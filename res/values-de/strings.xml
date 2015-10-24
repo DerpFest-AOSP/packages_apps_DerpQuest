@@ -196,4 +196,8 @@
     <string name="three_finger_gesture">Wischen zum Screenshot</string>
     <string name="three_finger_gesture_summary">Wischen Sie mit drei Fingern, um einen Screenshot aufzunehmen</string>
 
+    <!-- Lock screen cover art -->
+    <string name="lockscreen_media_art_title">Mediencover anzeigen</string>
+    <string name="lockscreen_media_art_summary">Zeigen Sie das Albumcover des aktuell wiedergegebenen Mediums auf dem Sperrbildschirm an</string>
+
 </resources>
