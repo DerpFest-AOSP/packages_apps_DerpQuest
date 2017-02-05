@@ -950,6 +950,10 @@
     <string name="about_device_recovery_ver" translatable="false"></string> <!-- Recovery version -->
     <string name="about_device_recovery_link" translatable="false"></string> <!-- Recovery link -->
 
+    <!-- The Drill -->
+    <string name="the_drill_title">The Drill</string>
+    <string name="the_drill_summary">Found a bug? Ran into an issue?</string>
+
     <!-- Heads up -->
     <string name="heads_up_settings_title">Heads up</string>
     <string name="heads_up_settings_summary">Configure heads up timeout, snooze timer and more</string>

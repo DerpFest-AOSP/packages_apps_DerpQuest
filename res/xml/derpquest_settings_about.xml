@@ -146,4 +146,10 @@
 
     </PreferenceCategory>
 
+    <Preference
+        android:key="the_drill"
+        android:title="@string/the_drill_title"
+        android:summary="@string/the_drill_summary"
+        android:fragment="com.derpquest.settings.fragments.TheDrill"/>
+
 </PreferenceScreen>
