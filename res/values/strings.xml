@@ -35,8 +35,7 @@
     <string name="quicksettings_summary">Manage your quick tiles and expanded statusbar</string>
     <string name="navigation_category">Navigation</string>
     <string name="navigation_summary">Customize navigation bar style and behavior</string>
-    <string name="buttons_title">Hardware buttons</string>
-    <string name="buttons_summary">Tweak the actions of your devices physical buttons</string>
+    <string name="global_actions_summary">Customize power menu behavior</string>
     <string name="gesture_category">Gesture</string>
     <string name="gesture_summary">Gesture based options/actions</string>
     <string name="lockscreen_title">Lockscreen</string>
@@ -123,5 +122,25 @@
     <string name="vowifi_icon_simple1">Simple1 Icon</string>
     <string name="vowifi_icon_simple2">Simple2 Icon</string>
     <string name="vowifi_icon_simple3">Simple3 Icon</string>
+
+    <string name="power_button_category_title">Power Button</string>
+
+    <!-- Global Actions -->
+    <string name="global_actions_title">Power menu</string>
+    <string name="global_actions_power">Power</string>
+    <string name="global_actions_restart">Restart</string>
+    <string name="global_actions_airplane">Airplane</string>
+    <string name="global_actions_settings">Settings</string>
+    <string name="global_actions_lockdown">Lock Down</string>
+    <string name="global_actions_soundpanel">Sound Panel</string>
+    <string name="global_actions_users">Users</string>
+    <string name="global_actions_screenshot">Screenshot</string>
+    <string name="global_actions_screenrecord">Screenrecord</string>
+    <string name="global_actions_flashlight">Flashlight</string>
+    <string name="global_actions_emergency">Emergency</string>
+    <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
+    <string name="global_actions_advanced_reboot_summary">When restarting also show options for recovery and bootloader</string>
+    <string name="global_actions_max_columns_title">Max actions to show</string>
+    <string name="global_actions_max_columns_summary">Set how many actions to show before buttons move to overflow menu</string>
 
 </resources>

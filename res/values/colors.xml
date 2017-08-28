@@ -24,7 +24,7 @@
     <color name="derpquest_about_icon_background">#a3a3a3</color>
     <color name="derpquest_status_icon_background">#2196F3</color>
     <color name="derpquest_qs_icon_background">#FF7E0F</color>
-    <color name="derpquest_buttons_icon_background">#01B1AF</color>
+    <color name="derpquest_global_actions_icon_background">#01B1AF</color>
     <color name="derpquest_gesture_icon_background">#C14CE6</color>
     <color name="derpquest_lockscreen_icon_background">#0F9D58</color>
     <color name="derpquest_notif_icon_background">#5011C1</color>

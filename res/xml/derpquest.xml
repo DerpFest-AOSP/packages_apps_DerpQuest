@@ -42,14 +42,14 @@
        android:fragment="com.derpquest.settings.fragments.Navigation"
        android:title="@string/navigation_category"
        android:summary="@string/navigation_summary"
-       android:icon="@drawable/ic_derpquest_nav_background" />
+       android:icon="@drawable/ic_derpquest_nav_background" / -->
 
     <PreferenceScreen
-       android:key="buttons"
-       android:fragment="com.derpquest.settings.fragments.Buttons"
-       android:title="@string/buttons_title"
-       android:summary="@string/buttons_summary"
-       android:icon="@drawable/ic_derpquest_buttons_background" / -->
+       android:key="global_actions"
+       android:fragment="com.derpquest.settings.fragments.GlobalActionsSettings"
+       android:title="@string/global_actions_title"
+       android:summary="@string/global_actions_summary"
+       android:icon="@drawable/ic_derpquest_global_actions_background" />
 
     <PreferenceScreen
        android:key="lockscreen"
