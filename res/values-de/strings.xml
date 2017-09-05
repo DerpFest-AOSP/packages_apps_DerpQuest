@@ -182,4 +182,10 @@
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusleistenelemente</string>
 
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">In-Call-Vibrationsoptionen</string>
+    <string name="incall_vibrate_connect_title">Beim Verbinden vibrieren</string>
+    <string name="incall_vibrate_call_wait_title">Vibrieren beim Warten auf Anruf</string>
+    <string name="incall_vibrate_disconnect_title">Beim Trennen vibrieren</string>
+
 </resources>
