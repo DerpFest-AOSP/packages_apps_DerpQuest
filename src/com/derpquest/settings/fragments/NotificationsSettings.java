@@ -23,8 +23,16 @@ import androidx.preference.PreferenceScreen;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.derpquest.settings.Utils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class NotificationsSettings extends SettingsPreferenceFragment {
+
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
     private Preference mChargingLeds;
 
@@ -34,6 +42,11 @@ public class NotificationsSettings extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.derpquest_settings_notifications);
         PreferenceScreen prefScreen = getPreferenceScreen();
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(incallVibCategory);
+        }
 
         mChargingLeds = (Preference) findPreference("charging_light");
         if (mChargingLeds != null

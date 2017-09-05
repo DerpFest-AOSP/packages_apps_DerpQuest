@@ -32,10 +32,31 @@
         android:fragment="com.derpquest.settings.fragments.BatteryLightSettings"
         android:title="@string/battery_light_settings" />
 
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference 
-            android:key="charging_animation" 
-            android:title="@string/charging_animation_title" 
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="charging_animation"
+            android:title="@string/charging_animation_title"
             android:summary="@string/charging_animation_summary"
             android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="incall_vib_options"
+        android:title="@string/incall_vibration_category" >
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_connect"
+            android:title="@string/incall_vibrate_connect_title"
+            android:defaultValue="false" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_callwaiting"
+            android:title="@string/incall_vibrate_call_wait_title"
+            android:defaultValue="false" />
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_disconnect"
+            android:title="@string/incall_vibrate_disconnect_title"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
