@@ -200,4 +200,7 @@
     <string name="lockscreen_media_art_title">Mediencover anzeigen</string>
     <string name="lockscreen_media_art_summary">Zeigen Sie das Albumcover des aktuell wiedergegebenen Mediums auf dem Sperrbildschirm an</string>
 
+	<!-- Navbar tuner -->
+    <string name="navbar_tuner_title">Navbar-Tasten</string>
+
 </resources>

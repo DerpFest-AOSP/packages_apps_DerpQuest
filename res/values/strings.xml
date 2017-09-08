@@ -200,4 +200,7 @@
     <string name="lockscreen_media_art_title">Display media cover art</string>
     <string name="lockscreen_media_art_summary">Show current playing media\'s album art on lockscreen</string>
 
+	<!-- Navbar tuner -->
+    <string name="navbar_tuner_title">Navbar buttons</string>
+
 </resources>
