@@ -179,4 +179,7 @@
     <string name="smart_space_title">Google Smart space</string>
     <string name="smart_space_summary">Informationen wie Wetter und Ereignisse auf dem Sperrbildschirm anzeigen\nErfordert einen Neustart der SystemUI</string>
 
+    <!-- Statusbar Tuner -->
+    <string name="statusbar_items_title">Statusleistenelemente</string>
+
 </resources>
