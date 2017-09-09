@@ -24,6 +24,13 @@
         android:title="@string/usb_default_config_title"
         android:summary="@string/usb_default_config_summary"/>
 
+	<ListPreference
+		android:dialogTitle="@string/volume_key_cursor_control_title"
+		android:entries="@array/volume_key_cursor_control_entries"
+		android:entryValues="@array/volume_key_cursor_control_values"
+		android:key="volume_key_cursor_control"
+		android:title="@string/volume_key_cursor_control_title" />
+
     <!-- Gvisual mod -->
     <PreferenceCategory 
          android:key="gvisual_category"
