@@ -68,5 +68,8 @@
     <!-- Double Tap Lockscreen to Sleep -->
     <string name="double_tap_to_sleep_lockscreen_title">Sperrbildschirm</string>
     <string name="double_tap_to_sleep_lockscreen_summary">Tippen Sie zweimal auf den Sperrbildschirm, um das Gerät in den Ruhezustand zu versetzen</string>
+    <!-- Double tap-to-sleep on statusbar -->
+    <string name="double_tap_to_sleep_title">Statusleiste</string>
+    <string name="double_tap_to_sleep_summary">Tippen Sie zweimal auf die Statusleiste, um das Gerät in den Ruhezustand zu versetzen</string>
 
 </resources>
