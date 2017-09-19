@@ -15,20 +15,67 @@
  */
 package com.derpquest.settings.fragments;
 
-import com.android.internal.logging.nano.MetricsProto;
-
+import androidx.annotation.NonNull;
+import android.content.Context;
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.content.pm.UserInfo;
 import android.os.Bundle;
-import com.android.settings.R;
+import android.os.UserHandle;
+import android.os.UserManager;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
+import android.provider.Settings;
 
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class PowerMenuSettings extends SettingsPreferenceFragment {
+import com.derpquest.settings.Utils;
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PowerMenuSettings extends SettingsPreferenceFragment
+                implements Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
+
+    private SwitchPreference mPowermenuTorch;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.derpquest_settings_power);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
+        mPowermenuTorch.setOnPreferenceChangeListener(this);
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mPowermenuTorch);
+        } else {
+        mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
+                Settings.System.POWERMENU_TORCH, 0) == 1));
+        }
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mPowermenuTorch) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWERMENU_TORCH, value ? 1 : 0);
+            return true;
+        }
+        return false;
     }
 
     @Override
