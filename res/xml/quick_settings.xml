@@ -44,6 +44,17 @@
         android:title="@string/qs_columns_rows_config_title"
         android:summary="@string/qs_columns_rows_config_summary" />
 
+    <PreferenceCategory 
+         android:key="qsheader_category"
+         android:title="@string/qsheader_title">
+
+        <PreferenceScreen
+            android:key="qsheader"
+            android:title="@string/custom_header_title"
+            android:fragment="com.derpquest.settings.fragments.ui.QSHeader" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="qs_footer_category"
         android:title="@string/qs_footer_category_title" >
