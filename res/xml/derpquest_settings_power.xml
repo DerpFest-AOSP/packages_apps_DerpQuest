@@ -21,6 +21,7 @@
          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="powermenu_power"
             android:title="@string/powermenu_power"
+            android:enabled="false"
             android:defaultValue="true" />
 
          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
