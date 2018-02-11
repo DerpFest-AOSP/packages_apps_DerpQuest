@@ -756,4 +756,7 @@
     <string name="theme_select_title">Themes</string>
     <string name="theme_select_summary">Browse and select installed themes</string>
 
+    <!--Gestures-->
+    <string name="aosp_gesture_title">AOSP Gestures</string>
+
 </resources>
