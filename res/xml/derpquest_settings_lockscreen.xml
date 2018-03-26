@@ -31,6 +31,12 @@
         android:summary="@string/fprint_sucess_vib_summary"
         android:persistent="false" />
 
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_show_status_bar"
+        android:title="@string/lockscreen_show_status_bar_title"
+        android:summary="@string/lockscreen_show_status_bar_summary"
+        android:defaultValue="true" />
+
     <com.derpquest.settings.preferences.SecureSettingSwitchPreference
         android:key="sysui_keyguard_show_battery_bar"
         android:title="@string/tuner_keyguard_show_battery_bar_title"
