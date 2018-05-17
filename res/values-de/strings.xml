@@ -291,4 +291,10 @@
     <string name="qs_battery_percentage_title">QS Akku-Prozentsatz</string>
     <string name="qs_battery_percentage_summary">Akku-Prozentsatz im QS-Header anstelle der geschätzten Laufzeit anzeigen</string>
 
+    <!-- Running Services -->
+    <string name="qs_running_services_title">Laufende Prozesse</string>
+    <string name="qs_running_services_summary">Deaktivieren Sie das Symbol für Laufende Prozesse in der Fußzeile</string>
+
+    <string name="qs_footer_category_title">QS-Fußzeile</string>
+
 </resources>

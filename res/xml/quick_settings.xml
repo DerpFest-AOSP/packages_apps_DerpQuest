@@ -66,17 +66,27 @@
             settings:units="" />
         </PreferenceCategory>
 
-    <!-- QS footer text toggle -->
-    <com.derp.support.preference.SystemSettingSwitchPreference
-        android:key="qs_footer_text_show"
-        android:title="@string/qs_footer_text_show_title"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:key="qs_footer_category"
+        android:title="@string/qs_footer_category_title" >
+        <!-- QS footer text toggle -->
+        <com.derp.support.preference.SystemSettingSwitchPreference
+            android:key="qs_footer_text_show"
+            android:title="@string/qs_footer_text_show_title"
+            android:defaultValue="false" />
 
-    <!-- QS footer text string -->
-    <com.derp.support.preference.SystemSettingEditTextPreference
-        android:key="qs_footer_text_string"
-        android:title="@string/qs_footer_text_string_title"
-        android:dependency="qs_footer_text_show"
-        android:defaultValue="#StayDerped" />
+        <!-- QS footer text string -->
+        <com.derp.support.preference.SystemSettingEditTextPreference
+            android:key="qs_footer_text_string"
+            android:title="@string/qs_footer_text_string_title"
+            android:dependency="qs_footer_text_show"
+            android:defaultValue="#StayDerped" />
+
+        <com.derp.support.preference.SystemSettingSwitchPreference
+            android:key="qs_running_services_toggle"
+            android:title="@string/qs_running_services_title"
+            android:summary="@string/qs_running_services_summary"
+            android:defaultValue="false" />
+        </PreferenceCategory>
 
 </PreferenceScreen>
