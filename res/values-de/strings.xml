@@ -192,4 +192,8 @@
     <string name="lockscreen_visualizer_enable">Musik-Visualizer</string>
     <string name="lockscreen_visualizer_enable_summary">Zeigen Sie während der Musikwiedergabe Visualisierungsleisten an</string>
 
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Wischen zum Screenshot</string>
+    <string name="three_finger_gesture_summary">Wischen Sie mit drei Fingern, um einen Screenshot aufzunehmen</string>
+
 </resources>
