@@ -62,6 +62,12 @@
             android:summary="@string/show_gentle_header_summary"
             android:defaultValue="false" />
 
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="force_expanded_notifications"
+            android:title="@string/force_expanded_notifications_title"
+            android:summary="@string/force_expanded_notifications_summary"
+            android:defaultValue="false" />
+
         <!-- Pulse Ambient Light (aka Edge Lighting) -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="pulse_ambient_light"
