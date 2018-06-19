@@ -37,6 +37,13 @@
             android:fragment="com.derpquest.settings.fragments.BatteryLightSettings"
             android:title="@string/battery_light_settings" />
 
+        <com.derpquest.settings.preferences.SystemSettingListPreference
+            android:key="flashlight_on_call"
+            android:title="@string/flashlight_on_call_title"
+            android:entries="@array/flashlight_on_call_entries"
+            android:entryValues="@array/flashlight_on_call_values"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

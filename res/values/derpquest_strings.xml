@@ -1004,4 +1004,11 @@
     <string name="selinux_unrooted_summary">Couldn\'t detect root. You must have root to use these switches</string>
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
 
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Blink Flashlight for call</string>
+    <string name="flashlight_on_call_disabled">Disabled</string>
+    <string name="flashlight_on_call_ringer">Only in ringer mode</string>
+    <string name="flashlight_on_call_silent">Only when ringer is silent</string>
+    <string name="flashlight_on_call_always">Always</string>
+
 </resources>
