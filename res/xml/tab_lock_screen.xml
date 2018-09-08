@@ -28,8 +28,8 @@
         android:key="lockscreen_weather"
         android:fragment="com.derpquest.settings.fragments.lockscreen.LockscreenWeather"
         android:icon="@drawable/ic_lockscreen_weather_background"
-        android:title="@string/lockscreen_weather_title"
-        android:summary="@string/lockscreen_weather_summary" />
+        android:title="@string/lockscreen_weather_title2"
+        android:summary="@string/lockscreen_weather_summary2" />
 
 <!-- Uncomment once Tuner has been added
     <com.android.settings.widget.CardPreference

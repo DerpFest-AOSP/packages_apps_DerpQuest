@@ -69,8 +69,8 @@
     <string name="lockscreen_general_summary">Fügen Sie visuelle Elemente Ihres Sperrbildschirms hinzu oder entfernen Sie sie</string>
     <string name="lockscreen_tuner_title">Lockscreen-Tuner</string>
     <string name="lockscreen_tuner_summary">Fügen Sie Tuner-Teile Ihres Sperrbildschirms hinzu oder entfernen Sie sie</string>
-    <string name="lockscreen_weather_title">Wetteroptionen</string>
-    <string name="lockscreen_weather_summary">Konfigurieren Sie das Wetter auf dem Sperrbildschirm</string>
+    <string name="lockscreen_weather_title2">Wetteroptionen</string>
+    <string name="lockscreen_weather_summary2">Konfigurieren Sie das Wetter auf dem Sperrbildschirm</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animationen</string>
@@ -522,4 +522,17 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Anzahl der Benachrichtigungen</string>
     <string name="status_bar_notif_count_summary">Zeigen Sie die Anzahl der ausstehenden Benachrichtigungen an</string>
+
+    <!-- Omni Jaws -->
+    <string name="weather_title">Wettereinstellungen</string>
+    <string name="weather_summary">OmniJaws Wetterkonfigurationen</string>
+    <string name="weather_config_title">Wetterdienst</string>
+    <string name="weather_config_summary">Systemdiensteinstellungen</string>
+    <string name="header_weather_title">Header-Ansicht Wetter</string>
+    <string name="header_weather_summary">Aktivieren Sie die Wetteranzeige in der Kopfzeile des Benachrichtigungsfelds</string>
+    <string name="weather_icon_pack_title">Zustandssymbolpaket</string>
+    <string name="weather_icon_pack_note">Hinweis\u003a Sie können neue Icon Packs aus dem Play Store installieren, indem Sie nach \"Chronus icons\" suchen</string>
+    <string name="weather_icon_pack_info_title">Das Zustandssymbolpaket wird in den Schnelleinstellungen und im Sperrbildschirm verwendet</string>
+    <string name="lockscreen_weather_title">Wetterbedingungen anzeigen</string>
+    <string name="lockscreen_weather_summary">Aktuelle Wetterbedingungen und Temperatur anzeigen</string>
 </resources>
