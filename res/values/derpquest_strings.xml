@@ -71,4 +71,7 @@
     <string name="powermenu_logout">Logout</string>
     <string name="powermenu_torch">Flashlight</string>
 
+    <!-- Volume settings -->
+    <string name="hardware_keys_vol_key_title">Volume button</string>
+
 </resources>
