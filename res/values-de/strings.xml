@@ -535,4 +535,10 @@
     <string name="weather_icon_pack_info_title">Das Zustandssymbolpaket wird in den Schnelleinstellungen und im Sperrbildschirm verwendet</string>
     <string name="lockscreen_weather_title">Wetterbedingungen anzeigen</string>
     <string name="lockscreen_weather_summary">Aktuelle Wetterbedingungen und Temperatur anzeigen</string>
+
+    <!-- LockWeather Switches -->
+    <string name="lockscreen_weather_show_city_title">Stadtnamen anzeigen</string>
+    <string name="lockscreen_weather_show_city_summary">Zeigen Sie den Namen der aktuellen Stadt links im Bild an</string>
+    <string name="lockscreen_weather_show_temp_title">Temperatur anzeigen</string>
+    <string name="lockscreen_weather_show_temp_summary">Zeigen Sie die aktuelle Stadttemperatur rechts im Bild an</string>
 </resources>
