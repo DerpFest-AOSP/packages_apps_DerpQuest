@@ -353,4 +353,12 @@
     <string name="qs_clock_title">Clock</string>
     <string name="qs_clock_summary">Display clock in quick status bar header</string>
 
+    <!-- Quick pull down-->
+    <string name="quick_pulldown_title">Status bar pulls down Quick Settings</string>
+    <string name="quick_pulldown_summary">%1$s</string>
+    <string name="quick_pulldown_off">Off</string>
+    <string name="quick_pulldown_left">Left edge</string>
+    <string name="quick_pulldown_right">Right edge</string>
+    <string name="quick_pulldown_always">Anywhere</string>
+
 </resources>
