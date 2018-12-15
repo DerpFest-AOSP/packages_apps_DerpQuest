@@ -31,6 +31,36 @@
 		android:key="volume_key_cursor_control"
 		android:title="@string/volume_key_cursor_control_title" />
 
+    <PreferenceCategory    
+        android:key="corners_category"
+        android:title="@string/corners_category" >
+
+        <com.derp.support.preference.SecureSettingSwitchPreference
+            android:key="sysui_rounded_fwvals"
+            android:title="@string/corner_fwvals"
+            android:summary="@string/corner_fwvals_summary"
+            android:defaultValue="true"
+            android:disableDependentsState="true" />
+
+        <com.derp.support.preference.CustomSeekBarPreference
+            android:key="sysui_rounded_size"
+            android:title="@string/corner_radius"
+            android:max="60"
+            settings:min="0"
+            settings:units="dp"
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
+
+        <!-- <com.derp.support.preference.CustomSeekBarPreference
+            android:key="sysui_rounded_content_padding"
+            android:title="@string/content_padding"
+            android:max="30"
+            settings:min="0"
+            settings:units="dp"
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" /-->
+    </PreferenceCategory>
+
     <!-- Gvisual mod -->
     <PreferenceCategory 
          android:key="gvisual_category"
