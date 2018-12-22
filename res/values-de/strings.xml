@@ -621,4 +621,8 @@
     <string name="global_actions_screenshot_title">Screenshot</string>
     <string name="global_actions_screenrecord_title">Bildschirmaufnahme</string>
     <string name="global_actions_none_title">Nichts</string>
+
+    <!-- USB Configuration -->
+    <string name="usb_default_config_title">USB-Konfiguration</string>
+    <string name="usb_default_config_summary">Wählen Sie das Standardverhalten, wenn Sie über USB mit einem Gerät verbunden sind</string>
 </resources>
