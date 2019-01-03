@@ -16,12 +16,15 @@
 
 package com.derpquest.settings.tabs;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.text.TextUtils;
 
 import androidx.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.derp.derpUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.widget.CardPreference;
@@ -31,11 +34,13 @@ public class StatusBarTab extends SettingsPreferenceFragment implements
 
     private static final String BATTERY_CATEGORY = "battery_options_category";
     private static final String CLOCK_OPTIONS_CATEGORY = "clock_options_category";
+    private static final String PREF_KEY_CUTOUT = "cutout_settings";
     private static final String TRAFFIC_CATEGORY = "traffic_category";
     private static final String STATUS_BAR_ITEMS_CATEGORY = "status_bar";
 
     private CardPreference mBattery;
     private CardPreference mClockOptions;
+    private CardPreference mCutoutPref;
     private CardPreference mTraffic;
     private CardPreference mStatusBarItems;
 
@@ -49,13 +54,21 @@ public class StatusBarTab extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mBattery);
         } else {
             mBattery = (CardPreference) findPreference(BATTERY_CATEGORY);
-        } 
+        }
 
         CardPreference mClockOptions = findPreference("clock_options_category");
         if (!getResources().getBoolean(R.bool.clock_category_isVisible)) {
             getPreferenceScreen().removePreference(mClockOptions);
         } else {
             mClockOptions = (CardPreference) findPreference(CLOCK_OPTIONS_CATEGORY);
+        }
+
+        CardPreference mCutoutPref = findPreference("cutout_settings");
+        String hasDisplayCutout = getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
+        if (TextUtils.isEmpty(hasDisplayCutout)) {
+            getPreferenceScreen().removePreference(mCutoutPref);
+        } else {
+            mCutoutPref = (CardPreference) findPreference(PREF_KEY_CUTOUT);
         }
 
         CardPreference mTraffic = findPreference("traffic_category");
