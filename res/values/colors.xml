@@ -30,6 +30,7 @@
     <color name="derpquest_battery_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_changelog_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_clock_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_cutout_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_display_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_gestures_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_headsup_background">@*android:color/accent_device_default_light</color>
