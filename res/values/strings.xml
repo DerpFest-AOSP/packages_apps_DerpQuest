@@ -791,4 +791,9 @@
     <string name="pulse_ambient_light_repeat_count_title">Edge Light Repeat count</string>
     <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
 
+    <!-- Volume Panel on Left -->
+    <string name="volume_panel_category">Volume panel</string>
+    <string name="volume_panel_on_left_title">Volume Panel on Left</string>
+    <string name="volume_panel_on_left_summary">Change volume panel from right side to left side</string>
+
 </resources>
