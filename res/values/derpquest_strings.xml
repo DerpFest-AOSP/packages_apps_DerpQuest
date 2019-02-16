@@ -197,4 +197,8 @@
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
 
+    <!-- QSTile requires unlocking before being accessible -->
+    <string name="qstile_requires_unlocking_title">Secure tiles require unlocking</string>
+    <string name="qstile_requires_unlocking_summary">The following quick tiles require unlocking before you can acccess them from lock screen: airplane, battery saver, bluetooth, cellular, data saver, nfc and wifi.</string>
+
 </resources>
