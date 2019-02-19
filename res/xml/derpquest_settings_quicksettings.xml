@@ -51,4 +51,11 @@
         android:entryValues="@array/qs_battery_mode_values"
         android:defaultValue="1" />
 
+    <!-- QS clock -->
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="show_qs_clock"
+        android:title="@string/qs_clock_title"
+        android:summary="@string/qs_clock_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

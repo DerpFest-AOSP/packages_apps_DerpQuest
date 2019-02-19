@@ -349,4 +349,8 @@
     <string name="battery_percentage_inside">Enabled (inside icon)</string>
     <string name="battery_percentage_estimate">Enabled (estimate)</string>
 
+    <!-- QS clock -->
+    <string name="qs_clock_title">Clock</string>
+    <string name="qs_clock_summary">Display clock in quick status bar header</string>
+
 </resources>
