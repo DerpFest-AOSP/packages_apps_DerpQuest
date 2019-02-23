@@ -323,4 +323,28 @@
     <string name="lock_date_font_summary">Ändern der Standardschriftart des Sperrbildschirm-Datumswidget</string>
     <string name="lock_date_font_dialog_title">Wählen Sie die Schriftart</string>
 
+    <!-- Battery Bar -->
+    <string name="battery_bar_title">Akku-Leiste</string>
+    <string name="battery_bar_summary">Akkuleiste anpassen</string>
+    <string name="battery_bar_location">Position</string>
+    <string name="battery_bar_color">Farbe</string>
+    <string name="battery_bar_charging_color">Farbe beim Ladevorgang</string>
+    <string name="battery_bar_battery_low_color">Farbe bei niedrigem Akkustand</string>
+    <string name="battery_bar_style_title">Stil</string>
+    <string name="battery_bar_thickness_title">Stärke</string>
+    <string name="battery_bar_thickness_summary">%1$s</string>
+    <string name="battery_bar_animate_title">Ladeanimation</string>
+    <string name="battery_bar_animate_summary">Animiert die Akkuleiste während des Ladevorgangs</string>
+    <string name="battery_bar_hide">Nicht anzeigen</string>
+    <string name="battery_bar_statusbar">Statusleiste</string>
+    <string name="battery_bar_topnav">Über der Navigationsleiste</string>
+    <string name="battery_bar_bottomnav">Unterhalb der Navigationsleiste</string>
+    <string name="battery_bar_reg">Normal</string>
+    <string name="battery_bar_center">Mittig gespiegelt</string>
+    <string name="battery_bar_reversed">Umgekehrt</string>
+    <string name="battery_bar_use_gradient_color">Farbverlauf verwenden</string>
+    <string name="battery_bar_gradient_color_summary">Verwende Farbverlauf als Maßstab für den Akkustand</string>
+    <string name="battery_bar_high_color">Farbe bei hohem Akkustand</string>
+    <string name="battery_bar_low_color">Farbe bei niedrigem Akkustand</string>
+
 </resources>

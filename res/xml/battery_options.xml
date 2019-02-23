@@ -39,4 +39,10 @@
         android:key="qs_battery_percentage"
         android:title="@string/qs_battery_percentage_title"
         android:summary="@string/qs_battery_percentage_summary" />
+
+    <com.android.settings.widget.CardPreference
+        android:key="battery_bar_settings"
+        android:fragment="com.derpquest.settings.fragments.statusbar.BatteryBar"
+        android:title="@string/battery_bar_title"
+        android:summary="@string/battery_bar_summary" />
 </PreferenceScreen>
