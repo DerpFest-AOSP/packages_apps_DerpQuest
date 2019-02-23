@@ -91,11 +91,16 @@
     <PreferenceCategory
         android:title="@string/etc_category_title" >
 
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="battery_bar_settings"
+            android:title="@string/sb_battery_bar_title"
+            android:fragment="com.derpquest.settings.fragments.BatteryBar" />
+
         <Preference
-             android:key="carrier_label_settings"
-             android:title="@string/carrier_label_category_title"
-             android:summary="@string/carrier_label_category_summary"
-             android:fragment="com.derpquest.settings.fragments.CarrierLabelSettings" />
+            android:key="carrier_label_settings"
+            android:title="@string/carrier_label_category_title"
+            android:summary="@string/carrier_label_category_summary"
+            android:fragment="com.derpquest.settings.fragments.CarrierLabelSettings" />
 
     </PreferenceCategory>
 

@@ -67,6 +67,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
     private static final String BATTERY_ICON_STYLE = "battery_icon_style";
     private static final String NOTIFICATION_TICKER = "status_bar_show_ticker";
+    private static final String BATTERY_BAR = "battery_bar_settings";
 
     private SystemSettingMasterSwitchPreference mNetTrafficState;
     private SystemSettingMasterSwitchPreference mStatusBarClock;
@@ -74,6 +75,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mStatusBarLogo;
     private SystemSettingMasterSwitchPreference mBatteryIconStyle;
     private SystemSettingMasterSwitchPreference mNotificationTicker;
+    private SystemSettingMasterSwitchPreference mBatteryBar;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -126,6 +128,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_SHOW_TICKER, 0) == 1;
         mNotificationTicker.setChecked(enabled);
 
+        mBatteryBar = (SystemSettingMasterSwitchPreference)
+                findPreference(BATTERY_BAR);
+        mBatteryBar.setOnPreferenceChangeListener(this);
+        enabled = Settings.System.getInt(resolver,
+                Settings.System.BATTERY_BAR_LOCATION, 0) != 0;
+        mBatteryBar.setChecked(enabled);
+
     }
 
     @Override
@@ -160,6 +169,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_TICKER, enabled ? 1 : 0);
+            return true;
+        } else if (preference == mBatteryBar) {
+            boolean enabled = (boolean) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BATTERY_BAR_LOCATION, enabled ? 1 : 0);
             return true;
         }
         return false;
