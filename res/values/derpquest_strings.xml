@@ -191,6 +191,7 @@
     <string name="show_network_traffic_up">Uplink</string>
     <string name="show_network_traffic_down">Downlink</string>
     <string name="show_network_traffic_all">Uplink and Downlink</string>
+    <string name="nettraf_font_size">Single net font size</string>
 
     <!-- Statusbar double tap to sleep -->
     <string name="double_tap_to_sleep_title">Status bar double tap to sleep</string>

@@ -68,6 +68,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mShowArrows;
     private ListPreference mNetTrafficType;
+    private CustomSeekBarPreference mNetTrafficSize;
+
+    private static final String NETWORK_TRAFFIC_FONT_SIZE  = "network_traffic_font_size";
 
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
     private static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
@@ -121,6 +124,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mNetTrafficType.setValue(String.valueOf(type));
         mNetTrafficType.setSummary(mNetTrafficType.getEntry());
         mNetTrafficType.setOnPreferenceChangeListener(this);
+
+        int NetTrafficSize = Settings.System.getInt(resolver,
+                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 42);
+        mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
+        mNetTrafficSize.setValue(NetTrafficSize / 1);
+        mNetTrafficSize.setOnPreferenceChangeListener(this);
 
         mNetTrafficLocation = (ListPreference) findPreference("network_traffic_location");
         int location = Settings.System.getIntForUser(resolver,
@@ -266,6 +275,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             int index = mNetTrafficType.findIndexOfValue((String) objValue);
             mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
             return true;
+        }  else if (preference == mNetTrafficSize) {
+            int width = ((Integer)objValue).intValue();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, width);
+            return true;
         } else if (preference == mStatusBarClock) {
             int clockStyle = Integer.parseInt((String) objValue);
             int index = mStatusBarClock.findIndexOfValue((String) objValue);
@@ -370,12 +384,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 mThreshold.setEnabled(false);
                 mShowArrows.setEnabled(false);
                 mNetTrafficType.setEnabled(false);
+                mNetTrafficSize.setEnabled(false);
                 break;
             case 1:
             case 2:
                 mThreshold.setEnabled(true);
                 mShowArrows.setEnabled(true);
                 mNetTrafficType.setEnabled(true);
+                mNetTrafficSize.setEnabled(true);
                 break;
             default: 
                 break;
