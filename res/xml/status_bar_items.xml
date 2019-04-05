@@ -19,6 +19,13 @@
     android:title="@string/status_bar_items_title" >
 
     <com.derp.support.preference.SystemSettingMasterSwitchPreference
+        android:key="status_bar_logo"
+        android:fragment="com.derpquest.settings.fragments.statusbar.StatusbarLogo"
+        android:title="@string/status_bar_logo_title"
+        android:summary="@string/status_bar_logo_summary"
+        android:defaultValue="false" />
+
+    <com.derp.support.preference.SystemSettingMasterSwitchPreference
         android:key="carrier_label_enabled"
         android:fragment="com.derpquest.settings.fragments.statusbar.CustomCarrierLabel"
         android:title="@string/carrier_label_settings_title"

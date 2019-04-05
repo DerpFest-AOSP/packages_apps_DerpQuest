@@ -50,8 +50,10 @@ public class StatusBarItems extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String CARRIER_LABEL = "carrier_label_enabled";
+    private static final String STATUS_BAR_LOGO = "status_bar_logo";
 
 	private SystemSettingMasterSwitchPreference mCarrierLabel;
+    private SystemSettingMasterSwitchPreference mStatusBarLogo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,11 @@ public class StatusBarItems extends SettingsPreferenceFragment implements
     }
 
     private void updateMasterPrefs() {
+        mStatusBarLogo = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_LOGO);
+        mStatusBarLogo.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_LOGO, 0) == 1));
+        mStatusBarLogo.setOnPreferenceChangeListener(this);
+
         mCarrierLabel = (SystemSettingMasterSwitchPreference) findPreference(CARRIER_LABEL);
         mCarrierLabel.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.CARRIER_LABEL_ENABLED, 1) == 1));
@@ -71,7 +78,12 @@ public class StatusBarItems extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mCarrierLabel) {
+        if (preference == mStatusBarLogo) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_LOGO, value ? 1 : 0);
+            return true;
+        } else if (preference == mCarrierLabel) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.CARRIER_LABEL_ENABLED, value ? 1 : 0);
