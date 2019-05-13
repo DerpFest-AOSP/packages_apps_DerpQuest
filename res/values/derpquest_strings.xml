@@ -52,8 +52,6 @@
     <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">Longpress box to save color</string>
 
-    <!-- Statusbar Tuner -->
-    <string name="statusbar_items_title">Statusbar items</string>
     <!-- Navbar options -->
     <string name="navbar_invert_layout_title">Invert layout</string>
     <!-- Lockscreen icons -->
@@ -204,5 +202,10 @@
     <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">Enable on-screen nav bar</string>
     <string name="disable_navkeys_summary">Enable on-screen navigation bar</string>
+
+    <!-- Status bar - icons -->
+    <string name="status_bar_icons_title">Status bar icons</string>
+    <string name="status_bar_system_icons_title">System icons</string>
+    <string name="status_bar_system_icons_summary">Control which status bar icons are shown</string>
 
 </resources>
