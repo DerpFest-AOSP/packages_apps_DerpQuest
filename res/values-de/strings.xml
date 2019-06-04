@@ -541,4 +541,11 @@
     <string name="lockscreen_weather_show_city_summary">Zeigen Sie den Namen der aktuellen Stadt links im Bild an</string>
     <string name="lockscreen_weather_show_temp_title">Temperatur anzeigen</string>
     <string name="lockscreen_weather_show_temp_summary">Zeigen Sie die aktuelle Stadttemperatur rechts im Bild an</string>
+
+    <!-- Lockscreen weather style -->
+    <string name="lockscreen_weather_style_title">Wetterstil</string>
+    <string name="lockscreen_weather_omni_style_title">Omni-Stil</string>
+    <string name="lockscreen_weather_pixel_style_title">Pixel-Stil</string>
+    <string name="lock_screen_weather_style_title">Zeigen Sie Wetter mit Pixel-Stil</string>
+    <string name="lock_screen_weather_style_summary">Anstatt das große Widget zu verwenden, wird es neben dem Datum angezeigt</string>
 </resources>
