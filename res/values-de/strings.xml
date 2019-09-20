@@ -203,4 +203,7 @@
 	<!-- Navbar tuner -->
     <string name="navbar_tuner_title">Navbar-Tasten</string>
 
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Layout umkehren</string>
+
 </resources>
