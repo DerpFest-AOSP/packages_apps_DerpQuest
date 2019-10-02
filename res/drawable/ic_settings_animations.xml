@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017-2019 The PixelDust Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M11.342,0.716c1.591,-0.09 3.202,0.152 4.69,0.724c1.608,0.613 3.07,1.603 4.241,2.863c1.181,1.267 2.067,2.808 2.56,4.468c0.406,1.36 0.549,2.798 0.426,4.212c-0.183,2.199 -1.04,4.336 -2.421,6.057c-1.133,1.425 -2.614,2.57 -4.28,3.303c-2.519,1.122 -5.454,1.263 -8.072,0.4c-1.558,-0.507 -3,-1.363 -4.195,-2.482c-1.393,-1.297 -2.453,-2.951 -3.04,-4.763c-0.533,-1.63 -0.681,-3.382 -0.443,-5.079c0.242,-1.737 0.9,-3.414 1.902,-4.853c1.079,-1.558 2.556,-2.84 4.253,-3.684c1.36,-0.682 2.86,-1.078 4.379,-1.166m0.084,1.015c-1.054,0.061 -2.101,0.279 -3.087,0.657c-1.616,0.614 -3.069,1.647 -4.185,2.966c-1.079,1.27 -1.844,2.806 -2.199,4.436c-0.17,0.771 -0.249,1.563 -0.237,2.353c0.02,1.717 0.48,3.426 1.33,4.917c0.884,1.567 2.19,2.893 3.741,3.805c1.519,0.9 3.277,1.393 5.043,1.417c1.302,0.023 2.609,-0.204 3.826,-0.669c2.019,-0.765 3.78,-2.189 4.956,-3.998c0.633,-0.965 1.1,-2.04 1.374,-3.161c0.352,-1.434 0.39,-2.944 0.112,-4.394c-0.34,-1.795 -1.177,-3.492 -2.388,-4.86c-1.205,-1.369 -2.78,-2.411 -4.515,-2.976c-1.211,-0.399 -2.498,-0.561 -3.771,-0.493Z"
+      android:fillColor="?android:attr/colorAccent"
+      android:fillType="nonZero"/>
+  <path
+      android:pathData="M15.713,11.96m-3.618,0a3.618,3.618 0,1 1,7.236 0a3.618,3.618 0,1 1,-7.236 0"
+      android:fillColor="?android:attr/colorAccent"/>
+  <path
+      android:pathData="M13.908,8.407c-2.002,0 -3.627,1.625 -3.627,3.627c0,2.002 1.625,3.627 3.627,3.627c-1.261,-0.448 -2.285,-1.919 -2.285,-3.627c0,-1.709 1.024,-3.18 2.285,-3.627Z"
+      android:fillColor="?android:attr/colorAccent"/>
+  <path
+      android:pathData="M11.923,8.407c-2.002,0 -3.627,1.625 -3.627,3.627c0,2.002 1.625,3.627 3.627,3.627c-1.261,-0.448 -2.284,-1.919 -2.284,-3.627c0,-1.709 1.023,-3.18 2.284,-3.627Z"
+      android:fillColor="?android:attr/colorAccent"
+      android:fillAlpha="0.6"/>
+  <path
+      android:pathData="M10.11,8.342c-2.002,0 -3.627,1.625 -3.627,3.627c0,2.001 1.625,3.627 3.627,3.627c-1.261,-0.448 -2.285,-1.919 -2.285,-3.627c0,-1.709 1.024,-3.18 2.285,-3.627Z"
+      android:fillColor="?android:attr/colorAccent"
+      android:fillAlpha="0.4"/>
+  <path
+      android:pathData="M8.296,8.407c-2.002,0 -3.627,1.625 -3.627,3.627c0,2.002 1.625,3.627 3.627,3.627c-1.261,-0.448 -2.284,-1.919 -2.284,-3.627c0,-1.709 1.023,-3.18 2.284,-3.627Z"
+      android:fillColor="?android:attr/colorAccent"
+      android:fillAlpha="0.2"/>
+</vector>
