@@ -29,8 +29,8 @@
             android:title="@string/powermenu_restart"
             android:defaultValue="true" />
 
-         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="powermenu_restart_recovery"
+         <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+            android:key="advanced_reboot"
             android:title="@string/powermenu_restart_recovery"
             android:defaultValue="true" />
 
