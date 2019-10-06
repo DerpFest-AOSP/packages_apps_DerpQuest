@@ -201,4 +201,8 @@
     <string name="qstile_requires_unlocking_title">Secure tiles require unlocking</string>
     <string name="qstile_requires_unlocking_summary">The following quick tiles require unlocking before you can acccess them from lock screen: airplane, battery saver, bluetooth, cellular, data saver, nfc and wifi.</string>
 
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">Enable on-screen nav bar</string>
+    <string name="disable_navkeys_summary">Enable on-screen navigation bar</string>
+
 </resources>
