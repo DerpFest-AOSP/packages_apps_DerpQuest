@@ -41,4 +41,9 @@
         android:title="@string/volume_steps_title"
         android:fragment="com.derpquest.settings.fragments.VolumeSteps" />
 
+    <Preference
+        android:key="audio_panel" 
+        android:fragment="com.derpquest.settings.fragments.AudioPanelSettings"
+        android:title="@string/audio_panel_view" />
+
 </PreferenceScreen>
