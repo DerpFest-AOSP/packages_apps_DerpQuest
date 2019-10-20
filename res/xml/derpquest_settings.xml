@@ -66,12 +66,13 @@
             android:fragment="com.derpquest.settings.fragments.PowerMenuSettings"
             android:icon="@drawable/ic_settings_powermenu"/>
 
-        <!-- Recents -->
+        <!-- Recents 
         <Preference
             android:key="recents_category"
             android:title="@string/recents_title"
             android:fragment="com.derpquest.settings.fragments.RecentsSettings"
             android:icon="@drawable/ic_settings_recents"/>
+        -->
 
         <!-- Notifications -->
         <Preference
