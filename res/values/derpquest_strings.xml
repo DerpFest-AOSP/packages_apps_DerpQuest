@@ -536,6 +536,11 @@
     <string name="flash_on_call_title">Pulse flash on incoming call</string>
     <string name="flash_on_call_delay_title">Flash pulse rate</string>
 
+    <!-- Lock Date Fonts -->
+    <string name="lock_date_font_title">Date font options</string>
+    <string name="lock_date_font_summary">Change the default font of the lockscreen date widget</string>
+    <string name="lock_date_font_dialog_title">Select lock date font</string>
+
     <!-- Custom carrier label and position -->
     <string name="etc_category_title">ETC</string>
     <string name="carrier_label_category_title">Carrier Label Settings</string>
