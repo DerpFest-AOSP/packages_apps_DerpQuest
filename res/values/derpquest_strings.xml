@@ -54,6 +54,10 @@
 
     <!-- Navbar options -->
     <string name="navbar_invert_layout_title">Invert layout</string>
+    <!-- Enable navbar -->
+    <string name="enable_navbar_title">Enable</string>
+    <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>
+
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
 
