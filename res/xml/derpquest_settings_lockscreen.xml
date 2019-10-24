@@ -51,8 +51,9 @@
             android:defaultValue="100"
             android:dependency="lockscreen_media_metadata" />
 
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+        <com.derpquest.settings.preferences.SecureSettingMasterSwitchPreference
             android:key="lockscreen_visualizer_enabled"
+            android:fragment="com.derpquest.settings.fragments.Visualizer"
             android:title="@string/lockscreen_visualizer_enable"
             android:summary="@string/lockscreen_visualizer_enable_summary"
             android:defaultValue="false" />
