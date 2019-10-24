@@ -41,4 +41,10 @@
         android:entryValues="@array/lockscreen_clock_values"
         android:defaultValue="2" />
 
+    <com.derp.support.preference.SecureSettingSwitchPreference
+        android:key="lockscreen_visualizer_enabled"
+        android:title="@string/lockscreen_visualizer_enable"
+        android:summary="@string/lockscreen_visualizer_enable_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

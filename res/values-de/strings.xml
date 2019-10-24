@@ -188,4 +188,8 @@
     <string name="incall_vibrate_call_wait_title">Vibrieren beim Warten auf Anruf</string>
     <string name="incall_vibrate_disconnect_title">Beim Trennen vibrieren</string>
 
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_enable">Musik-Visualizer</string>
+    <string name="lockscreen_visualizer_enable_summary">Zeigen Sie während der Musikwiedergabe Visualisierungsleisten an</string>
+
 </resources>
