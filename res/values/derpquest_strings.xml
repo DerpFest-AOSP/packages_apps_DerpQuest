@@ -531,4 +531,8 @@
     <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
     <string name="notification_sound_vib_screen_on_summary">Disable to block notifications sound and vibration when the screen is awake</string>
 
+    <!-- Old MobileType Toggle -->
+    <string name="use_old_mobiletype_title">Use old mobile type style</string>
+    <string name="use_old_mobiletype_summary">Merge signal and type icons</string>
+
 </resources>
