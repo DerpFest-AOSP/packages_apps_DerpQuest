@@ -25,7 +25,7 @@
             android:targetClass="com.android.systemui.tuner.LockscreenActivity" />
     </Preference>
 
-    <SwitchPreference
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="fingerprint_success_vib"
         android:title="@string/fprint_sucess_vib_title"
         android:summary="@string/fprint_sucess_vib_summary"
