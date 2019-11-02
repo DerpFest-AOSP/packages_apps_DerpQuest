@@ -33,6 +33,7 @@
     <string name="theming_title">Theming</string>
     <string name="animations_title">Animations</string>
     <string name="nav_bar_category_title">Navigation bar</string>
+    <string name="edge_lighting_category_title">Edge lighting</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -778,5 +779,11 @@
     <!-- Running Services button -->
     <string name="qs_running_services_title">Running Services Icon</string>
     <string name="qs_running_services_summary">Enable the running services icon in the footer</string>
+
+    <string name="pulse_ambient_light_title">Pulse light notification</string>
+    <string name="pulse_ambient_light_summary">Show light bar on notification pulse</string>
+
+    <string name="ambient_notification_light_enabled_title">Always on ambient lights on notification</string>
+    <string name="ambient_notification_light_enabled_sumary">Show Always On light bars when receiving a notification</string>
 
 </resources>
