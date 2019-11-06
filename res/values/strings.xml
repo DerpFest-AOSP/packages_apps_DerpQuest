@@ -688,4 +688,9 @@
     <string name="ambient_icons_size_title">AOD icons size</string>
     <string name="ambient_icons_color_title">AOD icons color</string>
 
+    <!-- Swap volume buttons on rotation -->
+    <string name="swap_volume_title">Volume buttons settings</string>
+    <string name="swap_volume_keys_on_rotation_title">Swap volume buttons</string>
+    <string name="swap_volume_keys_on_rotation_summary">Swap volume buttons when rotating the device to landscape orientation</string>
+
 </resources>
