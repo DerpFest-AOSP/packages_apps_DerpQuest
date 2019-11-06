@@ -31,4 +31,16 @@
 
     </PreferenceCategory>
 
+    <!-- Swap Volume Button -->
+    <PreferenceCategory 
+         android:key="swap_volume_button_category"
+         android:title="@string/swap_volume_title">
+
+        <com.derp.support.preference.SystemSettingSwitchPreference
+            android:key="swap_volume_keys_on_rotation"
+            android:title="@string/swap_volume_keys_on_rotation_title"
+            android:summary="@string/swap_volume_keys_on_rotation_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

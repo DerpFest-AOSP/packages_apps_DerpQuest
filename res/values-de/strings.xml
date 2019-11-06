@@ -573,4 +573,9 @@
     <string name="ambient_icons_lockscreen_summary">Ändern Sie die Darstellung der AOD-Symbole</string>
     <string name="ambient_icons_size_title">AOD-Symbol-Größe</string>
     <string name="ambient_icons_color_title">AOD-Symbol-Farbe</string>
+
+    <!-- Swap volume buttons on rotation -->
+    <string name="swap_volume_title">Lautstärketasten</string>
+    <string name="swap_volume_keys_on_rotation_title">Lautstärketasten vertauschen</string>
+    <string name="swap_volume_keys_on_rotation_summary">Vertauschen Sie die Lautstärketasten beim Drehen des Geräts</string>
 </resources>
