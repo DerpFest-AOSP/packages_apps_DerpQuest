@@ -43,17 +43,30 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "ThemeSettings";
+    private static final String CUSTOM_THEME_BROWSE = "theme_select_activity";
+
+    private Preference mThemeBrowse;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.derpquest_settings_themes);
+
+        mThemeBrowse = findPreference(CUSTOM_THEME_BROWSE);
+        mThemeBrowse.setEnabled(isBrowseThemesAvailable());
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return true;
+    }
+
+    private boolean isBrowseThemesAvailable() {
+        PackageManager pm = getPackageManager();
+        Intent browse = new Intent();
+        browse.setClassName("com.android.customization", "com.android.customization.picker.CustomizationPickerActivity");
+        return pm.resolveActivity(browse, 0) != null;
     }
 
     @Override
