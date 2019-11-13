@@ -342,6 +342,9 @@
     <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
     <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
 
+    <!-- QS drag handle -->
+    <string name="qs_drag_title">Show QS drag handle</string>
+
     <!-- Battery mode -->
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>

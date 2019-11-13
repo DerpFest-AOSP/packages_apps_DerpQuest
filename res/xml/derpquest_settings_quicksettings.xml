@@ -43,6 +43,12 @@
         android:defaultValue="false"
         android:dependency="qs_show_brightness" />
 
+    <!-- QS drag handle -->
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_drag_handle"
+        android:title="@string/qs_drag_title"
+        android:defaultValue="true" />
+
     <!-- Battery mode -->
     <com.derpquest.settings.preferences.SystemSettingListPreference
         android:key="qs_battery_mode"
