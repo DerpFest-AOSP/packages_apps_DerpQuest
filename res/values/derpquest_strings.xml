@@ -345,6 +345,9 @@
     <!-- QS drag handle -->
     <string name="qs_drag_title">Show QS drag handle</string>
 
+    <!-- QS settings icon -->
+    <string name="qs_always_show_settings_title">Always show settings icon</string>
+
     <!-- Battery mode -->
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>
