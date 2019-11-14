@@ -342,11 +342,17 @@
     <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
     <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
 
+    <!-- QS settings categories -->
+    <string name="category_tiles_title">Tiles area</string>
+    <string name="category_footer_title">Footer area</string>
+    <string name="category_header_title">Header area</string>
+
     <!-- QS drag handle -->
     <string name="qs_drag_title">Show QS drag handle</string>
 
     <!-- QS settings icon -->
     <string name="qs_always_show_settings_title">Always show settings icon</string>
+    <string name="qs_always_show_settings_summary">Hides drag handle</string>
 
     <!-- Battery mode -->
     <string name="battery_percentage_title">Battery percentage</string>
