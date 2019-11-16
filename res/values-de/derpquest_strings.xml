@@ -345,12 +345,25 @@
     <string name="status_bar_battery_text_charging_title">Batterieprozentsatz beim Laden</string>
     <string name="status_bar_battery_text_charging_summary">Beim Laden immer den Batterieprozentsatz anzeigen</string>
 
+    <!-- QS settings categories -->
+    <string name="category_tiles_title">Fliesen Bereich</string>
+    <string name="category_footer_title">Fußzeile</string>
+    <string name="category_header_title">Header-Bereich</string>
+
+    <!-- QS drag handle -->
+    <string name="qs_drag_title">Zeige QS Ziehpunkt</string>
+
+    <!-- QS settings icon -->
+    <string name="qs_always_show_settings_title">Symbol für Einstellungen immer anzeigen</string>
+    <string name="qs_always_show_settings_summary">Versteckt den Ziehpunkt</string>
+
     <!-- Battery mode -->
     <string name="battery_percentage_title">Batterieprozentsatz</string>
     <string name="battery_percentage_off">Deaktiviert</string>
     <string name="battery_percentage_next">Aktiviert</string>
     <string name="battery_percentage_inside">Aktiviert (innerhalb des Symbols)</string>
     <string name="battery_percentage_estimate">Aktiviert (Schätzung)</string>
+    <string name="battery_percentage_percentage_estimate">Aktiviert (Prozent | Schätzung)</string>
 
     <!-- QS clock -->
     <string name="qs_clock_title">Uhr</string>
@@ -400,5 +413,18 @@
     <string name="file_header_select_summary">Bild aus dem Speicher auswählen</string>
     <string name="file_header_provider_title">Einzelbild</string>
     <string name="file_header_provider" translatable="false">Datei</string>
+
+    <!-- Audio Panel view -->
+    <string name="audio_panel_view">Lautstärkeregler</string>
+    <string name="audio_panel_view_media_title">Medien</string> 
+    <string name="audio_panel_view_ringer_title">Klingeln</string> 
+    <string name="audio_panel_view_notification_title">Benachrichtigung</string> 
+    <string name="audio_panel_view_alarm_title">Alarm</string> 
+    <string name="audio_panel_view_voice_title">Stimme</string>
+    <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
+
+    <!-- Charging animation -->
+    <string name="charging_animation_title">Lade Animation</string>
+    <string name="charging_animation_summary">Zeigen Sie eine Animation an, wenn das Gerät angeschlossen ist</string>
 
 </resources>
