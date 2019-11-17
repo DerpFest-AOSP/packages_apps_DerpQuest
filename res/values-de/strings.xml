@@ -545,4 +545,34 @@
     <!-- Brightness control -->
     <string name="status_bar_toggle_brightness">Helligkeitskontrolle</string>
     <string name="status_bar_toggle_brightness_summary">Passen Sie die Helligkeit an, indem Sie über die Statusleiste wischen</string>
+
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">Gaming-Modus</string>
+    <string name="gaming_mode_summary">Beseitigen Sie allgemeine Unterbrechungen während des mobilen Spielens</string>
+    <string name="gaming_mode_app_picker_title">Automatisch für diese Apps aktivieren</string>
+    <string name="gaming_mode_add_package_title">Fügen Sie Apps für den automatischen Gaming-Modus hinzu</string>
+    <string name="gaming_mode_add_package_summary">Automatisches Aktivieren / Deaktivieren des Gaming-Modus basierend auf der Verwendung ausgewählter Apps</string>
+    <string name="gaming_mode_headsup_title">Heads-up-Benachrichtigungen ausblenden</string>
+    <string name="gaming_mode_headsup_summary">Begrenzen oder deaktivieren Sie Heads-up-Unterbrechungen nach Benachrichtigungstyp</string>
+    <string name="gaming_mode_headsup_allow">Alles anzeigen</string>
+    <string name="gaming_mode_headsup_dnc">Nur für eingehende Anrufe und Alarme anzeigen</string>
+    <string name="gaming_mode_headsup_clock">Nur für Alarme anzeigen</string>
+    <string name="gaming_mode_headsup_dialer">Nur für eingehende Anrufe anzeigen</string>
+    <string name="gaming_mode_headsup_stop">Alles ausblenden</string>
+    <string name="gaming_mode_hardware_keys_title">Tasten sperren</string>
+    <string name="gaming_mode_hardware_keys_summary">Deaktivieren Sie die Hardwaretasten, während der Gaming-Modus aktiviert ist</string>
+    <string name="gaming_mode_brightness_title">Deaktivieren Sie die automatische Helligkeit</string>
+    <string name="gaming_mode_brightness_summary">Verhindern Sie Änderungen der Bildschirmhelligkeit, während der Gaming-Modus aktiviert ist</string>
+    <string name="gaming_mode_ringer_title">Klingelton im Gaming-Modus zulassen</string>
+    <string name="gaming_mode_ringer_off_title">Nicht verändern</string>
+    <string name="gaming_mode_ringer_vibrate_title">Vibrieren</string>
+    <string name="gaming_mode_ringer_dnd_title">Nicht stören</string>
+    <string name="gaming_mode_ringer_silent_title">Stille</string>
+    <string name="gaming_mode_notifications_title">Gaming-Modus-Anzeige</string>
+    <string name="gaming_mode_notifications_off_title">Deaktivert</string>
+    <string name="gaming_mode_notifications_notif_title">Benachrichtigung anzeigen</string>
+    <string name="gaming_mode_notifications_toast_title">Toast anzeigen</string>
+    <string name="gaming_mode_notifications_all_title">Toast und Benachrichtigung anzeigen</string>
+    <string name="gaming_mode_dynamic_title">Dynamischer Modus</string>
+    <string name="gaming_mode_dynamic_summary">Das System versucht, Games automatisch zu erkennen und hinzuzufügen</string>
 </resources>
