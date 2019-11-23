@@ -629,4 +629,16 @@
     <string name="navbar_rose">Rose</string>
     <string name="navbar_color_title">Navbar Colors</string>
     <string name="navbar_color_dialog_title">Select color</string>
+
+    <!-- Custom carrier label and position -->
+    <string name="carrier_label_settings_title">Carrier label</string>
+    <string name="carrier_label_settings_summary">Display the current network name in the status bar</string>
+    <string name="custom_carrier_label_title">Custom text</string>
+    <string name="custom_carrier_label_explain">Enter a custom label. Leave blank to use your network name</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="show_carrier_title">Location</string>
+    <string name="show_carrier_keyguard">Lockscreen</string>
+    <string name="show_carrier_statusbar">Status bar</string>
+    <string name="show_carrier_both">Lockscreen &amp; Status bar</string>
+    <string name="show_carrier_enabled">Both</string>
 </resources>

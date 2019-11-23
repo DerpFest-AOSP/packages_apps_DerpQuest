@@ -517,4 +517,12 @@
     <!-- QS panel options -->
     <string name="qs_edit_title">Bearbeiten-Symbol</string>
     <string name="qs_edit_summary">Aktivieren Sie das Kachelbearbeitungssymbol in der Fußzeile</string>
+
+    <!-- Custom carrier label and position -->
+    <string name="carrier_label_settings_title">Netzbetreiber-Anzeige</string>
+    <string name="custom_carrier_label_explain">Eigene Bezeichnung eingeben. Leer lassen, um Netzwerknamen zu verwenden.</string>
+    <string name="custom_carrier_label_notset">Keine benutzerdefinierte Bezeichung festgelegt</string>
+    <string name="show_carrier_keyguard">Sperrbildschirm</string>
+    <string name="show_carrier_statusbar">Statusleiste</string>
+    <string name="show_carrier_enabled">Beide</string>
 </resources>
