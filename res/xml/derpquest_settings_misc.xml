@@ -53,7 +53,17 @@
             android:dependency="aspect_ratio_apps_enabled"
             android:persistent="false"
             android:summary="@string/aspect_ratio_apps_info" />
+    </PreferenceCategory>
 
+    <!-- Rounded Corners -->
+    <PreferenceCategory 
+         android:key="rounded_corners"
+         android:title="@string/corners_category_title"> 
+        <Preference
+         android:key="rounded_corners" 
+         android:title="@string/corners_title"
+         android:summary="@string/corners_category_summary" 
+         android:fragment="com.derpquest.settings.fragments.RoundedCornersSettings" />
     </PreferenceCategory>
 
 </PreferenceScreen>
