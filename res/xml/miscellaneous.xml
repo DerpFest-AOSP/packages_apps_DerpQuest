@@ -18,4 +18,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/miscellaneous_title" >
 
+    <!-- Rounded Corners -->
+    <PreferenceCategory 
+         android:key="rounded_corners_category"
+         android:title="@string/corners_category_title">
+
+        <PreferenceScreen
+            android:key="rounded_corners"
+            android:title="@string/corners_title"
+            android:summary="@string/corners_category_summary"
+            android:fragment="com.derpquest.settings.fragments.system_misc.RoundedCorners" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
