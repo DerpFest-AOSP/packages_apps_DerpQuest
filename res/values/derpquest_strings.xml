@@ -364,6 +364,11 @@
     <string name="qs_always_show_settings_title">Always show settings icon</string>
     <string name="qs_always_show_settings_summary">Hides drag handle</string>
 
+    <!-- QS footer text -->
+    <string name="derp_footer_text_show_title">Show QS footer text</string>
+    <string name="derp_footer_text_string_title">Customize footer text</string>
+    <string name="derp_footer_text_string_summary">Set to empty for default #DerpFest</string> 
+
     <!-- Battery mode -->
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>

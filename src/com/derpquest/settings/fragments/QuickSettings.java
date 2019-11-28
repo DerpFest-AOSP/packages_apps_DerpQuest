@@ -37,6 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.derpquest.settings.preferences.SystemSettingEditTextPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 
@@ -59,6 +60,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String FILE_HEADER_SELECT = "file_header_select";
+    private static final String DERP_FOOTER_TEXT_STRING = "derp_footer_text_string";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
@@ -68,6 +70,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
     private SystemSettingSwitchPreference mHeaderEnabled;
+    private SystemSettingEditTextPreference mFooterString;
     private Preference mFileHeader;
     private String mFileHeaderProvider;
 
@@ -81,6 +84,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.derpquest_settings_quicksettings);
+
+        mFooterString = (SystemSettingEditTextPreference) findPreference(DERP_FOOTER_TEXT_STRING);
+        mFooterString.setOnPreferenceChangeListener(this);
+        String footerString = Settings.System.getString(getContentResolver(),
+                DERP_FOOTER_TEXT_STRING);
+        if (footerString != null && footerString != "")
+            mFooterString.setText(footerString);
+        else {
+            mFooterString.setText("#DerpFest");
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.DERP_FOOTER_TEXT_STRING, "#DerpFest");
+        }
 
         mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
         mFileHeaderProvider = getResources().getString(R.string.file_header_provider);
@@ -168,6 +183,17 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else if (preference == mHeaderEnabled) {
             Boolean headerEnabled = (Boolean) newValue;
             updateHeaderProviderSummary(headerEnabled);
+        } else if (preference == mFooterString) {
+            String value = (String) newValue;
+            if (value != "" && value != null)
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.DERP_FOOTER_TEXT_STRING, value);
+            else {
+                mFooterString.setText("#DerpFest");
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.DERP_FOOTER_TEXT_STRING, "#DerpFest");
+            }
+            return true;
         }
         return true;
     }

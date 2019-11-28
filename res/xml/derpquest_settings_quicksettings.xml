@@ -76,6 +76,20 @@
             android:summary="@string/qs_always_show_settings_summary"
             android:defaultValue="false" />
 
+        <!-- QS footer text toggle -->
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="derp_footer_text_show"
+            android:title="@string/derp_footer_text_show_title"
+            android:defaultValue="false" />
+
+        <!-- QS footer text string -->
+        <com.derpquest.settings.preferences.SystemSettingEditTextPreference
+            android:key="derp_footer_text_string"
+            android:title="@string/derp_footer_text_string_title"
+            android:summary="@string/derp_footer_text_string_summary"
+            android:dependency="derp_footer_text_show"
+            android:defaultValue="#DerpFest" />
+
     </PreferenceCategory>
 
     <!-- Footer settings -->
