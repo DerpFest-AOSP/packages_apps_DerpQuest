@@ -72,4 +72,8 @@
     <string name="double_tap_to_sleep_title">Statusleiste</string>
     <string name="double_tap_to_sleep_summary">Tippen Sie zweimal auf die Statusleiste, um das Gerät in den Ruhezustand zu versetzen</string>
 
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">QS-Fußzeilentext anzeigen</string>
+    <string name="qs_footer_text_string_title">Passe den Fußzeilentext an</string>
+
 </resources>

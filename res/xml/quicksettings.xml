@@ -20,5 +20,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title" >
 
+    <!-- QS footer text toggle -->
+    <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="qs_footer_text_show"
+        android:title="@string/qs_footer_text_show_title"
+        android:defaultValue="false" />
+
+    <!-- QS footer text string -->
+    <com.derp.support.preference.SystemSettingEditTextPreference
+        android:key="qs_footer_text_string"
+        android:title="@string/qs_footer_text_string_title"
+        android:dependency="qs_footer_text_show"
+        android:defaultValue="#StayDerped" />
+
 </PreferenceScreen>
 
