@@ -367,7 +367,7 @@
     <!-- QS footer text -->
     <string name="derp_footer_text_show_title">Show QS footer text</string>
     <string name="derp_footer_text_string_title">Customize footer text</string>
-    <string name="derp_footer_text_string_summary">Set to empty for default #DerpFest</string> 
+    <string name="derp_footer_text_string_summary">Set to empty for default #DerpFest</string>
 
     <!-- Battery mode -->
     <string name="battery_percentage_title">Battery percentage</string>
@@ -504,5 +504,11 @@
     <string name="corner_fwvals">Use framework values</string>
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="unit_pixels">dp</string>
+
+    <!-- Screen Off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
 
 </resources>

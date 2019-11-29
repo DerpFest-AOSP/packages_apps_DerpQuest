@@ -21,6 +21,12 @@
     <PreferenceCategory
         android:title="@string/system_animation_title">
 
+        <ListPreference
+            android:key="screen_off_animation"
+            android:title="@string/screen_off_animation_title"
+            android:entries="@array/screen_off_animation_entries"
+            android:entryValues="@array/screen_off_animation_values" />
+
         <com.derpquest.settings.preferences.CustomSeekBarPreference
             android:key="animation_controls_duration"
             android:title="@string/animation_duration_title"
@@ -30,10 +36,10 @@
             android:defaultValue="0"
             android:persistent="false" />
 
-        <com.derpquest.settings.preferences.GlobalSettingSwitchPreference 
-            android:key="disable_transition_animations" 
-            android:title="@string/disable_transition_animations_title" 
-            android:summary="@string/disable_transition_animations_summary" 
+        <com.derpquest.settings.preferences.GlobalSettingSwitchPreference
+            android:key="disable_transition_animations"
+            android:title="@string/disable_transition_animations_title"
+            android:summary="@string/disable_transition_animations_summary"
             android:defaultValue="false" />
 
         <ListPreference
