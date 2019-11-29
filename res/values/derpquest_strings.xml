@@ -196,6 +196,12 @@
     <string name="lockscreen_power_menu_disabled_title">Disable power menu when locked</string>
     <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lock screens</string>
 
+    <!-- Battery Bar -->
+    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
+    <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
+    <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
+
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
