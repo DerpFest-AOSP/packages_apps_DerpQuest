@@ -364,10 +364,13 @@
    <string-array name="status_bar_logo_style_entries" translatable="false">
         <item>DerpQuest</item>
         <item>DerpQuest 1</item>
-        <item>Android</item>
+        <item>DerpQuest 2</item>
         <item>Owl</item>
         <item>Owl 1</item>
-        <item>Owl 2</item>
+        <item>Q</item>
+        <item>OnePlus</item>
+        <item>Trident</item>
+        <item>Android</item>
     </string-array>
 
     <string-array name="status_bar_logo_style_values" translatable="false">
@@ -377,6 +380,9 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
 
     <!-- Screen off animation -->
