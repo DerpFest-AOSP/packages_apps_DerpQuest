@@ -16,25 +16,31 @@
 package com.derpquest.settings.fragments;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.derpquest.settings.Utils;
+import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class NotificationsSettings extends SettingsPreferenceFragment {
+public class NotificationsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
+    private static final String FLASH_ON_CALL_CATEGORY = "flash_on_call_category";
 
     private Preference mChargingLeds;
+    private SystemSettingSeekBarPreference mFlashOnCallWaitingDelay;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -48,6 +54,16 @@ public class NotificationsSettings extends SettingsPreferenceFragment {
             prefScreen.removePreference(incallVibCategory);
         }
 
+        PreferenceCategory flashOnCallCategory = (PreferenceCategory) findPreference(FLASH_ON_CALL_CATEGORY);
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(flashOnCallCategory);
+        }
+
+        mFlashOnCallWaitingDelay = (SystemSettingSeekBarPreference) findPreference(FLASH_ON_CALL_WAITING_DELAY);
+        mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+              Settings.System.FLASH_ON_CALLWAITING_DELAY, 200));
+        mFlashOnCallWaitingDelay.setOnPreferenceChangeListener(this);
+
         mChargingLeds = (Preference) findPreference("charging_light");
         if (mChargingLeds != null
                 && !getResources().getBoolean(
@@ -55,6 +71,17 @@ public class NotificationsSettings extends SettingsPreferenceFragment {
             prefScreen.removePreference(mChargingLeds);
         }
     }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mFlashOnCallWaitingDelay) {
+            int val = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(), Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
+            return true;
+        }
+        return false;
+    }
+
 
     @Override
     public int getMetricsCategory() {
