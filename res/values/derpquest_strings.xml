@@ -37,6 +37,7 @@
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="default_string">Default</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -535,5 +536,11 @@
     <string name="flash_on_call_category">Pulse flash</string>
     <string name="flash_on_call_title">Pulse flash on incoming call</string>
     <string name="flash_on_call_delay_title">Flash pulse rate</string>
+
+    <!-- Ambient edge lighting -->
+    <string name="notification_screen_title">Screen</string>
+    <string name="pulse_ambient_light_title">Edge lighting</string>
+    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="pulse_ambient_light_color_title">Edge light color</string>
 
 </resources>

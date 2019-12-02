@@ -27,6 +27,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.derpquest.settings.Utils;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +39,9 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
     private static final String FLASH_ON_CALL_CATEGORY = "flash_on_call_category";
+    private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
 
+    private ColorPickerPreference mEdgeLightColorPreference;
     private Preference mChargingLeds;
     private SystemSettingSeekBarPreference mFlashOnCallWaitingDelay;
 
@@ -70,6 +73,19 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             prefScreen.removePreference(mChargingLeds);
         }
+
+        mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
+        int edgeLightColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
+        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
+        mEdgeLightColorPreference.setAlphaSliderEnabled(false);
+        String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
+        if (edgeLightColorHex.equals("#ff3980ff")) {
+            mEdgeLightColorPreference.setSummary(R.string.default_string);
+        } else {
+            mEdgeLightColorPreference.setSummary(edgeLightColorHex);
+        }
+        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -77,6 +93,18 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         if (preference == mFlashOnCallWaitingDelay) {
             int val = (Integer) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
+            return true;
+        } else if (preference == mEdgeLightColorPreference) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff3980ff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
             return true;
         }
         return false;
