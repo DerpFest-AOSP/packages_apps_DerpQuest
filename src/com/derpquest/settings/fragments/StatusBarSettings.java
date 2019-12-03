@@ -176,6 +176,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         int showClockFont = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 28);
         mClockFontStyle.setValue(String.valueOf(showClockFont));
+        mClockFontStyle.setSummary(mClockFontStyle.getEntry());
         mClockFontStyle.setOnPreferenceChangeListener(this);
 
         if (DateFormat.is24HourFormat(getActivity())) {
@@ -201,6 +202,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mClockDateStyle.setOnPreferenceChangeListener(this);
 
         mClockDateFormat = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_FORMAT);
+        mClockDateFormat.setSummary(mClockDateFormat.getEntry());
         mClockDateFormat.setOnPreferenceChangeListener(this);
         String clkvalue = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.STATUSBAR_CLOCK_DATE_FORMAT);
