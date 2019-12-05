@@ -21,12 +21,6 @@
     <PreferenceCategory
         android:title="@string/system_animation_title">
 
-        <ListPreference
-            android:key="screen_off_animation"
-            android:title="@string/screen_off_animation_title"
-            android:entries="@array/screen_off_animation_entries"
-            android:entryValues="@array/screen_off_animation_values" />
-
         <com.derpquest.settings.preferences.CustomSeekBarPreference
             android:key="animation_controls_duration"
             android:title="@string/animation_duration_title"

@@ -522,12 +522,6 @@
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="unit_pixels">dp</string>
 
-    <!-- Screen Off animation -->
-    <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_default">Default</string>
-    <string name="screen_off_animation_crt">CRT</string>
-    <string name="screen_off_animation_scale">Scale</string>
-
     <!-- smart notifications -->
     <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
     <string name="notification_sound_vib_screen_on_summary">Disable to block notifications sound and vibration when the screen is awake</string>

@@ -40,7 +40,6 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
-import com.derpquest.settings.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,10 +61,8 @@ public class Animations extends SettingsPreferenceFragment
     private static final String WALLPAPER_CLOSE = "wallpaper_close";
     private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
-    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     private CustomSeekBarPreference mAnimDuration;
-    private ListPreference mScreenOffAnimation;
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
     ListPreference mTaskOpenPref;
@@ -105,13 +102,6 @@ public class Animations extends SettingsPreferenceFragment
             mAnimationsStrings[i] = AwesomeAnimationHelper.getProperName(getActivity().getApplicationContext(), mAnimations[i]);
             mAnimationsNum[i] = String.valueOf(mAnimations[i]);
         }
-
-        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
-        int screenOffStyle = Settings.System.getInt(resolver,
-                Settings.System.SCREEN_OFF_ANIMATION, 0);
-        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
-        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
-        mScreenOffAnimation.setOnPreferenceChangeListener(this);
 
         mActivityOpenPref = (ListPreference) findPreference(ACTIVITY_OPEN);
         mActivityOpenPref.setSummary(getProperSummary(mActivityOpenPref));
@@ -253,13 +243,6 @@ public class Animations extends SettingsPreferenceFragment
             Settings.Global.putInt(resolver,
                     Settings.Global.ACTIVITY_ANIMATION_CONTROLS[10], val);
             preference.setSummary(getProperSummary(preference));
-            return true;
-        } else if (preference == mScreenOffAnimation) {
-            String value = (String) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf(value));
-            int valueIndex = mScreenOffAnimation.findIndexOfValue(value);
-            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]);
             return true;
         }
         return false;
