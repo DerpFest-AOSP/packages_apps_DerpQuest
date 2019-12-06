@@ -107,6 +107,11 @@
             android:summary="@string/lockscreen_autocolor_summary"
             android:defaultValue="true" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="lockscreen_visualizer_color"
+            android:title="@string/lockscreen_visualizer_color_title"
+            android:defaultValue="0xffffffff" />
+
         <com.derpquest.settings.preferences.SecureSettingSeekBarPreference
             android:key="lockscreen_solid_units_count"
             android:title="@string/lockscreen_solid_units_count_title"

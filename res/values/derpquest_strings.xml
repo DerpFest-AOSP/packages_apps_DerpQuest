@@ -419,6 +419,7 @@
     <string name="lockscreen_solid_units_count_title">Lines count</string>
     <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
     <string name="lockscreen_solid_units_opacity_title">Lines opacity</string>
+    <string name="lockscreen_visualizer_color_title">Default color</string>
 
     <!-- Custom headers -->
     <string name="notification_title">Notification panel</string>
@@ -551,7 +552,7 @@
     <string name="status_bar_carrier_color">Carrier label color</string>
     <string name="status_bar_carrier_size">Carrier label size</string>
     <string name="status_bar_carrier_font_style_title">Carrier Label Font</string>
-    
+
     <!-- Ambient edge lighting -->
     <string name="notification_screen_title">Screen</string>
     <string name="pulse_ambient_light_title">Edge lighting</string>

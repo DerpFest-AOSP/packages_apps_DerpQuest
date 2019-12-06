@@ -42,6 +42,8 @@ import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -56,6 +58,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SOLID_UNITS = "lockscreen_solid_units_count";
     private static final String KEY_FUDGE_FACTOR = "lockscreen_solid_fudge_factor";
     private static final String KEY_OPACITY = "lockscreen_solid_units_opacity";
+    private static final String KEY_COLOR = "lockscreen_visualizer_color";
+
+    private static final int DEFAULT_COLOR = 0xffffffff;
 
     private SecureSettingSwitchPreference mVisualizerEnabled;
     private SystemSettingListPreference mArtFilter;
@@ -68,6 +73,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private SecureSettingSeekBarPreference mSolidUnits;
     private SecureSettingSeekBarPreference mFudgeFactor;
     private SecureSettingSeekBarPreference mOpacity;
+    private ColorPickerPreference mColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -90,9 +96,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         boolean mLavaLampEnabled = Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_LAVALAMP_ENABLED, 1) != 0;
-
+        boolean mAutoColorEnabled = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_VISUALIZER_AUTOCOLOR, 1) != 0;
         mAutoColor = (SecureSettingSwitchPreference) findPreference(KEY_AUTOCOLOR);
-        mAutoColor.setEnabled(!mLavaLampEnabled);
+        mAutoColor.setOnPreferenceChangeListener(this);
+        mAutoColor.setChecked(mAutoColorEnabled);
 
         if (mLavaLampEnabled) {
             mAutoColor.setSummary(getActivity().getString(
@@ -120,17 +128,21 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mOpacity.setValue(Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_SOLID_UNITS_OPACITY, 140));
 
+        mColor = (ColorPickerPreference) findPreference(KEY_COLOR);
+        mColor.setOnPreferenceChangeListener(this);
+        int intColor = Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.LOCKSCREEN_VISUALIZER_COLOR, DEFAULT_COLOR);
+        String hexColor = String.format("#%08x", (DEFAULT_COLOR & intColor));
+        mColor.setSummary(hexColor);
+        mColor.setNewPreviewColor(intColor);
+
         mVisualizerEnabled = (SecureSettingSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
         mVisualizerEnabled.setOnPreferenceChangeListener(this);
         int visualizerEnabled = Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
 
-        mLavaLamp.setEnabled(visualizerEnabled != 0);
-        mAutoColor.setEnabled(visualizerEnabled != 0);
-        mSolidUnits.setEnabled(visualizerEnabled != 0);
-        mFudgeFactor.setEnabled(visualizerEnabled != 0);
-        mOpacity.setEnabled(visualizerEnabled != 0);
+        UpdateEnablement(resolver);
 
         mArtFilter = (SystemSettingListPreference) findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
         mArtFilter.setOnPreferenceChangeListener(this);
@@ -151,11 +163,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
-            mLavaLamp.setEnabled(value);
-            mAutoColor.setEnabled(value);
-            mSolidUnits.setEnabled(value);
-            mFudgeFactor.setEnabled(value);
-            mOpacity.setEnabled(value);
+            UpdateEnablement(resolver);
             return true;
         } else if (preference == mArtFilter) {
             int value = Integer.parseInt((String) newValue);
@@ -174,12 +182,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 mAutoColor.setSummary(getActivity().getString(
                         R.string.lockscreen_autocolor_summary));
             }
-            mAutoColor.setEnabled(!value);
+            UpdateEnablement(resolver);
             return true;
         } else if (preference == mAutoColor) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCKSCREEN_VISUALIZER_AUTOCOLOR, value ? 1 : 0);
+            UpdateEnablement(resolver);
             return true;
         } else if (preference == mSolidUnits) {
             int value = (int) newValue;
@@ -196,8 +205,32 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCKSCREEN_SOLID_UNITS_OPACITY, value);
             return true;
+        } else if (preference == mColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.LOCKSCREEN_VISUALIZER_COLOR, intHex);
+            return true;
         }
         return false;
+    }
+
+    // Updates enablement of lockscreen visualizer toggles
+    private void UpdateEnablement(ContentResolver resolver) {
+        boolean mLavaLampEnabled = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_LAVALAMP_ENABLED, 1) != 0;
+        boolean mAutoColorEnabled = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_VISUALIZER_AUTOCOLOR, 1) != 0;
+        boolean visualizerEnabled = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 0) != 0;
+        mLavaLamp.setEnabled(visualizerEnabled);
+        mAutoColor.setEnabled(visualizerEnabled && !mLavaLampEnabled);
+        mSolidUnits.setEnabled(visualizerEnabled);
+        mFudgeFactor.setEnabled(visualizerEnabled);
+        mOpacity.setEnabled(visualizerEnabled);
+        mColor.setEnabled(visualizerEnabled && !mAutoColorEnabled && !mLavaLampEnabled);
     }
 
     @Override
