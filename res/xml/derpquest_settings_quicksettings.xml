@@ -71,19 +71,19 @@
     <PreferenceCategory
         android:key="category_footer_header"
         android:title="@string/category_footer_title">
-
-        <!-- QS drag handle -->
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_drag_handle"
-            android:title="@string/qs_drag_title"
-            android:defaultValue="true" />
-
+        
         <!-- QS always show settings icon -->
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_always_show_settings"
             android:title="@string/qs_always_show_settings_title"
             android:summary="@string/qs_always_show_settings_summary"
             android:defaultValue="false" />
+
+        <!-- QS drag handle -->
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_drag_handle"
+            android:title="@string/qs_drag_title"
+            android:defaultValue="true" />
 
         <!-- QS footer text toggle -->
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
@@ -101,7 +101,7 @@
 
     </PreferenceCategory>
 
-    <!-- Footer settings -->
+    <!-- Header settings -->
     <PreferenceCategory
         android:key="category_header_header"
         android:title="@string/category_header_title">

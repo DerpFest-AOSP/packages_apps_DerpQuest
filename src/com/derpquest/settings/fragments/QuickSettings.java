@@ -62,6 +62,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String FILE_HEADER_SELECT = "file_header_select";
     private static final String DERP_FOOTER_TEXT_STRING = "derp_footer_text_string";
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
+    private static final String KEY_ALWAYS_SETTINGS = "qs_always_show_settings";
+    private static final String KEY_DRAG_HANDLE = "qs_drag_handle";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
@@ -75,6 +77,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SystemSettingEditTextPreference mFooterString;
     private Preference mFileHeader;
     private String mFileHeaderProvider;
+    private SystemSettingSwitchPreference mAlwaysSettings;
+    private SystemSettingSwitchPreference mDragHandle;
 
     @Override
     public void onResume() {
@@ -135,6 +139,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mHeaderProvider.setOnPreferenceChangeListener(this);
 
         mFileHeader = findPreference(FILE_HEADER_SELECT);
+
+        mAlwaysSettings = (SystemSettingSwitchPreference) findPreference(KEY_ALWAYS_SETTINGS);
+        mAlwaysSettings.setOnPreferenceChangeListener(this);
+
+        mDragHandle = (SystemSettingSwitchPreference) findPreference(KEY_DRAG_HANDLE);
+        mDragHandle.setOnPreferenceChangeListener(this);
 
         PreferenceScreen prefSet = getPreferenceScreen();
     }
@@ -207,6 +217,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int trueValue = (int) (((double) bgAlpha / 100) * 255);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_PANEL_BG_ALPHA, trueValue);
+            return true;
+        } else if (preference == mAlwaysSettings) {
+            Boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_ALWAYS_SHOW_SETTINGS, value ? 1 : 0);
+            updateEnablement();
+            return true;
+        } else if (preference == mDragHandle) {
+            Boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_DRAG_HANDLE, value ? 1 : 0);
+            updateEnablement();
             return true;
         }
         return true;
@@ -287,6 +309,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
         mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable() && providerName.equals(mFileHeaderProvider));
+
+        boolean alwaysSettings = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0) == 1;
+        mDragHandle.setEnabled(!alwaysSettings);
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
