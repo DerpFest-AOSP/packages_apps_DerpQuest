@@ -40,6 +40,7 @@
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="default_string">Default</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -787,5 +788,8 @@
     <string name="ambient_notification_light_enabled_sumary">Keep showing on always on display. Until the screen is turned on</string>
     <string name="ambient_notification_light_hide_aod_title">Hide AoD content</string>
     <string name="ambient_notification_light_hide_aod_sumary">Hide other AoD content when bars are showing</string>
+    <string name="pulse_ambient_light_color_title">Edge light color</string>
+    <string name="pulse_ambient_auto_color_title">Auto color</string>
+    <string name="pulse_ambient_auto_color_summary">Sets edge light color to the primary color of wallpaper</string>
 
 </resources>
