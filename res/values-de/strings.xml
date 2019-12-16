@@ -100,6 +100,7 @@
     <string name="volte_icon_title">VoLTE-Symbol</string>
     <string name="volte_icon_summary">VoLTE-Symbol anzeigen</string>
     <string name="volte_icon_style_title">VoLTE-Symbol auswählen</string>
+    <string name="volte_icon_asus">VoLTE-Asus-Symbol</string>
     <string name="volte_icon_vo">Vo-Symbol</string>
     <string name="volte_icon_volte">VoLTE-Symbol</string>
     <string name="volte_icon_oos">VoLTE-OOS-Symbol</string>
