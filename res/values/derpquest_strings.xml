@@ -687,6 +687,7 @@
     <string name="system_proxi_check_enabled_summary">Check proximity sensor before handling power button and volume button wake events</string>
 
     <!-- Show VoLTE icon on statusbar -->
+    <string name="volte_icon_asus">VoLTE Asus Icon</string>
     <string name="volte_icon_title">VoLTE icon</string>
     <string name="volte_icon_summary">Display VoLTE icon</string>
     <string name="volte_icon_style_title">Select VoLTE Icon</string>
