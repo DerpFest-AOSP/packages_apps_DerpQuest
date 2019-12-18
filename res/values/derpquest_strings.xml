@@ -297,6 +297,9 @@
     <string name="lock_clock_font_burnstown">Burnstown</string>
     <string name="lock_clock_font_dumbledor">Dumbledor</string>
     <string name="lock_clock_font_phantombold">PhantomBold</string>
+    <string name="lock_clock_font_sourcesanspro">Source Sans Pro</string>
+    <string name="lock_clock_font_circularstd">CircularStd</string>
+    <string name="lock_clock_font_oneplusslate">OnePlus Slate</string>
 
     <!-- Media art -->
     <string name="lockscreen_media_category">Music</string>
