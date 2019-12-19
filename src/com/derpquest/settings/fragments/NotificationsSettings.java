@@ -42,12 +42,14 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
     private static final String FLASH_ON_CALL_CATEGORY = "flash_on_call_category";
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
+    private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
 
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
     private ColorPickerPreference mEdgeLightColorPreference;
+    private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
     private Preference mChargingLeds;
     private SystemSettingSeekBarPreference mFlashOnCallWaitingDelay;
 
@@ -92,6 +94,12 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         }
         mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
 
+        mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
+        mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
+        int duration = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
+        mEdgeLightDurationPreference.setValue(duration);
+
         int defaultDoze = getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);
         int defaultPulse = getResources().getInteger(
@@ -130,6 +138,11 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
+            return true;
+        } else if (preference == mEdgeLightDurationPreference) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PULSE_AMBIENT_LIGHT_DURATION, value);
             return true;
         } else if (preference == mPulseBrightness) {
             int value = (Integer) newValue;
