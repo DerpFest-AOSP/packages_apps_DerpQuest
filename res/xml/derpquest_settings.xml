@@ -17,6 +17,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/derp_settings_title" >
 
+        <!-- Theming -->
+        <Preference
+            android:key="themes_category"
+            android:title="@string/theming_title"
+            android:fragment="com.derpquest.settings.fragments.ThemeSettings"
+            android:icon="@drawable/ic_settings_theming"/>
+
         <!-- Status Bar -->
         <Preference
             android:key="statusbar_category"

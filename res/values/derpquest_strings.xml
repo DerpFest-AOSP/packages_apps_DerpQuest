@@ -30,6 +30,7 @@
     <string name="recents_title">Recents apps</string>
     <string name="statusbar_title">Status bar</string>
     <string name="volume_title">Volume Settings</string>
+    <string name="theming_title">Theming</string>
     <string name="animations_title">Animations</string>
     <string name="nav_bar_category_title">Navigation bar</string>
 
@@ -750,5 +751,8 @@
     <string name="qs_bg_use_fw_summary">Disable custom QS styles for external theme engines</string>
     <string name="qs_bg_accent_title">Use Accent color</string>
     <string name="qs_bg_accent_summary">Set QS background color from System Accent</string>
+
+    <!-- Themes -->
+    <string name="theme_select_title">Themes</string>
 
 </resources>
