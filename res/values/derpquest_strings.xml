@@ -525,8 +525,7 @@
     <string name="status_bar_logo_right">Right</string>
     <string name="status_bar_logo_left">Left</string>
     <string name="status_bar_logo_disabled">Disabled</string>
-    <string name="status_bar_logo_style_title">DerpQuest logo style</string>
-    <string name="status_bar_logo_color_title">Select color</string>
+    <string name="status_bar_logo_style_title">DerpFest logo style</string>
 
     <!-- Rounded corners -->
     <string name="corners_category_title">Rounded corners</string>
