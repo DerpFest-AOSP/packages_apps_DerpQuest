@@ -682,4 +682,8 @@
     <string name="time_in_state_title">Time in state</string>
     <string name="time_in_state_summary">Show CPU frequency statistics</string>
 
+    <!-- Proximity check -->
+    <string name="system_proxi_check_enabled_title">Proximity check</string>
+    <string name="system_proxi_check_enabled_summary">Check proximity sensor before handling power button and volume button wake events</string>
+
 </resources>

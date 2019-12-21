@@ -18,15 +18,21 @@
     android:title="@string/misc_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="system_proxi_check_enabled"
+        android:title="@string/system_proxi_check_enabled_title"
+        android:summary="@string/system_proxi_check_enabled_summary"
+        android:defaultValue="false" />
+
     <com.derpquest.settings.preferences.GlobalSettingSwitchPreference
         android:key="wake_when_plugged_or_unplugged"
         android:title="@string/wakeup_when_plugged_unplugged_title"
         android:summary="@string/wakeup_when_plugged_unplugged_summary"
         android:defaultValue="true" />
 
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference 
-        android:key="status_bar_brightness_control" 
-        android:title="@string/status_bar_toggle_brightness" 
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="status_bar_brightness_control"
+        android:title="@string/status_bar_toggle_brightness"
         android:summary="@string/status_bar_toggle_brightness_summary"
         android:defaultValue="false" />
 
@@ -56,13 +62,13 @@
     </PreferenceCategory>
 
     <!-- Rounded Corners -->
-    <PreferenceCategory 
+    <PreferenceCategory
          android:key="rounded_corners"
-         android:title="@string/corners_category_title"> 
+         android:title="@string/corners_category_title">
         <Preference
-         android:key="rounded_corners" 
+         android:key="rounded_corners"
          android:title="@string/corners_title"
-         android:summary="@string/corners_category_summary" 
+         android:summary="@string/corners_category_summary"
          android:fragment="com.derpquest.settings.fragments.RoundedCornersSettings" />
     </PreferenceCategory>
 

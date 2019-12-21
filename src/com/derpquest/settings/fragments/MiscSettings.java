@@ -18,17 +18,20 @@ package com.derpquest.settings.fragments;
 import com.android.internal.logging.nano.MetricsProto;
 
 import android.os.Bundle;
+import android.provider.Settings;
+import android.text.TextUtils;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.SwitchPreference;
-import android.provider.Settings;
-import android.text.TextUtils;
+import com.android.internal.util.aosip.DeviceUtils;
 import com.android.settings.R;
+
 import com.derpquest.settings.preferences.AppMultiSelectListPreference;
 import com.derpquest.settings.preferences.ScrollAppsViewPreference;
+import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -45,6 +48,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
     private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
+    private static final String SYSTEM_PROXI_CHECK_ENABLED = "system_proxi_check_enabled";
 
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
@@ -79,6 +83,12 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         }
         mAspectRatioAppsSelect.setValues(valuesList);
         mAspectRatioAppsSelect.setOnPreferenceChangeListener(this);
+      }
+
+      boolean supportPowerButtonProxyCheck = getResources().getBoolean(com.android.internal.R.bool.config_proxiSensorWakupCheck);
+      SystemSettingSwitchPreference proxyCheckPreference = (SystemSettingSwitchPreference) findPreference(SYSTEM_PROXI_CHECK_ENABLED);
+      if (!DeviceUtils.deviceSupportsProximitySensor(getActivity()) || !supportPowerButtonProxyCheck) {
+          getPreferenceScreen().removePreference(proxyCheckPreference);
       }
     }
 
