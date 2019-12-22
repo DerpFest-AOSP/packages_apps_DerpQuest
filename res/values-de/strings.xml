@@ -420,4 +420,38 @@
     <string name="pulse_filled_block_size">Blockgröße</string>
     <string name="pulse_empty_block_size">Blockabstände</string>
 
+    <!-- Status bar clock options -->
+    <string name="clock_title_enable">Uhrzeit positionieren</string>
+    <string name="clock_enabled">Aktiviert</string>
+    <string name="clock_disabled">Deaktivert</string>
+    <string name="status_bar_clock_style_reset">Zurücksetzen</string>
+    <string name="status_bar_show_clock_title">Uhrzeit und Datum anzeigen</string>
+    <string name="status_bar_clock_seconds_title">Sekunden anzeigen</string>
+    <string name="status_bar_am_pm_title">AM/PM-Darstellung</string>
+    <string name="status_bar_am_pm_info">24 Stunden-Format ist aktiviert</string>
+    <string name="enable_clock_weekday">Wochentag</string>
+    <string name="enable_clock_weekday_summary">Abgekürzter Wochentag vor der Zeit</string>
+    <string name="right_clock">Rechts</string>
+    <string name="left_clock">Links</string>
+    <string name="dont_show">Nicht anzeigen</string>
+    <string name="clock_date_display">Datum</string>
+    <string name="clock_date_display_summary">Benutzerdefiniertes Datum vor der Uhrzeit anzeigen</string>
+    <string name="clock_date_style">Datum-Schriftstil</string>
+    <string name="clock_date_format">Datumsformat</string>
+    <string name="clock_date_string_edittext_title">Eingabe nur im vorgegebenen Datumsformat möglich, z.B. MM/TT/JJ</string>
+    <string name="clock_date_string_edittext_summary">Zeichenfolge eingeben</string>
+    <string name="am_pm_clock_normal">Normale Schriftgröße</string>
+    <string name="am_pm_clock_small">Kleine Schriftgröße</string>
+    <string name="am_pm_clock_none">Nicht anzeigen</string>
+    <string name="clock_date_display_none">Nicht anzeigen</string>
+    <string name="clock_date_display_small">Kleine Schriftgröße</string>
+    <string name="clock_date_display_normal">Normale Schriftgröße</string>
+    <string name="clock_date_style_normal">Normal</string>
+    <string name="clock_date_style_lowercase">Kleinschreibung</string>
+    <string name="clock_date_style_uppercase">Großschreibung</string>
+    <string name="clock_date_format_custom">Benutzerdefiniertes Datum vor der Uhrzeit anzeigen</string>
+    <string name="clock_date_right">Rechts neben der Uhrzeit</string>
+    <string name="clock_date_left">Links neben der Uhrzeit</string>
+    <string name="clock_date_position">Datum positionieren</string>
+
 </resources>
