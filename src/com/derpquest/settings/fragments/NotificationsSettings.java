@@ -29,6 +29,8 @@ import com.derpquest.settings.Utils;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
+import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
@@ -99,6 +101,18 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         int duration = Settings.System.getInt(getContentResolver(),
                 Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
         mEdgeLightDurationPreference.setValue(duration);
+
+        if (!getResources().getBoolean(
+                        com.android.internal.R.bool.config_supportAmbientWakeGestures)) {
+            PreferenceCategory mEdgeCat = (PreferenceCategory) findPreference("notification_screen");
+            SystemSettingSwitchPreference mEdgeAutoLightPreference = (SystemSettingSwitchPreference) findPreference("pulse_ambient_light");
+            SystemSettingSwitchPreference mEdgeAutoColorPreference = (SystemSettingSwitchPreference) findPreference("pulse_ambient_auto_color");
+            prefScreen.removePreference(mEdgeAutoLightPreference);
+            prefScreen.removePreference(mEdgeLightDurationPreference);
+            prefScreen.removePreference(mEdgeAutoColorPreference);
+            prefScreen.removePreference(mEdgeLightColorPreference);
+            prefScreen.removePreference(mEdgeCat);
+        }
 
         int defaultDoze = getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);
