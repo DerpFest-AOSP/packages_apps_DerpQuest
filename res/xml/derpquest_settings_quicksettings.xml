@@ -71,7 +71,7 @@
     <PreferenceCategory
         android:key="category_footer_header"
         android:title="@string/category_footer_title">
-        
+
         <!-- QS always show settings icon -->
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_always_show_settings"
