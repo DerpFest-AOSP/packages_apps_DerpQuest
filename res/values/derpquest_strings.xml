@@ -353,6 +353,10 @@
     <string name="qs_show_minmax_brightness_title">Min-Max icons</string>
     <string name="qs_show_minmax_brightness_summary">Show + - brightness control buttons near the slider</string>
 
+    <!-- QS security footer -->
+    <string name="qs_show_secure_title">Security footer</string>
+    <string name="qs_show_secure_summary">Show a conditional security footer</string>
+
     <!-- Battery Styles -->
     <string name="battery_style_category_title">Battery level</string>
     <string name="battery_percent_title">Battery percent</string>
