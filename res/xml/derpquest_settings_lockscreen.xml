@@ -50,6 +50,9 @@
         android:dependency="sysui_keyguard_show_battery_bar"
         android:defaultValue="false" />
 
+    <PreferenceCategory
+        android:title="@string/lockmods_settings_title">
+
     <ListPreference
         android:key="lock_clock_fonts"
         android:title="@string/lock_clock_font_title"
@@ -106,6 +109,7 @@
         settings:units="sp"
         android:defaultValue="18"
         android:persistent="false" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_media_category"

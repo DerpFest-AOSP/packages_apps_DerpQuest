@@ -547,6 +547,8 @@
     <string name="flash_on_call_title">Pulse flash on incoming call</string>
     <string name="flash_on_call_delay_title">Flash pulse rate</string>
 
+    <string name="lockmods_settings_title">Fonts and sizes</string>
+
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Date font options</string>
     <string name="lock_date_font_summary">Change the default font of the lockscreen date widget</string>
