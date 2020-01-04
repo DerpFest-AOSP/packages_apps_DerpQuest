@@ -55,10 +55,10 @@
     <string name="longpress_info">Longpress box to save color</string>
 
     <!-- Navbar options -->
-    <string name="navbar_invert_layout_title">Invert layout</string>
-    <!-- Enable navbar -->
     <string name="enable_navbar_title">Enable</string>
     <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>
+    <string name="nav_bar_tuner_title">Navigation bar tuner</string>
+    <string name="nav_bar_tuner_summary">Reorder and change navbar buttons</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
