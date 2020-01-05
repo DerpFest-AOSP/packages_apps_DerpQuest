@@ -30,6 +30,7 @@
     <string name="recents_title">אפליקציות אחרונות</string>
     <string name="statusbar_title">שורת המצב</string>
     <string name="volume_title">הגדרות ווליום</string>
+    <string name="theming_title">מראה</string>
     <string name="animations_title">אנימציות</string>
 
     <!-- General strings -->
@@ -37,6 +38,7 @@
     <string name="reset">אתחול</string>
     <string name="cancel">ביטול</string>
     <string name="save">שמירה</string>
+    <string name="default_string">ברירת מחדל</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">בוחר צבעים</string>
@@ -54,10 +56,10 @@
     <string name="longpress_info">לחץ לחיצה ארוכה ע"מ לשמור צבע"</string>
 
     <!-- Navbar options -->
-    <string name="navbar_invert_layout_title">הפוך תצורה</string>
-    <!-- Enable navbar -->
     <string name="enable_navbar_title">אפשר</string>
     <string name="enable_navbar_summary">האם להציג את שורת הניווט</string>
+    <string name="nav_bar_tuner_title">עורך שורת הניווט</string>
+    <string name="nav_bar_tuner_summary">שנה את מיקומם ואת סוגם של הכפתורים בשורת הניווט</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">קיצורי מסך נעילה</string>
@@ -139,13 +141,6 @@
     <string name="volume_rocker_wake_title">הער בעזרת כפתורי הווליום</string>
     <string name="volume_rocker_wake_summary">לחיצה על כפתורי הווליום תעיר את המכשיר</string>
 
-    <!-- Language options - Volume rocker cursor control -->
-    <string name="cursor_section_header">סמן</string>
-    <string name="volume_key_cursor_control_title">שליטה בסמן באמצעות כפתורי הווליום</string>
-    <string name="volume_key_cursor_control_off">מבוטל</string>
-    <string name="volume_key_cursor_control_on">ווליום +\- יזיז את הסמן ימינה\שמאלה בהתאמה</string>
-    <string name="volume_key_cursor_control_on_reverse">ווליום +\- יזיז את הסמן שמאלה\ימינה בהתאמה</string>
-
     <!-- Torch Power button -->
     <string name="hardware_keys_power_key_title">כפתור כיבוי</string>
     <string name="torch_long_press_power_gesture_title">הדלק את הפנס בעזרת כפתור הכיבוי</string>
@@ -185,8 +180,15 @@
     <string name="traffic_statusbar">שורת מצב</string>
     <string name="traffic_expanded_statusbar">שורת מצב מורחבת</string>
     <string name="network_traffic_autohide_threshold_title">גובה הסתרה אוטומטית של פעילות רשת (KB/s)</string>
-    <string name="network_traffic_hidearrow">הסתר חצים</string>
-    <string name="network_traffic_hidearrow_summary">הסתר את החצים של מצג פעילות הרשת</string>
+    <string name="network_traffic_arrow">הצג חצים</string>
+    <string name="network_traffic_arrow_summary">הצג חצים אינדיקטיביים</string>
+    <string name="network_traffic_type">בחר סוג פעילות תנועת רשת</string>
+    <string name="show_network_traffic_combined">משולב (העלאה + הורדה)</string>
+    <string name="show_network_traffic_dynamic">דינמי</string>
+    <string name="show_network_traffic_up">העלאה</string>
+    <string name="show_network_traffic_down">הורדה</string>
+    <string name="show_network_traffic_all">גם וגם</string>
+    <string name="nettraf_font_size">גודל גופן</string>
 
     <!-- Statusbar double tap to sleep -->
     <string name="double_tap_to_sleep_title">לחיצה כפולה על שורת המצב ע"מ לישון</string>
@@ -198,6 +200,16 @@
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">בטל את כפתור הכיבוי במסך הנעילה</string>
     <string name="lockscreen_power_menu_disabled_summary">בטל את כפתור הכיבוי כאשר המכשיר נעול</string>
+
+    <!-- Battery Bar -->
+    <string name="tuner_keyguard_show_battery_bar_title">הצג את שורת הסוללה</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">הצג שורת סוללה במצב תצוגה דולקת תמידית</string>
+    <string name="tuner_keyguard_show_battery_bar_always_title">הצג תמיד</string>
+    <string name="tuner_keyguard_show_battery_bar_always_summary">הצג את שורת הסוללה תמיד כאשר בטעינה</string>
+
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">הסתר את סמליל המנעול</string>
+    <string name="hide_lockicon_summary">הסתר את סמליל המנעול במסך הנעילה</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">רטט במגע</string>
@@ -290,6 +302,18 @@
     <string name="lock_clock_font_burnstown">Burnstown</string>
     <string name="lock_clock_font_dumbledor">Dumbledor</string>
     <string name="lock_clock_font_phantombold">PhantomBold</string>
+    <string name="lock_clock_font_sourcesanspro">Source Sans Pro</string>
+    <string name="lock_clock_font_circularstd">CircularStd</string>
+    <string name="lock_clock_font_slateforoneplus">Slate for OnePlus</string>
+    <string name="lock_clock_font_aclonica">Aclonica</string>
+    <string name="lock_clock_font_amarante">Amarante</string>
+    <string name="lock_clock_font_bariol">Bariol</string>
+    <string name="lock_clock_font_cagliostro">Cagliostro</string>
+    <string name="lock_clock_font_coolstory">Coolstory</string>
+    <string name="lock_clock_font_lgsmartgothic">LGSmartGothic</string>
+    <string name="lock_clock_font_rosemary">Rosemary</string>
+    <string name="lock_clock_font_sonysketch">SonySketch</string>
+    <string name="lock_clock_font_surfer">Surfer</string>
 
     <!-- Media art -->
     <string name="lockscreen_media_category">מוזיקה</string>
@@ -334,6 +358,14 @@
     <string name="qs_show_brightness_summary">הצג את סרגל הבהירות בתצוגת ההגדרות המהירות</string>
     <string name="qs_brightness_position_bottom_title">סרגל בהירות תחתון</string>
     <string name="qs_brightness_position_bottom_summary">הצג את סרגל הבהירות בחלק התחתון</string>
+    <string name="qs_show_auto_brightness_title">סמליל בהירות אוטומטית</string>
+    <string name="qs_show_auto_brightness_summary">הצג את הסמליל ליד הסרגל</string>
+    <string name="qs_show_minmax_brightness_title">סמליל מינימום-מקסימום</string>
+    <string name="qs_show_minmax_brightness_summary">הצג סמלילי + - ליד הסרגל</string>
+
+    <!-- QS security footer -->
+    <string name="qs_show_secure_title">הצג מידע אודות אבטחה</string>
+    <string name="qs_show_secure_summary">הצג מידע אודות אבטחה במידה ויש צורך בכך</string>
 
     <!-- Battery Styles -->
     <string name="battery_style_category_title">רמת סוללה</string>
@@ -366,6 +398,11 @@
     <!-- QS settings icon -->
     <string name="qs_always_show_settings_title">הצג את סמליל ההתראות תמיד</string>
     <string name="qs_always_show_settings_summary">מסתיר את ידית הגרירה</string>
+
+    <!-- QS footer text -->
+    <string name="derp_footer_text_show_title">הצג טקסט בכותרת התחתונה</string>
+    <string name="derp_footer_text_string_title">שנה טקטס כותרת תחתונה</string>
+    <string name="derp_footer_text_string_summary">מחק הכל על מנת לבחור בברירת המחדל #DerpFest</string>
 
     <!-- Battery mode -->
     <string name="battery_percentage_title">אחוזי סוללה</string>
@@ -400,6 +437,7 @@
     <string name="lockscreen_solid_units_count_title">מספר קווים</string>
     <string name="lockscreen_solid_fudge_factor_title">רמת שפיות</string>
     <string name="lockscreen_solid_units_opacity_title">שקיפות קווים</string>
+    <string name="lockscreen_visualizer_color_title">צבע ברירת מחדל</string>
 
     <!-- Custom headers -->
     <string name="notification_title">שורת התראות</string>
@@ -453,8 +491,11 @@
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">רטט תוך-שיחה</string>
     <string name="incall_vibrate_connect_title">רטט בעת התחברות</string>
+    <string name="incall_vibrate_connect_summary">אפשר על מנת לבצע רטט בעת התחברות לשיחה</string>
     <string name="incall_vibrate_call_wait_title">רטט בעת ממתינה</string>
+    <string name="incall_vibrate_call_wait_summary">אפשר על מנת לבצע רטט בעת כניסת שיחה ממתינה</string>
     <string name="incall_vibrate_disconnect_title">רטט בעת התנתקות</string>
+    <string name="incall_vibrate_disconnect_summary">אפשר על מנת לבצע רטט בעת ניתוק שיחה</string>
 
     <!-- Brightness control -->
     <string name="status_bar_toggle_brightness">שליטה בבהירות</string>
@@ -471,7 +512,7 @@
     <string name="task_move_to_back_title">אנימציית הזז לאחורנית</string>
     <string name="wallpaper_open_title">אנימציית פתיחת תמונת רקע</string>
     <string name="wallpaper_close_title">אנימציית סגירת תמונת רקע</string>
-    <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
+    <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string> <!--idk how tf to say those XD -->
     <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
     <string name="animation_duration_title">אורך אנימצייה</string>
     <string name="title_animation_no_override">מנע שינוי של אפליקציות</string>
@@ -481,5 +522,250 @@
     <!-- Force disable transition animation -->
     <string name="disable_transition_animations_title">בטל אנימציות מעבר</string>
     <string name="disable_transition_animations_summary">כפה ביטול של כל אנימציות המעבר</string>
+
+    <!-- Statusbar logo -->
+    <string name="status_bar_logo_category_title">לוגו שורת המצב</string>
+    <string name="status_bar_logo_category_summary">אפשר על מנת להציג לוגו בשורת המצב</string>
+    <string name="status_bar_logo_title">לוגו</string>
+    <string name="status_bar_logo_right">ימין</string>
+    <string name="status_bar_logo_left">שמאל</string>
+    <string name="status_bar_logo_disabled">מבוטל</string>
+    <string name="status_bar_logo_style_title">סגנון לוגו</string>
+
+    <!-- Rounded corners -->
+    <string name="corners_category_title">פינות מעוגלות</string>
+    <string name="corners_category_summary">אפשר על מנת לשנות את הפינות ואת הריווח</string>
+    <string name="corners_title">התאם את הפינות</string>
+    <string name="corner_radius">רדיוס פינות</string>
+    <string name="content_padding">ריווח תוכן</string>
+    <string name="status_bar_padding">ריווח תוכן בשורת המצב</string>
+    <string name="corner_fwvals">השתמש בהגדרות יצרן</string>
+    <string name="corner_fwvals_summary">שימושי אם למכשיר באמת יש פינות מעוגלות</string>
+    <string name="unit_pixels">dp</string>
+
+    <!-- smart notifications -->
+    <string name="notification_sound_vib_screen_on_title">התרעות רועשות במסך דולק</string>
+    <string name="notification_sound_vib_screen_on_summary">בטל על מנת לחסום התראות ורטט כאשר המסך דולק</string>
+
+    <!-- flash on call waiting -->
+    <string name="flash_on_call_category">הבהב פנס</string>
+    <string name="flash_on_call_title">הבהב פנס בשיחה נכנסת</string>
+    <string name="flash_on_call_delay_title">קצב הבהוב</string>
+
+    <string name="lockmods_settings_title">גופנים וגדלים</string>
+
+    <!-- Lock Date Fonts -->
+    <string name="lock_date_font_title">הגדרות גופן תאריך</string>
+    <string name="lock_date_font_summary">שנה את גופן התאריך במסך הנעילה</string>
+    <string name="lock_date_font_dialog_title">בחר גופן</string>
+
+    <!-- Lock Clock & Date Size -->
+    <string name="lockdate_font_size_title">גודל גופן התאריך</string>
+    <string name="lockclock_font_size_title">גודל גופן השעון</string>
+
+    <!-- LS OwnerInfo Font & Size -->
+    <string name="lock_ownerinfo_font_title">אפשרויות גופן של מידע בעלים</string>
+    <string name="lock_ownerinfo_font_summary">שנה את הגופן של המידע אודות הבעלים במסך הנעילה</string>
+    <string name="lock_ownerinfo_font_dialog_title">בחר גופן</string>
+    <string name="lockowner_font_size_title">בחר גודל</string>
+
+    <!-- Custom carrier label and position -->
+    <string name="etc_category_title">אחר</string>
+    <string name="carrier_label_category_title">הגדות תוית מפעיל</string>
+    <string name="carrier_label_category_summary">שנה את תוית המפעיל על גבי שורת המצב</string>
+    <string name="carrier_label_settings_title">תוית מפעיל</string>
+    <string name="carrier_label_settings_summary">שנה את תוית המפעיל</string>
+    <string name="custom_carrier_label_title">תוית מפעיל בבחירה אישית</string>
+    <string name="custom_carrier_label_explain">אנא בחר תוית חדשה. השאר ריק על מנת לחזור לברירת המחדל</string>
+    <string name="custom_carrier_label_notset">כעת אין תוית מותאמת אישית</string>
+    <string name="show_carrier_title">תוית מפעיל</string>
+    <string name="show_carrier_disabled">מבוטל</string>
+    <string name="show_carrier_keyguard">מסך נעילה בלבד</string>
+    <string name="show_carrier_statusbar">שורת מצב בלבד</string>
+    <string name="show_carrier_enabled">מסך נעילה &amp; שורת מצב</string>
+    <string name="status_bar_carrier_color">צבע תוית מפעיל</string>
+    <string name="status_bar_carrier_size">גודל תוית מפעיל</string>
+    <string name="status_bar_carrier_font_style_title">גופן תוית מפעיל</string>
+
+    <!-- Ambient edge lighting -->
+    <string name="notification_screen_title">מסך</string>
+    <string name="pulse_ambient_light_title">תאורת קצוות</string>
+    <string name="pulse_ambient_light_summary">האר את צידי המסך בעת כניסת התראה</string>
+    <string name="pulse_ambient_light_color_title">צבע צידי מסך</string>
+    <string name="pulse_ambient_auto_color_title">צבע אוטומטי</string>
+    <string name="pulse_ambient_auto_color_summary">בוחר בצבע הדומיננטי בטפט מסך הבית</string>
+    <string name="pulse_ambient_light_duration_title">אורך</string>
+    <string name="pulse_ambient_light_duration_summary">שנה את אורך האנימציה</string>
+
+    <!-- QuickSettings Panel Transparency -->
+    <string name="qs_panel_alpha_title">שקיפות הגדרות מהירות</string>
+    <string name="qs_panel_alpha_summary">שנה את שקיפות הרקע</string>
+
+    <!-- Doze Brightness Config -->
+    <string name="doze_brightness_category">הגדרת בהירות נמנום</string>
+    <string name="ambient_pulse_brightness_title">בהירות התראות נמנום</string>
+    <string name="ambient_pulse_brightness_summary">בחר את הבירות בה להשתמש כאשר מוצגת התראת נמנום</string>
+    <string name="ambient_doze_brightness_title">בהירות תצוגה תמידית</string>
+    <string name="ambient_doze_brightness_summary">בחר את הבהירות בה להשתמש כאשר במצב תצוגה תמידית</string>
+
+    <!-- Doze settings editor -->
+    <string name="doze_settings_title">הגדרות נמנום</string>
+    <string name="doze_settings_summary">שנה את הגדרות הנמנום</string>
+    <string name="action_restoredefault">שחזר ברירת מחדל</string>
+    <string name="action_profile">פרופילים</string>
+    <string name="action_save_as_profile">שמור כפרופיל</string>
+    <string name="delete_profile">מחק פרופיל</string>
+    <string name="profile_name">שם</string>
+    <string name="string_seconds">שניות</string>
+    <string name="string_default">ברירת מחדל</string>
+    <string name="action_filter">מסנן</string>
+    <string name="doze_settings_applied">הגדות הופעלו</string> <!-- TODO: those. if even understanable w/o english explanation -->
+    <string name="DESC_INACTIVE_TIMEOUT">This is the time, after becoming inactive, at which we start looking at the motion sensor to determine if the device is being left alone. We don\'t do this immediately after going inactive just because we don\'t want to be continually running the significant motion sensor whenever the screen is off</string>
+    <string name="DESC_SENSING_TIMEOUT">If we don\'t receive a callback from AnyMotion in this amount of time + locating_to, we will change from STATE_SENSING to STATE_INACTIVE, and any AnyMotion callbacks while not in STATE_SENSING will be ignored</string>
+    <string name="DESC_LOCATING_TIMEOUT">This is how long we will wait to try to get a good location fix before going in to idle mode</string>
+    <string name="DESC_LOCATION_ACCURACY">The desired maximum accuracy (in meters) we consider the location to be good enough to go on to idle. We will be trying to get an accuracy fix at least this good or until locating_to expires</string>
+    <string name="DESC_MOTION_INACTIVE_TIMEOUT">This is the time, after seeing motion, that we wait after becoming inactive from that until we start looking for motion again</string>
+    <string name="DESC_IDLE_AFTER_INACTIVE_TIMEOUT">This is the time, after the inactive timeout elapses, that we will wait looking for significant motion until we truly consider the device to be idle</string>
+    <string name="DESC_IDLE_PENDING_TIMEOUT">This is the initial time, after being idle, that we will allow ourself to be back in the IDLE_PENDING state allowing the system to run normally until we return to idle</string>
+    <string name="DESC_MAX_IDLE_PENDING_TIMEOUT">Maximum pending idle timeout (time spent running) we will be allowed to use</string>
+    <string name="DESC_IDLE_PENDING_FACTOR">Scaling factor to apply to current pending idle timeout each time we cycle through that state</string>
+    <string name="DESC_IDLE_TIMEOUT">This is the initial time that we want to sit in the idle state before waking up again to return to pending idle and allowing normal work to run</string>
+    <string name="DESC_MAX_IDLE_TIMEOUT">Maximum idle duration we will be allowed to use</string>
+    <string name="DESC_IDLE_FACTOR">Scaling factor to apply to current idle timeout each time we cycle through that state</string>
+    <string name="DESC_MIN_TIME_TO_ALARM">This is the minimum time we will allow until the next upcoming alarm for us to actually go in to idle mode</string>
+    <string name="DESC_MAX_TEMP_APP_WHITELIST_DURATION">Max amount of time to temporarily whitelist an app when it receives a high tickle</string>
+    <string name="DESC_MMS_TEMP_APP_WHITELIST_DURATION">Amount of time we would like to whitelist an app that is receiving an MMS</string>
+    <string name="DESC_SMS_TEMP_APP_WHITELIST_DURATION">Amount of time we would like to whitelist an app that is receiving an SMS</string>
+    <string name="DESC_LIGHT_IDLE_AFTER_INACTIVE_TIMEOUT">This is the time, after becoming inactive, that we go in to the first light-weight idle mode</string>
+    <string name="DESC_LIGHT_PRE_IDLE_TIMEOUT">This is amount of time we will wait from the point where we decide we would like to go idle until we actually do, while waiting for jobs and other current activity to finish</string>
+    <string name="DESC_LIGHT_IDLE_TIMEOUT">This is the initial time that we will run in idle maintenance mode</string>
+    <string name="DESC_LIGHT_IDLE_FACTOR">Scaling factor to apply to the light idle mode time each time we complete a cycle</string>
+    <string name="DESC_LIGHT_MAX_IDLE_TIMEOUT">This is the maximum time we will run in idle maintenence mode</string>
+    <string name="DESC_LIGHT_IDLE_MAINTENANCE_MIN_BUDGET">This is the minimum amount of time we want to make available for maintenance mode when lightly idling</string>
+    <string name="DESC_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">This is the maximum amount of time we want to make available for maintenance mode when lightly idling</string>
+    <string name="DESC_MIN_LIGHT_MAINTENANCE_TIME">This is the minimum amount of time that we will stay in maintenance mode after a light doze</string>
+    <string name="DESC_MIN_DEEP_MAINTENANCE_TIME">This is the minimum amount of time that we will stay in maintenance mode after a full doze</string>
+    <string name="DESC_KEY_NOTIFICATION_WHITELIST_DURATION">Amount of time we would like to whitelist an app that is handling a notification</string>
+    <string name="SHORT_INACTIVE_TIMEOUT">הגבלת זמן לחוסר פעילות</string>
+    <string name="SHORT_SENSING_TIMEOUT">הגבלת זמן לחיישנים</string>
+    <string name="SHORT_LOCATING_TIMEOUT">הגבלת זמן למיקום</string>
+    <string name="SHORT_LOCATION_ACCURACY">דיוק מיקום</string>
+    <string name="SHORT_MOTION_INACTIVE_TIMEOUT">הגבלת זמן חוסר תנועה</string>
+    <string name="SHORT_IDLE_AFTER_INACTIVE_TIMEOUT">הגבלת זמן כניסה למצב סרק לאחר חוסר פעילות</string>
+    <string name="SHORT_IDLE_PENDING_TIMEOUT">פסק זמן לא פעיל</string>
+    <string name="SHORT_MAX_IDLE_PENDING_TIMEOUT">פסק זמן מקסימלי במצב המתנה</string>
+    <string name="SHORT_IDLE_PENDING_FACTOR">גורם בהמתנה סרק</string>
+    <string name="SHORT_IDLE_TIMEOUT">פסק זמן סרק</string>
+    <string name="SHORT_MAX_IDLE_TIMEOUT">פסק זמן מקסימלי לסרק</string>
+    <string name="SHORT_IDLE_FACTOR">גורם סרק</string>
+    <string name="SHORT_MIN_TIME_TO_ALARM">זמן מינימלי להזעקה</string>
+    <string name="SHORT_MAX_TEMP_APP_WHITELIST_DURATION">משך זמן רשימה לבנה לאפליקציות</string>
+    <string name="SHORT_MMS_TEMP_APP_WHITELIST_DURATION">משך זמן רשימה לבנה להודעות MMS</string>
+    <string name="SHORT_SMS_TEMP_APP_WHITELIST_DURATION">משך זמן רשימה לבנה להודעות SMS</string>
+    <string name="SHORT_LIGHT_IDLE_AFTER_INACTIVE_TIMEOUT">סרק לאחר פרק זמן לא פעיל</string>
+    <string name="SHORT_LIGHT_PRE_IDLE_TIMEOUT">סרק לפני פרק זמן לא פעיל</string>
+    <string name="SHORT_LIGHT_IDLE_TIMEOUT">פסק זמן קל למצב סרק</string>
+    <string name="SHORT_LIGHT_IDLE_FACTOR">פקטור קל למצב סרק</string>
+    <string name="SHORT_LIGHT_MAX_IDLE_TIMEOUT">Max light idle timeout</string>
+    <string name="SHORT_LIGHT_IDLE_MAINTENANCE_MIN_BUDGET">זמן תחזוקה במצב סרק זמן לא פעיל</string>
+    <string name="SHORT_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">פסק זמן מקסימלי במצב סרק במצב תחזוקה</string>
+    <string name="SHORT_MIN_LIGHT_MAINTENANCE_TIME">Maintenance mode light doze min timeout</string>
+    <string name="SHORT_MIN_DEEP_MAINTENANCE_TIME">Maintenance mode full doze min timeout</string>
+    <string name="SHORT_KEY_NOTIFICATION_WHITELIST_DURATION">Max notification whitelist duration</string>
+
+    <!-- Time In State & CPU State -->
+    <string name="state_time_mode">ער</string>
+    <string name="since_boot">אתחול</string>
+    <string name="since_charged">טעון</string>
+    <string name="since_unplugged">לא מחובר</string>
+    <string name="since_reset">אתחול</string>
+    <string name="since_unplug">ניתוק</string>
+    <string name="other">פעילות</string>
+    <string name="kernel_wakelocks">Kernel wakelocks</string>
+    <string name="partial_wakelocks">Partial wakelocks</string>
+    <string name="app_wakelocks">App wakelocks</string>
+    <string name="create_ref">אתחול</string>
+    <string name="spinner_period_title">מ</string>
+    <string name="spinner_type_title">הצג</string>
+    <string name="screen_on_time">מסך דולק</string>
+    <string name="awake_time">ער</string>
+    <string name="deep_sleep_time">שינה עמוקה</string>
+    <string name="no_kernel_wakelock_file_found">No kernel wakelock stats file /proc/wakelocks or /sys/kernel/debug/wakeup_sources found.</string>
+    <string name="more_line_text">עוד\u2026</string>
+    <string name="state_core_mode">ליבות</string>
+    <string name="kernel_wakelock_time">Kernel wakelocks</string>
+    <string name="user_wakelock_time">Partial wakelocks</string>
+    <string name="battery_change">שינוי בסוללה</string>
+    <string name="spinner_state_time_title">זמן</string>
+    <string name="total_time">סך הכל</string>
+    <string name="wakelock_time">Wakelocks</string>
+    <string name="copy_as_text">העתק כטקטס</string>
+    <string name="google_it">חפש בגוגל</string>
+    <string name="app_details">מידע אודות האפליקציה</string>
+    <string name="no_stat_because_reset_state">הקש על אתחול על מנת להתחיל לאסוף מידע</string>
+    <string name="no_stat_because_reset_wakelock">Press reset to start collecting wakelock data</string>
+    <string name="no_stat_because_plugged">Please unplug power to get wakelock data</string>
+    <string name="no_states_file_found">No states file found. Are you sure your phone is
+        compatible?\n\nIf you are running a custom ROM or kernel, try
+        contacting its developer to inform him that the states file is not
+        readable.</string>
+    <string name="deep_sleep">"שינה עמוקה"</string>
+    <string name="mt_refresh">רענן</string>
+    <string name="mt_share">שתף</string>
+    <string name="mt_reset">אתחל</string>
+    <string name="time_in_state_title">זמן במצב</string>
+    <string name="time_in_state_summary">הצג נתונים אודות תדרי מעבד</string>
+
+    <!-- Proximity check -->
+    <string name="system_proxi_check_enabled_title">בדיקת קרבה</string>
+    <string name="system_proxi_check_enabled_summary">בדוק את חיישן הקרבה לפני ביצוע הדלקת מכשיר מכפתור הכח או הווליום</string>
+
+    <!-- Show statusbar on lockscreen -->
+    <string name="lockscreen_show_status_bar_title">שורת המצב</string>
+    <string name="lockscreen_show_status_bar_summary">הצג את שורת המצב במסך הנעילה</string>
+
+    <!-- Themes -->
+    <string name="theme_select_title">ערכות נושא</string>
+    <string name="theme_select_summary">בחר צבע משני, תצורת סמלילים ועוד</string>
+
+    <!-- Berry Lite -->
+    <string name="style_title">סגנון</string>
+    <string name="style_summary">בחר צבע מערכת</string>
+    <string name="style_global_title">סגנון</string>
+    <string name="style_global_entry_automatic">אוטומטי (טפט)</string>
+    <string name="style_global_entry_light">בהיר</string>
+    <string name="style_global_entry_dark">כהה</string>
+    <string name="style_global_entry_time">אוטומטי (לפי הזמן ביום)</string>
+    <string name="style_global_entry_app">מנוהל על ידי %1$s</string>
+    <string name="style_accent_title">צבע משני</string>
+    <string name="style_dark_theme_title">ערכת נושא כהה</string>
+    <string name="style_dark_theme_automatic">אוטומטי (טפט)</string>
+    <string name="style_dark_theme_disabled">מבוטל</string>
+    <string name="style_dark_theme_enabled">מאופשר</string>
+    <string name="style_dark_theme_livedisplay">אוטומטי (livedisplay)</string>
+    <string name="accent_picker_dialog_title">בחר צבע משני</string>
+    <string name="theme_accent_picker_title">צבע משני</string>
+    <string name="theme_accent_picker_summary">בחר צבע משני עבור ערכת הנושא של המערכת</string>
+    <string name="theme_accent_picker_default">ברירת מחדל</string>
+    <string name="accent_picker_material_colors">לוח חומר</string>
+    <string name="accent_picker_custom_colors">התבקשו על ידי משתמשים</string>
+    <string name="accent_picker_brand_colors">צבעי מותגים</string>
+    <string name="style_accent_configuration_not_supported">הצבע המשני הנוכחי אינו תואם את ערכת הנושא. על מנת להמשיך יש לבחור בצבע אחר. האם להמשיך?</string>
+    <string name="style_accent_configuration_positive">Proceed</string>
+    <string name="style_automagic_title">אוטומטי</string>
+    <string name="style_automagic_description">שנה את ערכת הנושא על מנת שתתאים לטפט שלך</string>
+    <string name="style_automagic_dialog_content">סגנון מומלץ: <b>%1$s</b> עם צבע <b>%2$s</b>.\nהאם לאפשר?</string>
+    <string name="style_automagic_dialog_positive">החל</string>
+    <string name="style_accent_default_name">ברירת מחדל</string>
+    <string name="style_dark_overlay_title">מצב כהה</string>
+    <string name="style_dark_overlay_default">אפור עמוק</string>
+    <string name="style_dark_overlay_black">שחור amoled</string>
+    <string name="style_notification_title">סגנון התראות</string>
+    <string name="style_notification_auto">אוטומטי (ערכת נושא של המערכת)</string>
+    <string name="style_notification_light">בהיר</string>
+    <string name="style_notification_dark">אפור עמוק</string>
+    <string name="style_notification_black">Amoled שחור</string>
+    <string name="style_and_wallpaper_title">סגנונות &amp; טפטים</string>
+    <string name="style_and_wallpaper_summary">בחר צבע משני, שעון ועוד</string>
 
 </resources>
