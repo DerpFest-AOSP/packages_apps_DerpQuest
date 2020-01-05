@@ -328,8 +328,8 @@
     <string name="lockscreen_cover_filter_gradientblur">Gradient Blur</string>
 
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Three finger gesture</string>
-    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+    <string name="three_finger_gesture">Three finger screenshot</string>
+    <string name="three_finger_gesture_summary">WARNING! Will make multitouch limited to 3 spots</string>
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Volume steps</string>
