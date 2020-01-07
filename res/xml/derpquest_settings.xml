@@ -38,35 +38,28 @@
             android:fragment="com.derpquest.settings.fragments.ButtonSettings"
             android:icon="@drawable/ic_settings_buttons"/>
 
-        <!-- Navigation Bar -->
-        <Preference
-            android:key="navigationbar_category"
-            android:title="@string/navbar_title" 
-            android:fragment="com.derpquest.settings.fragments.NavigationBarSettings"
-            android:icon="@drawable/ic_settings_navbar"/>
-
         <!-- Gestures -->
         <Preference
             android:key="gestures_category"
-            android:title="@string/gestures_title" 
+            android:title="@string/gestures_title"
             android:fragment="com.derpquest.settings.fragments.DERPGestureSettings"
             android:icon="@drawable/ic_settings_pdgestures"/>
 
         <!-- Lock Screen -->
         <Preference
             android:key="lockscreen_category"
-            android:title="@string/lockscreen_title" 
+            android:title="@string/lockscreen_title"
             android:fragment="com.derpquest.settings.fragments.LockScreenSettings"
             android:icon="@drawable/ic_settings_lockscreens"/>
 
         <!-- Power Menu -->
         <Preference
             android:key="powermenu_category"
-            android:title="@string/powermenu_title" 
+            android:title="@string/powermenu_title"
             android:fragment="com.derpquest.settings.fragments.PowerMenuSettings"
             android:icon="@drawable/ic_settings_powermenu"/>
 
-        <!-- Recents 
+        <!-- Recents
         <Preference
             android:key="recents_category"
             android:title="@string/recents_title"
@@ -82,16 +75,16 @@
             android:icon="@drawable/ic_settings_notifications"/>
 
         <!-- Animation -->
-        <Preference 
-            android:key="animations_category" 
-            android:title="@string/animations_title" 
-            android:fragment="com.derpquest.settings.fragments.Animations" 
+        <Preference
+            android:key="animations_category"
+            android:title="@string/animations_title"
+            android:fragment="com.derpquest.settings.fragments.Animations"
             android:icon="@drawable/ic_settings_animations"/>
 
         <!-- Misc -->
         <Preference
             android:key="misc_category"
-            android:title="@string/misc_title" 
+            android:title="@string/misc_title"
             android:fragment="com.derpquest.settings.fragments.MiscSettings"
             android:icon="@drawable/ic_settings_miscs"/>
 

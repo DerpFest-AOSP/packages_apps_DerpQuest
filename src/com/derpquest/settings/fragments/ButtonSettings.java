@@ -42,6 +42,8 @@ import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
 
     //Keys
+    private static final String ENABLE_NAV_BAR = "enable_nav_bar";
+    private static final String NAV_BAR_TUNER = "nav_bar_tuner";
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
@@ -69,6 +71,8 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
+    private SwitchPreference mEnableNavigationBar;
+    private Preference mNavBarTuner;
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
@@ -91,6 +95,19 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // Navigation bar related options
+        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
+        mNavBarTuner = (Preference) findPreference(NAV_BAR_TUNER);
+
+        // Only visible on devices that have a navigation bar already
+        if (ActionUtils.hasNavbarByDefault(getActivity())) {
+            mEnableNavigationBar.setOnPreferenceChangeListener(this);
+            mHandler = new Handler();
+            updateDisableNavkeysOption();
+        } else {
+            prefScreen.removePreference(mEnableNavigationBar);
+        }
 
         mAnbiEnable = (SystemSettingSwitchPreference) findPreference(ANBI_ENABLED_OPTION);
         mAnbiEnable.setOnPreferenceChangeListener(this);
@@ -298,6 +315,24 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                 }
             }, 1000);
             return true;
+        } else if (preference == mEnableNavigationBar) {
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
+            boolean isNavBarChecked = ((Boolean) newValue);
+            mEnableNavigationBar.setEnabled(false);
+            writeDisableNavkeysOption(isNavBarChecked);
+            updateDisableNavkeysOption();
+            mEnableNavigationBar.setEnabled(true);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1000);
+            mNavBarTuner.setEnabled(isNavBarChecked);
+            return true;
         }
         return false;
     }
@@ -310,7 +345,10 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private void updateDisableNavkeysOption() {
         boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.FORCE_SHOW_NAVBAR, 0, UserHandle.USER_CURRENT) != 0;
-        mDisableNavigationKeys.setChecked(enabled);
+        if (mDisableNavigationKeys != null)
+            mDisableNavigationKeys.setChecked(enabled);
+        if (mEnableNavigationBar != null)
+            mEnableNavigationBar.setChecked(enabled);
     }
 
     @Override
