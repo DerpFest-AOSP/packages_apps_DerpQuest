@@ -126,6 +126,13 @@
         android:key="category_header_header"
         android:title="@string/category_header_title">
 
+        <!-- Battery hide -->
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+             android:key="qs_hide_battery"
+             android:title="@string/qs_hide_battery_title"
+             android:summary="@string/qs_hide_battery_summary"
+             android:defaultValue="false" />
+
         <!-- Battery mode -->
         <com.derpquest.settings.preferences.SystemSettingListPreference
             android:key="qs_battery_mode"

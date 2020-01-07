@@ -404,6 +404,8 @@
     <string name="derp_footer_text_string_summary">Set to empty for default #DerpFest</string>
 
     <!-- Battery mode -->
+    <string name="qs_hide_battery_title">Hide battery icon</string>
+    <string name="qs_hide_battery_summary">Hides the battery icon from the QS header</string>
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>
     <string name="battery_percentage_next">Enabled</string>

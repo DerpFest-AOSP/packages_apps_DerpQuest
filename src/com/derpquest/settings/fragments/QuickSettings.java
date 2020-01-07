@@ -38,6 +38,7 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.derpquest.settings.preferences.SystemSettingEditTextPreference;
+import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 
@@ -64,6 +65,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String KEY_ALWAYS_SETTINGS = "qs_always_show_settings";
     private static final String KEY_DRAG_HANDLE = "qs_drag_handle";
+    private static final String QS_HIDE_BATTERY = "qs_hide_battery";
+    private static final String QS_BATTERY_MODE = "qs_battery_mode";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
@@ -79,6 +82,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private String mFileHeaderProvider;
     private SystemSettingSwitchPreference mAlwaysSettings;
     private SystemSettingSwitchPreference mDragHandle;
+    private SystemSettingSwitchPreference mHideBattery;
+    private SystemSettingListPreference mQsBatteryMode;
 
     @Override
     public void onResume() {
@@ -145,6 +150,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mDragHandle = (SystemSettingSwitchPreference) findPreference(KEY_DRAG_HANDLE);
         mDragHandle.setOnPreferenceChangeListener(this);
+
+        mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
+        mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
+        mHideBattery.setOnPreferenceChangeListener(this);
 
         PreferenceScreen prefSet = getPreferenceScreen();
     }
@@ -230,8 +239,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.QS_DRAG_HANDLE, value ? 1 : 0);
             updateEnablement();
             return true;
+        } else if (preference == mHideBattery) {
+            Boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_HIDE_BATTERY, value ? 1 : 0);
+            mQsBatteryMode.setEnabled(!value);
+            return true;
         }
-        return true;
+        return false;
     }
 
     private boolean isBrowseWallsAvailable() {
