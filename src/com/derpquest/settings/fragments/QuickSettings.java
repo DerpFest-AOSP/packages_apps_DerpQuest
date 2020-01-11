@@ -39,6 +39,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.derpquest.settings.preferences.SystemSettingEditTextPreference;
 import com.derpquest.settings.preferences.SystemSettingListPreference;
+import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 
@@ -70,7 +71,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
-    private CustomSeekBarPreference mQsPanelAlpha;
+    private SystemSettingSeekBarPreference mQsPanelAlpha;
     private Preference mHeaderBrowse;
     private ListPreference mDaylightHeaderPack;
     private CustomSeekBarPreference mHeaderShadow;
@@ -108,7 +109,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.DERP_FOOTER_TEXT_STRING, "#DerpFest");
         }
 
-        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
+        mQsPanelAlpha = (SystemSettingSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getInt(getContentResolver(),
                 Settings.System.QS_PANEL_BG_ALPHA, 255);
         mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));
