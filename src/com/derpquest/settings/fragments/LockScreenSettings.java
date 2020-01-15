@@ -50,7 +50,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
-    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker_category";
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String KEY_AMBIENT_VIS = "ambient_visualizer";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
@@ -80,7 +80,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mInfoEnabled;
     private SystemSettingSeekBarPreference mBlurSeekbar;
     private FingerprintManager mFingerprintManager;
-    private Preference mFODIconPicker;
+    private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintVib;
     private SystemSettingSwitchPreference mAmbientVisualizer;
     private SecureSettingSwitchPreference mAutoColor;
@@ -181,10 +181,10 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
         mBlurSeekbar.setEnabled(artFilter > 2);
 
-        mFODIconPicker = (Preference) findPreference(FOD_ICON_PICKER_CATEGORY);
-        if (mFODIconPicker != null
+        mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPickerCategory != null
                 && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
-            prefScreen.removePreference(mFODIconPicker);
+            prefScreen.removePreference(mFODIconPickerCategory);
         }
 
         int defaultDoze = getResources().getInteger(
