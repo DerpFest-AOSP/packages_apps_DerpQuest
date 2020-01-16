@@ -40,6 +40,7 @@ import com.derpquest.settings.preferences.SecureSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SecureSettingSwitchPreference;
 import com.derpquest.settings.preferences.SecureSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingListPreference;
+import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 
@@ -48,16 +49,12 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
-    private static final String DATE_FONT_SIZE  = "lockdate_font_size";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
-    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
-    private static final String LOCK_DATE_FONTS = "lock_date_fonts";
-    private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
-    private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String KEY_AMBIENT_VIS = "ambient_visualizer";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+    private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
+    private static final String LOCKSCREEN_INFO = "lockscreen_info";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
     private static final String KEY_LAVALAMP = "lockscreen_lavalamp_enabled";
     private static final String KEY_LAVALAMP_SPEED = "lockscreen_lavalamp_speed";
@@ -73,17 +70,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
-    private CustomSeekBarPreference mClockFontSize;
-    private CustomSeekBarPreference mDateFontSize;
-    private CustomSeekBarPreference mOwnerInfoFontSize;
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
-    private ListPreference mLockClockFonts;
-    private ListPreference mLockDateFonts;
-    private ListPreference mLockOwnerInfoFonts;
     private ListPreference mChargingInfoFont;
     private SecureSettingSwitchPreference mVisualizerEnabled;
     private SystemSettingListPreference mArtFilter;
+    private SystemSettingMasterSwitchPreference mClockEnabled;
+    private SystemSettingMasterSwitchPreference mInfoEnabled;
     private SystemSettingSeekBarPreference mBlurSeekbar;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
@@ -93,8 +86,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private SecureSettingSeekBarPreference mSolidUnits;
     private SecureSettingSeekBarPreference mFudgeFactor;
     private SecureSettingSeekBarPreference mOpacity;
-    private ColorPickerPreference mColor;
     private ColorPickerPreference mBatteryBarColor;
+    private ColorPickerPreference mColor;
+
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -104,6 +98,19 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Resources resources = getResources();
+
+        mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
+        mClockEnabled.setOnPreferenceChangeListener(this);
+        int clockEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_CLOCK, 1);
+        mClockEnabled.setChecked(clockEnabled != 0);
+
+        mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
+        mInfoEnabled.setOnPreferenceChangeListener(this);
+        int infoEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_INFO, 1);
+        mInfoEnabled.setChecked(infoEnabled != 0);
+        mInfoEnabled.setEnabled(clockEnabled != 0);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -115,32 +122,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mFingerprintVib.setOnPreferenceChangeListener(this);
         }
 
-        // Lockscreen Clock Fonts
-        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
-        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 28)));
-        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-        mLockClockFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Clock Size
-        mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
-        mClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKCLOCK_FONT_SIZE, 54));
-        mClockFontSize.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Date Fonts
-        mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
-        mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_DATE_FONTS, 28)));
-        mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-        mLockDateFonts.setOnPreferenceChangeListener(this);
-
-        // Lock Date Size
-        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
-        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKDATE_FONT_SIZE, 18));
-        mDateFontSize.setOnPreferenceChangeListener(this);
-
         boolean mLavaLampEnabled = Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_LAVALAMP_ENABLED, 1) != 0;
         boolean mAutoColorEnabled = Settings.Secure.getInt(resolver,
@@ -148,19 +129,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mAutoColor = (SecureSettingSwitchPreference) findPreference(KEY_AUTOCOLOR);
         mAutoColor.setOnPreferenceChangeListener(this);
         mAutoColor.setChecked(mAutoColorEnabled);
-
-        // Lockscreen Owner Info Fonts
-        mLockOwnerInfoFonts = (ListPreference) findPreference(LOCK_OWNERINFO_FONTS);
-        mLockOwnerInfoFonts.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS, 28)));
-        mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
-        mLockOwnerInfoFonts.setOnPreferenceChangeListener(this);
-
-        // Lockscreen Owner Info Size
-        mOwnerInfoFontSize = (CustomSeekBarPreference) findPreference(LOCKOWNER_FONT_SIZE);
-        mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKOWNER_FONT_SIZE, 18));
-        mOwnerInfoFontSize.setOnPreferenceChangeListener(this);
 
         if (mLavaLampEnabled) {
             mAutoColor.setSummary(getActivity().getString(
@@ -248,43 +216,21 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mFingerprintVib) {
+        if (preference == mClockEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            LOCKSCREEN_CLOCK, value ? 1 : 0);
+            mInfoEnabled.setEnabled(value);
+            return true;
+        } else if (preference == mInfoEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            LOCKSCREEN_INFO, value ? 1 : 0);
+            return true;
+        } else if (preference == mFingerprintVib) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
-            return true;
-        } else if (preference == mLockClockFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockClockFonts.setValue(String.valueOf(newValue));
-            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-            return true;
-        } else if (preference == mClockFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
-            return true;
-        } else if (preference == mLockDateFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockDateFonts.setValue(String.valueOf(newValue));
-            mLockDateFonts.setSummary(mLockDateFonts.getEntry());
-            return true;
-        } else if (preference == mDateFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
-            return true;
-       } else if (preference == mLockOwnerInfoFonts) {
-            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_OWNERINFO_FONTS,
-                    Integer.valueOf((String) newValue));
-            mLockOwnerInfoFonts.setValue(String.valueOf(newValue));
-            mLockOwnerInfoFonts.setSummary(mLockOwnerInfoFonts.getEntry());
-            return true;
-        } else if (preference == mOwnerInfoFontSize) {
-            int top = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKOWNER_FONT_SIZE, top*1);
             return true;
         } else if (preference == mVisualizerEnabled) {
             boolean value = (Boolean) newValue;

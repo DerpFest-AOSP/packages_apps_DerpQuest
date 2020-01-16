@@ -65,6 +65,7 @@
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+    <string name="lockscreen_tuner_summary">Modify the shortcuts shown in the lockscreen</string>
 
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Screenshot</string>
@@ -269,9 +270,8 @@
     <string name="clock_date_left">Left of time</string>
     <string name="clock_date_position">Date position</string>
 
-    <!-- Statusbar Clock Font Style & Size -->
-    <string name="status_bar_clock_font_style_title">Clock font style</string>
-    <string name="status_bar_clock_font_size_title">Clock font size</string>
+    <!-- Lockscreen information -->
+    <string name="lockscreen_info_category_title">Lockscreen info elements</string>
 
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Clock font options</string>
@@ -568,7 +568,20 @@
     <string name="flash_on_call_title">Pulse flash on incoming call</string>
     <string name="flash_on_call_delay_title">Flash pulse rate</string>
 
-    <string name="lockmods_settings_title">Fonts and sizes</string>
+    <!-- Statusbar Clock Font Style, Size & Color -->
+    <string name="status_bar_clock_font_style_title">Clock font style</string>
+    <string name="status_bar_clock_font_size_title">Clock font size</string>
+    <string name="status_bar_clock_color_title">Clock font color</string>
+
+    <!-- Lockscreen Clock, Date & Owner Info -->
+    <string name="lockscreen_clock_options_title">Clock widget options</string>
+    <string name="lockscreen_clock_summary">Modify the style/font/size of the clock widget</string>
+    <string name="lockscreen_date_title">Date options</string>
+    <string name="lockscreen_date_summary">Change the font style/size of the dateview</string>
+    <string name="lockscreen_info_title">Date widget</string>
+    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
+    <string name="lockscreen_ownerinfo_title">Owner info options</string>
+    <string name="lockscreen_ownerinfo_summary">Customize the font style/size of the Owner information</string>
 
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Date font options</string>
