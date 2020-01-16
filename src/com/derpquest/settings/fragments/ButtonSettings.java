@@ -344,7 +344,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
     private void updateDisableNavkeysOption() {
         boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR, 0, UserHandle.USER_CURRENT) != 0;
+                Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
         if (mDisableNavigationKeys != null)
             mDisableNavigationKeys.setChecked(enabled);
         if (mEnableNavigationBar != null)
