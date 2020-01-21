@@ -90,4 +90,8 @@
 	<string name="qs_show_auto_brightness_title">Symbol für automatische Helligkeit</string>
     <string name="qs_show_auto_brightness_summary">Zeigen Sie einen automatischen Helligkeitsschalter in der Nähe des Helligkeitsreglers an</string>
 
+    <!-- 4G LTE switch -->
+    <string name="show_fourg_title">Zeigen Sie 4G anstelle von LTE</string>
+    <string name="show_fourg_summary">Ersetzt LTE-Statusleistenanzeige durch 4G</string>
+
 </resources>
