@@ -94,4 +94,8 @@
     <string name="show_fourg_title">Zeigen Sie 4G anstelle von LTE</string>
     <string name="show_fourg_summary">Ersetzt LTE-Statusleistenanzeige durch 4G</string>
 
+    <!-- VoLTE switch -->
+    <string name="volte_switch_title">VoLTE-Symbol</string>
+    <string name="volte_switch_summary">VoLTE-Symbol anzeigen</string>
+
 </resources>
