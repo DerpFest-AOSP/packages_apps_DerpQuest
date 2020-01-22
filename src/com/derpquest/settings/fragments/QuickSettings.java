@@ -72,6 +72,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String QS_HIDE_BATTERY = "qs_hide_battery";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
     private static final String QS_PANEL_COLOR = "qs_panel_color";
+    private static final String QS_BLUR_ALPHA = "qs_blur_alpha";
     static final int DEFAULT_QS_PANEL_COLOR = 0xffffffff;
 
     private static final int REQUEST_PICK_IMAGE = 0;
@@ -91,6 +92,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mDragHandle;
     private SystemSettingSwitchPreference mHideBattery;
     private SystemSettingListPreference mQsBatteryMode;
+    private CustomSeekBarPreference mQSBlurAlpha;
 
     @Override
     public void onResume() {
@@ -169,6 +171,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
         mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
         mHideBattery.setOnPreferenceChangeListener(this);
+
+        mQSBlurAlpha = (CustomSeekBarPreference) findPreference(QS_BLUR_ALPHA);
+        int qsBlurAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_BLUR_ALPHA, 100);
+        mQSBlurAlpha.setValue(qsBlurAlpha);
+        mQSBlurAlpha.setOnPreferenceChangeListener(this);
 
         PreferenceScreen prefSet = getPreferenceScreen();
     }
@@ -271,6 +279,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_HIDE_BATTERY, value ? 1 : 0);
             mQsBatteryMode.setEnabled(!value);
+            return true;
+        } else if (preference == mQSBlurAlpha) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_BLUR_ALPHA, value);
             return true;
         }
         return false;
