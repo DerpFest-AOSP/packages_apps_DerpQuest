@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 The PixelDust Project
+ * Copyright (C) 2017-2020 The PixelDust Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.text.TextUtils;
@@ -48,6 +49,7 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
@@ -61,8 +63,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+@SearchIndexable
 public class StatusBarSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+        OnPreferenceChangeListener, Indexable {
 
     private ListPreference mNetTrafficLocation;
     private CustomSeekBarPreference mThreshold;
@@ -457,4 +460,25 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.OWLSNEST;
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                                                                            boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.derpquest_settings_statusbar;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+            };
 }

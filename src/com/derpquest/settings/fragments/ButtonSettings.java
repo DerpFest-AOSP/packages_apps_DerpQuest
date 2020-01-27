@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 The PixelDust Project
+ * Copyright (C) 2017-2020 The PixelDust Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,13 @@
 package com.derpquest.settings.fragments;
 
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.os.Vibrator;
+import android.provider.SearchIndexableResource;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -34,12 +35,19 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.ActionFragment;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 
-public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
+import java.util.ArrayList;
+import java.util.List;
+
+@SearchIndexable
+public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener, Indexable {
 
     //Keys
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
@@ -360,4 +368,25 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.OWLSNEST;
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                                                                            boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.derpquest_settings_button;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+            };
 }
