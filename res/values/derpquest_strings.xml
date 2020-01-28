@@ -780,10 +780,12 @@
     <string name="qs_running_services_title">Running Services Icon</string>
     <string name="qs_running_services_summary">Enable the running services icon in the footer</string>
 
-    <string name="pulse_ambient_light_title">Pulse light notification</string>
-    <string name="pulse_ambient_light_summary">Show light bar on notification pulse</string>
-
-    <string name="ambient_notification_light_enabled_title">Always on ambient lights on notification</string>
-    <string name="ambient_notification_light_enabled_sumary">Show Always On light bars when receiving a notification</string>
+    <!-- Edge lighting (aka pulse ambient light) -->
+    <string name="pulse_ambient_light_title">Enable</string>
+    <string name="pulse_ambient_light_summary">Show edge lighting on new notifications</string>
+    <string name="ambient_notification_light_enabled_title">Show on AoD</string>
+    <string name="ambient_notification_light_enabled_sumary">Keep showing on always on display. Until the screen is turned on</string>
+    <string name="ambient_notification_light_hide_aod_title">Hide AoD content</string>
+    <string name="ambient_notification_light_hide_aod_sumary">Hide other AoD content when bars are showing</string>
 
 </resources>
