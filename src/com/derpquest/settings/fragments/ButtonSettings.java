@@ -108,8 +108,9 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
         mNavBarTuner = (Preference) findPreference(NAV_BAR_TUNER);
 
-        // Only visible on devices that have a navigation bar already
-        if (ActionUtils.hasNavbarByDefault(getActivity())) {
+        // Only visible on devices that have no HW navigation
+        if (ActionUtils.hasNavbarByDefault(getActivity()) &&
+                !ActionUtils.isHWKeysSupported(getActivity())) {
             mEnableNavigationBar.setOnPreferenceChangeListener(this);
             mHandler = new Handler();
             updateDisableNavkeysOption();
@@ -139,6 +140,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                 .findPreference(CATEGORY_HWKEY);
         int keysDisabled = 0;
         if (!needsNavbar) {
+            prefScreen.removePreference(mEnableNavigationBar);
             mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
             keysDisabled = Settings.Secure.getIntForUser(getContentResolver(),
                     Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
