@@ -68,6 +68,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String KEY_COLOR = "lockscreen_visualizer_color";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
+    private static final String KEY_BATT_BAR_COLOR = "sysui_keyguard_battery_bar_color";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
@@ -91,6 +92,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private SecureSettingSeekBarPreference mFudgeFactor;
     private SecureSettingSeekBarPreference mOpacity;
     private ColorPickerPreference mColor;
+    private ColorPickerPreference mBatteryBarColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -226,6 +228,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 Settings.System.DOZE_BRIGHTNESS, defaultDoze);
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
+
+        mBatteryBarColor = (ColorPickerPreference) findPreference(KEY_BATT_BAR_COLOR);
+        mBatteryBarColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, DEFAULT_COLOR);
+        hexColor = String.format("#%08x", (DEFAULT_COLOR & intColor));
+        mBatteryBarColor.setSummary(hexColor);
+        mBatteryBarColor.setNewPreviewColor(intColor);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -331,6 +341,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOZE_BRIGHTNESS, value);
+            return true;
+        } else if (preference == mBatteryBarColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, intHex);
             return true;
         }
         return false;

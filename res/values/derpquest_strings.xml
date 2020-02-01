@@ -207,6 +207,7 @@
     <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
+    <string name="tuner_keyguard_battery_bar_color_title">Battery bar color</string>
 
     <!-- Lock icon -->
     <string name="hide_lockicon_title">Hide lock icon</string>
@@ -784,7 +785,7 @@
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
     <string name="ticker_tick_duration_title">Ticker duration</string>
-    
+
     <!-- Running Services button -->
     <string name="qs_running_services_title">Running Services Icon</string>
     <string name="qs_running_services_summary">Enable the running services icon in the footer</string>
