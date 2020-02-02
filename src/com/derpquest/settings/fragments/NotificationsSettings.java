@@ -35,9 +35,6 @@ import com.derpquest.settings.Utils;
 import com.derpquest.settings.preferences.AmbientLightSettingsPreview;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
-import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
-
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,11 +47,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
     private static final String FLASH_ON_CALL_CATEGORY = "flash_on_call_category";
-    private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
-    private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
 
-    private ColorPickerPreference mEdgeLightColorPreference;
-    private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
     private Preference mChargingLeds;
     private SystemSettingSeekBarPreference mFlashOnCallWaitingDelay;
 
@@ -86,25 +79,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             prefScreen.removePreference(mChargingLeds);
         }
-
-        mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
-        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
-        int edgeLightColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
-        AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
-        String edgeLightColorHex = ColorPickerPreference.convertToRGB(edgeLightColor);
-        if (edgeLightColorHex.equals("#3980ff")) {
-            mEdgeLightColorPreference.setSummary(R.string.default_string);
-        } else {
-            mEdgeLightColorPreference.setSummary(edgeLightColorHex);
-        }
-        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
-
-        mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
-        mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
-        int duration = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
-        mEdgeLightDurationPreference.setValue(duration);
     }
 
     @Override
@@ -112,24 +86,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         if (preference == mFlashOnCallWaitingDelay) {
             int val = (Integer) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
-            return true;
-        } else if (preference == mEdgeLightColorPreference) {
-            String hex = ColorPickerPreference.convertToRGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#3980ff")) {
-                preference.setSummary(R.string.default_string);
-            } else {
-                preference.setSummary(hex);
-            }
-            AmbientLightSettingsPreview.setAmbientLightPreviewColor(Integer.valueOf(String.valueOf(newValue)));
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
-            return true;
-        } else if (preference == mEdgeLightDurationPreference) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_AMBIENT_LIGHT_DURATION, value);
             return true;
         }
         return false;
