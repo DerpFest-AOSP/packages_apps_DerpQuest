@@ -736,21 +736,6 @@
     <string name="lockscreen_show_status_bar_title">Statusbar</string>
     <string name="lockscreen_show_status_bar_summary">Show statusbar on the lockscreen</string>
 
-    <!-- Lockscreen clock style -->
-    <string name="lockscreen_clock_title">Clock style</string>
-    <string name="lockscreen_clock_dialog_title">Select clock style</string>
-    <string name="lockscreen_clock_selection_hidden">Hidden</string>
-    <string name="lockscreen_clock_selection_digital">Default</string>
-    <string name="lockscreen_clock_selection_digital_bold">Bold (digital)</string>
-    <string name="lockscreen_clock_selection_digital_small">Small (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent">Full accent (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent_min">Accent minutes (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent_hour">Accent hours (digital)</string>
-    <string name="lockscreen_clock_selection_sammy">Sammy</string>
-    <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
-    <string name="lockscreen_clock_selection_sammy_accent">Sammy accent</string>
-    <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy accent (darker hour)</string>
-
     <!-- QS themes -->
     <string name="qs_themes_category_title">QS Themes</string>
     <string name="qs_panel_color_title">QS Panel color</string>
