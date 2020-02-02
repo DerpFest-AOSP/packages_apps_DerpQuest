@@ -43,13 +43,13 @@
         android:summary="@string/hide_lockicon_summary"
         android:defaultValue="false" />
 
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="sysui_keyguard_show_battery_bar"
         android:title="@string/tuner_keyguard_show_battery_bar_title"
         android:summary="@string/tuner_keyguard_show_battery_bar_summary"
         android:defaultValue="true" />
 
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="sysui_keyguard_show_battery_bar_always"
         android:title="@string/tuner_keyguard_show_battery_bar_always_title"
         android:summary="@string/tuner_keyguard_show_battery_bar_always_summary"
