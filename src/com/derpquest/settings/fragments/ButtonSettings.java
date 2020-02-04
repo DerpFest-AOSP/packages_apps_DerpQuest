@@ -286,7 +286,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                     value ? 1 : 0, UserHandle.USER_CURRENT);
             setActionPreferencesEnabled(!value);
             mAnbiEnable.setEnabled(!value);
-            mAnbiEnable.setChecked(!value);
+            mAnbiEnable.setChecked(false);
             return true;
         } else if (preference == mAnbiEnable) {
             boolean value = (Boolean) newValue;
