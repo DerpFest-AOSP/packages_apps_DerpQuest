@@ -68,9 +68,11 @@ public class BatterySettings extends SettingsPreferenceFragment implements
 
     private static final int BATTERY_STYLE_Q = 0;
     private static final int BATTERY_STYLE_DOTTED_CIRCLE = 1;
-    private static final int BATTERY_STYLE_CIRCLE = 2;
-    private static final int BATTERY_STYLE_TEXT = 3;
-    private static final int BATTERY_STYLE_HIDDEN = 4;
+    private static final int BATTERY_STYLE_PA_CIRCLE = 2;
+    private static final int BATTERY_STYLE_CIRCLE = 3;
+    private static final int BATTERY_STYLE_BIG_CIRCLE = 4;
+    private static final int BATTERY_STYLE_TEXT = 5;
+    private static final int BATTERY_STYLE_HIDDEN = 6;
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
@@ -139,11 +141,7 @@ public class BatterySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
         }
-        if (batterystyle == BATTERY_STYLE_TEXT)
-            mBatteryCharging.setEnabled(false);
-        else
-            mBatteryCharging.setEnabled(true);
-        mBatteryPercent.setEnabled(enabled);
+        mBatteryCharging.setEnabled(batterystyle != BATTERY_STYLE_TEXT);
         updateBoltEnablement();
     }
 
