@@ -539,7 +539,7 @@
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">Statusbar Logo</string>
     <string name="status_bar_logo_category_summary">Enable to display logo in the status bar</string>
-    <string name="status_bar_logo_title">DerpQuest logo</string>
+    <string name="status_bar_logo_title">DerpFest logo</string>
     <string name="status_bar_logo_right">Right</string>
     <string name="status_bar_logo_left">Left</string>
     <string name="status_bar_logo_disabled">Disabled</string>

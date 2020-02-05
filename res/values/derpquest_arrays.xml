@@ -402,9 +402,9 @@
     </string-array>
 
    <string-array name="status_bar_logo_style_entries" translatable="false">
-        <item>DerpQuest</item>
-        <item>DerpQuest 1</item>
-        <item>DerpQuest 2</item>
+        <item>DerpFest</item>
+        <item>DerpFest 1</item>
+        <item>DerpFest 2</item>
         <item>Owl</item>
         <item>Owl 1</item>
         <item>Q</item>
