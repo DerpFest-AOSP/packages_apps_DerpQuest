@@ -69,6 +69,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String KEY_BATT_BAR_COLOR = "sysui_keyguard_battery_bar_color";
+    private static final String KEY_CHARGE_INFO_FONT = "lockscreen_battery_info_font";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
@@ -80,6 +81,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
     private ListPreference mLockOwnerInfoFonts;
+    private ListPreference mChargingInfoFont;
     private SecureSettingSwitchPreference mVisualizerEnabled;
     private SystemSettingListPreference mArtFilter;
     private SystemSettingSeekBarPreference mBlurSeekbar;
@@ -229,6 +231,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
 
+        mChargingInfoFont = (ListPreference) findPreference(KEY_CHARGE_INFO_FONT);
+        mChargingInfoFont.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, 28)));
+        mChargingInfoFont.setSummary(mChargingInfoFont.getEntry());
+        mChargingInfoFont.setOnPreferenceChangeListener(this);
+
         mBatteryBarColor = (ColorPickerPreference) findPreference(KEY_BATT_BAR_COLOR);
         mBatteryBarColor.setOnPreferenceChangeListener(this);
         intColor = Settings.System.getInt(getContentResolver(),
@@ -341,6 +349,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOZE_BRIGHTNESS, value);
+            return true;
+        } else if (preference == mChargingInfoFont) {
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, value);
+            mChargingInfoFont.setValue(String.valueOf(value));
+            mChargingInfoFont.setSummary(mChargingInfoFont.getEntry());
             return true;
         } else if (preference == mBatteryBarColor) {
             String hex = ColorPickerPreference.convertToARGB(
