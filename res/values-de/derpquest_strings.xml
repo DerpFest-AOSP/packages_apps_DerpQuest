@@ -33,7 +33,7 @@
     <string name="theming_title">Design</string>
     <string name="animations_title">Animationen</string>
     <string name="nav_bar_category_title">Navigationsleiste</string>
-    <string name="edge_lighting_category_title">Edge lighting</string>
+    <string name="edge_lighting_category_title">Edge Lighting</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -53,18 +53,16 @@
     <string name="hex_reset_button_text">ZURÜCKSETZEN</string>
     <string name="set">Einstellen</string>
     <string name="color_default">Standard</string>
-    <string name="color_right_arrow" translatable="false">"→"</string>
-    <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">Die Taste lange drücken, um die Farbe zu speichern</string>
 
     <!-- Navbar options -->
-    <string name="enable_navbar_title">Enable</string>
-    <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>
-    <string name="navbar_tuner_title">Navigationsleisten Schaltflächen</string>
-    <string name="navbar_tuner_summary">Passen Sie die Schaltflächen an, die auf der Navigationsleiste angezeigt werden</string>
+    <string name="enable_navbar_title">Aktivieren</string>
+    <string name="enable_navbar_summary">Steuert, ob die Navigationsleiste angezeigt wird</string>
+    <string name="navbar_tuner_title">Navigationsleisten-Tuner</string>
+    <string name="navbar_tuner_summary">Schaltflächen der Navigationsleiste neu anordnen und ändern</string>
 
     <!-- Lockscreen icons -->
-    <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+    <string name="lockscreen_tuner_title">Sperrbildschirm-Verknüpfungen</string>
 
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Screenshot</string>
@@ -137,8 +135,8 @@
 
     <!-- Torch Power button -->
     <string name="hardware_keys_power_key_title">Ein-/Ausschalter</string>
-    <string name="torch_long_press_power_gesture_title">Bildschirm ausschalten Taschenlampe</string>
-    <string name="torch_long_press_power_gesture_desc">Halten Sie die Ein/Aus-Taste gedrückt, während der Bildschirm ausgeschaltet ist, um die Taschenlampe einzuschalten</string>
+    <string name="torch_long_press_power_gesture_title">Taschenlampe bei ausgeschaltetem Bildschirm</string>
+    <string name="torch_long_press_power_gesture_desc">Bei ausgeschaltetem Bildschirm lange auf die Ein/Aus-Taste drücken, um die Taschenlampe einzuschalten</string>
     <string name="torch_long_press_power_timeout_title">Taschenlampe automatisch ausschalten</string>
     <string name="torch_long_press_power_timeout_never">Niemals</string>
     <string name="torch_long_press_power_timeout_1min">1 Minute</string>
@@ -148,20 +146,21 @@
 
     <!-- Wakeup options -->
     <string name="wakeup_when_plugged_unplugged_title">Aufwecken beim Laden</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Aufwachen des Gerätes, wenn Ladegerät angeschlossen/abgezogen wird.</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Aufwecken des Gerätes, wenn Ladegerät angeschlossen/abgezogen wird.</string>
 
     <!-- Battery light -->
-    <string name="battery_light_settings">Lade LED</string>
-    <string name="battery_light_settings_summary">Batterieanzeige LED anpassen</string>
-    <string name="battery_light_allow_on_dnd_title">Batterielicht im Modus \"Nicht stören\"</string>
-    <string name="battery_light_allow_on_dnd_summary">blinkende LED für Akku im Modus \"Nicht stören\"</string>
-    <string name="battery_light_low_blinking_title">Benachrichtigung bei geringem Akkustand</string>
-    <string name="battery_light_low_blinking_summary">LED blinken, wenn Akkustand niedrig ist</string>
+    <string name="battery_light_enable">Aktiviert</string>
+    <string name="battery_light_settings">Akku Lade-LED</string>
+    <string name="battery_light_settings_summary">Akku Lade-LED anpassen</string>
+    <string name="battery_light_allow_on_dnd_title">Akku-LED im Modus \"Bitte nicht stören\"</string>
+    <string name="battery_light_allow_on_dnd_summary">Akku-LED im Modus \"Bitte nicht stören\"</string>
+    <string name="battery_light_low_blinking_title">Blinkende LED bei schwachem Akku</string>
+    <string name="battery_light_low_blinking_summary">LED blinkt, wenn Akkustand niedrig ist</string>
     <string name="battery_light_cat">Wird aufgeladen</string>
     <string name="battery_light_low_color">Niedriger Akkustand</string>
     <string name="battery_light_medium_color">Mittlerer Akkustand</string>
     <string name="battery_light_full_color">Fast voller Akku</string>
-    <string name="battery_light_reallyfull_color">Akku voll</string>
+    <string name="battery_light_reallyfull_color">Voll (100%) Akku</string>
 
     <string name="notification_light_settings">Benachrichtigungs-LED</string>
 
@@ -187,26 +186,26 @@
     <string name="nettraf_font_size">Einfache Netzwerkaktivitsgröße</string>
 
     <!-- Statusbar double tap to sleep -->
-    <string name="double_tap_to_sleep_title">Doppelt Tippen für Schlafmodus</string>
-    <string name="double_tap_to_sleep_summary">Tippe die Statusleiste zweimal an, um das Gerät in den Ruhemodus zu versetzen</string>
+    <string name="double_tap_to_sleep_title">Statusleiste doppeltippen für Ruhemodus</string>
+    <string name="double_tap_to_sleep_summary">Die Statusleiste doppelt antippen, um das Gerät in den Ruhemodus zu versetzen</string>
     <!-- Lockscreen double tap to sleep -->
-    <string name="double_tap_sleep_lockscreen_title">Doppeltippen auf Sperrbildschirm für Ruhemodus</string>
-    <string name="double_tap_sleep_lockscreen_summary">Zweimal irgendwo auf dem Sperrbildschirm tippen, um das Gerät in den Ruhemodus zu versetzen</string>
+    <string name="double_tap_sleep_lockscreen_title">Sperrbildschirm doppeltippen für Ruhemodus</string>
+    <string name="double_tap_sleep_lockscreen_summary">Irgendwo auf dem Sperrbildschirm doppeltippen, um das Gerät in den Ruhemodus zu versetzen</string>
 
     <!-- Disable power menu on secure lock screen -->
-    <string name="lockscreen_power_menu_disabled_title">Power-Menü auf dem Sperrbildschirm deaktivieren</string>
+    <string name="lockscreen_power_menu_disabled_title">Power-Menü auf Sperrbildschirm deaktivieren</string>
     <string name="lockscreen_power_menu_disabled_summary">Diese Option deaktiviert das Power-Menü nur auf einem gesicherten Sperrbildschirm</string>
 
     <!-- Battery Bar -->
-    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
-    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
-    <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
-    <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
-    <string name="tuner_keyguard_battery_bar_color_title">Battery bar color on lockscreen</string>
+    <string name="tuner_keyguard_show_battery_bar_title">Akkuleiste anzeigen</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">Akkuleiste beim Aufladen immer auf dem Bildschirm anzeigen</string>
+    <string name="tuner_keyguard_show_battery_bar_always_title">Akkuleiste immer anzeigen</string>
+    <string name="tuner_keyguard_show_battery_bar_always_summary">Akkuleiste beim Laden immer anzeigen</string>
+    <string name="tuner_keyguard_battery_bar_color_title">Akkuleistefarbe auf dem Sperrbildschirm</string>
 
     <!-- Lock icon -->
-    <string name="hide_lockicon_title">Schlosssymbol ausblenden</string>
-    <string name="hide_lockicon_summary">Das Schlosssymbol auf dem Schlossbildschirm ausblenden</string>
+    <string name="hide_lockicon_title">Schloss-Symbol ausblenden</string>
+    <string name="hide_lockicon_summary">Schloss-Symbol auf dem Sperrbildschirm ausblenden</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibration bei Berührung</string>
@@ -221,8 +220,8 @@
     <string name="blur_quicksettings_subtitle">Verwischt den abgedunkelten Hintergrund hinter den Schnelleinstellungen</string>
     <string name="qs_blur_alpha_title">Blur Alpha</string>
     <string name="qs_blur_alpha_summary">Legt die Transparenz der Unschärfe fest</string>
-    <string name="qs_blur_intensity_title">Blur intensity</string>
-    <string name="qs_blur_intensity_summary">Sets the blur intensity/radius</string>
+    <string name="qs_blur_intensity_title">Unschärfeintensität</string>
+    <string name="qs_blur_intensity_summary">Legt die Unschärfeintensität/-radius fest</string>
 
     <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">Aktivieren Sie die Navigationsleiste auf dem Bildschirm</string>
@@ -234,8 +233,8 @@
     <string name="status_bar_system_icons_summary">Steuern, welche Symbole in der Statusleiste angezeigt werden</string>
 
     <!-- Statusbar Clock -->
-    <string name="status_bar_clock_title">Uhr &amp; Datum</string>
-    <string name="status_bar_clock_summary">Passen Sie die Uhr und das Datum in der Statusleiste an</string>
+    <string name="status_bar_clock_title">Einstellungen der Uhr</string>
+    <string name="status_bar_clock_summary">Uhr und Datum in der Statusleiste anpassen</string>
     <string name="status_bar_clock_show">Uhrzeit und Datum anzeigen</string>
     <string name="status_bar_clock_style_title">Darstellung der Uhr</string>
     <string name="status_bar_clock_style_right">Rechts</string>
@@ -273,24 +272,9 @@
 
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Schriftstil der Uhr</string>
-    <string name="lock_clock_font_stock">Normal</string>
-    <string name="lock_clock_font_bold">Fett</string>
-    <string name="lock_clock_font_italic">Kursiv</string>
-    <string name="lock_clock_font_bold_italic">Fett kursiv</string>
-    <string name="lock_clock_font_light_italic">Schmal kursiv</string>
-    <string name="lock_clock_font_thin_italic">Ultraleicht kursiv</string>
-    <string name="lock_clock_font_light">Leicht</string>
-    <string name="lock_clock_font_thin">Dünn</string>
-    <string name="lock_clock_font_condensed_normal">Schmal</string>
-    <string name="lock_clock_font_condensed_italic">Schmal &amp; Kursiv</string>
-    <string name="lock_clock_font_condensed_bold">Schmal &amp; Fett</string>
-    <string name="lock_clock_font_condensed_bold_italic">Schmal, Fett und kursiv</string>
-    <string name="lock_clock_font_condensed_light">Leicht Schmal</string>
-    <string name="lock_clock_font_condensed_light_italic">Leicht Schmal + kursiv</string>
-    <string name="lock_clock_font_medium_normal">Mittel</string>
-    <string name="lock_clock_font_medium_italic">Medium kursiv</string>
-    <string name="lock_clock_font_black">Schwarz</string>
-    <string name="lock_clock_font_black_italic">Schwarz kursiv</string>
+    <string name="lock_clock_font_summary">Standardschriftart des Sperrbildschirm-Uhr-Widgets ändern</string>
+    <string name="lock_clock_font_dialog_title">Schriftart der Sperrbildschirm-Uhr auswählen</string>
+    <string name="lock_clock_font_stock">Normal (Standard)</string>
 
     <!-- Media art -->
     <string name="lockscreen_media_category">Musik</string>
@@ -315,7 +299,7 @@
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Lautstärkestufen</string>
-    <string name="volume_steps_summary">Legen Sie eine benutzerdefinierte Anzahl von Lautstärkestufen fest</string>
+    <string name="volume_steps_summary">Eine benutzerdefinierte Anzahl von Lautstärkestufen festlegen</string>
     <string name="volume_steps_alarm_title">Lautstärkestufen: Wecker</string>
     <string name="volume_steps_dtmf_title">Lautstärkestufen: DTMF</string>
     <string name="volume_steps_music_title">Lautstärkestufen: Musik</string>
@@ -351,7 +335,7 @@
 
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Akku Anzeige</string>
-    <string name="status_bar_battery_style_q">Batterie (Standard)</string>
+    <string name="status_bar_battery_style_q">Akku (Standard)</string>
     <string name="status_bar_battery_style_dotted_circle">Gepunkteter Kreis</string>
     <string name="status_bar_battery_style_circle">Kreis</string>
     <string name="status_bar_battery_style_text">Prozentsatz</string>
@@ -362,8 +346,8 @@
     <string name="status_bar_battery_percentage_default">Nicht anzeigen</string>
     <string name="status_bar_battery_percentage_text_next">Neben dem Symbol</string>
     <string name="status_bar_battery_percentage_text_inside">Innerhalb des Symbols</string>
-    <string name="status_bar_battery_text_charging_title">Batterieprozentsatz beim Laden</string>
-    <string name="status_bar_battery_text_charging_summary">Beim Laden immer den Batterieprozentsatz anzeigen</string>
+    <string name="status_bar_battery_text_charging_title">Akkuprozentsatz beim Laden</string>
+    <string name="status_bar_battery_text_charging_summary">Beim Laden immer den Akkuprozentsatz anzeigen</string>
 
     <!-- QS settings categories -->
     <string name="category_tiles_title">Kacheln</string>
@@ -418,6 +402,7 @@
     <string name="lockscreen_solid_units_count_title">Anzahl Linien</string>
     <string name="lockscreen_solid_fudge_factor_title">Höhe der Linien</string>
     <string name="lockscreen_solid_units_opacity_title">Linien Deckkraft</string>
+    <string name="lockscreen_visualizer_color_title">Standardfarbe</string>
 
     <!-- Custom headers -->
     <string name="notification_title">Benachrichtigungsfeld</string>
@@ -453,6 +438,7 @@
     <string name="charging_animation_summary">Zeigen Sie eine Animation an, wenn das Gerät angeschlossen ist</string>
 
     <!-- Per App aspect Ratio -->
+    <string name="action_save">Speichern</string>
     <string name="aspect_ratio_apps_enabled_title">Skalierung aktivieren</string>
     <string name="aspect_ratio_apps_enabled_summary">Altapps erlauben den Vollbildschirm zu verwenden</string>
     <string name="aspect_ratio_apps_list_title">Apps, welche die Skalierung verwenden dürfen</string>
@@ -466,7 +452,8 @@
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Vibration bei eingehendem Anruf</string>
     <string name="incall_vibrate_connect_title">Vibriert bei Verbindung</string>
-    <string name="incall_vibrate_call_wait_title">Vibriert beim Anklopfen von Anrufen</string>
+    <string name="incall_vibrate_call_wait_title">Vibrieren beim Anklopfen</string>
+    <string name="incall_vibrate_call_wait_summary">Vibration aktivieren, wenn der Anruf im Wartezustand ist</string>
     <string name="incall_vibrate_disconnect_title">Vibriert beim Trennen der Verbindung</string>
     <string name="incall_notifications_vibrate">Vibration bei Benachrichtigungen</string>
 
@@ -548,28 +535,28 @@
 
     <!-- Custom carrier label and position -->
     <string name="etc_category_title">Verschiedenes</string>
-    <string name="carrier_label_category_title">Netzbetreiber Anzeige</string>
-    <string name="carrier_label_category_summary">Netzbetreiber Anzeige ändern</string>
-    <string name="carrier_label_settings_title">Netzbetreiber Anzeige</string>
-    <string name="carrier_label_settings_summary">Netzbetreiber Anzeige ändern</string>
-    <string name="custom_carrier_label_title">Benutzerdefinierte Anbieter-Anzeige</string>
+    <string name="carrier_label_category_title">Netzbetreiberanzeige</string>
+    <string name="carrier_label_category_summary">Netzbetreiberanzeige ändern</string>
+    <string name="carrier_label_settings_title">Netzbetreiberanzeige</string>
+    <string name="carrier_label_settings_summary">Netzbetreiberanzeige ändern</string>
+    <string name="custom_carrier_label_title">Benutzerdefinierte Anbieteranzeige</string>
     <string name="custom_carrier_label_explain">Eigenen Text eingeben. Leer lassen für Standard</string>
     <string name="custom_carrier_label_notset">Keine benutzerdefinierte Bezeichung festgelegt</string>
-    <string name="show_carrier_title">Platzierung der Netzbetreiber-Anzeige</string>
+    <string name="show_carrier_title">Platzierung der Netzbetreiberanzeige</string>
     <string name="show_carrier_disabled">Deaktiviert</string>
     <string name="show_carrier_keyguard">Sperrbildschirm</string>
     <string name="show_carrier_statusbar">Statusleiste</string>
     <string name="show_carrier_enabled">Beides</string>
-    <string name="status_bar_carrier_size">Größe der Netzbetreiber-Anzeige</string>
-    <string name="status_bar_carrier_font_style_title">Schriftart der Netzbetreiber-Anzeige</string>
+    <string name="status_bar_carrier_size">Größe der Netzbetreiberanzeige</string>
+    <string name="status_bar_carrier_font_style_title">Schriftart der Netzbetreiberanzeige</string>
     <string name="status_bar_carrier_font_style_summary">%1$s</string>
-    <string name="status_bar_carrier_color">Farbe der Netzbetreiber-Anzeige</string>
+    <string name="status_bar_carrier_color">Farbe der Netzbetreiberanzeige</string>
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Info Ladezustand</string>
-    <string name="lockscreen_battery_info_summary">Zeige maximale ermittelte Ladespannung/-Strom und Batterietemperatur während des Ladens auf dem Sperrbildschirm</string>
-    <string name="lockscreen_battery_info_font_title">Charging info font</string>
-    <string name="lockscreen_battery_info_dialog_title">Select charging info font</string>
+    <string name="lockscreen_battery_info_summary">Maximale ermittelte Ladespannung/-Strom und Akkutemperatur während des Ladens auf dem Sperrbildschirm anzeigen</string>
+    <string name="lockscreen_battery_info_font_title">Schriftart für Ladeinformationen</string>
+    <string name="lockscreen_battery_info_dialog_title">Schriftart für Ladeinformationen auswählen</string>
 
     <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_title">Transparenz der Schnelleinstellungen</string>
@@ -582,11 +569,9 @@
     <string name="ambient_doze_brightness_title">Helligkeit des Ambient-Bildschirms</string>
     <string name="ambient_doze_brightness_summary">Helligkeit setzen, die während der Ambient-Anzeige genutzt wird</string>
 
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Doze Einstellungen</string>
     <string name="doze_settings_summary">Doze Einstellungen bearbeiten</string>
-    <string name="action_save">Speichern</string>
     <string name="action_restoredefault">Zurücksetzen</string>
     <string name="action_profile">Profile</string>
     <string name="action_save_as_profile">Profil speichern</string>
@@ -701,6 +686,7 @@
     <string name="lockscreen_clock_selection_title">Darstellung der Uhr</string>
     <string name="lockscreen_clock_selection_digital">Standard</string>
     <string name="lockscreen_clock_selection_digital_bold">Digital (Fett)</string>
+    <string name="lockscreen_clock_selection_digital_small">Klein (Digital)</string>
     <string name="lockscreen_clock_selection_digital_accent">Digital (Akzent)</string>
     <string name="lockscreen_clock_selection_digital_accent_min">Digital (Akzent - Minuten)</string>
     <string name="lockscreen_clock_selection_digital_accent_hour">Digital (Akzent - Stunde)</string>
@@ -710,8 +696,8 @@
     <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy (Akzent - Alt)</string>
 
     <!-- QS themes -->
-    <string name="qs_themes_category_title">QS Themen</string>
-    <string name="qs_panel_color_title">QS Panel-Farbe</string>
+    <string name="qs_themes_category_title">QS-Themen</string>
+    <string name="qs_panel_color_title">QS-Panel-Farbe</string>
     <string name="qs_bg_wall_title">Hintergrundfarben verwenden</string>
     <string name="qs_bg_wall_summary">QS-Hintergrundfarbe aus Hintergrund einstellen</string>
     <string name="qs_bg_use_fw">Standardfarben verwenden</string>
@@ -732,35 +718,35 @@
     <string name="unit_pixels">dp</string>
 
     <!-- Statusbar ticker -->
-    <string name="statusbar_notifi_cat">Notifications ticker (beta)</string>
+    <string name="statusbar_notifi_cat">Benachrichtigungs-Ticker (Beta)</string>
     <string name="status_bar_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_title">Ticker</string>
-    <string name="status_bar_show_ticker_summary">Benachrichtigungs-Vorschau in der Statusleiste</string>
+    <string name="status_bar_show_ticker_summary">Benachrichtigungsvorschau in der Statusleiste</string>
     <string name="ticker_animation_mode_title">Ticker-Animation</string>
     <string name="ticker_animation_mode_alpha_fade">Überblenden</string>
     <string name="ticker_animation_mode_scroll">Scrollen</string>
     <string name="ticker_tick_duration_title">Ticker-Dauer</string>
 
     <!-- Running Services button -->
-    <string name="qs_running_services_title">Running Services Icon</string>
-    <string name="qs_running_services_summary">Enable the running services icon in the footer</string>
+    <string name="qs_running_services_title">Laufende Dienste-Symbol</string>
+    <string name="qs_running_services_summary">Symbol für laufende Dienste in der Fußzeile aktivieren</string>
 
     <!-- Edge lighting (aka pulse ambient light) -->
-    <string name="pulse_ambient_light_title">Enable</string>
-    <string name="pulse_ambient_light_summary">Show edge lighting on new notifications</string>
-    <string name="ambient_notification_light_enabled_title">Show on AoD</string>
-    <string name="ambient_notification_light_enabled_sumary">Keep showing on always on display. Until the screen is turned on</string>
-    <string name="ambient_notification_light_hide_aod_title">Hide AoD content</string>
-    <string name="ambient_notification_light_hide_aod_sumary">Hide other AoD content when bars are showing</string>
-    <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="pulse_ambient_auto_color_title">Auto color</string>
-    <string name="pulse_ambient_auto_color_summary">Sets edge light color to the primary color of wallpaper</string>
-    <string name="pulse_ambient_light_duration_title">Duration</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
-    <string name="pulse_ambient_light_repeat_count_title">Repeat count</string>
-    <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
-    <string name="pulse_ambient_light_pulse_for_all_title">Pulse for all doze events</string>
-    <string name="pulse_ambient_light_pulse_for_all_summary">Pulses for any doze wake and not just notifications when enabled</string>
+    <string name="pulse_ambient_light_title">Aktivieren</string>
+    <string name="pulse_ambient_light_summary">Edge Lighting bei neuen Benachrichtigungen anzeigen</string>
+    <string name="ambient_notification_light_enabled_title">Auf AOD anzeigen</string>
+    <string name="ambient_notification_light_enabled_sumary">Immer auf dem Anzeige bleiben, bis der Bildschirm eingeschaltet wird.</string>
+    <string name="ambient_notification_light_hide_aod_title">AOD-Inhalt ausblenden</string>
+    <string name="ambient_notification_light_hide_aod_sumary">Andere AOD-Inhalte ausblenden, wenn Leiste angezeigt werden</string>
+    <string name="pulse_ambient_light_color_title">Edge Light-Farbe</string>
+    <string name="pulse_ambient_auto_color_title">Automatische Farbe</string>
+    <string name="pulse_ambient_auto_color_summary">Setzt Edge Light auf die Hintergrundprimärfarbe</string>
+    <string name="pulse_ambient_light_duration_title">Dauer</string>
+    <string name="pulse_ambient_light_duration_summary">Dauer der Umgebungslichtanimation festlegen</string>
+    <string name="pulse_ambient_light_repeat_count_title">Wiederholungenanzahl</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Maximale Wiederholungsanzahl einstellen. 0 für unendlich</string>
+    <string name="pulse_ambient_light_pulse_for_all_title">Impulse für alle Doze-Ereignisse</string>
+    <string name="pulse_ambient_light_pulse_for_all_summary">Impulse für jeden Doze Wake und nicht nur Benachrichtigungen, wenn aktiviert</string>
 
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Ausschaltanimation</string>
