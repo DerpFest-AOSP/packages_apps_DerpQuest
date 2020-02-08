@@ -46,7 +46,6 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 
 import java.util.ArrayList;
@@ -66,26 +65,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
     private static final String STATUS_BAR_DATE = "status_bar_date";
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
-
-    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-    private static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
-    private static final String BATTERY_PERCENTAGE_HIDDEN = "0";
-    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-
-    private static final int BATTERY_STYLE_Q = 0;
-    private static final int BATTERY_STYLE_DOTTED_CIRCLE = 1;
-    private static final int BATTERY_STYLE_CIRCLE = 2;
-    private static final int BATTERY_STYLE_TEXT = 3;
-    private static final int BATTERY_STYLE_HIDDEN = 4;
+    private static final String BATTERY_ICON_STYLE = "battery_icon_style";
 
     private SystemSettingMasterSwitchPreference mNetTrafficState;
     private SystemSettingMasterSwitchPreference mStatusBarClock;
     private SystemSettingMasterSwitchPreference mStatusBarDate;
     private SystemSettingMasterSwitchPreference mStatusBarLogo;
-
-    private ListPreference mBatteryPercent;
-    private ListPreference mBatteryStyle;
-    private SwitchPreference mBatteryCharging;
+    private SystemSettingMasterSwitchPreference mBatteryIconStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -124,14 +110,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_LOGO, 0) > 0;
         mStatusBarLogo.setChecked(enabled);
 
-        mBatteryPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mBatteryCharging = (SwitchPreference) findPreference(STATUS_BAR_BATTERY_TEXT_CHARGING);
-        mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
-        int batterystyle = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_Q);
-        mBatteryStyle.setOnPreferenceChangeListener(this);
+        mBatteryIconStyle = (SystemSettingMasterSwitchPreference)
+                findPreference(BATTERY_ICON_STYLE);
+        mBatteryIconStyle.setOnPreferenceChangeListener(this);
+        enabled = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0) < 4;
+        mBatteryIconStyle.setChecked(enabled);
 
-        updateBatteryOptions(batterystyle);
     }
 
     @Override
@@ -157,24 +142,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_LOGO, enabled ? 1 : 0);
             return true;
-        } else if (preference == mBatteryStyle) {
-            int value = Integer.parseInt((String) objValue);
-            updateBatteryOptions(value);
+        } else if (preference == mBatteryIconStyle) {
+            boolean enabled = (boolean) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_BATTERY_STYLE, enabled ? 0 : 4);
             return true;
         }
         return false;
-    }
-
-    private void updateBatteryOptions(int batterystyle) {
-        boolean enabled = batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN;
-        if (batterystyle == BATTERY_STYLE_HIDDEN) {
-            mBatteryPercent.setValue(BATTERY_PERCENTAGE_HIDDEN);
-            mBatteryPercent.setSummary(mBatteryPercent.getEntry());
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
-        }
-        mBatteryCharging.setEnabled(enabled);
-        mBatteryPercent.setEnabled(enabled);
     }
 
     @Override

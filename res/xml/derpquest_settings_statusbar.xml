@@ -45,6 +45,14 @@
             android:fragment="com.derpquest.settings.fragments.NetTrafficMonSettings"
             android:defaultValue="true" />
 
+        <!-- Battery Icon Style -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="battery_icon_style"
+            android:title="@string/battery_icon_style_title"
+            android:summary="@string/battery_icon_style_summary"
+            android:fragment="com.derpquest.settings.fragments.BatterySettings"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -66,35 +74,6 @@
             android:fragment="com.derpquest.settings.fragments.DateSettings"
             android:dependency="status_bar_clock"
             android:defaultValue="false" />
-
-    <PreferenceCategory
-        android:key="battery_style_category"
-        android:title="@string/battery_style_category_title" >
-
-       <com.derpquest.settings.preferences.SystemSettingListPreference
-            android:key="status_bar_battery_style"
-            android:title="@string/status_bar_battery_style_title"
-            android:summary="%s"
-            android:dialogTitle="@string/status_bar_battery_style_title"
-            android:entries="@array/status_bar_battery_style_entries"
-            android:entryValues="@array/status_bar_battery_style_values"
-            android:defaultValue="0" />
-
-       <com.derpquest.settings.preferences.SystemSettingListPreference
-            android:key="status_bar_show_battery_percent"
-            android:title="@string/battery_percent_title"
-            android:dialogTitle="@string/battery_percent_title"
-            android:entries="@array/battery_percent_entries"
-            android:entryValues="@array/battery_percent_values"
-            android:defaultValue="0" />
-
-       <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="status_bar_battery_text_charging"
-            android:title="@string/status_bar_battery_text_charging_title"
-            android:summary="@string/status_bar_battery_text_charging_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/statusbar_notifi_cat">
