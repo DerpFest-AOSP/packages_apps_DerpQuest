@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2020 The PixelDust Project
+ * Copyright (C) 2020 DerpFest ROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,8 @@
  */
 package com.derpquest.settings.fragments;
 
-import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -67,15 +64,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
-
-    private static final String STATUS_BAR_CLOCK_DATE_DISPLAY = "clock_date_display";
-    private static final String STATUS_BAR_CLOCK_DATE_STYLE = "clock_date_style";
-    private static final String STATUS_BAR_CLOCK_DATE_FORMAT = "clock_date_format";
-    private static final String STATUS_BAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
-
-    public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
-    public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
-    private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
+    private static final String STATUS_BAR_DATE = "status_bar_date";
 
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
@@ -90,11 +79,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private SystemSettingMasterSwitchPreference mNetTrafficState;
     private SystemSettingMasterSwitchPreference mStatusBarClock;
+    private SystemSettingMasterSwitchPreference mStatusBarDate;
 
-    private ListPreference mClockDateDisplay;
-    private ListPreference mClockDateStyle;
-    private ListPreference mClockDateFormat;
-    private ListPreference mClockDatePosition;
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
     private SwitchPreference mBatteryCharging;
@@ -121,50 +107,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1;
         mStatusBarClock.setChecked(enabled);
 
-        mClockDateDisplay = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_DISPLAY);
-        mClockDateStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_STYLE);
-
-        int clockDateDisplay = Settings.System.getInt(resolver,
-                Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0);
-        mClockDateDisplay.setValue(String.valueOf(clockDateDisplay));
-        mClockDateDisplay.setSummary(mClockDateDisplay.getEntry());
-        mClockDateDisplay.setOnPreferenceChangeListener(this);
-         int clockDateStyle = Settings.System.getInt(resolver,
-                Settings.System.STATUSBAR_CLOCK_DATE_STYLE, 0);
-        mClockDateStyle.setValue(String.valueOf(clockDateStyle));
-        mClockDateStyle.setSummary(mClockDateStyle.getEntry());
-        mClockDateStyle.setOnPreferenceChangeListener(this);
-
-        mClockDateFormat = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_FORMAT);
-        mClockDateFormat.setSummary(mClockDateFormat.getEntry());
-        mClockDateFormat.setOnPreferenceChangeListener(this);
-        String clkvalue = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.STATUSBAR_CLOCK_DATE_FORMAT);
-        if (clkvalue == null || clkvalue.isEmpty()) {
-            clkvalue = "EEE";
-        }
-        int index = mClockDateFormat.findIndexOfValue((String) clkvalue);
-        if (index == -1) {
-            mClockDateFormat.setValueIndex(CUSTOM_CLOCK_DATE_FORMAT_INDEX);
-        } else {
-            mClockDateFormat.setValue(clkvalue);
-        }
-        parseClockDateFormats();
-
-        mClockDatePosition = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_POSITION);
-        mClockDatePosition.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_DATE_POSITION,
-                0)));
-        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
-        mClockDatePosition.setOnPreferenceChangeListener(this);
-
-        int clockDatePosition = Settings.System.getInt(resolver,
-                Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0);
-        mClockDatePosition.setValue(String.valueOf(clockDatePosition));
-        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
-        mClockDatePosition.setOnPreferenceChangeListener(this);
-
-        setDateOptions();
+        mStatusBarDate = (SystemSettingMasterSwitchPreference)
+                findPreference(STATUS_BAR_DATE);
+        mStatusBarDate.setOnPreferenceChangeListener(this);
+        mStatusBarDate.setEnabled(enabled);
+        enabled = Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0) > 0;
+        mStatusBarDate.setChecked(enabled);
 
         mBatteryPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
         mBatteryCharging = (SwitchPreference) findPreference(STATUS_BAR_BATTERY_TEXT_CHARGING);
@@ -178,7 +127,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        AlertDialog dialog;
         if (preference == mNetTrafficState) {
             boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -188,70 +136,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK, enabled ? 1 : 0);
+            mStatusBarDate.setEnabled(enabled);
             return true;
-        } else if (preference == mClockDateDisplay) {
-            int clockDateDisplay = Integer.valueOf((String) objValue);
-            int index = mClockDateDisplay.findIndexOfValue((String) objValue);
+        } else if (preference == mStatusBarDate) {
+            boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, clockDateDisplay);
-            mClockDateDisplay.setSummary(mClockDateDisplay.getEntries()[index]);
-            setDateOptions();
-            return true;
-        } else if (preference == mClockDateStyle) {
-            int clockDateStyle = Integer.valueOf((String) objValue);
-            int index = mClockDateStyle.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_DATE_STYLE, clockDateStyle);
-            mClockDateStyle.setSummary(mClockDateStyle.getEntries()[index]);
-            parseClockDateFormats();
-            return true;
-        } else if (preference == mClockDateFormat) {
-            int index = mClockDateFormat.findIndexOfValue((String) objValue);
-             if (index == CUSTOM_CLOCK_DATE_FORMAT_INDEX) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-                alert.setTitle(R.string.clock_date_string_edittext_title);
-                alert.setMessage(R.string.clock_date_string_edittext_summary);
-                 final EditText input = new EditText(getActivity());
-                String oldText = Settings.System.getString(
-                    getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_DATE_FORMAT);
-                if (oldText != null) {
-                    input.setText(oldText);
-                }
-                alert.setView(input);
-                 alert.setPositiveButton(R.string.menu_save, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogInterface, int whichButton) {
-                        String value = input.getText().toString();
-                        if (value.equals("")) {
-                            return;
-                        }
-                        Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.STATUSBAR_CLOCK_DATE_FORMAT, value);
-                         return;
-                    }
-                });
-                 alert.setNegativeButton(R.string.menu_cancel,
-                    new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        return;
-                    }
-                });
-                dialog = alert.create();
-                dialog.show();
-            } else {
-                if ((String) objValue != null) {
-                    Settings.System.putString(getActivity().getContentResolver(),
-                        Settings.System.STATUSBAR_CLOCK_DATE_FORMAT, (String) objValue);
-                }
-            }
-            return true;
-        } else if (preference == mClockDatePosition) {
-            int val = Integer.parseInt((String) objValue);
-            int index = mClockDatePosition.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
-            mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
-            parseClockDateFormats();
+                    Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, enabled ? 1 : 0);
             return true;
         } else if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) objValue);
@@ -259,47 +149,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
-    }
-
-    private void parseClockDateFormats() {
-        String[] dateEntries = getResources().getStringArray(R.array.clock_date_format_entries_values);
-        CharSequence parsedDateEntries[];
-        parsedDateEntries = new String[dateEntries.length];
-        Date now = new Date();
-         int lastEntry = dateEntries.length - 1;
-        int dateFormat = Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_DATE_STYLE, 0);
-        for (int i = 0; i < dateEntries.length; i++) {
-            if (i == lastEntry) {
-                parsedDateEntries[i] = dateEntries[i];
-            } else {
-                String newDate;
-                CharSequence dateString = DateFormat.format(dateEntries[i], now);
-                if (dateFormat == CLOCK_DATE_STYLE_LOWERCASE) {
-                    newDate = dateString.toString().toLowerCase();
-                } else if (dateFormat == CLOCK_DATE_STYLE_UPPERCASE) {
-                    newDate = dateString.toString().toUpperCase();
-                } else {
-                    newDate = dateString.toString();
-                }
-                 parsedDateEntries[i] = newDate;
-            }
-        }
-        mClockDateFormat.setEntries(parsedDateEntries);
-    }
-
-    private void setDateOptions() {
-        int enableDateOptions = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0);
-        if (enableDateOptions == 0) {
-            mClockDateStyle.setEnabled(false);
-            mClockDateFormat.setEnabled(false);
-            mClockDatePosition.setEnabled(false);
-        } else {
-            mClockDateStyle.setEnabled(true);
-            mClockDateFormat.setEnabled(true);
-            mClockDatePosition.setEnabled(true);
-        }
     }
 
     private void updateBatteryOptions(int batterystyle) {
