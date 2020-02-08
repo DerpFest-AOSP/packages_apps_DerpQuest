@@ -34,6 +34,7 @@
     <string name="animations_title">Animations</string>
     <string name="nav_bar_category_title">Navigation bar</string>
     <string name="edge_lighting_category_title">Edge lighting</string>
+    <string name="clock_settings_title">Clock</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -242,7 +243,10 @@
 
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_title">Clock settings</string>
-    <string name="status_bar_clock_show">Show clock and date</string>
+    <string name="status_bar_clock_show">Show clock</string>
+    <string name="status_bar_clock_summary">Customize clock placement and look</string>
+    <string name="status_bar_date_show">Show date</string>
+    <string name="status_bar_date_summary">Customize date placement and look</string>
     <string name="status_bar_clock_style_title">Clock style</string>
     <string name="status_bar_clock_style_right">Right</string>
     <string name="status_bar_clock_style_center">Center</string>

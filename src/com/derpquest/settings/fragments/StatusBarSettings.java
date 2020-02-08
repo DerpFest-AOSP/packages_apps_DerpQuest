@@ -67,15 +67,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
-    private static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
-    private static final String STATUS_BAR_CLOCK_STYLE = "statusbar_clock_style";
-    private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
+
     private static final String STATUS_BAR_CLOCK_DATE_DISPLAY = "clock_date_display";
     private static final String STATUS_BAR_CLOCK_DATE_STYLE = "clock_date_style";
     private static final String STATUS_BAR_CLOCK_DATE_FORMAT = "clock_date_format";
     private static final String STATUS_BAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
-    private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
-    private static final String STATUS_BAR_CLOCK_FONT_STYLE  = "status_bar_clock_font_style";
+
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
@@ -92,16 +89,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final int BATTERY_STYLE_HIDDEN = 4;
 
     private SystemSettingMasterSwitchPreference mNetTrafficState;
+    private SystemSettingMasterSwitchPreference mStatusBarClock;
 
-    private ListPreference mStatusBarClock;
-    private ListPreference mStatusBarAmPm;
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
     private ListPreference mClockDatePosition;
-    private CustomSeekBarPreference mClockSize;
-    private ListPreference mClockFontStyle;
-
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
     private SwitchPreference mBatteryCharging;
@@ -121,41 +114,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.NETWORK_TRAFFIC_STATE, 0) == 1;
         mNetTrafficState.setChecked(enabled);
 
-	      // clock settings
-        mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
-        mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
+        mStatusBarClock = (SystemSettingMasterSwitchPreference)
+                findPreference(STATUS_BAR_CLOCK);
+        mStatusBarClock.setOnPreferenceChangeListener(this);
+        enabled = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK, 1) == 1;
+        mStatusBarClock.setChecked(enabled);
+
         mClockDateDisplay = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_DISPLAY);
         mClockDateStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_STYLE);
-
-        int clockStyle = Settings.System.getInt(resolver,
-                Settings.System.STATUSBAR_CLOCK_STYLE, 0);
-        mStatusBarClock.setValue(String.valueOf(clockStyle));
-        mStatusBarClock.setSummary(mStatusBarClock.getEntry());
-        mStatusBarClock.setOnPreferenceChangeListener(this);
-
-        mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
-        int clockSize = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
-        mClockSize.setValue(clockSize / 1);
-        mClockSize.setOnPreferenceChangeListener(this);
-
-        mClockFontStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_FONT_STYLE);
-        int showClockFont = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 28);
-        mClockFontStyle.setValue(String.valueOf(showClockFont));
-        mClockFontStyle.setSummary(mClockFontStyle.getEntry());
-        mClockFontStyle.setOnPreferenceChangeListener(this);
-
-        if (DateFormat.is24HourFormat(getActivity())) {
-            mStatusBarAmPm.setEnabled(false);
-            mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
-        } else {
-            int statusBarAmPm = Settings.System.getInt(resolver,
-                    Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, 2);
-            mStatusBarAmPm.setValue(String.valueOf(statusBarAmPm));
-            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntry());
-            mStatusBarAmPm.setOnPreferenceChangeListener(this);
-        }
 
         int clockDateDisplay = Settings.System.getInt(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0);
@@ -218,30 +185,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     Settings.System.NETWORK_TRAFFIC_STATE, enabled ? 1 : 0);
             return true;
         } else if (preference == mStatusBarClock) {
-            int clockStyle = Integer.parseInt((String) objValue);
-            int index = mStatusBarClock.findIndexOfValue((String) objValue);
+            boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_STYLE, clockStyle);
-            mStatusBarClock.setSummary(mStatusBarClock.getEntries()[index]);
-            return true;
-        } else if (preference == mStatusBarAmPm) {
-            int statusBarAmPm = Integer.valueOf((String) objValue);
-            int index = mStatusBarAmPm.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, statusBarAmPm);
-            mStatusBarAmPm.setSummary(mStatusBarAmPm.getEntries()[index]);
-            return true;
-        } else if (preference == mClockSize) {
-            int width = ((Integer)objValue).intValue();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_CLOCK_SIZE, width);
-            return true;
-        } else if (preference == mClockFontStyle) {
-            int showClockFont = Integer.valueOf((String) objValue);
-            int index = mClockFontStyle.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getContentResolver(), Settings.System.
-                STATUS_BAR_CLOCK_FONT_STYLE, showClockFont);
-            mClockFontStyle.setSummary(mClockFontStyle.getEntries()[index]);
+                    Settings.System.STATUS_BAR_CLOCK, enabled ? 1 : 0);
             return true;
         } else if (preference == mClockDateDisplay) {
             int clockDateDisplay = Integer.valueOf((String) objValue);
