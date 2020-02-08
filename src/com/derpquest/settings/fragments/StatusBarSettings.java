@@ -21,8 +21,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -52,7 +50,7 @@ import com.android.settings.Utils;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
-import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
+import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,14 +65,7 @@ import java.util.Set;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
-    private ListPreference mNetTrafficLocation;
-    private CustomSeekBarPreference mThreshold;
-    private SystemSettingSwitchPreference mShowArrows;
-    private ListPreference mNetTrafficType;
-    private CustomSeekBarPreference mNetTrafficSize;
-
-    private static final String NETWORK_TRAFFIC_FONT_SIZE  = "network_traffic_font_size";
-
+    private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
     private static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
     private static final String STATUS_BAR_CLOCK_STYLE = "statusbar_clock_style";
@@ -100,6 +91,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final int BATTERY_STYLE_TEXT = 3;
     private static final int BATTERY_STYLE_HIDDEN = 4;
 
+    private SystemSettingMasterSwitchPreference mNetTrafficState;
+
     private ListPreference mStatusBarClock;
     private ListPreference mStatusBarAmPm;
     private ListPreference mClockDateDisplay;
@@ -121,43 +114,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        int type = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_TYPE, 0, UserHandle.USER_CURRENT);
-        mNetTrafficType = (ListPreference) findPreference("network_traffic_type");
-        mNetTrafficType.setValue(String.valueOf(type));
-        mNetTrafficType.setSummary(mNetTrafficType.getEntry());
-        mNetTrafficType.setOnPreferenceChangeListener(this);
+        mNetTrafficState = (SystemSettingMasterSwitchPreference)
+                findPreference(NETWORK_TRAFFIC_STATE);
+        mNetTrafficState.setOnPreferenceChangeListener(this);
+        boolean enabled = Settings.System.getInt(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 0) == 1;
+        mNetTrafficState.setChecked(enabled);
 
-        int NetTrafficSize = Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 42);
-        mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
-        mNetTrafficSize.setValue(NetTrafficSize / 1);
-        mNetTrafficSize.setOnPreferenceChangeListener(this);
-
-        mNetTrafficLocation = (ListPreference) findPreference("network_traffic_location");
-        int location = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0, UserHandle.USER_CURRENT);
-        mNetTrafficLocation.setOnPreferenceChangeListener(this);
-
-        int value = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 1, UserHandle.USER_CURRENT);
-        mThreshold = (CustomSeekBarPreference) findPreference("network_traffic_autohide_threshold");
-        mThreshold.setValue(value);
-        mThreshold.setOnPreferenceChangeListener(this);
-        mShowArrows = (SystemSettingSwitchPreference) findPreference("network_traffic_arrow");
-
-        int netMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
-        if (netMonitorEnabled == 1) {
-            mNetTrafficLocation.setValue(String.valueOf(location+1));
-            updateTrafficLocation(location+1);
-        } else {
-            mNetTrafficLocation.setValue("0");
-            updateTrafficLocation(0); 
-        }
-        mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntry());
-
-	// clock settings
+	      // clock settings
         mStatusBarClock = (ListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
         mStatusBarAmPm = (ListPreference) findPreference(STATUS_BAR_AM_PM);
         mClockDateDisplay = (ListPreference) findPreference(STATUS_BAR_CLOCK_DATE_DISPLAY);
@@ -248,42 +212,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         AlertDialog dialog;
-        if (preference == mNetTrafficLocation) {
-            int location = Integer.valueOf((String) objValue);
-            int index = mNetTrafficLocation.findIndexOfValue((String) objValue);
-            mNetTrafficLocation.setSummary(mNetTrafficLocation.getEntries()[index]);
-            if (location > 0) {
-                // Convert the selected location mode from our list {0,1,2} and store it to "view location" setting: 0=sb; 1=expanded sb
-                Settings.System.putIntForUser(getActivity().getContentResolver(),
-                        Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, location-1, UserHandle.USER_CURRENT);
-                // And also enable the net monitor
-                Settings.System.putIntForUser(getActivity().getContentResolver(),
-                        Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT);
-                updateTrafficLocation(location);
-            } else { // Disable net monitor completely
-                Settings.System.putIntForUser(getActivity().getContentResolver(),
-                        Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
-                updateTrafficLocation(location);
-            }
-            return true;
-        } else if (preference == mThreshold) {
-            int val = (Integer) objValue;
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, val,
-                    UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mNetTrafficType) {
-            int val = Integer.valueOf((String) objValue);
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_TYPE, val,
-                    UserHandle.USER_CURRENT);
-            int index = mNetTrafficType.findIndexOfValue((String) objValue);
-            mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
-            return true;
-        }  else if (preference == mNetTrafficSize) {
-            int width = ((Integer)objValue).intValue();
+        if (preference == mNetTrafficState) {
+            boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_FONT_SIZE, width);
+                    Settings.System.NETWORK_TRAFFIC_STATE, enabled ? 1 : 0);
             return true;
         } else if (preference == mStatusBarClock) {
             int clockStyle = Integer.parseInt((String) objValue);
@@ -381,26 +313,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
-    }
-
-    public void updateTrafficLocation(int location) {
-        switch(location){ 
-            case 0:
-                mThreshold.setEnabled(false);
-                mShowArrows.setEnabled(false);
-                mNetTrafficType.setEnabled(false);
-                mNetTrafficSize.setEnabled(false);
-                break;
-            case 1:
-            case 2:
-                mThreshold.setEnabled(true);
-                mShowArrows.setEnabled(true);
-                mNetTrafficType.setEnabled(true);
-                mNetTrafficSize.setEnabled(true);
-                break;
-            default: 
-                break;
-        }
     }
 
     private void parseClockDateFormats() {
