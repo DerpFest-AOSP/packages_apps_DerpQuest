@@ -33,6 +33,7 @@
     <string name="theming_title">Theming</string>
     <string name="animations_title">Animations</string>
     <string name="nav_bar_category_title">Navigation bar</string>
+    <string name="statusbar_notifi_cat">Notifications</string>
     <string name="edge_lighting_category_title">Edge lighting</string>
     <string name="clock_settings_title">Clock</string>
     <string name="battery_icon_style_title">Battery icon</string>
@@ -774,10 +775,8 @@
     <string name="unit_pixels">dp</string>
 
     <!-- Statusbar ticker -->
-    <string name="statusbar_notifi_cat">Notifications ticker (beta)</string>
-    <string name="status_bar_ticker_title">Ticker</string>
-    <string name="status_bar_show_ticker_title">Ticker</string>
-    <string name="status_bar_show_ticker_summary">Notification preview in status bar</string>
+    <string name="status_bar_show_ticker_title">Ticker (beta)</string>
+    <string name="status_bar_show_ticker_summary">Customize notification preview in status bar</string>
     <string name="ticker_animation_mode_title">Ticker animation</string>
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>

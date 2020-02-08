@@ -66,12 +66,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_DATE = "status_bar_date";
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
     private static final String BATTERY_ICON_STYLE = "battery_icon_style";
+    private static final String NOTIFICATION_TICKER = "status_bar_show_ticker";
 
     private SystemSettingMasterSwitchPreference mNetTrafficState;
     private SystemSettingMasterSwitchPreference mStatusBarClock;
     private SystemSettingMasterSwitchPreference mStatusBarDate;
     private SystemSettingMasterSwitchPreference mStatusBarLogo;
     private SystemSettingMasterSwitchPreference mBatteryIconStyle;
+    private SystemSettingMasterSwitchPreference mNotificationTicker;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -117,6 +119,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_BATTERY_STYLE, 0) < 4;
         mBatteryIconStyle.setChecked(enabled);
 
+        mNotificationTicker = (SystemSettingMasterSwitchPreference)
+                findPreference(NOTIFICATION_TICKER);
+        mNotificationTicker.setOnPreferenceChangeListener(this);
+        enabled = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_SHOW_TICKER, 0) == 1;
+        mNotificationTicker.setChecked(enabled);
+
     }
 
     @Override
@@ -146,6 +155,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             boolean enabled = (boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_BATTERY_STYLE, enabled ? 0 : 4);
+            return true;
+        } else if (preference == mNotificationTicker) {
+            boolean enabled = (boolean) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_TICKER, enabled ? 1 : 0);
             return true;
         }
         return false;
