@@ -210,6 +210,7 @@
     <string name="lockscreen_power_menu_disabled_summary">Disable power menu on secure lock screens</string>
 
     <!-- Battery Bar -->
+    <string name="battery_bar_title">Lock Screen Battery Bar</string>
     <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
     <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
@@ -582,10 +583,10 @@
 
     <!-- Lockscreen Clock, Date & Owner Info -->
     <string name="lockscreen_clock_options_title">Clock widget options</string>
-    <string name="lockscreen_clock_summary">Modify the style/font/size of the clock widget</string>
+    <string name="lockscreen_clock_summary">Modify the style, font and size of the clock widget</string>
     <string name="lockscreen_date_title">Date options</string>
     <string name="lockscreen_date_summary">Change the font style/size of the dateview</string>
-    <string name="lockscreen_info_title">Date widget</string>
+    <string name="lockscreen_info_title">Date widget options</string>
     <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
     <string name="lockscreen_ownerinfo_title">Owner info options</string>
     <string name="lockscreen_ownerinfo_summary">Customize the font style/size of the Owner information</string>

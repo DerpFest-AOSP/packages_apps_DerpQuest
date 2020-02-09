@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 The PixelDust Project
+ * Copyright (C) 2020 DerpFest ROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SecureSettingSeekBarPreference;
@@ -46,6 +47,15 @@ import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -58,6 +68,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String KEY_AMBIENT_VIS = "ambient_visualizer";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+    private static final String BATTERY_BAR = "sysui_keyguard_show_battery_bar";
     private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
     private static final String LOCKSCREEN_INFO = "lockscreen_info";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
@@ -70,7 +81,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String KEY_COLOR = "lockscreen_visualizer_color";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
-    private static final String KEY_BATT_BAR_COLOR = "sysui_keyguard_battery_bar_color";
     private static final String KEY_CHARGE_INFO_FONT = "lockscreen_battery_info_font";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
@@ -80,6 +90,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private ListPreference mChargingInfoFont;
     private SecureSettingSwitchPreference mVisualizerEnabled;
     private SystemSettingListPreference mArtFilter;
+    private SystemSettingMasterSwitchPreference mBatteryBar;
     private SystemSettingMasterSwitchPreference mClockEnabled;
     private SystemSettingMasterSwitchPreference mInfoEnabled;
     private SystemSettingSeekBarPreference mBlurSeekbar;
@@ -92,7 +103,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private SecureSettingSeekBarPreference mSolidUnits;
     private SecureSettingSeekBarPreference mFudgeFactor;
     private SecureSettingSeekBarPreference mOpacity;
-    private ColorPickerPreference mBatteryBarColor;
     private ColorPickerPreference mColor;
 
 
@@ -104,6 +114,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Resources resources = getResources();
+
+        mBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(BATTERY_BAR);
+        mBatteryBar.setOnPreferenceChangeListener(this);
+        boolean enabled = Settings.System.getInt(resolver,
+                BATTERY_BAR, 0) == 1;
+        mBatteryBar.setChecked(enabled);
 
         mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
         mClockEnabled.setOnPreferenceChangeListener(this);
@@ -216,19 +232,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 getContentResolver(), Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, 28)));
         mChargingInfoFont.setSummary(mChargingInfoFont.getEntry());
         mChargingInfoFont.setOnPreferenceChangeListener(this);
-
-        mBatteryBarColor = (ColorPickerPreference) findPreference(KEY_BATT_BAR_COLOR);
-        mBatteryBarColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, DEFAULT_COLOR);
-        hexColor = String.format("#%08x", (DEFAULT_COLOR & intColor));
-        mBatteryBarColor.setSummary(hexColor);
-        mBatteryBarColor.setNewPreviewColor(intColor);
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mClockEnabled) {
+        if (preference == mBatteryBar) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            BATTERY_BAR, value ? 1 : 0);
+            return true;
+        } else if (preference == mClockEnabled) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            LOCKSCREEN_CLOCK, value ? 1 : 0);
@@ -314,14 +328,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                     Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, value);
             mChargingInfoFont.setValue(String.valueOf(value));
             mChargingInfoFont.setSummary(mChargingInfoFont.getEntry());
-            return true;
-        } else if (preference == mBatteryBarColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(resolver,
-                    Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, intHex);
             return true;
         }
         return false;

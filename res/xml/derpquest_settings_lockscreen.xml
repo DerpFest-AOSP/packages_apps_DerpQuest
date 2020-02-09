@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The PixelDust Project
+<!-- Copyright (C) 2020 DerpFest ROM
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -127,25 +127,15 @@
             android:dependency="lockscreen_battery_info"
             android:persistent="false" />
 
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        <!-- Battery Bar -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="sysui_keyguard_show_battery_bar"
             android:title="@string/tuner_keyguard_show_battery_bar_title"
             android:summary="@string/tuner_keyguard_show_battery_bar_summary"
+            android:fragment="com.derpquest.settings.fragments.BatteryBarSettings"
             android:defaultValue="true" />
 
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="sysui_keyguard_show_battery_bar_always"
-            android:title="@string/tuner_keyguard_show_battery_bar_always_title"
-            android:summary="@string/tuner_keyguard_show_battery_bar_always_summary"
-            android:dependency="sysui_keyguard_show_battery_bar"
-            android:defaultValue="false" />
-
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="sysui_keyguard_battery_bar_color"
-            android:title="@string/tuner_keyguard_battery_bar_color_title"
-            android:dependency="sysui_keyguard_show_battery_bar_always"
-            android:defaultValue="0xffffffff" />
-
+        <!-- Clock Options -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_clock"
             android:title="@string/lockscreen_clock_options_title"
@@ -153,6 +143,7 @@
             android:fragment="com.derpquest.settings.fragments.LockScreenClockSettings"
             android:defaultValue="true" />
 
+        <!-- Date Options -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_info"
             android:title="@string/lockscreen_info_title"
@@ -161,6 +152,7 @@
             android:dependency="lockscreen_clock"
             android:defaultValue="true" />
 
+        <!-- Owner Info -->
         <Preference
             android:key="lockscreen_ownerinfo"
             android:title="@string/lockscreen_ownerinfo_title"
