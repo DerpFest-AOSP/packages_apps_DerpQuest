@@ -76,6 +76,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
     private static final String QS_BLUR = "qs_blur";
     private static final String QS_BG_STYLE = "qs_panel_bg_override";
+    private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
@@ -96,6 +97,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private SystemSettingMasterSwitchPreference mQsBlurSettings;
     private SystemSettingMasterSwitchPreference mQsBGStyle;
+    private SystemSettingMasterSwitchPreference mBrightnessSlider;
 
     @Override
     public void onResume() {
@@ -184,6 +186,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         enabled = Settings.System.getInt(resolver,
                 Settings.System.QS_PANEL_BG_USE_FW, 1) == 0;
         mQsBGStyle.setChecked(enabled);
+
+        mBrightnessSlider = (SystemSettingMasterSwitchPreference)
+                findPreference(BRIGHTNESS_SLIDER);
+        mBrightnessSlider.setOnPreferenceChangeListener(this);
+        enabled = Settings.Secure.getInt(resolver,
+                BRIGHTNESS_SLIDER, 1) == 1;
+        mBrightnessSlider.setChecked(enabled);
 
     }
 
@@ -284,6 +293,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.QS_PANEL_BG_USE_FW, value ? 0 : 1);
+            return true;
+        } else if (preference == mBrightnessSlider) {
+            Boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(resolver,
+                    BRIGHTNESS_SLIDER, value ? 1 : 0);
             return true;
         }
         return false;

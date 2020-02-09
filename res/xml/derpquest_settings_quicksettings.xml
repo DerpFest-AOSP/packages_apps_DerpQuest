@@ -52,39 +52,20 @@
         android:fragment="com.derpquest.settings.fragments.QSColorSettings"
         android:defaultValue="false" />
 
-    <!-- Tiles settings -->
+    <!-- Tiles Settings -->
     <Preference
          android:key="qs_tiles_settings"
          android:title="@string/category_tiles_title"
          android:summary="@string/category_tiles_title_summary"
          android:fragment="com.derpquest.settings.fragments.QSTilesSettings" />
 
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+    <!-- Brightness Slider Settings -->
+    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
         android:key="qs_show_brightness"
         android:title="@string/qs_show_brightness_title"
         android:summary="@string/qs_show_brightness_summary"
+        android:fragment="com.derpquest.settings.fragments.BrightnessSliderSettings"
         android:defaultValue="true" />
-
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_brightness_position_bottom"
-        android:title="@string/qs_brightness_position_bottom_title"
-        android:summary="@string/qs_brightness_position_bottom_summary"
-        android:defaultValue="false"
-        android:dependency="qs_show_brightness" />
-
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_show_auto_brightness"
-        android:title="@string/qs_show_auto_brightness_title"
-        android:summary="@string/qs_show_auto_brightness_summary"
-        android:defaultValue="true"
-        android:dependency="qs_show_brightness" />
-
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_show_minmax_brightness"
-        android:title="@string/qs_show_minmax_brightness_title"
-        android:summary="@string/qs_show_minmax_brightness_summary"
-        android:defaultValue="false"
-        android:dependency="qs_show_brightness" />
 
     <!-- Footer settings -->
     <PreferenceCategory
