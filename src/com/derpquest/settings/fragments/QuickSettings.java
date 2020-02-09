@@ -41,7 +41,6 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
@@ -68,8 +67,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String FILE_HEADER_SELECT = "file_header_select";
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
-    private static final String QS_HIDE_BATTERY = "qs_hide_battery";
-    private static final String QS_BATTERY_MODE = "qs_battery_mode";
     private static final String QS_BLUR = "qs_blur";
     private static final String QS_BG_STYLE = "qs_panel_bg_override";
     private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
@@ -85,8 +82,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mHeaderEnabled;
     private Preference mFileHeader;
     private String mFileHeaderProvider;
-    private SystemSettingSwitchPreference mHideBattery;
-    private SystemSettingListPreference mQsBatteryMode;
 
     private SystemSettingMasterSwitchPreference mQsBlurSettings;
     private SystemSettingMasterSwitchPreference mQsBGStyle;
@@ -142,10 +137,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mHeaderProvider.setOnPreferenceChangeListener(this);
 
         mFileHeader = findPreference(FILE_HEADER_SELECT);
-
-        mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
-        mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
-        mHideBattery.setOnPreferenceChangeListener(this);
 
         mQsBlurSettings = (SystemSettingMasterSwitchPreference)
                 findPreference(QS_BLUR);
@@ -228,12 +219,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int trueValue = (int) (((double) bgAlpha / 100) * 255);
             Settings.System.putInt(resolver,
                     Settings.System.QS_PANEL_BG_ALPHA, trueValue);
-            return true;
-        } else if (preference == mHideBattery) {
-            Boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.QS_HIDE_BATTERY, value ? 1 : 0);
-            mQsBatteryMode.setEnabled(!value);
             return true;
         } else if (preference == mQsBlurSettings) {
             Boolean value = (Boolean) newValue;

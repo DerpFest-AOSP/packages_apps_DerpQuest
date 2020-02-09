@@ -408,6 +408,7 @@
     <string name="category_footer_title">Footer area</string>
     <string name="category_footer_summary">Customize QS footer area items</string>
     <string name="category_header_title">Header area</string>
+    <string name="category_header_summary">Customize QS header area items</string>
 
     <!-- QS drag handle -->
     <string name="qs_drag_title">Show QS drag handle</string>

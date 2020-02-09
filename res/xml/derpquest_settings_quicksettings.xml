@@ -75,33 +75,11 @@
          android:fragment="com.derpquest.settings.fragments.QSFooterSettings" />
 
     <!-- Header settings -->
-    <PreferenceCategory
-        android:key="category_header_header"
-        android:title="@string/category_header_title">
-
-        <!-- Battery hide -->
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-             android:key="qs_hide_battery"
-             android:title="@string/qs_hide_battery_title"
-             android:summary="@string/qs_hide_battery_summary"
-             android:defaultValue="false" />
-
-        <!-- Battery mode -->
-        <com.derpquest.settings.preferences.SystemSettingListPreference
-            android:key="qs_battery_mode"
-            android:title="@string/battery_percentage_title"
-            android:entries="@array/qs_battery_mode_entries"
-            android:entryValues="@array/qs_battery_mode_values"
-            android:defaultValue="1" />
-
-        <!-- QS clock -->
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="show_qs_clock"
-            android:title="@string/qs_clock_title"
-            android:summary="@string/qs_clock_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
+    <Preference
+         android:key="qs_header_settings"
+         android:title="@string/category_header_title"
+         android:summary="@string/category_header_summary"
+         android:fragment="com.derpquest.settings.fragments.QSHeaderSettings" />
 
     <!-- Custom headers -->
     <PreferenceCategory
