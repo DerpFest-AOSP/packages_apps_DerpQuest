@@ -57,8 +57,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 @SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {

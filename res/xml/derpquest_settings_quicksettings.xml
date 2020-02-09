@@ -53,56 +53,38 @@
         android:defaultValue="false" />
 
     <!-- Tiles settings -->
-    <PreferenceCategory
-        android:key="category_tiles_header"
-        android:title="@string/category_tiles_title">
+    <Preference
+         android:key="qs_tiles_settings"
+         android:title="@string/category_tiles_title"
+         android:summary="@string/category_tiles_title_summary"
+         android:fragment="com.derpquest.settings.fragments.QSTilesSettings" />
 
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-            android:key="quick_settings_vibrate"
-            android:title="@string/quick_settings_vibrate_title"
-            android:summary="@string/quick_settings_vibrate_summary"
-            android:defaultValue="false"/>
+    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+        android:key="qs_show_brightness"
+        android:title="@string/qs_show_brightness_title"
+        android:summary="@string/qs_show_brightness_summary"
+        android:defaultValue="true" />
 
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-            android:key="qstile_requires_unlocking"
-            android:title="@string/qstile_requires_unlocking_title"
-            android:summary="@string/qstile_requires_unlocking_summary"
-            android:defaultValue="true"/>
+    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+        android:key="qs_brightness_position_bottom"
+        android:title="@string/qs_brightness_position_bottom_title"
+        android:summary="@string/qs_brightness_position_bottom_summary"
+        android:defaultValue="false"
+        android:dependency="qs_show_brightness" />
 
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_secure"
-            android:title="@string/qs_show_secure_title"
-            android:summary="@string/qs_show_secure_summary"
-            android:defaultValue="true"/>
+    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+        android:key="qs_show_auto_brightness"
+        android:title="@string/qs_show_auto_brightness_title"
+        android:summary="@string/qs_show_auto_brightness_summary"
+        android:defaultValue="true"
+        android:dependency="qs_show_brightness" />
 
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_brightness"
-            android:title="@string/qs_show_brightness_title"
-            android:summary="@string/qs_show_brightness_summary"
-            android:defaultValue="true" />
-
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-            android:key="qs_brightness_position_bottom"
-            android:title="@string/qs_brightness_position_bottom_title"
-            android:summary="@string/qs_brightness_position_bottom_summary"
-            android:defaultValue="false"
-            android:dependency="qs_show_brightness" />
-
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_auto_brightness"
-            android:title="@string/qs_show_auto_brightness_title"
-            android:summary="@string/qs_show_auto_brightness_summary"
-            android:defaultValue="true"
-            android:dependency="qs_show_brightness" />
-
-        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
-            android:key="qs_show_minmax_brightness"
-            android:title="@string/qs_show_minmax_brightness_title"
-            android:summary="@string/qs_show_minmax_brightness_summary"
-            android:defaultValue="false"
-            android:dependency="qs_show_brightness" />
-
-    </PreferenceCategory>
+    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+        android:key="qs_show_minmax_brightness"
+        android:title="@string/qs_show_minmax_brightness_title"
+        android:summary="@string/qs_show_minmax_brightness_summary"
+        android:defaultValue="false"
+        android:dependency="qs_show_brightness" />
 
     <!-- Footer settings -->
     <PreferenceCategory

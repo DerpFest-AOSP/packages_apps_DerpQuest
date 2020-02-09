@@ -404,6 +404,7 @@
 
     <!-- QS settings categories -->
     <string name="category_tiles_title">Tiles area</string>
+    <string name="category_tiles_title_summary">Customize QS tiles area items</string>
     <string name="category_footer_title">Footer area</string>
     <string name="category_header_title">Header area</string>
 
