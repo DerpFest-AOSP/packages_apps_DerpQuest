@@ -41,7 +41,6 @@ import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.derpquest.settings.preferences.SystemSettingEditTextPreference;
 import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
@@ -68,10 +67,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String FILE_HEADER_SELECT = "file_header_select";
-    private static final String DERP_FOOTER_TEXT_STRING = "derp_footer_text_string";
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
-    private static final String KEY_ALWAYS_SETTINGS = "qs_always_show_settings";
-    private static final String KEY_DRAG_HANDLE = "qs_drag_handle";
     private static final String QS_HIDE_BATTERY = "qs_hide_battery";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
     private static final String QS_BLUR = "qs_blur";
@@ -87,11 +83,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mHeaderProvider;
     private String mDaylightHeaderProvider;
     private SystemSettingSwitchPreference mHeaderEnabled;
-    private SystemSettingEditTextPreference mFooterString;
     private Preference mFileHeader;
     private String mFileHeaderProvider;
-    private SystemSettingSwitchPreference mAlwaysSettings;
-    private SystemSettingSwitchPreference mDragHandle;
     private SystemSettingSwitchPreference mHideBattery;
     private SystemSettingListPreference mQsBatteryMode;
 
@@ -112,18 +105,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mFooterString = (SystemSettingEditTextPreference) findPreference(DERP_FOOTER_TEXT_STRING);
-        mFooterString.setOnPreferenceChangeListener(this);
-        String footerString = Settings.System.getString(resolver,
-                DERP_FOOTER_TEXT_STRING);
-        if (footerString != null && footerString != "")
-            mFooterString.setText(footerString);
-        else {
-            mFooterString.setText("#DerpFest");
-            Settings.System.putString(resolver,
-                    Settings.System.DERP_FOOTER_TEXT_STRING, "#DerpFest");
-        }
 
         mQsPanelAlpha = (SystemSettingSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getInt(resolver,
@@ -161,12 +142,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mHeaderProvider.setOnPreferenceChangeListener(this);
 
         mFileHeader = findPreference(FILE_HEADER_SELECT);
-
-        mAlwaysSettings = (SystemSettingSwitchPreference) findPreference(KEY_ALWAYS_SETTINGS);
-        mAlwaysSettings.setOnPreferenceChangeListener(this);
-
-        mDragHandle = (SystemSettingSwitchPreference) findPreference(KEY_DRAG_HANDLE);
-        mDragHandle.setOnPreferenceChangeListener(this);
 
         mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
         mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
@@ -248,34 +223,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Boolean headerEnabled = (Boolean) newValue;
             updateHeaderProviderSummary(headerEnabled);
             return true;
-        } else if (preference == mFooterString) {
-            String value = (String) newValue;
-            if (value != "" && value != null)
-                Settings.System.putString(resolver,
-                        Settings.System.DERP_FOOTER_TEXT_STRING, value);
-            else {
-                mFooterString.setText("#DerpFest");
-                Settings.System.putString(resolver,
-                        Settings.System.DERP_FOOTER_TEXT_STRING, "#DerpFest");
-            }
-            return true;
         } else if (preference == mQsPanelAlpha) {
             int bgAlpha = (Integer) newValue;
             int trueValue = (int) (((double) bgAlpha / 100) * 255);
             Settings.System.putInt(resolver,
                     Settings.System.QS_PANEL_BG_ALPHA, trueValue);
-            return true;
-        } else if (preference == mAlwaysSettings) {
-            Boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.QS_ALWAYS_SHOW_SETTINGS, value ? 1 : 0);
-            updateEnablement();
-            return true;
-        } else if (preference == mDragHandle) {
-            Boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.QS_DRAG_HANDLE, value ? 1 : 0);
-            updateEnablement();
             return true;
         } else if (preference == mHideBattery) {
             Boolean value = (Boolean) newValue;
@@ -378,10 +330,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mDaylightHeaderPack.setEnabled(providerName.equals(mDaylightHeaderProvider));
         mFileHeader.setEnabled(providerName.equals(mFileHeaderProvider));
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable() && providerName.equals(mFileHeaderProvider));
-
-        boolean alwaysSettings = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0) == 1;
-        mDragHandle.setEnabled(!alwaysSettings);
     }
 
     @Override

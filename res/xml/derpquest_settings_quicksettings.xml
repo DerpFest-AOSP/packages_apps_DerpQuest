@@ -52,13 +52,6 @@
         android:fragment="com.derpquest.settings.fragments.QSColorSettings"
         android:defaultValue="false" />
 
-    <!-- Tiles Settings -->
-    <Preference
-         android:key="qs_tiles_settings"
-         android:title="@string/category_tiles_title"
-         android:summary="@string/category_tiles_title_summary"
-         android:fragment="com.derpquest.settings.fragments.QSTilesSettings" />
-
     <!-- Brightness Slider Settings -->
     <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
         android:key="qs_show_brightness"
@@ -67,45 +60,19 @@
         android:fragment="com.derpquest.settings.fragments.BrightnessSliderSettings"
         android:defaultValue="true" />
 
-    <!-- Footer settings -->
-    <PreferenceCategory
-        android:key="category_footer_header"
-        android:title="@string/category_footer_title">
+    <!-- Tiles Settings -->
+    <Preference
+         android:key="qs_tiles_settings"
+         android:title="@string/category_tiles_title"
+         android:summary="@string/category_tiles_title_summary"
+         android:fragment="com.derpquest.settings.fragments.QSTilesSettings" />
 
-        <!-- QS always show settings icon -->
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_always_show_settings"
-            android:title="@string/qs_always_show_settings_title"
-            android:summary="@string/qs_always_show_settings_summary"
-            android:defaultValue="false" />
-
-        <!-- QS drag handle -->
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_drag_handle"
-            android:title="@string/qs_drag_title"
-            android:defaultValue="true" />
-
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_running_services_toggle"
-            android:title="@string/qs_running_services_title"
-            android:summary="@string/qs_running_services_summary"
-            android:defaultValue="false" />
-
-        <!-- QS footer text toggle -->
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="derp_footer_text_show"
-            android:title="@string/derp_footer_text_show_title"
-            android:defaultValue="false" />
-
-        <!-- QS footer text string -->
-        <com.derpquest.settings.preferences.SystemSettingEditTextPreference
-            android:key="derp_footer_text_string"
-            android:title="@string/derp_footer_text_string_title"
-            android:summary="@string/derp_footer_text_string_summary"
-            android:dependency="derp_footer_text_show"
-            android:defaultValue="#DerpFest" />
-
-    </PreferenceCategory>
+    <!-- Footer Settings -->
+    <Preference
+         android:key="qs_footer_settings"
+         android:title="@string/category_footer_title"
+         android:summary="@string/category_footer_summary"
+         android:fragment="com.derpquest.settings.fragments.QSFooterSettings" />
 
     <!-- Header settings -->
     <PreferenceCategory
