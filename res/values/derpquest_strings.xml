@@ -230,7 +230,7 @@
 
     <!-- QS blur -->
     <string name="blur_quicksettings">Blur behind quick settings (beta)</string>
-    <string name="blur_quicksettings_subtitle">blurs darkened background behind quick settings</string>
+    <string name="blur_quicksettings_subtitle">Customize alpha and intensity</string>
     <string name="qs_blur_alpha_title">Blur alpha</string>
     <string name="qs_blur_alpha_summary">Sets the blur transparency</string>
     <string name="qs_blur_intensity_title">Blur intensity</string>

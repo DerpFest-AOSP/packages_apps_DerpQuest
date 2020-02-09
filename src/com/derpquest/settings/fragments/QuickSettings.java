@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 The PixelDust Project
+ * Copyright (C) 2020 DerpFest ROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,12 @@
 package com.derpquest.settings.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -37,9 +39,11 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.SystemSettingEditTextPreference;
 import com.derpquest.settings.preferences.SystemSettingListPreference;
+import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
@@ -55,6 +59,7 @@ import java.util.Map;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
+@SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
@@ -72,8 +77,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String QS_HIDE_BATTERY = "qs_hide_battery";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
     private static final String QS_PANEL_COLOR = "qs_panel_color";
-    private static final String QS_BLUR_ALPHA = "qs_blur_alpha";
-    private static final String QS_BLUR_INTENSITY = "qs_blur_intensity";
+    private static final String QS_BLUR = "qs_blur";
     static final int DEFAULT_QS_PANEL_COLOR = 0xffffffff;
 
     private static final int REQUEST_PICK_IMAGE = 0;
@@ -93,8 +97,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mDragHandle;
     private SystemSettingSwitchPreference mHideBattery;
     private SystemSettingListPreference mQsBatteryMode;
-    private CustomSeekBarPreference mQSBlurAlpha;
-    private CustomSeekBarPreference mQSBlurIntensity;
+
+    private SystemSettingMasterSwitchPreference mQsBlurSettings;
 
     @Override
     public void onResume() {
@@ -106,35 +110,38 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.derpquest_settings_quicksettings);
+        final Resources res = getResources();
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mFooterString = (SystemSettingEditTextPreference) findPreference(DERP_FOOTER_TEXT_STRING);
         mFooterString.setOnPreferenceChangeListener(this);
-        String footerString = Settings.System.getString(getContentResolver(),
+        String footerString = Settings.System.getString(resolver,
                 DERP_FOOTER_TEXT_STRING);
         if (footerString != null && footerString != "")
             mFooterString.setText(footerString);
         else {
             mFooterString.setText("#DerpFest");
-            Settings.System.putString(getActivity().getContentResolver(),
+            Settings.System.putString(resolver,
                     Settings.System.DERP_FOOTER_TEXT_STRING, "#DerpFest");
         }
 
         mQsPanelAlpha = (SystemSettingSeekBarPreference) findPreference(KEY_QS_PANEL_ALPHA);
-        int qsPanelAlpha = Settings.System.getInt(getContentResolver(),
+        int qsPanelAlpha = Settings.System.getInt(resolver,
                 Settings.System.QS_PANEL_BG_ALPHA, 255);
         mQsPanelAlpha.setValue((int)(((double) qsPanelAlpha / 255) * 100));
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
 
         mQsPanelColor = (ColorPickerPreference) findPreference(QS_PANEL_COLOR);
         mQsPanelColor.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getIntForUser(getContentResolver(),
+        int intColor = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_PANEL_BG_COLOR, DEFAULT_QS_PANEL_COLOR, UserHandle.USER_CURRENT);
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mQsPanelColor.setSummary(hexColor);
         mQsPanelColor.setNewPreviewColor(intColor);
 
-        mDaylightHeaderProvider = getResources().getString(R.string.daylight_header_provider);
-        mFileHeaderProvider = getResources().getString(R.string.file_header_provider);
+        mDaylightHeaderProvider = res.getString(R.string.daylight_header_provider);
+        mFileHeaderProvider = res.getString(R.string.file_header_provider);
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
 
         mHeaderEnabled = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
@@ -148,13 +155,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mDaylightHeaderPack.setEntries(entries.toArray(new String[entries.size()]));
         mDaylightHeaderPack.setEntryValues(values.toArray(new String[values.size()]));
 
-        boolean headerEnabled = Settings.System.getInt(getContentResolver(),
+        boolean headerEnabled = Settings.System.getInt(resolver,
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0) != 0;
         updateHeaderProviderSummary(headerEnabled);
         mDaylightHeaderPack.setOnPreferenceChangeListener(this);
 
         mHeaderShadow = (CustomSeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-        final int headerShadow = Settings.System.getInt(getContentResolver(),
+        final int headerShadow = Settings.System.getInt(resolver,
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
         mHeaderShadow.setOnPreferenceChangeListener(this);
@@ -174,24 +181,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mHideBattery = (SystemSettingSwitchPreference) findPreference(QS_HIDE_BATTERY);
         mHideBattery.setOnPreferenceChangeListener(this);
 
-        mQSBlurAlpha = (CustomSeekBarPreference) findPreference(QS_BLUR_ALPHA);
-        int qsBlurAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_BLUR_ALPHA, 100);
-        mQSBlurAlpha.setValue(qsBlurAlpha);
-        mQSBlurAlpha.setOnPreferenceChangeListener(this);
+        mQsBlurSettings = (SystemSettingMasterSwitchPreference)
+                findPreference(QS_BLUR);
+        mQsBlurSettings.setOnPreferenceChangeListener(this);
+        boolean enabled = Settings.System.getInt(resolver,
+                Settings.System.QS_BLUR, 0) == 1;
+        mQsBlurSettings.setChecked(enabled);
 
-        mQSBlurIntensity = (CustomSeekBarPreference) findPreference(QS_BLUR_INTENSITY);
-        int qsBlurIntensity = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_BLUR_INTENSITY, 30);
-        mQSBlurIntensity.setValue(qsBlurIntensity);
-        mQSBlurIntensity.setOnPreferenceChangeListener(this);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.OWLSNEST;
     }
 
     private void updateHeaderProviderSummary(boolean headerEnabled) {
@@ -220,9 +216,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final ContentResolver resolver = getContentResolver();
         if (preference == mDaylightHeaderPack) {
             String value = (String) newValue;
-            Settings.System.putString(getContentResolver(),
+            Settings.System.putString(resolver,
                     Settings.System.OMNI_STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
             int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
             mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
@@ -230,12 +227,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else if (preference == mHeaderShadow) {
             Integer headerShadow = (Integer) newValue;
             int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
             return true;
         } else if (preference == mHeaderProvider) {
             String value = (String) newValue;
-            Settings.System.putString(getContentResolver(),
+            Settings.System.putString(resolver,
                     Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_PROVIDER, value);
             int valueIndex = mHeaderProvider.findIndexOfValue(value);
             mHeaderProvider.setSummary(mHeaderProvider.getEntries()[valueIndex]);
@@ -248,18 +245,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else if (preference == mFooterString) {
             String value = (String) newValue;
             if (value != "" && value != null)
-                Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.putString(resolver,
                         Settings.System.DERP_FOOTER_TEXT_STRING, value);
             else {
                 mFooterString.setText("#DerpFest");
-                Settings.System.putString(getActivity().getContentResolver(),
+                Settings.System.putString(resolver,
                         Settings.System.DERP_FOOTER_TEXT_STRING, "#DerpFest");
             }
             return true;
         } else if (preference == mQsPanelAlpha) {
             int bgAlpha = (Integer) newValue;
             int trueValue = (int) (((double) bgAlpha / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.QS_PANEL_BG_ALPHA, trueValue);
             return true;
         } else if (preference == mQsPanelColor) {
@@ -267,36 +264,31 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Integer.valueOf(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putIntForUser(getContentResolver(),
+            Settings.System.putIntForUser(resolver,
                     Settings.System.QS_PANEL_BG_COLOR, intHex, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mAlwaysSettings) {
             Boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.QS_ALWAYS_SHOW_SETTINGS, value ? 1 : 0);
             updateEnablement();
             return true;
         } else if (preference == mDragHandle) {
             Boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.QS_DRAG_HANDLE, value ? 1 : 0);
             updateEnablement();
             return true;
         } else if (preference == mHideBattery) {
             Boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.QS_HIDE_BATTERY, value ? 1 : 0);
             mQsBatteryMode.setEnabled(!value);
             return true;
-        } else if (preference == mQSBlurAlpha) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_BLUR_ALPHA, value);
-            return true;
-        } else if (preference == mQSBlurIntensity) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_BLUR_INTENSITY, value);
+        } else if (preference == mQsBlurSettings) {
+            Boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_BLUR, value ? 1 : 0);
             return true;
         }
         return false;
@@ -381,6 +373,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         boolean alwaysSettings = Settings.System.getInt(getContentResolver(),
                 Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0) == 1;
         mDragHandle.setEnabled(!alwaysSettings);
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.OWLSNEST;
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The PixelDust Project
+<!-- Copyright (C) 2020 DerpFest ROM
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -36,31 +36,13 @@
         settings:units="%"
         android:persistent="false" />
 
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+    <!-- Blur Settings -->
+    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
         android:key="qs_blur"
         android:title="@string/blur_quicksettings"
         android:summary="@string/blur_quicksettings_subtitle"
-        android:defaultValue="true" />
-
-    <com.derpquest.settings.preferences.CustomSeekBarPreference
-        android:key="qs_blur_alpha"
-        android:title="@string/qs_blur_alpha_title"
-        android:summary="@string/qs_blur_alpha_summary"
-        android:max="100"
-        settings:min="1"
-        settings:unitsRight="@string/unit_percent"
-        android:persistent="false"
-        android:dependency="qs_blur" />
-
-    <com.derpquest.settings.preferences.CustomSeekBarPreference
-        android:key="qs_blur_intensity"
-        android:title="@string/qs_blur_intensity_title"
-        android:summary="@string/qs_blur_intensity_summary"
-        android:max="100"
-        settings:min="1"
-        settings:unitsRight="@string/unit_percent"
-        android:persistent="false"
-        android:dependency="qs_blur" />
+        android:fragment="com.derpquest.settings.fragments.BlurSettings"
+        android:defaultValue="false" />
 
     <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="qs_panel_bg_use_fw"
