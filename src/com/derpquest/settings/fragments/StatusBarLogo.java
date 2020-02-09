@@ -47,12 +47,18 @@ public class StatusBarLogo extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.derpquest_statusbar_logo);
 
         mShowLogo = (ListPreference) findPreference("status_bar_logo");
-        mShowLogo.setOnPreferenceChangeListener(this);
         int showLogo = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.STATUS_BAR_LOGO,
                 0, UserHandle.USER_CURRENT);
-        mShowLogo.setValue(String.valueOf(showLogo));
-        mShowLogo.setSummary(mShowLogo.getEntry());
+        boolean isEnabled = showLogo > 0;
+        if (isEnabled) {
+            mShowLogo.setOnPreferenceChangeListener(this);
+            mShowLogo.setValue(String.valueOf(showLogo));
+            mShowLogo.setSummary(mShowLogo.getEntry());
+        } else {
+            mShowLogo.setEnabled(false);
+            mShowLogo.setSummary(R.string.enable_first);
+        }
 
         mLogoStyle = (ListPreference) findPreference("status_bar_logo_style");
         mLogoStyle.setOnPreferenceChangeListener(this);
