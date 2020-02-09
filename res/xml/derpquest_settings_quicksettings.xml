@@ -44,33 +44,13 @@
         android:fragment="com.derpquest.settings.fragments.BlurSettings"
         android:defaultValue="false" />
 
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-        android:key="qs_panel_bg_use_fw"
+    <!-- QS BG Color Settings -->
+    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+        android:key="qs_panel_bg_override"
         android:title="@string/qs_bg_use_fw"
         android:summary="@string/qs_bg_use_fw_summary"
-        android:defaultValue="true"
-        android:disableDependentsState="true" />
-
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-        android:key="qs_panel_bg_use_wall"
-        android:title="@string/qs_bg_wall_title"
-        android:summary="@string/qs_bg_wall_summary"
-        android:defaultValue="false"
-        android:dependency="qs_panel_bg_use_fw" />
-
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-        android:key="qs_panel_bg_use_accent"
-        android:title="@string/qs_bg_accent_title"
-        android:summary="@string/qs_bg_accent_summary"
-        android:defaultValue="false"
-        android:dependency="qs_panel_bg_use_fw" />
-
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="qs_panel_color"
-        android:title="@string/qs_panel_color_title"
-        android:defaultValue="0xffffff"
-        android:persistent="false"
-        android:dependency="qs_panel_bg_use_fw" />
+        android:fragment="com.derpquest.settings.fragments.QSColorSettings"
+        android:defaultValue="false" />
 
     <!-- Tiles settings -->
     <PreferenceCategory
