@@ -42,10 +42,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SecureSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SecureSettingSwitchPreference;
-import com.derpquest.settings.preferences.SecureSettingMasterSwitchPreference;
-import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
-import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
@@ -67,11 +64,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String KEY_AMBIENT_VIS = "ambient_visualizer";
-    private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
+
     private static final String BATTERY_BAR = "sysui_keyguard_show_battery_bar";
     private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
     private static final String LOCKSCREEN_INFO = "lockscreen_info";
-    private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
+    private static final String MEDIA_ART = "lockscreen_media_metadata";
+
     private static final String KEY_LAVALAMP = "lockscreen_lavalamp_enabled";
     private static final String KEY_LAVALAMP_SPEED = "lockscreen_lavalamp_speed";
     private static final String KEY_AUTOCOLOR = "lockscreen_visualizer_autocolor";
@@ -89,11 +87,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mDozeBrightness;
     private ListPreference mChargingInfoFont;
     private SecureSettingSwitchPreference mVisualizerEnabled;
-    private SystemSettingListPreference mArtFilter;
+
     private SystemSettingMasterSwitchPreference mBatteryBar;
     private SystemSettingMasterSwitchPreference mClockEnabled;
     private SystemSettingMasterSwitchPreference mInfoEnabled;
-    private SystemSettingSeekBarPreference mBlurSeekbar;
+    private SystemSettingMasterSwitchPreference mMediaArt;
+
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintVib;
@@ -129,10 +128,16 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
         mInfoEnabled.setOnPreferenceChangeListener(this);
-        int infoEnabled = Settings.System.getInt(resolver,
-                LOCKSCREEN_INFO, 1);
-        mInfoEnabled.setChecked(infoEnabled != 0);
+        enabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_INFO, 1) != 0;
+        mInfoEnabled.setChecked(enabled);
         mInfoEnabled.setEnabled(clockEnabled != 0);
+
+        mMediaArt = (SystemSettingMasterSwitchPreference) findPreference(MEDIA_ART);
+        mMediaArt.setOnPreferenceChangeListener(this);
+        enabled = Settings.System.getInt(resolver,
+                MEDIA_ART, 1) == 1;
+        mMediaArt.setChecked(enabled);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -194,19 +199,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         UpdateEnablement(resolver);
 
-        mArtFilter = (SystemSettingListPreference) findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
-        mArtFilter.setOnPreferenceChangeListener(this);
-        int artFilter = Settings.System.getInt(resolver,
-                Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, 0);
-        mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
-        mBlurSeekbar.setEnabled(artFilter > 2);
-
-        mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
-        if (mFODIconPickerCategory != null
-                && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
-            prefScreen.removePreference(mFODIconPickerCategory);
-        }
-
         int defaultDoze = getResources().getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);
         int defaultPulse = getResources().getInteger(
@@ -253,6 +245,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
 		            LOCKSCREEN_INFO, value ? 1 : 0);
             return true;
+        } else if (preference == mMediaArt) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                MEDIA_ART, value ? 1 : 0);
+            return true;
         } else if (preference == mFingerprintVib) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
@@ -263,12 +260,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
             UpdateEnablement(resolver);
-            return true;
-        } else if (preference == mArtFilter) {
-            int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(resolver,
-                    Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
-            mBlurSeekbar.setEnabled(value > 2);
             return true;
         } else if (preference == mLavaLamp) {
             boolean value = (Boolean) newValue;
