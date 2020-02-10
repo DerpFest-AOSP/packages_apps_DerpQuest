@@ -18,6 +18,7 @@
     android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Notification Light -->
     <Preference
         android:key="notification_light"
         android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
@@ -27,6 +28,7 @@
             android:value="com.android.settings.Settings$NotificationAppListActivity" />
     </Preference>
 
+    <!-- Charging Light -->
     <Preference
         android:key="charging_light"
         android:fragment="com.derpquest.settings.fragments.BatteryLightSettings"
@@ -45,34 +47,17 @@
         android:defaultValue="true" />
 
     <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-      android:key="show_gentle_header"
-      android:title="@string/show_gentle_header_title"
-      android:summary="@string/show_gentle_header_summary"
-      android:defaultValue="false" />
+        android:key="show_gentle_header"
+        android:title="@string/show_gentle_header_title"
+        android:summary="@string/show_gentle_header_summary"
+        android:defaultValue="false" />
 
-    <PreferenceCategory
+    <!-- In-call Vibrations -->
+    <Preference
         android:key="incall_vib_options"
-        android:title="@string/incall_vibration_category" >
-
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="vibrate_on_connect"
-            android:title="@string/incall_vibrate_connect_title"
-            android:summary="@string/incall_vibrate_connect_summary"
-            android:defaultValue="false" />
-
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="vibrate_on_callwaiting"
-            android:title="@string/incall_vibrate_call_wait_title"
-            android:summary="@string/incall_vibrate_call_wait_summary"
-            android:defaultValue="false" />
-
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="vibrate_on_disconnect"
-            android:title="@string/incall_vibrate_disconnect_title"
-            android:summary="@string/incall_vibrate_disconnect_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
+        android:title="@string/incall_vibration_category"
+        android:summary="@string/incall_vibration_summary"
+        android:fragment="com.derpquest.settings.fragments.InCallVibrations" />
 
     <PreferenceCategory
         android:key="flash_on_call_options"

@@ -512,6 +512,7 @@
 
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration options</string>
+    <string name="incall_vibration_summary">Manage in-call vibration options</string>
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
     <string name="incall_vibrate_connect_summary">Enable to vibrate after call connect</string>
     <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
@@ -860,4 +861,3 @@
     <string name="fod_recog_animation_pulse_white">Pulse (White)</string>
     <string name="fod_recog_animation_rhythm">Rhythm</string>
 </resources>
-

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2020 The PixelDust Project
+ * Copyright (C) 2020 DerpFest ROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,22 @@
  */
 package com.derpquest.settings.fragments;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+
+import androidx.preference.ListPreference;
+import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -35,15 +41,18 @@ import com.derpquest.settings.Utils;
 import com.derpquest.settings.preferences.AmbientLightSettingsPreview;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @SearchIndexable
-public class NotificationsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener, Indexable {
+public class NotificationsSettings extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener, Indexable {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
@@ -63,9 +72,11 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.derpquest_settings_notifications);
-        PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        Preference incallVibCategory = (Preference) findPreference(INCALL_VIB_OPTIONS);
         if (!Utils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
@@ -76,20 +87,20 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         }
 
         mFlashOnCallWaitingDelay = (SystemSettingSeekBarPreference) findPreference(FLASH_ON_CALL_WAITING_DELAY);
-        mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+        mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(resolver,
               Settings.System.FLASH_ON_CALLWAITING_DELAY, 200));
         mFlashOnCallWaitingDelay.setOnPreferenceChangeListener(this);
 
         mChargingLeds = (Preference) findPreference("charging_light");
         if (mChargingLeds != null
-                && !getResources().getBoolean(
+                && !res.getBoolean(
                         com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             prefScreen.removePreference(mChargingLeds);
         }
 
         mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
         mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
-        int edgeLightColor = Settings.System.getInt(getContentResolver(),
+        int edgeLightColor = Settings.System.getInt(resolver,
                 Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
         AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
         String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
@@ -102,19 +113,19 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
 
         mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
         mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
-        int duration = Settings.System.getInt(getContentResolver(),
+        int duration = Settings.System.getInt(resolver,
                 Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
         mEdgeLightDurationPreference.setValue(duration);
 
         mEdgeLightRepeatCountPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_REPEAT_COUNT);
         mEdgeLightRepeatCountPreference.setOnPreferenceChangeListener(this);
-        int rCount = Settings.System.getInt(getContentResolver(),
+        int rCount = Settings.System.getInt(resolver,
                 Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, 0);
         mEdgeLightRepeatCountPreference.setValue(rCount);
 
-        int defaultDoze = getResources().getInteger(
+        int defaultDoze = res.getInteger(
                 com.android.internal.R.integer.config_screenBrightnessDoze);
-        int defaultPulse = getResources().getInteger(
+        int defaultPulse = res.getInteger(
                 com.android.internal.R.integer.config_screenBrightnessPulse);
         if (defaultPulse == -1) {
             defaultPulse = defaultDoze;
@@ -123,9 +134,10 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final ContentResolver resolver = getContentResolver();
         if (preference == mFlashOnCallWaitingDelay) {
             int val = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(), Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
+            Settings.System.putInt(resolver, Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
             return true;
         } else if (preference == mEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToARGB(
@@ -137,17 +149,17 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             }
             AmbientLightSettingsPreview.setAmbientLightPreviewColor(Integer.valueOf(String.valueOf(newValue)));
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
             return true;
         } else if (preference == mEdgeLightDurationPreference) {
             int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.PULSE_AMBIENT_LIGHT_DURATION, value);
             return true;
         } else if (preference == mEdgeLightRepeatCountPreference) {
             int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, value);
             return true;
         }
