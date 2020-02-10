@@ -39,7 +39,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.derpquest.settings.Utils;
 
 import com.derpquest.settings.preferences.AmbientLightSettingsPreview;
-import com.derpquest.settings.preferences.CustomSeekBarPreference;
+import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
@@ -55,8 +55,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-    private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
-    private static final String FLASH_ON_CALL_CATEGORY = "flash_on_call_category";
+    private static final String FLASH_ON_CALL = "flash_on_call_options";
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
@@ -65,7 +64,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
     private SystemSettingSeekBarPreference mEdgeLightRepeatCountPreference;
     private Preference mChargingLeds;
-    private SystemSettingSeekBarPreference mFlashOnCallWaitingDelay;
+    private SystemSettingMasterSwitchPreference mFlashOnCall;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -81,15 +80,16 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(incallVibCategory);
         }
 
-        PreferenceCategory flashOnCallCategory = (PreferenceCategory) findPreference(FLASH_ON_CALL_CATEGORY);
+        mFlashOnCall = (SystemSettingMasterSwitchPreference)
+                findPreference(FLASH_ON_CALL);
         if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(flashOnCallCategory);
+            prefScreen.removePreference(mFlashOnCall);
+        } else {
+            mFlashOnCall.setOnPreferenceChangeListener(this);
+            boolean enabled = Settings.System.getInt(resolver,
+                    Settings.System.FLASH_ON_CALL_WAITING, 0) == 1;
+            mFlashOnCall.setChecked(enabled);
         }
-
-        mFlashOnCallWaitingDelay = (SystemSettingSeekBarPreference) findPreference(FLASH_ON_CALL_WAITING_DELAY);
-        mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(resolver,
-              Settings.System.FLASH_ON_CALLWAITING_DELAY, 200));
-        mFlashOnCallWaitingDelay.setOnPreferenceChangeListener(this);
 
         mChargingLeds = (Preference) findPreference("charging_light");
         if (mChargingLeds != null
@@ -135,11 +135,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final ContentResolver resolver = getContentResolver();
-        if (preference == mFlashOnCallWaitingDelay) {
-            int val = (Integer) newValue;
-            Settings.System.putInt(resolver, Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
-            return true;
-        } else if (preference == mEdgeLightColorPreference) {
+        if (preference == mEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#ff3980ff")) {
@@ -161,6 +157,10 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, value);
+        } else if (preference == mFlashOnCall) {
+            Boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.FLASH_ON_CALL_WAITING, value ? 1 : 0);
             return true;
         }
         return false;
