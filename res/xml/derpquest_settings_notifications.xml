@@ -18,61 +18,76 @@
     android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Notification Light -->
-    <Preference
-        android:key="notification_light"
-        android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-        android:title="@string/notification_light_settings" >
-        <extra
-            android:name="classname"
-            android:value="com.android.settings.Settings$NotificationAppListActivity" />
-    </Preference>
+    <PreferenceCategory
+        android:title="@string/led_category">
 
-    <!-- Charging Light -->
-    <Preference
-        android:key="charging_light"
-        android:fragment="com.derpquest.settings.fragments.BatteryLightSettings"
-        android:title="@string/battery_light_settings" />
+        <!-- Notification Light -->
+        <Preference
+            android:key="notification_light"
+            android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
+            android:title="@string/notification_light_settings" >
+            <extra
+                android:name="classname"
+                android:value="com.android.settings.Settings$NotificationAppListActivity" />
+        </Preference>
 
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-        android:key="charging_animation"
-        android:title="@string/charging_animation_title"
-        android:summary="@string/charging_animation_summary"
-        android:defaultValue="false" />
+        <!-- Charging Light -->
+        <Preference
+            android:key="charging_light"
+            android:fragment="com.derpquest.settings.fragments.BatteryLightSettings"
+            android:title="@string/battery_light_settings" />
 
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-        android:key="notification_sound_vib_screen_on"
-        android:title="@string/notification_sound_vib_screen_on_title"
-        android:summary="@string/notification_sound_vib_screen_on_summary"
-        android:defaultValue="true" />
+        <!-- Flash on Call -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="flash_on_call_options"
+            android:title="@string/flash_on_call_category"
+            android:summary="@string/flash_on_call_title"
+            android:fragment="com.derpquest.settings.fragments.FlashOnCall"
+            android:defaultValue="flase" />
 
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-        android:key="show_gentle_header"
-        android:title="@string/show_gentle_header_title"
-        android:summary="@string/show_gentle_header_summary"
-        android:defaultValue="false" />
+    </PreferenceCategory>
 
-    <!-- In-call Vibrations -->
-    <Preference
-        android:key="incall_vib_options"
-        android:title="@string/incall_vibration_category"
-        android:summary="@string/incall_vibration_summary"
-        android:fragment="com.derpquest.settings.fragments.InCallVibrations" />
+    <PreferenceCategory
+        android:title="@string/onscreen_category">
 
-    <!-- Flash on Call -->
-    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
-        android:key="flash_on_call_options"
-        android:title="@string/flash_on_call_category"
-        android:summary="@string/flash_on_call_title"
-        android:fragment="com.derpquest.settings.fragments.FlashOnCall"
-        android:defaultValue="flase" />
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="charging_animation"
+            android:title="@string/charging_animation_title"
+            android:summary="@string/charging_animation_summary"
+            android:defaultValue="false" />
 
-    <!-- Pulse Ambient Light (aka Edge Lighting) -->
-    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
-        android:key="pulse_ambient_light"
-        android:title="@string/edge_lighting_category_title"
-        android:summary="@string/pulse_ambient_light_summary"
-        android:fragment="com.derpquest.settings.fragments.AmbientLight"
-        android:defaultValue="false" />
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="show_gentle_header"
+            android:title="@string/show_gentle_header_title"
+            android:summary="@string/show_gentle_header_summary"
+            android:defaultValue="false" />
+
+        <!-- Pulse Ambient Light (aka Edge Lighting) -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="pulse_ambient_light"
+            android:title="@string/edge_lighting_category_title"
+            android:summary="@string/pulse_ambient_light_summary"
+            android:fragment="com.derpquest.settings.fragments.AmbientLight"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/etc_category_title">
+
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_sound_vib_screen_on"
+            android:title="@string/notification_sound_vib_screen_on_title"
+            android:summary="@string/notification_sound_vib_screen_on_summary"
+            android:defaultValue="true" />
+
+        <!-- In-call Vibrations -->
+        <Preference
+            android:key="incall_vib_options"
+            android:title="@string/incall_vibration_category"
+            android:summary="@string/incall_vibration_summary"
+            android:fragment="com.derpquest.settings.fragments.InCallVibrations" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
