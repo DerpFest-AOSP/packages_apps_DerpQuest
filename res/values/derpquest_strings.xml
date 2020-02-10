@@ -46,6 +46,9 @@
     <string name="save">Save</string>
     <string name="default_string">Default</string>
     <string name="enable_first">Please enable first</string>
+    <string name="general_category">General</string>
+    <string name="look_category">Look</string>
+    <string name="items_category">Items</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

@@ -18,75 +18,90 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Quick pull down-->
-    <com.derpquest.settings.preferences.SystemSettingListPreference
-        android:key="status_bar_quick_qs_pulldown"
-        android:title="@string/quick_pulldown_title"
-        android:entries="@array/quick_pulldown_entries"
-        android:entryValues="@array/quick_pulldown_values"
-        android:defaultValue="0" />
+    <PreferenceCategory
+        android:title="@string/general_category">
 
-    <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
-        android:key="qs_panel_alpha"
-        android:title="@string/qs_panel_alpha_title"
-        android:summary="@string/qs_panel_alpha_summary"
-        android:max="100"
-        settings:min="0"
-        android:defaultValue="100"
-        settings:units="%"
-        android:persistent="false" />
+        <!-- Quick pull down-->
+        <com.derpquest.settings.preferences.SystemSettingListPreference
+            android:key="status_bar_quick_qs_pulldown"
+            android:title="@string/quick_pulldown_title"
+            android:entries="@array/quick_pulldown_entries"
+            android:entryValues="@array/quick_pulldown_values"
+            android:defaultValue="0" />
 
-    <!-- Blur Settings -->
-    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
-        android:key="qs_blur"
-        android:title="@string/blur_quicksettings"
-        android:summary="@string/blur_quicksettings_subtitle"
-        android:fragment="com.derpquest.settings.fragments.BlurSettings"
-        android:defaultValue="false" />
+    </PreferenceCategory>
 
-    <!-- QS BG Color Settings -->
-    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
-        android:key="qs_panel_bg_override"
-        android:title="@string/qs_bg_use_fw"
-        android:summary="@string/qs_bg_use_fw_summary"
-        android:fragment="com.derpquest.settings.fragments.QSColorSettings"
-        android:defaultValue="false" />
+    <PreferenceCategory
+        android:title="@string/look_category">
 
-    <!-- Brightness Slider Settings -->
-    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
-        android:key="qs_show_brightness"
-        android:title="@string/qs_show_brightness_title"
-        android:summary="@string/qs_show_brightness_summary"
-        android:fragment="com.derpquest.settings.fragments.BrightnessSliderSettings"
-        android:defaultValue="true" />
+        <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_panel_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:summary="@string/qs_panel_alpha_summary"
+            android:max="100"
+            settings:min="0"
+            android:defaultValue="100"
+            settings:units="%"
+            android:persistent="false" />
 
-    <!-- Tiles Settings -->
-    <Preference
-         android:key="qs_tiles_settings"
-         android:title="@string/category_tiles_title"
-         android:summary="@string/category_tiles_title_summary"
-         android:fragment="com.derpquest.settings.fragments.QSTilesSettings" />
+        <!-- Blur Settings -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="qs_blur"
+            android:title="@string/blur_quicksettings"
+            android:summary="@string/blur_quicksettings_subtitle"
+            android:fragment="com.derpquest.settings.fragments.BlurSettings"
+            android:defaultValue="false" />
 
-    <!-- Footer Settings -->
-    <Preference
-         android:key="qs_footer_settings"
-         android:title="@string/category_footer_title"
-         android:summary="@string/category_footer_summary"
-         android:fragment="com.derpquest.settings.fragments.QSFooterSettings" />
+        <!-- QS BG Color Settings -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="qs_panel_bg_override"
+            android:title="@string/qs_bg_use_fw"
+            android:summary="@string/qs_bg_use_fw_summary"
+            android:fragment="com.derpquest.settings.fragments.QSColorSettings"
+            android:defaultValue="false" />
 
-    <!-- Header settings -->
-    <Preference
-         android:key="qs_header_settings"
-         android:title="@string/category_header_title"
-         android:summary="@string/category_header_summary"
-         android:fragment="com.derpquest.settings.fragments.QSHeaderSettings" />
+        <!-- Custom headers -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_custom_header"
+            android:title="@string/status_bar_custom_header_title"
+            android:summary="@string/status_bar_custom_header_summary"
+            android:fragment="com.derpquest.settings.fragments.HeaderImageSettings"
+            android:defaultValue="false" />
 
-    <!-- Custom headers -->
-    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
-        android:key="status_bar_custom_header"
-        android:title="@string/status_bar_custom_header_title"
-        android:summary="@string/status_bar_custom_header_summary"
-        android:fragment="com.derpquest.settings.fragments.HeaderImageSettings"
-        android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/items_category">
+
+        <!-- Brightness Slider Settings -->
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="qs_show_brightness"
+            android:title="@string/qs_show_brightness_title"
+            android:summary="@string/qs_show_brightness_summary"
+            android:fragment="com.derpquest.settings.fragments.BrightnessSliderSettings"
+            android:defaultValue="true" />
+
+        <!-- Tiles Settings -->
+        <Preference
+             android:key="qs_tiles_settings"
+             android:title="@string/category_tiles_title"
+             android:summary="@string/category_tiles_title_summary"
+             android:fragment="com.derpquest.settings.fragments.QSTilesSettings" />
+
+        <!-- Footer Settings -->
+        <Preference
+             android:key="qs_footer_settings"
+             android:title="@string/category_footer_title"
+             android:summary="@string/category_footer_summary"
+             android:fragment="com.derpquest.settings.fragments.QSFooterSettings" />
+
+        <!-- Header settings -->
+        <Preference
+             android:key="qs_header_settings"
+             android:title="@string/category_header_title"
+             android:summary="@string/category_header_summary"
+             android:fragment="com.derpquest.settings.fragments.QSHeaderSettings" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
