@@ -67,80 +67,12 @@
         android:fragment="com.derpquest.settings.fragments.FlashOnCall"
         android:defaultValue="flase" />
 
-      <PreferenceCategory
-          android:key="edge_lighting_options"
-          android:title="@string/edge_lighting_category_title" >
-
-          <!-- Preview -->
-          <com.derpquest.settings.preferences.AmbientLightSettingsPreview
-              android:key="ambientlight_preview"
-              android:layout="@layout/ambient_light"
-              android:selectable="false"/>
-
-          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-              android:key="pulse_ambient_light"
-              android:title="@string/pulse_ambient_light_title"
-              android:summary="@string/pulse_ambient_light_summary"
-              android:defaultValue="false" />
-
-          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-              android:key="pulse_ambient_light_pulse_for_all"
-              android:title="@string/pulse_ambient_light_pulse_for_all_title"
-              android:summary="@string/pulse_ambient_light_pulse_for_all_summary"
-              android:dependency="pulse_ambient_light"
-              android:defaultValue="false" />
-
-          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-              android:key="ambient_notification_light_enabled"
-              android:title="@string/ambient_notification_light_enabled_title"
-              android:summary="@string/ambient_notification_light_enabled_sumary"
-              android:dependency="pulse_ambient_light"
-              android:defaultValue="false" />
-
-          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-              android:key="ambient_notification_light_hide_aod"
-              android:title="@string/ambient_notification_light_hide_aod_title"
-              android:summary="@string/ambient_notification_light_hide_aod_sumary"
-              android:dependency="ambient_notification_light_enabled"
-              android:defaultValue="false" />
-
-          <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
-              android:key="pulse_ambient_light_repeat_count"
-              android:title="@string/pulse_ambient_light_repeat_count_title"
-              android:summary="@string/pulse_ambient_light_repeat_count_summary"
-              android:persistent="false"
-              android:defaultValue="0"
-              android:max="10"
-              settings:min="0"
-              settings:interval="1"
-              android:dependency="pulse_ambient_light" />
-
-          <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
-              android:key="pulse_ambient_light_duration"
-              android:title="@string/pulse_ambient_light_duration_title"
-              android:summary="@string/pulse_ambient_light_duration_summary"
-              android:persistent="false"
-              android:defaultValue="2"
-              android:max="10"
-              settings:min="1"
-              settings:units="sec"
-              settings:interval="1"
-              android:dependency="pulse_ambient_light" />
-
-          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-              android:key="pulse_ambient_auto_color"
-              android:title="@string/pulse_ambient_auto_color_title"
-              android:summary="@string/pulse_ambient_auto_color_summary"
-              android:dependency="pulse_ambient_light"
-              android:defaultValue="false" />
-
-          <net.margaritov.preference.colorpicker.ColorPickerPreference
-              android:key="pulse_ambient_light_color"
-              android:title="@string/pulse_ambient_light_color_title"
-              android:persistent="false"
-              android:dependency="pulse_ambient_light"
-              settings:defaultColorValue="0xFF3980FF" />
-
-      </PreferenceCategory>
+    <!-- Pulse Ambient Light (aka Edge Lighting) -->
+    <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+        android:key="pulse_ambient_light"
+        android:title="@string/edge_lighting_category_title"
+        android:summary="@string/pulse_ambient_light_summary"
+        android:fragment="com.derpquest.settings.fragments.AmbientLight"
+        android:defaultValue="false" />
 
 </PreferenceScreen>

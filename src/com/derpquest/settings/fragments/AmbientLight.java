@@ -51,77 +51,77 @@ import java.util.List;
 import java.util.Map;
 
 @SearchIndexable
-public class NotificationsSettings extends SettingsPreferenceFragment implements
+public class AmbientLight extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
-    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-    private static final String FLASH_ON_CALL = "flash_on_call_options";
-    private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
+    private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
+    private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
+    private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
 
-    private Preference mChargingLeds;
-    private SystemSettingMasterSwitchPreference mFlashOnCall;
-    private SystemSettingMasterSwitchPreference mAmbientLight;
+    private ColorPickerPreference mEdgeLightColorPreference;
+    private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
+    private SystemSettingSeekBarPreference mEdgeLightRepeatCountPreference;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.derpquest_settings_notifications);
+        addPreferencesFromResource(R.xml.derpquest_settings_ambient_light);
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        Preference incallVibCategory = (Preference) findPreference(INCALL_VIB_OPTIONS);
-        if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(incallVibCategory);
-        }
-
-        mFlashOnCall = (SystemSettingMasterSwitchPreference)
-                findPreference(FLASH_ON_CALL);
-        if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(mFlashOnCall);
+        mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
+        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
+        int edgeLightColor = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
+        AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
+        String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
+        if (edgeLightColorHex.equals("#ff3980ff")) {
+            mEdgeLightColorPreference.setSummary(R.string.default_string);
         } else {
-            mFlashOnCall.setOnPreferenceChangeListener(this);
-            boolean enabled = Settings.System.getInt(resolver,
-                    Settings.System.FLASH_ON_CALL_WAITING, 0) == 1;
-            mFlashOnCall.setChecked(enabled);
+            mEdgeLightColorPreference.setSummary(edgeLightColorHex);
         }
+        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
 
-        mAmbientLight = (SystemSettingMasterSwitchPreference)
-                findPreference(PULSE_AMBIENT_LIGHT);
-        mAmbientLight.setOnPreferenceChangeListener(this);
-        boolean enabled = Settings.System.getInt(resolver,
-                Settings.System.OMNI_PULSE_AMBIENT_LIGHT, 0) == 1;
-        mAmbientLight.setChecked(enabled);
+        mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_DURATION);
+        mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
+        int duration = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
+        mEdgeLightDurationPreference.setValue(duration);
 
-        mChargingLeds = (Preference) findPreference("charging_light");
-        if (mChargingLeds != null
-                && !res.getBoolean(
-                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-            prefScreen.removePreference(mChargingLeds);
-        }
-
-        int defaultDoze = res.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessDoze);
-        int defaultPulse = res.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessPulse);
-        if (defaultPulse == -1) {
-            defaultPulse = defaultDoze;
-        }
+        mEdgeLightRepeatCountPreference = (SystemSettingSeekBarPreference) findPreference(PULSE_AMBIENT_LIGHT_REPEAT_COUNT);
+        mEdgeLightRepeatCountPreference.setOnPreferenceChangeListener(this);
+        int rCount = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, 0);
+        mEdgeLightRepeatCountPreference.setValue(rCount);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final ContentResolver resolver = getContentResolver();
-        if (preference == mFlashOnCall) {
-            Boolean value = (Boolean) newValue;
+        if (preference == mEdgeLightColorPreference) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff3980ff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            AmbientLightSettingsPreview.setAmbientLightPreviewColor(Integer.valueOf(String.valueOf(newValue)));
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
-                    Settings.System.FLASH_ON_CALL_WAITING, value ? 1 : 0);
+                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex);
             return true;
-        } else if (preference == mAmbientLight) {
-            Boolean value = (Boolean) newValue;
+        } else if (preference == mEdgeLightDurationPreference) {
+            int value = (Integer) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.OMNI_PULSE_AMBIENT_LIGHT, value ? 1 : 0);
+                    Settings.System.PULSE_AMBIENT_LIGHT_DURATION, value);
+            return true;
+        } else if (preference == mEdgeLightRepeatCountPreference) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, value);
             return true;
         }
         return false;
@@ -141,7 +141,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
                             new ArrayList<SearchIndexableResource>();
 
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.derpquest_settings_notifications;
+                    sir.xmlResId = R.xml.derpquest_settings_ambient_light;
                     result.add(sir);
                     return result;
                 }
