@@ -41,7 +41,6 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SecureSettingMasterSwitchPreference;
-import com.derpquest.settings.preferences.SecureSettingSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 
 import java.util.ArrayList;
@@ -53,8 +52,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 @SearchIndexable
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -63,8 +60,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
-    private static final String KEY_CHARGE_INFO_FONT = "lockscreen_battery_info_font";
 
+    private static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
     private static final String BATTERY_BAR = "sysui_keyguard_show_battery_bar";
     private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
     private static final String LOCKSCREEN_INFO = "lockscreen_info";
@@ -73,8 +70,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private CustomSeekBarPreference mPulseBrightness;
     private CustomSeekBarPreference mDozeBrightness;
-    private ListPreference mChargingInfoFont;
 
+    private SystemSettingMasterSwitchPreference mBatteryInfo;
     private SystemSettingMasterSwitchPreference mBatteryBar;
     private SystemSettingMasterSwitchPreference mClockEnabled;
     private SystemSettingMasterSwitchPreference mInfoEnabled;
@@ -94,9 +91,16 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         Resources resources = getResources();
 
+        mBatteryInfo = (SystemSettingMasterSwitchPreference)
+                findPreference(LOCKSCREEN_BATTERY_INFO);
+        mBatteryInfo.setOnPreferenceChangeListener(this);
+        boolean enabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_BATTERY_INFO, 1) == 1;
+        mBatteryInfo.setChecked(enabled);
+
         mBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(BATTERY_BAR);
         mBatteryBar.setOnPreferenceChangeListener(this);
-        boolean enabled = Settings.System.getInt(resolver,
+        enabled = Settings.System.getInt(resolver,
                 BATTERY_BAR, 0) == 1;
         mBatteryBar.setChecked(enabled);
 
@@ -155,17 +159,22 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
 
-        mChargingInfoFont = (ListPreference) findPreference(KEY_CHARGE_INFO_FONT);
-        mChargingInfoFont.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, 28)));
-        mChargingInfoFont.setSummary(mChargingInfoFont.getEntry());
-        mChargingInfoFont.setOnPreferenceChangeListener(this);
+        mFODIconPickerCategory = (PreferenceCategory)
+                findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPickerCategory != null
+                && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView))
+            prefScreen.removePreference(mFODIconPickerCategory);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mBatteryBar) {
+        if (preference == mBatteryInfo) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            LOCKSCREEN_BATTERY_INFO, value ? 1 : 0);
+            return true;
+        } else if (preference == mBatteryBar) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            BATTERY_BAR, value ? 1 : 0);
@@ -205,13 +214,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOZE_BRIGHTNESS, value);
-            return true;
-        } else if (preference == mChargingInfoFont) {
-            int value = Integer.valueOf((String) newValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, value);
-            mChargingInfoFont.setValue(String.valueOf(value));
-            mChargingInfoFont.setSummary(mChargingInfoFont.getEntry());
             return true;
         }
         return false;
