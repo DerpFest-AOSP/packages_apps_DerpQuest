@@ -53,6 +53,13 @@
         settings:min="0"
         settings:interval="1" />
 
+    <ListPreference
+        android:key="ambient_notification_light_timeout"
+        android:title="@string/ambient_notification_light_timeout_title"
+        android:persistent="false"
+        android:entries="@array/ambient_notification_light_timeout_entries"
+        android:entryValues="@array/ambient_notification_light_timeout_values" />
+
     <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
         android:key="pulse_ambient_light_duration"
         android:title="@string/pulse_ambient_light_duration_title"

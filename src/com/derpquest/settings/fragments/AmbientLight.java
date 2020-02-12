@@ -58,11 +58,13 @@ public class AmbientLight extends SettingsPreferenceFragment implements
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
     private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
+    private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
 
     private ColorPickerPreference mEdgeLightColorPreference;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
     private SystemSettingSeekBarPreference mEdgeLightRepeatCountPreference;
     private ListPreference mColorMode;
+    private ListPreference mPulseTimeout;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -117,6 +119,21 @@ public class AmbientLight extends SettingsPreferenceFragment implements
         mColorMode.setValue(Integer.toString(value));
         mColorMode.setSummary(mColorMode.getEntry());
         mColorMode.setOnPreferenceChangeListener(this);
+
+        mPulseTimeout = (ListPreference) findPreference(PULSE_TIMEOUT_PREF);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT, 0);
+
+        mPulseTimeout.setValue(Integer.toString(value));
+        mPulseTimeout.setSummary(mPulseTimeout.getEntry());
+        mPulseTimeout.setOnPreferenceChangeListener(this);
+        if (rCount == 0) {
+            mPulseTimeout.setEnabled(true);
+            mPulseTimeout.setSummary("");
+        } else {
+            mPulseTimeout.setEnabled(false);
+            mPulseTimeout.setSummary(R.string.set_to_zero);
+        }
     }
 
     @Override
@@ -144,6 +161,13 @@ public class AmbientLight extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, value);
+            if (value == 0) {
+                mPulseTimeout.setEnabled(true);
+                mPulseTimeout.setSummary("");
+            } else {
+                mPulseTimeout.setEnabled(false);
+                mPulseTimeout.setSummary(R.string.set_to_zero);
+            }
             return true;
         } else if (preference == mColorMode) {
             int value = Integer.valueOf((String) newValue);
@@ -178,6 +202,13 @@ public class AmbientLight extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0);
             }
+            return true;
+        } else if (preference == mPulseTimeout) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mPulseTimeout.findIndexOfValue((String) newValue);
+            mPulseTimeout.setSummary(mPulseTimeout.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT, value);
             return true;
         }
         return false;

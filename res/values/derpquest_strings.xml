@@ -819,6 +819,14 @@
     <string name="ambient_notification_light_color_mode_accent">System accent color</string>
     <string name="ambient_notification_light_color_mode_wall">Wallpaper color</string>
     <string name="ambient_notification_light_color_mode_custom">Custom color</string>
+    <string name="ambient_notification_light_timeout_title">Timeout for light pulse</string>
+    <string name="set_to_zero">Set repeat count to 0 to enable</string>
+    <string name="entry_infinite">Infinite</string>
+    <string name="entry_five_minute">5 minutes</string>
+    <string name="entry_ten_minute">10 minutes</string>
+    <string name="entry_thirty_minute">30 minutes</string>
+    <string name="entry_sixty_minute">60 minutes</string>
+    <string name="entry_fifteen_minute">15 minutes</string>
 
     <!-- FOD pressed state behavior -->
     <string name="fod_pressed_state_title">Pressed icon behavior</string>
