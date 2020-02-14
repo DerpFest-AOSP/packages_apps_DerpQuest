@@ -807,15 +807,18 @@
     <string name="ambient_notification_light_enabled_sumary">Keep showing on always on display. Until the screen is turned on</string>
     <string name="ambient_notification_light_hide_aod_title">Hide AoD content</string>
     <string name="ambient_notification_light_hide_aod_sumary">Hide other AoD content when bars are showing</string>
-    <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="pulse_ambient_auto_color_title">Auto color</string>
-    <string name="pulse_ambient_auto_color_summary">Sets edge light color to the primary color of wallpaper</string>
+    <string name="pulse_ambient_light_color_title">Default color</string>
     <string name="pulse_ambient_light_duration_title">Duration</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
     <string name="pulse_ambient_light_repeat_count_title">Repeat count</string>
     <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
     <string name="pulse_ambient_light_pulse_for_all_title">Pulse for all doze events</string>
     <string name="pulse_ambient_light_pulse_for_all_summary">Pulses for any doze wake and not just notifications when enabled</string>
+    <string name="ambient_notification_light_color_mode_title">Color mode</string>
+    <string name="ambient_notification_light_color_mode_automatic">Notification color</string>
+    <string name="ambient_notification_light_color_mode_accent">System accent color</string>
+    <string name="ambient_notification_light_color_mode_wall">Wallpaper color</string>
+    <string name="ambient_notification_light_color_mode_custom">Custom color</string>
 
     <!-- FOD pressed state behavior -->
     <string name="fod_pressed_state_title">Pressed icon behavior</string>

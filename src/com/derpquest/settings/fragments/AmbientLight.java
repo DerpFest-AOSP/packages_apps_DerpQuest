@@ -57,10 +57,12 @@ public class AmbientLight extends SettingsPreferenceFragment implements
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
+    private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
 
     private ColorPickerPreference mEdgeLightColorPreference;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
     private SystemSettingSeekBarPreference mEdgeLightRepeatCountPreference;
+    private ListPreference mColorMode;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -95,6 +97,26 @@ public class AmbientLight extends SettingsPreferenceFragment implements
         int rCount = Settings.System.getInt(resolver,
                 Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, 0);
         mEdgeLightRepeatCountPreference.setValue(rCount);
+
+        mColorMode = (ListPreference) findPreference(PULSE_COLOR_MODE_PREF);
+        boolean colorModeAutomatic = Settings.System.getInt(resolver,
+                Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0) != 0;
+        boolean colorModeAccent = Settings.System.getInt(resolver,
+                Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0) != 0;
+        boolean colorModeWall = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0) != 0;
+        int value = 3;
+        if (colorModeAutomatic) {
+            value = 0;
+        } else if (colorModeAccent) {
+            value = 1;
+        } else if (colorModeWall) {
+            value = 2;
+        }
+
+        mColorMode.setValue(Integer.toString(value));
+        mColorMode.setSummary(mColorMode.getEntry());
+        mColorMode.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -122,6 +144,40 @@ public class AmbientLight extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, value);
+            return true;
+        } else if (preference == mColorMode) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mColorMode.findIndexOfValue((String) newValue);
+            mColorMode.setSummary(mColorMode.getEntries()[index]);
+            if (value == 0) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 1);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0);
+            } else if (value == 1) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 1);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0);
+            } else if (value == 2) {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 1);
+            } else {
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0);
+            }
             return true;
         }
         return false;
