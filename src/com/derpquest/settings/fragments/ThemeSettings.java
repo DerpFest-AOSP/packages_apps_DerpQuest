@@ -18,10 +18,13 @@ package com.derpquest.settings.fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -50,17 +53,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class ThemeSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "ThemeSettings";
     private static final String CUSTOM_THEME_BROWSE = "theme_select_activity";
+    private static final String ACCENT_COLOR = "accent_color";
+    private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
     private static final String SYSUI_STATUS_BAR_PADDING = "sysui_status_bar_padding";
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
 
     private Preference mThemeBrowse;
+    private IOverlayManager mOverlayService;
+    private ColorPickerPreference mThemeColor;
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;
     private CustomSeekBarPreference mSBPadding;
@@ -84,6 +93,10 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
+
+        mOverlayService = IOverlayManager.Stub
+                .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+        setupAccentPref();
 
         // Rounded Corner Radius
         mCornerRadius = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
@@ -131,6 +144,16 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
                     (int) newValue, UserHandle.USER_CURRENT);
         } else if (preference == mRoundedFwvals) {
             restoreCorners();
+        } else if (preference == mThemeColor) {
+            int color = (Integer) newValue;
+            String hexColor = String.format("%08X", (0xFFFFFFFF & color));
+            SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
+            try {
+                 mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+             } catch (RemoteException ignored) {
+             }
         }
         return true;
     }
@@ -140,6 +163,16 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
         Intent browse = new Intent();
         browse.setClassName("com.android.customization", "com.android.customization.picker.CustomizationPickerActivity");
         return pm.resolveActivity(browse, 0) != null;
+    }
+
+    private void setupAccentPref() {
+        mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
+        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
+        int color = "-1".equals(colorVal)
+                ? Color.WHITE
+                : Color.parseColor("#" + colorVal);
+        mThemeColor.setNewPreviewColor(color);
+        mThemeColor.setOnPreferenceChangeListener(this);
     }
 
     private void restoreCorners() {

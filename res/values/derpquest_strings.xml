@@ -868,4 +868,9 @@
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_pureview_future">Future</string>
     <string name="fod_recog_animation_pureview_molecular">Molecular</string>
+
+    <!-- RGB Picker -->
+    <string name="accent_color">Accent picker</string>
+    <string name="accent_summary">System wide accent picker</string>
+
 </resources>
