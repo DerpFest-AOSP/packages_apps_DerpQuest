@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2017-2019 The PixelDust Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
          http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,13 +30,14 @@
     <string name="recents_title">Недавние приложения</string>
     <string name="statusbar_title">Панель состояния</string>
     <string name="volume_title">Настройки громкости</string>
+    <string name="theming_title">Тематизация</string>
     <string name="animations_title">Анимации</string>
     <string name="nav_bar_category_title">Панель навигации</string>
     <string name="statusbar_notifi_cat">Уведомления</string>
     <string name="edge_lighting_category_title">Подсветка по краям экрана</string>
     <string name="clock_settings_title">Часы</string>
-    <string name="battery_icon_style_title">Иконка батареи</string>
-    <string name="battery_icon_style_summary">Настроить стиль и поведение</string>
+    <string name="battery_icon_style_title">Значок батареи</string>
+    <string name="battery_icon_style_summary">Настройка стиля и поведения</string>
 
     <!-- General strings -->
     <string name="ok">Ок</string>
@@ -62,10 +66,10 @@
     <string name="longpress_info">Удерживайте на объекте для сохранения цвета</string>
 
     <!-- Navbar options -->
-    <string name="navbar_invert_layout_title">Инвертировать окраску</string>
+    <string name="navbar_invert_layout_title">Инвертировать расположение</string>
     <!-- Enable navbar -->
     <string name="enable_navbar_title">Включить</string>
-    <string name="enable_navbar_summary">Кнопки управления когда навигационная панель отображается</string>
+    <string name="enable_navbar_summary">Навигационная панель отображается</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Ярлыки на рабочем столе</string>
@@ -105,9 +109,9 @@
     <string name="button_backlight_on_touch_only_summary">Подсветка только при нажатии кнопок</string>
 
     <!-- HW Keys customization -->
-    <string name="action_value_default_action" translatable="false">default</string>
-    <string name="action_value_select_app" translatable="false">app</string>
-    <string name="action_value_custom_action" translatable="false">custom</string>
+    <string name="action_value_default_action" translatable="false">по умолчанию</string>
+    <string name="action_value_select_app" translatable="false">приложение</string>
+    <string name="action_value_custom_action" translatable="false">пользовательский</string>
     <string name="action_value_back" translatable="false">task_back</string>
     <string name="action_value_home" translatable="false">task_home</string>
     <string name="action_value_search_assist" translatable="false">task_assist</string>
@@ -173,8 +177,9 @@
     <string name="battery_light_medium_color">Средний заряд батареи</string>
     <string name="battery_light_full_color">Батарея почти заряжена</string>
     <string name="battery_light_reallyfull_color">Батарея полностью заряжена</string>
-    <string name="led_category">LED</string>
-    <string name="onscreen_category">On-Screen</string>
+
+    <string name="led_category">Светодиод</string>
+    <string name="onscreen_category">Экран</string>
     <string name="notification_light_settings">Индикатор уведомлений</string>
 
     <!-- Fingerprint authentication vibration -->
@@ -185,7 +190,6 @@
     <string name="network_traffic_state_title">Отображение интернет трафика</string>
     <string name="network_traffic_state_summary">Размещение индикатора движения и внешний вид</string>
     <string name="network_traffic_location">Расположение индикатора сети</string>
-    <string name="traffic_disabled">Выключен</string>
     <string name="traffic_statusbar">Строка состояния</string>
     <string name="traffic_expanded_statusbar">Расширенный заголовок</string>
     <string name="network_traffic_autohide_threshold_title">Прятать индикатор сети при скорости (КБ/С)</string>
@@ -211,11 +215,12 @@
     <string name="lockscreen_power_menu_disabled_summary">Отключить меню питания, когда установлена блокировка экрана</string>
 
     <!-- Battery Bar -->
-    <string name="battery_bar_title">Панель батареи на экране блокировки</string>
+    <string name="battery_bar_title">Бар батареи на экране блокировки</string>
     <string name="tuner_keyguard_show_battery_bar_title">Показывать иконку батареи</string>
     <string name="tuner_keyguard_show_battery_bar_summary">Показывать иконку батареи на AOD</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Всегда показывать иконку батареи</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">ВСегда показывать иконку батареи при зарядке</string>
+    <string name="tuner_keyguard_battery_bar_color_title">Цвет бара батареи на экране блокировки</string>
 
     <!-- Lock icon -->
     <string name="hide_lockicon_title">Скрыть значок замка</string>
@@ -229,15 +234,15 @@
     <string name="qstile_requires_unlocking_title">Для использования быстрых настроек необходимо разблокировать экран</string>
     <string name="qstile_requires_unlocking_summary">Следующие быстрые настройки требуют разблокировки, прежде чем вы сможете получить к ним доступ с экрана блокировки: самолет, режим экономии батареи, Bluetooth, сотовая связь, сохранение данных, NFC и Wi-Fi.</string>
 
-<!-- QS blur -->
+    <!-- QS blur -->
     <string name="blur_quicksettings">Размытие за быстрыми настройками (beta)</string>
     <string name="blur_quicksettings_subtitle">Настройте размытие и интенсивность</string>
     <string name="qs_blur_alpha_title">Размытие</string>
     <string name="qs_blur_alpha_summary">Устанавливает прозрачность размытия</string>
     <string name="qs_blur_intensity_title">Интенсивность размытия</string>
-    <string name="qs_blur_intensity_summary">Устанавливает интенсивность / радиус размытия</string>    
+    <string name="qs_blur_intensity_summary">Устанавливает интенсивность / радиус размытия</string>
 
-<!-- Buttons - Enable navbar -->
+    <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">Включить наэкранную нав. панель</string>
     <string name="disable_navkeys_summary">Включить наэкранную навигационную панель</string>
 
@@ -260,11 +265,10 @@
     <string name="status_bar_am_pm_info">24-часов вид включен</string>
     <string name="status_bar_am_pm_normal">Стандартный</string>
     <string name="status_bar_am_pm_small">Маленький</string>
-    <string name="status_bar_am_pm_hidden">Спрятан (стандарт)</string>
+    <string name="status_bar_am_pm_hidden">Скрыт (стандарт)</string>
     <string name="clock_seconds_display">Показывать секунды</string>
     <string name="clock_date_display">Дата</string>
     <string name="clock_date_display_summary">Показывать дату перед часами</string>
-    <string name="clock_date_display_none">Не показывать</string>
     <string name="clock_date_display_small">Маленький размер шрифта</string>
     <string name="clock_date_display_normal">Средний размер шрифта</string>
     <string name="clock_date_style">Стиль отображения даты</string>
@@ -273,13 +277,13 @@
     <string name="clock_date_style_uppercase">Больше</string>
     <string name="clock_date_format_custom">Свой вариант</string>
     <string name="clock_date_format">Формат даты</string>
-    <string name="clock_date_string_edittext_title">Должен быть в DateFormat eg. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_title">Должен быть в формате MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Введите строку</string>
     <string name="clock_date_right">Справа от часов</string>
     <string name="clock_date_left">Слева от часов</string>
     <string name="clock_date_position">Расположение даты</string>
 
-<!-- Lockscreen information -->
+    <!-- Lockscreen information -->
     <string name="lockscreen_info_category_title">Информационные элементы экрана блокировки</string>
 
     <!-- Lock Clock Fonts -->
@@ -387,21 +391,18 @@
     <string name="qs_show_secure_title">Заголовок безопасности</string>
     <string name="qs_show_secure_summary">Показать условия безопасности</string>
 
-    <!-- Battery Styles -->
-    <string name="battery_style_category_title">Уровень заряда</string>
-
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Стиль батареи</string>
     <string name="status_bar_battery_style_q">Вид иконки (стандарт)</string>
     <string name="status_bar_battery_style_dotted_circle">Круг с точкой</string>
     <string name="status_bar_battery_style_circle">Заполненый круг</string>
     <string name="status_bar_battery_style_text">Текст</string>
-    <string name="status_bar_battery_style_hidden">Спрятан</string>
+    <string name="status_bar_battery_style_hidden">Скрыта</string>
     <string name="battery_percent_title">Проценты</string>
 
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">Процент батареи</string>
-    <string name="status_bar_battery_percentage_default">Спрятаны (стандарт)</string>
+    <string name="status_bar_battery_percentage_default">Скрыт (стандарт)</string>
     <string name="status_bar_battery_percentage_text_inside">Внутри иконки</string>
     <string name="status_bar_battery_percentage_text_next">Снаружи иконки</string>
     <string name="status_bar_battery_text_charging_title">Показывать уровень батареи при зарядке</string>
@@ -409,18 +410,18 @@
 
     <!-- QS settings categories -->
     <string name="category_tiles_title">Область плитки</string>
-    <string name="category_tiles_title_summary">Настройка элементов области плиток быстрых настроек</string>
+    <string name="category_tiles_title_summary">Настройка элементов области плиток QS</string>
     <string name="category_footer_title">Нижняя область</string>
-    <string name="category_footer_summary">Настройка элементов области плиток быстрых настроек</string>
+    <string name="category_footer_summary">Настройка элементов области нижнего колонтитула QS</string>
     <string name="category_header_title">Область заголовка</string>
-    <string name="category_header_summary">Настройка элементов области плиток быстрых настроек</string>
+    <string name="category_header_summary">Настройка элементов заголовка QS</string>
 
     <!-- QS drag handle -->
     <string name="qs_drag_title">Показать переключатель быстрой настройки</string>
 
     <!-- QS settings icon -->
     <string name="qs_always_show_settings_title">Всегда показывать иконку настроек</string>
-    <string name="qs_always_show_settings_summary">Скрывает рычаг</string>
+    <string name="qs_always_show_settings_summary">Скрыть значок</string>
 
     <!-- QS footer text -->
     <string name="derp_footer_text_show_title">Показать текст быстрых настроек снизу</string>
@@ -442,7 +443,7 @@
     <string name="qs_clock_summary">Показывать часы в заголовке быстрых настроек</string>
 
     <!-- Quick pull down-->
-    <string name="quick_pulldown_title">Строка состояния опускает быстрые настройки</string>
+    <string name="quick_pulldown_title">Быстрый доступ к шторке</string>
     <string name="quick_pulldown_summary">%1$s</string>
     <string name="quick_pulldown_off">Выключено</string>
     <string name="quick_pulldown_left">Левый край</string>
@@ -467,12 +468,13 @@
     <!-- Custom headers -->
     <string name="notification_title">Панель уведомлений</string>
     <string name="status_bar_custom_header_title">Включена</string>
+    <string name="status_bar_custom_header_summary">Использовать пользовательское изображение в заголовоке</string>
     <string name="daylight_header_pack_title">Коллекция изображений заголовка</string>
     <string name="status_bar_custom_header_shadow_title">Тень изображения заголовка</string>
     <string name="status_bar_custom_header_shadow_summary">Для лучшего отображения на ярких картинках</string>
     <string name="unit_percent">\u0025</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
+    <string name="static_header_provider" translatable="false">статичное</string>
+    <string name="daylight_header_provider" translatable="false">коллекция</string>
     <string name="static_header_provider_title">Статическое изображение</string>
     <string name="daylight_header_provider_title">Коллекция изображений</string>
     <string name="custom_header_provider_title">Проводник заголовка</string>
@@ -555,7 +557,6 @@
     <string name="status_bar_logo_title">DerpQuest лого</string>
     <string name="status_bar_logo_right">Справа</string>
     <string name="status_bar_logo_left">Слева</string>
-    <string name="status_bar_logo_disabled">Отключено</string>
     <string name="status_bar_logo_style_title">Стиль лого DerpQuest</string>
 
     <!-- Rounded corners -->
@@ -567,13 +568,12 @@
     <string name="status_bar_padding">Отступы строки состояния</string>
     <string name="corner_fwvals">Использовать системные настройки</string>
     <string name="corner_fwvals_summary">Полезно если у устройства закруглённые углы</string>
-    <string name="unit_pixels">dp</string>
 
     <!-- smart notifications -->
     <string name="notification_sound_vib_screen_on_title">Громкость и вибрация уведомлений, при включенном экране</string>
     <string name="notification_sound_vib_screen_on_summary">Отключите, чтобы блокировать звук и вибрацию уведомлений, когда экран включен</string>
 
- <!-- Gentle notifications header -->
+    <!-- Gentle notifications header -->
     <string name="show_gentle_header_title">Показать заголовки уведомлений</string>
     <string name="show_gentle_header_summary">Показывать ли заголовок «тихие уведомления» над такими уведомлениями (требуется перезагрузка интерфейса системы)</string>
 
@@ -582,7 +582,7 @@
     <string name="flash_on_call_title">Мигающая вспышка при входящем вызове</string>
     <string name="flash_on_call_delay_title">Частота мигания вспышки</string>
 
- <!-- Statusbar Clock Font Style, Size & Color -->
+    <!-- Statusbar Clock Font Style, Size & Color -->
     <string name="status_bar_clock_font_style_title">Стиль шрифта часов</string>
     <string name="status_bar_clock_font_size_title">Размер шрифта часов</string>
     <string name="status_bar_clock_color_title">Цвет шрифта часов</string>
@@ -596,8 +596,6 @@
     <string name="lockscreen_info_summary">Показать дату, погоду, будильник на экране блокировки</string>
     <string name="lockscreen_ownerinfo_title">Опции информации о владельце</string>
     <string name="lockscreen_ownerinfo_summary">Настройте стиль шрифта / размер информации о владельце</string>
-
-    <string name="lockmods_settings_title">Шрифты и размеры</string>
 
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Настройки шрифта даты</string>
@@ -632,13 +630,13 @@
     <string name="status_bar_carrier_size">Размер ярлыка оператора</string>
     <string name="status_bar_carrier_font_style_title">Шрифт ярлыка оператора</string>
 
-<!-- Lockscreen battery info indicator  -->
+    <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Информация о зарядке на экране блокировки</string>
     <string name="lockscreen_battery_info_summary">Показывать зарядный ток, напряжение и температуру аккумулятора на экране блокировки во время зарядки</string>
     <string name="lockscreen_battery_info_font_title">Шрифт зарядки информации</string>
     <string name="lockscreen_battery_info_dialog_title">Выберите шрифт информации о зарядке</string>
 
-       <!-- QuickSettings Panel Transparency -->
+    <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_title">Прозрачность быстрых настроек</string>
     <string name="qs_panel_alpha_summary">Изменить прозрачность фона</string>
 
@@ -749,6 +747,7 @@
     <string name="no_states_file_found">Файл состояний не найден. Вы уверены, что ваш телефон
         совместимый?\n\nЕсли вы используете кастомную прошивку или ядро,
      попробуйте связаться с разработчиком, чтобы сообщить ему о том, что файл недоступен</string>
+    <!-- new line to match english file -->
     <string name="deep_sleep">"Глубокий сон"</string>
     <string name="mt_refresh">Обновить</string>
     <string name="mt_share">Поделиться</string>
@@ -764,21 +763,6 @@
     <string name="lockscreen_show_status_bar_title">Строка состояния</string>
     <string name="lockscreen_show_status_bar_summary">Показывать строку состояния на экране блокировки</string>
 
-    <!-- Lockscreen clock style -->
-    <string name="lockscreen_clock_title">Стиль часов</string>
-    <string name="lockscreen_clock_dialog_title">Выберите стиль часов</string>
-    <string name="lockscreen_clock_selection_hidden">Hidden</string>
-    <string name="lockscreen_clock_selection_digital">Default</string>
-    <string name="lockscreen_clock_selection_digital_bold">Bold (digital)</string>
-    <string name="lockscreen_clock_selection_digital_small">Small (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent">Full accent (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent_min">Accent minutes (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent_hour">Accent hours (digital)</string>
-    <string name="lockscreen_clock_selection_sammy">Sammy</string>
-    <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
-    <string name="lockscreen_clock_selection_sammy_accent">Sammy accent</string>
-    <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy accent (darker hour)</string>
-
     <!-- QS themes -->
     <string name="qs_themes_category_title">Темы быстрых настроек</string>
     <string name="qs_panel_color_title">Цвет панели быстрых настроек</string>
@@ -789,19 +773,24 @@
     <string name="qs_bg_accent_title">Использовать цветовой акцент</string>
     <string name="qs_bg_accent_summary">Установить фоновый цвет быстрых настроек из системного акцента</string>
 
- <!-- Themes -->
+    <!-- Themes -->
     <string name="theme_select_title">Темы</string>
     <string name="theme_select_summary">Просмотрите и выберите установленные темы</string>
 
     <!--Gestures-->
     <string name="aosp_gesture_title">AOSP жесты</string>
 
+    <!-- Units -->
+    <string name="unit_seconds">секунды</string>
+    <string name="unit_milliseconds">милисекунды</string>
+    <string name="unit_pixels">dp</string>
+
     <!-- Statusbar ticker -->
     <string name="status_bar_show_ticker_title">Бегущая строка (beta)</string>
     <string name="status_bar_show_ticker_summary">Настроить предварительный просмотр уведомлений в строке состояния</string>
     <string name="ticker_animation_mode_title">Анимация бегущей строки</string>
-    <string name="ticker_animation_mode_alpha_fade">Fade</string>
-    <string name="ticker_animation_mode_scroll">Scroll</string>
+    <string name="ticker_animation_mode_alpha_fade">Увядание</string>
+    <string name="ticker_animation_mode_scroll">Спираль</string>
     <string name="ticker_tick_duration_title">Продолжительность бегущей строки</string>
 
     <!-- Running Services button -->
@@ -823,10 +812,6 @@
     <string name="pulse_ambient_light_repeat_count_summary">Установите максимальное количество повторений. 0 для бесконечного</string>
     <string name="pulse_ambient_light_pulse_for_all_title">Пульс для всех дозовых событий</string>
     <string name="pulse_ambient_light_pulse_for_all_summary">Импульсы для любого пробуждения, а не только уведомления при включении</string>
-	
-	 <!-- Ambient edge lighting -->
-    <string name="notification_screen_title">Экран</string>
-    <string name="pulse_ambient_light_title">Подсветка краев экрана</string>
 
     <!-- FOD pressed state behavior -->
     <string name="fod_pressed_state_title">Поведение нажатой иконки</string>
@@ -835,7 +820,23 @@
     <string name="fod_pressed_state_icon_white">Значок (белый)</string>
     <string name="fod_pressed_state_solid_color">Сплошной цвет (обычно зеленый)</string>
 
-       <!-- Lockscreen Date styles -->
+    <!-- Lockscreen clock style -->
+    <string name="lockscreen_clock_title">Стиль часов</string>
+    <string name="lockscreen_clock_dialog_title">Настройте стиль часв</string>
+    <string name="lockscreen_clock_hide">Скрыть</string>
+    <string name="lockscreen_clock_default">По умолчанию</string>
+    <string name="lockscreen_clock_default_bold">По умолчанию (жирный)</string>
+    <string name="lockscreen_clock_default_accent">По умолчанию (акцент)</string>
+    <string name="lockscreen_clock_default_accent_min">По умолчанию (акцент минуты)</string>
+    <string name="lockscreen_clock_default_accent_hour">По умолчанию (акцент часы)</string>
+    <string name="lockscreen_clock_sammy">Sammy</string>
+    <string name="lockscreen_clock_sammy_bold">Sammy (жирный)</string>
+    <string name="lockscreen_clock_sammy_accent_hour">Sammy (акцент часы)</string>
+    <string name="lockscreen_clock_sammy_accent_min">Sammy (акцент минуты)</string>
+    <string name="lockscreen_clock_text">Текст (Android 9)</string>
+    <string name="lockscreen_clock_text_alt">Текст (Android 10)</string>
+
+    <!-- Lockscreen Date styles -->
     <string name="lockscreen_date_selection_title">Стиль даты</string>
     <string name="lockscreen_date_dialog_title">Выберите стиль даты</string>
     <string name="lockscreen_date_selection_default">По-умолчанию</string>
@@ -849,8 +850,8 @@
     <string name="lockscreen_date_selection_str_border_gradient">Темный с градиентными границами</string>
 
     <!-- FOD icon picker -->
-    <string name="fod_icon_picker_category_title">Параметры настройки FOD</string>
-    <string name="fod_icon_picker_title">Настройка иконок</string>
+    <string name="fod_icon_picker_category_title">Настройка отпечатка пальца</string>
+    <string name="fod_icon_picker_title">Настройка значка</string>
     <string name="fod_icon_picker_summary">Выберите ваш любимый значок отпечатка пальца</string>
     <string name="fod_icon_picker_footer">Чтобы добавить свой значок, выберите значок в верхнем левом углу и с помощью приложения OnePlus 6T FP Customizer выберите нужный значок.</string>
 
@@ -858,11 +859,29 @@
     <string name="fod_recog_animation">Распознавание анимации</string>
     <string name="fod_recog_animation_summary">Показывает анимацию при чтении пальца</string>
     <string name="fod_recog_animation_picker_title">Распознавание настроек анимации</string>
-    <string name="fod_recog_animation_normal">Нормальный</string>
-    <string name="fod_recog_animation_aod">AOD</string>
-    <string name="fod_recog_animation_light">Светлый</string>
-    <string name="fod_recog_animation_pop">Pop</string>
-    <string name="fod_recog_animation_pulse">Пульсирубщий</string>
-    <string name="fod_recog_animation_pulse_white">Пульсирующий (Белый)</string>
+    <string name="fod_recog_animation_miui_normal">Нормальный</string>
+    <string name="fod_recog_animation_miui_aod">AOD</string>
+    <string name="fod_recog_animation_miui_light">Светлый</string>
+    <string name="fod_recog_animation_miui_pop">Pop</string>
+    <string name="fod_recog_animation_miui_pulse">Пульсирубщий</string>
+    <string name="fod_recog_animation_miui_pulse_white">Пульсирующий (Белый)</string>
     <string name="fod_recog_animation_rhythm">Ритмичный</string>
+    <string name="fod_recog_animation_op_cosmos">Cosmos</string>
+    <string name="fod_recog_animation_op_mclaren">McLaren</string>
+    <string name="fod_recog_animation_pureview_future">Future</string>
+    <string name="fod_recog_animation_pureview_molecular">Molecular</string>
+
+    <!-- RGB Picker -->
+    <string name="accent_color">Комплектация акцента</string>
+    <string name="accent_summary">Общесистемный подбор акцентов</string>
+
+    <!-- Text Clock -->
+    <string name="text_clock_customizations">Текстовые часы</string>
+    <string name="text_clock_alignment">Выравнивание</string>
+    <string name="text_clock_left">Слева</string>
+    <string name="text_clock_center">Центр</string>
+    <string name="text_clock_right">Справа</string>
+    <string name="text_clock_left_right">Лево-право</string>
+    <string name="text_clock_right_left">Право-лево</string>
+    <string name="text_clock_padding">Свечение края</string>
 </resources>
