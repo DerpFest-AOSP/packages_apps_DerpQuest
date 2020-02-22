@@ -421,7 +421,7 @@
 
     <!-- QS settings icon -->
     <string name="qs_always_show_settings_title">Always show settings icon</string>
-    <string name="qs_always_show_settings_summary">Hides drag handle</string>
+    <string name="qs_always_show_settings_summary">Even when QS are collapsed</string>
 
     <!-- QS footer text -->
     <string name="derp_footer_text_show_title">Show QS footer text</string>

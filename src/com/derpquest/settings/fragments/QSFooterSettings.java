@@ -108,22 +108,14 @@ public class QSFooterSettings extends SettingsPreferenceFragment implements
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.QS_ALWAYS_SHOW_SETTINGS, value ? 1 : 0);
-            updateEnablement();
             return true;
         } else if (preference == mDragHandle) {
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.QS_DRAG_HANDLE, value ? 1 : 0);
-            updateEnablement();
             return true;
         }
         return false;
-    }
-
-    private void updateEnablement() {
-        boolean alwaysSettings = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0) == 1;
-        mDragHandle.setEnabled(!alwaysSettings);
     }
 
     @Override
