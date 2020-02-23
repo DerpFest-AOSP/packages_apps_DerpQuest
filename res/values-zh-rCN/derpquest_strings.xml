@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2017-2019 The PixelDust Project
-     
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
          http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -46,7 +43,7 @@
     <string name="save">保存</string>
     <string name="default_string">默认</string>
     <string name="enable_first">请先启用</string>
-    <string name="general_category">一般</string>
+    <string name="general_category">常规</string>
     <string name="look_category">外观</string>
     <string name="items_category">项目</string>
 
@@ -129,7 +126,7 @@
     <string name="hardware_keys_home_key_title">Home键</string>
     <string name="hardware_keys_menu_key_title">菜单键</string>
     <string name="hardware_keys_assist_key_title">搜索键</string>
-    <string name="hardware_keys_appswitch_key_title">Overview键</string>
+    <string name="hardware_keys_appswitch_key_title">任务键</string>
     <string name="hardware_keys_back_key_title">返回键</string>
     <string name="hardware_keys_double_tap_summary">设置双击行为</string>
     <string name="hardware_keys_single_tap_summary">设置单击行为</string>
@@ -178,18 +175,18 @@
     <string name="battery_light_full_color">高电量</string>
     <string name="battery_light_reallyfull_color">满电量</string>
 
-    <string name="onscreen_category">在屏幕上</string>
     <string name="led_category">LED</string>
+    <string name="onscreen_category">在屏幕上</string>
     <string name="notification_light_settings">通知灯</string>
 
     <!-- Fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">指纹认证时震动</string>
-    <string name="fprint_sucess_vib_summary">指纹认证成功时震动</string>
+    <string name="fprint_sucess_vib_title">按压指纹时震动</string>
+    <string name="fprint_sucess_vib_summary">指纹成功验证时震动</string>
 
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">网速指示器</string>
     <string name="network_traffic_state_summary">网络指示器位置与外观</string>
-    <string name="network_traffic_location">网速指示器的位置</string>
+    <string name="network_traffic_location_title">网速指示器的位置</string>
     <string name="traffic_statusbar">状态栏</string>
     <string name="traffic_expanded_statusbar">扩展状态栏</string>
     <string name="network_traffic_autohide_threshold_title">自动隐藏的阈值 (KB/s)</string>
@@ -211,8 +208,8 @@
     <string name="double_tap_sleep_lockscreen_summary">双击锁屏界面的任意位置休眠手机</string>
 
     <!-- Disable power menu on secure lock screen -->
-    <string name="lockscreen_power_menu_disabled_title">当未解锁时关闭电源选项</string>
-    <string name="lockscreen_power_menu_disabled_summary">关闭电源选项在锁定的手机</string>
+    <string name="lockscreen_power_menu_disabled_title">未解锁无法使用电源菜单</string>
+    <string name="lockscreen_power_menu_disabled_summary">当手机处于锁定状态时无法使用电源菜单</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">锁屏电池条</string>
@@ -227,12 +224,12 @@
     <string name="hide_lockicon_summary">锁屏上隐藏锁定按钮</string>
 
     <!-- QuickSettings haptic feedback -->
-    <string name="quick_settings_vibrate_title">点击震动</string>
-    <string name="quick_settings_vibrate_summary">点击快速设置（状态栏上WiFi那种按钮）按钮时震动</string>
+    <string name="quick_settings_vibrate_title">震动回馈</string>
+    <string name="quick_settings_vibrate_summary">点击快速设置上的磁贴时震动</string>
 
     <!-- QSTile requires unlocking before being accessible -->
-    <string name="qstile_requires_unlocking_title">在解锁后才可以操控快速设置按钮</string>
-    <string name="qstile_requires_unlocking_summary">这些快速设置按钮要求锁屏：飞行模式, 省电模式, 蓝牙, 热点, 数据节省, NFC 和 WiFi.</string>
+    <string name="qstile_requires_unlocking_title">锁定时无法使用电源菜单</string>
+    <string name="qstile_requires_unlocking_summary">下列功能需要解锁才能使用：飞行模式, 省电模式, 蓝牙, 热点, 数据节省, NFC 和 WiFi.</string>
 
     <!-- QS blur -->
     <string name="blur_quicksettings">快速设置模糊 (测试功能)</string>
@@ -249,7 +246,7 @@
     <!-- Status bar - icons -->
     <string name="status_bar_icons_title">状态栏图标</string>
     <string name="status_bar_system_icons_title">系统图标</string>
-    <string name="status_bar_system_icons_summary">控制显示哪些图标在状态栏上</string>
+    <string name="status_bar_system_icons_summary">控制状态栏显示哪些图标</string>
 
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_title">时钟设置</string>
@@ -268,9 +265,9 @@
     <string name="status_bar_am_pm_hidden">隐藏(默认)</string>
     <string name="clock_seconds_display">显示秒数</string>
     <string name="clock_date_display">日期</string>
-    <string name="clock_date_display_summary">显示自定义日期在时钟前</string>
-    <string name="clock_date_display_small">小字体大小</string>
-    <string name="clock_date_display_normal">普通字体大小</string>
+    <string name="clock_date_display_summary">在时钟前显示自定义日期</string>
+    <string name="clock_date_display_small">小号字体</string>
+    <string name="clock_date_display_normal">普通大小</string>
     <string name="clock_date_style">日期样式</string>
     <string name="clock_date_style_normal">普通</string>
     <string name="clock_date_style_lowercase">小写</string>
@@ -298,20 +295,20 @@
     <string name="lock_clock_font_thin_italic">轻斜体</string>
     <string name="lock_clock_font_light">细体</string>
     <string name="lock_clock_font_thin">瘦体</string>
-    <string name="lock_clock_font_condensed_normal">浓缩体</string>
-    <string name="lock_clock_font_condensed_italic">浓缩斜体</string>
-    <string name="lock_clock_font_condensed_bold">浓缩粗体</string>
-    <string name="lock_clock_font_condensed_bold_italic">浓缩粗斜体</string>
-    <string name="lock_clock_font_condensed_light">浓缩细体</string>
-    <string name="lock_clock_font_condensed_light_italic">浓缩细斜体</string>
+    <string name="lock_clock_font_condensed_normal">紧凑</string>
+    <string name="lock_clock_font_condensed_italic">紧凑斜体</string>
+    <string name="lock_clock_font_condensed_bold">紧凑粗体</string>
+    <string name="lock_clock_font_condensed_bold_italic">紧凑粗斜体</string>
+    <string name="lock_clock_font_condensed_light">紧凑细体</string>
+    <string name="lock_clock_font_condensed_light_italic">紧凑细斜体</string>
     <string name="lock_clock_font_medium_normal">中等</string>
-    <string name="lock_clock_font_medium_italic">中斜体</string>
+    <string name="lock_clock_font_medium_italic">中等斜体</string>
     <string name="lock_clock_font_black">黑体</string>
     <string name="lock_clock_font_black_italic">黑斜体</string>
-    <string name="lock_clock_font_dancingscript">DancingScript</string>
-    <string name="lock_clock_font_dancingscript_bold">DancingScript 粗</string>
+    <string name="lock_clock_font_dancingscript">花体</string>
+    <string name="lock_clock_font_dancingscript_bold">花粗体</string>
     <string name="lock_clock_font_comingsoon">ComingSoon</string>
-    <string name="lock_clock_font_notoserif">NotoSerif 普通</string>
+    <string name="lock_clock_font_notoserif">NotoSerif 正常</string>
     <string name="lock_clock_font_notoserif_italic">NotoSerif 斜体</string>
     <string name="lock_clock_font_notoserif_bold">NotoSerif 粗体</string>
     <string name="lock_clock_font_notoserif_bold_italic">NotoSerif 粗斜体</string>
@@ -351,14 +348,14 @@
     <string name="lockscreen_cover_filter_title">锁屏专辑封面过滤器</string>
     <string name="lockscreen_cover_filter_none">无</string>
     <string name="lockscreen_cover_filter_grayscale">灰阶</string>
-    <string name="lockscreen_cover_filter_tint">口音着色</string>
+    <string name="lockscreen_cover_filter_tint">强调色</string>
     <string name="lockscreen_cover_filter_blur">模糊</string>
     <string name="lockscreen_cover_filter_grayblur">灰阶和模糊</string>
     <string name="lockscreen_cover_filter_gradientblur">渐变模糊</string>
 
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">三指手势</string>
-    <string name="three_finger_gesture_summary">三手指下滑截图</string>
+    <string name="three_finger_gesture_summary">三指下滑截图</string>
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">音量渐进</string>
@@ -393,7 +390,7 @@
 
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">电池风格</string>
-    <string name="status_bar_battery_style_q">图标肖像（默认）</string>
+    <string name="status_bar_battery_style_q">纵向图标（默认）</string>
     <string name="status_bar_battery_style_dotted_circle">虚线圆</string>
     <string name="status_bar_battery_style_circle">实心圆</string>
     <string name="status_bar_battery_style_text">数字</string>
@@ -405,8 +402,8 @@
     <string name="status_bar_battery_percentage_default">隐藏（默认）</string>
     <string name="status_bar_battery_percentage_text_inside">图标内</string>
     <string name="status_bar_battery_percentage_text_next">图标旁</string>
-    <string name="status_bar_battery_text_charging_title">充电时的电池电量百分比</string>
-    <string name="status_bar_battery_text_charging_summary">充电时始终显示电池电量百分比</string>
+    <string name="status_bar_battery_text_charging_title">充电时电池百分比</string>
+    <string name="status_bar_battery_text_charging_summary">充电时始终显示电池百分比</string>
 
     <!-- QS settings categories -->
     <string name="category_tiles_title">磁贴区域</string>
@@ -417,20 +414,20 @@
     <string name="category_header_summary">自定义快速设置标题项目</string>
 
     <!-- QS drag handle -->
-    <string name="qs_drag_title">显示QS拖动手柄</string>
+    <string name="qs_drag_title">显示拖动手柄</string>
 
     <!-- QS settings icon -->
     <string name="qs_always_show_settings_title">总是显示设置图标</string>
-    <string name="qs_always_show_settings_summary">隐藏拖动手柄</string>
+    <string name="qs_always_show_settings_summary">即使快速设置崩溃</string>
 
     <!-- QS footer text -->
-    <string name="derp_footer_text_show_title">显示QS页脚文本</string>
+    <string name="derp_footer_text_show_title">显示页脚文本</string>
     <string name="derp_footer_text_string_title">自定义页脚文本</string>
     <string name="derp_footer_text_string_summary">默认设置为空 #DerpFest</string>
 
     <!-- Battery mode -->
     <string name="qs_hide_battery_title">隐藏电池图标</string>
-    <string name="qs_hide_battery_summary">隐藏QS标题中的电池图标</string>
+    <string name="qs_hide_battery_summary">隐藏快速设置标题中的电池图标</string>
     <string name="battery_percentage_title">电池百分比</string>
     <string name="battery_percentage_off">停用</string>
     <string name="battery_percentage_next">启用</string>
@@ -443,7 +440,7 @@
     <string name="qs_clock_summary">在快速状态栏标题中显示时钟</string>
 
     <!-- Quick pull down-->
-    <string name="quick_pulldown_title">状态栏下拉快捷设置</string>
+    <string name="quick_pulldown_title">状态栏下拉开启快速设置面板</string>
     <string name="quick_pulldown_summary">%1$s</string>
     <string name="quick_pulldown_off">关</string>
     <string name="quick_pulldown_left">左边缘</string>
@@ -451,18 +448,18 @@
     <string name="quick_pulldown_always">任何地方</string>
 
     <!-- Lock screen visualizer -->
-    <string name="lockscreen_visualizer_enable">音乐展示台</string>
-    <string name="lockscreen_visualizer_enable_summary">在播放音乐时显示可视化工具栏</string>
+    <string name="lockscreen_visualizer_enable">音乐可视化</string>
+    <string name="lockscreen_visualizer_enable_summary">播放音乐时显示可视化栏</string>
     <string name="lockscreen_autocolor_title">自动上色</string>
-    <string name="lockscreen_autocolor_summary">将颜色与锁屏背景同步</string>
-    <string name="lockscreen_autocolor_lavalamp">需要熔岩灯禁用</string>
-    <string name="lockscreen_lavalamp_title">熔岩灯</string>
-    <string name="lockscreen_lavalamp_summary">使用平滑的熔岩灯样式颜色混合动画</string>
+    <string name="lockscreen_autocolor_summary">颜色与锁屏背景同步</string>
+    <string name="lockscreen_autocolor_lavalamp">需要禁用霓虹灯</string>
+    <string name="lockscreen_lavalamp_title">霓虹灯</string>
+    <string name="lockscreen_lavalamp_summary">使用平滑的霓虹灯样式颜色混合动画</string>
     <string name="lockscreen_lavalamp_speed_title">混色间隔</string>
     <string name="lockscreen_solid_lines_category">实线</string>
     <string name="lockscreen_solid_units_count_title">行数</string>
-    <string name="lockscreen_solid_fudge_factor_title">健全程度</string>
-    <string name="lockscreen_solid_units_opacity_title">线的不透明度</string>
+    <string name="lockscreen_solid_fudge_factor_title">清晰度</string>
+    <string name="lockscreen_solid_units_opacity_title">线条不透明度</string>
     <string name="lockscreen_visualizer_color_title">默认颜色</string>
 
     <!-- Custom headers -->
@@ -475,7 +472,7 @@
     <string name="unit_percent">\u0025</string>
     <string name="static_header_provider" translatable="false">静态的</string>
     <string name="daylight_header_provider" translatable="false">日光</string>
-    <string name="static_header_provider_title">静态影像</string>
+    <string name="static_header_provider_title">静态图片</string>
     <string name="daylight_header_provider_title">图片收藏</string>
     <string name="custom_header_provider_title">标题提供者</string>
     <string name="custom_header_pick_title">选择标题图片</string>
@@ -500,7 +497,7 @@
 
     <!-- Charging animation -->
     <string name="charging_animation_title">充电动画</string>
-    <string name="charging_animation_summary">插入设备后显示动画</string>
+    <string name="charging_animation_summary">设备插入电源时显示动画</string>
 
     <!-- Per App aspect Ratio -->
     <string name="action_save">保存</string>
@@ -512,7 +509,7 @@
     <string name="aspect_ratio_apps_info">更改后需要重新启动应用程序</string>
 
     <!-- ambient visualizer -->
-    <string name="ambient_visualizer_title">在环境显示器上显示LS可视化器</string>
+    <string name="ambient_visualizer_title">在环境显示上显示可视化条</string>
     <string name="ambient_visualizer_summary">在环境显示上也显示可视化条（但不透明）</string>
 
     <!-- Incall vibrate options -->
@@ -542,7 +539,7 @@
     <string name="wallpaper_close_title">墙纸结束动画</string>
     <string name="wallpaper_intra_open_title">壁纸内打开动画</string>
     <string name="wallpaper_intra_close_title">壁纸内结束动画</string>
-    <string name="animation_duration_title">动画时长</string>
+    <string name="animation_duration_title">动画持续时长</string>
     <string name="title_animation_no_override">防止应用覆盖</string>
     <string name="summary_animation_no_override">防止应用覆盖过渡</string>
     <string name="animation_duration_default">默认</string>
@@ -564,10 +561,10 @@
     <string name="corners_category_summary">调整圆角和填充</string>
     <string name="corners_title">自定义圆角</string>
     <string name="corner_radius">圆角半径</string>
-    <string name="content_padding">角内容填充</string>
+    <string name="content_padding">边角内容填充</string>
     <string name="status_bar_padding">状态栏额外的填充</string>
     <string name="corner_fwvals">使用框架值</string>
-    <string name="corner_fwvals_summary">如果设备实际上有圆角，那么这将会有用</string>
+    <string name="corner_fwvals_summary">如果设备实际上有圆角，将很有用</string>
 
     <!-- smart notifications -->
     <string name="notification_sound_vib_screen_on_title">屏幕开启时出现嘈杂的通知</string>
@@ -581,6 +578,10 @@
     <string name="flash_on_call_category">脉冲闪光</string>
     <string name="flash_on_call_title">来电闪光</string>
     <string name="flash_on_call_delay_title">闪光延迟时间</string>
+
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">强制扩展通知</string>
+    <string name="force_expanded_notifications_summary">强制使应用支持通知扩展</string>
 
     <!-- Statusbar Clock Font Style, Size & Color -->
     <string name="status_bar_clock_font_style_title">时钟字体样式</string>
@@ -685,32 +686,32 @@
     <string name="DESC_MIN_LIGHT_MAINTENANCE_TIME">我们会在轻度打盹后保持维护模式的最小时间</string>
     <string name="DESC_MIN_DEEP_MAINTENANCE_TIME">我们会在打盹后保持维护模式的最小时间</string>
     <string name="DESC_KEY_NOTIFICATION_WHITELIST_DURATION">我们希望将处理通知的应用程序列入白名单的时间</string>
-    <string name="SHORT_INACTIVE_TIMEOUT">不活跃超时</string>
-    <string name="SHORT_SENSING_TIMEOUT">感知超时</string>
-    <string name="SHORT_LOCATING_TIMEOUT">定位超时</string>
-    <string name="SHORT_LOCATION_ACCURACY">精确定位</string>
-    <string name="SHORT_MOTION_INACTIVE_TIMEOUT">运动不活跃超时</string>
-    <string name="SHORT_IDLE_AFTER_INACTIVE_TIMEOUT">不活跃超时后空闲</string>
-    <string name="SHORT_IDLE_PENDING_TIMEOUT">空闲挂起超时</string>
-    <string name="SHORT_MAX_IDLE_PENDING_TIMEOUT">最大空闲挂起超时</string>
-    <string name="SHORT_IDLE_PENDING_FACTOR">挂起超时因素</string>
-    <string name="SHORT_IDLE_TIMEOUT">空闲超时</string>
-    <string name="SHORT_MAX_IDLE_TIMEOUT">最大空闲超时</string>
-    <string name="SHORT_IDLE_FACTOR">空闲因素</string>
-    <string name="SHORT_MIN_TIME_TO_ALARM">最小警报时间</string>
-    <string name="SHORT_MAX_TEMP_APP_WHITELIST_DURATION">白名单应用最大临时存留时间</string>
-    <string name="SHORT_MMS_TEMP_APP_WHITELIST_DURATION">白名单彩信最大临时存留时间</string>
-    <string name="SHORT_SMS_TEMP_APP_WHITELIST_DURATION">白名单短信最大临时存留时间</string>
-    <string name="SHORT_LIGHT_IDLE_AFTER_INACTIVE_TIMEOUT">不活跃超时后轻度空闲</string>
-    <string name="SHORT_LIGHT_PRE_IDLE_TIMEOUT">轻度预空闲超时</string>
-    <string name="SHORT_LIGHT_IDLE_TIMEOUT">轻度空闲超时</string>
-    <string name="SHORT_LIGHT_IDLE_FACTOR">轻度空闲因素</string>
-    <string name="SHORT_LIGHT_MAX_IDLE_TIMEOUT">最大轻度空闲超时</string>
-    <string name="SHORT_LIGHT_IDLE_MAINTENANCE_MIN_BUDGET">维护模式最小轻度空闲超时</string>
-    <string name="SHORT_LIGHT_IDLE_MAINTENANCE_MAX_BUDGET">维护模式最大轻度空闲超时</string>
-    <string name="SHORT_MIN_LIGHT_MAINTENANCE_TIME">维护模式最小轻度打盹超时</string>
-    <string name="SHORT_MIN_DEEP_MAINTENANCE_TIME">维护模式最小打盹超时</string>
-    <string name="SHORT_KEY_NOTIFICATION_WHITELIST_DURATION">白名单通知最大持续时间</string>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Align the original-->
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Time In State & CPU State -->
     <string name="state_time_mode">唤醒</string>
@@ -799,22 +800,25 @@
 
     <!-- Edge lighting (aka pulse ambient light) -->
     <string name="pulse_ambient_light_summary">新通知显示边缘闪光</string>
-    <string name="ambient_notification_light_enabled_title">主动显示上显示</string>
+    <string name="ambient_notification_light_enabled_title">环境显示上显示</string>
     <string name="ambient_notification_light_enabled_sumary">直到打开屏幕前持续显示</string>
-    <string name="ambient_notification_light_hide_aod_title">隐藏主动显示的内容</string>
-    <string name="ambient_notification_light_hide_aod_sumary">当闪光时隐藏主动显示的其他内容</string>
-    <string name="pulse_ambient_light_color_title">边缘闪光颜色</string>
-    <string name="pulse_ambient_auto_color_title">自动颜色</string>
-    <string name="pulse_ambient_auto_color_summary">从壁纸强调色选取边缘闪光的颜色</string>
+    <string name="ambient_notification_light_hide_aod_title">隐藏环境显示的内容</string>
+    <string name="ambient_notification_light_hide_aod_sumary">来通知时隐藏主动显示的其他内容</string>
+    <string name="pulse_ambient_light_color_title">默认颜色</string>
     <string name="pulse_ambient_light_duration_title">持续时间</string>
-    <string name="pulse_ambient_light_duration_summary">设置闪光动画的持续时间</string>
+    <string name="pulse_ambient_light_duration_summary">设置闪光动画持续时间</string>
     <string name="pulse_ambient_light_repeat_count_title">重复次数</string>
     <string name="pulse_ambient_light_repeat_count_summary">设置最大重复次数，0为无限次</string>
-    <string name="pulse_ambient_light_pulse_for_all_title">所有打盹事件都闪光</string>
-    <string name="pulse_ambient_light_pulse_for_all_summary">任何打盹都会唤醒，不仅仅只是通知时启用</string>
+    <string name="pulse_ambient_light_pulse_for_all_title">通知所有打盹事件</string>
+    <string name="pulse_ambient_light_pulse_for_all_summary">唤醒打盹时的任何事件，不仅仅只是通知时启用</string>
+    <string name="ambient_notification_light_color_mode_title">颜色模式</string>
+    <string name="ambient_notification_light_color_mode_automatic">通知颜色</string>
+    <string name="ambient_notification_light_color_mode_accent">系统强调色</string>
+    <string name="ambient_notification_light_color_mode_wall">壁纸色</string>
+    <string name="ambient_notification_light_color_mode_custom">自定义颜色</string>
 
     <!-- FOD pressed state behavior -->
-    <string name="fod_pressed_state_title">按压图标</string>
+    <string name="fod_pressed_state_title">按压效果</string>
     <string name="fod_pressed_state_footer">图标与颜色可能会在不同设备上存在差异</string>
     <string name="fod_pressed_state_icon">图标 (通常是青色)</string>
     <string name="fod_pressed_state_icon_white">图标 (白色)</string>
@@ -833,6 +837,8 @@
     <string name="lockscreen_clock_sammy_bold">竖式 (加粗)</string>
     <string name="lockscreen_clock_sammy_accent_hour">竖式 (小时使用强调色)</string>
     <string name="lockscreen_clock_sammy_accent_min">竖式 (分钟使用强调色)</string>
+    <string name="lockscreen_clock_text">文本样式 (Android 9)</string>
+    <string name="lockscreen_clock_text_alt">文本样式 (Android 10)</string>
 
     <!-- Lockscreen Date styles -->
     <string name="lockscreen_date_selection_title">日期样式</string>
@@ -856,12 +862,31 @@
     <!-- FOD animations -->
     <string name="fod_recog_animation">解锁动画</string>
     <string name="fod_recog_animation_summary">按压指纹时显示动画</string>
-    <string name="fod_recog_animation_picker_title">选择解锁动画</string>
-    <string name="fod_recog_animation_normal">流光</string>
-    <string name="fod_recog_animation_aod">流光(强调色)</string>
-    <string name="fod_recog_animation_light">流光(浅色)</string>
-    <string name="fod_recog_animation_pop">星光</string>
-    <string name="fod_recog_animation_pulse">脉冲</string>
-    <string name="fod_recog_animation_pulse_white">脉冲(白色)</string>
-    <string name="fod_recog_animation_rhythm">律动</string>
+    <string name="fod_recog_animation_picker_title">自定义解锁动画</string>
+    <string name="fod_recog_animation_miui_normal">MIUI 默认动画</string>
+    <string name="fod_recog_animation_miui_aod">流光</string>
+    <string name="fod_recog_animation_miui_light">流光 (浅色)</string>
+    <string name="fod_recog_animation_miui_pop">星光</string>
+    <string name="fod_recog_animation_miui_pulse">脉冲</string>
+    <string name="fod_recog_animation_miui_pulse_white">脉冲 (白色)</string>
+    <string name="fod_recog_animation_miui_rhythm">律动</string>
+    <string name="fod_recog_animation_op_cosmos">宇宙</string>
+    <string name="fod_recog_animation_op_mclaren">迈凯伦</string>
+    <string name="fod_recog_animation_pureview_future">科技</string>
+    <string name="fod_recog_animation_pureview_molecular">分子</string>
+
+    <!-- RGB Picker -->
+    <string name="accent_color">选取强调色</string>
+    <string name="accent_summary">选取系统强调色</string>
+
+    <!-- Text Clock -->
+    <string name="text_clock_customizations">文本时钟</string>
+    <string name="text_clock_alignment">对齐</string>
+    <string name="text_clock_left">靠左</string>
+    <string name="text_clock_center">居中</string>
+    <string name="text_clock_right">靠右</string>
+    <string name="text_clock_left_right">左-右</string>
+    <string name="text_clock_right_left">右-左</string>
+    <string name="text_clock_padding">边距</string>
+
 </resources>
