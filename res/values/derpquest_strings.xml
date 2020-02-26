@@ -909,6 +909,9 @@
     <string name="about_qa_title">Lead of QA</string>
     <string name="about_qa_name">David Setiawan</string>
     <string name="about_qa_git" translatable="false">https://github.com/fryevia</string>
+    <string name="maintainer">Device Maintainer</string>
+    <string name="maintainer_name" translatable="false">Alexander Brunswig</string>
+    <string name="maintainer_telegram" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_site_title">Site</string>
     <string name="about_site_summary">Visit DerpFest.org</string>
     <string name="about_site_link" translatable="false">https://derpfest.org/</string>
