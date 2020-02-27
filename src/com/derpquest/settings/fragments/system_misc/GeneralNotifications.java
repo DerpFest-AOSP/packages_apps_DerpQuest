@@ -60,6 +60,7 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mEdgeLightDurationPreference;
     private CustomSeekBarPreference mEdgeLightRepeatCountPreference;
     private ListPreference mColorMode;
+    private Preference mAlertSlider;
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
@@ -67,6 +68,7 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
     private static final String NOTIFICATION_PULSE_DURATION = "notification_pulse_duration";
     private static final String NOTIFICATION_PULSE_REPEATS = "notification_pulse_repeats";
     private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,15 +76,22 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.general_notifications);
         PreferenceScreen prefScreen = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
+        final Resources res = getResources();
 
         PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
         if (!Utils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
 
-	        mAmbientPref = (SystemSettingSwitchPreference) findPreference(KEY_AMBIENT);
+        mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
+        boolean mAlertSliderAvailable = res.getBoolean(
+                com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable)
+            prefScreen.removePreference(mAlertSlider);
+
+	    mAmbientPref = (SystemSettingSwitchPreference) findPreference(KEY_AMBIENT);
         boolean aodEnabled = Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.DOZE_ALWAYS_ON, 0, UserHandle.USER_CURRENT) == 1;
+                Settings.Secure.DOZE_ALWAYS_ON, 0, UserHandle.USER_CURRENT) == 1;
         if (!aodEnabled) {
             mAmbientPref.setChecked(false);
             mAmbientPref.setEnabled(false);
@@ -201,6 +210,11 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
             @Override
             public List<String> getNonIndexableKeys(Context context) {
                 final List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+                    boolean mAlertSliderAvailable = res.getBoolean(
+                            com.android.internal.R.bool.config_hasAlertSlider);
+                    if (!mAlertSliderAvailable)
+                        keys.add(ALERT_SLIDER_PREF);
                 return keys;
             }
     };
