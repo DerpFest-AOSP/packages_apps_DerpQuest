@@ -47,6 +47,7 @@ import com.android.settings.search.Indexable;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,6 +61,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "ThemeSettings";
     private static final String CUSTOM_THEME_BROWSE = "theme_select_activity";
+    private static final String ACCENT_PRESET = "accent_preset";
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
@@ -69,6 +71,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
 
     private Preference mThemeBrowse;
     private IOverlayManager mOverlayService;
+    private ListPreference mAccentPreset;
     private ColorPickerPreference mThemeColor;
     private CustomSeekBarPreference mCornerRadius;
     private CustomSeekBarPreference mContentPadding;
@@ -96,7 +99,22 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
 
         mOverlayService = IOverlayManager.Stub
                 .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
-        setupAccentPref();
+        mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
+        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
+        try {
+            int color = "-1".equals(colorVal)
+                    ? Color.WHITE
+                    : Color.parseColor("#" + colorVal);
+            mThemeColor.setNewPreviewColor(color);
+        }
+        catch (Exception e) {
+            mThemeColor.setNewPreviewColor(Color.WHITE);
+        }
+        mThemeColor.setOnPreferenceChangeListener(this);
+
+        mAccentPreset = (ListPreference) findPreference(ACCENT_PRESET);
+        mAccentPreset.setOnPreferenceChangeListener(this);
+        checkColorPreset(colorVal);
 
         // Rounded Corner Radius
         mCornerRadius = (CustomSeekBarPreference) findPreference(SYSUI_ROUNDED_SIZE);
@@ -134,13 +152,16 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mCornerRadius) {
-            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
+            Settings.Secure.putIntForUser(getContext().getContentResolver(),
+                    Settings.Secure.SYSUI_ROUNDED_SIZE,
                     (int) newValue, UserHandle.USER_CURRENT);
         } else if (preference == mContentPadding) {
-            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
+            Settings.Secure.putIntForUser(getContext().getContentResolver(),
+                    Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
                     (int) newValue, UserHandle.USER_CURRENT);
         } else if (preference == mSBPadding) {
-            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_STATUS_BAR_PADDING,
+            Settings.Secure.putIntForUser(getContext().getContentResolver(),
+                    Settings.Secure.SYSUI_STATUS_BAR_PADDING,
                     (int) newValue, UserHandle.USER_CURRENT);
         } else if (preference == mRoundedFwvals) {
             restoreCorners();
@@ -148,12 +169,24 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
             int color = (Integer) newValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
+            checkColorPreset(hexColor);
             try {
                  mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
                  mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
                  mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
-             } catch (RemoteException ignored) {
-             }
+            } catch (RemoteException ignored) {
+            }
+        } else if (preference == mAccentPreset) {
+            String value = (String) newValue;
+            int index = mAccentPreset.findIndexOfValue(value);
+            mAccentPreset.setSummary(mAccentPreset.getEntries()[index]);
+            SystemProperties.set(ACCENT_COLOR_PROP, value);
+            try {
+                 mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+            } catch (RemoteException ignored) {
+            }
         }
         return true;
     }
@@ -161,18 +194,23 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private boolean isBrowseThemesAvailable() {
         PackageManager pm = getPackageManager();
         Intent browse = new Intent();
-        browse.setClassName("com.android.customization", "com.android.customization.picker.CustomizationPickerActivity");
+        browse.setClassName("com.android.customization",
+                "com.android.customization.picker.CustomizationPickerActivity");
         return pm.resolveActivity(browse, 0) != null;
     }
 
-    private void setupAccentPref() {
-        mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
-        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
-        int color = "-1".equals(colorVal)
-                ? Color.WHITE
-                : Color.parseColor("#" + colorVal);
-        mThemeColor.setNewPreviewColor(color);
-        mThemeColor.setOnPreferenceChangeListener(this);
+    private void checkColorPreset(String colorValue) {
+        List<String> colorPresets = Arrays.asList(
+                getResources().getStringArray(R.array.accent_presets_values));
+        if (colorPresets.contains(colorValue)) {
+            mAccentPreset.setValue(colorValue);
+            int index = mAccentPreset.findIndexOfValue(colorValue);
+            mAccentPreset.setSummary(mAccentPreset.getEntries()[index]);
+        }
+        else {
+            mAccentPreset.setSummary(
+                    getResources().getString(R.string.custom_string));
+        }
     }
 
     private void restoreCorners() {
