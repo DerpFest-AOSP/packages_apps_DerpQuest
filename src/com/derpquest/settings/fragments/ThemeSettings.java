@@ -47,6 +47,7 @@ import com.android.settings.search.Indexable;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -67,6 +68,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
+    private static final String ACCENT_PRESET = "accent_preset";
 
     private IOverlayManager mOverlayManager;
     private SharedPreferences mSharedPreferences;
@@ -77,6 +79,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mSBPadding;
     private SwitchPreference mRoundedFwvals;
     private ColorPickerPreference rgbAccentPicker;
+    private ListPreference mAccentPreset;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -139,18 +142,25 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
                 : Color.parseColor("#" + colorVal);
         rgbAccentPicker.setNewPreviewColor(color);
         rgbAccentPicker.setOnPreferenceChangeListener(this);
+
+        mAccentPreset = (ListPreference) findPreference(ACCENT_PRESET);
+        mAccentPreset.setOnPreferenceChangeListener(this);
+        checkColorPreset(colorVal);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mCornerRadius) {
-            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_SIZE,
+            Settings.Secure.putIntForUser(getContext().getContentResolver(),
+                    Settings.Secure.SYSUI_ROUNDED_SIZE,
                     (int) newValue, UserHandle.USER_CURRENT);
         } else if (preference == mContentPadding) {
-            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
+            Settings.Secure.putIntForUser(getContext().getContentResolver(),
+                    Settings.Secure.SYSUI_ROUNDED_CONTENT_PADDING,
                     (int) newValue, UserHandle.USER_CURRENT);
         } else if (preference == mSBPadding) {
-            Settings.Secure.putIntForUser(getContext().getContentResolver(), Settings.Secure.SYSUI_STATUS_BAR_PADDING,
+            Settings.Secure.putIntForUser(getContext().getContentResolver(),
+                    Settings.Secure.SYSUI_STATUS_BAR_PADDING,
                     (int) newValue, UserHandle.USER_CURRENT);
         } else if (preference == mRoundedFwvals) {
             restoreCorners();
@@ -158,7 +168,18 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
             int color = (Integer) newValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
-            mSharedPreferences.edit().remove(PREF_THEME_ACCENT_COLOR);
+            checkColorPreset(hexColor);
+            try {
+                mOverlayManager.reloadAndroidAssets(UserHandle.USER_CURRENT);
+                mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+            } catch (RemoteException ignored) { }
+
+        } else if (preference == mAccentPreset) {
+            String value = (String) newValue;
+            int index = mAccentPreset.findIndexOfValue(value);
+            mAccentPreset.setSummary(mAccentPreset.getEntries()[index]);
+            SystemProperties.set(ACCENT_COLOR_PROP, value);
             try {
                 mOverlayManager.reloadAndroidAssets(UserHandle.USER_CURRENT);
                 mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
@@ -171,8 +192,23 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
     private boolean isBrowseThemesAvailable() {
         PackageManager pm = getPackageManager();
         Intent browse = new Intent();
-        browse.setClassName("com.android.customization", "com.android.customization.picker.CustomizationPickerActivity");
+        browse.setClassName("com.android.customization",
+                "com.android.customization.picker.CustomizationPickerActivity");
         return pm.resolveActivity(browse, 0) != null;
+    }
+
+    private void checkColorPreset(String colorValue) {
+        List<String> colorPresets = Arrays.asList(
+                getResources().getStringArray(R.array.accent_presets_values));
+        if (colorPresets.contains(colorValue)) {
+            mAccentPreset.setValue(colorValue);
+            int index = mAccentPreset.findIndexOfValue(colorValue);
+            mAccentPreset.setSummary(mAccentPreset.getEntries()[index]);
+        }
+        else {
+            mAccentPreset.setSummary(
+                    getResources().getString(R.string.custom_string));
+        }
     }
 
     private void restoreCorners() {
