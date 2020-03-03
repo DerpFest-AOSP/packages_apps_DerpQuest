@@ -180,7 +180,6 @@
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">नेटवर्क ट्रैफ़िक डिस्प्ले</string>
     <string name="network_traffic_state_summary">ट्रैफिक इंडिकेटर प्लेसमेंट और लुक</string>
-    <string name="network_traffic_location_title">नेटवर्क ट्रैफिक लोकेशन</string>
     <string name="traffic_statusbar">स्टेटस बार</string>
     <string name="traffic_expanded_statusbar">विस्तारित हैडर</string>
     <string name="network_traffic_autohide_threshold_title">नेट गतिविधि ऑटोहाइड थ्रेशोल्ड (KB/s)</string>
@@ -648,7 +647,6 @@
     <string name="action_save_as_profile">प्रोफ़ाइल के रूप में सहेजें</string>
     <string name="delete_profile">प्रोफ़ाइल हटाएं</string>
     <string name="profile_name">नाम</string>
-    <string name="string_सेकंड">सेकंड</string>
     <string name="string_default">डिफॉल्ट</string>
     <string name="action_filter">फ़िल्टर</string>
     <string name="doze_settings_applied">सेटिंग्स लागू की गईं</string>

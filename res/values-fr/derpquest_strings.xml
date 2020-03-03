@@ -189,7 +189,6 @@
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Affichage du trafic réseau</string>
     <string name="network_traffic_state_summary">Placement et affichage du moniteur réseau</string>
-    <string name="network_traffic_location_title">Location du moniteur réseau</string>
     <string name="traffic_statusbar">Barre d\'état</string>
     <string name="traffic_expanded_statusbar">Barre d\'état étendue</string>
     <string name="network_traffic_autohide_threshold_title">Masquer si inférieur à (KB/s)</string>
@@ -804,8 +803,6 @@
     <string name="ambient_notification_light_hide_aod_title">Masquer les autres élements AoD</string>
     <string name="ambient_notification_light_hide_aod_sumary">Masquer le reste de l\'AoD tant que l\'animation est affichée</string>
     <string name="pulse_ambient_light_color_title">Couleur de l\'effet</string>
-    <string name="pulse_ambient_auto_color_title">Selon le fond d\'écran</string>
-    <string name="pulse_ambient_auto_color_summary">Couleur dérivée de la couleur primaire du fond d\'écran</string>
     <string name="pulse_ambient_light_duration_title">Durée</string>
     <string name="pulse_ambient_light_duration_summary">Définit la durée de l\'animation</string>
     <string name="pulse_ambient_light_repeat_count_title">Répétitions</string>
@@ -868,7 +865,7 @@
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_pureview_future">Future</string>
     <string name="fod_recog_animation_pureview_molecular">Molecular</string>
-    
+
     <!-- RGB Picker -->
     <string name="accent_color">Sélectionner la couleur d\'accentuation</string>
     <string name="accent_summary">Sélectionner la couleur d\'accentuation utilisée par le système</string>

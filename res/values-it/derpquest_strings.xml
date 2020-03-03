@@ -174,8 +174,6 @@
 
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Indicatore traffico di rete</string>
-    <string name="network_traffic_location">Posizione indicatore traffico di rete</string>
-    <string name="traffic_disabled">Disabilitato</string>
     <string name="traffic_statusbar">Statusbar</string>
     <string name="traffic_expanded_statusbar">Header QS</string>
     <string name="network_traffic_autohide_threshold_title">Nascondi indicatore al di sotto della velocità indicata (KB/s)</string>
@@ -251,7 +249,6 @@
     <string name="clock_seconds_display">Mostra secondi</string>
     <string name="clock_date_display">Data</string>
     <string name="clock_date_display_summary">Mostra data personalizzata a sinistra dell\'ora</string>
-    <string name="clock_date_display_none">Non mostrare</string>
     <string name="clock_date_display_small">Dimensione font piccola</string>
     <string name="clock_date_display_normal">Dimensione font media</string>
     <string name="clock_date_style">Stile data</string>
@@ -376,7 +373,6 @@
     <string name="qs_show_secure_summary">Show a conditional security footer</string>
 
     <!-- Battery Styles -->
-    <string name="battery_style_category_title">Livello batteria</string>
     <string name="battery_percent_title">Percentuale batteria</string>
 
     <!-- Status bar - Battery -->
@@ -539,7 +535,6 @@
     <string name="status_bar_logo_title">Logo DerpQuest</string>
     <string name="status_bar_logo_right">Destra</string>
     <string name="status_bar_logo_left">Sinistra</string>
-    <string name="status_bar_logo_disabled">Disabilitato</string>
     <string name="status_bar_logo_style_title">Stile logo DerpFest </string>
 
     <!-- Rounded corners -->
@@ -564,8 +559,6 @@
     <string name="flash_on_call_category">Flash pulsante</string>
     <string name="flash_on_call_title">Accendi il flash a chiamata ricevuta</string>
     <string name="flash_on_call_delay_title">Frequenza impulso flash</string>
-
-    <string name="lockmods_settings_title">Font e dimensioni</string>
 
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Opzioni font data</string>
@@ -730,17 +723,6 @@
     <!-- Lockscreen clock style -->
     <string name="lockscreen_clock_title">Stile orologio</string>
     <string name="lockscreen_clock_dialog_title">Scegli stile orologio</string>
-    <string name="lockscreen_clock_selection_hidden">Nascosto</string>
-    <string name="lockscreen_clock_selection_digital">Default</string>
-    <string name="lockscreen_clock_selection_digital_bold">Grassetto (digitale)</string>
-    <string name="lockscreen_clock_selection_digital_small">Piccolo (digitale)</string>
-    <string name="lockscreen_clock_selection_digital_accent">Colore accent (digitale)</string>
-    <string name="lockscreen_clock_selection_digital_accent_min">Minuti colore accent (digitale)</string>
-    <string name="lockscreen_clock_selection_digital_accent_hour">Ore colore accent (digitale)</string>
-    <string name="lockscreen_clock_selection_sammy">Sammy</string>
-    <string name="lockscreen_clock_selection_sammy_bold">Sammy (grassetto)</string>
-    <string name="lockscreen_clock_selection_sammy_accent">Sammy colore accent</string>
-    <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy colore accent (ore più scure)</string>
 
     <!-- QS themes -->
     <string name="qs_themes_category_title">Temi QS</string>
@@ -766,7 +748,6 @@
 
     <!-- Statusbar ticker -->
     <string name="statusbar_notifi_cat">Ticker notifiche (beta)</string>
-    <string name="status_bar_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_summary">Anteprima notifica nella status bar</string>
     <string name="ticker_animation_mode_title">Animazione Ticker</string>
@@ -779,15 +760,12 @@
     <string name="qs_running_services_summary">Abilita icona servizi in background nel footer dei QS</string>
 
     <!-- Edge lighting (aka pulse ambient light) -->
-    <string name="pulse_ambient_light_title">Abilita</string>
     <string name="pulse_ambient_light_summary">Mostra edge lighting al ricevimento di nuove notifiche</string>
     <string name="ambient_notification_light_enabled_title">Mostra in AoD</string>
     <string name="ambient_notification_light_enabled_sumary">Continua a mostrare in AoD finché lo schermo non viene acceso</string>
     <string name="ambient_notification_light_hide_aod_title">Nascondi contenuto AoD</string>
     <string name="ambient_notification_light_hide_aod_sumary">Nascondi altri contenuti AoD quando le barre vengono visualizzate </string>
     <string name="pulse_ambient_light_color_title">Colore Edge light</string>
-    <string name="pulse_ambient_auto_color_title">Colore automatico</string>
-    <string name="pulse_ambient_auto_color_summary">Imposta il colore in base al colore principale dello sfondo</string>
     <string name="pulse_ambient_light_duration_title">Durata</string>
     <string name="pulse_ambient_light_duration_summary">Imposta durata animazione Ambient light</string>
     <string name="pulse_ambient_light_repeat_count_title">Numero ripetizioni</string>

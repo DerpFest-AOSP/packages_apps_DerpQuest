@@ -175,8 +175,6 @@
 
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">תנועת רשת</string>
-    <string name="network_traffic_location">הצג פעילות רשת</string>
-    <string name="traffic_disabled">מבוטל</string>
     <string name="traffic_statusbar">שורת מצב</string>
     <string name="traffic_expanded_statusbar">שורת מצב מורחבת</string>
     <string name="network_traffic_autohide_threshold_title">גובה הסתרה אוטומטית של פעילות רשת (KB/s)</string>
@@ -243,7 +241,6 @@
     <string name="clock_seconds_display">הצג שניות</string>
     <string name="clock_date_display">תאריך</string>
     <string name="clock_date_display_summary">הצג תאריך לפני השעון</string>
-    <string name="clock_date_display_none">אל תציג</string>
     <string name="clock_date_display_small">גודל כתיב קטן</string>
     <string name="clock_date_display_normal">גודל כתיב רגיל</string>
     <string name="clock_date_style">עיצוב תאריך</string>
@@ -368,7 +365,6 @@
     <string name="qs_show_secure_summary">הצג מידע אודות אבטחה במידה ויש צורך בכך</string>
 
     <!-- Battery Styles -->
-    <string name="battery_style_category_title">רמת סוללה</string>
     <string name="battery_percent_title">אחוזי סוללה</string>
 
     <!-- Status bar - Battery -->
@@ -529,7 +525,6 @@
     <string name="status_bar_logo_title">לוגו</string>
     <string name="status_bar_logo_right">ימין</string>
     <string name="status_bar_logo_left">שמאל</string>
-    <string name="status_bar_logo_disabled">מבוטל</string>
     <string name="status_bar_logo_style_title">סגנון לוגו</string>
 
     <!-- Rounded corners -->
@@ -552,7 +547,6 @@
     <string name="flash_on_call_title">הבהב פנס בשיחה נכנסת</string>
     <string name="flash_on_call_delay_title">קצב הבהוב</string>
 
-    <string name="lockmods_settings_title">גופנים וגדלים</string>
 
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">הגדרות גופן תאריך</string>
@@ -588,12 +582,8 @@
     <string name="status_bar_carrier_font_style_title">גופן תוית מפעיל</string>
 
     <!-- Ambient edge lighting -->
-    <string name="notification_screen_title">מסך</string>
-    <string name="pulse_ambient_light_title">תאורת קצוות</string>
     <string name="pulse_ambient_light_summary">האר את צידי המסך בעת כניסת התראה</string>
     <string name="pulse_ambient_light_color_title">צבע צידי מסך</string>
-    <string name="pulse_ambient_auto_color_title">צבע אוטומטי</string>
-    <string name="pulse_ambient_auto_color_summary">בוחר בצבע הדומיננטי בטפט מסך הבית</string>
     <string name="pulse_ambient_light_duration_title">אורך</string>
     <string name="pulse_ambient_light_duration_summary">שנה את אורך האנימציה</string>
 
@@ -727,45 +717,5 @@
     <!-- Themes -->
     <string name="theme_select_title">ערכות נושא</string>
     <string name="theme_select_summary">בחר צבע משני, תצורת סמלילים ועוד</string>
-
-    <!-- Berry Lite -->
-    <string name="style_title">סגנון</string>
-    <string name="style_summary">בחר צבע מערכת</string>
-    <string name="style_global_title">סגנון</string>
-    <string name="style_global_entry_automatic">אוטומטי (טפט)</string>
-    <string name="style_global_entry_light">בהיר</string>
-    <string name="style_global_entry_dark">כהה</string>
-    <string name="style_global_entry_time">אוטומטי (לפי הזמן ביום)</string>
-    <string name="style_global_entry_app">מנוהל על ידי %1$s</string>
-    <string name="style_accent_title">צבע משני</string>
-    <string name="style_dark_theme_title">ערכת נושא כהה</string>
-    <string name="style_dark_theme_automatic">אוטומטי (טפט)</string>
-    <string name="style_dark_theme_disabled">מבוטל</string>
-    <string name="style_dark_theme_enabled">מאופשר</string>
-    <string name="style_dark_theme_livedisplay">אוטומטי (livedisplay)</string>
-    <string name="accent_picker_dialog_title">בחר צבע משני</string>
-    <string name="theme_accent_picker_title">צבע משני</string>
-    <string name="theme_accent_picker_summary">בחר צבע משני עבור ערכת הנושא של המערכת</string>
-    <string name="theme_accent_picker_default">ברירת מחדל</string>
-    <string name="accent_picker_material_colors">לוח חומר</string>
-    <string name="accent_picker_custom_colors">התבקשו על ידי משתמשים</string>
-    <string name="accent_picker_brand_colors">צבעי מותגים</string>
-    <string name="style_accent_configuration_not_supported">הצבע המשני הנוכחי אינו תואם את ערכת הנושא. על מנת להמשיך יש לבחור בצבע אחר. האם להמשיך?</string>
-    <string name="style_accent_configuration_positive">Proceed</string>
-    <string name="style_automagic_title">אוטומטי</string>
-    <string name="style_automagic_description">שנה את ערכת הנושא על מנת שתתאים לטפט שלך</string>
-    <string name="style_automagic_dialog_content">סגנון מומלץ: <b>%1$s</b> עם צבע <b>%2$s</b>.\nהאם לאפשר?</string>
-    <string name="style_automagic_dialog_positive">החל</string>
-    <string name="style_accent_default_name">ברירת מחדל</string>
-    <string name="style_dark_overlay_title">מצב כהה</string>
-    <string name="style_dark_overlay_default">אפור עמוק</string>
-    <string name="style_dark_overlay_black">שחור amoled</string>
-    <string name="style_notification_title">סגנון התראות</string>
-    <string name="style_notification_auto">אוטומטי (ערכת נושא של המערכת)</string>
-    <string name="style_notification_light">בהיר</string>
-    <string name="style_notification_dark">אפור עמוק</string>
-    <string name="style_notification_black">Amoled שחור</string>
-    <string name="style_and_wallpaper_title">סגנונות &amp; טפטים</string>
-    <string name="style_and_wallpaper_summary">בחר צבע משני, שעון ועוד</string>
 
 </resources>

@@ -686,7 +686,7 @@
     <string name="DESC_MIN_LIGHT_MAINTENANCE_TIME">我们会在轻度打盹后保持维护模式的最小时间</string>
     <string name="DESC_MIN_DEEP_MAINTENANCE_TIME">我们会在打盹后保持维护模式的最小时间</string>
     <string name="DESC_KEY_NOTIFICATION_WHITELIST_DURATION">我们希望将处理通知的应用程序列入白名单的时间</string>
- 
+
 
 
 
@@ -746,7 +746,7 @@
     <string name="no_stat_because_reset_wakelock">点击重置后开始统计唤醒锁数据</string>
     <string name="no_stat_because_plugged">请拔掉电源以获取唤醒锁数据</string>
     <string name="no_states_file_found">状态文件未找到，您确定您的手机是兼容的吗？如果您正在使用第三方的固件或内核，请尝试与开发者联系，告诉其状态文件不可读</string>
-    
+
 
 
     <string name="deep_sleep">"深度休眠"</string>
@@ -793,7 +793,7 @@
     <string name="ticker_animation_mode_alpha_fade">渐隐</string>
     <string name="ticker_animation_mode_scroll">滚动</string>
     <string name="ticker_tick_duration_title">预览持续时长</string>
-    
+
     <!-- Running Services button -->
     <string name="qs_running_services_title">运行中服务图标</string>
     <string name="qs_running_services_summary">在页脚上开启运行中服务图标</string>
