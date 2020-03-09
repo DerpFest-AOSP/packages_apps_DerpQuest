@@ -161,4 +161,7 @@
     <string name="lockscreen_clock_sammy">Sammy</string>
     <string name="lockscreen_clock_sammy_bold">Sammy (fett)</string>
 
+    <string name="qs_bg_use_new_tint">Farben der QS-Kacheln</string>
+    <string name="qs_bg_use_new_tint_summary">Verwenden Sie die Akzentfarbe für QS-Kachelsymbole und den Hintergrund</string>
+
 </resources>
