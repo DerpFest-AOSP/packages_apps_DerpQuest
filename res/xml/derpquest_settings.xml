@@ -22,49 +22,49 @@
             android:key="themes_category"
             android:title="@string/theming_title"
             android:fragment="com.derpquest.settings.fragments.ThemeSettings"
-            android:icon="@drawable/ic_settings_theming"/>
+            android:icon="@drawable/ic_derpquest_theming_background"/>
 
         <!-- Status Bar -->
         <Preference
             android:key="statusbar_category"
             android:title="@string/statusbar_title"
             android:fragment="com.derpquest.settings.fragments.StatusBarSettings"
-            android:icon="@drawable/ic_settings_statusbar"/>
+            android:icon="@drawable/ic_derpquest_statusbar_background"/>
 
         <!-- Quick Settings -->
         <Preference
             android:key="quicksettings_category"
             android:title="@string/quicksettings_title"
             android:fragment="com.derpquest.settings.fragments.QuickSettings"
-            android:icon="@drawable/ic_settings_quicksettings"/>
+            android:icon="@drawable/ic_derpquest_quicksettings_background"/>
 
         <!-- Buttons -->
         <Preference
             android:key="buttonsettings_category"
             android:title="@string/button_title"
             android:fragment="com.derpquest.settings.fragments.ButtonSettings"
-            android:icon="@drawable/ic_settings_buttons"/>
+            android:icon="@drawable/ic_derpquest_buttons_background"/>
 
         <!-- Gestures -->
         <Preference
             android:key="gestures_category"
             android:title="@string/gestures_title"
             android:fragment="com.derpquest.settings.fragments.DERPGestureSettings"
-            android:icon="@drawable/ic_settings_pdgestures"/>
+            android:icon="@drawable/ic_derpquest_gestures_background"/>
 
         <!-- Lock Screen -->
         <Preference
             android:key="lockscreen_category"
             android:title="@string/lockscreen_title"
             android:fragment="com.derpquest.settings.fragments.LockScreenSettings"
-            android:icon="@drawable/ic_settings_lockscreens"/>
+            android:icon="@drawable/ic_derpquest_lockscreen_background"/>
 
         <!-- Power Menu -->
         <Preference
             android:key="powermenu_category"
             android:title="@string/powermenu_title"
             android:fragment="com.derpquest.settings.fragments.PowerMenuSettings"
-            android:icon="@drawable/ic_settings_powermenu"/>
+            android:icon="@drawable/ic_derpquest_powermenu_background"/>
 
         <!-- Recents
         <Preference
@@ -79,27 +79,27 @@
             android:key="notifications_category"
             android:title="@string/notifications_title"
             android:fragment="com.derpquest.settings.fragments.NotificationsSettings"
-            android:icon="@drawable/ic_settings_notifications"/>
+            android:icon="@drawable/ic_derpquest_notifications_background"/>
 
         <!-- Animation -->
         <Preference
             android:key="animations_category"
             android:title="@string/animations_title"
             android:fragment="com.derpquest.settings.fragments.Animations"
-            android:icon="@drawable/ic_settings_animations"/>
+            android:icon="@drawable/ic_derpquest_animations_background"/>
 
         <!-- Misc -->
         <Preference
             android:key="misc_category"
             android:title="@string/misc_title"
             android:fragment="com.derpquest.settings.fragments.MiscSettings"
-            android:icon="@drawable/ic_settings_miscs"/>
+            android:icon="@drawable/ic_derpquest_misc_background"/>
 
         <!-- About -->
         <Preference
             android:key="about_category"
             android:title="@string/about_title"
             android:fragment="com.derpquest.settings.fragments.About"
-            android:icon="@drawable/ic_about"/>
+            android:icon="@drawable/ic_derpquest_about_background"/>
 
 </PreferenceScreen>

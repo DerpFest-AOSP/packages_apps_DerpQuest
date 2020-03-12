@@ -39,4 +39,18 @@
     <color name="ambient_light_body_color">#323232</color>
 
     <color name="fod_item_background_stroke_color">#d6d6d6</color>
+
+    <!-- DerpQuest icon colors definition -->
+    <color name="derpquest_theming_icon_background">#5011C1</color>
+    <color name="derpquest_statusbar_icon_background">#2196F3</color>
+    <color name="derpquest_quicksettings_icon_background">#FF7E0F</color>
+    <color name="derpquest_buttons_icon_background">#01B1AF</color>
+    <color name="derpquest_gestures_icon_background">#C14CE6</color>
+    <color name="derpquest_lockscreen_icon_background">#0F9D58</color>
+    <color name="derpquest_powermenu_icon_background">#F15B8D</color>
+    <color name="derpquest_notifications_icon_background">#5011C1</color>
+    <color name="derpquest_animations_icon_background">#72B70F</color>
+    <color name="derpquest_misc_icon_background">#2EC7DC</color>
+    <color name="derpquest_about_icon_background">#DB242B</color>
+
 </resources>
