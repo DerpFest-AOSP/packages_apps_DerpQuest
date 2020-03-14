@@ -785,6 +785,8 @@
     <!-- Themes -->
     <string name="theme_select_title">Themes</string>
     <string name="theme_select_summary">Browse and select installed themes</string>
+    <string name="rgb_accent_picker_title">RGB accent picker</string>
+    <string name="rgb_accent_picker_summary">Choose the accent color yourself</string>
 
     <!--Gestures-->
     <string name="aosp_gesture_title">AOSP Gestures</string>
