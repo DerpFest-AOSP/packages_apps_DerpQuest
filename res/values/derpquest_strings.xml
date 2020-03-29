@@ -596,6 +596,9 @@
     <string name="notification_headers_title">Show notification headers</string>
     <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
 
+    <string name="show_media_heads_up_title">Show media heads up</string>
+    <string name="show_media_heads_up_summary">Show media heads up when a new track is played, if the player is not already in foreground</string>
+
     <!-- Statusbar Clock Font Style, Size & Color -->
     <string name="status_bar_clock_font_style_title">Clock font style</string>
     <string name="status_bar_clock_font_size_title">Clock font size</string>

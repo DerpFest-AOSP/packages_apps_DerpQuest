@@ -18,6 +18,12 @@
     android:title="@string/heads_up_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="show_media_heads_up"
+        android:title="@string/show_media_heads_up_title"
+        android:summary="@string/show_media_heads_up_summary"
+        android:defaultValue="false" />
+
     <com.derpquest.settings.preferences.CustomSeekBarPreference
         android:key="heads_up_snooze_time"
         android:title="@string/heads_up_snooze_title"
