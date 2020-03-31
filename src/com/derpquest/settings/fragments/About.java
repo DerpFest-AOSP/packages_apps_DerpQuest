@@ -21,6 +21,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.util.Log;
 
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
@@ -47,6 +48,11 @@ import java.util.Map;
 @SearchIndexable
 public class About extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
+
+    private PreferenceCategory mDeviceLinks;
+    private Preference mDeviceFW;
+    private Preference mDeviceRecovery;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -55,6 +61,21 @@ public class About extends SettingsPreferenceFragment implements
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mDeviceLinks = (PreferenceCategory) findPreference("about_device_links");
+        mDeviceFW = (Preference) findPreference("device_fw");
+        mDeviceRecovery = (Preference) findPreference("device_recovery");
+
+        boolean hasFWLink = !(res.getString(R.string.about_device_fw_link).equals(""));
+        if (!hasFWLink)
+            mDeviceFW.setVisible(false);
+
+        boolean hasRecoveryLink = !(res.getString(R.string.about_device_recovery_link).equals(""));
+        if (!hasRecoveryLink)
+            mDeviceRecovery.setVisible(false);
+
+        if (!hasFWLink && !hasRecoveryLink)
+            mDeviceLinks.setVisible(false);
 
     }
 
