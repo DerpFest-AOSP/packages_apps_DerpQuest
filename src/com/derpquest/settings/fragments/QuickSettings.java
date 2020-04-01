@@ -65,6 +65,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String QS_BG_STYLE = "qs_panel_bg_override";
     private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
     private static final String QS_CUSTOM_HEADER = "status_bar_custom_header";
+    private static final String STATUS_BAR_CUSTOM_HEADER_IMAGE = "status_bar_custom_header_image";
+    private static final String STATUS_BAR_CUSTOM_HEADER_PROVIDER = "custom_header_provider";
+    private static final String STATUS_BAR_CUSTOM_HEADER_PACK = "daylight_header_pack";
 
     private SystemSettingSeekBarPreference mQsPanelAlpha;
 
@@ -116,6 +119,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0) == 1;
         mCustomHeader.setChecked(enabled);
 
+        // Making sure that, If enabled, A header is also selected
+        if (enabled && (Settings.System.getString(resolver,
+                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == null ||
+                Settings.System.getString(resolver,
+                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == "")) {
+            Settings.System.putString(resolver,
+                    STATUS_BAR_CUSTOM_HEADER_PROVIDER, "static");
+            Settings.System.putString(resolver,
+                    STATUS_BAR_CUSTOM_HEADER_PACK, "org.omnirom.omnistyle/org.omnirom.omnistyle.derp_art");
+            Settings.System.putString(resolver,
+                    STATUS_BAR_CUSTOM_HEADER_IMAGE, "org.omnirom.omnistyle/derp_header_04");
+        }
+
     }
 
     @Override
@@ -147,6 +163,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
+            // Making sure that, If enabled, A header is also selected
+            if (value && (Settings.System.getString(resolver,
+                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == null ||
+                    Settings.System.getString(resolver,
+                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == "")) {
+                Settings.System.putString(resolver,
+                        STATUS_BAR_CUSTOM_HEADER_PROVIDER, "static");
+                Settings.System.putString(resolver,
+                        STATUS_BAR_CUSTOM_HEADER_PACK, "org.omnirom.omnistyle/org.omnirom.omnistyle.derp_art");
+                Settings.System.putString(resolver,
+                        STATUS_BAR_CUSTOM_HEADER_IMAGE, "org.omnirom.omnistyle/derp_header_04");
+            }
             return true;
         }
         return false;

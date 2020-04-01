@@ -23,12 +23,14 @@
         android:title="@string/custom_header_provider_title"
         android:persistent="false"
         android:entries="@array/custom_header_provider_entries"
-        android:entryValues="@array/custom_header_provider_values" />
+        android:entryValues="@array/custom_header_provider_values"
+        android:defaultValue="static" />
 
     <ListPreference
         android:key="daylight_header_pack"
         android:title="@string/daylight_header_pack_title"
-        android:persistent="false" />
+        android:persistent="false"
+        android:defaultValue="org.omnirom.omnistyle/org.omnirom.omnistyle.derp_art" />
 
     <Preference
         android:key="custom_header_browse"
