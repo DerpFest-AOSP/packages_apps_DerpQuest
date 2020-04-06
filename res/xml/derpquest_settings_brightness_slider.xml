@@ -18,19 +18,19 @@
     android:title="@string/qs_show_brightness_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="qs_brightness_position_bottom"
         android:title="@string/qs_brightness_position_bottom_title"
         android:summary="@string/qs_brightness_position_bottom_summary"
         android:defaultValue="false" />
 
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="qs_show_auto_brightness"
         android:title="@string/qs_show_auto_brightness_title"
         android:summary="@string/qs_show_auto_brightness_summary"
         android:defaultValue="true" />
 
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="qs_show_minmax_brightness"
         android:title="@string/qs_show_minmax_brightness_title"
         android:summary="@string/qs_show_minmax_brightness_summary"

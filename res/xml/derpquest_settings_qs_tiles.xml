@@ -30,7 +30,7 @@
         android:summary="@string/qstile_requires_unlocking_summary"
         android:defaultValue="true"/>
 
-    <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
         android:key="qs_show_secure"
         android:title="@string/qs_show_secure_title"
         android:summary="@string/qs_show_secure_summary"
