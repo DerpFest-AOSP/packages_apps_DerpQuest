@@ -17,7 +17,11 @@ package com.derpquest.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -74,8 +78,26 @@ public class About extends SettingsPreferenceFragment implements
         if (!hasRecoveryLink)
             mDeviceRecovery.setVisible(false);
 
-        if (!hasFWLink && !hasRecoveryLink)
+        if (!hasFWLink && !hasRecoveryLink) {
             mDeviceLinks.setVisible(false);
+        } else {
+            String defaultBrowser = null;
+            try {
+                Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("https://"));
+                ResolveInfo resolveInfo = getPackageManager().resolveActivity(browserIntent,PackageManager.MATCH_DEFAULT_ONLY);
+                defaultBrowser = resolveInfo.activityInfo.packageName;
+            } catch (Exception e) {
+                // nothing to do. defaultBrowser already set to null
+            }
+
+            // if we have no default browser set we disable the buttons and let the user know
+            if (defaultBrowser == null) {
+                mDeviceFW.setEnabled(false);
+                mDeviceFW.setSummary(res.getString(R.string.no_browser));
+                mDeviceRecovery.setEnabled(false);
+                mDeviceRecovery.setSummary(res.getString(R.string.no_browser));
+            }
+        }
 
     }
 

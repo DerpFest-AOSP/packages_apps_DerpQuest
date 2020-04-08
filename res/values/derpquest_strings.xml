@@ -46,6 +46,7 @@
     <string name="save">Save</string>
     <string name="default_string">Default</string>
     <string name="enable_first">Please enable first</string>
+    <string name="no_browser">Please choose a default browser</string>
     <string name="general_category">General</string>
     <string name="look_category">Look</string>
     <string name="items_category">Items</string>
