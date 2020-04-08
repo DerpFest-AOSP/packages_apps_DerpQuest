@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2017-2019 The PixelDust Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
          http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -30,7 +33,11 @@
     <string name="theming_title">Temi</string>
     <string name="animations_title">Animazioni</string>
     <string name="nav_bar_category_title">Barra di navigazione</string>
+    <string name="statusbar_notifi_cat">Notifiche</string>
     <string name="edge_lighting_category_title">Illuminazione laterale</string>
+    <string name="clock_settings_title">Orologio</string>
+    <string name="battery_icon_style_title">Icona batteria</string>
+    <string name="battery_icon_style_summary">Personalizza stile e comportamento</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -38,6 +45,11 @@
     <string name="cancel">Annulla</string>
     <string name="save">Salva</string>
     <string name="default_string">Predefinito</string>
+    <string name="enable_first">Perfavore abilita prima</string>
+    <string name="general_category">Generale</string>
+    <string name="look_category">Aspetto</string>
+    <string name="items_category">Elementi</string>
+    <string name="custom_string">Personalizzato</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Seleziona colore</string>
@@ -62,6 +74,7 @@
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Scorciatoie schermata di blocco</string>
+    <string name="lockscreen_tuner_summary">Modifica scorciatoie visualizzate nella schermata di blocco</string>
 
     <!-- Power Menu -->
     <string name="powermenu_screenshot">Screenshot</string>
@@ -166,6 +179,8 @@
     <string name="battery_light_full_color">Quasi carico</string>
     <string name="battery_light_reallyfull_color">Completamente carico</string>
 
+    <string name="led_category">LED</string>
+    <string name="onscreen_category">On-Screen</string>
     <string name="notification_light_settings">Led di notifica</string>
 
     <!-- Fingerprint authentication vibration -->
@@ -174,6 +189,8 @@
 
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Indicatore traffico di rete</string>
+    <string name="network_traffic_state_summary">Posizione e aspetto indicatore di traffico</string>
+    <string name="network_traffic_location_title">Posizione indicatore di traffico</string>
     <string name="traffic_statusbar">Barra di stato</string>
     <string name="traffic_expanded_statusbar">Intestazione impostazioni rapide</string>
     <string name="network_traffic_autohide_threshold_title">Nascondi indicatore al di sotto della velocità indicata (KB/s)</string>
@@ -199,6 +216,7 @@
     <string name="lockscreen_power_menu_disabled_summary">Disabilità il menù di spegnimento quando il telefono è bloccato e protetto da password.</string>
 
     <!-- Battery Bar -->
+    <string name="battery_bar_title">Schermata di blocco barra batteria</string>
     <string name="tuner_keyguard_show_battery_bar_title">Mostra barra batteria</string>
     <string name="tuner_keyguard_show_battery_bar_summary">Mostra barra batteria sull\'always on display quando il dispositivo è in carica</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Mostra sempre la barra batteria</string>
@@ -237,6 +255,9 @@
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_title">Impostazioni orologio</string>
     <string name="status_bar_clock_show">Mostra data e ora</string>
+    <string name="status_bar_clock_summary">Personalizza posizione orologio e aspetto</string>
+    <string name="status_bar_date_show">Mostra data</string>
+    <string name="status_bar_date_summary">Personalizza posizione data e aspetto</string>
     <string name="status_bar_clock_style_title">Stile orologio</string>
     <string name="status_bar_clock_style_right">Destra</string>
     <string name="status_bar_clock_style_center">Centro</string>
@@ -263,9 +284,8 @@
     <string name="clock_date_left">A sinistra dell\'ora</string>
     <string name="clock_date_position">Posizione data</string>
 
-    <!-- Statusbar Clock Font Style & Size -->
-    <string name="status_bar_clock_font_style_title">Stile carattere</string>
-    <string name="status_bar_clock_font_size_title">Dimensione carattere dell\'orologio</string>
+    <!-- Lockscreen information -->
+    <string name="lockscreen_info_category_title">Schermata di blocco info elementi</string>
 
     <!-- Lock Clock Fonts -->
     <string name="lock_clock_font_title">Opzioni carattere orologio</string>
@@ -296,7 +316,6 @@
     <string name="lock_clock_font_notoserif_italic">NotoSerif corsivo</string>
     <string name="lock_clock_font_notoserif_bold">NotoSerif grassetto</string>
     <string name="lock_clock_font_notoserif_bold_italic">NotoSerif grassetto Italiccorsivo</string>
-
     <string name="lock_clock_font_gobold">GoBold leggero</string>
     <string name="lock_clock_font_roadrage">Road Rage</string>
     <string name="lock_clock_font_snowstorm">Snowstorm</string>
@@ -373,9 +392,6 @@
     <string name="qs_show_secure_title">Sicurezza piè di pagina</string>
     <string name="qs_show_secure_summary">Mostra le condizioni di sicurezza nel piè di pagina delle impostazioni rapide</string>
 
-    <!-- Battery Styles -->
-    <string name="battery_percent_title">Percentuale batteria</string>
-
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Stile icona batteria</string>
     <string name="status_bar_battery_style_q">Icona verticale (predefinito)</string>
@@ -383,6 +399,7 @@
     <string name="status_bar_battery_style_circle">Cerchio pieno</string>
     <string name="status_bar_battery_style_text">Testuale</string>
     <string name="status_bar_battery_style_hidden">Nascosta</string>
+    <string name="battery_percent_title">Percentuale batteria</string>
 
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">Percentuale batteria</string>
@@ -394,8 +411,11 @@
 
     <!-- QS settings categories -->
     <string name="category_tiles_title">Area tile</string>
+    <string name="category_tiles_title_summary">Customize QS tiles area items</string>
     <string name="category_footer_title">Area piè di pagina</string>
+    <string name="category_footer_summary">Customize QS footer area items</string>
     <string name="category_header_title">Area intestazione</string>
+    <string name="category_header_summary">Customize QS header area items</string>
 
     <!-- QS drag handle -->
     <string name="qs_drag_title">Mostra la maniglia di trascinamento nelle impostazioni rapide</string>
@@ -449,6 +469,7 @@
     <!-- Custom headers -->
     <string name="notification_title">Pannello notifiche</string>
     <string name="status_bar_custom_header_title">Abilita</string>
+    <string name="status_bar_custom_header_summary">Usa immagine personalizzata intestazione QS</string>
     <string name="daylight_header_pack_title">Collezione immagini dell\'intestazione</string>
     <string name="status_bar_custom_header_shadow_title">Ombra immagini dell\'intestazione</string>
     <string name="status_bar_custom_header_shadow_summary">Per una migliore visibilità con immagini luminose</string>
@@ -497,6 +518,7 @@
 
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Opzioni vibrazione in chiamata</string>
+    <string name="incall_vibration_summary">Gestisci opzioni vibrazione in chiamata</string>
     <string name="incall_vibrate_connect_title">Vibra alla risposta</string>
     <string name="incall_vibrate_connect_summary">Abilita per avere una vibrazione alla connessione della chiamata</string>
     <string name="incall_vibrate_call_wait_title">Vibrate alla messa in attesa</string>
@@ -561,6 +583,25 @@
     <string name="flash_on_call_title">Consente il lampeggio ad intermittenza sulle chiamate in arrivo</string>
     <string name="flash_on_call_delay_title">Frequenza impulso flash</string>
 
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Forza notifiche espanse</string>
+    <string name="force_expanded_notifications_summary">Forza app che supportano notifiche espanse</string>
+
+    <!-- Statusbar Clock Font Style, Size & Color -->
+    <string name="status_bar_clock_font_style_title">Stile carattere orologio</string>
+    <string name="status_bar_clock_font_size_title">Dimensione carattere orologio</string>
+    <string name="status_bar_clock_color_title">Colore carattere orologio</string>
+
+    <!-- Lockscreen Clock, Date & Owner Info -->
+    <string name="lockscreen_clock_options_title">Clock widget options</string>
+    <string name="lockscreen_clock_summary">Modify the style, font and size of the clock widget</string>
+    <string name="lockscreen_date_title">Date options</string>
+    <string name="lockscreen_date_summary">Change the font style/size of the dateview</string>
+    <string name="lockscreen_info_title">Date widget options</string>
+    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
+    <string name="lockscreen_ownerinfo_title">Owner info options</string>
+    <string name="lockscreen_ownerinfo_summary">Customize the font style/size of the Owner information</string>
+
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Opzioni carattere data</string>
     <string name="lock_date_font_summary">Cambia il carattere predefinito del widget della data sulla schermata di blocco</string>
@@ -593,6 +634,12 @@
     <string name="status_bar_carrier_color">Colore etichetta operatore</string>
     <string name="status_bar_carrier_size">Dimensione etichetta operatore</string>
     <string name="status_bar_carrier_font_style_title">Carattere etichetta operatore</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Info ricarica schermata di blocco</string>
+    <string name="lockscreen_battery_info_summary">Mostra corrente ricarica, voltaggio e temperatura batteria nella schemrata di blocco quando in ricarica</string>
+    <string name="lockscreen_battery_info_font_title">Carattere informazioni ricarica</string>
+    <string name="lockscreen_battery_info_dialog_title">Seleziona carattere info ricarica</string>
 
     <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_title">Opacità impostazioni rapide</string>
@@ -730,6 +777,8 @@
     <string name="qs_bg_use_fw_summary">Disabilita lo stile impostazioni rapide personalizzati quando si usano gestori temi di terze parti</string>
     <string name="qs_bg_accent_title">Usa colore primario</string>
     <string name="qs_bg_accent_summary">Imposta il colore di sfondo delle impostazioni rapide in base al colore primario</string>
+    <string name="qs_bg_use_new_tint">Colorazione</string>
+    <string name="qs_bg_use_new_tint_summary">Abilita stile colorazione tile QS</string>
 
     <!-- Themes -->
     <string name="theme_select_title">Temi</string>
@@ -744,13 +793,11 @@
     <string name="unit_pixels">dp</string>
 
     <!-- Statusbar ticker -->
-    <string name="statusbar_notifi_cat">Ticker notifiche (beta)</string>
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="status_bar_show_ticker_summary">Anteprima notifica nella barra di stato</string>
     <string name="ticker_animation_mode_title">Animazione Ticker</string>
     <string name="ticker_animation_mode_alpha_fade">Dissolvenza</string>
     <string name="ticker_animation_mode_scroll">Scorrimento</string>
-    <string name="ticker_tick_duration_title">Durata Ticker</string>
 
     <!-- Running Services button -->
     <string name="qs_running_services_title">Icona servizi in background</string>
@@ -894,6 +941,15 @@
     <string name="about_phone_title">Info sul telefono</string>
     <string name="about_phone_summary">Apri la pagina delle informazioni del sistema</string>
 
+    <!-- About - Device specific links -->
+    <string name="about_device_category">Link specifici dispositivo</string>
+    <string name="about_device_fw">Firmware richiesto</string>
+    <string name="about_device_fw_ver" translatable="false"></string> <!-- Firmware version -->
+    <string name="about_device_fw_link" translatable="false"></string> <!-- Firmware link -->
+    <string name="about_device_recovery">Recovery consigliata</string>
+    <string name="about_device_recovery_ver" translatable="false"></string> <!-- Recovery version -->
+    <string name="about_device_recovery_link" translatable="false"></string> <!-- Recovery link -->
+
     <!-- Accent presets -->
     <string name="accent_preset_0">AOSP Cinnamon</string>
     <string name="accent_preset_1">AOSP Verde</string>
@@ -934,4 +990,5 @@
     <string name="accent_preset_36">XboxGreen</string>
     <string name="accent_preset_37">XiaomiOrange</string>
     <string name="accent_preset_title">Colore primario predefinito</string>
+
 </resources>
