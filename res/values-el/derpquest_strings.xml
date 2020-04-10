@@ -345,7 +345,7 @@
     <string name="lockscreen_clock_title">Στυλ ρολογιού</string>
     <string name="lockscreen_cover_filter_blur">Θαμπό</string>
     <string name="lockscreen_cover_filter_gradientblur">Κεκλιμένη θαμπάδα</string>
-    <string name="lockscreen_cover_filter_grayblur">Θαμπό και απόχρωση γκρι</string>
+    <string name="lockscreen_cover_filter_grayblur">Θαμπάδα και απόχρωση του γκρι</string>
     <string name="lockscreen_cover_filter_grayscale">Γκρι</string>
     <string name="lockscreen_cover_filter_none">Κανένα</string>
     <string name="lockscreen_cover_filter_tint">Γκρίζα βάση</string>
@@ -441,7 +441,7 @@
     <string name="qs_always_show_settings_title">Εμφάνιση πάντα του εικονιδίου ρυθμίσεων</string>
     <string name="qs_clock_summary">Εμφάνιση ρολογιού επάνω στην γρήγορη μπάρα</string>
     <string name="qs_clock_title">Ρολόι</string>
-    <string name="qs_drag_title">Εμφάνιση QS σε σύρσιμο</string>
+    <string name="qs_drag_title">Εμφάνιση γρήγορων ρυθμίσεων (QS) σε σύρσιμο</string>
     <string name="qs_panel_alpha_summary">Ρυθμίστε την διαφάνεια του παρασκηνίου</string>
     <string name="qs_panel_alpha_title">Διαφάνεια γρήγορων ρυθμίσεων</string>
     <string name="qstile_requires_unlocking_summary">Τα παρακάτω εικονιδ. ειδοποιήσεων, απαιτούν ξεκλείδωμα, πριν να είναι προσβάσιμα από την οθόνη κλειδώματος: πτήση, εξοικ.μπαταρίας, bluetooth, δεδομένα, αποθηκ.δεδομένων, nfc και wifi.</string>
@@ -593,7 +593,7 @@
     <string name="tuner_keyguard_show_battery_bar_always_title">Πάντα εμφ. μπάρας μπαταρίας</string>
     <string name="tuner_keyguard_show_battery_bar_summary">Εμφ. μπαρ. μπαταρ. σε πάντα ενεργή οθόνη</string>
     <string name="tuner_keyguard_show_battery_bar_title">Εμφ. μπαρ. μπαταρίας</string>
-    <string name="volume_rocker_music_controls_summary">όταν η οθόνη είναι σβηστή, παρατεταμένο πάτημα στα πλήκτρα έντασης θα αναζητήσει μουσικά κομμάτια</string>
+    <string name="volume_rocker_music_controls_summary">Όταν η οθόνη είναι σβηστή, παρατεταμένο πάτημα στα πλήκτρα έντασης θα αναζητήσει μουσικά κομμάτια</string>
     <string name="volume_rocker_music_controls_title">Έλεγχος αναπαραγωγής</string>
     <string name="volume_rocker_wake_summary">Πατώντας τα πλήκτρα ένασης θα ξυπνήσει η συσκευή</string>
     <string name="volume_rocker_wake_title">Ξύπνημα πλήκτρου έντασης</string>
@@ -631,8 +631,6 @@
     <string name="wifi_state_unknown">Άγνωστο</string>
     <string name="wifi_status_test">Κατάσταση Wi-Fi</string>
     <string name="wifi_update">Ανανέωση στατιστικών</string>
-    <string name="sound_amplifier_service_name">Ενισχυτής ήχου</string>
-    <string name="sound_amplifier_summary">Χρησιμοποιήστε ακουστικά για να βελτιώσετε τον ήχο</string>
     <!-- Categories -->
     <string name="button_title">Πλήκτρα</string>
     <string name="navbar_title">Μπάρα πλοήγησης</string>
@@ -677,6 +675,11 @@
     <string name="about_devices_git_summary">Δείτε τις πηγές του κώδικα της συσκευής στο GitHub</string>
     <string name="about_phone_title">Σχετικά με τη συσκευή</string>
     <string name="about_phone_summary">Άνοιξε την σχετική σελίδα του συστήματος</string>
+     
+    <!-- About - Device specific links -->
+    <string name="about_device_category">Πρόσθετες λήψεις συσκευής</string>
+    <string name="about_device_fw">Προτεινόμενο λογισμικό (firmware)</string>
+    <string name="about_device_recovery">Προτεινόμενη ανάκτηση(Recovery)</string>
 
     <!-- Accent presets -->
     <string name="accent_preset_0">AOSP κανελί</string>
