@@ -862,10 +862,6 @@
     <string name="fod_recog_animation_pureview_future">भविष्य</string>
     <string name="fod_recog_animation_pureview_molecular">आणविक</string>
 
-    <!-- RGB Picker -->
-    <string name="accent_color">एक्सेंट पिकर</string>
-    <string name="accent_summary">सिस्टम वाइड एक्सेंट पिकर</string>
-
     <!-- Text Clock -->
     <string name="text_clock_customizations">शब्द घड़ी</string>
     <string name="text_clock_alignment">स्थान</string>

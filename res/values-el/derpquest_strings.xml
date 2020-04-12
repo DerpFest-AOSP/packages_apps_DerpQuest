@@ -642,7 +642,6 @@
     <string name="cancel">Άκυρο</string>
     <string name="save">Αποθήκευση</string>
     <string name="items_category">Αντικείμενα</string>
-    <string name="custom_string">Άλλα</string>
     <!-- Color Picker -->
     <string name="hex_check_button_text">ΠΡΟΕΠΙΣΚΟΠΗΣΗ</string>
     <string name="hex_reset_button_text">ΕΠΑΝΑΦΟΡΑ</string>
@@ -675,52 +674,11 @@
     <string name="about_devices_git_summary">Δείτε τις πηγές του κώδικα της συσκευής στο GitHub</string>
     <string name="about_phone_title">Σχετικά με τη συσκευή</string>
     <string name="about_phone_summary">Άνοιξε την σχετική σελίδα του συστήματος</string>
-     
+
     <!-- About - Device specific links -->
     <string name="about_device_category">Πρόσθετες λήψεις συσκευής</string>
     <string name="about_device_fw">Προτεινόμενο λογισμικό (firmware)</string>
     <string name="about_device_recovery">Προτεινόμενη ανάκτηση(Recovery)</string>
-
-    <!-- Accent presets -->
-    <string name="accent_preset_0">AOSP κανελί</string>
-    <string name="accent_preset_1">AOSP πράσινο</string>
-    <string name="accent_preset_2">AOSP ωκεανί</string>
-    <string name="accent_preset_3">AOSP ορχιδέα</string>
-    <string name="accent_preset_4">AOSP μωβ</string>
-    <string name="accent_preset_5">AOSP διάστημα</string>
-    <string name="accent_preset_6">AndroidOneΠράσινο</string>
-    <string name="accent_preset_7">AospaΠράσινο</string>
-    <string name="accent_preset_8">AtlantisΠράσινο</string>
-    <string name="accent_preset_9">AzureRadiance</string>
-    <string name="accent_preset_10">μαύρο</string>
-    <string name="accent_preset_11">CocaColaΚόκκ</string>
-    <string name="accent_preset_12">DiscordΜώβ</string>
-    <string name="accent_preset_13">ElectricΒιολετί</string>
-    <string name="accent_preset_14">FacebookΜπλέ</string>
-    <string name="accent_preset_15">FiBlue</string>
-    <string name="accent_preset_16">InstagramCerise</string>
-    <string name="accent_preset_17">JollibeeCrimson</string>
-    <string name="accent_preset_18">MarsΠορτοκαλί</string>
-    <string name="accent_preset_19">MonsterΕνεργΠράσινο</string>
-    <string name="accent_preset_20">NextbitMint</string>
-    <string name="accent_preset_21">NovaΚίτρινο</string>
-    <string name="accent_preset_22">OneplusΚοκκινο</string>
-    <string name="accent_preset_23">PepsiΜπλέ</string>
-    <string name="accent_preset_24">PersianΚόκκινο</string>
-    <string name="accent_preset_25">PocophoneΚίτρινο</string>
-    <string name="accent_preset_26">RazerΠράσινο</string>
-    <string name="accent_preset_27">SamsungΜπλέ</string>
-    <string name="accent_preset_28">SlateSpruce</string>
-    <string name="accent_preset_29">SpotifyΠράσινο</string>
-    <string name="accent_preset_30">StarbucksΠράσινο</string>
-    <string name="accent_preset_31">βάσης</string>
-    <string name="accent_preset_32">Ρόζ</string>
-    <string name="accent_preset_33">TwitchΜώβ</string>
-    <string name="accent_preset_34">TwitterΜπλέ</string>
-    <string name="accent_preset_35">λευκό</string>
-    <string name="accent_preset_36">XboxΠράσινο</string>
-    <string name="accent_preset_37">XiaomiΠορτοκαλί</string>
-    <string name="accent_preset_title">Βασικό έμφασης</string>
     <!-- Running Services button -->
     <string name="qs_running_services_title">Εικονίδιο εκτελούμενων εργασιών</string>
     <string name="qs_running_services_summary">Ενεργοποιήστε το εικονίδιο των εκτελούμενων εργασιών στο κάτω μέρος</string>
@@ -784,8 +742,6 @@
     <string name="qs_blur_alpha_summary">Ρυθμίζει την διαφάνεια θολώματος</string>
     <string name="qs_blur_intensity_title">Πυκνότητα θολώματος</string>
     <string name="qs_blur_intensity_summary">Ρυθμίζει την πυκνότητα/ακτίνα</string>
-    <string name="accent_color">Χρώματα έμφασης</string>
-    <string name="accent_summary">Επιλογή χρωμάτων έμφασης, γραμματοσειράς συτήματος</string>
     <string name="network_traffic_state_summary">Θέση και εμφάνιση, κίνησης δικτύου-δεδομένων</string>
     <!-- Doze settings editor -->
     <string name="DESC_INACTIVE_TIMEOUT">Αυτός είναι ο χρόνος, που αφού απενεργοπ/θεί, ξεκινάμε να κοιτάμε στον αισθητήρα κίνησης, ώστε να εξασφαλ/με ότι η συσκευή ενεργεί μόνη της. Δεν το κάνουμε αυτό αμέσως μόλις η συσκευή είναι αδρανής, γιατί απλά δεν θέλουμε να τρέχει στο παρασκήνιο ο αισθητήρας κίνησης, όταν η οθόνη είναι σβηστή</string>

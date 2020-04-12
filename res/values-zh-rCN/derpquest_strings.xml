@@ -46,7 +46,6 @@
     <string name="general_category">常规</string>
     <string name="look_category">外观</string>
     <string name="items_category">项目</string>
-    <string name="custom_string">自定义</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">选择颜色</string>
@@ -859,12 +858,6 @@
     <string name="fod_recog_animation_pureview_future">科技</string>
     <string name="fod_recog_animation_pureview_molecular">分子</string>
 
-    <!-- RGB Picker -->
-    <string name="accent_color">选取强调色</string>
-    <string name="accent_summary">选取系统强调色</string>
-    <string name="gradient_color">选取渐变色</string>
-    <string name="gradient_summary">选取渐变效果	</string>
-
     <!-- Text Clock -->
     <string name="text_clock_customizations">文本时钟</string>
     <string name="text_clock_alignment">对齐</string>
@@ -913,45 +906,4 @@
     <string name="about_phone_title">关于手机</string>
     <string name="about_phone_summary">打开系统关于界面</string>
 
-	<!-- Accent presets -->
-    <string name="accent_preset_0">AOSP 淡黄色</string>
-    <string name="accent_preset_1">AOSP 绿色</string>
-    <string name="accent_preset_2">AOSP 海天蓝</string>
-    <string name="accent_preset_3">AOSP 淡蓝色</string>
-    <string name="accent_preset_4">AOSP 紫色</string>
-    <string name="accent_preset_5">AOSP 玫红色</string>
-    <string name="accent_preset_6">Android One 绿色</string>
-    <string name="accent_preset_7">Aospa 绿色</string>
-    <string name="accent_preset_8">Atlantis 绿色</string>
-    <string name="accent_preset_9">蔚蓝色</string>
-    <string name="accent_preset_10">黑色</string>
-    <string name="accent_preset_11">可乐红</string>
-    <string name="accent_preset_12">紫色</string>
-    <string name="accent_preset_13">紫罗兰</string>
-    <string name="accent_preset_14">Facebook 蓝色</string>
-    <string name="accent_preset_15">Fi 蓝色</string>
-    <string name="accent_preset_16">Instagram 鲜红色</string>
-    <string name="accent_preset_17">Jollibee 深红色</string>
-    <string name="accent_preset_18">火星红</string>
-    <string name="accent_preset_19">艾绿色</string>
-    <string name="accent_preset_20">薄荷绿</string>
-    <string name="accent_preset_21">Nova 橙黄色</string>
-    <string name="accent_preset_22">一加红</string>
-    <string name="accent_preset_23">百事蓝</string>
-    <string name="accent_preset_24">Persian 红色</string>
-    <string name="accent_preset_25">Pocophone 黄色</string>
-    <string name="accent_preset_26">雷蛇绿</string>
-    <string name="accent_preset_27">三星蓝</string>
-    <string name="accent_preset_28">长石灰</string>
-    <string name="accent_preset_29">Spotify 绿色</string>
-    <string name="accent_preset_30">星巴克绿</string>
-    <string name="accent_preset_31">水鸭绿</string>
-    <string name="accent_preset_32">Torch 粉红色</string>
-    <string name="accent_preset_33">Twitch 紫色</string>
-    <string name="accent_preset_34">推特蓝</string>
-    <string name="accent_preset_35">月白</string>
-    <string name="accent_preset_36">Xbox 绿色</string>
-    <string name="accent_preset_37">小米橙</string>
-    <string name="accent_preset_title">预设强调色</string>
-    <string name="gradient_preset_title">预设渐变色</string>
 </resources>

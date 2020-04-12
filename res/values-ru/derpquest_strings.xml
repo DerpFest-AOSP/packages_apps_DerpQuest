@@ -865,10 +865,6 @@
     <string name="fod_recog_animation_pureview_future">Future</string>
     <string name="fod_recog_animation_pureview_molecular">Molecular</string>
 
-    <!-- RGB Picker -->
-    <string name="accent_color">Комплектация акцента</string>
-    <string name="accent_summary">Общесистемный подбор акцентов</string>
-
     <!-- Text Clock -->
     <string name="text_clock_customizations">Текстовые часы</string>
     <string name="text_clock_alignment">Выравнивание</string>
