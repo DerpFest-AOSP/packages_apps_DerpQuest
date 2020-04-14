@@ -68,6 +68,12 @@
             android:summary="@string/force_expanded_notifications_summary"
             android:defaultValue="false" />
 
+        <Preference
+            android:key="heads_up_settings"
+            android:title="@string/heads_up_settings_title"
+            android:summary="@string/heads_up_settings_summary"
+            android:fragment="com.derpquest.settings.fragments.HeadsUp" />
+
         <!-- Pulse Ambient Light (aka Edge Lighting) -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="pulse_ambient_light"
