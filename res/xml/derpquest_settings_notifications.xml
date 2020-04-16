@@ -68,7 +68,7 @@
             android:summary="@string/force_expanded_notifications_summary"
             android:defaultValue="false" />
 
-        <Preference
+        <com.derpquest.settings.preferences.GlobalSettingMasterSwitchPreference
             android:key="heads_up_settings"
             android:title="@string/heads_up_settings_title"
             android:summary="@string/heads_up_settings_summary"

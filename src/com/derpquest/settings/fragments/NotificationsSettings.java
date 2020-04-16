@@ -39,6 +39,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.derpquest.settings.Utils;
 
 import com.derpquest.settings.preferences.AmbientLightSettingsPreview;
+import com.derpquest.settings.preferences.GlobalSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 
@@ -57,10 +58,12 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String FLASH_ON_CALL = "flash_on_call_options";
     private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
+    private static final String PREF_HEADS_UP = "heads_up_settings";
 
     private Preference mChargingLeds;
     private SystemSettingMasterSwitchPreference mFlashOnCall;
     private SystemSettingMasterSwitchPreference mAmbientLight;
+    private GlobalSettingMasterSwitchPreference mHeadsUp;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -108,6 +111,12 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         if (defaultPulse == -1) {
             defaultPulse = defaultDoze;
         }
+
+        mHeadsUp = (GlobalSettingMasterSwitchPreference)
+                findPreference(PREF_HEADS_UP);
+        mHeadsUp.setChecked(Settings.Global.getInt(resolver,
+                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1);
+        mHeadsUp.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -122,6 +131,11 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.OMNI_PULSE_AMBIENT_LIGHT, value ? 1 : 0);
+            return true;
+        } else if (preference == mHeadsUp) {
+            Boolean value = (Boolean) newValue;
+            Settings.Global.putInt(resolver,
+                    Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;

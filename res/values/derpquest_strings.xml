@@ -948,7 +948,7 @@
     <string name="about_device_recovery_link" translatable="false"></string> <!-- Recovery link -->
 
     <!-- Heads up -->
-    <string name="heads_up_settings_title">Heads up settings</string>
+    <string name="heads_up_settings_title">Heads up</string>
     <string name="heads_up_settings_summary">Configure heads up timeout, snooze timer and more</string>
 
     <!-- Heads up snooze -->
