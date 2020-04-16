@@ -38,4 +38,36 @@
         settings:units="sec"
         android:persistent="false" />
 
+    <PreferenceCategory
+            android:title="@string/heads_up_stoplist_title"
+            android:key="stoplist_applications" >
+
+        <com.derpquest.settings.preferences.AppMultiSelectListPreference
+            android:key="add_stoplist_packages"
+            android:title="@string/add_heads_up_package"
+            android:summary="@string/add_heads_up_stoplist_summary"
+            android:persistent="false" />
+        <com.derpquest.settings.preferences.ScrollAppsViewPreference
+            android:key="stoplist_apps_list_scroller"
+            android:persistent="false"
+            android:selectable="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/heads_up_blacklist_title"
+            android:key="blacklist_applications" >
+
+        <com.derpquest.settings.preferences.AppMultiSelectListPreference
+            android:key="add_blacklist_packages"
+            android:title="@string/add_heads_up_package"
+            android:summary="@string/add_heads_up_blacklist_summary"
+            android:persistent="false" />
+        <com.derpquest.settings.preferences.ScrollAppsViewPreference
+            android:key="blacklist_apps_list_scroller"
+            android:persistent="false"
+            android:selectable="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
