@@ -473,8 +473,6 @@
     <string name="show_carrier_keyguard">Μόνο σε κλειδ. οθόνη</string>
     <string name="show_carrier_statusbar">Μόνο σε στατική μπάρα</string>
     <string name="show_carrier_title">Τίτλος παρόχου</string>
-    <string name="show_gentle_header_summary">Για την εμφάνιση ειοδοπ/σεων σίγασης, ονόμασέ τες ποιο πάνω. (Απαιτ. επανεκ/ση SystemUI)</string>
-    <string name="show_gentle_header_title">Εμφαν. απλών ειδοπ. στην κεφαλίδα</string>
     <string name="show_network_traffic_all">Αποστολή/Λήψη</string>
     <string name="show_network_traffic_combined">Μίξη (Αποστολή + Λήψη)</string>
     <string name="show_network_traffic_down">Λήψη</string>

@@ -570,10 +570,6 @@
     <string name="notification_sound_vib_screen_on_title">Громкость и вибрация уведомлений, при включенном экране</string>
     <string name="notification_sound_vib_screen_on_summary">Отключите, чтобы блокировать звук и вибрацию уведомлений, когда экран включен</string>
 
-    <!-- Gentle notifications header -->
-    <string name="show_gentle_header_title">Показать заголовки уведомлений</string>
-    <string name="show_gentle_header_summary">Показывать ли заголовок «тихие уведомления» над такими уведомлениями (требуется перезагрузка интерфейса системы)</string>
-
     <!-- flash on call waiting -->
     <string name="flash_on_call_category">Мигающая вспышка</string>
     <string name="flash_on_call_title">Мигающая вспышка при входящем вызове</string>

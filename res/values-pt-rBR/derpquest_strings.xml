@@ -202,7 +202,6 @@
 
 	<!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Desativar o menu de energia quando bloqueado</string>
-    <string name="lockscreen_power_menu_disabled_summary">Desativa o menu de energia na telas de bloqueio</string>
 
 	<!-- Battery Bar -->
     <string name="battery_bar_title">Barra da bateria na tela bloqueio</string>
@@ -553,10 +552,6 @@
 	<!-- smart notifications -->
     <string name="notification_sound_vib_screen_on_title">Sons de notificações com tela ligada</string>
     <string name="notification_sound_vib_screen_on_summary">Desativar para bloquear som e vibração de notificações quando a tela estiver ativa</string>
-
-	<!-- Gentle notifications header -->
-    <string name="show_gentle_header_title">Mostrar cabeçalho de notificações discretas</string>
-    <string name="show_gentle_header_summary">Ativar para mostrar o título \"notificações silenciosas\" acima dessas notificações (necessário reiniciar o ystemUI)</string>
 
 	<!-- flash on call waiting -->
     <string name="flash_on_call_category">Piscar flash</string>

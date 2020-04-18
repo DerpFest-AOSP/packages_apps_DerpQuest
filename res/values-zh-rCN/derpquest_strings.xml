@@ -570,10 +570,6 @@
     <string name="notification_sound_vib_screen_on_title">屏幕开启时出现新通知</string>
     <string name="notification_sound_vib_screen_on_summary">当屏幕唤醒时，开启通知声音和振动</string>
 
-    <!-- Gentle notifications header -->
-    <string name="show_gentle_header_title">显示温和的通知标题</string>
-    <string name="show_gentle_header_summary">是否在此类通知上方显示“静默通知”标题（需要重新启动系统UI）</string>
-
     <!-- flash on call waiting -->
     <string name="flash_on_call_category">脉冲闪光</string>
     <string name="flash_on_call_title">来电闪光</string>

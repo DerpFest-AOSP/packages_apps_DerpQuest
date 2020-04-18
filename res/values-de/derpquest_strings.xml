@@ -184,7 +184,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Power-Menü auf Sperrbildschirm deaktivieren</string>
-    <string name="lockscreen_power_menu_disabled_summary">Diese Option deaktiviert das Power-Menü nur auf einem gesicherten Sperrbildschirm</string>
 
     <!-- Battery Bar -->
     <string name="tuner_keyguard_show_battery_bar_title">Akkuleiste anzeigen</string>
@@ -486,10 +485,6 @@
     <!-- smart notifications -->
     <string name="notification_sound_vib_screen_on_title">Laute Benachrichtigungen</string>
     <string name="notification_sound_vib_screen_on_summary">Wiedergabe von Ton und Vibration für Benachrichtigungen bei eingeschaltetem Bildschirm</string>
-
-    <!-- Gentle notifications header -->
-    <string name="show_gentle_header_title">Kopfzeile für sanfte Benachrichtigungen anzeigen</string>
-    <string name="show_gentle_header_summary">Ob der Titel "Stille Benachrichtigungen" über solchen Benachrichtigungen angezeigt werden soll (SystemUI-Neustart erforderlich)</string>
 
     <!-- flash on call waiting -->
     <string name="flash_on_call_category">Impulsblitz</string>

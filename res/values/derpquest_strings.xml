@@ -574,10 +574,6 @@
     <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
     <string name="notification_sound_vib_screen_on_summary">Disable to block notifications sound and vibration when the screen is awake</string>
 
-    <!-- Gentle notifications header -->
-    <string name="show_gentle_header_title">Show gentle notifications header</string>
-    <string name="show_gentle_header_summary">Wheter to show "silent notifications" title above such notifications (SystemUI restart required)</string>
-
     <!-- flash on call waiting -->
     <string name="flash_on_call_category">Pulse flash</string>
     <string name="flash_on_call_title">Pulse flash on incoming call</string>

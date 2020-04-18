@@ -561,10 +561,6 @@
     <string name="notification_sound_vib_screen_on_title">ध्वनि सूचनाएं यदि स्क्रीन चालू है</string>
     <string name="notification_sound_vib_screen_on_summary">स्क्रीन चालू  होने पर नोटिफिकेशन साउंड और वाइब्रेशन को ब्लॉक करने के लिए अक्षम करें</string>
 
-    <!-- Gentle notifications header -->
-    <string name="show_gentle_header_title">कोमल सूचनाएं हेडर दिखाएं</string>
-    <string name="show_gentle_header_summary">ऐसी सूचनाओं के ऊपर "साइलेंट नोटिफिकेशन" शीर्षक दिखाने के लिए  (SystemUI रिस्टार्ट आवश्यक)</string>
-
     <!-- flash on call waiting -->
     <string name="flash_on_call_category">पल्स फ़्लैश</string>
     <string name="flash_on_call_title">आने वाली कॉल पर पल्स फ्लैश</string>
