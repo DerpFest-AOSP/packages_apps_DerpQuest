@@ -451,6 +451,11 @@
     <string name="quick_pulldown_right">Right edge</string>
     <string name="quick_pulldown_always">Anywhere</string>
 
+    <!-- QS panels -->
+    <string name="qs_tile_panels_title">Show Panels</string>
+    <string name="qs_tile_panels_summary_enabled">Show QS tile detail view as a panel</string>
+    <string name="qs_tile_panels_summary_disabled">Show QS tile detail view inside the tile area</string>
+
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_enable">Music Visualizer</string>
     <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>

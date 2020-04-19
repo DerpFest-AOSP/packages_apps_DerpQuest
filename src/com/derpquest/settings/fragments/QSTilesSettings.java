@@ -42,6 +42,8 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
+import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -52,6 +54,10 @@ import java.util.Map;
 public class QSTilesSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String QS_TILE_PANELS = "qs_tile_panels";
+
+    private SystemSettingSwitchPreference mQSPanels;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +65,30 @@ public class QSTilesSettings extends SettingsPreferenceFragment implements
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mQSPanels = (SystemSettingSwitchPreference) findPreference(QS_TILE_PANELS);
+        boolean enabled = Settings.System.getInt(resolver,
+                Settings.System.QS_TILE_PANELS, 1) == 1;
+        mQSPanels.setChecked(enabled);
+        mQSPanels.setSummary(enabled
+                ? res.getString(R.string.qs_tile_panels_summary_enabled)
+                : res.getString(R.string.qs_tile_panels_summary_disabled));
+        mQSPanels.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final Resources res = getResources();
         final ContentResolver resolver = getContentResolver();
+        if (preference == mQSPanels) {
+            boolean enabled = (boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_TILE_PANELS, enabled ? 1 : 0);
+            mQSPanels.setSummary(enabled
+                    ? res.getString(R.string.qs_tile_panels_summary_enabled)
+                    : res.getString(R.string.qs_tile_panels_summary_disabled));
+            return true;
+        }
         return false;
     }
 

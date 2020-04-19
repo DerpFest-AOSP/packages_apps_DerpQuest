@@ -18,6 +18,11 @@
     android:title="@string/category_tiles_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_tile_panels"
+        android:title="@string/qs_tile_panels_title"
+        android:defaultValue="true" />
+
     <com.derpquest.settings.preferences.SecureSettingSwitchPreference
         android:key="quick_settings_vibrate"
         android:title="@string/quick_settings_vibrate_title"
