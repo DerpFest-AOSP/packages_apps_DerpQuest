@@ -53,13 +53,10 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint" translatable="false">#FFDDDDDD</string>
     <string name="hex_check_button_text">预览</string>
     <string name="hex_reset_button_text">重新设置</string>
     <string name="set">设置</string>
     <string name="color_default">默认</string>
-    <string name="color_right_arrow" translatable="false">"→"</string>
-    <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">长按框以保存颜色</string>
 
     <!-- Navbar options -->
@@ -106,15 +103,6 @@
     <string name="button_backlight_on_touch_only_summary">仅在按钮触摸时启用带超时的背光</string>
 
     <!-- HW Keys customization -->
-    <string name="action_value_default_action" translatable="false">默认</string>
-    <string name="action_value_select_app" translatable="false">应用</string>
-    <string name="action_value_custom_action" translatable="false">自定义</string>
-    <string name="action_value_back" translatable="false">返回</string>
-    <string name="action_value_home" translatable="false">Home键</string>
-    <string name="action_value_search_assist" translatable="false">助手</string>
-    <string name="action_value_recent_apps" translatable="false">多任务</string>
-    <string name="action_value_voice_search" translatable="false">语音搜索</string>
-    <string name="action_value_menu" translatable="false">菜单键</string>
     <string name="picker_activities">行为</string>
     <string name="select_custom_app_title">选择应用</string>
     <string name="select_custom_activity_title">选择行为</string>
@@ -367,12 +355,6 @@
     <string name="volume_steps_system_title">音量渐进：系统</string>
     <string name="volume_steps_voice_call_title">音量渐进：语音通话</string>
     <string name="volume_steps_reset">重置</string>
-    <string name="volume_steps_60" translatable="false">60</string>
-    <string name="volume_steps_45" translatable="false">45</string>
-    <string name="volume_steps_30" translatable="false">30</string>
-    <string name="volume_steps_15" translatable="false">15</string>
-    <string name="volume_steps_7" translatable="false">7</string>
-    <string name="volume_steps_5" translatable="false">5</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_title">亮度滑块</string>
@@ -470,8 +452,6 @@
     <string name="status_bar_custom_header_shadow_title">标题图像阴影</string>
     <string name="status_bar_custom_header_shadow_summary">在明亮的图像上获得更好的可见性</string>
     <string name="unit_percent">\u0025</string>
-    <string name="static_header_provider" translatable="false">静态的</string>
-    <string name="daylight_header_provider" translatable="false">日光</string>
     <string name="static_header_provider_title">静态图片</string>
     <string name="daylight_header_provider_title">图片收藏</string>
     <string name="custom_header_provider_title">标题提供者</string>
@@ -484,7 +464,6 @@
     <string name="file_header_select_title">选择本地图像</string>
     <string name="file_header_select_summary">从存储中选择图像</string>
     <string name="file_header_provider_title">单张图片</string>
-    <string name="file_header_provider" translatable="false">文件</string>
 
     <!-- Audio Panel view -->
     <string name="audio_panel_view">音量面板</string>
@@ -874,31 +853,21 @@
     <string name="about_external_category">外部链接</string>
     <string name="about_ceo_title">CEO</string>
     <string name="about_ceo_name">Alexander Brunswig</string>
-    <string name="about_ceo_git" translatable="false">https://github.com/NurKeinNeid</string>
     <string name="about_dev_title">开发头头</string>
     <string name="about_dev_name">Ido Ben-Hur</string>
-    <string name="about_dev_git" translatable="false">https://github.com/idoybh</string>
     <string name="about_qa_title">质保头头</string>
     <string name="about_qa_name">David Setiawan</string>
-    <string name="about_qa_git" translatable="false">https://github.com/fryevia</string>
     <string name="maintainer">设备维护者</string>
-    <string name="maintainer_name" translatable="false">Alexander Brunswig</string>
-    <string name="maintainer_telegram" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_site_title">官网</string>
     <string name="about_site_summary">访问 DerpFest.org</string>
-    <string name="about_site_link" translatable="false">https://derpfest.org/</string>
     <string name="about_tg_title">电报群</string>
     <string name="about_tg_summary">官方, 国际化电报群</string>
-    <string name="about_tg_link" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_wall_title">壁纸</string>
     <string name="about_wall_summary">社区制作的壁纸电报频道</string>
-    <string name="about_wall_link" translatable="false">https://t.me/DerpFestWalls</string>
     <string name="about_git_title">ROM源码</string>
     <string name="about_git_summary">在GitHub上查看我们的源码</string>
-    <string name="about_git_link" translatable="false">https://github.com/DerpLab</string>
     <string name="about_devices_git_title">设备源码</string>
     <string name="about_devices_git_summary">在GitHub上查看我们的设备源</string>
-    <string name="about_devices_git_link" translatable="false">https://github.com/DerpFest-Devices</string>
     <string name="about_phone_title">关于手机</string>
     <string name="about_phone_summary">打开系统关于界面</string>
 

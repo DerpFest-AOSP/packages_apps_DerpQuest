@@ -56,13 +56,10 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint" translatable="false">#FFDDDDDD</string>
     <string name="hex_check_button_text">ANTEPRIMA</string>
     <string name="hex_reset_button_text">RIPRISTINA</string>
     <string name="set">Imposta</string>
     <string name="color_default">Predefinito</string>
-    <string name="color_right_arrow" translatable="false">"→"</string>
-    <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">Tieni premuto il box per salvare il colore</string>
 
     <!-- Navbar options -->
@@ -109,15 +106,6 @@
     <string name="button_backlight_on_touch_only_summary">Abilita la durata della retroilluminazione al tocco</string>
 
     <!-- HW Keys customization -->
-    <string name="action_value_default_action" translatable="false">default</string>
-    <string name="action_value_select_app" translatable="false">app</string>
-    <string name="action_value_custom_action" translatable="false">custom</string>
-    <string name="action_value_back" translatable="false">task_back</string>
-    <string name="action_value_home" translatable="false">task_home</string>
-    <string name="action_value_search_assist" translatable="false">task_assist</string>
-    <string name="action_value_recent_apps" translatable="false">task_recents</string>
-    <string name="action_value_voice_search" translatable="false">task_voice_search</string>
-    <string name="action_value_menu" translatable="false">task_menu</string>
     <string name="picker_activities">Attività</string>
     <string name="select_custom_app_title">Scegli app personalizzata</string>
     <string name="select_custom_activity_title">Scegli attività personalizzata</string>
@@ -370,12 +358,6 @@
     <string name="volume_steps_system_title">Livello volume: Sistema</string>
     <string name="volume_steps_voice_call_title">Livello volume: Chiamata vocale</string>
     <string name="volume_steps_reset">Ripristina</string>
-    <string name="volume_steps_60" translatable="false">60</string>
-    <string name="volume_steps_45" translatable="false">45</string>
-    <string name="volume_steps_30" translatable="false">30</string>
-    <string name="volume_steps_15" translatable="false">15</string>
-    <string name="volume_steps_7" translatable="false">7</string>
-    <string name="volume_steps_5" translatable="false">5</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_title">Cursore della luminosità</string>
@@ -473,8 +455,6 @@
     <string name="status_bar_custom_header_shadow_title">Ombra immagini dell\'intestazione</string>
     <string name="status_bar_custom_header_shadow_summary">Per una migliore visibilità con immagini luminose</string>
     <string name="unit_percent">\u0025</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
     <string name="static_header_provider_title">Immagine statica</string>
     <string name="daylight_header_provider_title">Collezione immagini</string>
     <string name="custom_header_provider_title">Provider intestazione</string>
@@ -487,7 +467,6 @@
     <string name="file_header_select_title">Scegli immagine locale</string>
     <string name="file_header_select_summary">Seleziona immagine dalla memoria interna</string>
     <string name="file_header_provider_title">Immagine singola</string>
-    <string name="file_header_provider" translatable="false">file</string>
 
     <!-- Audio Panel view -->
     <string name="audio_panel_view">Pannello volume</string>
@@ -904,41 +883,27 @@
     <string name="about_external_category">Link esterni</string>
     <string name="about_ceo_title">CEO</string>
     <string name="about_ceo_name">Alexander Brunswig</string>
-    <string name="about_ceo_git" translatable="false">https://github.com/NurKeinNeid</string>
     <string name="about_dev_title">Sviluppatore principale</string>
     <string name="about_dev_name">Ido Ben-Hur</string>
-    <string name="about_dev_git" translatable="false">https://github.com/idoybh</string>
     <string name="about_qa_title">Responsabile del controllo qualità</string>
     <string name="about_qa_name">David Setiawan</string>
-    <string name="about_qa_git" translatable="false">https://github.com/fryevia</string>
     <string name="maintainer">Manutenzione del dispositivo</string>
-    <string name="maintainer_name" translatable="false">Alexander Brunswig</string>
-    <string name="maintainer_telegram" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_site_title">Sito</string>
     <string name="about_site_summary">Visita DerpFest.org</string>
-    <string name="about_site_link" translatable="false">https://derpfest.org/</string>
     <string name="about_tg_title">Gruppo Telegram</string>
     <string name="about_tg_summary">Gruppo Telegram ufficiale</string>
-    <string name="about_tg_link" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_wall_title">Sfondi</string>
     <string name="about_wall_summary">Canale per gli sfondi su Telegramm realizzati dalla communità</string>
-    <string name="about_wall_link" translatable="false">https://t.me/DerpFestWalls</string>
     <string name="about_git_title">Codice sorgente ROM</string>
     <string name="about_git_summary">Visualizza la nostra fonte su GitHub</string>
-    <string name="about_git_link" translatable="false">https://github.com/DerpLab</string>
     <string name="about_devices_git_title">Codice sorgente dei dispositivi</string>
     <string name="about_devices_git_summary">Visualizza le fonti dei nostri dispositivi su GitHub</string>
-    <string name="about_devices_git_link" translatable="false">https://github.com/DerpFest-Devices</string>
     <string name="about_phone_title">Info sul telefono</string>
     <string name="about_phone_summary">Apri la pagina delle informazioni del sistema</string>
 
     <!-- About - Device specific links -->
     <string name="about_device_category">Link specifici dispositivo</string>
     <string name="about_device_fw">Firmware richiesto</string>
-    <string name="about_device_fw_ver" translatable="false"></string> <!-- Firmware version -->
-    <string name="about_device_fw_link" translatable="false"></string> <!-- Firmware link -->
     <string name="about_device_recovery">Recovery consigliata</string>
-    <string name="about_device_recovery_ver" translatable="false"></string> <!-- Recovery version -->
-    <string name="about_device_recovery_link" translatable="false"></string> <!-- Recovery link -->
 
 </resources>

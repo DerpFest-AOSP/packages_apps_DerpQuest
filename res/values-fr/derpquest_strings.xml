@@ -56,13 +56,10 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Héxa:</string>
-    <string name="hex_hint" translatable="false">#FFDDDDDD</string>
     <string name="hex_check_button_text">PRÉVISUALISER</string>
     <string name="hex_reset_button_text">RÉINITIALISER</string>
     <string name="set">Appliquer</string>
     <string name="color_default">Par défaut</string>
-    <string name="color_right_arrow" translatable="false">"→"</string>
-    <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">Appui long pour sauvegarder la couleur</string>
 
     <!-- Navbar options -->
@@ -109,15 +106,6 @@
     <string name="button_backlight_on_touch_only_summary">Activer le rétroéclairage seulement quand le bouton est pressé</string>
 
     <!-- HW Keys customization -->
-    <string name="action_value_default_action" translatable="false">default</string>
-    <string name="action_value_select_app" translatable="false">app</string>
-    <string name="action_value_custom_action" translatable="false">custom</string>
-    <string name="action_value_back" translatable="false">task_back</string>
-    <string name="action_value_home" translatable="false">task_home</string>
-    <string name="action_value_search_assist" translatable="false">task_assist</string>
-    <string name="action_value_recent_apps" translatable="false">task_recents</string>
-    <string name="action_value_voice_search" translatable="false">task_voice_search</string>
-    <string name="action_value_menu" translatable="false">task_menu</string>
     <string name="picker_activities">Activités</string>
     <string name="select_custom_app_title">Sélectionner une application</string>
     <string name="select_custom_activity_title">Sélectionner une activité</string>
@@ -369,12 +357,6 @@
     <string name="volume_steps_system_title">Pas de volume: Système</string>
     <string name="volume_steps_voice_call_title">Pas de volume: Appel vocal</string>
     <string name="volume_steps_reset">Réinitialiser</string>
-    <string name="volume_steps_60" translatable="false">60</string>
-    <string name="volume_steps_45" translatable="false">45</string>
-    <string name="volume_steps_30" translatable="false">30</string>
-    <string name="volume_steps_15" translatable="false">15</string>
-    <string name="volume_steps_7" translatable="false">7</string>
-    <string name="volume_steps_5" translatable="false">5</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_title">Curseur de luminosité</string>
@@ -472,8 +454,6 @@
     <string name="status_bar_custom_header_shadow_title">Ombre de l\'image d\'en-tête</string>
     <string name="status_bar_custom_header_shadow_summary">Pour une meilleure visibilité sur les images claires</string>
     <string name="unit_percent">\u0025</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
     <string name="static_header_provider_title">Image statique</string>
     <string name="daylight_header_provider_title">Collection d\'images</string>
     <string name="custom_header_provider_title">Source d\'images</string>
@@ -486,7 +466,6 @@
     <string name="file_header_select_title">Selectionner une image locale</string>
     <string name="file_header_select_summary">Selectionner une image depuis le stockage</string>
     <string name="file_header_provider_title">Image seule</string>
-    <string name="file_header_provider" translatable="false">file</string>
 
     <!-- Audio Panel view -->
     <string name="audio_panel_view">Panneau volume</string>
@@ -901,31 +880,21 @@
     <string name="about_external_category">Liens externes</string>
     <string name="about_ceo_title">CEO</string>
     <string name="about_ceo_name">Alexander Brunswig</string>
-    <string name="about_ceo_git" translatable="false">https://github.com/NurKeinNeid</string>
     <string name="about_dev_title">Développeur principal</string>
     <string name="about_dev_name">Ido Ben-Hur</string>
-    <string name="about_dev_git" translatable="false">https://github.com/idoybh</string>
     <string name="about_qa_title">Chef de l\'Assurance Qualité</string>
     <string name="about_qa_name">David Setiawan</string>
-    <string name="about_qa_git" translatable="false">https://github.com/fryevia</string>
     <string name="maintainer">Mainteneur des appareils</string>
-    <string name="maintainer_name" translatable="false">Alexander Brunswig</string>
-    <string name="maintainer_telegram" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_site_title">Site Internet</string>
     <string name="about_site_summary">Visitez DerpFest.org</string>
-    <string name="about_site_link" translatable="false">https://derpfest.org/</string>
     <string name="about_tg_title">Groupe Telegram</string>
     <string name="about_tg_summary">Official, Global Telegram Group</string>
-    <string name="about_tg_link" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_wall_title">Fonds d\'écran</string>
     <string name="about_wall_summary">Fonds d\'écran réalisés par la communauté</string>
-    <string name="about_wall_link" translatable="false">https://t.me/DerpFestWalls</string>
     <string name="about_git_title">Code source de la ROM</string>
     <string name="about_git_summary">Accèdez au code source sur GitHub</string>
-    <string name="about_git_link" translatable="false">https://github.com/DerpLab</string>
     <string name="about_devices_git_title">Code source spécifique aux appareils</string>
     <string name="about_devices_git_summary">Accèdez au code source spécifique pour les appareils sur GitHub</string>
-    <string name="about_devices_git_link" translatable="false">https://github.com/DerpFest-Devices</string>
     <string name="about_phone_title">À propos du téléphone</string>
     <string name="about_phone_summary">Ouvre la page "À propos" du système</string>
 

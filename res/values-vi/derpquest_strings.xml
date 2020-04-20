@@ -56,13 +56,10 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint" translatable="false">#FFDDDDDD</string>
     <string name="hex_check_button_text">XEM TRƯỚC</string>
     <string name="hex_reset_button_text">CÀI LẠI</string>
     <string name="set">Đặt</string>
     <string name="color_default">Mặc định</string>
-    <string name="color_right_arrow" translatable="false">"→"</string>
-    <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">Nhấn giữ để lưu màu sắc</string>
 
     <!-- Navbar options -->
@@ -109,15 +106,6 @@
     <string name="button_backlight_on_touch_only_summary">Bật đèn nền với thời gian chờ chỉ khi chạm vào nút</string>
 
     <!-- HW Keys customization -->
-    <string name="action_value_default_action" translatable="false">default</string>
-    <string name="action_value_select_app" translatable="false">app</string>
-    <string name="action_value_custom_action" translatable="false">custom</string>
-    <string name="action_value_back" translatable="false">task_back</string>
-    <string name="action_value_home" translatable="false">task_home</string>
-    <string name="action_value_search_assist" translatable="false">task_assist</string>
-    <string name="action_value_recent_apps" translatable="false">task_recents</string>
-    <string name="action_value_voice_search" translatable="false">task_voice_search</string>
-    <string name="action_value_menu" translatable="false">task_menu</string>
     <string name="picker_activities">Hoạt động</string>
     <string name="select_custom_app_title">Chọn ứng dụng tùy chỉnh</string>
     <string name="select_custom_activity_title">Chọn hoạt động tùy chỉnh</string>
@@ -370,12 +358,6 @@
     <string name="volume_steps_system_title">Các bước âm lượng: Hệ thống</string>
     <string name="volume_steps_voice_call_title">Các bước âm lượng: Cuộc gọi thoại</string>
     <string name="volume_steps_reset">Đặt lại</string>
-    <string name="volume_steps_60" translatable="false">60</string>
-    <string name="volume_steps_45" translatable="false">45</string>
-    <string name="volume_steps_30" translatable="false">30</string>
-    <string name="volume_steps_15" translatable="false">15</string>
-    <string name="volume_steps_7" translatable="false">7</string>
-    <string name="volume_steps_5" translatable="false">5</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_title">Thanh trượt độ sáng</string>
@@ -473,8 +455,6 @@
     <string name="status_bar_custom_header_shadow_title">Bóng hình ảnh tiêu đề</string>
     <string name="status_bar_custom_header_shadow_summary">Để nhìn rõ hơn trên hình ảnh sáng</string>
     <string name="unit_percent">\u0025</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
     <string name="static_header_provider_title">Hình ảnh tĩnh</string>
     <string name="daylight_header_provider_title">Bộ sưu tập hình ảnh</string>
     <string name="custom_header_provider_title">Nhà cung cấp tiêu đề</string>
@@ -487,7 +467,6 @@
     <string name="file_header_select_title">Chọn hình ảnh</string>
     <string name="file_header_select_summary">Chọn hình ảnh từ bộ nhớ máy</string>
     <string name="file_header_provider_title">Hình ảnh duy nhất</string>
-    <string name="file_header_provider" translatable="false">file</string>
 
     <!-- Audio Panel view -->
     <string name="audio_panel_view">Bảng điều khiển âm lượng</string>
@@ -902,31 +881,21 @@
     <string name="about_external_category">Liện kết ngoài</string>
     <string name="about_ceo_title">CEO</string>
     <string name="about_ceo_name">Alexander Brunswig</string>
-    <string name="about_ceo_git" translatable="false">https://github.com/NurKeinNeid</string>
     <string name="about_dev_title">Nhà phát triển chính</string>
     <string name="about_dev_name">Ido Ben-Hur</string>
-    <string name="about_dev_git" translatable="false">https://github.com/idoybh</string>
     <string name="about_qa_title">Trưởng nhóm Q&amp;A</string>
     <string name="about_qa_name">David Setiawan</string>
-    <string name="about_qa_git" translatable="false">https://github.com/fryevia</string>
     <string name="maintainer">Người duy trì</string>
-    <string name="maintainer_name" translatable="false">Alexander Brunswig</string>
-    <string name="maintainer_telegram" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_site_title">Trang</string>
     <string name="about_site_summary">Truy cập DerpFest.org</string>
-    <string name="about_site_link" translatable="false">https://derpfest.org/</string>
     <string name="about_tg_title">Nhóm Telegram</string>
     <string name="about_tg_summary">Chính thức, Tập đoàn Telegram toàn cầu</string>
-    <string name="about_tg_link" translatable="false">https://t.me/DerpFest5T</string>
     <string name="about_wall_title">Hình nền</string>
     <string name="about_wall_summary">Cộng đồng làm kênh hình nền telegram</string>
-    <string name="about_wall_link" translatable="false">https://t.me/DerpFestWalls</string>
     <string name="about_git_title">Mã nguồn ROM</string>
     <string name="about_git_summary">Xem nguồn của chúng tôi trên GitHub</string>
-    <string name="about_git_link" translatable="false">https://github.com/DerpLab</string>
     <string name="about_devices_git_title">Mã nguồn thiết bị</string>
     <string name="about_devices_git_summary">Xem nguồn thiết bị của chúng tôi trên GitHub</string>
-    <string name="about_devices_git_link" translatable="false">https://github.com/DerpFest-Devices</string>
     <string name="about_phone_title">Về thiết bị</string>
     <string name="about_phone_summary">Mở trang thông tin thiết bị</string>
 
