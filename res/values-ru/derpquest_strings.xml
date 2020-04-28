@@ -56,18 +56,17 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint" translatable="false">#FFDDDDDD</string>
     <string name="hex_check_button_text">Предпросмотр</string>
     <string name="hex_reset_button_text">Сброс</string>
     <string name="set">Установить</string>
     <string name="color_default">Стандарт</string>
-    <string name="color_right_arrow" translatable="false">"→"</string>
-    <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">Удерживайте на объекте для сохранения цвета</string>
 
     <!-- Enable navbar -->
     <string name="enable_navbar_title">Включить</string>
     <string name="enable_navbar_summary">Навигационная панель отображается</string>
+    <string name="nav_bar_tuner_title">Настройки навигационной панели</string>
+    <string name="nav_bar_tuner_summary">Изминения порядка кнопок навигации</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Ярлыки на рабочем столе</string>
@@ -89,6 +88,38 @@
     <!-- Volume settings -->
     <string name="hardware_keys_vol_key_title">Кнопки громкости</string>
 
+    <!-- Force expanded notifications -->
+    <string name="force_expanded_notifications_title">Принудительно раскрывать увидомления</string>
+    <string name="force_expanded_notifications_summary">Принудительнное раскрывание увидомлений в поддерживаемых приложениях</string>
+
+    <!-- R Notification headers -->
+    <string name="notification_headers_title">Новый стиль увидомлений</string>
+    <string name="notification_headers_summary">Отображать увидомления в R стиле (Требуеться перезапуск SystemUI)</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_settings_title">Всплывающие увидомления</string>
+    <string name="heads_up_settings_summary">Настройка всплывающих увидомлений и прочие</string>
+
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">Таймер повората</string>
+    <string name="heads_up_snooze_summary">Если свайпнуть всплывающее уведомление вверх, то оно пропадет и уведомления не будут приходить некоторое время</string>
+
+    <!-- Heads up timeout -->
+    <string name="heads_up_time_out_title">Время отображения</string>
+    <string name="heads_up_time_out_summary">Время отображения увидомления</string>
+
+    <!-- Heads up blacklists -->
+    <string name="add_heads_up_package">Управление приложениями</string>
+    <string name="heads_up_stoplist_title">Стоплист</string>
+    <string name="add_heads_up_stoplist_summary">Отключения всплывающих увидомлений в приложениях</string>
+    <string name="heads_up_blacklist_title">Чёрный список</string>
+    <string name="add_heads_up_blacklist_summary">Отключения всплывающийх увидомлений для приложений</string>
+
+    <!-- Allow fake signature checkbox in developer settings -->
+    <string name="allow_signature_fake">Разрешить подделку подписи</string>
+    <string name="allow_signature_fake_summary">Разрешить приложениям обходить системы безопасности и выдавая себя за другое приложение</string>
+
+
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">Тайм-аут подсветки кнопок</string>
     <string name="backlight_timeout_on">Всегда включена</string>
@@ -107,15 +138,6 @@
     <string name="button_backlight_on_touch_only_summary">Подсветка только при нажатии кнопок</string>
 
     <!-- HW Keys customization -->
-    <string name="action_value_default_action" translatable="false">по умолчанию</string>
-    <string name="action_value_select_app" translatable="false">приложение</string>
-    <string name="action_value_custom_action" translatable="false">пользовательский</string>
-    <string name="action_value_back" translatable="false">task_back</string>
-    <string name="action_value_home" translatable="false">task_home</string>
-    <string name="action_value_search_assist" translatable="false">task_assist</string>
-    <string name="action_value_recent_apps" translatable="false">task_recents</string>
-    <string name="action_value_voice_search" translatable="false">task_voice_search</string>
-    <string name="action_value_menu" translatable="false">task_menu</string>
     <string name="picker_activities">Активность</string>
     <string name="select_custom_app_title">Выберите Пользовательское приложения</string>
     <string name="select_custom_activity_title">Выберите активность</string>
@@ -348,31 +370,25 @@
     <string name="lockscreen_cover_filter_title">Фильтр обложки произведения</string>
     <string name="lockscreen_cover_filter_none">Нет</string>
     <string name="lockscreen_cover_filter_grayscale">Оттенок серого</string>
-    <string name="lockscreen_cover_filter_tint">Акцент затонированный</string>
-    <string name="lockscreen_cover_filter_blur">Размыто</string>
+    <string name="lockscreen_cover_filter_tint">В цвет акцента</string>
+    <string name="lockscreen_cover_filter_blur">Размытие</string>
     <string name="lockscreen_cover_filter_grayblur">Оттенок серого и размытие</string>
-    <string name="lockscreen_cover_filter_gradientblur">Размытие оттенка серого</string>
+    <string name="lockscreen_cover_filter_gradientblur">Размытие градиентного серого</string>
 
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Жест трёмя пальцами</string>
+    <string name="three_finger_gesture">Жест тремя пальцами</string>
     <string name="three_finger_gesture_summary">Проведите тремя пальцами для скриншота</string>
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Шаги громкости</string>
     <string name="volume_steps_alarm_title">Шаги громкости: Будильник</string>
-    <string name="volume_steps_dtmf_title">Шаги громкости: DTMF</string>
+    <string name="volume_steps_dtmf_title">Шаги громкости: Тональный набор</string>
     <string name="volume_steps_music_title">Шаги громкости: Музыка</string>
     <string name="volume_steps_notification_title">Шаги громкости: Уведомление</string>
     <string name="volume_steps_ring_title">Шаги громкости: Рингтон</string>
     <string name="volume_steps_system_title">Шаги громкости: Система</string>
     <string name="volume_steps_voice_call_title">Шаги громкости: Голосовой вызов</string>
     <string name="volume_steps_reset">Сброс</string>
-    <string name="volume_steps_60" translatable="false">60</string>
-    <string name="volume_steps_45" translatable="false">45</string>
-    <string name="volume_steps_30" translatable="false">30</string>
-    <string name="volume_steps_15" translatable="false">15</string>
-    <string name="volume_steps_7" translatable="false">7</string>
-    <string name="volume_steps_5" translatable="false">5</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_title">Ползунок яркости</string>
@@ -382,7 +398,7 @@
     <string name="qs_show_auto_brightness_title">Иконка автояркости</string>
     <string name="qs_show_auto_brightness_summary">Показать кнопку автоматического управления яркостью рядом с ползунком</string>
     <string name="qs_show_minmax_brightness_title">Min-Max иконки</string>
-    <string name="qs_show_minmax_brightness_summary">Показать + - кнопки регулировки яркости возле слайдера</string>
+    <string name="qs_show_minmax_brightness_summary">Показать кнопки регулировки яркости возле слайдера</string>
 
     <!-- QS security footer -->
     <string name="qs_show_secure_title">Заголовок безопасности</string>
@@ -406,7 +422,7 @@
     <string name="status_bar_battery_text_charging_summary">Всегда отображать уровень батареи при зарядке</string>
 
     <!-- QS settings categories -->
-    <string name="category_tiles_title">Область плитки</string>
+    <string name="category_tiles_title">Область плиток</string>
     <string name="category_tiles_title_summary">Настройка элементов области плиток QS</string>
     <string name="category_footer_title">Нижняя область</string>
     <string name="category_footer_summary">Настройка элементов области нижнего колонтитула QS</string>
@@ -414,7 +430,7 @@
     <string name="category_header_summary">Настройка элементов заголовка QS</string>
 
     <!-- QS drag handle -->
-    <string name="qs_drag_title">Показать переключатель быстрой настройки</string>
+    <string name="qs_drag_title">Показать переключатель быстрых настроек</string>
 
     <!-- QS settings icon -->
     <string name="qs_always_show_settings_title">Всегда показывать иконку настроек</string>
@@ -423,7 +439,7 @@
     <!-- QS footer text -->
     <string name="derp_footer_text_show_title">Показать текст быстрых настроек снизу</string>
     <string name="derp_footer_text_string_title">Изменить текст быстрых настроек</string>
-    <string name="derp_footer_text_string_summary">Оставить пустым (стандарт) #DerpFest</string>
+    <string name="derp_footer_text_string_summary">Оставить пустым (стандарт)=#DerpFest</string>
 
     <!-- Battery mode -->
     <string name="qs_hide_battery_title">Скрыть иконку батареи</string>
@@ -432,8 +448,8 @@
     <string name="battery_percentage_off">Отключен</string>
     <string name="battery_percentage_next">Включен</string>
     <string name="battery_percentage_inside">Включен (внутри иконки)</string>
-    <string name="battery_percentage_estimate">Включено (оценка)</string>
-    <string name="battery_percentage_percentage_estimate">Включено (процент | оценка)</string>
+    <string name="battery_percentage_estimate">Включен (оценка)</string>
+    <string name="battery_percentage_percentage_estimate">Включен (процент | оценка)</string>
 
     <!-- QS clock -->
     <string name="qs_clock_title">Часы</string>
@@ -470,8 +486,6 @@
     <string name="status_bar_custom_header_shadow_title">Тень изображения заголовка</string>
     <string name="status_bar_custom_header_shadow_summary">Для лучшего отображения на ярких картинках</string>
     <string name="unit_percent">\u0025</string>
-    <string name="static_header_provider" translatable="false">статичное</string>
-    <string name="daylight_header_provider" translatable="false">коллекция</string>
     <string name="static_header_provider_title">Статическое изображение</string>
     <string name="daylight_header_provider_title">Коллекция изображений</string>
     <string name="custom_header_provider_title">Проводник заголовка</string>
@@ -484,7 +498,6 @@
     <string name="file_header_select_title">Выберите локальное изображение</string>
     <string name="file_header_select_summary">Выберите локальное изображение в хранилище</string>
     <string name="file_header_provider_title">Одно изображение</string>
-    <string name="file_header_provider" translatable="false">file</string>
 
     <!-- Audio Panel view -->
     <string name="audio_panel_view">Панель громкости</string>
@@ -765,6 +778,8 @@
     <string name="qs_bg_use_fw_summary">Отключить пользовательские стили быстрых настроек для внешних движков тем</string>
     <string name="qs_bg_accent_title">Использовать цветовой акцент</string>
     <string name="qs_bg_accent_summary">Установить фоновый цвет быстрых настроек из системного акцента</string>
+    <string name="qs_bg_use_new_tint">Оттенок</string>
+    <string name="qs_bg_use_new_tint_summary">Включить оттеннок QS tiles</string>
 
     <!-- Themes -->
     <string name="theme_select_title">Темы</string>
@@ -870,4 +885,23 @@
     <string name="text_clock_left_right">Лево-право</string>
     <string name="text_clock_right_left">Право-лево</string>
     <string name="text_clock_padding">Свечение края</string>
+
+    <!-- About -->
+    <string name="about_title">О Нас</string>
+    <string name="about_team_category">Наша команда</string>
+    <string name="about_external_category">Внешние ссылки</string>
+    <string name="about_ceo_title">Генеральный директор</string>
+    <string name="about_dev_title">Ведущий разработчик</string>
+    <string name="about_qa_title">Ведущий QA</string>
+    <string name="about_site_title">Сайт</string>
+    <string name="about_tg_title">Telegram Група</string>
+    <string name="about_tg_summary">Официальнная, Глобальная Telegram група</string>
+    <string name="about_wall_title">Обои</string>
+    <string name="about_wall_summary">Telegram канал с обоями Derpfest</string>
+    <string name="about_git_title">ROM Source Code</string>
+    <string name="about_git_summary">Просмотр исзодников на GitHub</string>
+    <string name="about_devices_git_title">Исходный код устройств</string>
+    <string name="about_devices_git_summary">Наши исходники устройств на GitHub</string>
+    <string name="about_phone_title">О Телефоне</string>
+    <string name="about_phone_summary">Открыть страницу о телефоне</string>
 </resources>
