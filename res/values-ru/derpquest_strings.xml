@@ -231,7 +231,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Отключить меню питания, когда экран заблокирован</string>
-    <string name="lockscreen_power_menu_disabled_summary">Отключить меню питания, когда установлена блокировка экрана</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Бар батареи на экране блокировки</string>

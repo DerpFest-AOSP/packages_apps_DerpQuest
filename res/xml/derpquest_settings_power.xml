@@ -18,11 +18,10 @@
     android:title="@string/powermenu_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_power_menu_disabled"
+        <com.derpquest.settings.preferences.SecureSettingSwitchPreference
+            android:key="secured_lock_power_menu"
             android:title="@string/lockscreen_power_menu_disabled_title"
-            android:summary="@string/lockscreen_power_menu_disabled_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
          <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="powermenu_power"

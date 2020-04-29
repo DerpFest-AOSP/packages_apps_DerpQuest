@@ -200,7 +200,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Disabilita menù spegnimento quando bloccato</string>
-    <string name="lockscreen_power_menu_disabled_summary">Disabilità il menù di spegnimento quando il telefono è bloccato e protetto da password.</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Schermata di blocco barra batteria</string>

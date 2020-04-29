@@ -200,7 +200,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Tắt menu nguồn khi màn hình khóa</string>
-    <string name="lockscreen_power_menu_disabled_summary">Tắt menu nguồn trên màn hình khóa bảo mật</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Thanh pin trên màn hình khóa</string>

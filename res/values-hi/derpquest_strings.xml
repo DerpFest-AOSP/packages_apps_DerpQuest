@@ -202,7 +202,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">लॉक होने पर पावर मेनू को अक्षम करें</string>
-    <string name="lockscreen_power_menu_disabled_summary">सुरक्षित लॉक स्क्रीन पर पावर मेनू को अक्षम करें</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">लॉक स्क्रीन बैटरी बार</string>

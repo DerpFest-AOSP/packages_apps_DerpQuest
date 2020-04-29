@@ -201,7 +201,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Wyłącz menu zasilania podczas zablokowania</string>
-    <string name="lockscreen_power_menu_disabled_summary">Menu zasilania jest wyłączone na zabezpieczonym ekranie blokady</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Pasek baterii na ekranie blokady</string>

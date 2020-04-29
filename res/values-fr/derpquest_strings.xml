@@ -199,7 +199,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">Désactiver le menu marche/arrêt si verrouillé</string>
-    <string name="lockscreen_power_menu_disabled_summary">Le menu d\'alimentation ne sera pas accessible si l\'écran est verrouillé</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Barre de batterie sur écran de verrouillage</string>

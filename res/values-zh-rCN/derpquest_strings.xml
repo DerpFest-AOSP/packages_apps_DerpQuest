@@ -197,7 +197,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">未解锁无法使用电源菜单</string>
-    <string name="lockscreen_power_menu_disabled_summary">当手机处于锁定状态时无法使用电源菜单</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">锁屏电池条</string>

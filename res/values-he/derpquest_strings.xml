@@ -197,7 +197,6 @@
 
     <!-- Disable power menu on secure lock screen -->
     <string name="lockscreen_power_menu_disabled_title">בטל את כפתור הכיבוי במסך הנעילה</string>
-    <string name="lockscreen_power_menu_disabled_summary">בטל את כפתור הכיבוי כאשר המכשיר נעול</string>
 
     <!-- Battery Bar -->
     <string name="tuner_keyguard_show_battery_bar_title">הצג את שורת הסוללה</string>
