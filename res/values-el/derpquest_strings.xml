@@ -821,5 +821,28 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Τύπος εμφάνισης ειδοποιήσεων κεφαλίδας</string>
     <string name="notification_headers_summary">Ενεργοπ./Απενεργοπ. ειδοποιήσεων κεφαλίδας στυλ R-Android-11 (Χρειάζεται επανεκ/ση του SystemUI)</string>
+     
+    <!-- Battery bar -->
+    <string name="sb_battery_bar_title">Μπάρα μπαταρίας</string>
+    <string name="sb_battery_bar_summary">Εμφάνιση και προσαρμογή της μπάρας μπαταρίας, κάτω από την στατική μπάρα ή στην μπάρα πλοήγησης</string>
+    <string name="sb_battery_bar_location">Θέση μπάρας μπαταρίας</string>
+    <string name="sb_battery_bar_color">Χρώμα μπάρας μπαταρίας</string>
+    <string name="sb_battery_bar_style_title">Στυλ μπάρας μπαταρίας</string>
+    <string name="sb_battery_bar_thickness_title">Πάχος μπάρας μπαταρίας</string>
+    <string name="sb_battery_bar_animate_title">Γραφικά φόρτισης</string>
+    <string name="sb_battery_bar_animate_summary">Τα γραφικά φόρτισης, μπορεί να μην εμφανίζονται με καλή ανάλυση. Ενεργοποιήστε το εάν θέλετε και δοκιμάστε.</string>
+    <string name="sb_battery_bar_hide">Απόκρυψη</string>
+    <string name="sb_battery_bar_statusbar">Στατική μπάρα</string>
+    <string name="sb_battery_bar_topnav">Στην κοπρυφή της στατικής μπάρας</string>
+    <string name="sb_battery_bar_bottomnav">Κάτω από την στατική μπάρα</string>
+    <string name="sb_battery_bar_reg">Κανονική</string>
+    <string name="sb_battery_bar_center">Κέντρο-καθρεπτισμός</string>
+    <string name="sb_battery_bar_charging_color">Χρώμα μπάρας κατά τη φόρτιση</string>
+    <string name="sb_battery_bar_battery_low_color">Χρωματισμός χαμηλά στην μπάρα μπαταρίας</string>
+    <string name="sb_battery_bar_reversed">Επαναφορά</string>
+    <string name="sb_battery_bar_use_gradient_color">Χρήση χρώματος διαβάθμισης</string>
+    <string name="sb_battery_bar_gradient_color_summary">Χρησιμοποιήστε το χρώμα διαβάθμισης ως κλίμακα, για το επίπεδο της μπαταρίας</string>
+    <string name="sb_battery_bar_high_color">Χρώμα υψηλού επιπέδου"</string>
+    <string name="sb_battery_bar_low_color">Χρώμα χαμηλού επιπέδου"</string>
 
 </resources>
