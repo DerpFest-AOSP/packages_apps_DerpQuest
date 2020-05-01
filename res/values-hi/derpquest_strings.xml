@@ -93,13 +93,6 @@
 
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">बटन बैकलाइट टाइमआउट</string>
-    <string name="backlight_timeout_on">हमेशा सक्षम</string>
-    <string name="backlight_timeout_3s">3 सेकंड</string>
-    <string name="backlight_timeout_default">5 सेकंड (डिफ़ॉल्ट)</string>
-    <string name="backlight_timeout_10s">10 सेकंड</string>
-    <string name="backlight_timeout_15s">15 सेकंड</string>
-    <string name="backlight_timeout_20s">20 सेकंड</string>
-    <string name="backlight_timeout_30s">30 सेकंड</string>
 
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">बैकलाइट</string>

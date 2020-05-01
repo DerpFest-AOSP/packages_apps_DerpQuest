@@ -107,13 +107,14 @@
             android:title="@string/button_brightness_sw_title"
             android:persistent="false" />
 
-        <ListPreference
-            android:dialogTitle="@string/backlight_timeout_title"
-            android:entries="@array/backlight_timeout_entries"
-            android:entryValues="@array/backlight_timeout_values"
+        <com.derpquest.settings.preferences.CustomSeekBarPreference
             android:key="backlight_timeout"
-            android:persistent="false"
-            android:title="@string/backlight_timeout_title" />
+            android:title="@string/backlight_timeout_title"
+            android:max="30"
+            settings:min="0"
+            settings:interval="1"
+            settings:units="sec"
+            android:persistent="false" />
 
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="button_backlight_only_when_pressed"

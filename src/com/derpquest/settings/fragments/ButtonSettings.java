@@ -81,7 +81,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
     private SwitchPreference mEnableNavigationBar;
     private Preference mNavBarTuner;
-    private ListPreference mBacklightTimeout;
+    private CustomSeekBarPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
@@ -152,7 +152,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                     com.android.internal.R.bool.config_deviceHasVariableButtonBrightness);
 
             mBacklightTimeout =
-                    (ListPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
+                    (CustomSeekBarPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
 
             mButtonBrightness =
                     (CustomSeekBarPreference) findPreference(KEY_BUTTON_BRIGHTNESS);
@@ -160,30 +160,30 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             mButtonBrightness_sw =
                     (SwitchPreference) findPreference(KEY_BUTTON_BRIGHTNESS_SW);
 
-                if (mBacklightTimeout != null) {
-                    mBacklightTimeout.setOnPreferenceChangeListener(this);
-                    int BacklightTimeout = Settings.System.getIntForUser(getContentResolver(),
-                            Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 5000, UserHandle.USER_CURRENT);
-                    mBacklightTimeout.setValue(Integer.toString(BacklightTimeout));
-                    mBacklightTimeout.setSummary(mBacklightTimeout.getEntry());
-                }
+            if (mBacklightTimeout != null) {
+                mBacklightTimeout.setOnPreferenceChangeListener(this);
+                int BacklightTimeout = Settings.System.getIntForUser(getContentResolver(),
+                        Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
+                        5000, UserHandle.USER_CURRENT) / 1000; // milliseconds to seconds
+                mBacklightTimeout.setValue(BacklightTimeout);
+            }
 
-                if (variableBrightness) {
-                    hwkeyCat.removePreference(mButtonBrightness_sw);
-                    if (mButtonBrightness != null) {
-                        int ButtonBrightness = Settings.System.getIntForUser(getContentResolver(),
-                                Settings.System.BUTTON_BRIGHTNESS, 255, UserHandle.USER_CURRENT);
-                        mButtonBrightness.setValue(ButtonBrightness / 1);
-                        mButtonBrightness.setOnPreferenceChangeListener(this);
-                    }
-                } else {
-                    hwkeyCat.removePreference(mButtonBrightness);
-                    if (mButtonBrightness_sw != null) {
-                        mButtonBrightness_sw.setChecked((Settings.System.getIntForUser(getContentResolver(),
-                                Settings.System.BUTTON_BRIGHTNESS, 1, UserHandle.USER_CURRENT) == 1));
-                        mButtonBrightness_sw.setOnPreferenceChangeListener(this);
-                    }
+            if (variableBrightness) {
+                hwkeyCat.removePreference(mButtonBrightness_sw);
+                if (mButtonBrightness != null) {
+                    int ButtonBrightness = Settings.System.getIntForUser(getContentResolver(),
+                            Settings.System.BUTTON_BRIGHTNESS, 255, UserHandle.USER_CURRENT);
+                    mButtonBrightness.setValue(ButtonBrightness / 1);
+                    mButtonBrightness.setOnPreferenceChangeListener(this);
                 }
+            } else {
+                hwkeyCat.removePreference(mButtonBrightness);
+                if (mButtonBrightness_sw != null) {
+                    mButtonBrightness_sw.setChecked((Settings.System.getIntForUser(getContentResolver(),
+                            Settings.System.BUTTON_BRIGHTNESS, 1, UserHandle.USER_CURRENT) == 1));
+                    mButtonBrightness_sw.setOnPreferenceChangeListener(this);
+                }
+            }
         } else {
             mAnbiEnable.setChecked(false);
             prefScreen.removePreference(hwkeyCat);
@@ -261,14 +261,10 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mBacklightTimeout) {
-            String BacklightTimeout = (String) newValue;
-            int BacklightTimeoutValue = Integer.parseInt(BacklightTimeout);
+            int BacklightTimeout = ((Integer) newValue) * 1000; // seconds to milliseconds
             Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeoutValue, UserHandle.USER_CURRENT);
-            int BacklightTimeoutIndex = mBacklightTimeout
-                    .findIndexOfValue(BacklightTimeout);
-            mBacklightTimeout
-                    .setSummary(mBacklightTimeout.getEntries()[BacklightTimeoutIndex]);
+                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeout,
+                    UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mButtonBrightness) {
             int value = (Integer) newValue;

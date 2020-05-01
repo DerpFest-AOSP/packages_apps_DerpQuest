@@ -90,13 +90,6 @@
 
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">Nút tắt đèn nền</string>
-    <string name="backlight_timeout_on">Bật ngay</string>
-    <string name="backlight_timeout_3s">3 giây</string>
-    <string name="backlight_timeout_default">5 giây (mặc định)</string>
-    <string name="backlight_timeout_10s">10 giây</string>
-    <string name="backlight_timeout_15s">15 giây</string>
-    <string name="backlight_timeout_20s">20 giây</string>
-    <string name="backlight_timeout_30s">30 giây</string>
 
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">Đèn nền</string>

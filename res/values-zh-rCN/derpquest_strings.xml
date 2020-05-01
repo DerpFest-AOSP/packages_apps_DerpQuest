@@ -87,13 +87,6 @@
 
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">按钮背光超时</string>
-    <string name="backlight_timeout_on">总是开启</string>
-    <string name="backlight_timeout_3s">3秒</string>
-    <string name="backlight_timeout_default">5秒（默认）</string>
-    <string name="backlight_timeout_10s">10秒</string>
-    <string name="backlight_timeout_15s">15秒</string>
-    <string name="backlight_timeout_20s">20秒</string>
-    <string name="backlight_timeout_30s">30秒</string>
 
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">背光灯</string>

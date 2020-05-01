@@ -122,13 +122,6 @@
 
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">Тайм-аут подсветки кнопок</string>
-    <string name="backlight_timeout_on">Всегда включена</string>
-    <string name="backlight_timeout_3s">3 сек.</string>
-    <string name="backlight_timeout_default">5 сек. (стандарт)</string>
-    <string name="backlight_timeout_10s">10 сек.</string>
-    <string name="backlight_timeout_15s">15 сек.</string>
-    <string name="backlight_timeout_20s">20 сек.</string>
-    <string name="backlight_timeout_30s">30 сек.</string>
 
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">Подсветка</string>

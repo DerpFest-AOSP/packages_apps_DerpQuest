@@ -82,13 +82,6 @@
 
     <!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">זמן תאורת רקע</string>
-    <string name="backlight_timeout_on">דולק תמיד</string>
-    <string name="backlight_timeout_3s">3 שניות</string>
-    <string name="backlight_timeout_default">5 שניות (ברירת מחדל)</string>
-    <string name="backlight_timeout_10s">10 שניות</string>
-    <string name="backlight_timeout_15s">15 שניות</string>
-    <string name="backlight_timeout_20s">20 שניות</string>
-    <string name="backlight_timeout_30s">30 שניות</string>
 
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">תאורת רקע</string>

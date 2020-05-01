@@ -91,13 +91,6 @@
 
 	<!-- Buttons backlight timeout -->
     <string name="backlight_timeout_title">Tempo de luz dos botões físicos</string>
-    <string name="backlight_timeout_on">Sempre ativado</string>
-    <string name="backlight_timeout_3s">3 seg</string>
-    <string name="backlight_timeout_default">5 seg (padrão)</string>
-    <string name="backlight_timeout_10s">10 seg</string>
-    <string name="backlight_timeout_15s">15 seg</string>
-    <string name="backlight_timeout_20s">20 seg</string>
-    <string name="backlight_timeout_30s">30 seg</string>
 
 	<!-- Enable keys backlight-->
     <string name="button_brightness_title">Luz nos botões físico</string>
