@@ -300,6 +300,7 @@
     <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
     <string name="battery_bar_high_color">High level color</string>
     <string name="battery_bar_low_color">Low level color</string>
+    <string name="battery_bar_animate_color">Charging animation color</string>
 
     <!-- Navbar layout options -->
     <string name="navbar_layout_title">Layout</string>
@@ -909,6 +910,7 @@
     <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>
 
     <!-- Units -->
+    <string name="default_string">Default</string>
     <string name="unit_seconds">seconds</string>
     <string name="unit_milliseconds">milliseconds</string>
     <string name="unit_pixels">dp</string>

@@ -44,6 +44,13 @@
             android:summary="@string/battery_bar_animate_summary" />
 
         <com.derp.support.colorpicker.ColorPickerPreference
+            android:key="battery_bar_animate_color"
+            android:title="@string/battery_bar_animate_color"
+            settings:defaultColorValue="0xffff2200"
+            android:dependency="battery_bar_animate"
+            android:persistent="false" />
+
+        <com.derp.support.colorpicker.ColorPickerPreference
             android:key="battery_bar_color"
             android:title="@string/battery_bar_color"
             android:defaultValue="0xffffff" />

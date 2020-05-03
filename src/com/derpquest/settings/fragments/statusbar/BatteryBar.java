@@ -68,6 +68,7 @@ public class BatteryBar extends SettingsPreferenceFragment implements
     private static final String PREF_BATT_BAR_HIGH_COLOR = "battery_bar_high_color";
     private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
+    private static final String PREF_BATT_ANIMATE_COLOR = "battery_bar_animate_color";
 
     private Context mContext;
 
@@ -81,6 +82,7 @@ public class BatteryBar extends SettingsPreferenceFragment implements
     private ColorPickerPreference mBatteryBarBatteryLowColor;
     private ColorPickerPreference mBatteryBarBatteryLowColorWarn;
     private ColorPickerPreference mBatteryBarBatteryHighColor;
+    private ColorPickerPreference mBatteryBarAnimateColor;
 
     @Override
     public int getMetricsCategory() {
@@ -157,6 +159,17 @@ public class BatteryBar extends SettingsPreferenceFragment implements
         mBatteryBarChargingAnimation.setChecked(Settings.System.getInt(resolver,
                 Settings.System.BATTERY_BAR_ANIMATE, 0) == 1);
 
+        mBatteryBarAnimateColor = (ColorPickerPreference) findPreference(PREF_BATT_ANIMATE_COLOR);
+        mBatteryBarAnimateColor.setOnPreferenceChangeListener(this);
+        int batteryBarAnimateColor = Settings.System.getInt(resolver,
+                Settings.System.BATTERY_BAR_ANIMATE_COLOR, 0xFFFF2200);
+        String batteryBarAnimateColorHex = String.format("#%08x", (0xFFFF2200 & batteryBarAnimateColor));
+        if (batteryBarAnimateColorHex.equals("#ffff2200"))
+            mBatteryBarAnimateColor.setSummary(R.string.default_string);
+        else
+            mBatteryBarAnimateColor.setSummary(batteryBarAnimateColorHex);
+        mBatteryBarAnimateColor.setNewPreviewColor(batteryBarAnimateColor);
+
         mBatteryBarThickness = (CustomSeekBarPreference) prefSet.findPreference(PREF_BATT_BAR_WIDTH);
         mBatteryBarThickness.setValue(Settings.System.getInt(resolver,
                 Settings.System.BATTERY_BAR_THICKNESS, 1));
@@ -228,6 +241,17 @@ public class BatteryBar extends SettingsPreferenceFragment implements
             int val =  (Integer) newValue;
             Settings.System.putInt(resolver,
                 Settings.System.BATTERY_BAR_THICKNESS, val);
+            return true;
+        } else if (preference == mBatteryBarAnimateColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ffff2200"))
+                mBatteryBarAnimateColor.setSummary(R.string.default_string);
+            else
+                mBatteryBarAnimateColor.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                Settings.System.BATTERY_BAR_ANIMATE_COLOR, intHex);
             return true;
         }
         return false;

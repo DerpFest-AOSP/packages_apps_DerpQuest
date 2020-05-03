@@ -248,6 +248,7 @@
     <string name="battery_bar_gradient_color_summary">Verwende Farbverlauf als Maßstab für den Akkustand</string>
     <string name="battery_bar_high_color">Farbe bei hohem Akkustand</string>
     <string name="battery_bar_low_color">Farbe bei niedrigem Akkustand</string>
+    <string name="battery_bar_animate_color">Farbe der Ladeanimation</string>
 
     <!-- Navbar layout options -->
     <string name="navbar_layout_title">Layout</string>
@@ -774,6 +775,7 @@
     <string name="fod_gesture_summary">Ermöglicht das Entsperren des Geräts, ohne den Bildschirm zuerst aufwecken zu müssen</string>
 
     <!-- Units -->
+    <string name="default_string">Standard</string>
     <string name="unit_seconds">Sekunden</string>
     <string name="unit_milliseconds">Millisekunden</string>
     <string name="unit_pixels">dp</string>
