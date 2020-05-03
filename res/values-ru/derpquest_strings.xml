@@ -18,6 +18,11 @@
     <!-- App Title -->
     <string name="derp_settings_title">DerpQuest</string>
 
+    <!-- QS panels -->
+    <string name="qs_tile_panels_title">Показать Панели</string>
+    <string name="qs_tile_panels_summary_enabled">Показать подробный вид плитки QS в виде панели</string>
+    <string name="qs_tile_panels_summary_disabled">Показать подробный вид плитки QS внутри области плитки</string>
+
     <!-- Categories -->
     <string name="button_title">Кнопки</string>
     <string name="gestures_title">Жесты</string>
@@ -896,4 +901,31 @@
     <string name="about_devices_git_summary">Наши исходники устройств на GitHub</string>
     <string name="about_phone_title">О Телефоне</string>
     <string name="about_phone_summary">Открыть страницу о телефоне</string>
+
+     <!-- Battery bar -->
+
+    <string name="sb_battery_bar_title">Бар Батареи</string>
+    <string name="sb_battery_bar_summary">Отображение и настройка панели бара батареи рядом со строкой состояния или панелью навигации</string>
+    <string name="sb_battery_bar_location">Расположение</string>
+    <string name="sb_battery_bar_color">Цвет</string>
+    <string name="sb_battery_bar_style_title">Стиль</string>
+    <string name="sb_battery_bar_thickness_title">Толщина</string>
+    <string name="sb_battery_bar_animate_title">Анимация зарядки</string>
+    <string name="sb_battery_bar_animate_summary">Анимация зарядки может привести к ухудшению работы интерфейса. Включайие по своему усмотрению.</string>
+    <string name="sb_battery_bar_hide">Скрыть</string>
+    <string name="sb_battery_bar_statusbar">Статусбар</string>
+    <string name="sb_battery_bar_topnav">Верхняя часть навбара</string>
+    <string name="sb_battery_bar_bottomnav">Нижняя часть Навбара</string>
+    <string name="sb_battery_bar_reg">Регулирование</string>
+    <string name="sb_battery_bar_center">Центр-зеркальные</string>
+    <string name="sb_battery_bar_charging_color">Цвет при зарядке</string>
+    <string name="sb_battery_bar_battery_low_color">Цвет при низком заряде батареи</string>
+    <string name="sb_battery_bar_reversed">Перевернутый</string>
+    <string name="sb_battery_bar_use_gradient_color">Использоваё градиентный цвет</string>
+    <string name="sb_battery_bar_gradient_color_summary">Используйте градиентный цвет в качестве шкалы уровня заряда батареи</string>
+    <string name="sb_battery_bar_high_color">Цвет высокого уровня"</string>
+    <string name="sb_battery_bar_low_color">Цвет низкого уровня"</string>
+
+
+
 </resources>
