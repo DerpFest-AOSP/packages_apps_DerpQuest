@@ -36,7 +36,7 @@
         android:defaultValue="true"/>
 
     <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-        android:key="qs_show_secure"
+        android:key="qs_show_security"
         android:title="@string/qs_show_secure_title"
         android:summary="@string/qs_show_secure_summary"
         android:defaultValue="true"/>
