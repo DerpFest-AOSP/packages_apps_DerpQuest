@@ -92,4 +92,11 @@
             android:min="0"
             settings:interval="1" />
 
+        <com.derp.support.preference.SystemSettingListPreference
+            android:key="ambient_light_repeat_direction"
+            android:title="@string/pulse_ambient_light_repeat_direction_title"
+            android:entries="@array/pulse_ambient_light_repeat_direction_entries"
+            android:entryValues="@array/pulse_ambient_light_repeat_direction_values"
+            android:defaultValue="0" />
+
 </PreferenceScreen>

@@ -60,6 +60,7 @@ public class EdgeLightingSettings extends SettingsPreferenceFragment implements
     private SystemSettingListPreference mColorMode;
     private SystemSettingListPreference mAmbientNotificationLightTimeout;
     private SecureSettingListPreference mAmbientLightLayout;
+    private SystemSettingListPreference mEdgeLightRepeatDirection;
     private SystemSettingSwitchPreference mAmbientNotificationForAll;
 
     private EdgeLightingEnabler mEdgeLightingEnabler;
@@ -80,6 +81,7 @@ public class EdgeLightingSettings extends SettingsPreferenceFragment implements
         mColorMode = (SystemSettingListPreference) findPreference("ambient_notification_light_color_mode");
         mEdgeLightColorPreference = (ColorPickerPreference) findPreference("ambient_notification_light_color");
         mAmbientLightLayout = (SecureSettingListPreference) findPreference("pulse_ambient_light_layout");
+        mEdgeLightRepeatDirection = (SystemSettingListPreference) findPreference("ambient_light_repeat_direction");
         mAmbientNotificationForAll = (SystemSettingSwitchPreference) findPreference("ambient_light_pulse_for_all");
 
         int repeats = Settings.System.getInt(getContentResolver(),
@@ -206,6 +208,7 @@ public class EdgeLightingSettings extends SettingsPreferenceFragment implements
         mEdgeLightColorPreference.setEnabled(enabled ? true : false);
         mEdgeLightDurationPreference.setEnabled(enabled ? true : false);
         mEdgeLightRepeatCountPreference.setEnabled(enabled ? true : false);
+        mEdgeLightRepeatDirection.setEnabled(enabled ? true : false);
         mAmbientNotificationLightEnabled.setEnabled(enabled ? true : false);
         mColorMode.setEnabled(enabled ? true : false);
         mAmbientNotificationLightHideAod.setEnabled(enabled ? true : false);

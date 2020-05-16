@@ -796,6 +796,9 @@
     <string name="pulse_ambient_light_layout_faded">Faded</string>
     <string name="pulse_ambient_light_show_always_title">Show for all doze events</string>
     <string name="pulse_ambient_light_show_always_summary">Show lights for all doze events and not just notifications</string>
+    <string name="pulse_ambient_light_repeat_direction_title">Light repeat mode</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">Restart</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">Reverse</string>
 
     <!-- Volume Panel on Left -->
     <string name="volume_panel_category">Volume panel</string>

@@ -673,6 +673,9 @@
     <string name="pulse_ambient_light_layout_faded">Verblasst</string>
     <string name="pulse_ambient_light_show_always_title">Für alle Aufwach-Ereignisse anzeigen</string>
     <string name="pulse_ambient_light_show_always_summary">Zeigen Sie Lichter für alle Aufwach-Ereignisse und nicht nur für Benachrichtigungen</string>
+    <string name="pulse_ambient_light_repeat_direction_title">Lichtwiederholungsmodus</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">Neu starten</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">Umkehren</string>
 
     <!-- Volume Panel on Left -->
     <string name="volume_panel_category">Lautstärkefenster</string>
