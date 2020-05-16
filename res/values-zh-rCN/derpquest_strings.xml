@@ -43,6 +43,7 @@
     <string name="save">保存</string>
     <string name="default_string">默认</string>
     <string name="enable_first">请先启用</string>
+    <string name="no_browser">请选择一个默认浏览器</string>
     <string name="general_category">常规</string>
     <string name="look_category">外观</string>
     <string name="items_category">项目</string>
@@ -378,6 +379,8 @@
     <string name="status_bar_battery_percentage_text_next">图标旁</string>
     <string name="status_bar_battery_text_charging_title">充电时电池百分比</string>
     <string name="status_bar_battery_text_charging_summary">充电时始终显示电池百分比</string>
+    <string name="status_bar_battery_charging_bolt_title">显示充电符号</string>
+    <string name="status_bar_battery_charging_bolt_summary">充电时在电量文本旁显示一个 \u26A1\uFE0E 符号</string>
 
     <!-- QS settings categories -->
     <string name="category_tiles_title">磁贴区域</string>
@@ -420,6 +423,11 @@
     <string name="quick_pulldown_left">左边缘</string>
     <string name="quick_pulldown_right">右边缘</string>
     <string name="quick_pulldown_always">任何地方</string>
+
+    <!-- QS panels -->
+    <string name="qs_tile_panels_title">显示面板</string>
+    <string name="qs_tile_panels_summary_enabled">在面板显示快速设置磁贴细节视图</string>
+    <string name="qs_tile_panels_summary_disabled">显示快速设置磁贴区域内的细节视图</string>
 
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_enable">音乐可视化</string>
@@ -549,6 +557,10 @@
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">强制扩展通知</string>
     <string name="force_expanded_notifications_summary">强制使应用支持通知扩展</string>
+
+    <!-- R Notification headers -->
+    <string name="notification_headers_title">显示顶栏通知</string>
+    <string name="notification_headers_summary">是否显示Android R样式顶栏通知 (需要重启系统界面)</string>
 
     <!-- Statusbar Clock Font Style, Size & Color -->
     <string name="status_bar_clock_font_style_title">时钟字体样式</string>
@@ -862,5 +874,52 @@
     <string name="about_devices_git_summary">在GitHub上查看我们的设备源</string>
     <string name="about_phone_title">关于手机</string>
     <string name="about_phone_summary">打开系统关于界面</string>
+
+    <!-- About - Device specific links -->
+    <string name="about_device_category">设备详细链接</string>
+    <string name="about_device_fw">需要固件</string>
+    <string name="about_device_recovery">推荐Recovery</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_settings_title">浮动通知</string>
+    <string name="heads_up_settings_summary">配置浮动通知, 打盹计时器以及更多</string>
+
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">打盹计时器</string>
+    <string name="heads_up_snooze_summary">在一定时间内，上滑浮动通知将会暂停应用程序通知</string>
+
+    <!-- Heads up timeout -->
+    <string name="heads_up_time_out_title">超时</string>
+    <string name="heads_up_time_out_summary">浮动通知显示时长</string>
+
+    <!-- Heads up blacklists -->
+    <string name="add_heads_up_package">管理应用</string>
+    <string name="heads_up_stoplist_title">禁用列表</string>
+    <string name="add_heads_up_stoplist_summary">在这些应用中禁用浮动通知</string>
+    <string name="heads_up_blacklist_title">黑名单</string>
+    <string name="add_heads_up_blacklist_summary">在这些应用中关闭浮动通知</string>
+
+    <!-- Battery bar -->
+    <string name="sb_battery_bar_title">电池栏</string>
+    <string name="sb_battery_bar_summary">显示并自定义电池栏</string>
+    <string name="sb_battery_bar_location">电池栏位置</string>
+    <string name="sb_battery_bar_color">电池栏颜色</string>
+    <string name="sb_battery_bar_style_title">电池栏样式</string>
+    <string name="sb_battery_bar_thickness_title">电池栏厚度</string>
+    <string name="sb_battery_bar_animate_title">充电动画</string>
+    <string name="sb_battery_bar_animate_summary">启用充电动画可能会导致较差的用户体验，请自行斟酌是否启用</string>
+    <string name="sb_battery_bar_hide">隐藏</string>
+    <string name="sb_battery_bar_statusbar">状态栏</string>
+    <string name="sb_battery_bar_topnav">导航栏顶部</string>
+    <string name="sb_battery_bar_bottomnav">导航栏底部</string>
+    <string name="sb_battery_bar_reg">常规</string>
+    <string name="sb_battery_bar_center">居中</string>
+    <string name="sb_battery_bar_charging_color">电池栏充电颜色</string>
+    <string name="sb_battery_bar_battery_low_color">电池栏低电量颜色</string>
+    <string name="sb_battery_bar_reversed">反转</string>
+    <string name="sb_battery_bar_use_gradient_color">使用渐变色</string>
+    <string name="sb_battery_bar_gradient_color_summary">使用渐变色作为电池栏电量</string>
+    <string name="sb_battery_bar_high_color">高电量颜色"</string>
+    <string name="sb_battery_bar_low_color">低电量颜色"</string>
 
 </resources>
