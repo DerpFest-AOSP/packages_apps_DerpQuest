@@ -20,6 +20,8 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.app.WallpaperManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
@@ -41,6 +43,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
 import com.derpquest.settings.preferences.SecureSettingMasterSwitchPreference;
+import com.derpquest.settings.preferences.SystemSettingListPreference;
 import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 
 import java.util.ArrayList;
@@ -52,12 +55,16 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 @SearchIndexable
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+    private static final String FOD_PRESSED_STATE = "fod_pressed_state";
+    private static final String FOD_SOLID_COLOR = "fod_solid_color";
     private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
     private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
 
@@ -80,6 +87,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
+    private SystemSettingListPreference mFODPressedState;
+    private ColorPickerPreference mFODIconColor;
     private SwitchPreference mFingerprintVib;
 
     @Override
@@ -159,6 +168,29 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mDozeBrightness.setValue(value);
         mDozeBrightness.setOnPreferenceChangeListener(this);
 
+        mFODPressedState = (SystemSettingListPreference) findPreference(FOD_PRESSED_STATE);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.FOD_PRESSED_STATE, 0);
+        mFODPressedState.setValue(String.valueOf(value));
+        mFODPressedState.setOnPreferenceChangeListener(this);
+
+        mFODIconColor = (ColorPickerPreference) findPreference(FOD_SOLID_COLOR);
+        mFODIconColor.setEnabled(value == 2); // if mFODPressedState index == 2
+        try {
+            Resources res = getContext().getPackageManager().getResourcesForApplication(
+                    "com.android.systemui");
+            int defaultColor = res.getColor(res.getIdentifier(
+                    "com.android.systemui:color/config_fodColor", null, null));
+            mFODIconColor.setDefaultColor(defaultColor);
+            value = Settings.System.getInt(getContentResolver(),
+                    Settings.System.FOD_SOLID_COLOR, defaultColor);
+            mFODIconColor.setNewPreviewColor(value);
+            mFODIconColor.setOnPreferenceChangeListener(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+            mFODIconColor.setEnabled(false);
+        }
+
         mFODIconPickerCategory = (PreferenceCategory)
                 findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null
@@ -214,6 +246,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOZE_BRIGHTNESS, value);
+            return true;
+        } else if (preference == mFODPressedState) {
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.FOD_PRESSED_STATE, value);
+            mFODIconColor.setEnabled(value == 2);
+            return true;
+        } else if (preference == mFODIconColor) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.FOD_SOLID_COLOR, value);
             return true;
         }
         return false;

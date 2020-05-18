@@ -68,6 +68,10 @@
         <Preference
             android:summary="@string/fod_pressed_state_footer" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="fod_solid_color"
+            android:title="@string/fod_solid_color_title" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
