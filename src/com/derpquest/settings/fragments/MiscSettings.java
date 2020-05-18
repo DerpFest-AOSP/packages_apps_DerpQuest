@@ -36,6 +36,7 @@ import android.util.Log;
 import com.derpquest.settings.preferences.AppMultiSelectListPreference;
 import com.derpquest.settings.preferences.ScrollAppsViewPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
+import com.derpquest.settings.Utils;
 import com.derpquest.settings.utils.SuShell;
 import com.derpquest.settings.utils.SuTask;
 
@@ -58,6 +59,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     private static final String KEY_ASPECT_RATIO_APPS_LIST_SCROLLER = "aspect_ratio_apps_list_scroller";
     private static final String SYSTEM_PROXI_CHECK_ENABLED = "system_proxi_check_enabled";
     private static final String SELINUX_CATEGORY = "selinux";
+    private static final String SELINUX_EXPLANATION = "selinux_explanation";
     private static final String PREF_SELINUX_MODE = "selinux_mode";
     private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
 
@@ -65,7 +67,6 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     private ScrollAppsViewPreference mAspectRatioApps;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
-
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -103,18 +104,31 @@ public class MiscSettings extends SettingsPreferenceFragment implements
       if (!DeviceUtils.deviceSupportsProximitySensor(getActivity()) || !supportPowerButtonProxyCheck) {
           getPreferenceScreen().removePreference(proxyCheckPreference);
       }
+
       // SELinux
       Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
+      Preference selinuxExp = findPreference(SELINUX_EXPLANATION);
       mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
       mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
-      mSelinuxMode.setOnPreferenceChangeListener(this);
 
       mSelinuxPersistence =
           (SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
-      mSelinuxPersistence.setOnPreferenceChangeListener(this);
       mSelinuxPersistence.setChecked(getContext()
           .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
           .contains(PREF_SELINUX_MODE));
+
+      // Disabling root required switches if unrooted and letting the user know
+      if (!Utils.isRooted(getContext())) {
+        Log.e(TAG, "Root not found");
+        mSelinuxMode.setEnabled(false);
+        mSelinuxPersistence.setEnabled(false);
+        mSelinuxPersistence.setChecked(false);
+        selinuxExp.setSummary(selinuxExp.getSummary() + "\n" +
+            getResources().getString(R.string.selinux_unrooted_summary));
+      } else {
+        mSelinuxPersistence.setOnPreferenceChangeListener(this);
+        mSelinuxMode.setOnPreferenceChangeListener(this);
+      }
     }
 
     @Override
