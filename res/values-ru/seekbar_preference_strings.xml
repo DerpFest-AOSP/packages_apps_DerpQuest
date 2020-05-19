@@ -27,7 +27,7 @@
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Значение: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">По умолчанию</string>
-    <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_to_set">Значение по умолчанию: <xliff:g id="v">%s</xliff:g>\nУдерживайте для применения</string>
     <string name="custom_seekbar_default_value_is_set">Значение по умолчанию установлено</string>
 
 </resources>

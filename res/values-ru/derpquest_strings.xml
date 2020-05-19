@@ -330,11 +330,14 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Стиль батареи</string>
     <string name="status_bar_battery_style_q">Портрет (по умолчанию)</string>
-    <string name="status_bar_battery_style_dotted_circle">Точечный круг</string>
-    <string name="status_bar_battery_style_circle">Заполненный круг</string>
+    <string name="status_bar_battery_style_dotted_circle">Точечная окружность</string>
+    <string name="status_bar_battery_style_circle">Окружность</string>
+    <string name="status_bar_battery_style_big_circle">Большая окружность</string>
+    <string name="status_bar_battery_style_filled_circle">Круг</string>
     <string name="status_bar_battery_style_text">Текст</string>
     <string name="status_bar_battery_style_hidden">Скрытый</string>
     <string name="battery_percent_title">Процент заряда батареи</string>
+
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">Процент заряда батареи</string>
     <string name="status_bar_battery_percentage_default">Скрытый (по умолчанию)</string>
@@ -538,7 +541,7 @@
     <string name="show_carrier_disabled">Отключено</string>
     <string name="show_carrier_keyguard">Только на экране блокировки</string>
     <string name="show_carrier_statusbar">Только в строке состояния</string>
-    <string name="show_carrier_enabled">Экран блокировки &amp; строка состояния</string>
+    <string name="show_carrier_enabled">Экран блокировки и строка состояния</string>
     <string name="status_bar_carrier_color">Цвет названия оператора</string>
     <string name="status_bar_carrier_size">Размер имени оператора</string>
     <string name="status_bar_carrier_font_style_title">Шрифт названия оператора</string>
@@ -692,6 +695,8 @@
     <string name="status_bar_show_ticker_title">Тикер (бета)</string>
     <string name="status_bar_show_ticker_summary">Настройка предварительного просмотра уведомлений в строке состояния</string>
     <string name="ticker_animation_mode_title">Анимация тикера</string>
+    <string name="status_bar_ticker_music_title">Тикер музыки</string>
+    <string name="status_bar_ticker_music_summary">Показывать тикер при включении нового трека</string>
     <string name="ticker_animation_mode_alpha_fade">Затухание</string>
     <string name="ticker_animation_mode_scroll">Прокрутка</string>
     <string name="ticker_tick_duration_title">Длительность тикера</string>
@@ -726,10 +731,11 @@
     <string name="entry_fifteen_minute">15 минут</string>
     <!-- FOD pressed state behavior -->
     <string name="fod_pressed_state_title">Поведение нажатой иконки</string>
-    <string name="fod_pressed_state_footer">Значки/цвета могут различаться в зависимости от используемого устройства.</string>
+    <string name="fod_pressed_state_footer">Значки/цвета по умолчанию могут различаться в зависимости от используемого устройства.</string>
     <string name="fod_pressed_state_icon">Значок (обычно синий)</string>
     <string name="fod_pressed_state_icon_white">Значок (белый)</string>
-    <string name="fod_pressed_state_solid_color">Сплошной цвет (обычно зеленый)</string>
+    <string name="fod_pressed_state_solid_color">Сплошной цвет (пользовательский hex)</string>
+    <string name="fod_solid_color_title">Цвет нажатой иконки</string>
     <!-- Lockscreen clock style -->
     <string name="lockscreen_clock_title">Стиль часов</string>
     <string name="lockscreen_clock_dialog_title">Выбрать стиль часов</string>
@@ -855,7 +861,19 @@
     <string name="sb_battery_bar_battery_low_color">Цвет полосы низкого заряда батареи</string>
     <string name="sb_battery_bar_reversed">Перевернутый</string>
     <string name="sb_battery_bar_use_gradient_color">Использовать градиент</string>
-    <string name="sb_battery_bar_gradient_color_summary">Использовать градиент для шкалы уровня заряда батареи</string>
-    <string name="sb_battery_bar_high_color">Высокоуровневый цвет\"</string>
-    <string name="sb_battery_bar_low_color">Низкоуровневый цвет\"</string>
+    <string name="sb_battery_bar_gradient_color_summary">Использовать градиент в качестве шкалы для уровня заряда батареи</string>
+    <string name="sb_battery_bar_high_color">Цвет при высоком уровне заряда</string>
+    <string name="sb_battery_bar_low_color">Цвет при низком уровне заряда</string>
+    <!-- Selinux Switch -->
+    <string name="selinux_category">SELinux</string>
+    <string name="selinux_explanation_summary">SELinux — это набор модификаций ядра и инструментов пользовательского пространства. Изменение режимов может привести к нежелательным последствиям. Используйте на свой страх и риск.</string>
+    <string name="selinux_mode_title">Режим SELinux</string>
+    <string name="selinux_permissive_summary">Permissive (разрешающий)</string>
+    <string name="selinux_enforcing_summary">Enforcing (принудительный)</string>
+    <string name="selinux_persistence_title">Сохранять через перезагрузку</string>
+    <string name="selinux_persistence_summary">Восстанавливать вышеуказанный режим политики при каждой загрузке</string>
+    <string name="selinux_permissive_toast_title">SELinux установлен на Permissive (разрешающий)!</string>
+    <string name="selinux_enforcing_toast_title">SELinux установлен на Enforcing (принудительный)!</string>
+    <string name="selinux_unrooted_summary">Не удалось обнаружить root-доступ. Для использования этих переключателей необходим root</string>
+    <string name="cannot_get_su">Не удалось выполнить из-за отсутствия доступа суперпользователя</string>
 </resources>
