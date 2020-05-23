@@ -41,10 +41,11 @@
         android:defaultValue="true" />
 
     <!-- QS Header Data Usage -->
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference 
+    <com.derpquest.settings.preferences.SystemSettingListPreference 
         android:key="qs_datausage"
         android:title="@string/qs_datausage_title" 
-        android:summary="@string/qs_datausage_subtitle"
-        android:defaultValue="false" />
+        android:entries="@array/qs_datausage_entries" 
+        android:entryValues="@array/qs_datausage_values"
+        android:defaultValue="0" />
 
 </PreferenceScreen>
