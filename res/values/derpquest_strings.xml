@@ -795,6 +795,8 @@
     <!-- Statusbar ticker -->
     <string name="status_bar_show_ticker_title">Ticker (beta)</string>
     <string name="status_bar_show_ticker_summary">Customize notification preview in status bar</string>
+    <string name="status_bar_ticker_music_title">Media ticker</string>
+    <string name="status_bar_ticker_music_summary">Show ticker for switched music tracks</string>
     <string name="ticker_animation_mode_title">Ticker animation</string>
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>

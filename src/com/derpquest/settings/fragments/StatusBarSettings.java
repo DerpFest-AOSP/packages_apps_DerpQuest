@@ -125,7 +125,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 findPreference(NOTIFICATION_TICKER);
         mNotificationTicker.setOnPreferenceChangeListener(this);
         enabled = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_SHOW_TICKER, 0) == 1;
+                Settings.System.STATUS_BAR_SHOW_TICKER, 0) != 0;
         mNotificationTicker.setChecked(enabled);
 
         mBatteryBar = (SystemSettingMasterSwitchPreference)

@@ -54,44 +54,64 @@ import java.util.Set;
 public class TickerSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
-      @Override
-      public void onCreate(Bundle icicle) {
-          super.onCreate(icicle);
+    private static final String PREF_STATUS_BAR_TICKER_MUSIC = "status_bar_ticker_music";
 
-          addPreferencesFromResource(R.xml.derpquest_settings_ticker);
-          PreferenceScreen prefSet = getPreferenceScreen();
-          final ContentResolver resolver = getActivity().getContentResolver();
+    private SwitchPreference mTickerMusic;
 
-      }
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
 
-      @Override
-      public boolean onPreferenceChange(Preference preference, Object objValue) {
-          return false;
-      }
+        addPreferencesFromResource(R.xml.derpquest_settings_ticker);
+        PreferenceScreen prefSet = getPreferenceScreen();
+        final ContentResolver resolver = getActivity().getContentResolver();
 
-      @Override
-      public int getMetricsCategory() {
-          return MetricsProto.MetricsEvent.OWLSNEST;
-      }
+        mTickerMusic = (SwitchPreference) findPreference(PREF_STATUS_BAR_TICKER_MUSIC);
+        int tickerMode = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_SHOW_TICKER, 0);
+        if (tickerMode == 0) {
+            mTickerMusic.setEnabled(false);
+            mTickerMusic.setSummary(R.string.enable_first);
+        } else {
+            mTickerMusic.setChecked(tickerMode == 2);
+            mTickerMusic.setOnPreferenceChangeListener(this);
+        }
+    }
 
-      public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-              new BaseSearchIndexProvider() {
-                  @Override
-                  public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                                                                              boolean enabled) {
-                      ArrayList<SearchIndexableResource> result =
-                              new ArrayList<SearchIndexableResource>();
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mTickerMusic) {
+            boolean enabled = (Boolean) objValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_SHOW_TICKER, enabled ? 2 : 1);
+            return true;
+        }
+        return false;
+    }
 
-                      SearchIndexableResource sir = new SearchIndexableResource(context);
-                      sir.xmlResId = R.xml.derpquest_settings_ticker;
-                      result.add(sir);
-                      return result;
-                  }
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.OWLSNEST;
+    }
 
-                  @Override
-                  public List<String> getNonIndexableKeys(Context context) {
-                      List<String> keys = super.getNonIndexableKeys(context);
-                      return keys;
-                  }
-              };
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+            @Override
+            public List<SearchIndexableResource> getXmlResourcesToIndex(Context context, boolean enabled) {
+                ArrayList<SearchIndexableResource> result =
+                    new ArrayList<SearchIndexableResource>();
+
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.derpquest_settings_ticker;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+            };
 }
