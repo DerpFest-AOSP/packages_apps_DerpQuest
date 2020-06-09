@@ -45,6 +45,7 @@
     <color name="derpquest_navigationbar_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_notifications_general_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_powerbutton_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_pulse_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_quick_settings_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_recents_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_statusbar_items_background">@*android:color/accent_device_default_light</color>

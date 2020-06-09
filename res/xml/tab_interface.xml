@@ -42,4 +42,11 @@
         android:title="@string/headsup_title"
         android:summary="@string/headsup_summary" />
 
+    <com.android.settings.widget.CardPreference
+        android:key="pulse_category"
+        android:fragment="com.derpquest.settings.fragments.ui.PulseSettings"
+        android:icon="@drawable/ic_pulse_background"
+        android:title="@string/pulse_settings"
+        android:summary="@string/pulse_settings_summary" />
+
 </PreferenceScreen>
