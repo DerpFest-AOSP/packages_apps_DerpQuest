@@ -479,12 +479,6 @@
     <string name="notification_sound_vib_screen_on_title">Laute Benachrichtigungen</string>
     <string name="notification_sound_vib_screen_on_summary">Wiedergabe von Ton und Vibration für Benachrichtigungen bei eingeschaltetem Bildschirm</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Impulsblitz</string>
-    <string name="flash_on_call_title">Impulsblitzen bei eingehenden Anrufen</string>
-    <string name="flash_on_call_delay_title">Impulsblitzfreuenz</string>
-
-
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Datum Schriftstil</string>
     <string name="lock_date_font_summary">Standardschriftart des Sperrbildschirmdatum-Widgets ändern</string>

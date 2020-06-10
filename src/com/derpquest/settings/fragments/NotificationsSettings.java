@@ -56,7 +56,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-    private static final String FLASH_ON_CALL = "flash_on_call_options";
     private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
     private static final String PREF_HEADS_UP = "heads_up_settings";
 
@@ -77,17 +76,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         Preference incallVibCategory = (Preference) findPreference(INCALL_VIB_OPTIONS);
         if (!Utils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
-        }
-
-        mFlashOnCall = (SystemSettingMasterSwitchPreference)
-                findPreference(FLASH_ON_CALL);
-        if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(mFlashOnCall);
-        } else {
-            mFlashOnCall.setOnPreferenceChangeListener(this);
-            boolean enabled = Settings.System.getInt(resolver,
-                    Settings.System.FLASH_ON_CALL_WAITING, 0) == 1;
-            mFlashOnCall.setChecked(enabled);
         }
 
         mAmbientLight = (SystemSettingMasterSwitchPreference)
@@ -122,12 +110,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final ContentResolver resolver = getContentResolver();
-        if (preference == mFlashOnCall) {
-            Boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.FLASH_ON_CALL_WAITING, value ? 1 : 0);
-            return true;
-        } else if (preference == mAmbientLight) {
+        if (preference == mAmbientLight) {
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.OMNI_PULSE_AMBIENT_LIGHT, value ? 1 : 0);

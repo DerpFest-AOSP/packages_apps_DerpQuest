@@ -37,14 +37,6 @@
             android:fragment="com.derpquest.settings.fragments.BatteryLightSettings"
             android:title="@string/battery_light_settings" />
 
-        <!-- Flash on Call -->
-        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
-            android:key="flash_on_call_options"
-            android:title="@string/flash_on_call_category"
-            android:summary="@string/flash_on_call_title"
-            android:fragment="com.derpquest.settings.fragments.FlashOnCall"
-            android:defaultValue="flase" />
-
     </PreferenceCategory>
 
     <PreferenceCategory

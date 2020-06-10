@@ -545,11 +545,6 @@
     <string name="notification_sound_vib_screen_on_title">Głośne powiadomienia przy włączonym ekranie</string>
     <string name="notification_sound_vib_screen_on_summary">Wyłącz, aby dźwięki i wibracje powiadomień, gdy ekran nie jest wygaszony</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Migająca latarka przy dzwonieniu</string>
-    <string name="flash_on_call_title">Migająca latarka przy połączeniu przychodzącym</string>
-    <string name="flash_on_call_delay_title">Szybkość pulsacji lampy błyskowej</string>
-
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Wymuś rozszerzone powiadomienia</string>
     <string name="force_expanded_notifications_summary">Określa, czy na aplikacjach mają być wymuszone rozszerzone powiadomienia</string>

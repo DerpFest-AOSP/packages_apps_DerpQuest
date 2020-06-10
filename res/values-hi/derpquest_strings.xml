@@ -553,11 +553,6 @@
     <string name="notification_sound_vib_screen_on_title">ध्वनि सूचनाएं यदि स्क्रीन चालू है</string>
     <string name="notification_sound_vib_screen_on_summary">स्क्रीन चालू  होने पर नोटिफिकेशन साउंड और वाइब्रेशन को ब्लॉक करने के लिए अक्षम करें</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">पल्स फ़्लैश</string>
-    <string name="flash_on_call_title">आने वाली कॉल पर पल्स फ्लैश</string>
-    <string name="flash_on_call_delay_title">फ्लैश पल्स रेट</string>
-
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">सूचना विस्तारण को फोर्स करें</string>
     <string name="force_expanded_notifications_summary">फोर्स ऐप्स जो विस्तारित सूचनाओं का समर्थन करते हैं</string>

@@ -543,11 +543,6 @@
     <string name="notification_sound_vib_screen_on_title">Notifications sonores quand l\'écran est allumé</string>
     <string name="notification_sound_vib_screen_on_summary">Désactiver pour bloquer le son et la vibration des notifications lorsque l\'appareil est allumé</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Clignotement du flash</string>
-    <string name="flash_on_call_title">Faire clignoter le flash lors d\'un appel</string>
-    <string name="flash_on_call_delay_title">Intervalle de clignotement du flash</string>
-
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Forcer les notifications étendues</string>
     <string name="force_expanded_notifications_summary">Toujours étendre les notifications pour les applications supportées</string>

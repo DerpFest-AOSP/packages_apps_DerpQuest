@@ -186,9 +186,6 @@
     <string name="file_header_provider_title">Απλή εικόνα</string>
     <string name="file_header_select_summary">Επιλογή εικόνας από αρχείο</string>
     <string name="file_header_select_title">Επιλογή τοπικής εικόνας</string>
-    <string name="flash_on_call_category">Παλμός φλας</string>
-    <string name="flash_on_call_delay_title">Ποσοστό παλμού φλας</string>
-    <string name="flash_on_call_title">Παλμός φλας σε εισερχ. κλήση</string>
     <string name="fod_icon_picker_category_title">Διαμόρφωση επιλογών εικονιδίων</string>
     <string name="fod_icon_picker_footer">Για να προσθέσετε δικό σας εικονίδιο, επιλέξτε το επάνω αριστερά εικονιδ. και κάντε χρήση της OnePlus 6T FP Customizer εφαρμογής, για να επιλέξετε αυτό που θέλετε.</string>
     <string name="fod_icon_picker_summary">Επιλογή αγαπημένου εικονιδίου για τον σένσορα δακτυλ. αποτυπ/των</string>
@@ -841,7 +838,7 @@
     <string name="sb_battery_bar_gradient_color_summary">Χρησιμοποιήστε το χρώμα διαβάθμισης ως κλίμακα, για το επίπεδο της μπαταρίας</string>
     <string name="sb_battery_bar_high_color">Χρώμα υψηλού επιπέδου"</string>
     <string name="sb_battery_bar_low_color">Χρώμα χαμηλού επιπέδου"</string>
-     
+
     <!-- Selinux Switch -->
     <string name="selinux_category">SELinux</string>
     <string name="selinux_explanation_summary">Το SELinux είναι ένα πακέτο ρυθμίσεων, αλλαγών και εργαλείων του kernel. Η αλλαγή αυτών των ρυθμίσεων, μπορεί να προκαλέσει ανεπιθύμητες λειτουργίες στην συσκευή σας.Χρησιμοποιήστε το με δική σας ευθύνη.</string>

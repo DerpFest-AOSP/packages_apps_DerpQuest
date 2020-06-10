@@ -493,10 +493,6 @@
     <!-- smart notifications -->
     <string name="notification_sound_vib_screen_on_title">Звуковые уведомления при включенном экране</string>
     <string name="notification_sound_vib_screen_on_summary">Отключите, чтобы блокировать звук и вибрацию уведомлений, когда экран включен</string>
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Мигание вспышкой</string>
-    <string name="flash_on_call_title">Мигать вспышкой при входящем вызове</string>
-    <string name="flash_on_call_delay_title">Частота мигания</string>
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Принудительно разворачивать уведомления</string>
     <string name="force_expanded_notifications_summary">Принудительно раскрывать уведомления в поддерживаемых приложениях</string>

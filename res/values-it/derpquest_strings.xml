@@ -544,11 +544,6 @@
     <string name="notification_sound_vib_screen_on_title">Notifiche senza suono a schermo acceso</string>
     <string name="notification_sound_vib_screen_on_summary">Disabilita il suono e la vibrazione delle notifiche quando lo schermo è acceso</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Flash a impulsi</string>
-    <string name="flash_on_call_title">Consente il lampeggio ad intermittenza sulle chiamate in arrivo</string>
-    <string name="flash_on_call_delay_title">Frequenza impulso flash</string>
-
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Forza notifiche espanse</string>
     <string name="force_expanded_notifications_summary">Forza app che supportano notifiche espanse</string>

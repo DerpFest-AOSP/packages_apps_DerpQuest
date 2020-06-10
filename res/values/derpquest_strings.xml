@@ -574,11 +574,6 @@
     <string name="notification_sound_vib_screen_on_title">Noisy notifications if screen on</string>
     <string name="notification_sound_vib_screen_on_summary">Disable to block notifications sound and vibration when the screen is awake</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Pulse flash</string>
-    <string name="flash_on_call_title">Pulse flash on incoming call</string>
-    <string name="flash_on_call_delay_title">Flash pulse rate</string>
-
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Force expanded notifications</string>
     <string name="force_expanded_notifications_summary">Force apps that support expanded notifications</string>

@@ -534,12 +534,6 @@
     <string name="notification_sound_vib_screen_on_title">התרעות רועשות במסך דולק</string>
     <string name="notification_sound_vib_screen_on_summary">בטל על מנת לחסום התראות ורטט כאשר המסך דולק</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">הבהב פנס</string>
-    <string name="flash_on_call_title">הבהב פנס בשיחה נכנסת</string>
-    <string name="flash_on_call_delay_title">קצב הבהוב</string>
-
-
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">הגדרות גופן תאריך</string>
     <string name="lock_date_font_summary">שנה את גופן התאריך במסך הנעילה</string>

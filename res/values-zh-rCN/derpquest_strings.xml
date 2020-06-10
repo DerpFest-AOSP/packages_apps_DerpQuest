@@ -549,11 +549,6 @@
     <string name="notification_sound_vib_screen_on_title">屏幕开启时出现新通知</string>
     <string name="notification_sound_vib_screen_on_summary">当屏幕唤醒时，开启通知声音和振动</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">脉冲闪光</string>
-    <string name="flash_on_call_title">来电闪光</string>
-    <string name="flash_on_call_delay_title">闪光延迟时间</string>
-
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">强制扩展通知</string>
     <string name="force_expanded_notifications_summary">强制使应用支持通知扩展</string>

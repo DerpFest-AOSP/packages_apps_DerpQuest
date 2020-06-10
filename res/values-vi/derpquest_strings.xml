@@ -544,11 +544,6 @@
     <string name="notification_sound_vib_screen_on_title">Thông báo ồn ào nếu màn hình bật</string>
     <string name="notification_sound_vib_screen_on_summary">Vô hiệu hóa để chặn âm thanh thông báo và rung khi màn hình thức</string>
 
-    <!-- flash on call waiting -->
-    <string name="flash_on_call_category">Nháy flash</string>
-    <string name="flash_on_call_title">Nháy flash khi có cuộc gọi đến</string>
-    <string name="flash_on_call_delay_title">Tốc độ nháy flash</string>
-
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Buộc mở rộng thông báo</string>
     <string name="force_expanded_notifications_summary">Buộc các ứng dụng hỗ trợ thông báo mở rộng</string>

@@ -546,11 +546,6 @@
     <string name="notification_sound_vib_screen_on_title">Sons de notificações com tela ligada</string>
     <string name="notification_sound_vib_screen_on_summary">Desativar para bloquear som e vibração de notificações quando a tela estiver ativa</string>
 
-	<!-- flash on call waiting -->
-    <string name="flash_on_call_category">Piscar flash</string>
-    <string name="flash_on_call_title">Piscar flash ao receber chamada</string>
-    <string name="flash_on_call_delay_title">Taxa de pulso flash</string>
-
 	<!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Forçar notificações expandidas</string>
     <string name="force_expanded_notifications_summary">Forçar aplicativos que ofereçam suporte a notificações expandidas</string>
