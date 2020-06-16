@@ -144,6 +144,7 @@
     <string name="battery_light_full_color">Почти полный заряд батареи</string>
     <string name="battery_light_reallyfull_color">Полный (100) заряд батареи</string>
     <string name="led_category">Светодиод</string>
+    <string name="flashlight_category">Фонарик</string>
     <string name="onscreen_category">На экране</string>
     <string name="notification_light_settings">Индикатор уведомлений</string>
     <!-- Fingerprint authentication vibration -->
@@ -872,4 +873,20 @@
     <string name="selinux_enforcing_toast_title">SELinux установлен на Enforcing (принудительный)!</string>
     <string name="selinux_unrooted_summary">Не удалось обнаружить root-доступ. Для использования этих переключателей необходим root</string>
     <string name="cannot_get_su">Не удалось выполнить из-за отсутствия доступа суперпользователя</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Индикация входящего вызова</string>
+    <string name="flashlight_on_call_disabled">Выключена</string>
+    <string name="flashlight_on_call_ringer">При включенном звуке</string>
+    <string name="flashlight_on_call_no_ringer">В режиме вибрации</string>
+    <string name="flashlight_on_call_silent">В беззвучном режиме</string>
+    <string name="flashlight_on_call_always">Всегда</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Игнорировать режим \"Не беспокоить\"</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Включать индикация не смотря на режим \"Не беспокоить\"</string>
+    <string name="flashlight_on_call_rate_title">Частота</string>
+    <string name="flashlight_on_call_rate_summary">С какой частотой мигать вспышкой при вызове</string>
+    <!-- QS Header Data Usage -->
+    <string name="qs_datausage_title">Использование данных</string>
+    <string name="qs_datausage_disabled">Выключено</string>
+    <string name="qs_datausage_daily">Использование за день</string>
+    <string name="qs_datausage_monthly">Использование за месяц</string>
 </resources>
