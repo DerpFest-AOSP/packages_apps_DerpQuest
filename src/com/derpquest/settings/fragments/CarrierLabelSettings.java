@@ -169,6 +169,8 @@ public class CarrierLabelSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mShowCarrierLabel) {
             int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUS_BAR_SHOW_CARRIER, value);
             updateCarrierLabelSummary(value);
             return true;
         }
