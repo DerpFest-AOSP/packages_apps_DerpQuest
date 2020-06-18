@@ -29,6 +29,13 @@
             android:defaultValue="true"
             android:persistent="false" />
 
+        <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+            android:key="navigation_bar_arrow_keys"
+            android:title="@string/navigation_bar_arrow_keys_title"
+            android:summary="@string/navigation_bar_arrow_keys_summary"
+            android:defaultValue="false"
+            android:dependency="enable_nav_bar" />
+
         <Preference
             android:key="nav_bar_tuner"
             android:title="@string/nav_bar_tuner_title"

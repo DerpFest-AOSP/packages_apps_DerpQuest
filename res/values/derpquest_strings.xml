@@ -71,6 +71,8 @@
     <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>
     <string name="nav_bar_tuner_title">Navigation bar tuner</string>
     <string name="nav_bar_tuner_summary">Reorder and change navbar buttons</string>
+    <string name="navigation_bar_arrow_keys_title">IME arrows</string>
+    <string name="navigation_bar_arrow_keys_summary">Show arrow keys on navbar while typing</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
