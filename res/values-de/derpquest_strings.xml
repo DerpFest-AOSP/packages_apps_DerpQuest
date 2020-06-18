@@ -205,10 +205,6 @@
     <string name="qs_blur_intensity_title">Unschärfeintensität</string>
     <string name="qs_blur_intensity_summary">Legt die Unschärfeintensität/-radius fest</string>
 
-    <!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">Aktivieren Sie die Navigationsleiste auf dem Bildschirm</string>
-    <string name="disable_navkeys_summary">Aktivieren Sie die Navigationsleiste auf dem Bildschirm</string>
-
     <!-- Status bar - icons -->
     <string name="status_bar_icons_title">Symbole in der Statusleiste</string>
     <string name="status_bar_system_icons_title">Systemsymbole</string>

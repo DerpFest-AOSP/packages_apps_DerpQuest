@@ -158,8 +158,6 @@
     <string name="derp_footer_text_string_summary">Κενή ρύθμιση προεπιλογή για #Derp</string>
     <string name="derp_footer_text_string_title">Αλλάξτε το κάτω κείμενο</string>
     <string name="dialog_color_picker">Επιλογέας χρωμάτων</string>
-    <string name="disable_navkeys_summary">Ενεργοποίηση εικονικών πλήκτρων</string>
-    <string name="disable_navkeys_title">Ενεργοπ. μπάρας εικονικών πλήκτρων</string>
     <string name="disable_transition_animations_summary">Αναγκαστική διακοπή όλων των γραφικών σχεδίων</string>
     <string name="disable_transition_animations_title">Διακοπή γραφικών σχεδίων</string>
     <string name="disconnect">αποσύνδεση</string>

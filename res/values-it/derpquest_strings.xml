@@ -222,10 +222,6 @@
     <string name="qs_blur_intensity_title">Intensità sfocatura</string>
     <string name="qs_blur_intensity_summary">Imposta il raggio/intensità della sfocatura</string>
 
-    <!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">Abilita barra di navigazione</string>
-    <string name="disable_navkeys_summary">Abilita barra di navigazione a schermo acceso</string>
-
     <!-- Status bar - icons -->
     <string name="status_bar_icons_title">Icone barra di stato</string>
     <string name="status_bar_system_icons_title">Icone di sistema</string>

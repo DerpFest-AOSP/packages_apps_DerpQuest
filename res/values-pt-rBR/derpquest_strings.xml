@@ -224,10 +224,6 @@
     <string name="qs_blur_intensity_title">Intensidade de desfoque</string>
     <string name="qs_blur_intensity_summary">Define a intensidade/raio do desfoque</string>
 
-	<!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">Ativar barra de navegação na tela</string>
-    <string name="disable_navkeys_summary">Ativa barra de navegação na tela</string>
-
 	<!-- Status bar - icons -->
     <string name="status_bar_icons_title">Ícones da barra de status</string>
     <string name="status_bar_system_icons_title">Ícones do sistema</string>

@@ -94,13 +94,6 @@
             android:summary="@string/anbi_summary"
             android:defaultValue="false" />
 
-        <SwitchPreference
-            android:key="disable_nav_keys"
-            android:title="@string/disable_navkeys_title"
-            android:summary="@string/disable_navkeys_summary"
-            android:defaultValue="false"
-            android:persistent="false" />
-
         <com.derpquest.settings.preferences.CustomSeekBarPreference
             android:key="button_brightness"
             android:title="@string/button_brightness_title"

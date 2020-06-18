@@ -224,10 +224,6 @@
     <string name="qs_blur_intensity_title">ब्लर तीव्रता</string>
     <string name="qs_blur_intensity_summary">ब्लर तीव्रता / त्रिज्या सेट करता है</string>
 
-    <!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">ऑन-स्क्रीन नेवीगेशन बार सक्षम करें</string>
-    <string name="disable_navkeys_summary">ऑन-स्क्रीन नेविगेशन बार सक्षम करें</string>
-
     <!-- Status bar - icons -->
     <string name="status_bar_icons_title">स्टेटस बार आइकन</string>
     <string name="status_bar_system_icons_title">सिस्टम आइकन</string>

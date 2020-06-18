@@ -197,9 +197,6 @@
     <string name="qs_blur_alpha_summary">Задает прозрачность размытия</string>
     <string name="qs_blur_intensity_title">Интенсивность размытия</string>
     <string name="qs_blur_intensity_summary">Задает интенсивность/радиус размытия</string>
-    <!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">Включить экранную панель навигации</string>
-    <string name="disable_navkeys_summary">Включить экранную панель навигации</string>
     <!-- Status bar - icons -->
     <string name="status_bar_icons_title">Значки строки состояния</string>
     <string name="status_bar_system_icons_title">Системные значки</string>

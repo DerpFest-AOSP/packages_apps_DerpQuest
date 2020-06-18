@@ -238,10 +238,6 @@
     <string name="qs_blur_intensity_title">Blur intensity</string>
     <string name="qs_blur_intensity_summary">Sets the blur intensity/radius</string>
 
-    <!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">Enable on-screen nav bar</string>
-    <string name="disable_navkeys_summary">Enable on-screen navigation bar</string>
-
     <!-- Status bar - icons -->
     <string name="status_bar_icons_title">Status bar icons</string>
     <string name="status_bar_system_icons_title">System icons</string>

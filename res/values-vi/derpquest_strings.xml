@@ -222,10 +222,6 @@
     <string name="qs_blur_intensity_title">Cường độ mờ</string>
     <string name="qs_blur_intensity_summary">Đặt cường độ / bán kính mờ</string>
 
-    <!-- Buttons - Enable navbar -->
-    <string name="disable_navkeys_title">Bật thanh điều hướng trên màn hình</string>
-    <string name="disable_navkeys_summary">Bật thanh điều hướng trên màn hình</string>
-
     <!-- Status bar - icons -->
     <string name="status_bar_icons_title">Biểu tượng thanh trạng thái</string>
     <string name="status_bar_system_icons_title">Biểu tượng hệ thống</string>
