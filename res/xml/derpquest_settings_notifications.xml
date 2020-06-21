@@ -85,7 +85,7 @@
             android:key="notification_headers"
             android:title="@string/notification_headers_title"
             android:summary="@string/notification_headers_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <com.derpquest.settings.preferences.GlobalSettingMasterSwitchPreference
             android:key="heads_up_settings"
