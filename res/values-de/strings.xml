@@ -114,5 +114,11 @@
     <string name="vowifi_icon_enabled">VoWiFi-Symbol aktiviert</string>
     <string name="vowifi_icon_disabled">VoWiFi-Symbol deaktiviert</string>
     <string name="vowifi_icon_enabled_volte_disabled">VoWiFi anstelle von VoLTE-Symbol</string>
+    <string name="vowifi_icon_style_title">VoWiFi-Symbol auswählen</string>
+    <string name="vowifi_icon_default">Standardsymbol</string>
+    <string name="vowifi_icon_emui">EMUI-Symbol</string>
+    <string name="vowifi_icon_asus">Asus-Symbol</string>
+    <string name="vowifi_icon_oneplus">OOS-Symbol</string>
+    <string name="vowifi_icon_moto">Motorola-Symbol</string>
 
 </resources>
