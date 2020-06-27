@@ -120,5 +120,8 @@
     <string name="vowifi_icon_asus">Asus-Symbol</string>
     <string name="vowifi_icon_oneplus">OOS-Symbol</string>
     <string name="vowifi_icon_moto">Motorola-Symbol</string>
+    <string name="vowifi_icon_simple1">Simple1-Symbol</string>
+    <string name="vowifi_icon_simple2">Simple2-Symbol</string>
+    <string name="vowifi_icon_simple3">Simple3-Symbol</string>
 
 </resources>
