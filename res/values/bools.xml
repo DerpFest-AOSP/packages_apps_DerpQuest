@@ -23,7 +23,7 @@
     <bool name="powerbutton_category_isVisible">true</bool>
     <bool name="navigationbar_category_isVisible">true</bool>
     <bool name="gestures_category_isVisible">true</bool>
-    <bool name="volumerocker_category_isVisible">false</bool>
+    <bool name="volumerocker_category_isVisible">true</bool>
     <bool name="hwkeys_category_isVisible">false</bool>
 
     <!-- Interface tab -->

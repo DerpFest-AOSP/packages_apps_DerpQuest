@@ -625,4 +625,17 @@
     <!-- USB Configuration -->
     <string name="usb_default_config_title">USB-Konfiguration</string>
     <string name="usb_default_config_summary">Wählen Sie das Standardverhalten, wenn Sie über USB mit einem Gerät verbunden sind</string>
+
+    <!--DerpQuest buttons-->
+    <string name="buttons_title">Hardware-Tasten</string>
+    <string name="buttons_summary">Optimieren Sie die Aktionen der physischen Tasten Ihres Geräts</string>
+    <string name="power_button_category">Einschalttaste</string>
+    <string name="volume_category">Lautstärketasten</string>
+
+    <!--  Volume Panel Plugin   -->
+    <string name="volume_panel">Volume-Panel-Stil</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Kompakt</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Gekachelt</string>
 </resources>
