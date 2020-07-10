@@ -611,13 +611,6 @@
     <string name="qs_panel_alpha_title">त्वरित सेटिंग्स अस्पष्टता</string>
     <string name="qs_panel_alpha_summary">त्वरित सेटिंग पृष्ठभूमि की अपारदर्शिता को कॉन्फ़िगर करें</string>
 
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">डोज ब्राइटनेस कॉन्फिग</string>
-    <string name="ambient_pulse_brightness_title">एंबिएंट सूचना चमक</string>
-    <string name="ambient_pulse_brightness_summary">सूचना दिखाए जाने पर चमक सेट करने के लिए उपयोग करें</string>
-    <string name="ambient_doze_brightness_title">एंबिएंट डिस्प्ले चमक</string>
-    <string name="ambient_doze_brightness_summary">एंबिएंट डिस्प्ले के दौरान उपयोग करने के लिए चमक सेट करें</string>
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">डोज सेटिंग्स</string>
     <string name="doze_settings_summary">डोज कॉन्फिग सेटिंग्स को एडिट करें</string>

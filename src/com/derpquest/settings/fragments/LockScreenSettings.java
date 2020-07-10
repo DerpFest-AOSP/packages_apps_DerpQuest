@@ -65,8 +65,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String FOD_PRESSED_STATE = "fod_pressed_state";
     private static final String FOD_SOLID_COLOR = "fod_solid_color";
-    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
-    private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
 
     private static final String LOCKSCREEN_BATTERY_INFO = "lockscreen_battery_info";
     private static final String BATTERY_BAR = "sysui_keyguard_show_battery_bar";
@@ -74,9 +72,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_INFO = "lockscreen_info";
     private static final String MEDIA_ART = "lockscreen_media_metadata";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
-
-    private CustomSeekBarPreference mPulseBrightness;
-    private CustomSeekBarPreference mDozeBrightness;
 
     private SystemSettingMasterSwitchPreference mBatteryInfo;
     private SystemSettingMasterSwitchPreference mBatteryBar;
@@ -148,28 +143,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             mFingerprintVib.setOnPreferenceChangeListener(this);
         }
 
-        int defaultDoze = resources.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessDoze);
-        int defaultPulse = resources.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessPulse);
-        if (defaultPulse == -1) {
-            defaultPulse = defaultDoze;
-        }
-
-        mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
-        int value = Settings.System.getInt(getContentResolver(),
-                Settings.System.PULSE_BRIGHTNESS, defaultPulse);
-        mPulseBrightness.setValue(value);
-        mPulseBrightness.setOnPreferenceChangeListener(this);
-
-        mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
-        value = Settings.System.getInt(getContentResolver(),
-                Settings.System.DOZE_BRIGHTNESS, defaultDoze);
-        mDozeBrightness.setValue(value);
-        mDozeBrightness.setOnPreferenceChangeListener(this);
-
         mFODPressedState = (SystemSettingListPreference) findPreference(FOD_PRESSED_STATE);
-        value = Settings.System.getInt(getContentResolver(),
+        int value = Settings.System.getInt(getContentResolver(),
                 Settings.System.FOD_PRESSED_STATE, 0);
         mFODPressedState.setValue(String.valueOf(value));
         mFODPressedState.setOnPreferenceChangeListener(this);
@@ -236,16 +211,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(resolver,
                     LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
-            return true;
-        } else if (preference == mPulseBrightness) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.PULSE_BRIGHTNESS, value);
-            return true;
-        } else if (preference == mDozeBrightness) {
-            int value = (Integer) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.DOZE_BRIGHTNESS, value);
             return true;
         } else if (preference == mFODPressedState) {
             int value = Integer.valueOf((String) newValue);

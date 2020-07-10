@@ -98,14 +98,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mChargingLeds);
         }
 
-        int defaultDoze = res.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessDoze);
-        int defaultPulse = res.getInteger(
-                com.android.internal.R.integer.config_screenBrightnessPulse);
-        if (defaultPulse == -1) {
-            defaultPulse = defaultDoze;
-        }
-
         mHeadsUp = (GlobalSettingMasterSwitchPreference)
                 findPreference(PREF_HEADS_UP);
         mHeadsUp.setChecked(Settings.Global.getInt(resolver,

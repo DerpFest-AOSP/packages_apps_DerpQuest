@@ -601,13 +601,6 @@
     <string name="qs_panel_alpha_title">Opacité du panneau de réglages rapides</string>
     <string name="qs_panel_alpha_summary">Configure l\'opacité de l\'arrière plan du panneau des réglages rapides</string>
 
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">Luminosité de l\'écran de veille</string>
-    <string name="ambient_pulse_brightness_title">Luminosité des notifications sur écran ambiant</string>
-    <string name="ambient_pulse_brightness_summary">Définir la luminosité de l\'écran ambiant lors de notifications</string>
-    <string name="ambient_doze_brightness_title">Luminosité de l\'écran ambiant</string>
-    <string name="ambient_doze_brightness_summary">Définir la luminosité de l\'écran ambiant</string>
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Paramètres de la veille</string>
     <string name="doze_settings_summary">Changer les réglages avancés de la veille</string>

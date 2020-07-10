@@ -547,12 +547,6 @@
     <!-- QuickSettings Panel Transparency -->
     <string name="qs_panel_alpha_title">Прозрачность быстрых настроек</string>
     <string name="qs_panel_alpha_summary">Настроить прозрачность фона быстрых настроек</string>
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">Настройка яркости Doze</string>
-    <string name="ambient_pulse_brightness_title">Яркость уведомлений в Ambient режиме</string>
-    <string name="ambient_pulse_brightness_summary">Установить яркость при отображении уведомлений</string>
-    <string name="ambient_doze_brightness_title">Яркость Ambient Display</string>
-    <string name="ambient_doze_brightness_summary">Установить яркость для использования при вкл. Ambient Display</string>
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Настройки Doze</string>
     <string name="doze_settings_summary">Изменить настройки Doze</string>

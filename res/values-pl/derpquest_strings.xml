@@ -603,13 +603,6 @@
     <string name="qs_panel_alpha_title">Przyciemnienie szybkich ustawień</string>
     <string name="qs_panel_alpha_summary">Skonfiguruj krycie tła szybkich ustawień</string>
 
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">Jasność Doze</string>
-    <string name="ambient_pulse_brightness_title">Jasność powiadomień Ambient</string>
-    <string name="ambient_pulse_brightness_summary">Ustaw jasność, która ma być używana podczas wyświetlania powiadomień</string>
-    <string name="ambient_doze_brightness_title">Jasność ekranu Ambient</string>
-    <string name="ambient_doze_brightness_summary">Ustaw jasność aktywnego ekranu Ambient</string>
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Ustawienia Doze</string>
     <string name="doze_settings_summary">Edytuj ustawienia funkcji Doze</string>

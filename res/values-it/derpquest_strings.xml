@@ -602,13 +602,6 @@
     <string name="qs_panel_alpha_title">Opacità impostazioni rapide</string>
     <string name="qs_panel_alpha_summary">Configura l\'opacità dello sfondo delle impostazioni rapide</string>
 
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">Configurazione luminosità doze</string>
-    <string name="ambient_pulse_brightness_title">Luminosità Ambient notifications</string>
-    <string name="ambient_pulse_brightness_summary">Imposta la luminosità da utilizzare quando vengono visualizzate le notifiche</string>
-    <string name="ambient_doze_brightness_title">Luminosità Ambient display</string>
-    <string name="ambient_doze_brightness_summary">Imposta la luminosità da utilizzare quando viene visualizzato Ambient display</string>
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Impostazioni doze</string>
     <string name="doze_settings_summary">Modifica le impostazioni di configurazione di doze</string>

@@ -30,8 +30,6 @@
     <string name="activity_open_title">Διεργασία ανοίγματος γραφ.σχεδίων</string>
     <string name="allow_signature_fake">Αποδοχή ψευδών υπογραφών</string>
     <string name="allow_signature_fake_summary">Επίτρεψε σε εφαρμογές να παρακάμψουν την ασφάλεια του συστήματος, προσποιούμενες άλλες εφαρμογές. Προσοχή! Μπορεί να δημιουργηθεί κενό ασφαλείας.</string>
-    <string name="ambient_doze_brightness_summary">Ρύθμιση φωτεινότητας, για χρήση σε προφύλαξη οθόνης</string>
-    <string name="ambient_doze_brightness_title">Φωτεινότητα προφύλαξης οθόνης</string>
     <string name="ambient_notification_light_color_mode_accent">Χρώμα βάσης συστήματος</string>
     <string name="ambient_notification_light_color_mode_automatic">Χρώμα ειδοποιήσεων</string>
     <string name="ambient_notification_light_color_mode_custom">Άλλο χρώμα</string>
@@ -42,8 +40,6 @@
     <string name="ambient_notification_light_hide_aod_sumary">Απόκρυψη άλλου περιεχομένου στην οθόνη περιβάλλοντος, όταν εμφανίζονται οι μπάρες</string>
     <string name="ambient_notification_light_hide_aod_title">Απόκρυψη περιεχομένου στην οθόνη περιβάλλοντος</string>
     <string name="ambient_notification_light_timeout_title">Χρόνος λήξης για φωτεινό παλμό</string>
-    <string name="ambient_pulse_brightness_summary">Ρύθμιση επιπέδου φωτεινότητας, για χρήση σε εμφάνιση ειδοποιήσεων</string>
-    <string name="ambient_pulse_brightness_title">Φωτεινότητα ειδοπ. σε οθον. περιβαλ/ντος</string>
     <string name="ambient_visualizer_summary">Εμφανίζει τις μπάρες του γραφ. ισοσταθμιστή στην οθ. περιβαλ/ντος (με μικρή διαφάνεια)</string>
     <string name="ambient_visualizer_title">Εμφάνιση γραφ. ισοσταθμ/στή LS στην οθ. περιβαλ/ντος</string>
     <string name="anbi_summary">Αποτρέπει τις ενέργειες ανάδρασης με τα εικονικά πλήκτρα, όταν η οθόνη αγγίζεται</string>
@@ -165,10 +161,7 @@
     <string name="double_tap_sleep_lockscreen_title">Διπλό πάτημα για ύπνο</string>
     <string name="double_tap_to_sleep_summary">Διπλό πάτημα στην στατική μπάρα, για να μπει η συσκευή σε ύπνο</string>
     <string name="double_tap_to_sleep_title">Διπλό πάτημα στην στατική μπάρα</string>
-    <string name="doze_brightness_category">Διαμόρφωση φωτεινότητας σε αδράνεια (doze)</string>
     <string name="doze_settings_applied">Καταχωρήθηκαν οι ρυθμίσεις</string>
-    <string name="doze_settings_summary">Επεξεργασία τιμών και ρυθμίσεων αδράνειας (doze)</string>
-    <string name="doze_settings_title">Ρυθμίσεις αδράνειας (doze)</string>
     <string name="edge_lighting_category_title">Φωτισμός άκρων</string>
     <string name="enable_first">Παρακαλώ πρώτα εφαρμόστε</string>
     <string name="enable_navbar_summary">Ελέγχει το πότε θα εμφανίζεται η μπάρα πλοήγησης</string>

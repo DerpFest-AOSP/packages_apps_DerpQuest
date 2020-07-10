@@ -611,13 +611,6 @@
     <string name="qs_panel_alpha_title">快速设置不透明度</string>
     <string name="qs_panel_alpha_summary">配置快速设置不透明度</string>
 
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">配置环境显示亮度</string>
-    <string name="ambient_pulse_brightness_title">息屏通知亮度</string>
-    <string name="ambient_pulse_brightness_summary">设置通知来临时的亮度</string>
-    <string name="ambient_doze_brightness_title">环境显示亮度</string>
-    <string name="ambient_doze_brightness_summary">设置使用环境显示时的亮度</string>
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">打盹设置</string>
     <string name="doze_settings_summary">编辑打盹配置设置</string>

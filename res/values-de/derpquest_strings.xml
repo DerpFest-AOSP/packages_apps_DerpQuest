@@ -518,13 +518,6 @@
     <string name="qs_panel_alpha_title">Transparenz der Schnelleinstellungen</string>
     <string name="qs_panel_alpha_summary">Tranzparenz des QS-Hintergrunds konfigurieren</string>
 
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">Ambient-Helligkeits-Konfiguration</string>
-    <string name="ambient_pulse_brightness_title">Helligkeit der Ambient-Benachrichtigung</string>
-    <string name="ambient_pulse_brightness_summary">Helligkeit setzen, die genutzt wird, wenn eine Benachrichtigung gezeigt wird</string>
-    <string name="ambient_doze_brightness_title">Helligkeit des Ambient-Bildschirms</string>
-    <string name="ambient_doze_brightness_summary">Helligkeit setzen, die während der Ambient-Anzeige genutzt wird</string>
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Doze Einstellungen</string>
     <string name="doze_settings_summary">Doze Einstellungen bearbeiten</string>

@@ -602,13 +602,6 @@
     <string name="qs_panel_alpha_title">Cài đặt độ mờ nhanh</string>
     <string name="qs_panel_alpha_summary">Cấu hình độ mờ của nền cài đặt nhanh</string>
 
-    <!-- Doze Brightness Config -->
-    <string name="doze_brightness_category">Cấu hình độ sáng doze</string>
-    <string name="ambient_pulse_brightness_title">Độ sáng thông báo màn hình sáng</string>
-    <string name="ambient_pulse_brightness_summary">Đặt độ sáng để sử dụng khi thông báo được hiển thị</string>
-    <string name="ambient_doze_brightness_title">Độ sáng màn hình sáng</string>
-    <string name="ambient_doze_brightness_summary">Đặt độ sáng để sử dụng trong khi hiển thị màn hình sáng</string>
-
     <!-- Doze settings editor -->
     <string name="doze_settings_title">Cài đặt doze</string>
     <string name="doze_settings_summary">Chỉnh sửa cài đặt cấu hình doze</string>
