@@ -119,18 +119,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0) == 1;
         mCustomHeader.setChecked(enabled);
 
-        // Making sure that, If enabled, A header is also selected
-        if (enabled && (Settings.System.getString(resolver,
-                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == null ||
-                Settings.System.getString(resolver,
-                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == "")) {
-            Settings.System.putString(resolver,
-                    STATUS_BAR_CUSTOM_HEADER_PROVIDER, "static");
-            Settings.System.putString(resolver,
-                    STATUS_BAR_CUSTOM_HEADER_PACK, "org.omnirom.omnistyle/org.omnirom.omnistyle.derp_art");
-            Settings.System.putString(resolver,
-                    STATUS_BAR_CUSTOM_HEADER_IMAGE, "org.omnirom.omnistyle/derp_header_04");
-        }
+        ensureHeader(enabled);
 
     }
 
@@ -163,21 +152,26 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
-            // Making sure that, If enabled, A header is also selected
-            if (value && (Settings.System.getString(resolver,
-                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == null ||
-                    Settings.System.getString(resolver,
-                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == "")) {
-                Settings.System.putString(resolver,
-                        STATUS_BAR_CUSTOM_HEADER_PROVIDER, "static");
-                Settings.System.putString(resolver,
-                        STATUS_BAR_CUSTOM_HEADER_PACK, "org.omnirom.omnistyle/org.omnirom.omnistyle.derp_art");
-                Settings.System.putString(resolver,
-                        STATUS_BAR_CUSTOM_HEADER_IMAGE, "org.omnirom.omnistyle/derp_header_04");
-            }
+            ensureHeader(value);
             return true;
         }
         return false;
+    }
+
+    private void ensureHeader(boolean enabled) {
+        // Making sure that, If enabled, A header is also selected
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (enabled && (Settings.System.getString(resolver,
+                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE) == null ||
+                Settings.System.getString(resolver,
+                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_IMAGE).equals(""))) {
+            Settings.System.putString(resolver,
+                    STATUS_BAR_CUSTOM_HEADER_PROVIDER, "static");
+            Settings.System.putString(resolver,
+                    STATUS_BAR_CUSTOM_HEADER_PACK, "org.omnirom.omnistyle/org.omnirom.omnistyle.derp_art");
+            Settings.System.putString(resolver,
+                    STATUS_BAR_CUSTOM_HEADER_IMAGE, "org.omnirom.omnistyle/derp_header_04");
+        }
     }
 
     @Override
