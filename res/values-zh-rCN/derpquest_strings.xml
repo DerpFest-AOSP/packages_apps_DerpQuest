@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2017-2019 The PixelDust Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
          http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -65,6 +68,8 @@
     <string name="enable_navbar_summary">控制是否显示导航栏</string>
     <string name="nav_bar_tuner_title">导航栏调节器</string>
     <string name="nav_bar_tuner_summary">重新排序并更改导航栏按钮</string>
+    <string name="navigation_bar_arrow_keys_title">输入法箭头</string>
+    <string name="navigation_bar_arrow_keys_summary">输入时在虚拟导航栏上显示一个箭头按钮</string>
 
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">锁屏快捷方式</string>
@@ -158,6 +163,7 @@
     <string name="battery_light_reallyfull_color">满电量</string>
 
     <string name="led_category">LED</string>
+    <string name="flashlight_category">闪光灯</string>
     <string name="onscreen_category">在屏幕上</string>
     <string name="notification_light_settings">通知灯</string>
 
@@ -363,9 +369,9 @@
     <string name="status_bar_battery_style_title">电池风格</string>
     <string name="status_bar_battery_style_q">纵向图标（默认）</string>
     <string name="status_bar_battery_style_dotted_circle">虚线圆</string>
+    <string name="status_bar_battery_style_big_circle">大圈圈</string>
     <string name="status_bar_battery_style_circle">实心圆</string>
     <string name="status_bar_battery_style_text">数字</string>
-    <string name="status_bar_battery_style_hidden">隐藏</string>
     <string name="battery_percent_title">电池电量百分比</string>
 
     <!-- Status bar - Battery percentage -->
@@ -526,7 +532,7 @@
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">状态栏Logo</string>
     <string name="status_bar_logo_category_summary">启用以在状态栏中显示Logo</string>
-    <string name="status_bar_logo_title">DerpQuest的logo</string>
+    <string name="status_bar_logo_title">DerpFest的logo</string>
     <string name="status_bar_logo_right">右边</string>
     <string name="status_bar_logo_left">左边</string>
     <string name="status_bar_logo_style_title">DerpFest的logo风格</string>
@@ -683,7 +689,6 @@
     <string name="no_stat_because_reset_wakelock">点击重置后开始统计唤醒锁数据</string>
     <string name="no_stat_because_plugged">请拔掉电源以获取唤醒锁数据</string>
     <string name="no_states_file_found">状态文件未找到，您确定您的手机是兼容的吗？如果您正在使用第三方的固件或内核，请尝试与开发者联系，告诉其状态文件不可读</string>
-
     <string name="deep_sleep">"深度休眠"</string>
     <string name="mt_refresh">刷新</string>
     <string name="mt_share">分享</string>
@@ -726,6 +731,8 @@
     <!-- Statusbar ticker -->
     <string name="status_bar_show_ticker_title">通知预览 (测试功能)</string>
     <string name="status_bar_show_ticker_summary">状态栏中的通知预览</string>
+    <string name="status_bar_ticker_music_title">媒体预览</string>
+    <string name="status_bar_ticker_music_summary">为切换的音乐显示预览</string>
     <string name="ticker_animation_mode_title">预览动画</string>
     <string name="ticker_animation_mode_alpha_fade">渐隐</string>
     <string name="ticker_animation_mode_scroll">滚动</string>
@@ -768,6 +775,7 @@
     <string name="fod_pressed_state_icon">图标 (通常是青色)</string>
     <string name="fod_pressed_state_icon_white">图标 (白色)</string>
     <string name="fod_pressed_state_solid_color">纯色 (通常是绿色)</string>
+    <string name="fod_solid_color_title">按下按钮的颜色</string>
 
     <!-- Lockscreen clock style -->
     <string name="lockscreen_clock_title">时钟样式</string>
@@ -863,6 +871,9 @@
     <string name="about_device_category">设备详细链接</string>
     <string name="about_device_fw">需要固件</string>
     <string name="about_device_recovery">推荐Recovery</string>
+    <!-- The Drill -->
+    <string name="the_drill_title">一幅漫画</string>
+    <string name="the_drill_summary">发现了一个bug? 出现了一个问题？</string>
 
     <!-- Heads up -->
     <string name="heads_up_settings_title">浮动通知</string>
@@ -905,5 +916,40 @@
     <string name="sb_battery_bar_gradient_color_summary">使用渐变色作为电池栏电量</string>
     <string name="sb_battery_bar_high_color">高电量颜色"</string>
     <string name="sb_battery_bar_low_color">低电量颜色"</string>
+
+    <!-- Selinux Switch -->
+    <string name="selinux_category">SELinux</string>
+    <string name="selinux_explanation_summary">SELinux是一组内核修改和用户空间工具。 更改模式可能会导致不良影响。 使用风险自负。</string>
+    <string name="selinux_mode_title">SELinux模式</string>
+    <string name="selinux_permissive_summary">宽容</string>
+    <string name="selinux_enforcing_summary">强制</string>
+    <string name="selinux_persistence_title">重启后仍然应用</string>
+    <string name="selinux_persistence_summary">在每次启动时恢复上述设置的SELinux模式</string>
+    <string name="selinux_permissive_toast_title">Selinux 设置为了 permissive!</string>
+    <string name="selinux_enforcing_toast_title">Selinux 设置为了 enforcing!</string>
+    <string name="selinux_unrooted_summary">无法检测到root. 您必须具有root才能使用这些开关</string>
+    <string name="cannot_get_su">由于缺少root权限，操作失败</string>
+
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">来电时闪烁闪光灯</string>
+    <string name="flashlight_on_call_disabled">关闭</string>
+    <string name="flashlight_on_call_ringer">当响铃时</string>
+    <string name="flashlight_on_call_no_ringer">当静音铃声时</string>
+    <string name="flashlight_on_call_silent">当完全静音时</string>
+    <string name="flashlight_on_call_always">总是</string>
+    <string name="flashlight_on_call_ignore_dnd_title">忽略勿扰模式</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">无论是否进入勿扰模式都会闪烁</string>
+    <string name="flashlight_on_call_rate_title">速度</string>
+    <string name="flashlight_on_call_rate_summary">在来电时闪光灯闪烁的速度</string>
+
+    <!-- QS Header Data Usage -->
+    <string name="qs_datausage_title">QS顶部的数据使用情况</string>
+    <string name="qs_datausage_disabled">关闭</string>
+    <string name="qs_datausage_daily">日使用量</string>
+    <string name="qs_datausage_monthly">月使用量</string>
+
+    <!-- StatusBar notification count -->
+    <string name="notif_count_title">通知统计</string>
+    <string name="notif_count_summary">在接近通知图标的地方显示通知统计</string>
 
 </resources>
