@@ -37,7 +37,7 @@
     <string name="edge_lighting_category_title">Edge lighting</string>
     <string name="clock_settings_title">Clock</string>
     <string name="battery_icon_style_title">Battery icon</string>
-    <string name="battery_icon_style_summary">Customize style and behaviour</string>
+    <string name="battery_icon_style_summary">%s / Style %s, percentage %s</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -185,7 +185,7 @@
 
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Network traffic display</string>
-    <string name="network_traffic_state_summary">Traffic indicator placement and look</string>
+    <string name="network_traffic_state_summary">%s / Style %s, on %s</string>
     <string name="network_traffic_location_title">Network traffic location</string>
     <string name="traffic_statusbar">Statusbar</string>
     <string name="traffic_expanded_statusbar">Expanded header</string>
@@ -246,9 +246,9 @@
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_title">Clock settings</string>
     <string name="status_bar_clock_show">Show clock</string>
-    <string name="status_bar_clock_summary">Customize clock placement and look</string>
+    <string name="status_bar_clock_summary">%s / Font %s, on the %s</string>
     <string name="status_bar_date_show">Show date</string>
-    <string name="status_bar_date_summary">Customize date placement and look</string>
+    <string name="status_bar_date_summary">%s / %s, %s</string>
     <string name="status_bar_clock_style_title">Clock style</string>
     <string name="status_bar_clock_style_right">Right</string>
     <string name="status_bar_clock_style_center">Center</string>
@@ -385,7 +385,7 @@
 
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Battery style</string>
-    <string name="status_bar_battery_style_q">Icon portrait (default)</string>
+    <string name="status_bar_battery_style_q">Portrait (default)</string>
     <string name="status_bar_battery_style_dotted_circle">Dotted circle</string>
     <string name="status_bar_battery_style_circle">Circle</string>
     <string name="status_bar_battery_style_big_circle">Big circle</string>
@@ -468,7 +468,7 @@
     <!-- Custom headers -->
     <string name="notification_title">Notification panel</string>
     <string name="status_bar_custom_header_title">Header image</string>
-    <string name="status_bar_custom_header_summary">Use a custom QS header image</string>
+    <string name="status_bar_custom_header_summary">%s / %s with %s percent shadow</string>
     <string name="daylight_header_pack_title">Header image collection</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
@@ -553,7 +553,8 @@
 
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">Statusbar Logo</string>
-    <string name="status_bar_logo_category_summary">Enable to display logo in the status bar</string>
+    <string name="status_bar_logo_category_summary">%s / Style %s on the %s</string>
+    <string name="status_bar_logo_category_tooltip">Shows a logo on StatusBar</string>
     <string name="status_bar_logo_title">DerpFest logo</string>
     <string name="status_bar_logo_right">Right</string>
     <string name="status_bar_logo_left">Left</string>
@@ -781,7 +782,7 @@
 
     <!-- Statusbar ticker -->
     <string name="status_bar_show_ticker_title">Ticker (beta)</string>
-    <string name="status_bar_show_ticker_summary">Customize notification preview in status bar</string>
+    <string name="status_bar_show_ticker_summary">%s / Media ticker %s, animation %s for %s ms</string>
     <string name="status_bar_ticker_music_title">Media ticker</string>
     <string name="status_bar_ticker_music_summary">Show ticker for switched music tracks</string>
     <string name="ticker_animation_mode_title">Ticker animation</string>
@@ -962,7 +963,7 @@
 
     <!-- Battery bar -->
     <string name="sb_battery_bar_title">Battery bar</string>
-    <string name="sb_battery_bar_summary">Display and customize battery bar near status bar or navigation bar</string>
+    <string name="sb_battery_bar_summary">%s / Style %s on %s</string>
     <string name="sb_battery_bar_location">Battery bar location</string>
     <string name="sb_battery_bar_color">Battery bar color</string>
     <string name="sb_battery_bar_style_title">Battery bar style</string>

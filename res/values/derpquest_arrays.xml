@@ -166,7 +166,7 @@
         <item>@string/lock_clock_font_googlesans</item>
         <item>@string/lock_clock_font_neoneon</item>
         <item>@string/lock_clock_font_themeable</item>
-	<item>@string/lock_clock_font_samsung</item>
+        <item>@string/lock_clock_font_samsung</item>
         <item>@string/lock_clock_font_mexcellent</item>
         <item>@string/lock_clock_font_burnstown</item>
         <item>@string/lock_clock_font_dumbledor</item>
@@ -386,19 +386,19 @@
 
    <!-- Network traffic type -->
     <string-array name="show_network_traffic_type_entries" translatable="false">
-        <item>@string/show_network_traffic_combined</item>
-        <item>@string/show_network_traffic_dynamic</item>
+        <item>@string/show_network_traffic_all</item>
         <item>@string/show_network_traffic_up</item>
         <item>@string/show_network_traffic_down</item>
-        <item>@string/show_network_traffic_all</item>
+        <item>@string/show_network_traffic_combined</item>
+        <item>@string/show_network_traffic_dynamic</item>
     </string-array>
 
     <string-array name="show_network_traffic_type_values" translatable="false">
-        <item>3</item>
-        <item>4</item>
+        <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>0</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="period_type_entries">
@@ -723,10 +723,10 @@
     <!-- QS Header Data Usage -->
     <string-array name="qs_datausage_entries" translatable="false">
         <item>@string/qs_datausage_disabled</item>
-        <item>@string/qs_datausage_daily</item> 
+        <item>@string/qs_datausage_daily</item>
         <item>@string/qs_datausage_monthly</item>
     </string-array>
-    <string-array name="qs_datausage_values" translatable="false"> 
+    <string-array name="qs_datausage_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
