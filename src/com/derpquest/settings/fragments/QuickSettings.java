@@ -55,6 +55,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 @SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
@@ -76,6 +78,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mBrightnessSlider;
     private SystemSettingMasterSwitchPreference mCustomHeader;
 
+    private boolean skipSummaryUpdate;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +100,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         boolean enabled = Settings.System.getInt(resolver,
                 Settings.System.QS_BLUR, 0) == 1;
         mQsBlurSettings.setChecked(enabled);
+        updateQSBlurSummary(enabled);
 
         mQsBGStyle = (SystemSettingMasterSwitchPreference)
                 findPreference(QS_BG_STYLE);
@@ -104,6 +109,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         enabled = Settings.System.getInt(resolver,
                 Settings.System.QS_PANEL_BG_USE_FW, 1) == 0;
         mQsBGStyle.setChecked(enabled);
+        updateQSBGStyleSummary(enabled);
 
         mBrightnessSlider = (SystemSettingMasterSwitchPreference)
                 findPreference(BRIGHTNESS_SLIDER);
@@ -111,6 +117,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         enabled = Settings.System.getInt(resolver,
                 BRIGHTNESS_SLIDER, 1) == 1;
         mBrightnessSlider.setChecked(enabled);
+        updateBrightnessSliderSummary(enabled);
 
         mCustomHeader = (SystemSettingMasterSwitchPreference)
                 findPreference(QS_CUSTOM_HEADER);
@@ -120,7 +127,27 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mCustomHeader.setChecked(enabled);
 
         ensureHeader(enabled);
+        updateCustomHeaderSummary(enabled);
 
+        skipSummaryUpdate = true; // avoid being called twice on onResume
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!skipSummaryUpdate) {
+            final ContentResolver resolver = getActivity().getContentResolver();
+            updateQSBlurSummary(Settings.System.getInt(resolver,
+                    Settings.System.QS_BLUR, 0) == 1);
+            updateQSBGStyleSummary(Settings.System.getInt(resolver,
+                    Settings.System.QS_PANEL_BG_USE_FW, 1) == 0);
+            updateBrightnessSliderSummary(Settings.System.getInt(resolver,
+                    BRIGHTNESS_SLIDER, 1) == 1);
+            updateCustomHeaderSummary(Settings.System.getInt(resolver,
+                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0) == 1);
+        } else {
+            skipSummaryUpdate = false;
+        }
     }
 
     @Override
@@ -136,23 +163,27 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.QS_BLUR, value ? 1 : 0);
+            updateQSBlurSummary(value);
             return true;
         } else if (preference == mQsBGStyle) {
             // NOTE: Reverse logic
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.QS_PANEL_BG_USE_FW, value ? 0 : 1);
+            updateQSBGStyleSummary(value);
             return true;
         } else if (preference == mBrightnessSlider) {
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     BRIGHTNESS_SLIDER, value ? 1 : 0);
+            updateBrightnessSliderSummary(value);
             return true;
         } else if (preference == mCustomHeader) {
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
             ensureHeader(value);
+            updateCustomHeaderSummary(value);
             return true;
         }
         return false;
@@ -172,6 +203,83 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putString(resolver,
                     STATUS_BAR_CUSTOM_HEADER_IMAGE, "org.omnirom.omnistyle/derp_header_04");
         }
+    }
+
+    private void updateQSBlurSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        int alpha = Settings.System.getInt(resolver,
+                Settings.System.QS_BLUR_ALPHA, 100);
+        int intensity = Settings.System.getInt(resolver,
+                Settings.System.QS_BLUR_INTENSITY, 30);
+        mQsBlurSettings.setSummary(String.format(
+            res.getString(R.string.blur_quicksettings_subtitle),
+            enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+            String.valueOf(alpha), String.valueOf(intensity)));
+    }
+
+    private void updateQSBGStyleSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean accent = Settings.System.getInt(resolver,
+                Settings.System.QS_PANEL_BG_USE_ACCENT, 0) == 1;
+        boolean wall = Settings.System.getInt(resolver,
+                Settings.System.QS_PANEL_BG_USE_WALL, 0) == 1 && !accent;
+        String using;
+        if (accent) {
+            using = res.getString(R.string.qs_bg_using_accent);
+        } else if (wall) {
+            using = res.getString(R.string.qs_bg_using_wall);
+        } else {
+            String color = ColorPickerPreference.convertToARGB(
+                    Settings.System.getInt(resolver,
+                    Settings.System.QS_PANEL_BG_COLOR, 0xffffffff));
+            using = String.format(res.getString(R.string.qs_bg_using_color), color);
+        }
+        mQsBGStyle.setSummary(String.format(
+            res.getString(R.string.qs_bg_use_fw_summary),
+            enabled ? res.getString(R.string.on) : res.getString(R.string.off), using));
+    }
+
+    private void updateBrightnessSliderSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean bottom = Settings.System.getInt(resolver,
+                Settings.System.QS_BRIGHTNESS_POSITION_BOTTOM, 0) == 1;
+        boolean minmax = Settings.System.getInt(resolver,
+                Settings.System.QS_SHOW_MINMAX_BRIGHTNESS, 0) == 1;
+        boolean brightness = Settings.System.getInt(resolver,
+                Settings.System.QS_SHOW_AUTO_BRIGHTNESS, 1) == 1;
+        String icons = "";
+        if (minmax)
+            icons += res.getString(R.string.qs_show_minmax_brightness_title);
+        if (brightness) {
+            if (minmax)
+                icons += ", ";
+            icons += res.getString(R.string.qs_show_auto_brightness_title);
+        }
+        mBrightnessSlider.setSummary(String.format(
+            res.getString(R.string.qs_show_brightness_summary),
+            enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+            bottom ? res.getString(R.string.bottom) : res.getString(R.string.top), icons));
+    }
+
+    private void updateCustomHeaderSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean collection = Settings.System.getString(resolver,
+                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_PROVIDER)
+                == res.getString(R.string.daylight_header_provider);
+        int shadowVal = Settings.System.getInt(resolver,
+                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
+        int shadow = (int)(((double) shadowVal / 255) * 100);
+        mCustomHeader.setSummary(String.format(
+            res.getString(R.string.status_bar_custom_header_summary),
+            enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+            collection
+            ? res.getString(R.string.daylight_header_provider_title)
+            : res.getString(R.string.file_header_provider_title),
+            String.valueOf(shadow)));
     }
 
     @Override

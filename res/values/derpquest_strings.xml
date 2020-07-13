@@ -50,6 +50,11 @@
     <string name="general_category">General</string>
     <string name="look_category">Look</string>
     <string name="items_category">Items</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="bottom">Bottom</string>
+    <string name="top">Top</string>
+    <string name="and"> &amp; </string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -232,7 +237,7 @@
 
     <!-- QS blur -->
     <string name="blur_quicksettings">Blur behind quick settings (beta)</string>
-    <string name="blur_quicksettings_subtitle">Customize alpha and intensity</string>
+    <string name="blur_quicksettings_subtitle">%s / Alpha %s percent, Intensity %s percent</string>
     <string name="qs_blur_alpha_title">Blur alpha</string>
     <string name="qs_blur_alpha_summary">Sets the blur transparency</string>
     <string name="qs_blur_intensity_title">Blur intensity</string>
@@ -371,7 +376,7 @@
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_title">Brightness slider</string>
-    <string name="qs_show_brightness_summary">Show a brightness slider in the quick settings panel</string>
+    <string name="qs_show_brightness_summary">%s / On the %s of the QS, %s</string>
     <string name="qs_brightness_position_bottom_title">Brightness slider on bottom</string>
     <string name="qs_brightness_position_bottom_summary">Show a brightness slider on bottom quick settings</string>
     <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
@@ -762,11 +767,14 @@
     <string name="qs_bg_wall_title">Use Wallpaper colors</string>
     <string name="qs_bg_wall_summary">Set QS background color from Wallpaper</string>
     <string name="qs_bg_use_fw">Override default colors</string>
-    <string name="qs_bg_use_fw_summary">Customize QS colors</string>
+    <string name="qs_bg_use_fw_summary">%s / %s</string>
     <string name="qs_bg_accent_title">Use Accent color</string>
     <string name="qs_bg_accent_summary">Set QS background color from System Accent</string>
     <string name="qs_bg_use_new_tint">Tint</string>
     <string name="qs_bg_use_new_tint_summary">Enable QS tiles tint style</string>
+    <string name="qs_bg_using_accent">Currently using accent color</string>
+    <string name="qs_bg_using_wall">Currently using wallpaper color</string>
+    <string name="qs_bg_using_color">Currently using color %s</string>
 
     <!-- Themes -->
     <string name="theme_select_title">Themes</string>
