@@ -22,8 +22,10 @@
         android:key="qs_blur_alpha"
         android:title="@string/qs_blur_alpha_title"
         android:summary="@string/qs_blur_alpha_summary"
+        android:defaultValue="100"
         android:max="100"
-        settings:min="1"
+        settings:min="5"
+        settings:interval="5"
         settings:unitsRight="@string/unit_percent"
         android:persistent="false" />
 
@@ -32,7 +34,9 @@
         android:title="@string/qs_blur_intensity_title"
         android:summary="@string/qs_blur_intensity_summary"
         android:max="100"
-        settings:min="1"
+        android:defaultValue="30"
+        settings:min="5"
+        settings:interval="5"
         settings:unitsRight="@string/unit_percent"
         android:persistent="false" />
 

@@ -100,7 +100,9 @@
             android:max="255"
             settings:min="0"
             settings:units=""
-            android:persistent="false" />
+            android:persistent="false"
+            android:defaultValue="255"
+            settings:interval="5" />
 
         <SwitchPreference
             android:key="button_brightness_sw"
@@ -114,7 +116,8 @@
             settings:min="0"
             settings:interval="1"
             settings:units="sec"
-            android:persistent="false" />
+            android:persistent="false"
+            android:defaultValue="5" />
 
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="button_backlight_only_when_pressed"
