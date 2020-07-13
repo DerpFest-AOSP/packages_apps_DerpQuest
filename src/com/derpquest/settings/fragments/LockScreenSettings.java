@@ -86,6 +86,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private ColorPickerPreference mFODIconColor;
     private SwitchPreference mFingerprintVib;
 
+    private boolean skipSummaryUpdate;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -101,37 +103,40 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         boolean enabled = Settings.System.getInt(resolver,
                 LOCKSCREEN_BATTERY_INFO, 1) == 1;
         mBatteryInfo.setChecked(enabled);
+        updateBatteryInfoSUmmary(enabled);
 
         mBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(BATTERY_BAR);
         mBatteryBar.setOnPreferenceChangeListener(this);
-        enabled = Settings.System.getInt(resolver,
-                BATTERY_BAR, 0) == 1;
+        enabled = Settings.System.getInt(resolver, BATTERY_BAR, 0) == 1;
         mBatteryBar.setChecked(enabled);
+        updateBatteryBarSummary(enabled);
 
         mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
         mClockEnabled.setOnPreferenceChangeListener(this);
-        int clockEnabled = Settings.System.getInt(resolver,
-                LOCKSCREEN_CLOCK, 1);
-        mClockEnabled.setChecked(clockEnabled != 0);
+        boolean clockEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_CLOCK, 1) == 1;
+        mClockEnabled.setChecked(enabled);
+        updateClockSummary(enabled);
 
         mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
         mInfoEnabled.setOnPreferenceChangeListener(this);
-        enabled = Settings.System.getInt(resolver,
-                LOCKSCREEN_INFO, 1) != 0;
+        enabled = Settings.System.getInt(resolver, LOCKSCREEN_INFO, 1) != 0;
         mInfoEnabled.setChecked(enabled);
-        mInfoEnabled.setEnabled(clockEnabled != 0);
+        mInfoEnabled.setEnabled(clockEnabled);
+        updateDateSummary(enabled);
 
         mMediaArt = (SystemSettingMasterSwitchPreference) findPreference(MEDIA_ART);
         mMediaArt.setOnPreferenceChangeListener(this);
-        enabled = Settings.System.getInt(resolver,
-                MEDIA_ART, 1) == 1;
+        enabled = Settings.System.getInt(resolver, MEDIA_ART, 1) == 1;
         mMediaArt.setChecked(enabled);
+        updateMediaArtSummary(enabled);
 
         mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
         mVisualizerEnabled.setOnPreferenceChangeListener(this);
         enabled = Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 0) == 1;
         mVisualizerEnabled.setChecked(enabled);
+        updateVisualizerSummary(enabled);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -171,6 +176,30 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         if (mFODIconPickerCategory != null
                 && !getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView))
             prefScreen.removePreference(mFODIconPickerCategory);
+
+        skipSummaryUpdate = true; // avoid being called twice on onResume
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!skipSummaryUpdate) {
+            ContentResolver resolver = getActivity().getContentResolver();
+            updateBatteryInfoSUmmary(Settings.System.getInt(resolver,
+                    LOCKSCREEN_BATTERY_INFO, 1) == 1);
+            updateBatteryBarSummary(Settings.System.getInt(resolver,
+                    BATTERY_BAR, 0) == 1);
+            updateClockSummary(Settings.System.getInt(resolver,
+                    LOCKSCREEN_CLOCK, 1) == 1);
+            updateDateSummary(Settings.System.getInt(resolver,
+                    LOCKSCREEN_INFO, 1) != 0);
+            updateMediaArtSummary(Settings.System.getInt(resolver,
+                    MEDIA_ART, 1) == 1);
+            updateVisualizerSummary(Settings.Secure.getInt(resolver,
+                    Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 0) == 1);
+        } else {
+            skipSummaryUpdate = false;
+        }
     }
 
     @Override
@@ -180,27 +209,32 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            LOCKSCREEN_BATTERY_INFO, value ? 1 : 0);
+            updateBatteryInfoSUmmary(value);
             return true;
         } else if (preference == mBatteryBar) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            BATTERY_BAR, value ? 1 : 0);
+            updateBatteryBarSummary(value);
             return true;
         } else if (preference == mClockEnabled) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            LOCKSCREEN_CLOCK, value ? 1 : 0);
             mInfoEnabled.setEnabled(value);
+            updateClockSummary(value);
             return true;
         } else if (preference == mInfoEnabled) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            LOCKSCREEN_INFO, value ? 1 : 0);
+            updateDateSummary(value);
             return true;
         } else if (preference == mMediaArt) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
                 MEDIA_ART, value ? 1 : 0);
+            updateMediaArtSummary(value);
             return true;
         } else if (preference == mFingerprintVib) {
             boolean value = (Boolean) newValue;
@@ -211,6 +245,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(resolver,
                     LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
+            updateVisualizerSummary(value);
             return true;
         } else if (preference == mFODPressedState) {
             int value = Integer.valueOf((String) newValue);
@@ -225,6 +260,95 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    private void updateBatteryInfoSUmmary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        int font = Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, 28);
+        mBatteryInfo.setSummary(String.format(
+                res.getString(R.string.lockscreen_battery_info_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                res.getStringArray(R.array.lock_clock_fonts_entries)[font]));
+    }
+
+    private void updateBatteryBarSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean always = Settings.System.getInt(resolver,
+                Settings.System.SYSUI_KEYGUARD_SHOW_BATTERY_BAR_ALWAYS, 0) == 1;
+        String color = ColorPickerPreference.convertToARGB(
+                Settings.System.getInt(resolver,
+                Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, 0xffffffff));
+        mBatteryBar.setSummary(String.format(
+                res.getString(R.string.tuner_keyguard_show_battery_bar_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                always ? res.getString(R.string.tuner_keyguard_battery_bar_always_showing)
+                : res.getString(R.string.tuner_keyguard_battery_bar_not_always_showing), color));
+    }
+
+    private void updateClockSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        int style = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_CLOCK_SELECTION, 0);
+        int font = Settings.System.getInt(resolver,
+                Settings.System.LOCK_CLOCK_FONTS, 28);
+        int size = Settings.System.getInt(resolver,
+                Settings.System.LOCKCLOCK_FONT_SIZE, 54);
+        mClockEnabled.setSummary(String.format(
+                res.getString(R.string.lockscreen_clock_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                res.getStringArray(R.array.lockscreen_clock_titles)[style],
+                res.getStringArray(R.array.lock_clock_fonts_entries)[font],
+                String.valueOf(size)));
+    }
+
+    private void updateDateSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        int style = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_DATE_SELECTION, 0);
+        int font = Settings.System.getInt(resolver,
+                Settings.System.LOCK_DATE_FONTS, 28);
+        int size = Settings.System.getInt(resolver,
+                Settings.System.LOCKDATE_FONT_SIZE, 18);
+        mInfoEnabled.setSummary(String.format(
+                res.getString(R.string.lockscreen_clock_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                res.getStringArray(R.array.lockscreen_date_selection_entries)[style],
+                res.getStringArray(R.array.lock_clock_fonts_entries)[font],
+                String.valueOf(size)));
+    }
+
+    private void updateMediaArtSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        int filter = Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, 0);
+        mMediaArt.setSummary(String.format(
+                res.getString(R.string.media_art_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                res.getStringArray(R.array.lockscreen_cover_filter_entries)[filter]));
+    }
+
+    private void updateVisualizerSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean onAOD = Settings.System.getInt(resolver,
+                Settings.System.AMBIENT_VISUALIZER_ENABLED, 0) == 1;
+        int lines = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_SOLID_UNITS_COUNT, 32);
+        int sanity = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_SOLID_FUDGE_FACTOR, 16);
+        int opacity = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_SOLID_UNITS_OPACITY, 140);
+        mVisualizerEnabled.setSummary(String.format(
+                res.getString(R.string.lockscreen_visualizer_enable_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                onAOD ? res.getString(R.string.shown) : res.getString(R.string.hidden),
+                String.valueOf(lines), String.valueOf(sanity), String.valueOf(opacity)));
     }
 
     @Override

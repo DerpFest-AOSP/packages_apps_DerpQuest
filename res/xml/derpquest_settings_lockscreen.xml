@@ -126,7 +126,7 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_info"
             android:title="@string/lockscreen_info_title"
-            android:summary="@string/lockscreen_info_summary"
+            android:summary="@string/lockscreen_clock_summary"
             android:fragment="com.derpquest.settings.fragments.LockScreenInfoSettings"
             android:dependency="lockscreen_clock"
             android:defaultValue="true" />

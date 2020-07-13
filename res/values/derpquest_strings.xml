@@ -54,6 +54,8 @@
     <string name="off">Off</string>
     <string name="bottom">Bottom</string>
     <string name="top">Top</string>
+    <string name="shown">Shown</string>
+    <string name="hidden">Hidden</string>
     <string name="and"> &amp; </string>
 
     <!-- Color Picker -->
@@ -218,10 +220,12 @@
     <!-- Battery Bar -->
     <string name="battery_bar_title">Lock Screen Battery Bar</string>
     <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
-    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">%s / %s with %s color</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
     <string name="tuner_keyguard_battery_bar_color_title">Battery bar color on lockscreen</string>
+    <string name="tuner_keyguard_battery_bar_always_showing">Always showing</string>
+    <string name="tuner_keyguard_battery_bar_not_always_showing">Hidden when charged</string>
 
     <!-- Lock icon -->
     <string name="hide_lockicon_title">Hide lock icon</string>
@@ -339,7 +343,7 @@
     <!-- Media art -->
     <string name="lockscreen_media_category">Music</string>
     <string name="media_art_title">Media cover art</string>
-    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+    <string name="media_art_summary">%s / Filter %s</string>
 
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Media artwork blur level</string>
@@ -457,7 +461,7 @@
 
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_enable">Music Visualizer</string>
-    <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
+    <string name="lockscreen_visualizer_enable_summary">%s / %s on AoD, %s lines, sanity level of %s and opacity of %s</string>
     <string name="lockscreen_autocolor_title">Automatic color</string>
     <string name="lockscreen_autocolor_summary">Sync color with lockscreen background</string>
     <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
@@ -593,12 +597,11 @@
     <string name="status_bar_clock_color_title">Clock font color</string>
 
     <!-- Lockscreen Clock, Date & Owner Info -->
-    <string name="lockscreen_clock_options_title">Clock widget options</string>
-    <string name="lockscreen_clock_summary">Modify the style, font and size of the clock widget</string>
+    <string name="lockscreen_clock_options_title">Clock widget</string>
+    <string name="lockscreen_clock_summary">%s / Style %s, Font %s size %s dp</string>
     <string name="lockscreen_date_title">Date options</string>
     <string name="lockscreen_date_summary">Change the font style/size of the dateview</string>
-    <string name="lockscreen_info_title">Date widget options</string>
-    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
+    <string name="lockscreen_info_title">Date widget</string>
     <string name="lockscreen_ownerinfo_title">Owner info options</string>
     <string name="lockscreen_ownerinfo_summary">Customize the font style/size of the Owner information</string>
 
@@ -637,7 +640,7 @@
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
-    <string name="lockscreen_battery_info_summary">Show charging current, voltage and battery temperature on lockscreen while charging</string>
+    <string name="lockscreen_battery_info_summary">%s / Using font %s</string>
     <string name="lockscreen_battery_info_font_title">Charging info font</string>
     <string name="lockscreen_battery_info_dialog_title">Select charging info font</string>
 
