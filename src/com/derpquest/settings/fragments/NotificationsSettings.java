@@ -70,6 +70,8 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mFlashOnCallIgnoreDND;
     private CustomSeekBarPreference mFlashOnCallRate;
 
+    private boolean skipSummaryUpdate;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -90,6 +92,7 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         boolean enabled = Settings.System.getInt(resolver,
                 Settings.System.OMNI_PULSE_AMBIENT_LIGHT, 0) == 1;
         mAmbientLight.setChecked(enabled);
+        updateAmbientLightSummary(enabled);
 
         mChargingLeds = (Preference) findPreference("charging_light");
         if (mChargingLeds != null
@@ -100,9 +103,11 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
 
         mHeadsUp = (GlobalSettingMasterSwitchPreference)
                 findPreference(PREF_HEADS_UP);
-        mHeadsUp.setChecked(Settings.Global.getInt(resolver,
-                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1);
+        enabled = Settings.Global.getInt(resolver,
+                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1;
+        mHeadsUp.setChecked(enabled);
         mHeadsUp.setOnPreferenceChangeListener(this);
+        updateHeadsUpSummary(enabled);
 
         mFlashOnCallRate = (CustomSeekBarPreference)
                 findPreference(PREF_FLASH_ON_CALL_RATE);
@@ -121,6 +126,22 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         mFlashOnCall = (SystemSettingListPreference)
                 findPreference(PREF_FLASH_ON_CALL);
         mFlashOnCall.setOnPreferenceChangeListener(this);
+
+        skipSummaryUpdate = true; // avoid being called twice on onResume
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!skipSummaryUpdate) {
+            ContentResolver resolver = getActivity().getContentResolver();
+            updateAmbientLightSummary(Settings.System.getInt(resolver,
+                    Settings.System.OMNI_PULSE_AMBIENT_LIGHT, 0) == 1);
+            updateHeadsUpSummary(Settings.Global.getInt(resolver,
+                    Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1) == 1);
+        } else {
+            skipSummaryUpdate = false;
+        }
     }
 
     @Override
@@ -130,11 +151,13 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             Boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.OMNI_PULSE_AMBIENT_LIGHT, value ? 1 : 0);
+            updateAmbientLightSummary(value);
             return true;
         } else if (preference == mHeadsUp) {
             Boolean value = (Boolean) newValue;
             Settings.Global.putInt(resolver,
                     Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, value ? 1 : 0);
+            updateHeadsUpSummary(value);
             return true;
         } else if (preference == mFlashOnCall) {
             int value = Integer.parseInt((String) newValue);
@@ -150,6 +173,48 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    private void updateAmbientLightSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getContentResolver();
+        boolean onAOD = Settings.System.getInt(resolver,
+                Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED, 0) == 1;
+        int duration = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
+        int colorMode = 3;
+        boolean colorModeAutomatic = Settings.System.getInt(resolver,
+                Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0) != 0;
+        boolean colorModeAccent = Settings.System.getInt(resolver,
+                Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0) != 0;
+        boolean colorModeWall = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0) != 0;
+        if (colorModeAutomatic) {
+            colorMode = 0;
+        } else if (colorModeAccent) {
+            colorMode = 1;
+        } else if (colorModeWall) {
+            colorMode = 2;
+        }
+        mAmbientLight.setSummary(String.format(
+                res.getString(R.string.pulse_ambient_light_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                onAOD ? res.getString(R.string.shown) : res.getString(R.string.hidden),
+                String.valueOf(duration), res.getStringArray(
+                R.array.ambient_notification_light_color_mode_entries)[colorMode]));
+    }
+
+    private void updateHeadsUpSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getContentResolver();
+        int snooze = Settings.System.getInt(resolver,
+                Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, 3) / 60000;
+        int timeout = Settings.System.getInt(resolver,
+                Settings.System.HEADS_UP_TIMEOUT, 5) / 1000;
+        mHeadsUp.setSummary(String.format(
+                res.getString(R.string.heads_up_settings_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                String.valueOf(snooze), String.valueOf(timeout)));
     }
 
     @Override
