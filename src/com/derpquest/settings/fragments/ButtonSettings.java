@@ -23,13 +23,15 @@ import android.os.Handler;
 import android.os.UserHandle;
 import android.os.Vibrator;
 import android.provider.SearchIndexableResource;
+import android.provider.Settings;
+import android.util.Log;
+
 import androidx.preference.PreferenceCategory;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
-import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
@@ -41,6 +43,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.preferences.ActionFragment;
 import com.derpquest.settings.preferences.CustomSeekBarPreference;
+import com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference;
 import com.derpquest.settings.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
@@ -49,12 +52,15 @@ import java.util.List;
 @SearchIndexable
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener, Indexable {
 
+    private static final String TAG = "ButtonSettings";
+
     //Keys
     private static final String ENABLE_NAV_BAR = "enable_nav_bar";
     private static final String NAV_BAR_TUNER = "nav_bar_tuner";
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
+    private static final String KEY_PULSE_ENABLED = "navbar_pulse_enabled";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String ANBI_ENABLED_OPTION = "anbi_enabled_option";
 
@@ -79,6 +85,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     public static final int KEY_MASK_VOLUME = 0x40;
 
     private SwitchPreference mEnableNavigationBar;
+    private SystemSettingMasterSwitchPreference mPulseEnabled;
     private Preference mNavBarTuner;
     private CustomSeekBarPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
@@ -93,6 +100,8 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
     private ListPreference mTorchLongPressPowerTimeout;
 
+    private boolean skipSummaryUpdate;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -104,11 +113,17 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
         // Navigation bar related options
         mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
+        mPulseEnabled = (SystemSettingMasterSwitchPreference) findPreference(KEY_PULSE_ENABLED);
         mNavBarTuner = (Preference) findPreference(NAV_BAR_TUNER);
 
         mEnableNavigationBar.setOnPreferenceChangeListener(this);
         mHandler = new Handler();
         updateDisableNavkeysOption();
+
+        mPulseEnabled.setOnPreferenceChangeListener(this);
+        boolean enabled = Settings.System.getInt(resolver, KEY_PULSE_ENABLED, 0) == 1;
+        mPulseEnabled.setChecked(enabled);
+        updatePulseSummary(enabled);
 
         mAnbiEnable = (SystemSettingSwitchPreference) findPreference(ANBI_ENABLED_OPTION);
         mAnbiEnable.setOnPreferenceChangeListener(this);
@@ -232,6 +247,20 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                         Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0, UserHandle.USER_CURRENT);
         mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
         mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
+
+        skipSummaryUpdate = true; // avoid being called twice on onResume
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!skipSummaryUpdate) {
+            ContentResolver resolver = getActivity().getContentResolver();
+            updatePulseSummary(Settings.System.getInt(resolver,
+                    KEY_PULSE_ENABLED, 0) == 1);
+        } else {
+            skipSummaryUpdate = false;
+        }
     }
 
     @Override
@@ -263,13 +292,13 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             return true;
         } else if (preference == mAnbiEnable) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(), Settings.System.ANBI_ENABLED_OPTION,
+            Settings.Secure.putInt(resolver, Settings.System.ANBI_ENABLED_OPTION,
                     value ? 1 : 0);
             return true;
         } else if (preference == mTorchLongPressPowerTimeout) {
             String TorchTimeout = (String) newValue;
             int TorchTimeoutValue = Integer.parseInt(TorchTimeout);
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
+            Settings.System.putIntForUser(resolver,
                     Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, TorchTimeoutValue, UserHandle.USER_CURRENT);
             int TorchTimeoutIndex = mTorchLongPressPowerTimeout
                     .findIndexOfValue(TorchTimeout);
@@ -294,6 +323,11 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             }, 1000);
             mNavBarTuner.setEnabled(isNavBarChecked);
             return true;
+        } else if (preference == mPulseEnabled) {
+            boolean enabled = (Boolean) newValue;
+            Settings.System.putInt(resolver, KEY_PULSE_ENABLED, enabled ? 1 : 0);
+            updatePulseSummary(enabled);
+            return true;
         }
         return false;
     }
@@ -308,6 +342,29 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
                 Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
         if (mEnableNavigationBar != null)
             mEnableNavigationBar.setChecked(enabled);
+    }
+
+    private void updatePulseSummary(boolean enabled) {
+        Resources res = getResources();
+        ContentResolver resolver = getActivity().getContentResolver();
+        int style = Settings.System.getInt(resolver,
+                Settings.System.PULSE_RENDER_STYLE_URI, 0);
+        int color = Settings.System.getInt(resolver,
+                Settings.System.PULSE_COLOR_TYPE, 1);
+        int sanity = Settings.System.getInt(resolver, style == 0
+                ? Settings.System.PULSE_CUSTOM_FUDGE_FACTOR
+                : Settings.System.PULSE_SOLID_FUDGE_FACTOR, 1);
+        try {
+            mPulseEnabled.setSummary(String.format(
+                    res.getString(R.string.pulse_settings_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    res.getStringArray(R.array.pulse_render_mode_entries)[style],
+                    res.getStringArray(R.array.pulse_color_mode_entries)[color],
+                    String.valueOf(sanity)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in pulse_settings_summary");
+            mPulseEnabled.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     @Override

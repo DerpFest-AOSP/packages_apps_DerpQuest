@@ -1036,7 +1036,7 @@
     <!-- Pulse -->
     <string name="pulse_help_policy_notice_summary">Pulse does not work with some audio sources when listening on device speaker</string>
     <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Navigation bar audio graphic equalizer</string>
+    <string name="pulse_settings_summary">%s / Mode %s, Color mode %s and sanity of %s</string>
     <string name="show_pulse_title">Show Pulse</string>
     <string name="show_pulse_summary">Audio graphic equalizer on the navigation bar</string>
     <string name="pulse_render_mode_title">Render mode</string>
