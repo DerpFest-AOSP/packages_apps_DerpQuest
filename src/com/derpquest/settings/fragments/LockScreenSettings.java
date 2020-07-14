@@ -26,13 +26,15 @@ import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
+import android.util.Log;
+
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import android.provider.SearchIndexableResource;
-import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -61,6 +63,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String TAG = "LockScreenSettings";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String FOD_PRESSED_STATE = "fod_pressed_state";
@@ -267,10 +270,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         int font = Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO_FONT, 28);
-        mBatteryInfo.setSummary(String.format(
-                res.getString(R.string.lockscreen_battery_info_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                res.getStringArray(R.array.lock_clock_fonts_entries)[font]));
+        try {
+            mBatteryInfo.setSummary(String.format(
+                    res.getString(R.string.lockscreen_battery_info_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    res.getStringArray(R.array.lock_clock_fonts_entries)[font]));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in lockscreen_battery_info_summary");
+            mBatteryInfo.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateBatteryBarSummary(boolean enabled) {
@@ -281,11 +289,16 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         String color = ColorPickerPreference.convertToARGB(
                 Settings.System.getInt(resolver,
                 Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, 0xffffffff));
-        mBatteryBar.setSummary(String.format(
-                res.getString(R.string.tuner_keyguard_show_battery_bar_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                always ? res.getString(R.string.tuner_keyguard_battery_bar_always_showing)
-                : res.getString(R.string.tuner_keyguard_battery_bar_not_always_showing), color));
+        try {
+            mBatteryBar.setSummary(String.format(
+                    res.getString(R.string.tuner_keyguard_show_battery_bar_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    always ? res.getString(R.string.tuner_keyguard_battery_bar_always_showing)
+                    : res.getString(R.string.tuner_keyguard_battery_bar_not_always_showing), color));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in tuner_keyguard_show_battery_bar_summary");
+            mBatteryBar.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateClockSummary(boolean enabled) {
@@ -297,12 +310,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 Settings.System.LOCK_CLOCK_FONTS, 28);
         int size = Settings.System.getInt(resolver,
                 Settings.System.LOCKCLOCK_FONT_SIZE, 54);
-        mClockEnabled.setSummary(String.format(
-                res.getString(R.string.lockscreen_clock_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                res.getStringArray(R.array.lockscreen_clock_titles)[style],
-                res.getStringArray(R.array.lock_clock_fonts_entries)[font],
-                String.valueOf(size)));
+        try {
+            mClockEnabled.setSummary(String.format(
+                    res.getString(R.string.lockscreen_clock_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    res.getStringArray(R.array.lockscreen_clock_titles)[style],
+                    res.getStringArray(R.array.lock_clock_fonts_entries)[font],
+                    String.valueOf(size)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in lockscreen_clock_summary");
+            mClockEnabled.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateDateSummary(boolean enabled) {
@@ -314,12 +332,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 Settings.System.LOCK_DATE_FONTS, 28);
         int size = Settings.System.getInt(resolver,
                 Settings.System.LOCKDATE_FONT_SIZE, 18);
-        mInfoEnabled.setSummary(String.format(
-                res.getString(R.string.lockscreen_clock_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                res.getStringArray(R.array.lockscreen_date_selection_entries)[style],
-                res.getStringArray(R.array.lock_clock_fonts_entries)[font],
-                String.valueOf(size)));
+        try {
+            mInfoEnabled.setSummary(String.format(
+                    res.getString(R.string.lockscreen_clock_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    res.getStringArray(R.array.lockscreen_date_selection_entries)[style],
+                    res.getStringArray(R.array.lock_clock_fonts_entries)[font],
+                    String.valueOf(size)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in lockscreen_clock_summary");
+            mInfoEnabled.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateMediaArtSummary(boolean enabled) {
@@ -327,10 +350,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         int filter = Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, 0);
-        mMediaArt.setSummary(String.format(
-                res.getString(R.string.media_art_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                res.getStringArray(R.array.lockscreen_cover_filter_entries)[filter]));
+        try {
+            mMediaArt.setSummary(String.format(
+                    res.getString(R.string.media_art_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    res.getStringArray(R.array.lockscreen_cover_filter_entries)[filter]));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in media_art_summary");
+            mMediaArt.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateVisualizerSummary(boolean enabled) {
@@ -344,11 +372,16 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.LOCKSCREEN_SOLID_FUDGE_FACTOR, 16);
         int opacity = Settings.Secure.getInt(resolver,
                 Settings.Secure.LOCKSCREEN_SOLID_UNITS_OPACITY, 140);
-        mVisualizerEnabled.setSummary(String.format(
-                res.getString(R.string.lockscreen_visualizer_enable_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                onAOD ? res.getString(R.string.shown) : res.getString(R.string.hidden),
-                String.valueOf(lines), String.valueOf(sanity), String.valueOf(opacity)));
+        try {
+            mVisualizerEnabled.setSummary(String.format(
+                    res.getString(R.string.lockscreen_visualizer_enable_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    onAOD ? res.getString(R.string.shown) : res.getString(R.string.hidden),
+                    String.valueOf(lines), String.valueOf(sanity), String.valueOf(opacity)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in lockscreen_visualizer_enable_summary");
+            mVisualizerEnabled.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     @Override

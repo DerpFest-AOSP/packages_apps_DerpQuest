@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.util.Log;
 
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
@@ -212,10 +213,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_BLUR_ALPHA, 100);
         int intensity = Settings.System.getInt(resolver,
                 Settings.System.QS_BLUR_INTENSITY, 30);
-        mQsBlurSettings.setSummary(String.format(
-            res.getString(R.string.blur_quicksettings_subtitle),
-            enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-            String.valueOf(alpha), String.valueOf(intensity)));
+        try {
+            mQsBlurSettings.setSummary(String.format(
+                res.getString(R.string.blur_quicksettings_subtitle),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                String.valueOf(alpha), String.valueOf(intensity)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in blur_quicksettings_subtitle");
+            mQsBlurSettings.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateQSBGStyleSummary(boolean enabled) {
@@ -236,9 +242,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.QS_PANEL_BG_COLOR, 0xffffffff));
             using = String.format(res.getString(R.string.qs_bg_using_color), color);
         }
-        mQsBGStyle.setSummary(String.format(
-            res.getString(R.string.qs_bg_use_fw_summary),
-            enabled ? res.getString(R.string.on) : res.getString(R.string.off), using));
+        try {
+            mQsBGStyle.setSummary(String.format(
+                res.getString(R.string.qs_bg_use_fw_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off), using));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in qs_bg_use_fw_summary");
+            mQsBGStyle.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateBrightnessSliderSummary(boolean enabled) {
@@ -258,10 +269,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 icons += ", ";
             icons += res.getString(R.string.qs_show_auto_brightness_title);
         }
-        mBrightnessSlider.setSummary(String.format(
-            res.getString(R.string.qs_show_brightness_summary),
-            enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-            bottom ? res.getString(R.string.bottom) : res.getString(R.string.top), icons));
+        try {
+            mBrightnessSlider.setSummary(String.format(
+                res.getString(R.string.qs_show_brightness_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                bottom ? res.getString(R.string.bottom) : res.getString(R.string.top), icons));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in qs_show_brightness_summary");
+            mBrightnessSlider.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateCustomHeaderSummary(boolean enabled) {
@@ -273,13 +289,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         int shadowVal = Settings.System.getInt(resolver,
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         int shadow = (int)(((double) shadowVal / 255) * 100);
-        mCustomHeader.setSummary(String.format(
-            res.getString(R.string.status_bar_custom_header_summary),
-            enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-            collection
-            ? res.getString(R.string.daylight_header_provider_title)
-            : res.getString(R.string.file_header_provider_title),
-            String.valueOf(shadow)));
+        try {
+            mCustomHeader.setSummary(String.format(
+                res.getString(R.string.status_bar_custom_header_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                collection
+                ? res.getString(R.string.daylight_header_provider_title)
+                : res.getString(R.string.file_header_provider_title),
+                String.valueOf(shadow)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in status_bar_custom_header_summary");
+            mCustomHeader.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     @Override

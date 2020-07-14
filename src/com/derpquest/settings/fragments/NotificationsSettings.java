@@ -21,6 +21,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.util.Log;
 
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
@@ -56,6 +57,7 @@ import java.util.Map;
 public class NotificationsSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
+    private static final String TAG = "NotificationsSettings";
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
     private static final String PREF_HEADS_UP = "heads_up_settings";
@@ -196,12 +198,17 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         } else if (colorModeWall) {
             colorMode = 2;
         }
-        mAmbientLight.setSummary(String.format(
-                res.getString(R.string.pulse_ambient_light_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                onAOD ? res.getString(R.string.shown) : res.getString(R.string.hidden),
-                String.valueOf(duration), res.getStringArray(
-                R.array.ambient_notification_light_color_mode_entries)[colorMode]));
+        try {
+            mAmbientLight.setSummary(String.format(
+                    res.getString(R.string.pulse_ambient_light_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    onAOD ? res.getString(R.string.shown) : res.getString(R.string.hidden),
+                    String.valueOf(duration), res.getStringArray(
+                    R.array.ambient_notification_light_color_mode_entries)[colorMode]));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in pulse_ambient_light_summary");
+            mAmbientLight.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateHeadsUpSummary(boolean enabled) {
@@ -211,10 +218,15 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
                 Settings.System.HEADS_UP_NOTIFICATION_SNOOZE, 3) / 60000;
         int timeout = Settings.System.getInt(resolver,
                 Settings.System.HEADS_UP_TIMEOUT, 5) / 1000;
-        mHeadsUp.setSummary(String.format(
-                res.getString(R.string.heads_up_settings_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                String.valueOf(snooze), String.valueOf(timeout)));
+        try {
+            mHeadsUp.setSummary(String.format(
+                    res.getString(R.string.heads_up_settings_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    String.valueOf(snooze), String.valueOf(timeout)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in heads_up_settings_summary");
+            mHeadsUp.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     @Override

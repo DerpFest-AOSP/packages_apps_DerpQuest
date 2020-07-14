@@ -61,6 +61,7 @@ import java.util.Set;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
+    private static final String TAG = "StatusBarSettings";
     private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
     private static final String STATUS_BAR_DATE = "status_bar_date";
@@ -226,11 +227,16 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.NETWORK_TRAFFIC_VIEW_LOCATION, 0);
         int style = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.NETWORK_TRAFFIC_TYPE, 0);
-        mNetTrafficState.setSummary(String.format(
-                res.getString(R.string.network_traffic_state_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                res.getStringArray(R.array.show_network_traffic_type_entries)[style],
-                res.getStringArray(R.array.network_traffic_location_entries)[location]));
+        try {
+            mNetTrafficState.setSummary(String.format(
+                    res.getString(R.string.network_traffic_state_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    res.getStringArray(R.array.show_network_traffic_type_entries)[style],
+                    res.getStringArray(R.array.network_traffic_location_entries)[location]));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in network_traffic_state_summary");
+            mNetTrafficState.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateClockSummary(boolean enabled) {
@@ -239,29 +245,39 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_CLOCK_FONT_STYLE, 28);
         int location = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUSBAR_CLOCK_STYLE, 0);
-        mStatusBarClock.setSummary(String.format(
-            res.getString(R.string.status_bar_clock_summary),
-            enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-            res.getStringArray(R.array.lock_clock_fonts_entries)[font],
-            res.getStringArray(R.array.status_bar_clock_style_entries)[location]));
+        try {
+            mStatusBarClock.setSummary(String.format(
+                res.getString(R.string.status_bar_clock_summary),
+                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                res.getStringArray(R.array.lock_clock_fonts_entries)[font],
+                res.getStringArray(R.array.status_bar_clock_style_entries)[location]));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in status_bar_clock_summary");
+            mStatusBarClock.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateDateSummary(int value) {
         Resources res = getResources();
         int location = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0);
-        if (value != 0) {
-            mStatusBarDate.setSummary(String.format(
-                    res.getString(R.string.status_bar_date_summary),
-                    res.getString(R.string.on),
-                    res.getStringArray(R.array.clock_date_display_entries)[value-1],
-                    res.getStringArray(R.array.clock_date_position_entries)[location]));
-        } else {
-            mStatusBarDate.setSummary(String.format(
-                    res.getString(R.string.status_bar_date_summary),
-                    res.getString(R.string.off),
-                    res.getStringArray(R.array.clock_date_display_entries)[0],
-                    res.getStringArray(R.array.clock_date_position_entries)[location]));
+        try {
+            if (value != 0) {
+                mStatusBarDate.setSummary(String.format(
+                        res.getString(R.string.status_bar_date_summary),
+                        res.getString(R.string.on),
+                        res.getStringArray(R.array.clock_date_display_entries)[value-1],
+                        res.getStringArray(R.array.clock_date_position_entries)[location]));
+            } else {
+                mStatusBarDate.setSummary(String.format(
+                        res.getString(R.string.status_bar_date_summary),
+                        res.getString(R.string.off),
+                        res.getStringArray(R.array.clock_date_display_entries)[0],
+                        res.getStringArray(R.array.clock_date_position_entries)[location]));
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in status_bar_date_summary");
+            mStatusBarDate.setSummary(res.getString(R.string.translation_error));
         }
     }
 
@@ -269,18 +285,23 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         Resources res = getResources();
         int location = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
-        if (value != 6) {
-            mBatteryIconStyle.setSummary(String.format(
-                    res.getString(R.string.battery_icon_style_summary),
-                    res.getString(R.string.on),
-                    res.getStringArray(R.array.status_bar_battery_style_entries)[value],
-                    res.getStringArray(R.array.battery_percent_entries)[location]));
-        } else {
-            mBatteryIconStyle.setSummary(String.format(
-                    res.getString(R.string.battery_icon_style_summary),
-                    res.getString(R.string.off),
-                    res.getStringArray(R.array.status_bar_battery_style_entries)[0],
-                    res.getStringArray(R.array.battery_percent_entries)[location]));
+        try {
+            if (value != 6) {
+                mBatteryIconStyle.setSummary(String.format(
+                        res.getString(R.string.battery_icon_style_summary),
+                        res.getString(R.string.on),
+                        res.getStringArray(R.array.status_bar_battery_style_entries)[value],
+                        res.getStringArray(R.array.battery_percent_entries)[location]));
+            } else {
+                mBatteryIconStyle.setSummary(String.format(
+                        res.getString(R.string.battery_icon_style_summary),
+                        res.getString(R.string.off),
+                        res.getStringArray(R.array.status_bar_battery_style_entries)[0],
+                        res.getStringArray(R.array.battery_percent_entries)[location]));
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in battery_icon_style_summary");
+            mBatteryIconStyle.setSummary(res.getString(R.string.translation_error));
         }
     }
 
@@ -288,18 +309,23 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         Resources res = getResources();
         int style = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_LOGO_STYLE, 0);
-        if (value != 0) {
-            mStatusBarLogo.setSummary(String.format(
-                    res.getString(R.string.status_bar_logo_category_summary),
-                    res.getString(R.string.on),
-                    res.getStringArray(R.array.status_bar_logo_style_entries)[style],
-                    res.getStringArray(R.array.status_bar_logo_entries)[value-1]));
-        } else {
-            mStatusBarLogo.setSummary(String.format(
-                    res.getString(R.string.status_bar_logo_category_summary),
-                    res.getString(R.string.off),
-                    res.getStringArray(R.array.status_bar_logo_style_entries)[style],
-                    res.getStringArray(R.array.status_bar_logo_entries)[0]));
+        try {
+            if (value != 0) {
+                mStatusBarLogo.setSummary(String.format(
+                        res.getString(R.string.status_bar_logo_category_summary),
+                        res.getString(R.string.on),
+                        res.getStringArray(R.array.status_bar_logo_style_entries)[style],
+                        res.getStringArray(R.array.status_bar_logo_entries)[value-1]));
+            } else {
+                mStatusBarLogo.setSummary(String.format(
+                        res.getString(R.string.status_bar_logo_category_summary),
+                        res.getString(R.string.off),
+                        res.getStringArray(R.array.status_bar_logo_style_entries)[style],
+                        res.getStringArray(R.array.status_bar_logo_entries)[0]));
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in status_bar_logo_category_summary");
+            mStatusBarLogo.setSummary(res.getString(R.string.translation_error));
         }
     }
 
@@ -309,30 +335,40 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, 0);
         int duration = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.STATUS_BAR_TICKER_TICK_DURATION, 0);
-        mNotificationTicker.setSummary(String.format(
-                res.getString(R.string.status_bar_show_ticker_summary),
-                value != 0 ? res.getString(R.string.on) : res.getString(R.string.off),
-                value == 2 ? res.getString(R.string.on) : res.getString(R.string.off),
-                res.getStringArray(R.array.ticker_animation_mode_entries)[animation],
-                String.valueOf(duration)));
+        try {
+            mNotificationTicker.setSummary(String.format(
+                    res.getString(R.string.status_bar_show_ticker_summary),
+                    value != 0 ? res.getString(R.string.on) : res.getString(R.string.off),
+                    value == 2 ? res.getString(R.string.on) : res.getString(R.string.off),
+                    res.getStringArray(R.array.ticker_animation_mode_entries)[animation],
+                    String.valueOf(duration)));
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in status_bar_show_ticker_summary");
+            mNotificationTicker.setSummary(res.getString(R.string.translation_error));
+        }
     }
 
     private void updateBatteryBarSummary(int value) {
         Resources res = getResources();
         int style = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.BATTERY_BAR_STYLE, 0);
-        if (value != 0) {
-            mBatteryBar.setSummary(String.format(
-                    res.getString(R.string.status_bar_logo_category_summary),
-                    res.getString(R.string.on),
-                    res.getStringArray(R.array.battery_bar_style_entries)[style],
-                    res.getStringArray(R.array.battery_bar_entries)[value-1]));
-        } else {
-            mBatteryBar.setSummary(String.format(
-                    res.getString(R.string.status_bar_logo_category_summary),
-                    res.getString(R.string.off),
-                    res.getStringArray(R.array.battery_bar_style_entries)[style],
-                    res.getStringArray(R.array.battery_bar_entries)[0]));
+        try {
+            if (value != 0) {
+                mBatteryBar.setSummary(String.format(
+                        res.getString(R.string.status_bar_logo_category_summary),
+                        res.getString(R.string.on),
+                        res.getStringArray(R.array.battery_bar_style_entries)[style],
+                        res.getStringArray(R.array.battery_bar_entries)[value-1]));
+            } else {
+                mBatteryBar.setSummary(String.format(
+                        res.getString(R.string.status_bar_logo_category_summary),
+                        res.getString(R.string.off),
+                        res.getStringArray(R.array.battery_bar_style_entries)[style],
+                        res.getStringArray(R.array.battery_bar_entries)[0]));
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Translation error in status_bar_logo_category_summary");
+            mBatteryBar.setSummary(res.getString(R.string.translation_error));
         }
     }
 
