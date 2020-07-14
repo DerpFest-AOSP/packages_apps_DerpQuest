@@ -239,23 +239,23 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mBacklightTimeout) {
             int BacklightTimeout = ((Integer) newValue) * 1000; // seconds to milliseconds
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
+            Settings.System.putIntForUser(resolver,
                     Settings.System.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeout,
                     UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mButtonBrightness) {
             int value = (Integer) newValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
+            Settings.System.putIntForUser(resolver,
                     Settings.System.BUTTON_BRIGHTNESS, value * 1, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mButtonBrightness_sw) {
             boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
+            Settings.System.putIntForUser(resolver,
                     Settings.System.BUTTON_BRIGHTNESS, value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mHwKeyDisable) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
+            Settings.Secure.putIntForUser(resolver, Settings.Secure.HARDWARE_KEYS_DISABLE,
                     value ? 1 : 0, UserHandle.USER_CURRENT);
             setActionPreferencesEnabled(!value);
             mAnbiEnable.setEnabled(!value);
