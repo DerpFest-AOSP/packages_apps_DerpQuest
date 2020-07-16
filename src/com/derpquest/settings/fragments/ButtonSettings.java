@@ -34,6 +34,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.aosip.aosipUtils;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.settings.R;
@@ -354,13 +355,22 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         int sanity = Settings.System.getInt(resolver, style == 0
                 ? Settings.System.PULSE_CUSTOM_FUDGE_FACTOR
                 : Settings.System.PULSE_SOLID_FUDGE_FACTOR, 1);
+        boolean navBarHidden = !mEnableNavigationBar.isChecked() ||
+                (aosipUtils.isGesturalNav(getContext()) &&
+                Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.GESTURE_PILL_TOGGLE, 0) == 1);
         try {
-            mPulseEnabled.setSummary(String.format(
-                    res.getString(R.string.pulse_settings_summary),
-                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                    res.getStringArray(R.array.pulse_render_mode_entries)[style],
-                    res.getStringArray(R.array.pulse_color_mode_entries)[color],
-                    String.valueOf(sanity)));
+            if (!navBarHidden) {
+                mPulseEnabled.setSummary(String.format(
+                        res.getString(R.string.pulse_settings_summary),
+                        enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                        res.getStringArray(R.array.pulse_render_mode_entries)[style],
+                        res.getStringArray(R.array.pulse_color_mode_entries)[color],
+                        String.valueOf(sanity)));
+            } else {
+                mPulseEnabled.setSummary(
+                        res.getString(R.string.pulse_no_navbar_summary));
+            }
         } catch (Exception e) {
             Log.e(TAG, "Translation error in pulse_settings_summary");
             mPulseEnabled.setSummary(res.getString(R.string.translation_error));
