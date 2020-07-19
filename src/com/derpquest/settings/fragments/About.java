@@ -26,12 +26,14 @@ import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -51,11 +53,15 @@ import java.util.Map;
 
 @SearchIndexable
 public class About extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener, Indexable {
+        OnPreferenceChangeListener, OnPreferenceClickListener, Indexable {
 
+    private PreferenceScreen mDerpLogo;
     private PreferenceCategory mDeviceLinks;
     private Preference mDeviceFW;
     private Preference mDeviceRecovery;
+    private Toast mDerpHitToast;
+
+    private int mDerpLogoHitCountdown = 10;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -99,11 +105,41 @@ public class About extends SettingsPreferenceFragment implements
             }
         }
 
+        mDerpLogo = (PreferenceScreen) findPreference("derp_logo");
+        mDerpLogo.setOnPreferenceClickListener(this);
+        mDerpHitToast = null;
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+        if (mDerpLogoHitCountdown > 0) {
+            mDerpLogoHitCountdown--;
+            if (mDerpLogoHitCountdown == 0) {
+                if (mDerpHitToast != null) {
+                    mDerpHitToast.cancel();
+                }
+                mDerpHitToast = Toast.makeText(getContext(),
+                        getResources().getString(R.string.derpd_done),
+                        Toast.LENGTH_SHORT);
+                mDerpHitToast.show();
+                throw new RuntimeException("BOOYAH!"); // Crash :)
+            } else {
+                if (mDerpHitToast != null) {
+                    mDerpHitToast.cancel();
+                }
+                mDerpHitToast = Toast.makeText(getContext(),
+                        getResources().getQuantityString(
+                        R.plurals.show_derped_countdown, mDerpLogoHitCountdown,
+                        mDerpLogoHitCountdown), Toast.LENGTH_SHORT);
+                mDerpHitToast.show();
+            }
+        }
+        return true;
     }
 
     @Override
