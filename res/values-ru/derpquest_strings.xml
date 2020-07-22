@@ -36,25 +36,28 @@
     <string name="edge_lighting_category_title">Подсветка по краям экрана</string>
     <string name="clock_settings_title">Часы</string>
     <string name="battery_icon_style_title">Значок батареи</string>
-    <string name="battery_icon_style_summary">%s / Стиль: %s, процент: %s</string>
+    <string name="battery_icon_style_summary">%s / Стиль %s, процент %s</string>
     <!-- General strings -->
     <string name="ok">ОК</string>
     <string name="reset">Сброс</string>
     <string name="cancel">Отмена</string>
     <string name="save">Сохранить</string>
     <string name="default_string">По умолчанию</string>
+    <string name="custom_string">Пользовательский</string>
     <string name="enable_first">Пожалуйста, включите сначала</string>
     <string name="no_browser">Пожалуйста, выберите браузер по умолчанию</string>
     <string name="general_category">Общие сведения</string>
     <string name="look_category">Вид</string>
     <string name="items_category">Элементы</string>
-    <string name="on">Вкл.</string>
-    <string name="off">Выкл.</string>
+    <string name="on">Вкл</string>
+    <string name="off">Выкл</string>
     <string name="bottom">Внизу</string>
     <string name="top">Сверху</string>
-    <string name="shown">Отображается</string>
-    <string name="hidden">Скрыт</string>
+    <string name="shown">Показано</string>
+    <string name="hidden">Скрыто</string>
     <string name="and"> &amp; </string>
+    <!-- General error strings -->
+    <string name="translation_error">Ошибка перевода</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Палитра цветов</string>
     <string name="press_color_to_apply">Нажмите на цвет ниже, чтобы применить</string>
@@ -161,8 +164,8 @@
     <string name="fprint_sucess_vib_summary">Вибрировать при успешной разблокировке по отпечатку пальца</string>
     <!-- Statusbar net monitor -->
     <string name="network_traffic_state_title">Отображение сетевого трафика</string>
-    <string name="network_traffic_state_summary">%s / Тип: %s, расположение: %s</string>
-    <string name="network_traffic_location_title">Расположение сетевого трафика</string>
+    <string name="network_traffic_state_summary">%s / Стиль %s, на %s</string>
+    <string name="network_traffic_location_title">Местоположение сетевого трафика</string>
     <string name="traffic_statusbar">Строка состояния</string>
     <string name="traffic_expanded_statusbar">Расширенная строка состояния</string>
     <string name="network_traffic_autohide_threshold_title">Порог автоскрытия сетевой активности (КБ/с)</string>
@@ -186,12 +189,12 @@
     <!-- Battery Bar -->
     <string name="battery_bar_title">Панель батареи экрана блокировки</string>
     <string name="tuner_keyguard_show_battery_bar_title">Показывать иконку батареи</string>
-    <string name="tuner_keyguard_show_battery_bar_summary">%s / %s, цвет: %s</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">%s / %s с %s цветом</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Всегда показывать иконку батареи</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">Всегда показывать иконку батареи при зарядке</string>
     <string name="tuner_keyguard_battery_bar_color_title">Цвет полосы батареи на экране блокировки</string>
-    <string name="tuner_keyguard_battery_bar_always_showing">Отображается всегда</string>
-    <string name="tuner_keyguard_battery_bar_not_always_showing">Спрятана, когда батарея заряжена</string>
+    <string name="tuner_keyguard_battery_bar_always_showing">Всегда отображать</string>
+    <string name="tuner_keyguard_battery_bar_not_always_showing">Скрывать при зарядке</string>
     <!-- Lock icon -->
     <string name="hide_lockicon_title">Скрывать значок блокировки</string>
     <string name="hide_lockicon_summary">Скрыть значок блокировки на экране блокировки</string>
@@ -203,7 +206,7 @@
     <string name="qstile_requires_unlocking_summary">Следующие быстрые плитки требуют разблокировки перед тем, как вы сможете их закрепить на экране блокировки: самолет, экономия батареи, Bluetooth, сотовый режим, сохранение данных, NFC и Wi-Fi.</string>
     <!-- QS blur -->
     <string name="blur_quicksettings">Размытие позади быстрых настроек (бета)</string>
-    <string name="blur_quicksettings_subtitle">%s / Прозрачность: %s процентов, интенсивность: %s процентов</string>
+    <string name="blur_quicksettings_subtitle">%s / Прозрачность %s процентов, Интенсивность %s процентов</string>
     <string name="qs_blur_alpha_title">Прозрачность размытия</string>
     <string name="qs_blur_alpha_summary">Задает прозрачность размытия</string>
     <string name="qs_blur_intensity_title">Интенсивность размытия</string>
@@ -215,18 +218,18 @@
     <!-- Statusbar Clock -->
     <string name="status_bar_clock_title">Настройки часов</string>
     <string name="status_bar_clock_show">Показывать часы</string>
-    <string name="status_bar_clock_summary">%s / Шрифт: %s, %s</string>
+    <string name="status_bar_clock_summary">%s / Шрифт %s, на %s</string>
     <string name="status_bar_date_show">Показывать дату</string>
     <string name="status_bar_date_summary">%s / %s, %s</string>
     <string name="status_bar_clock_style_title">Стиль часов</string>
-    <string name="status_bar_clock_style_right">Справа</string>
-    <string name="status_bar_clock_style_center">По центру</string>
-    <string name="status_bar_clock_style_left">Слева</string>
+    <string name="status_bar_clock_style_right">Направо</string>
+    <string name="status_bar_clock_style_center">Центр</string>
+    <string name="status_bar_clock_style_left">Налево</string>
     <string name="status_bar_am_pm_title">Стиль AM/PM</string>
     <string name="status_bar_am_pm_info">24-часовой формат включен</string>
     <string name="status_bar_am_pm_normal">Обычный</string>
     <string name="status_bar_am_pm_small">Маленький</string>
-    <string name="status_bar_am_pm_hidden">Скрыт (по умолчанию)</string>
+    <string name="status_bar_am_pm_hidden">Скрытый (по умолчанию)</string>
     <string name="clock_seconds_display">Показывать секунды</string>
     <string name="clock_date_display">Дата</string>
     <string name="clock_date_display_summary">Отображать дату перед часами</string>
@@ -300,7 +303,7 @@
     <!-- Media art -->
     <string name="lockscreen_media_category">Музыка</string>
     <string name="media_art_title">Обложка произведения</string>
-    <string name="media_art_summary">%s / Фильтр: %s</string>
+    <string name="media_art_summary">%s / Фильтр %s</string>
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Уровень размытия медиа-обложки</string>
     <!-- Lockscreen cover art filter -->
@@ -326,7 +329,7 @@
     <string name="volume_steps_reset">Сброс</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_title">Ползунок яркости</string>
-    <string name="qs_show_brightness_summary">%s / %s, %s</string>
+    <string name="qs_show_brightness_summary">%s / На %s панели быстрого доступа, %s</string>
     <string name="qs_brightness_position_bottom_title">Ползунок яркости внизу</string>
     <string name="qs_brightness_position_bottom_summary">Показать слайдер яркости в нижней части быстрых настроек</string>
     <string name="qs_show_auto_brightness_title">Значок автояркости</string>
@@ -382,6 +385,7 @@
     <!-- QS clock -->
     <string name="qs_clock_title">Часы</string>
     <string name="qs_clock_summary">Отображать часы в заголовке строки состояния</string>
+    <string name="qs_clock_font_size_title">Размер шрифта часов</string>
     <!-- Quick pull down-->
     <string name="quick_pulldown_title">Быстрый доступ к шторке</string>
     <string name="quick_pulldown_summary">%1$s</string>
@@ -395,7 +399,7 @@
     <string name="qs_tile_panels_summary_disabled">Показать просмотр плиток быстрых настроек внутри области плиток</string>
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_enable">Визуализация музыки</string>
-    <string name="lockscreen_visualizer_enable_summary">%s / %s на AoD, %s линий с чувствительностью %s и прозрачностью %s</string>
+    <string name="lockscreen_visualizer_enable_summary">%s / %s on AoD, %s lines, sanity level of %s and opacity of %s</string>
     <string name="lockscreen_autocolor_title">Автоматический цвет</string>
     <string name="lockscreen_autocolor_summary">Синхронизировать цвет с фоном экрана блокировки</string>
     <string name="lockscreen_autocolor_lavalamp">Требует выключенный визуализатор музыки</string>
@@ -410,7 +414,7 @@
     <!-- Custom headers -->
     <string name="notification_title">Панель уведомлений</string>
     <string name="status_bar_custom_header_title">Изображение заголовка</string>
-    <string name="status_bar_custom_header_summary">%s / %s с тенью в %s процентов</string>
+    <string name="status_bar_custom_header_summary">%s / %s с %s процентом тени</string>
     <string name="daylight_header_pack_title">Коллекция изображений заголовка</string>
     <string name="status_bar_custom_header_shadow_title">Тень изображения заголовка</string>
     <string name="status_bar_custom_header_shadow_summary">Для лучшей видимости на ярких изображениях</string>
@@ -483,7 +487,8 @@
     <string name="disable_transition_animations_summary">Принудительно отключить все анимации перехода</string>
     <!-- Statusbar logo -->
     <string name="status_bar_logo_category_title">Логотип строки состояния</string>
-    <string name="status_bar_logo_category_summary">%s / Стиль: %s, %s</string>
+    <string name="status_bar_logo_category_summary">%s / Стиль %s на %s</string>
+    <string name="status_bar_logo_category_tooltip">Показывать логотип в строке состояния</string>
     <string name="status_bar_logo_title">Логотип DerpFest</string>
     <string name="status_bar_logo_right">Справа</string>
     <string name="status_bar_logo_left">Слева</string>
@@ -511,12 +516,11 @@
     <string name="status_bar_clock_font_size_title">Размер шрифта часов</string>
     <string name="status_bar_clock_color_title">Цвет шрифта часов</string>
     <!-- Lockscreen Clock, Date & Owner Info -->
-    <string name="lockscreen_clock_options_title">Настройки виджета часов</string>
-    <string name="lockscreen_clock_summary">%s / Стиль: %s, шрифт: %s, размер: %s</string>
+    <string name="lockscreen_clock_options_title">Виджет часов</string>
+    <string name="lockscreen_clock_summary">%s / Стиль %s, шрифт %s размер %s dp</string>
     <string name="lockscreen_date_title">Параметры даты</string>
     <string name="lockscreen_date_summary">Изменить стиль/размер шрифта даты</string>
-    <string name="lockscreen_info_title">Настройки виджета даты</string>
-    <string name="lockscreen_info_summary">Показывать дату, погоду и будильник на экране блокировки</string>
+    <string name="lockscreen_info_title">Виджет даты</string>
     <string name="lockscreen_ownerinfo_title">Параметры информации о владельце</string>
     <string name="lockscreen_ownerinfo_summary">Настройка стиля/размера шрифта информации о владельце</string>
     <!-- Lock Date Fonts -->
@@ -550,7 +554,7 @@
     <string name="status_bar_carrier_font_style_title">Шрифт названия оператора</string>
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Информация о зарядке на экране блокировки</string>
-    <string name="lockscreen_battery_info_summary">%s / Шрифт: %s</string>
+    <string name="lockscreen_battery_info_summary">%s / Использование шрифта %s</string>
     <string name="lockscreen_battery_info_font_title">Шрифт информации о зарядке</string>
     <string name="lockscreen_battery_info_dialog_title">Выберите шрифт информации о зарядке</string>
     <!-- QuickSettings Panel Transparency -->
@@ -675,16 +679,18 @@
     <string name="qs_bg_wall_summary">Установить цвет фона быстрых настроек из Обоев</string>
     <string name="qs_bg_use_fw">Переопределить цвета по умолчанию</string>
     <string name="qs_bg_use_fw_summary">%s / %s</string>
-    <string name="qs_bg_using_accent">Используется цвет акцента</string>
-    <string name="qs_bg_using_wall">Используется цвет обоев</string>
-    <string name="qs_bg_using_color">Используется цвет %s</string>
     <string name="qs_bg_accent_title">Использовать цветовой акцент</string>
     <string name="qs_bg_accent_summary">Установить фоновый цвет быстрых настроек из системного акцента</string>
     <string name="qs_bg_use_new_tint">Вид плиток</string>
     <string name="qs_bg_use_new_tint_summary">Включить затемнение плиток быстрых настроек</string>
+    <string name="qs_bg_using_accent">Текущий используемый цвет акцента</string>
+    <string name="qs_bg_using_wall">Текущий цвет обоев</string>
+    <string name="qs_bg_using_color">Используется цвет %s</string>
     <!-- Themes -->
     <string name="theme_select_title">Темы</string>
     <string name="theme_select_summary">Просмотреть и выбрать установленные темы</string>
+    <string name="rgb_accent_picker_title">RGB палитра цветов</string>
+    <string name="rgb_accent_picker_summary">Выберите цвет акцента самостоятельно</string>
     <!--Gestures-->
     <string name="aosp_gesture_title">Жесты AOSP</string>
     <!-- Units -->
@@ -693,7 +699,7 @@
     <string name="unit_pixels">dp</string>
     <!-- Statusbar ticker -->
     <string name="status_bar_show_ticker_title">Бегущая строка (бета)</string>
-    <string name="status_bar_show_ticker_summary">%s / Бегущая строка медиа %s, анимация: %s длительностью %s мс</string>
+    <string name="status_bar_show_ticker_summary">%s / Бегущая строка медиа %s, анимация %s на %s мс</string>
     <string name="status_bar_ticker_music_title">Бегущая строка медиа</string>
     <string name="status_bar_ticker_music_summary">Показывать бегущую строку для переключенных треков</string>
     <string name="ticker_animation_mode_title">Анимация бегущей строки</string>
@@ -704,7 +710,7 @@
     <string name="qs_running_services_title">Иконка запущенных служб</string>
     <string name="qs_running_services_summary">Включить иконку запущенных сервисов в нижней области быстрых настроек</string>
     <!-- Edge lighting (aka pulse ambient light) -->
-    <string name="pulse_ambient_light_summary">%s / %s на AoD, Длительность: %s секунд, Используется %s</string>
+    <string name="pulse_ambient_light_summary">%s / %s на AoD, длительность %s секунд, использование %s</string>
     <string name="ambient_notification_light_enabled_title">Показывать на AoD</string>
     <string name="ambient_notification_light_enabled_sumary">Продолжать отображать на Always on Display. До тех пор, пока экран не будет включен</string>
     <string name="ambient_notification_light_hide_aod_title">Скрывать контент AoD</string>
@@ -827,12 +833,20 @@
     <string name="about_device_recovery">Рекомендуемое Recovery</string>
     <!-- Recovery version -->
     <!-- Recovery link -->
+    <!-- About - Easter Egg -->
+    <plurals name="show_derped_countdown">
+        <item quantity="one">Вы в шаге от становления частью DerpFest сообщества</item>
+        <item quantity="few">Вы в <xliff:g id="derp_count">%1$d</xliff:g> шагах от становления частью DerpFest сообщества</item>
+        <item quantity="many">Вы в <xliff:g id="derp_count">%1$d</xliff:g> шагах от становления частью DerpFest сообщества</item>
+        <item quantity="other">Вы в <xliff:g id="derp_count">%1$d</xliff:g> шагах от становления частью DerpFest сообщества</item>
+    </plurals>
+    <string name="derpd_done">Добро пожаловать в DerpFest</string>
     <!-- The Drill -->
     <string name="the_drill_title">The Drill</string>
     <string name="the_drill_summary">Нашли ошибку? Попали в проблему?</string>
     <!-- Heads up -->
     <string name="heads_up_settings_title">Всплывающие уведомления</string>
-    <string name="heads_up_settings_summary">%s / Отложить на %s минут, таймаут %s секунд</string>
+    <string name="heads_up_settings_summary">%s / Отложено на %s минут, тайм-аут %s секунд</string>
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Таймер повтора</string>
     <string name="heads_up_snooze_summary">Свайп вверх по всплывающему уведомлению отложит всплывающие уведомления от этого приложения на заданное время</string>
@@ -847,7 +861,7 @@
     <string name="add_heads_up_blacklist_summary">Отключить всплывающие уведомления от этих приложений</string>
     <!-- Battery bar -->
     <string name="sb_battery_bar_title">Ползунок заряда батареи</string>
-    <string name="sb_battery_bar_summary">%s / Стиль: %s расположение: %s</string>
+    <string name="sb_battery_bar_summary">%s / Стиль %s на %s</string>
     <string name="sb_battery_bar_location">Расположение полосы батареи</string>
     <string name="sb_battery_bar_color">Цвет полосы батареи</string>
     <string name="sb_battery_bar_style_title">Стиль полосы батареи</string>
@@ -898,4 +912,85 @@
     <!-- StatusBar notification count -->
     <string name="notif_count_title">Количество уведомлений</string>
     <string name="notif_count_summary">Показывать количество уведомлений рядом с значками уведомлений</string>
+    <!-- Pulse -->
+    <string name="pulse_help_policy_notice_summary">Визуализатор музыки не работает с некоторыми источниками звука при прослушивании через динамик устройства</string>
+    <string name="pulse_settings">Визуализатор музыки</string>
+    <string name="pulse_settings_summary">%s / Mode %s, Color mode %s and sanity of %s</string>
+    <string name="pulse_no_navbar_summary">Выкл / Не показывать из-за скрытой панели навигации</string>
+    <string name="show_pulse_title">Показывать визуализатор музыки</string>
+    <string name="show_pulse_summary">Аудиографический эквалайзер на панели навигации</string>
+    <string name="pulse_render_mode_title">Режим отображения</string>
+    <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
+    <string name="pulse_render_mode_solid_lines">Сплошные линии</string>
+    <string name="pulse_color">Цвет</string>
+    <string name="pulse_color_mode">Режим цвета</string>
+    <string name="pulse_color_accent">Акцент</string>
+    <string name="pulse_color_custom">Пользовательский</string>
+    <string name="pulse_color_lava_lamp">Визуализатор музыки</string>
+    <string name="pulse_color_auto">Обложка альбома</string>
+    <string name="pulse_color_chooser">Выберите цвет</string>
+    <string name="smoothing_enabled_title">Включить сглаживание</string>
+    <string name="smoothing_enabled_summary">Каждый бар анимирован более гладко</string>
+    <string name="pulse_advanced_category">Расширенные настройки</string>
+    <string name="pulse_legacy_mode_advanced_category">Настройки режима затухающих блоков</string>
+    <string name="pulse_custom_fudge_factor">Уровень чувствительности</string>
+    <string name="lavamp_speed_title">Скорость визуализатора музыки</string>
+    <string name="pulse_solid_units_count">Количество сплошных линий</string>
+    <string name="pulse_solid_lines_count">Количество сплошных линий</string>
+    <string name="pulse_solid_units_opacity">Прозрачность сплошных линий</string>
+    <string name="pulse_solid_dimen_category">Настройки режима сплошных линий</string>
+    <string name="pulse_custom_dimen">Размер бара</string>
+    <string name="pulse_custom_div">Интервал бара</string>
+    <string name="pulse_filled_block_size">Размер блока</string>
+    <string name="pulse_empty_block_size">Интервал блоков</string>
+    <!-- Switch Styles -->
+    <string name="switch_style_title">Переключить стиль</string>
+    <string name="switch_default">По умолчанию</string>
+    <string name="switch_oneplus">OnePlus</string>
+    <string name="switch_narrow">Narrow</string>
+    <string name="switch_contained">Contained</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">MD2</string>
+    <string name="switch_retro">Retro</string>
+    <string name="switch_stockish">Stockish</string>
+    <!-- Accent presets -->
+    <string name="accent_preset_0">AOSP Cinnamon</string>
+    <string name="accent_preset_1">AOSP Green</string>
+    <string name="accent_preset_2">AOSP Ocean</string>
+    <string name="accent_preset_3">AOSP Orchid</string>
+    <string name="accent_preset_4">AOSP Purple</string>
+    <string name="accent_preset_5">AOSP Space</string>
+    <string name="accent_preset_6">AndroidOneGreen</string>
+    <string name="accent_preset_7">AospaGreen</string>
+    <string name="accent_preset_8">AtlantisGreen</string>
+    <string name="accent_preset_9">AzureRadiance</string>
+    <string name="accent_preset_10">black</string>
+    <string name="accent_preset_11">CocaColaRed</string>
+    <string name="accent_preset_12">DiscordPurple</string>
+    <string name="accent_preset_13">ElectricViolet</string>
+    <string name="accent_preset_14">FacebookBlue</string>
+    <string name="accent_preset_15">FiBlue</string>
+    <string name="accent_preset_16">InstagramCerise</string>
+    <string name="accent_preset_17">JollibeeCrimson</string>
+    <string name="accent_preset_18">MarsOrange</string>
+    <string name="accent_preset_19">MonsterEnergyGreen</string>
+    <string name="accent_preset_20">NextbitMint</string>
+    <string name="accent_preset_21">NovaYellow</string>
+    <string name="accent_preset_22">OneplusRed</string>
+    <string name="accent_preset_23">PepsiBlue</string>
+    <string name="accent_preset_24">PersianRed</string>
+    <string name="accent_preset_25">PocophoneYellow</string>
+    <string name="accent_preset_26">RazerGreen</string>
+    <string name="accent_preset_27">SamsungBlue</string>
+    <string name="accent_preset_28">SlateSpruce</string>
+    <string name="accent_preset_29">SpotifyGreen</string>
+    <string name="accent_preset_30">StarbucksGreen</string>
+    <string name="accent_preset_31">teal</string>
+    <string name="accent_preset_32">TorchPink</string>
+    <string name="accent_preset_33">TwitchPurple</string>
+    <string name="accent_preset_34">TwitterBlue</string>
+    <string name="accent_preset_35">white</string>
+    <string name="accent_preset_36">XboxGreen</string>
+    <string name="accent_preset_37">XiaomiOrange</string>
+    <string name="accent_preset_title">Предустановленный акцент</string>
 </resources>
