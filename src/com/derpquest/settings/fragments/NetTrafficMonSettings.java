@@ -87,7 +87,7 @@ public class NetTrafficMonSettings extends SettingsPreferenceFragment implements
         int NetTrafficSize = Settings.System.getInt(resolver,
                 Settings.System.NETWORK_TRAFFIC_FONT_SIZE, 36);
         mNetTrafficSize = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_FONT_SIZE);
-        mNetTrafficSize.setValue(NetTrafficSize / 1);
+        mNetTrafficSize.setValue(NetTrafficSize);
         mNetTrafficSize.setOnPreferenceChangeListener(this);
 
         mNetTrafficLocation = (ListPreference) findPreference(NETWORK_TRAFFIC_LOCATION);
@@ -131,7 +131,7 @@ public class NetTrafficMonSettings extends SettingsPreferenceFragment implements
             mNetTrafficType.setSummary(mNetTrafficType.getEntries()[index]);
             return true;
         }  else if (preference == mNetTrafficSize) {
-            int width = ((Integer)objValue).intValue();
+            int width = (Integer) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NETWORK_TRAFFIC_FONT_SIZE, width);
             return true;
