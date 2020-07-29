@@ -26,6 +26,7 @@
     <string name="navbar_title">Navigation bar</string>
     <string name="notifications_title">Notifications</string>
     <string name="powermenu_title">Power menu</string>
+    <string name="power_menu_items_title">Power Menu Items</string>
     <string name="quicksettings_title">Quick Settings</string>
     <string name="recents_title">Recents apps</string>
     <string name="statusbar_title">Status bar</string>
@@ -1138,5 +1139,18 @@
     <string name="accent_preset_36">XboxGreen</string>
     <string name="accent_preset_37">XiaomiOrange</string>
     <string name="accent_preset_title">Accent preset</string>
+
+    <!-- Powermunu Background Options-->
+    <string name="power_menu_bg_filter_none">None</string>
+    <string name="power_menu_bg_filter_grayscale">Grayscale</string>
+    <string name="power_menu_bg_filter_tint">Accent tinted</string>
+    <string name="power_menu_bg_filter_blur">Blur</string>
+    <string name="power_menu_bg_filter_grayblur">Grayscale and blurred</string> 
+    <string name="power_menu_bg_filter_tinted_blur">Accent Tinted and blurred</string>
+
+    <!-- Powermunu Background -->
+    <string name="power_menu_bg_title">Background Filter</string>
+    <string name="power_menu_bg_summary">Enables Custom filter when powermenu is active</string>
+    <string name="power_menu_bg_style_title">Filter Type</string>
 
 </resources>

@@ -18,6 +18,31 @@
     android:title="@string/powermenu_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="bg_filters"
+        android:title="@string/power_menu_bg_title">
+
+    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
+       android:key="power_menu_bg"
+       android:title="@string/power_menu_bg_title"
+       android:summary="@string/power_menu_bg_summary"
+       android:defaultValue="false" />
+
+    <com.derpquest.settings.preferences.SystemSettingListPreference
+        android:key="power_menu_bg_style"
+        android:title="@string/power_menu_bg_style_title"
+        android:entries="@array/power_menu_bg_style_entries"
+        android:entryValues="@array/power_menu_bg_style_values"
+        android:dependency="power_menu_bg"
+        android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="powermenu_items"
+        android:title="@string/power_menu_items_title">
+
+
         <com.derpquest.settings.preferences.SecureSettingSwitchPreference
             android:key="secured_lock_power_menu"
             android:title="@string/lockscreen_power_menu_disabled_title"
@@ -78,4 +103,7 @@
             android:key="powermenu_logout"
             android:title="@string/powermenu_logout"
             android:defaultValue="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
