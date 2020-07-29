@@ -64,6 +64,13 @@
             android:fragment="com.derpquest.settings.fragments.QSColorSettings"
             android:defaultValue="false" />
 
+        <ListPreference
+            android:key="qs_header_style"
+            android:title="@string/qs_header_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_header_style_entries"
+            android:entryValues="@array/qs_header_style_values" />
+
         <!-- Custom headers -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="status_bar_custom_header"

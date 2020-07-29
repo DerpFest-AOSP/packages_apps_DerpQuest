@@ -185,6 +185,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements
                 mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
                 mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
             } catch (RemoteException ignored) { }
+
         }
         return true;
     }

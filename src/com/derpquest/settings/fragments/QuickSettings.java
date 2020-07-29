@@ -67,17 +67,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String QS_BLUR = "qs_blur";
     private static final String QS_BG_STYLE = "qs_panel_bg_override";
     private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
+    private static final String QS_HEADER_STYLE = "qs_header_style";
     private static final String QS_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String STATUS_BAR_CUSTOM_HEADER_IMAGE = "status_bar_custom_header_image";
     private static final String STATUS_BAR_CUSTOM_HEADER_PROVIDER = "custom_header_provider";
     private static final String STATUS_BAR_CUSTOM_HEADER_PACK = "daylight_header_pack";
 
     private SystemSettingSeekBarPreference mQsPanelAlpha;
-
     private SystemSettingMasterSwitchPreference mQsBlurSettings;
     private SystemSettingMasterSwitchPreference mQsBGStyle;
     private SystemSettingMasterSwitchPreference mBrightnessSlider;
     private SystemSettingMasterSwitchPreference mCustomHeader;
+    private ListPreference mQsHeaderStyle;
 
     private boolean skipSummaryUpdate;
 
@@ -120,12 +121,27 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mBrightnessSlider.setChecked(enabled);
         updateBrightnessSliderSummary(enabled);
 
+        mQsHeaderStyle = (ListPreference) findPreference(QS_HEADER_STYLE);
+        int qsHeaderStyle = Settings.System.getInt(resolver,
+                Settings.System.QS_HEADER_STYLE, 0);
+        int valueIndex = mQsHeaderStyle.findIndexOfValue(String.valueOf(qsHeaderStyle));
+        mQsHeaderStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntry());
+        mQsHeaderStyle.setOnPreferenceChangeListener(this);
+
         mCustomHeader = (SystemSettingMasterSwitchPreference)
                 findPreference(QS_CUSTOM_HEADER);
         mCustomHeader.setOnPreferenceChangeListener(this);
         enabled = Settings.System.getInt(resolver,
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0) == 1;
-        mCustomHeader.setChecked(enabled);
+        if (qsHeaderStyle == 0) {
+            mCustomHeader.setChecked(enabled);
+        }
+        else {
+            mCustomHeader.setChecked(false);
+            Settings.System.putInt(resolver,
+                    Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0);
+        }
 
         ensureHeader(enabled);
         updateCustomHeaderSummary(enabled);
@@ -178,6 +194,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                     BRIGHTNESS_SLIDER, value ? 1 : 0);
             updateBrightnessSliderSummary(value);
+            return true;
+        } else if (preference == mQsHeaderStyle) {
+            int value = Integer.valueOf((String) newValue);
+            int newIndex = mQsHeaderStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.QS_HEADER_STYLE, value);
+            mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntries()[newIndex]);
+            if (value != 0) {
+                mCustomHeader.setChecked(false);
+                Settings.System.putInt(resolver,
+                        Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0);
+            }
+            updateCustomHeaderSummary(false);
             return true;
         } else if (preference == mCustomHeader) {
             Boolean value = (Boolean) newValue;
@@ -289,14 +318,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         int shadowVal = Settings.System.getInt(resolver,
                 Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         int shadow = (int)(((double) shadowVal / 255) * 100);
+        boolean qsHeaderStock = Settings.System.getInt(resolver,
+                Settings.System.QS_HEADER_STYLE, 0) == 0;
         try {
-            mCustomHeader.setSummary(String.format(
-                res.getString(R.string.status_bar_custom_header_summary),
-                enabled ? res.getString(R.string.on) : res.getString(R.string.off),
-                collection
-                ? res.getString(R.string.daylight_header_provider_title)
-                : res.getString(R.string.file_header_provider_title),
-                String.valueOf(shadow)));
+            if (qsHeaderStock) {
+                mCustomHeader.setSummary(String.format(
+                    res.getString(R.string.status_bar_custom_header_summary),
+                    enabled ? res.getString(R.string.on) : res.getString(R.string.off),
+                    collection
+                    ? res.getString(R.string.daylight_header_provider_title)
+                    : res.getString(R.string.file_header_provider_title),
+                    String.valueOf(shadow)));
+            } else {
+                mCustomHeader.setSummary(res.getString(
+                        R.string.status_bar_custom_header_disabled));
+            }
         } catch (Exception e) {
             Log.e(TAG, "Translation error in status_bar_custom_header_summary");
             mCustomHeader.setSummary(res.getString(R.string.translation_error));

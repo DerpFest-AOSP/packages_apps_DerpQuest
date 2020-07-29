@@ -479,10 +479,18 @@
     <string name="lockscreen_solid_units_opacity_title">Lines opacity</string>
     <string name="lockscreen_visualizer_color_title">Default color</string>
 
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Header style</string>
+    <string name="qs_header_grey">Grey</string>
+    <string name="qs_header_lightgrey">Light Grey</string>
+    <string name="qs_header_accent">Accent Based</string>
+    <string name="qs_header_transparent">Transparent</string>
+
     <!-- Custom headers -->
     <string name="notification_title">Notification panel</string>
     <string name="status_bar_custom_header_title">Header image</string>
     <string name="status_bar_custom_header_summary">%s / %s with %s percent shadow</string>
+    <string name="status_bar_custom_header_disabled">Off / Disabled due to non-stock header style</string>
     <string name="daylight_header_pack_title">Header image collection</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
