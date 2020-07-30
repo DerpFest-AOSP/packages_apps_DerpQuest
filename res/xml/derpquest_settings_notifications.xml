@@ -90,14 +90,12 @@
         <com.derpquest.settings.preferences.GlobalSettingMasterSwitchPreference
             android:key="heads_up_settings"
             android:title="@string/heads_up_settings_title"
-            android:summary="@string/heads_up_settings_summary"
             android:fragment="com.derpquest.settings.fragments.HeadsUp" />
 
         <!-- Pulse Ambient Light (aka Edge Lighting) -->
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="pulse_ambient_light"
             android:title="@string/edge_lighting_category_title"
-            android:summary="@string/pulse_ambient_light_summary"
             android:fragment="com.derpquest.settings.fragments.AmbientLight"
             android:defaultValue="false" />
 

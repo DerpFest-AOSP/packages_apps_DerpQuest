@@ -48,7 +48,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="navbar_pulse_enabled"
             android:title="@string/pulse_settings"
-            android:summary="@string/pulse_settings_summary"
             android:dependency="enable_nav_bar"
             android:fragment="com.derpquest.settings.fragments.PulseSettings"
             android:defaultValue="false" />

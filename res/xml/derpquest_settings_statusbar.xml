@@ -33,7 +33,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="status_bar_logo"
             android:title="@string/status_bar_logo_category_title"
-            android:summary="@string/status_bar_logo_category_summary"
             android:fragment="com.derpquest.settings.fragments.StatusBarLogo"
             android:defaultValue="false" />
 
@@ -41,7 +40,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="network_traffic_state"
             android:title="@string/network_traffic_state_title"
-            android:summary="@string/network_traffic_state_summary"
             android:fragment="com.derpquest.settings.fragments.NetTrafficMonSettings"
             android:defaultValue="true" />
 
@@ -49,7 +47,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="battery_icon_style"
             android:title="@string/battery_icon_style_title"
-            android:summary="@string/battery_icon_style_summary"
             android:fragment="com.derpquest.settings.fragments.BatterySettings"
             android:defaultValue="true" />
 
@@ -62,7 +59,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="status_bar_clock"
             android:title="@string/status_bar_clock_show"
-            android:summary="@string/status_bar_clock_summary"
             android:fragment="com.derpquest.settings.fragments.ClockSettings"
             android:defaultValue="true" />
 
@@ -70,7 +66,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="status_bar_date"
             android:title="@string/status_bar_date_show"
-            android:summary="@string/status_bar_date_summary"
             android:fragment="com.derpquest.settings.fragments.DateSettings"
             android:dependency="status_bar_clock"
             android:defaultValue="false" />
@@ -89,7 +84,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="status_bar_show_ticker"
             android:title="@string/status_bar_show_ticker_title"
-            android:summary="@string/status_bar_show_ticker_summary"
             android:fragment="com.derpquest.settings.fragments.TickerSettings"
             android:defaultValue="false" />
 
@@ -101,7 +95,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="battery_bar_settings"
             android:title="@string/sb_battery_bar_title"
-            android:summary="@string/sb_battery_bar_summary"
             android:fragment="com.derpquest.settings.fragments.BatteryBar" />
 
         <Preference

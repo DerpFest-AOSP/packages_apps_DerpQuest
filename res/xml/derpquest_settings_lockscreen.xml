@@ -102,7 +102,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_battery_info"
             android:title="@string/lockscreen_battery_info_title"
-            android:summary="@string/lockscreen_battery_info_summary"
             android:fragment="com.derpquest.settings.fragments.BatteryInfoSettings"
             android:defaultValue="true" />
 
@@ -110,7 +109,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="sysui_keyguard_show_battery_bar"
             android:title="@string/tuner_keyguard_show_battery_bar_title"
-            android:summary="@string/tuner_keyguard_show_battery_bar_summary"
             android:fragment="com.derpquest.settings.fragments.BatteryBarSettings"
             android:defaultValue="true" />
 
@@ -118,7 +116,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_clock"
             android:title="@string/lockscreen_clock_options_title"
-            android:summary="@string/lockscreen_clock_summary"
             android:fragment="com.derpquest.settings.fragments.LockScreenClockSettings"
             android:defaultValue="true" />
 
@@ -126,7 +123,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_info"
             android:title="@string/lockscreen_info_title"
-            android:summary="@string/lockscreen_clock_summary"
             android:fragment="com.derpquest.settings.fragments.LockScreenInfoSettings"
             android:dependency="lockscreen_clock"
             android:defaultValue="true" />
@@ -148,7 +144,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_media_metadata"
             android:title="@string/media_art_title"
-            android:summary="@string/media_art_summary"
             android:fragment="com.derpquest.settings.fragments.LSAlbumArtSettings"
             android:defaultValue="true" />
 
@@ -156,7 +151,6 @@
         <com.derpquest.settings.preferences.SecureSettingMasterSwitchPreference
             android:key="lockscreen_visualizer_enabled"
             android:title="@string/lockscreen_visualizer_enable"
-            android:summary="@string/lockscreen_visualizer_enable_summary"
             android:fragment="com.derpquest.settings.fragments.LockScreenVisualizer"
             android:defaultValue="false" />
 

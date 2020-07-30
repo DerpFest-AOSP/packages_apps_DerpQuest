@@ -54,7 +54,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="qs_blur"
             android:title="@string/blur_quicksettings"
-            android:summary="@string/blur_quicksettings_subtitle"
             android:fragment="com.derpquest.settings.fragments.BlurSettings"
             android:defaultValue="false" />
 
@@ -62,7 +61,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="qs_panel_bg_override"
             android:title="@string/qs_bg_use_fw"
-            android:summary="@string/qs_bg_use_fw_summary"
             android:fragment="com.derpquest.settings.fragments.QSColorSettings"
             android:defaultValue="false" />
 
@@ -70,7 +68,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="status_bar_custom_header"
             android:title="@string/status_bar_custom_header_title"
-            android:summary="@string/status_bar_custom_header_summary"
             android:fragment="com.derpquest.settings.fragments.HeaderImageSettings"
             android:defaultValue="false" />
 
@@ -83,7 +80,6 @@
         <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
             android:key="qs_show_brightness"
             android:title="@string/qs_show_brightness_title"
-            android:summary="@string/qs_show_brightness_summary"
             android:fragment="com.derpquest.settings.fragments.BrightnessSliderSettings"
             android:defaultValue="true" />
 
