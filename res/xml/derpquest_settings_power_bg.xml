@@ -1,0 +1,13 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/powermenu_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <com.derpquest.settings.preferences.SystemSettingListPreference
+        android:key="power_menu_bg_style"
+        android:title="@string/power_menu_bg_style_title"
+        android:entries="@array/power_menu_bg_style_entries"
+        android:entryValues="@array/power_menu_bg_style_values"
+        android:defaultValue="0" />
+
+</PreferenceScreen>

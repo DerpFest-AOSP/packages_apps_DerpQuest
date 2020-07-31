@@ -19,22 +19,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:key="bg_filters"
-        android:title="@string/power_menu_bg_title">
+        android:title="@string/look_category">
 
-    <com.derpquest.settings.preferences.SystemSettingSwitchPreference
-       android:key="power_menu_bg"
-       android:title="@string/power_menu_bg_title"
-       android:summary="@string/power_menu_bg_summary"
-       android:defaultValue="false" />
-
-    <com.derpquest.settings.preferences.SystemSettingListPreference
-        android:key="power_menu_bg_style"
-        android:title="@string/power_menu_bg_style_title"
-        android:entries="@array/power_menu_bg_style_entries"
-        android:entryValues="@array/power_menu_bg_style_values"
-        android:dependency="power_menu_bg"
-        android:defaultValue="0" />
+        <com.derpquest.settings.preferences.SystemSettingMasterSwitchPreference
+            android:key="power_menu_bg"
+            android:title="@string/power_menu_bg_title"
+            android:fragment="com.derpquest.settings.fragments.PowerBackgroundSettings"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
