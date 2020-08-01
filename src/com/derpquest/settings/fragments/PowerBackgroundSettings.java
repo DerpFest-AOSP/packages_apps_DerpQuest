@@ -38,9 +38,11 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
-
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+
+import com.derpquest.settings.preferences.SystemSettingListPreference;
+import com.derpquest.settings.preferences.SystemSettingSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,18 +56,46 @@ public class PowerBackgroundSettings extends SettingsPreferenceFragment implemen
 
     private static final String TAG = "PowerBackgroundSettings";
 
+    private static final String KEY_BG_STYLE = "power_menu_bg_style";
+    private static final String KEY_BG_BLUR_RADIUS = "power_menu_bg_blur_radius";
+
+    private SystemSettingListPreference mBgStyle;
+    private SystemSettingSeekBarPreference mBlurRadius;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.derpquest_settings_power_bg);
-        // final Resources res = getResources();
-        // final ContentResolver resolver = getActivity().getContentResolver();
-        // final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        mBlurRadius = (SystemSettingSeekBarPreference) findPreference(KEY_BG_BLUR_RADIUS);
+        mBlurRadius.setOnPreferenceChangeListener(this);
+        int value = Settings.System.getInt(resolver, KEY_BG_BLUR_RADIUS, 100);
+        mBlurRadius.setValue(value);
+
+        mBgStyle = (SystemSettingListPreference) findPreference(KEY_BG_STYLE);
+        mBgStyle.setOnPreferenceChangeListener(this);
+        value = Settings.System.getInt(resolver, KEY_BG_STYLE, 0);
+        mBgStyle.setValue(String.valueOf(value));
+        mBlurRadius.setEnabled(value != 1 && value != 2); // if filter is blur
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mBgStyle) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    KEY_BG_STYLE, value);
+            mBlurRadius.setEnabled(value != 1 && value != 2); // if filter is blur
+            return true;
+        } else if (preference == mBlurRadius) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    KEY_BG_BLUR_RADIUS, value);
+            return true;
+        }
         return false;
     }
 

@@ -58,6 +58,7 @@
     <string name="top">Top</string>
     <string name="shown">Shown</string>
     <string name="hidden">Hidden</string>
+    <string name="intensity">Intensity</string>
     <string name="and"> &amp; </string>
 
     <!-- General error strings -->
@@ -1149,7 +1150,7 @@
 
     <!-- Powermunu Background -->
     <string name="power_menu_bg_title">Background Filter</string>
-    <string name="power_menu_bg_summary">%s / Filter type %s</string>
+    <string name="power_menu_bg_summary">%s / Style %s</string>
     <string name="power_menu_bg_style_title">Filter Type</string>
 
 </resources>

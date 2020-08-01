@@ -10,4 +10,15 @@
         android:entryValues="@array/power_menu_bg_style_values"
         android:defaultValue="0" />
 
+    <com.derpquest.settings.preferences.SystemSettingSeekBarPreference
+        android:key="power_menu_bg_blur_radius"
+        android:title="@string/qs_blur_intensity_title"
+        android:summary="@string/qs_blur_intensity_summary"
+        android:max="100"
+        android:defaultValue="90"
+        settings:min="5"
+        settings:interval="5"
+        settings:unitsRight="@string/unit_percent"
+        android:persistent="false" />
+
 </PreferenceScreen>

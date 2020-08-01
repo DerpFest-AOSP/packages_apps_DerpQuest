@@ -131,6 +131,14 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
                     res.getString(R.string.power_menu_bg_summary),
                     enabled ? res.getString(R.string.on) : res.getString(R.string.off),
                     res.getStringArray(R.array.power_menu_bg_style_entries)[filter]));
+            if (filter != 1 && filter != 2) { // if filter is blur
+                int radius = Settings.System.getInt(resolver,
+                        Settings.System.POWER_MENU_BG_BLUR_RADIUS, 100);
+                mPowerMenuBg.setSummary(mPowerMenuBg.getSummary() +
+                        ", " + res.getString(R.string.intensity) +
+                        " " + String.valueOf(radius) +
+                        res.getString(R.string.unit_percent));
+            }
         } catch (Exception e) {
             Log.e(TAG, "Translation error in power_menu_bg_summary");
             mPowerMenuBg.setSummary(res.getString(R.string.translation_error));
