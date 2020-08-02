@@ -393,6 +393,8 @@
     <string name="show_navbar_pulse_summary">Audio-Equalizer beim Abspielen von Musik in der Navigationsleiste anzeigen</string>
     <string name="show_lockscreen_pulse_title">Lockscreen Audio-Equalizer</string>
     <string name="show_lockscreen_pulse_summary">Audio-Equalizer beim Abspielen von Musik auf dem Sperrbildschirm anzeigen</string>
+    <string name="show_ambient_pulse_title">Ambient Audio-Equalizer</string>
+    <string name="show_ambient_pulse_summary">Audio-Equalizer beim Abspielen von Musik auf dem Ambient Screen anzeigen</string>
     <string name="pulse_render_mode_title">Rendermodus</string>
     <string name="pulse_render_mode_fading_bars">Verblassende Blöcke</string>
     <string name="pulse_render_mode_solid_lines">Durchgezogene Linien</string>
