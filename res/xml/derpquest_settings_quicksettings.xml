@@ -44,6 +44,13 @@
             settings:units="%"
             android:persistent="false" />
 
+        <ListPreference
+            android:key="qs_tile_style"
+            android:title="@string/qs_tile_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_selector_entries"
+            android:entryValues="@array/qs_selector_values" />
+
         <com.derpquest.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_panel_bg_use_new_tint"
             android:title="@string/qs_bg_use_new_tint"

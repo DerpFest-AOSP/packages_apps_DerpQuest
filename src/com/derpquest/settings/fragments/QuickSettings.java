@@ -64,6 +64,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "QuickSettings";
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
+    private static final String QS_TILE_STYLE = "qs_tile_style";
     private static final String QS_BLUR = "qs_blur";
     private static final String QS_BG_STYLE = "qs_panel_bg_override";
     private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
@@ -79,6 +80,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mBrightnessSlider;
     private SystemSettingMasterSwitchPreference mCustomHeader;
     private ListPreference mQsHeaderStyle;
+    private ListPreference mQsTileStyle;
 
     private boolean skipSummaryUpdate;
 
@@ -104,6 +106,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsBlurSettings.setChecked(enabled);
         updateQSBlurSummary(enabled);
 
+        mQsTileStyle = (ListPreference) findPreference(QS_TILE_STYLE);
+        int qsTileStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
+        int valueIndex = mQsTileStyle.findIndexOfValue(String.valueOf(qsTileStyle));
+        mQsTileStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mQsTileStyle.setSummary(mQsTileStyle.getEntry());
+        mQsTileStyle.setOnPreferenceChangeListener(this);
+
         mQsBGStyle = (SystemSettingMasterSwitchPreference)
                 findPreference(QS_BG_STYLE);
         mQsBGStyle.setOnPreferenceChangeListener(this);
@@ -124,7 +134,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsHeaderStyle = (ListPreference) findPreference(QS_HEADER_STYLE);
         int qsHeaderStyle = Settings.System.getInt(resolver,
                 Settings.System.QS_HEADER_STYLE, 0);
-        int valueIndex = mQsHeaderStyle.findIndexOfValue(String.valueOf(qsHeaderStyle));
+        valueIndex = mQsHeaderStyle.findIndexOfValue(String.valueOf(qsHeaderStyle));
         mQsHeaderStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
         mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntry());
         mQsHeaderStyle.setOnPreferenceChangeListener(this);
@@ -214,6 +224,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                     Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
             ensureHeader(value);
             updateCustomHeaderSummary(value);
+            return true;
+        } else if (preference == mQsTileStyle) {
+            int value = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_TILE_STYLE, value, UserHandle.USER_CURRENT);
+            mQsTileStyle.setSummary(mQsTileStyle.getEntries()[value]);
             return true;
         }
         return false;
