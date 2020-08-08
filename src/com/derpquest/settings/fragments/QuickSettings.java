@@ -65,6 +65,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "QuickSettings";
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String QS_TILE_STYLE = "qs_tile_style";
+    private static final String KEY_QS_TILE_TINT = "qs_panel_bg_use_new_tint";
     private static final String QS_BLUR = "qs_blur";
     private static final String QS_BG_STYLE = "qs_panel_bg_override";
     private static final String BRIGHTNESS_SLIDER = "qs_show_brightness";
@@ -75,6 +76,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CUSTOM_HEADER_PACK = "daylight_header_pack";
 
     private SystemSettingSeekBarPreference mQsPanelAlpha;
+    private SystemSettingSwitchPreference mTileTint;
     private SystemSettingMasterSwitchPreference mQsBlurSettings;
     private SystemSettingMasterSwitchPreference mQsBGStyle;
     private SystemSettingMasterSwitchPreference mBrightnessSlider;
@@ -106,6 +108,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsBlurSettings.setChecked(enabled);
         updateQSBlurSummary(enabled);
 
+        mTileTint = (SystemSettingSwitchPreference) findPreference(KEY_QS_TILE_TINT);
         mQsTileStyle = (ListPreference) findPreference(QS_TILE_STYLE);
         int qsTileStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
@@ -113,6 +116,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsTileStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
         mQsTileStyle.setSummary(mQsTileStyle.getEntry());
         mQsTileStyle.setOnPreferenceChangeListener(this);
+        updateTileTintEnforce(qsTileStyle);
 
         mQsBGStyle = (SystemSettingMasterSwitchPreference)
                 findPreference(QS_BG_STYLE);
@@ -230,6 +234,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_TILE_STYLE, value, UserHandle.USER_CURRENT);
             mQsTileStyle.setSummary(mQsTileStyle.getEntries()[value]);
+            updateTileTintEnforce(value);
             return true;
         }
         return false;
@@ -352,6 +357,34 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } catch (Exception e) {
             Log.e(TAG, "Translation error in status_bar_custom_header_summary");
             mCustomHeader.setSummary(res.getString(R.string.translation_error));
+        }
+    }
+
+    private void updateTileTintEnforce(int style) {
+        if (mTileTint == null)
+            return;
+
+        if (style == 5 || style == 6 || style == 8 || style == 15) {
+            // force enable
+            mTileTint.setEnabled(false);
+            mTileTint.setChecked(true);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    KEY_QS_TILE_TINT, 1);
+            mTileTint.setSummary(getResources().getString(
+                    R.string.qs_bg_use_new_tint_summary_enabled));
+        } else if (style == 13) {
+            // force disable
+            mTileTint.setEnabled(false);
+            mTileTint.setChecked(false);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    KEY_QS_TILE_TINT, 0);
+            mTileTint.setSummary(getResources().getString(
+                    R.string.qs_bg_use_new_tint_summary_disabled));
+        } else {
+            // allow both
+            mTileTint.setEnabled(true);
+            mTileTint.setSummary(getResources().getString(
+                    R.string.qs_bg_use_new_tint_summary));
         }
     }
 

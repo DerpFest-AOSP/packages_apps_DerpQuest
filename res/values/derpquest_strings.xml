@@ -793,6 +793,8 @@
     <string name="qs_bg_accent_summary">Set QS background color from System Accent</string>
     <string name="qs_bg_use_new_tint">Tint</string>
     <string name="qs_bg_use_new_tint_summary">Enable QS tiles tint style</string>
+    <string name="qs_bg_use_new_tint_summary_enabled">Enabled for this tile style</string>
+    <string name="qs_bg_use_new_tint_summary_disabled">Disabled for this tile style</string>
     <string name="qs_bg_using_accent">Currently using accent color</string>
     <string name="qs_bg_using_wall">Currently using wallpaper color</string>
     <string name="qs_bg_using_color">Currently using color %s</string>
