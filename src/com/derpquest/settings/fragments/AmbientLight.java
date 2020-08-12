@@ -60,7 +60,7 @@ public class AmbientLight extends SettingsPreferenceFragment implements
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
     private static final String PULSE_AMBIENT_LIGHT_DURATION = "pulse_ambient_light_duration";
     private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
-    private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
+    private static final String PULSE_COLOR_MODE_PREF = "pulse_ambient_light_color_mode";
     private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
 
@@ -107,21 +107,8 @@ public class AmbientLight extends SettingsPreferenceFragment implements
         mEdgeLightRepeatCountPreference.setValue(rCount);
 
         mColorMode = (ListPreference) findPreference(PULSE_COLOR_MODE_PREF);
-        boolean colorModeAutomatic = Settings.System.getInt(resolver,
-                Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0) != 0;
-        boolean colorModeAccent = Settings.System.getInt(resolver,
-                Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0) != 0;
-        boolean colorModeWall = Settings.System.getInt(resolver,
-                Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0) != 0;
-        int value = 3;
-        if (colorModeAutomatic) {
-            value = 0;
-        } else if (colorModeAccent) {
-            value = 1;
-        } else if (colorModeWall) {
-            value = 2;
-        }
-
+        int value = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR_MODE, 0);
         mColorMode.setValue(Integer.toString(value));
         mColorMode.setSummary(mColorMode.getEntry());
         mColorMode.setOnPreferenceChangeListener(this);
@@ -129,7 +116,6 @@ public class AmbientLight extends SettingsPreferenceFragment implements
         mPulseTimeout = (ListPreference) findPreference(PULSE_TIMEOUT_PREF);
         value = Settings.System.getInt(getContentResolver(),
                 Settings.System.OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT, 0);
-
         mPulseTimeout.setValue(Integer.toString(value));
         mPulseTimeout.setSummary(mPulseTimeout.getEntry());
         mPulseTimeout.setOnPreferenceChangeListener(this);
@@ -180,41 +166,14 @@ public class AmbientLight extends SettingsPreferenceFragment implements
             int value = Integer.valueOf((String) newValue);
             int index = mColorMode.findIndexOfValue((String) newValue);
             mColorMode.setSummary(mColorMode.getEntries()[index]);
-            if (value == 0) {
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 1);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0);
-            } else if (value == 1) {
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 1);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0);
-            } else if (value == 2) {
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 1);
-            } else {
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0);
-            }
+            Settings.System.putInt(resolver,
+                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR_MODE, value);
             return true;
         } else if (preference == mPulseTimeout) {
             int value = Integer.valueOf((String) newValue);
             int index = mPulseTimeout.findIndexOfValue((String) newValue);
             mPulseTimeout.setSummary(mPulseTimeout.getEntries()[index]);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.OMNI_AOD_NOTIFICATION_PULSE_TIMEOUT, value);
             return true;
         }

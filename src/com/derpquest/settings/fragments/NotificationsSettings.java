@@ -184,20 +184,8 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
                 Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ENABLED, 0) == 1;
         int duration = Settings.System.getInt(resolver,
                 Settings.System.PULSE_AMBIENT_LIGHT_DURATION, 2);
-        int colorMode = 3;
-        boolean colorModeAutomatic = Settings.System.getInt(resolver,
-                Settings.System.OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC, 0) != 0;
-        boolean colorModeAccent = Settings.System.getInt(resolver,
-                Settings.System.OMNI_AMBIENT_NOTIFICATION_LIGHT_ACCENT, 0) != 0;
-        boolean colorModeWall = Settings.System.getInt(resolver,
-                Settings.System.PULSE_AMBIENT_AUTO_COLOR, 0) != 0;
-        if (colorModeAutomatic) {
-            colorMode = 0;
-        } else if (colorModeAccent) {
-            colorMode = 1;
-        } else if (colorModeWall) {
-            colorMode = 2;
-        }
+        int colorMode = Settings.System.getInt(resolver,
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR_MODE, 3);
         try {
             mAmbientLight.setSummary(String.format(
                     res.getString(R.string.pulse_ambient_light_summary),
