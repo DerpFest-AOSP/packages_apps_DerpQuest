@@ -82,7 +82,6 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="pulse_ambient_light_color"
         android:title="@string/pulse_ambient_light_color_title"
-        android:persistent="false"
-        settings:defaultColorValue="0xFF3980FF" />
+        android:persistent="false" />
 
 </PreferenceScreen>

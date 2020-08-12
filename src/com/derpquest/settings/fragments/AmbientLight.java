@@ -18,9 +18,12 @@ package com.derpquest.settings.fragments;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.util.TypedValue;
 
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
@@ -59,6 +62,7 @@ public class AmbientLight extends SettingsPreferenceFragment implements
     private static final String PULSE_AMBIENT_LIGHT_REPEAT_COUNT = "pulse_ambient_light_repeat_count";
     private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
     private static final String PULSE_TIMEOUT_PREF = "ambient_notification_light_timeout";
+    private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
 
     private ColorPickerPreference mEdgeLightColorPreference;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
@@ -74,14 +78,16 @@ public class AmbientLight extends SettingsPreferenceFragment implements
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final int accentColor = getAccentColor();
 
         mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
         mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
+        mEdgeLightColorPreference.setDefaultColor(accentColor);
         int edgeLightColor = Settings.System.getInt(resolver,
-                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, accentColor);
         AmbientLightSettingsPreview.setAmbientLightPreviewColor(edgeLightColor);
-        String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
-        if (edgeLightColorHex.equals("#ff3980ff")) {
+        String edgeLightColorHex = String.format("#%08x", (0xFFFFFFFF & edgeLightColor));
+        if (edgeLightColor == accentColor) {
             mEdgeLightColorPreference.setSummary(R.string.default_string);
         } else {
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
@@ -140,9 +146,10 @@ public class AmbientLight extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final ContentResolver resolver = getContentResolver();
         if (preference == mEdgeLightColorPreference) {
+            int accentColor = getAccentColor();
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#ff3980ff")) {
+            if (hex.equals(String.format("#%08x", (0xFFFFFFFF & accentColor)))) {
                 preference.setSummary(R.string.default_string);
             } else {
                 preference.setSummary(hex);
@@ -212,6 +219,16 @@ public class AmbientLight extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    private int getAccentColor() {
+        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
+        if (colorVal == "-1") {
+            final TypedValue value = new TypedValue();
+            getContext().getTheme().resolveAttribute(android.R.attr.colorAccent, value, true);
+            return value.data;
+        }
+        return Color.parseColor("#" + colorVal);
     }
 
     @Override
