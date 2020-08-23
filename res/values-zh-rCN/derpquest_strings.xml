@@ -817,9 +817,7 @@
     <string name="fod_recog_animation">解锁动画</string>
     <string name="fod_recog_animation_summary">按压指纹时显示动画</string>
     <string name="fod_recog_animation_picker_title">自定义解锁动画</string>
-    <string name="fod_recog_animation_miui_normal">MIUI 默认动画</string>
     <string name="fod_recog_animation_miui_aod">流光</string>
-    <string name="fod_recog_animation_miui_light">流光 (浅色)</string>
     <string name="fod_recog_animation_miui_pop">星光</string>
     <string name="fod_recog_animation_miui_pulse">脉冲</string>
     <string name="fod_recog_animation_miui_pulse_white">脉冲 (白色)</string>

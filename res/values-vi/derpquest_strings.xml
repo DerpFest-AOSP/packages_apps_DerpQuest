@@ -825,9 +825,7 @@
     <string name="fod_recog_animation">Nhận dạng hình ảnh động</string>
     <string name="fod_recog_animation_summary">Hiển thị hình ảnh động trong khi đọc ngón tay của bạn</string>
     <string name="fod_recog_animation_picker_title">Nhận dạng tùy biến hoạt hình</string>
-    <string name="fod_recog_animation_miui_normal">Mặc định MIUI</string>
     <string name="fod_recog_animation_miui_aod">AOD</string>
-    <string name="fod_recog_animation_miui_light">Ánh sáng</string>
     <string name="fod_recog_animation_miui_pop">Nhạc pop</string>
     <string name="fod_recog_animation_miui_pulse">Xung</string>
     <string name="fod_recog_animation_miui_pulse_white">Xung (Trắng)</string>

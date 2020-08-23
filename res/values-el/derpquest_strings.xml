@@ -188,8 +188,6 @@
     <string name="fod_pressed_state_title">Συμπεριφορά πατήματος σε εικονίδια</string>
     <string name="fod_recog_animation">Αναγνώριση γραφικών</string>
     <string name="fod_recog_animation_miui_aod">Οθόνη περιβ/ντος</string>
-    <string name="fod_recog_animation_miui_light">Φωτεινό</string>
-    <string name="fod_recog_animation_miui_normal">Προεπ. MIUI</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Παλμός</string>
     <string name="fod_recog_animation_miui_pulse_white">Παλμός (Λευκό)</string>
@@ -842,33 +840,33 @@
     <string name="selinux_enforcing_toast_title">Το SELinux ορίσθηκε σε επιβολή!</string>
     <string name="selinux_unrooted_summary">Δεν ήταν δυνατή η ανίχνευση\ root. Πρέπει να έχετε κάνει κάνει τη συσκευή σας root, για να χρησιμοποιήσετε αυτούς τους διακόπτες</string>
     <string name="cannot_get_su">Η ενέργεια/αλλαγή απέτυχε, γιατί η συσκευή σας δεν είναι root και δεν έχετε δικαιώματα υπερχρήστη σε αυτή</string>
-     
+
     <!-- Themes -->
     <string name="rgb_accent_picker_title">Επιλογή χρώματος RGB</string>
     <string name="rgb_accent_picker_summary">Επέλεξε το χρώμα βάσης που επιθυμείς</string>
-	
+
 	<!-- Navbar options -->
     <string name="navigation_bar_arrow_keys_title">Βέλη πληκτρ/σης</string>
     <string name="navigation_bar_arrow_keys_summary">Εμφάνιση βελών στη στατική μπάρα, κατά την πληκτρολόγηση</string>
-	
+
 	<!-- Battery light -->
     <string name="led_category">LED</string>
     <string name="flashlight_category">Φακός</string>
-	
+
 	<!-- QS header styles -->
     <string name="qs_header_style_title">Στυλ κεφαλίδας</string>
     <string name="qs_header_grey">Γκρι</string>
     <string name="qs_header_lightgrey">Φωτεινό γκρι</string>
     <string name="qs_header_accent">Χρώμα έμφασης</string>
     <string name="qs_header_transparent">Διαφανές</string>
-	
+
 	<!-- QS themes -->
     <string name="qs_bg_use_new_tint_summary_enabled">Ενεργοποίηση γι αυτό τον τύπο πλακιδίων</string>
     <string name="qs_bg_use_new_tint_summary_disabled">Απενεργοποίηση γι αυτό τον τύπο πλακιδίων</string>
     <string name="qs_bg_using_accent">Γίνεται χρήση χρώματος έμφασης</string>
     <string name="qs_bg_using_wall">Γίνεται χρήση χρώματος ταπετσαρίας</string>
     <string name="qs_bg_using_color">Γίνεται χρήση χρώματος %s</string>
-	
+
 	<!-- About - Easter Egg -->
     <plurals name="show_derped_countdown">
         <item quantity="one">Είστε τώρα <xliff:g id="derp_count">%1$d</xliff:g> βήμα μακρυά από το να γίνετε derp\'d.</item>
@@ -879,7 +877,7 @@
     <!-- The Drill -->
     <string name="the_drill_title">Ρίξτε μία ματιά</string>
     <string name="the_drill_summary">Βρήκατε ένα bug? Αντιμετωπίζετε ένα πρόβλημα?</string>
-	
+
 	<!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Αναλαμπή φακού σε εισερχόμενη κλήση</string>
     <string name="flashlight_on_call_disabled">Ανενεργό</string>

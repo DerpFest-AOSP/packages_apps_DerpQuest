@@ -824,9 +824,7 @@
     <string name="fod_recog_animation">Animation de reconnaissance</string>
     <string name="fod_recog_animation_summary">Affiche une animation lors de la reconnaissance de l\'empreinte digitale</string>
     <string name="fod_recog_animation_picker_title">Personnaliser l\'animation</string>
-    <string name="fod_recog_animation_miui_normal">Par défaut MIUI</string>
     <string name="fod_recog_animation_miui_aod">AOD</string>
-    <string name="fod_recog_animation_miui_light">Light</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Pulse</string>
     <string name="fod_recog_animation_miui_pulse_white">Pulse (Blanc)</string>

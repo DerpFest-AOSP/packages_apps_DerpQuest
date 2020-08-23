@@ -822,9 +822,7 @@
     <string name="fod_recog_animation">एनीमेशन को पहचान रहा</string>
     <string name="fod_recog_animation_summary"> उंगली पढ़ते समय एक एनीमेशन दिखाता है</string>
     <string name="fod_recog_animation_picker_title">एनीमेशन कस्टमाइज़र को पहचानना</string>
-    <string name="fod_recog_animation_miui_normal">MIUI डिफ़ॉल्ट</string>
     <string name="fod_recog_animation_miui_aod">आलवेज ऑन डिस्प्ले</string>
-    <string name="fod_recog_animation_miui_light">रोशनी</string>
     <string name="fod_recog_animation_miui_pop">पॉप</string>
     <string name="fod_recog_animation_miui_pulse">पल्स</string>
     <string name="fod_recog_animation_miui_pulse_white">पल्स (सफेद)</string>
