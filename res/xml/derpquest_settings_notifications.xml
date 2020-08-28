@@ -19,6 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="led"
         android:title="@string/led_category">
 
         <!-- Notification Light -->

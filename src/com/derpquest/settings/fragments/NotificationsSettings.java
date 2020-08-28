@@ -64,7 +64,9 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
     private static final String PREF_FLASH_ON_CALL = "flashlight_on_call";
     private static final String PREF_FLASH_ON_CALL_DND = "flashlight_on_call_ignore_dnd";
     private static final String PREF_FLASH_ON_CALL_RATE = "flashlight_on_call_rate";
+    private static final String LED_CATEGORY = "led";
 
+    private PreferenceCategory mLedCategory;
     private Preference mChargingLeds;
     private SystemSettingMasterSwitchPreference mAmbientLight;
     private GlobalSettingMasterSwitchPreference mHeadsUp;
@@ -96,11 +98,18 @@ public class NotificationsSettings extends SettingsPreferenceFragment implements
         mAmbientLight.setChecked(enabled);
         updateAmbientLightSummary(enabled);
 
-        mChargingLeds = (Preference) findPreference("charging_light");
-        if (mChargingLeds != null
-                && !res.getBoolean(
-                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-            prefScreen.removePreference(mChargingLeds);
+        boolean hasLED = res.getBoolean(
+                com.android.internal.R.bool.config_hasNotificationLed);
+        if (hasLED) {
+            mChargingLeds = (Preference) findPreference("charging_light");
+            if (mChargingLeds != null
+                    && !res.getBoolean(
+                            com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+                prefScreen.removePreference(mChargingLeds);
+            }
+        } else {
+            mLedCategory = (PreferenceCategory) findPreference(LED_CATEGORY);
+            mLedCategory.setVisible(false);
         }
 
         mHeadsUp = (GlobalSettingMasterSwitchPreference)
