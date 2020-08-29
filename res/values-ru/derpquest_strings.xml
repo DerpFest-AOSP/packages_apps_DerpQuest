@@ -25,6 +25,7 @@
     <string name="navbar_title">Панель навигации</string>
     <string name="notifications_title">Уведомления</string>
     <string name="powermenu_title">Меню загрузки</string>
+    <string name="power_menu_items_title">Элементы меню загрузки</string>
     <string name="quicksettings_title">Быстрые настройки</string>
     <string name="recents_title">Недавние приложения</string>
     <string name="statusbar_title">Панель состояния</string>
@@ -55,7 +56,8 @@
     <string name="top">Сверху</string>
     <string name="shown">Показано</string>
     <string name="hidden">Скрыто</string>
-    <string name="and"> &amp; </string>
+    <string name="intensity">Интенсивность</string>
+    <string name="and"> и </string>
     <!-- General error strings -->
     <string name="translation_error">Ошибка перевода</string>
     <!-- Color Picker -->
@@ -309,7 +311,7 @@
     <!-- Lockscreen cover art filter -->
     <string name="lockscreen_cover_filter_title">Фильтр обложек экрана блокировки</string>
     <string name="lockscreen_cover_filter_none">Нет</string>
-    <string name="lockscreen_cover_filter_grayscale">Grayscale</string>
+    <string name="lockscreen_cover_filter_grayscale">Оттенки серого</string>
     <string name="lockscreen_cover_filter_tint">Тон акцента</string>
     <string name="lockscreen_cover_filter_blur">Размытие</string>
     <string name="lockscreen_cover_filter_grayblur">Оттенки серого и размытые</string>
@@ -411,10 +413,17 @@
     <string name="lockscreen_solid_fudge_factor_title">Уровень чувствительности</string>
     <string name="lockscreen_solid_units_opacity_title">Прозрачность линий</string>
     <string name="lockscreen_visualizer_color_title">Цвет по умолчанию</string>
+    <!-- QS header styles -->
+    <string name="qs_header_style_title">Стиль заголовка</string>
+    <string name="qs_header_grey">Серый</string>
+    <string name="qs_header_lightgrey">Светло-серый</string>
+    <string name="qs_header_accent">На основе акцента системы</string>
+    <string name="qs_header_transparent">Прозрачный</string>
     <!-- Custom headers -->
     <string name="notification_title">Панель уведомлений</string>
     <string name="status_bar_custom_header_title">Изображение заголовка</string>
     <string name="status_bar_custom_header_summary">%s / %s с тенью в %s процентов</string>
+    <string name="status_bar_custom_header_disabled">Выкл / Отключено из-за нестандартного стиля заголовка</string>
     <string name="daylight_header_pack_title">Коллекция изображений заголовка</string>
     <string name="status_bar_custom_header_shadow_title">Тень изображения заголовка</string>
     <string name="status_bar_custom_header_shadow_summary">Для лучшей видимости на ярких изображениях</string>
@@ -511,6 +520,8 @@
     <!-- R Notification headers -->
     <string name="notification_headers_title">Новый стиль уведомлений</string>
     <string name="notification_headers_summary">Отображать уведомления в стиле Android R (требует перезагрузку SystemUI)</string>
+    <string name="show_media_heads_up_title">Показывать всплывающие уведомления медиа</string>
+    <string name="show_media_heads_up_summary">Показывать всплывающее уведомление при воспроизведении нового трека, если проигрыватель не находится в переднем плане</string>
     <!-- Statusbar Clock Font Style, Size & Color -->
     <string name="status_bar_clock_font_style_title">Стиль шрифта часов</string>
     <string name="status_bar_clock_font_size_title">Размер шрифта часов</string>
@@ -683,6 +694,8 @@
     <string name="qs_bg_accent_summary">Установить фоновый цвет быстрых настроек из системного акцента</string>
     <string name="qs_bg_use_new_tint">Вид плиток</string>
     <string name="qs_bg_use_new_tint_summary">Включить затемнение плиток быстрых настроек</string>
+    <string name="qs_bg_use_new_tint_summary_enabled">Включено для этого стиля плиток</string>
+    <string name="qs_bg_use_new_tint_summary_disabled">Отключено для этого стиля плиток</string>
     <string name="qs_bg_using_accent">Используется цвет акцента</string>
     <string name="qs_bg_using_wall">Используется цвет обоев</string>
     <string name="qs_bg_using_color">Используется цвет %s</string>
@@ -780,10 +793,12 @@
     <string name="fod_recog_animation_summary">Показывать анимацию при сканировании пальца</string>
     <string name="fod_recog_animation_picker_title">Распознавание настроек анимации</string>
     <string name="fod_recog_animation_miui_aod">AOD</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Aurora</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Пульсирующий</string>
     <string name="fod_recog_animation_miui_pulse_white">Пульсирующий (Белый)</string>
     <string name="fod_recog_animation_miui_rhythm">Ритм</string>
+    <string name="fod_recog_animation_miui_star_cas">Starlight</string>
     <string name="fod_recog_animation_op_cosmos">Cosmos</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_pureview_future">Future</string>
@@ -991,4 +1006,40 @@
     <string name="accent_preset_36">XboxGreen</string>
     <string name="accent_preset_37">XiaomiOrange</string>
     <string name="accent_preset_title">Предустановленный акцент</string>
+    <!-- Powermunu Background Options-->
+    <string name="power_menu_bg_filter_grayscale">Оттенки серого</string>
+    <string name="power_menu_bg_filter_tint">Масштабирование с акцентом системы</string>
+    <string name="power_menu_bg_filter_blur">Размытие</string>
+    <string name="power_menu_bg_filter_grayblur">Оттенки серого и размытые</string>
+    <string name="power_menu_bg_filter_tinted_blur">Цветовой акцент системы с размытием</string>
+    <!-- Powermunu Background -->
+    <string name="power_menu_bg_title">Фоновый эффект</string>
+    <string name="power_menu_bg_summary">%s / Стиль: %s</string>
+    <string name="power_menu_bg_style_title">Тип эффекта</string>
+    <!-- QS tile styles -->
+    <string name="qs_tile_style_title">Стиль плиток быстрых настроек</string>
+    <string name="qstile_default">По умолчанию</string>
+    <string name="qstile_circle_trim">Круг с обводкой</string>
+    <string name="qstile_dual_tone_circle">Двухтонный круг</string>
+    <string name="qstile_squircle_trim">Квадрат с обводкой</string>
+    <string name="qstile_wavey">Волны</string>
+    <string name="qstile_pokesign">Раздвоенный круг с обводкой</string>
+    <string name="qstile_ninja">Сюрикен</string>
+    <string name="qstile_dottedcircle">Точечная окружность</string>
+    <string name="qstile_attemptmountain">Горы</string>
+    <string name="qstile_squaremedo">The Squaremedo</string>
+    <string name="qstile_inkdrop">Краска</string>
+    <string name="qstile_cookie">Печенье</string>
+    <string name="qstile_circleoutline">Окружность</string>
+    <string name="qstile_cosmos">Космос</string>
+    <string name="qstile_divided">Разделённая окружность</string>
+    <string name="qstile_neonlike">Неоновый свет</string>
+    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_triangles">Треугольник</string>
+    <!--  Volume Panel Plugin   -->
+    <string name="volume_panel">Стиль панели громкости</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compat">Компактный</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Плитки</string>
 </resources>
