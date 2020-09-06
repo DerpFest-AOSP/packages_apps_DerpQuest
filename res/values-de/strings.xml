@@ -679,4 +679,7 @@
 
     <!-- Notification background opacity -->
     <string name="notification_alpha_title">Deckkraft des Benachrichtigungshintergrunds</string>
+
+    <string name="show_app_volume_title">App-Lautstärke anzeigen</string>
+    <string name="show_app_volume_summary">App-Lautstärke im Lautstärke-Panel anzeigen</string>
 </resources>
