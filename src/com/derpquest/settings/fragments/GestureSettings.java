@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2020 DerpFest
+ * Copyright (C) 2020 DerpFest
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SearchIndexable
-public class QuickSettings extends SettingsPreferenceFragment implements
+public class GestureSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     @Override
@@ -43,7 +43,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.quicksettings);
+
+        addPreferencesFromResource(R.xml.gesture);
     }
 
     @Override
@@ -61,7 +62,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             public List<SearchIndexableResource> getXmlResourcesToIndex(
                     Context context, boolean enabled) {
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.quicksettings;
+                    sir.xmlResId = R.xml.gesture;
                     return Arrays.asList(sir);
             }
 

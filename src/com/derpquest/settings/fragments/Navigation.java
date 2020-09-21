@@ -32,23 +32,24 @@ import java.util.Arrays;
 import java.util.List;
 
 @SearchIndexable
-public class QuickSettings extends SettingsPreferenceFragment implements
+public class Navigation extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.DERP;
-    }
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.quicksettings);
+        addPreferencesFromResource(R.xml.navigation);
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.DERP;
     }
 
     /**
@@ -61,7 +62,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             public List<SearchIndexableResource> getXmlResourcesToIndex(
                     Context context, boolean enabled) {
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.quicksettings;
+                    sir.xmlResId = R.xml.navigation;
                     return Arrays.asList(sir);
             }
 

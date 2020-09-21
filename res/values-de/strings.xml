@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 DerpFest
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- DerpFest device info settings -->
+    <string name="derp_version">DerpFest Version</string>
+    <string name="derp_version_default">Unbekannt</string>
+
+    <!-- DerpFest custom settings main -->
+    <string name="derpquest_title">DerpQuest</string>
+    <string name="derp_title">DerpFest Einstellungen</string>
+    <string name="derpquest_settings_title">Kategorien</string>
+
+    <!-- DerpFest categories -->
+    <string name="statusbar_bar_title">Statusleiste</string>
+    <string name="statusbar_bar_summary">Passe diverse Sachen an der Statusleiste an</string>
+    <string name="notification_title">Benachrichtigung</string>
+    <string name="notification_summary">Passe das Benachrichtigungsverhalten an</string>
+    <string name="notification_category">Benachrichtigungen</string>
+    <string name="quicksettings_title">Schnelleinstellungen</string>
+    <string name="quicksettings_summary">Verwalte Kacheln und erweiterte Statusleiste</string>
+    <string name="navigation_category">Navigation</string>
+    <string name="navigation_summary">Passe Navigationsstil und -verhalten an</string>
+    <string name="buttons_title">Hardwaretasten</string>
+    <string name="buttons_summary">Verändern Sie die Aktionen der physischen Tasten Ihrer Geräte</string>
+    <string name="gesture_category">Gesten</string>
+    <string name="gesture_summary">Gestenbasierte Optionen/Aktionen</string>
+    <string name="lockscreen_title">Sperrbildschirm</string>
+    <string name="lockscreen_summary">Anpassen des Lockscreen-Layouts und der Optionen</string>
+    <string name="advanced_title">Erweiterte Einstellungen</string>
+    <string name="advanced_summary">Verschiedene zusätzliche Systemeinstellungen</string>
+    <string name="system_category">Systemeinstellungen</string>
+
+    <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">Neustart der SystemUI erforderlich</string>
+    <string name="systemui_restart_message">Um alle Änderungen anzuwenden ist ein Neustart der SystemUI notwendig. SystemUI jetzt neustarten?</string>
+
+    <!-- About DerpFest -->
+    <string name="derp_about_title">Über DerpFest</string>
+    <string name="derp_about_summary">Eine kleine Info über das Team</string>
+    <string name="derp_telegram_title">DerpFest Telegram Community</string>
+    <string name="derp_telegram_summary">Tippe hier, um unsere wundervolle Community kennenzulernen!</string>
+    <string name="derp_github_title">DerpFest Github</string>
+    <string name="derp_github_summary">Tippe hier, um unser Github zu öffnen!</string>
+    <string name="derp_about_info_summary">Dies ist ein kleines Projekt, das auf AOSiP für Oneplus 5T basiert. Wir versuchen, eine Plattform für Anfänger zu sein und unterstützen die Custom ROM-Community auch mit unseren eigenen einzigartigen Beiträgen. Dieses ROM existiert dank unserer Basis - AOSiP, danke!</string>
+    <string name="derp_about_team">DerpFest Team</string>
+    <string name="derp_about_alex" translatable="false">Alexander Brunswig</string>
+    <string name="derp_about_alex_summary" translatable="false">Gründer</string>
+    <string name="derp_about_ido" translatable="false">Ido Ben Hur</string>
+    <string name="derp_about_ido_summary" translatable="false">Entwickler</string>
+    <string name="derp_about_david" translatable="false">David Setiawan</string>
+    <string name="derp_about_david_summary" translatable="false">Qualitätssicherung</string>
+    <string name="about_maintainer">Betreuer</string>
+    <string name="derp_about_maintainer">Der Betreuer für Ihr Gerät ist</string>
+
+</resources>
