@@ -20,6 +20,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title" >
 
+    <!-- QS brightness slider -->
+    <com.derp.support.preference.SystemSettingMasterSwitchPreference
+        android:key="qs_show_brightness"
+        android:title="@string/qs_show_brightness_title"
+        android:summary="@string/qs_show_brightness_summary"
+        android:fragment="com.derpquest.settings.fragments.BrightnessSliderSettings"
+        android:defaultValue="true" />
+
     <!-- QS footer text toggle -->
     <com.derp.support.preference.SystemSettingSwitchPreference
         android:key="qs_footer_text_show"

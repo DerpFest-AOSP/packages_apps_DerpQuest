@@ -80,4 +80,10 @@
     <string name="lockscreen_battery_info_title">Zusatzinfo zum Ladevorgang</string>
     <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
 
+    <!-- Brightness slider -->
+    <string name="qs_show_brightness_title">Helligkeitsregler</string>
+    <string name="qs_show_brightness_summary">Sichtbarkeit und Einstellungen des Helligkeitsreglers</string>
+    <string name="qs_brightness_position_bottom_title">Helligkeitsregler unten</string>
+    <string name="qs_brightness_position_bottom_summary">Zeigen Sie den Helligkeitsregler unten in den Schnelleinstellungen an</string>
+
 </resources>
