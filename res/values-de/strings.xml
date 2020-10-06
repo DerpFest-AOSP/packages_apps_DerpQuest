@@ -796,4 +796,8 @@
     <string name="ticker_animation_mode_scroll">Scrollen</string>
     <string name="ticker_tick_duration_title">Tickerdauer</string>
 
+    <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">Statusleisten-Songtext</string>
+    <string name="status_bar_show_lyric_summary">Songtext in Statusleiste anzeigen (App-Unterstützung erforderlich)</string>
+
 </resources>
