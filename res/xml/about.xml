@@ -45,7 +45,7 @@
 	        android:summary="@string/derp_github_summary">
 	    <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://www.github.com/DerpLab" />
+                android:data="https://www.github.com/DerpFest-11" />
         </Preference>
     </PreferenceCategory>
 
@@ -63,31 +63,11 @@
         </Preference>
 
         <Preference
-            android:title="@string/derp_about_ido"
-	        android:summary="@string/derp_about_ido_summary">
-	    <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://www.github.com/idoybh" />
-        </Preference>
-
-        <Preference
             android:title="@string/derp_about_david"
 	        android:summary="@string/derp_about_david_summary">
 	    <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://www.github.com/fryevia" />
-        </Preference>
-
-    </PreferenceCategory>
-
-	<!-- Maintainer -->
-    <PreferenceCategory
-        android:key="about_maintainer"
-        android:title="@string/about_maintainer">
-
-        <Preference
-            android:title="@string/derp_about_maintainer"
-	        android:summary="@string/maintainer_name">
         </Preference>
 
     </PreferenceCategory>

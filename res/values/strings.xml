@@ -54,17 +54,13 @@
     <string name="derp_about_summary">A little info about the team</string>
     <string name="derp_telegram_title">DerpFest Telegram Community</string>
     <string name="derp_telegram_summary">Tap here to open our wonderful community!</string>
-    <string name="derp_github_title">DerpFest Github</string>
+    <string name="derp_github_title">DerpFest GitHub</string>
     <string name="derp_github_summary">Tap here to open our Github!</string>
-    <string name="derp_about_info_summary">This is a small project based on AOSiP for the Oneplus 5T. We try to be a platform for beginners and support the Custom ROM community with our own unique contributions as well. This ROM exists thanks to our base - AOSiP, Thank you!</string>
+    <string name="derp_about_info_summary">This is a small project based on AOSP. We try to be a platform for beginners and support the Custom ROM community with our own unique contributions as well. This ROM exists thanks to inspiration of AOSiP, Thank you!</string>
     <string name="derp_about_team">DerpFest Team</string>
     <string name="derp_about_alex" translatable="false">Alexander Brunswig</string>
     <string name="derp_about_alex_summary" translatable="false">Founder</string>
-    <string name="derp_about_ido" translatable="false">Ido Ben Hur</string>
-    <string name="derp_about_ido_summary" translatable="false">Lead Dev</string>
     <string name="derp_about_david" translatable="false">David Setiawan</string>
     <string name="derp_about_david_summary" translatable="false">QA</string>
-    <string name="about_maintainer">Maintainer</string>
-    <string name="derp_about_maintainer">The maintainer for your device is</string>
 
 </resources>
