@@ -21,7 +21,7 @@
        android:fragment="com.derpquest.settings.fragments.Statusbar"
        android:title="@string/statusbar_bar_title"
        android:summary="@string/statusbar_bar_summary"
-       android:icon="@drawable/ic_derpquest_status_background" />
+       android:icon="@drawable/ic_derpquest_status_background" / -->
 
     <PreferenceScreen
        android:key="quicksettings"
@@ -30,7 +30,7 @@
        android:summary="@string/quicksettings_summary"
        android:icon="@drawable/ic_derpquest_qs_background" />
 
-    <PreferenceScreen
+    <!--PreferenceScreen
        android:key="notification"
        android:fragment="com.derpquest.settings.fragments.Notification"
        android:title="@string/notification_title"
