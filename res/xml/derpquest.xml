@@ -49,7 +49,7 @@
        android:fragment="com.derpquest.settings.fragments.Buttons"
        android:title="@string/buttons_title"
        android:summary="@string/buttons_summary"
-       android:icon="@drawable/ic_derpquest_buttons_background" />
+       android:icon="@drawable/ic_derpquest_buttons_background" / -->
 
     <PreferenceScreen
        android:key="lockscreen"
@@ -58,7 +58,7 @@
        android:summary="@string/lockscreen_summary"
        android:icon="@drawable/ic_derpquest_lockscreen_background" />
 
-    <PreferenceScreen
+    <!--PreferenceScreen
        android:key="gesture"
        android:fragment="com.android.settings.fragments.GestureSettings"
        android:title="@string/gesture_category"
