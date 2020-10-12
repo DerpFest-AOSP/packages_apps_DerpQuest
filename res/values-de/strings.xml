@@ -85,6 +85,8 @@
     <string name="qs_show_brightness_summary">Sichtbarkeit und Einstellungen des Helligkeitsreglers</string>
     <string name="qs_brightness_position_bottom_title">Helligkeitsregler unten</string>
     <string name="qs_brightness_position_bottom_summary">Zeigen Sie den Helligkeitsregler unten in den Schnelleinstellungen an</string>
+    <string name="qs_show_brightness_above_footer_title">Über der Fußzeile</string>
+    <string name="qs_show_brightness_above_footer_summary">Zeigen Sie den Helligkeitsregler über der Fußzeile an</string>
 	<string name="qs_show_auto_brightness_title">Symbol für automatische Helligkeit</string>
     <string name="qs_show_auto_brightness_summary">Zeigen Sie einen automatischen Helligkeitsschalter in der Nähe des Helligkeitsreglers an</string>
 
