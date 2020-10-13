@@ -143,4 +143,12 @@
     <string name="global_actions_max_columns_title">Max actions to show</string>
     <string name="global_actions_max_columns_summary">Set how many actions to show before buttons move to overflow menu</string>
 
+    <!-- Statusbar net monitor -->
+    <string name="net_monitor_category_title">Network monitor</string>
+    <string name="network_traffic_state_title">Enable network monitor</string>
+    <string name="network_traffic_state_sb_title">Always show net monitor</string>
+    <string name="network_traffic_state_summary">Show net download activity, or upload if bigger, in expanded statusbar</string>
+    <string name="network_traffic_state_sb_summary">Keep showing net activity also in normal statusbar</string>
+    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
 </resources>

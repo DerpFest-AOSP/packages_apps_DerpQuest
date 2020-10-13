@@ -143,4 +143,12 @@
     <string name="global_actions_max_columns_title">Maximal zu zeigende Aktionen</string>
     <string name="global_actions_max_columns_summary">Legen Sie fest, wie viele Aktionen angezeigt werden sollen, bevor die Schaltflächen in das Überlaufmenü verschoben werden</string>
 
+    <!-- Statusbar net monitor -->
+    <string name="net_monitor_category_title">Netzwerkverkehrsanzeige</string>
+    <string name="network_traffic_state_title">Netzwerkverkehrsanzeige aktivieren</string>
+    <string name="network_traffic_state_sb_title">Netzwerkverkehrsanzeige immer anzeigen</string>
+    <string name="network_traffic_state_summary">Netzwerkverkehrsanzeige in der erweiterten Statusleiste anzeigen</string>
+    <string name="network_traffic_state_sb_summary">Zeigen Sie die Netzwerkverkehrsanzeige auch in der normalen Statusleiste an</string>
+    <string name="network_traffic_autohide_threshold_title">Schwellenwert für das automatische Ausblenden der Netzwerkverkehrsanzeige (KB/s)</string>
+
 </resources>
