@@ -151,4 +151,14 @@
     <string name="network_traffic_state_sb_summary">Zeigen Sie die Netzwerkverkehrsanzeige auch in der normalen Statusleiste an</string>
     <string name="network_traffic_autohide_threshold_title">Schwellenwert für das automatische Ausblenden der Netzwerkverkehrsanzeige (KB/s)</string>
 
+    <!-- Lockscreen clock style -->
+    <string name="lockscreen_clock_title">Sperrbildschirmuhr</string>
+    <string name="lockscreen_clock_summary">Stil der Uhr im Sperrbildschirm und im Umgebungsdisplay</string>
+    <string name="lockscreen_clock_dialog_title">Uhrstil auswählen</string>
+    <string name="lockscreen_clock_hide">Verstecken</string>
+    <string name="lockscreen_clock_default">Standard</string>
+    <string name="lockscreen_clock_default_bold">Standard (fett)</string>
+    <string name="lockscreen_clock_sammy">Sammy</string>
+    <string name="lockscreen_clock_sammy_bold">Sammy (fett)</string>
+
 </resources>
