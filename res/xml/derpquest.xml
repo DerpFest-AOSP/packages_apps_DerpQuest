@@ -58,14 +58,14 @@
        android:summary="@string/lockscreen_summary"
        android:icon="@drawable/ic_derpquest_lockscreen_background" />
 
-    <!--PreferenceScreen
+    <PreferenceScreen
        android:key="gesture"
-       android:fragment="com.android.settings.fragments.GestureSettings"
+       android:fragment="com.derpquest.settings.fragments.GestureSettings"
        android:title="@string/gesture_category"
        android:summary="@string/gesture_summary"
        android:icon="@drawable/ic_derpquest_gesture_background" />
 
-    <PreferenceScreen
+    <!--PreferenceScreen
        android:key="advanced"
        android:fragment="com.derpquest.settings.fragments.Advanced"
        android:title="@string/advanced_title"
