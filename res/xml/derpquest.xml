@@ -30,14 +30,14 @@
        android:summary="@string/quicksettings_summary"
        android:icon="@drawable/ic_derpquest_qs_background" />
 
-    <!--PreferenceScreen
+    <PreferenceScreen
        android:key="notification"
        android:fragment="com.derpquest.settings.fragments.Notification"
        android:title="@string/notification_title"
        android:summary="@string/notification_summary"
        android:icon="@drawable/ic_derpquest_notif_background"/>
 
-    <PreferenceScreen
+    <!--PreferenceScreen
        android:key="navigation"
        android:fragment="com.derpquest.settings.fragments.Navigation"
        android:title="@string/navigation_category"
