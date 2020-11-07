@@ -226,6 +226,9 @@
     <!-- Lock screen cover art -->
     <string name="lockscreen_media_art_title">Mediencover anzeigen</string>
     <string name="lockscreen_media_art_summary">Zeigen Sie das Albumcover des aktuell wiedergegebenen Mediums auf dem Sperrbildschirm an</string>
+    <string name="lockscreen_media_blur_title">Mediencover-Blur-Level</string>
+    <string name="show_lockscreen_media_art_title">Mediencover anzeigen</string>
+    <string name="lockscreen_media_art_options_title">Sperrbildschirm-Mediencover</string>
 
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_category">Bildschirmkantenbeleuchtung</string>
