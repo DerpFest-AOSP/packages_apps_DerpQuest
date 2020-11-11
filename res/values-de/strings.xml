@@ -31,8 +31,8 @@
 
 <!-- CATEGORIES -->
     <!-- Actions -->
-    <string name="powerbutton_title">Power button</string>
-    <string name="powerbutton_summary">Configure additional options &amp; actions</string>
+    <string name="powerbutton_title">Ein-/Aus-Menü</string>
+    <string name="powerbutton_summary">Konfigurieren Sie zusätzliche Optionen und Aktionen</string>
     <string name="navigationbar_title">Navigation</string>
     <string name="navigationbar_summary">Konfigurieren Sie die Systemnavigationsoptionen</string>
     <string name="gesture_options_title">Gesten</string>
@@ -103,7 +103,7 @@
     <string name="qs_panel_layout_category">QS panel layout</string>
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="volume_steps_title">Volume steps</string>
-    <string name="power_menu_category">Power menu</string>
+    <string name="power_menu_category">Ein-/Aus-Menü</string>
     <string name="pulse_settings">Pulse</string>
 
     <!-- About DerpFest -->
