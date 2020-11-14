@@ -4,7 +4,9 @@
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -12,23 +14,40 @@
      limitations under the License.
 -->
 <resources>
-    <color name="homepage_derp_background">#DB242B</color>
-    <color name="background_tab_pressed">#6633B5E5</color>
-    <color name="text_color_white">@android:color/white</color>
-    <color name="theme_accent">@*android:color/accent_device_default_light</color>
-    <color name="tab_background_color">@android:color/transparent</color>
-    <color name="tab_text_color">@*android:color/accent_device_default_light</color>
-    <color name="white">#FFF</color>
+    <color name="nav_bg_light">#32787878</color>
+    <color name="color_active">#FF3A3A3A</color>
+    <color name="color_inactive">#BC606060</color> 
 
-    <!-- DerpQuest icon colors definition -->
-    <color name="derpquest_about_icon_background">#a3a3a3</color>
-    <color name="derpquest_status_icon_background">#2196F3</color>
-    <color name="derpquest_qs_icon_background">#FF7E0F</color>
-    <color name="derpquest_global_actions_icon_background">#01B1AF</color>
-    <color name="derpquest_gesture_icon_background">#C14CE6</color>
-    <color name="derpquest_lockscreen_icon_background">#0F9D58</color>
-    <color name="derpquest_notif_icon_background">#5011C1</color>
-    <color name="derpquest_nav_icon_background">#72B70F</color>
-    <color name="derpquest_advanced_icon_background">#2EC7DC</color>
+    <color name="default_inactive_shape_color">#BC606060</color>
+    <color name="default_inactive_color">#FFC8C8C8</color>
+    <color name="default_shape_inactive_color">#BC606060</color> 
+    <color name="theme_accent">@*android:color/accent_device_default_light</color>
+    <color name="preference_background_color">@*android:color/accent_device_default_light</color>
+
+    <!-- DerpQuest icon background colors -->
+    <color name="homepage_derp_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_animations_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_battery_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_changelog_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_clock_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_display_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_gestures_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_headsup_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_hw_keys_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_led_settings_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_lockscreen_aosp_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_lockscreen_general_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_lockscreen_tuner_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_lockscreen_weather_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_miscellaneous_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_themer_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_traffic_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_navigationbar_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_notifications_general_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_powerbutton_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_quick_settings_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_recents_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_statusbar_items_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_volume_rocker_background">@*android:color/accent_device_default_light</color>
 
 </resources>

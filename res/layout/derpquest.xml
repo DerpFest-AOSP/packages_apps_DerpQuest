@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 DerpFest
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation_view_constraint"/>
+
+    <com.derpquest.settings.navigation.BubbleNavigationConstraintView
+        android:id="@+id/bottom_navigation_view_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:colorPrimary"
+        android:elevation="8dp"
+        app:derp_mode="spread"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp">
+
+        <com.derpquest.settings.navigation.BubbleToggleView
+            android:id="@+id/tab_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:derp_active="true"
+            app:derp_padding="14dp"
+            app:derp_titlePadding="4dp"
+            app:derp_colorActive="@color/color_active"
+            app:derp_colorInactive="@color/color_inactive"
+            app:derp_icon="@drawable/navigation_actions"
+            app:derp_shape="@drawable/navigation_transition_background_drawable_actions"
+            app:derp_title="@string/navigation_actions_title" />
+
+        <com.derpquest.settings.navigation.BubbleToggleView
+            android:id="@+id/tab_interface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:derp_padding="14dp"
+            app:derp_titlePadding="4dp"
+            app:derp_colorActive="@color/color_active"
+            app:derp_colorInactive="@color/color_inactive"
+            app:derp_icon="@drawable/navigation_interface"
+            app:derp_shape="@drawable/navigation_transition_background_drawable_interface"
+            app:derp_title="@string/navigation_interface_title" />
+
+        <com.derpquest.settings.navigation.BubbleToggleView
+            android:id="@+id/tab_statusbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:derp_padding="14dp"
+            app:derp_titlePadding="4dp"
+            app:derp_colorActive="@color/color_active"
+            app:derp_colorInactive="@color/color_inactive"
+            app:derp_icon="@drawable/navigation_statusbar"
+            app:derp_shape="@drawable/navigation_transition_background_drawable_statusbar"
+            app:derp_title="@string/navigation_statusbar_title" />
+
+        <com.derpquest.settings.navigation.BubbleToggleView
+            android:id="@+id/tab_lockscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:derp_padding="14dp"
+            app:derp_titlePadding="4dp"
+            app:derp_colorActive="@color/color_active"
+            app:derp_colorInactive="@color/color_inactive"
+            app:derp_icon="@drawable/navigation_lockscreen"
+            app:derp_shape="@drawable/navigation_transition_background_drawable_lockscreen"
+            app:derp_title="@string/navigation_lockscreen_title" />
+
+        <com.derpquest.settings.navigation.BubbleToggleView
+            android:id="@+id/tab_system_misc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:derp_padding="14dp"
+            app:derp_titlePadding="4dp"
+            app:derp_colorActive="@color/color_active"
+            app:derp_colorInactive="@color/color_inactive"
+            app:derp_icon="@drawable/navigation_system"
+            app:derp_shape="@drawable/navigation_transition_background_drawable_system"
+            app:derp_title="@string/navigation_system_title" />
+
+    </com.derpquest.settings.navigation.BubbleNavigationConstraintView>
+
+</RelativeLayout>

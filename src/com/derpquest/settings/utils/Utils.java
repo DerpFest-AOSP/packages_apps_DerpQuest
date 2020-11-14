@@ -39,6 +39,7 @@ import android.os.AsyncTask;
 import android.os.UserManager;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.DisplayInfo;
 import android.view.Surface;
 import android.view.WindowManager;
@@ -46,7 +47,7 @@ import android.view.WindowManager;
 import com.android.settings.R;
 
 public final class Utils {
-    private static final String TAG = "OwlsNestUtils";
+    private static final String TAG = "DerpQuestUtils";
 
     // Device types
     private static final int DEVICE_PHONE = 0;
@@ -266,5 +267,11 @@ public final class Utils {
             }
             return null;
         }
+    }
+
+    public static int getThemeAccentColor (final Context context) {
+        final TypedValue value = new TypedValue ();
+        context.getTheme ().resolveAttribute (android.R.attr.colorAccent, value, true);
+        return value.data;
     }
 }

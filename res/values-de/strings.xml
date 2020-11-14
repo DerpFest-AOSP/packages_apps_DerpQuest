@@ -16,37 +16,95 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- DerpFest device info settings -->
-    <string name="derp_version">DerpFest Version</string>
-    <string name="derp_version_default">Unbekannt</string>
-
-    <!-- DerpFest custom settings main -->
+    <!-- DerpFest dashboard -->
     <string name="derpquest_title">DerpQuest</string>
     <string name="derp_title">DerpFest Einstellungen</string>
-    <string name="derpquest_settings_title">Kategorien</string>
 
-    <!-- DerpFest categories -->
-    <string name="statusbar_bar_title">Statusleiste</string>
-    <string name="statusbar_bar_summary">Passe diverse Sachen an der Statusleiste an</string>
-    <string name="notification_title">Benachrichtigung</string>
-    <string name="notification_summary">Passe das Benachrichtigungsverhalten an</string>
-    <string name="notification_category">Benachrichtigungen</string>
-    <string name="quicksettings_title">Schnelleinstellungen</string>
-    <string name="quicksettings_summary">Verwalte Kacheln und erweiterte Statusleiste</string>
-    <string name="navigation_category">Navigation</string>
-    <string name="navigation_summary">Passe Navigationsstil und -verhalten an</string>
-    <string name="global_actions_summary">Passe das Verhalten des Power-Menüs an</string>
-    <string name="gesture_category">Gesten</string>
-    <string name="gesture_summary">Gestenbasierte Optionen/Aktionen</string>
-    <string name="lockscreen_title">Sperrbildschirm</string>
-    <string name="lockscreen_summary">Anpassen des Lockscreen-Layouts und der Optionen</string>
-    <string name="advanced_title">Erweiterte Einstellungen</string>
-    <string name="advanced_summary">Verschiedene zusätzliche Systemeinstellungen</string>
-    <string name="system_category">Systemeinstellungen</string>
+    <!-- Bottom Tabs -->
+    <string name="navigation_actions_title">Aktionen</string>
+    <string name="navigation_interface_title">Oberfläche</string>
+    <string name="navigation_statusbar_title">Statusleiste</string>
+    <string name="navigation_lockscreen_title">Sperrbildschirm</string>
+    <string name="navigation_system_title">Verchiedenes</string>
+    <string name="accessibility_description">Bildschirmmenü</string>
+    <string name="accessibility_item_description">%1$s menu item</string>
 
-    <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">Neustart der SystemUI erforderlich</string>
-    <string name="systemui_restart_message">Um alle Änderungen anzuwenden ist ein Neustart der SystemUI notwendig. SystemUI jetzt neustarten?</string>
+<!-- CATEGORIES -->
+    <!-- Actions -->
+    <string name="powerbutton_title">Power button</string>
+    <string name="powerbutton_summary">Configure additional options &amp; actions</string>
+    <string name="navigationbar_title">Navigation</string>
+    <string name="navigationbar_summary">Konfigurieren Sie die Systemnavigationsoptionen</string>
+    <string name="gesture_options_title">Gesten</string>
+    <string name="gesture_options_summary">Aktivieren/Deaktivieren gerätespezifischer Benutzeraktionen</string>
+    <string name="volume_rocker_title">Volume rocker</string>
+    <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
+    <string name="hw_keys_title">Hardware keys</string>
+    <string name="hw_keys_summary">Assign actions for physical navigation buttons</string>
+
+    <!-- Interface -->
+    <string name="quick_settings_title">Schnelleinstellungen</string>
+    <string name="quick_settings_summary">Passen Sie die Gesamtansicht an &amp; Funktionalität</string>
+    <string name="headsup_title">Heads-up</string>
+    <string name="headsup_summary">Konfigurieren Sie Heads-up-Optionen</string>
+    <string name="recents_title">Recents</string>
+    <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
+    <string name="themer_title">Themer</string>
+    <string name="themer_summary">Durchsuchen und wählen Sie installierte Designs aus</string>
+
+    <!-- Statusbar -->
+    <string name="battery_options_title">Batterieoptionen</string>
+    <string name="battery_options_summary">Passen Sie an, wie das Batteriesymbol angezeigt wird</string>
+    <string name="clock_options_title">Uhroptionen</string>
+    <string name="clock_options_summary">Legen Sie die Ansichtsoptionen für die Zeit fest &amp; Datum in der Statusleiste</string>
+    <string name="traffic_title">Netzwerkanzeige</string>
+    <string name="traffic_summary">Aktivieren &amp; Konfigurieren Sie die Netzwerkanzeige in der Statusleiste</string>
+    <string name="status_bar_items_title">Statusleistenelemente</string>
+    <string name="status_bar_items_summary">Konfigurieren Sie Statusleistenanzeigen</string>
+
+    <!-- Lockscreen -->
+    <string name="lockscreen_aosp_title">Native Steuerelemente</string>
+    <string name="lockscreen_aosp_summary">Konfigurieren Sie die AOSP-Optionen für den Sperrbildschirm &amp; AOD</string>
+    <string name="lockscreen_general_title">Allgemeine Optionen</string>
+    <string name="lockscreen_general_summary">Fügen Sie visuelle Elemente Ihres Sperrbildschirms hinzu oder entfernen Sie sie</string>
+    <string name="lockscreen_tuner_title">Lockscreen-Tuner</string>
+    <string name="lockscreen_tuner_summary">Fügen Sie Tuner-Teile Ihres Sperrbildschirms hinzu oder entfernen Sie sie</string>
+    <string name="lockscreen_weather_title">Wetteroptionen</string>
+    <string name="lockscreen_weather_summary">Konfigurieren Sie das Wetter auf dem Sperrbildschirm</string>
+
+    <!-- System/ Misc -->
+    <string name="animations_category_title">Animationen</string>
+    <string name="animations_category_summary">Legen Sie benutzerdefinierte Animationen für bestimmte Übergänge fest</string>
+    <string name="general_notifications_title">Allgemeine Benachrichtigungen</string>
+    <string name="general_notifications_summary">Verschiedene Benachrichtigungskontrollen</string>
+    <string name="miscellaneous_title">Verschiedenes</string>
+    <string name="miscellaneous_summary">Nicht kategorisierte Optionen</string>
+    <string name="changelog_title">Änderungsprotokoll</string>
+    <string name="changelog_summary">Liste der zuletzt zu DerpFest hinzugefügten Commits</string>
+    <string name="led_settings_title">LED settings</string>
+    <string name="led_settings_summary">Configure the LED light for supported options</string>
+
+<!-- OTHER -->
+    <!-- Empty Preference Screen (if applicable) -->
+    <string name="empty_category_title">No extra features yet...</string>
+    <string name="empty_category_description">However, new features may be added here soon. Check back after future updates!</string>
+    <string name="dummy_string"> </string>
+
+    <!-- Sub-Categorized XMLs - DO NOT REMOVE -->
+    <string name="active_edge_title">Active Edge</string>
+    <string name="ambient_music_display">Music ticker</string>
+    <string name="aware_settings_title">Motion Sense</string>
+    <string name="battery_style_statusbar">Statusbar battery</string>
+    <string name="battery_style_qs">Quick panel battery</string>
+    <string name="brightness_control_category">Brightness control</string>
+    <string name="custom_header_title">Custom header</string>
+    <string name="led_notifications_title">LED notifications</string>
+    <string name="led_battery_title">Battery LED</string>
+    <string name="qs_panel_layout_category">QS panel layout</string>
+    <string name="smart_pixels_title">Smart Pixels</string>
+    <string name="volume_steps_title">Volume steps</string>
+    <string name="power_menu_category">Power menu</string>
+    <string name="pulse_settings">Pulse</string>
 
     <!-- About DerpFest -->
     <string name="derp_about_title">Über DerpFest</string>
@@ -62,14 +120,27 @@
     <string name="derp_about_david" translatable="false">David Setiawan</string>
     <string name="derp_about_david_summary" translatable="false">Qualitätssicherung</string>
 
-    <!-- Double Tap -->
-    <string name="dtts_category_header">Doppeltippen zum Schlafen</string>
-    <!-- Double Tap Lockscreen to Sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Sperrbildschirm</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Tippen Sie zweimal auf den Sperrbildschirm, um das Gerät in den Ruhezustand zu versetzen</string>
-    <!-- Double tap-to-sleep on statusbar -->
-    <string name="double_tap_to_sleep_title">Statusleiste</string>
-    <string name="double_tap_to_sleep_summary">Tippen Sie zweimal auf die Statusleiste, um das Gerät in den Ruhezustand zu versetzen</string>
+    <!-- DerpFest device info settings -->
+    <string name="derp_version">DerpFest Version</string>
+    <string name="derp_version_default">Unbekannt</string>
+
+    <!-- Reusable strings -->
+    <string name="advanced_behavior_title">Advanced behavior</string>
+    <string name="appearance_category">APPEARANCE</string>
+    <string name="behavior_category">BEHAVIOR</string>
+    <string name="enable_first">Please enable first</string>
+
+    <!-- SystemUI Restart -->
+    <string name="systemui_restart_title">SystemUI restart required</string>
+    <string name="systemui_restart_message">For all changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
+
+<!-- FEATURES -->
+
+    <!-- Navbar Entries -->
+    <string name="navigation_tuner_title">Navigation Tuner</string>
+    <string name="navigation_tuner_summary">Further adjust some elements of system navigation</string>
+    <string name="navbar_gestures_title">Navigation gesture options</string>
+    <string name="navbar_gestures_summary">Choose buttons or gestures to navigate your device</string>
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">QS-Fußzeilentext anzeigen</string>
@@ -78,16 +149,6 @@
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Zusatzinfo zum Ladevorgang</string>
     <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
-
-    <!-- Brightness slider -->
-    <string name="qs_show_brightness_title">Helligkeitsregler</string>
-    <string name="qs_show_brightness_summary">Sichtbarkeit und Einstellungen des Helligkeitsreglers</string>
-    <string name="qs_brightness_position_bottom_title">Helligkeitsregler unten</string>
-    <string name="qs_brightness_position_bottom_summary">Zeigen Sie den Helligkeitsregler unten in den Schnelleinstellungen an</string>
-    <string name="qs_show_brightness_above_footer_title">Über der Fußzeile</string>
-    <string name="qs_show_brightness_above_footer_summary">Zeigen Sie den Helligkeitsregler über der Fußzeile an</string>
-	<string name="qs_show_auto_brightness_title">Symbol für automatische Helligkeit</string>
-    <string name="qs_show_auto_brightness_summary">Zeigen Sie einen automatischen Helligkeitsschalter in der Nähe des Helligkeitsreglers an</string>
 
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Zeigen Sie 4G anstelle von LTE</string>
@@ -100,13 +161,15 @@
     <string name="volte_icon_summary">VoLTE-Symbol anzeigen</string>
     <string name="volte_icon_style_title">VoLTE-Symbol auswählen</string>
     <string name="volte_icon_asus">VoLTE-Asus-Symbol</string>
-    <string name="volte_icon_vo">Vo-Symbol</string>
+    <string name="volte_icon_vo">Standardsymbol</string>
     <string name="volte_icon_volte">VoLTE-Symbol</string>
     <string name="volte_icon_oos">VoLTE-OOS-Symbol</string>
     <string name="volte_icon_hd">HD-Symbol</string>
     <string name="volte_icon_hd2">HD-CAF-Symbol</string>
     <string name="volte_icon_miui">MIUI-11-Symbol</string>
     <string name="volte_icon_emui">EMUI-Symbol</string>
+	<string name="volte_icon_volit">VoLIT-Symbol</string>
+    <string name="volte_icon_oos10">OOS-10-Symbol</string>
 
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi-Symbol</string>
@@ -123,26 +186,6 @@
     <string name="vowifi_icon_simple2">Simple2-Symbol</string>
     <string name="vowifi_icon_simple3">Simple3-Symbol</string>
 
-    <string name="power_button_category_title">Power-Button</string>
-
-    <!-- Global Actions -->
-    <string name="global_actions_title">Power-Menü</string>
-    <string name="global_actions_power">Power</string>
-    <string name="global_actions_restart">Neustart</string>
-    <string name="global_actions_airplane">Flugmodus</string>
-    <string name="global_actions_settings">Einstellungen</string>
-    <string name="global_actions_lockdown">Aussperren</string>
-    <string name="global_actions_soundpanel">Sound Panel</string>
-    <string name="global_actions_users">Benutzer</string>
-    <string name="global_actions_screenshot">Screenshot</string>
-    <string name="global_actions_screenrecord">Bildschirmaufnahme</string>
-    <string name="global_actions_flashlight">Taschenlampe</string>
-    <string name="global_actions_emergency">Notfall</string>
-    <string name="global_actions_advanced_reboot_title">Aktivieren Sie den erweiterten Neustart</string>
-    <string name="global_actions_advanced_reboot_summary">Zeigen Sie beim Neustart auch Optionen für die Wiederherstellung und den Bootloader an</string>
-    <string name="global_actions_max_columns_title">Maximal zu zeigende Aktionen</string>
-    <string name="global_actions_max_columns_summary">Legen Sie fest, wie viele Aktionen angezeigt werden sollen, bevor die Schaltflächen in das Überlaufmenü verschoben werden</string>
-
     <!-- Statusbar net monitor -->
     <string name="net_monitor_category_title">Netzwerkverkehrsanzeige</string>
     <string name="network_traffic_state_title">Netzwerkverkehrsanzeige aktivieren</string>
@@ -151,29 +194,8 @@
     <string name="network_traffic_state_sb_summary">Zeigen Sie die Netzwerkverkehrsanzeige auch in der normalen Statusleiste an</string>
     <string name="network_traffic_autohide_threshold_title">Schwellenwert für das automatische Ausblenden der Netzwerkverkehrsanzeige (KB/s)</string>
 
-    <!-- Lockscreen clock style -->
-    <string name="lockscreen_clock_title">Sperrbildschirmuhr</string>
-    <string name="lockscreen_clock_summary">Stil der Uhr im Sperrbildschirm und im Umgebungsdisplay</string>
-    <string name="lockscreen_clock_dialog_title">Uhrstil auswählen</string>
-    <string name="lockscreen_clock_hide">Verstecken</string>
-    <string name="lockscreen_clock_default">Standard</string>
-    <string name="lockscreen_clock_default_bold">Standard (fett)</string>
-    <string name="lockscreen_clock_sammy">Sammy</string>
-    <string name="lockscreen_clock_sammy_bold">Sammy (fett)</string>
-
     <string name="qs_bg_use_new_tint">Farben der QS-Kacheln</string>
     <string name="qs_bg_use_new_tint_summary">Verwenden Sie die Akzentfarbe für QS-Kachelsymbole und den Hintergrund</string>
-
-    <!-- Long press power for torch -->
-    <string name="power_category_header">Power-Button</string>
-    <string name="torch_long_press_power_gesture_title">Taschenlampen-Funktion bei ausgeschaltetem Bildschirm</string>
-    <string name="torch_long_press_power_gesture_desc">Zum Einschalten der Taschenlampe Ein-/Aus-Taste lange drücken</string>
-    <string name="torch_long_press_power_timeout_title">Taachenlampe automatisch ausschalten</string>
-    <string name="torch_long_press_power_timeout_never">Nie</string>
-    <string name="torch_long_press_power_timeout_1min">1 Minute</string>
-    <string name="torch_long_press_power_timeout_2min">2 Minuten</string>
-    <string name="torch_long_press_power_timeout_5min">5 Minuten</string>
-    <string name="torch_long_press_power_timeout_10min">10 Minuten</string>
 
     <!-- SmartSpace -->
     <string name="smart_space_title">Google Smart space</string>
@@ -181,6 +203,11 @@
 
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusleistenelemente</string>
+
+    <!-- Status bar - icons -->
+    <string name="status_bar_icons_title">Status bar icons</string>
+    <string name="status_bar_system_icons_title">System icons</string>
+    <string name="status_bar_system_icons_summary">Control which status bar icons are shown</string>
 
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-Call-Vibrationsoptionen</string>
@@ -199,12 +226,6 @@
     <!-- Lock screen cover art -->
     <string name="lockscreen_media_art_title">Mediencover anzeigen</string>
     <string name="lockscreen_media_art_summary">Zeigen Sie das Albumcover des aktuell wiedergegebenen Mediums auf dem Sperrbildschirm an</string>
-
-	<!-- Navbar tuner -->
-    <string name="navbar_tuner_title">Navbar-Tasten</string>
-
-    <!-- Navbar options -->
-    <string name="navbar_invert_layout_title">Layout umkehren</string>
 
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_category">Bildschirmkantenbeleuchtung</string>
