@@ -21,5 +21,35 @@
     <color name="default_inactive_color">#A0A0A0</color>
     <color name="default_shape_inactive_color">#FFA0A0A0</color>
     <color name="fod_item_background_stroke_color">#555555</color>
+    <color name="theme_accent">@*android:color/accent_device_default_dark</color>
+    <color name="preference_background_color">@*android:color/accent_device_default_dark</color>
+
+    <!-- DerpQuest icon background colors -->
+    <color name="homepage_derp_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_animations_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_battery_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_changelog_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_clock_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_cutout_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_display_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_gestures_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_headsup_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_hw_keys_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_led_settings_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_lockscreen_aosp_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_lockscreen_general_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_lockscreen_tuner_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_lockscreen_weather_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_miscellaneous_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_themer_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_traffic_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_navigationbar_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_notifications_general_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_powerbutton_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_pulse_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_quick_settings_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_recents_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_statusbar_items_background">@*android:color/accent_device_default_dark</color>
+    <color name="derpquest_volume_rocker_background">@*android:color/accent_device_default_dark</color>
 
 </resources>
