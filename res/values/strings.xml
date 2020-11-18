@@ -256,4 +256,8 @@
     <string name="pulse_ambient_light_repeat_count_title">Repeat count</string>
     <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
 
+    <!-- Less boring heads up option -->
+    <string name="less_boring_heads_up_title">Less boring heads up</string>
+    <string name="less_boring_heads_up_summary">Quickly disable heads up for all apps but keep them enabled for dialer and messaging apps</string>
+
 </resources>
