@@ -18,6 +18,9 @@
     <color name="color_inactive">#FFA0A0A0</color>
     <color name="settingsHeaderColor">@*android:color/accent_device_default_dark</color>
 
+    <!-- Previews -->
+    <color name="preview_container_border">#14FFFFFF</color>
+
     <color name="default_inactive_shape_color">#FFA0A0A0</color>
     <color name="default_inactive_color">#A0A0A0</color>
     <color name="default_shape_inactive_color">#FFA0A0A0</color>

@@ -29,4 +29,8 @@
        android:title="@string/theme_customization_font_title"
        android:icon="@drawable/ic_font"/>
 
+    <ListPreference
+       android:layout="@layout/fonts_base_preview"
+       android:selectable="false" />
+
 </PreferenceScreen>

@@ -26,6 +26,9 @@
     <color name="preference_background_color">@*android:color/accent_device_default_light</color>
     <color name="dummycolorAccent">?android:attr/colorAccent</color>
 
+    <!-- Previews -->
+    <color name="preview_container_border">#ECECEC</color>
+
     <!-- DerpQuest icon background colors -->
     <color name="homepage_derp_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_animations_background">@*android:color/accent_device_default_light</color>
