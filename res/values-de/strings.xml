@@ -267,4 +267,12 @@
     <string name="quick_pulldown_right">Herunterziehen der Statusleiste von rechts</string>
     <string name="quick_pulldown_left">Herunterziehen der Statusleiste von links</string>
 
+    <!-- QS rows and columns -->
+    <string name="qs_columns_rows_category_title">QS-Zeilen und -Spalten</string>
+    <string name="qs_rows_columns_title">QS-Zeilen und -Spalten</string>
+    <string name="qs_rows_portrait_title">Kachelzeilen im Hochformat</string>
+    <string name="qs_rows_landscape_title">Kachelzeilen im Querformat</string>
+    <string name="qs_columns_portrait_title">Kachelspalten im Hochformat</string>
+    <string name="qs_columns_landscape_title">Kachelspalten im Querformat</string>
+
 </resources>
