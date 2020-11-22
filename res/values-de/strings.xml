@@ -274,5 +274,6 @@
     <string name="qs_rows_landscape_title">Kachelzeilen im Querformat</string>
     <string name="qs_columns_portrait_title">Kachelspalten im Hochformat</string>
     <string name="qs_columns_landscape_title">Kachelspalten im Querformat</string>
+    <string name="qs_tile_title_visibility_title">Kacheltitel anzeigen</string>
 
 </resources>
