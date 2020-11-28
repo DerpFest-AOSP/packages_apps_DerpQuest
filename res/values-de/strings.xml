@@ -276,4 +276,19 @@
     <string name="qs_columns_landscape_title">Kachelspalten im Querformat</string>
     <string name="qs_tile_title_visibility_title">Kacheltitel anzeigen</string>
 
+    <!-- Battery Styles -->
+    <string name="status_bar_battery_style_title">Stil der Akkuanzeige</string>
+    <string name="status_bar_battery_style_icon_portrait">Batterie (Standard)</string>
+    <string name="status_bar_battery_style_circle">Kreis</string>
+    <string name="status_bar_battery_style_dotted_circle">Gepunkteter Kreis</string>
+    <string name="status_bar_battery_style_filled_circle">Gefüllter Kreis</string>
+    <string name="status_bar_battery_style_text">Nur Prozentsatz</string>
+    <string name="status_bar_battery_style_hidden">Nicht anzeigen</string>
+    <string name="status_bar_battery_percentage_title">Akku-Prozentsatz</string>
+    <string name="status_bar_battery_percentage_default">Nicht anzeigen</string>
+    <string name="status_bar_battery_percentage_text_inside">Im Symbol</string>
+    <string name="status_bar_battery_percentage_text_next">Neben dem Symbol</string>
+    <string name="qs_battery_percentage_title">QS Akku-Prozentsatz</string>
+    <string name="qs_battery_percentage_summary">Akku-Prozentsatz im QS-Header anstelle der geschätzten Laufzeit anzeigen</string>
+
 </resources>
