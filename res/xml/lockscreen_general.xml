@@ -59,7 +59,8 @@
     <PreferenceCategory
         android:key="lock_clock_fonts"
         android:title="@string/lock_clock_font_title">
-    <ListPreference
+
+        <ListPreference
             android:key="lock_clock_font_style"
             android:title="@string/lock_clock_font_title"
             android:dialogTitle="@string/lock_clock_font_dialog_title"
@@ -67,6 +68,15 @@
             android:entryValues="@array/lock_clock_fonts_values"
             android:summary="@string/lock_clock_font_summary"
             android:persistent="false" />
-        </PreferenceCategory>
+
+        <ListPreference
+            android:key="lock_date_fonts"
+            android:title="@string/lock_date_font_title"
+            android:dialogTitle="@string/lock_date_font_dialog_title"
+            android:entries="@array/lock_date_fonts_entries"
+            android:entryValues="@array/lock_date_fonts_values"
+            android:summary="@string/lock_date_font_summary"
+            android:persistent="false" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

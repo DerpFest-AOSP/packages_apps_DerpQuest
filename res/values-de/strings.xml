@@ -318,4 +318,9 @@
     <string name="lock_clock_font_summary">Ändern Sie die Standardschriftart des Widgets für die Sperrbildschirmuhr</string>
     <string name="lock_clock_font_dialog_title">Wählen Sie die Schriftart</string>
 
+    <!-- Lock date fonts -->
+    <string name="lock_date_font_title">Datums-Schriftarten-Optionen</string>
+    <string name="lock_date_font_summary">Ändern der Standardschriftart des Sperrbildschirm-Datumswidget</string>
+    <string name="lock_date_font_dialog_title">Wählen Sie die Schriftart</string>
+
 </resources>
