@@ -15,7 +15,8 @@
 -->
 <resources>
     <color name="color_active">#FFE0E0E0</color>
-    <color name="color_inactive">#FFA0A0A0</color> 
+    <color name="color_inactive">#FFA0A0A0</color>
+    <color name="settingsHeaderColor">@*android:color/accent_device_default_dark</color>
 
     <color name="default_inactive_shape_color">#FFA0A0A0</color>
     <color name="default_inactive_color">#A0A0A0</color>
@@ -23,6 +24,7 @@
     <color name="fod_item_background_stroke_color">#555555</color>
     <color name="theme_accent">@*android:color/accent_device_default_dark</color>
     <color name="preference_background_color">@*android:color/accent_device_default_dark</color>
+    <color name="dummycolorAccent">?android:attr/colorAccent</color>
 
     <!-- DerpQuest icon background colors -->
     <color name="homepage_derp_background">@*android:color/accent_device_default_dark</color>
