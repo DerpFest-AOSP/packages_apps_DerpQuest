@@ -55,12 +55,14 @@ import java.util.Map;
 public class GeneralNotifications extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private SystemSettingSwitchPreference mAmbientPref;
     private ColorPickerPreference mEdgeLightColorPreference;
     private CustomSystemSeekBarPreference mEdgeLightDurationPreference;
     private CustomSystemSeekBarPreference mEdgeLightRepeatCountPreference;
     private ListPreference mColorMode;
 
-	private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
     private static final String NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
     private static final String NOTIFICATION_PULSE_DURATION = "notification_pulse_duration";
     private static final String NOTIFICATION_PULSE_REPEATS = "notification_pulse_repeats";
@@ -76,6 +78,15 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
         PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
         if (!Utils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
+        }
+
+	        mAmbientPref = (SystemSettingSwitchPreference) findPreference(KEY_AMBIENT);
+        boolean aodEnabled = Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.DOZE_ALWAYS_ON, 0, UserHandle.USER_CURRENT) == 1;
+        if (!aodEnabled) {
+            mAmbientPref.setChecked(false);
+            mAmbientPref.setEnabled(false);
+            mAmbientPref.setSummary(R.string.aod_disabled);
         }
 
         mEdgeLightRepeatCountPreference = (CustomSystemSeekBarPreference) findPreference(NOTIFICATION_PULSE_REPEATS);
