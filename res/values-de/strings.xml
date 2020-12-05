@@ -693,4 +693,9 @@
     <!-- Power menu background opacity -->
     <string name="power_menu_alpha_title">Deckkraft des Ein-/Aus-Menüs</string>
 
+    <!-- Lockscreen charge temperature unit -->
+    <string name="lockscreen_charge_temp_unit_title">Temperatureinheit</string>
+    <string name="lockscreen_charge_temp_unit_farhenheit">Fahrenheit</string>
+    <string name="lockscreen_charge_temp_unit_celsius">Celsius</string>
+
 </resources>

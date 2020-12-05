@@ -33,6 +33,8 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.fuelgauge.PowerUsageSummary;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
@@ -41,9 +43,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import com.derp.support.preference.CustomSeekBarPreference;
+import com.derp.support.preference.SystemSettingListPreference;
 import com.derp.support.colorpicker.ColorPickerPreference;
-
-import com.android.internal.logging.nano.MetricsProto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
     private ColorPickerPreference mAmbientIconsColor;
+    private SystemSettingListPreference mBatteryTempUnit;
 
     Preference mAODPref;
 
@@ -73,6 +75,15 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_general);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+        int unitMode = Settings.System.getIntForUser(resolver,
+                Settings.System.LOCKSCREEN_BATTERY_INFO_TEMP_UNIT, 0, UserHandle.USER_CURRENT);
+        mBatteryTempUnit = (SystemSettingListPreference) findPreference(
+                "lockscreen_charge_temp_unit");
+        mBatteryTempUnit.setValue(String.valueOf(unitMode));
+        mBatteryTempUnit.setSummary(mBatteryTempUnit.getEntry());
+        mBatteryTempUnit.setOnPreferenceChangeListener(this);
 
         mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONT_STYLE);
         mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
@@ -132,7 +143,16 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mLockClockFonts) {
+        if (preference == mBatteryTempUnit) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.LOCKSCREEN_BATTERY_INFO_TEMP_UNIT, value,
+                    UserHandle.USER_CURRENT);
+            int index = mBatteryTempUnit.findIndexOfValue((String) newValue);
+            mBatteryTempUnit.setSummary(
+            mBatteryTempUnit.getEntries()[index]);
+            return true;
+        } else if (preference == mLockClockFonts) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONT_STYLE,
                     Integer.valueOf((String) newValue));
             mLockClockFonts.setValue(String.valueOf(newValue));
