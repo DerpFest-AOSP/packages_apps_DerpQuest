@@ -354,4 +354,8 @@
     <string name="navbar_layout_rightleaning">Rechtsbündig</string>
     <string name="navbar_invert_layout_title">Layout umkehren</string>
 
+    <!-- Navbar Animation -->
+    <string name="pixel_navbar_anim_title">Pixel-Animation</string>
+    <string name="pixel_navbar_anim_summary">Animation der Home-Taste aktivieren</string>
+
 </resources>

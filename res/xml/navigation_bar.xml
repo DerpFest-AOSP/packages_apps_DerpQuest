@@ -25,6 +25,13 @@
         android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
         settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
+    <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="pixel_nav_animation"
+        android:title="@string/pixel_navbar_anim_title"
+        android:summary="@string/pixel_navbar_anim_summary"
+        android:defaultValue="true"
+        android:dependency="navbar_visibility" />
+
     <com.derp.support.preference.SecureSettingListPreference
         android:key="navbar_layout_views"
         android:title="@string/navbar_layout_title"
