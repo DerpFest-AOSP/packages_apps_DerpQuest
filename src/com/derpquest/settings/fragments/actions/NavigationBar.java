@@ -20,8 +20,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.*;
 
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -31,6 +30,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.derp.derpUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,10 +39,22 @@ import java.util.List;
 public class NavigationBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String LAYOUT_SETTINGS = "navbar_layout_views";
+
+    private Preference mLayoutSettings;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.navigation_bar);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mLayoutSettings = (Preference) findPreference(LAYOUT_SETTINGS);
+
+        if (!derpUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            prefScreen.removePreference(mLayoutSettings);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

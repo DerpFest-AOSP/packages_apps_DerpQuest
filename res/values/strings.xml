@@ -137,8 +137,6 @@
 <!-- FEATURES -->
 
     <!-- Navbar Entries -->
-    <string name="navigation_tuner_title">Navigation Tuner</string>
-    <string name="navigation_tuner_summary">Further adjust some elements of system navigation</string>
     <string name="navbar_gestures_title">Navigation gesture options</string>
     <string name="navbar_gestures_summary">Choose buttons or gestures to navigate your device</string>
 
@@ -394,5 +392,12 @@
     <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
+
+    <!-- Navbar layout options -->
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
 
 </resources>
