@@ -352,5 +352,6 @@
     <string name="navbar_layout_compact">Kompakt</string>
     <string name="navbar_layout_leftleaning">Linksbündig</string>
     <string name="navbar_layout_rightleaning">Rechtsbündig</string>
+    <string name="navbar_invert_layout_title">Layout umkehren</string>
 
 </resources>
