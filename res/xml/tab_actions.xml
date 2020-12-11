@@ -22,8 +22,7 @@
         android:fragment="com.derpquest.settings.fragments.actions.PowerButton"
         android:icon="@drawable/ic_powerbutton_background"
         android:title="@string/powerbutton_title"
-        android:summary="@string/powerbutton_summary" 
-		android:persistent="false"/>
+        android:summary="@string/powerbutton_summary" />
 
     <com.android.settings.widget.CardPreference
         android:key="navigationbar_settings"

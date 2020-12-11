@@ -406,4 +406,8 @@
     <string name="pixel_navbar_anim_title">Pixel animation</string>
     <string name="pixel_navbar_anim_summary">Toggle home button animation</string>
 
+    <!-- Global Actions -->
+    <string name="powermenu_advanced_reboot_title">Advanced reboot</string>
+    <string name="powermenu_advanced_reboot_summary">Enables access to recovery and bootloader</string>
+
 </resources>

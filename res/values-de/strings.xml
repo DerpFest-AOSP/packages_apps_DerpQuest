@@ -359,4 +359,8 @@
     <string name="pixel_navbar_anim_title">Pixel-Animation</string>
     <string name="pixel_navbar_anim_summary">Animation der Home-Taste aktivieren</string>
 
+    <!-- Global Actions -->
+    <string name="powermenu_advanced_reboot_title">Erweiterter Neustart</string>
+    <string name="powermenu_advanced_reboot_summary">Ermöglicht den Zugriff auf Wiederherstellungsmodus und Bootloader</string>
+
 </resources>
