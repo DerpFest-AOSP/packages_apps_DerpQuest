@@ -135,8 +135,7 @@
     <string name="enable_first">Bitte zuerst aktivieren</string>
 
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">Neustart der SystemUI erforderlich</string>
-    <string name="systemui_restart_message">Damit alle Änderungen wirksam werden, ist ein Neustart der SystemUI erforderlich. SystemUI jetzt neu starten?</string>
+    <string name="systemui_restart_toast">Für diese Funktion ist ein Neustart der SystemUI erforderlich. Wir werden die SystemUI jetzt neu starten.</string>
 
 <!-- FEATURES -->
 
