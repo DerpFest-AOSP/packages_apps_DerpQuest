@@ -812,4 +812,13 @@
 
     <string name="show_app_volume_title">Show app volume</string>
     <string name="show_app_volume_summary">Show app volume in volume panel</string>
+
+    <!-- Doze Brightness Config -->
+    <string name="doze_brightness_category">Doze Brightness Config</string>
+    <string name="doze_brightness_force_title">Force brightness values</string>
+    <string name="doze_brightness_force_summary">Use custom brightness values instead of screen brightness</string>
+    <string name="ambient_pulse_brightness_title">Ambient notification brightness</string>
+    <string name="ambient_pulse_brightness_summary">Set brightness to use when notifcations are shown</string>
+    <string name="ambient_doze_brightness_title">Ambient display brightness</string>
+    <string name="ambient_doze_brightness_summary">Set brightness to use during ambient display on</string>
 </resources>

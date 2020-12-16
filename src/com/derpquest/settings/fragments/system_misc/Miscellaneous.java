@@ -38,6 +38,8 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.derp.support.preference.CustomSeekBarPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,8 +47,12 @@ import java.util.List;
 public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
+    private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
 
+    private CustomSeekBarPreference mPulseBrightness;
+    private CustomSeekBarPreference mDozeBrightness;
     private ListPreference mVolumeKeyCursorControl;
 
     @Override
@@ -67,6 +73,26 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
             mVolumeKeyCursorControl.setValue(Integer.toString(volumeRockerCursorControl));
             mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
         }
+
+        int defaultDoze = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessDoze);
+        int defaultPulse = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessPulse);
+        if (defaultPulse == -1) {
+            defaultPulse = defaultDoze;
+        }
+
+        mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
+        int value = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_BRIGHTNESS, defaultPulse);
+        mPulseBrightness.setValue(value);
+        mPulseBrightness.setOnPreferenceChangeListener(this);
+
+        mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.DOZE_BRIGHTNESS, defaultDoze);
+        mDozeBrightness.setValue(value);
+        mDozeBrightness.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -79,6 +105,16 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                     .findIndexOfValue(volumeKeyCursorControl);
             mVolumeKeyCursorControl
                     .setSummary(mVolumeKeyCursorControl.getEntries()[volumeKeyCursorControlIndex]);
+            return true;
+        } else if (preference == mPulseBrightness) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PULSE_BRIGHTNESS, value);
+            return true;
+        } else if (preference == mDozeBrightness) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOZE_BRIGHTNESS, value);
             return true;
 		  }
         return false;
