@@ -566,4 +566,8 @@
     <string name="global_actions_screenrecord_title">Screen Record</string>
     <string name="global_actions_screenrecord_summary">Add Screen Record toggle to Power Menu</string>
 
+    <!-- QS panel options -->
+    <string name="qs_edit_title">Edit Icon</string>
+    <string name="qs_edit_summary">Enable the tile edit icon in the footer</string>
+
 </resources>

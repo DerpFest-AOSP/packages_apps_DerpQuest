@@ -512,4 +512,8 @@
     <!-- Screen record -->
     <string name="global_actions_screenrecord_title">Bildschirmaufnahme</string>
     <string name="global_actions_screenrecord_summary">Bildschirmaufnahme-Schalter zum Power-Menü hinzufügen</string>
+
+    <!-- QS panel options -->
+    <string name="qs_edit_title">Bearbeiten-Symbol</string>
+    <string name="qs_edit_summary">Aktivieren Sie das Kachelbearbeitungssymbol in der Fußzeile</string>
 </resources>
