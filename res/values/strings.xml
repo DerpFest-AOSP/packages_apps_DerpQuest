@@ -605,4 +605,20 @@
     <string name="fod_icon_picker_summary">Pick your favourite fingerprint icon</string>
     <string name="fod_wallpaper_color">Use wallpaper color for FOD icon</string>
     <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
+
+    <!-- gvisual mod -->
+    <string name="gvisual_title">G-Visual Mod</string>
+    <string name="gvisual_summary">Various UI customizations by @ImYourGege</string>
+    <string name="rounded_ui_title">Rounded corner</string>
+    <string name="rounded_ui_dialog_title">Select rounded corner model</string>
+    <string name="rounded_style_default">Default</string>
+    <string name="rounded_style_rectangle">Rectangle</string>
+    <string name="rounded_style_large">Large</string>
+    <string name="rounded_style_medium">Medium</string>
+    <string name="statusbar_height_title">Statusbar height</string>
+    <string name="statusbar_height_dialog_title">Select statusbar height model</string>
+    <string name="sb_height_default">Default</string>
+    <string name="sb_height_medium">Medium</string>
+    <string name="sb_height_large">Large</string>
+    <string name="sb_height_extralarge">Extra Large</string>
 </resources>
