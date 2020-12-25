@@ -91,9 +91,9 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
 
         mEdgeLightRepeatCountPreference = (CustomSystemSeekBarPreference) findPreference(NOTIFICATION_PULSE_REPEATS);
         mEdgeLightRepeatCountPreference.setOnPreferenceChangeListener(this);
-        int rCount = Settings.System.getInt(getContentResolver(),
+        int repeats = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_REPEATS, 0);
-        mEdgeLightRepeatCountPreference.setValue(rCount);
+        mEdgeLightRepeatCountPreference.setValue(repeats);
 
         mEdgeLightDurationPreference = (CustomSystemSeekBarPreference) findPreference(NOTIFICATION_PULSE_DURATION);
         mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
