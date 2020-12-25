@@ -30,12 +30,6 @@
         android:summary="@string/smart_space_summary"
         android:defaultValue="true" />
 
-    <com.derp.support.preference.SecureSettingSwitchPreference
-        android:key="lockscreen_visualizer_enabled"
-        android:title="@string/lockscreen_visualizer_enable"
-        android:summary="@string/lockscreen_visualizer_enable_summary"
-        android:defaultValue="false" />
-
     <PreferenceCategory
         android:key="lockscreen_media_art_options"
         android:title="@string/lockscreen_media_art_options_title">
