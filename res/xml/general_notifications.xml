@@ -95,7 +95,7 @@
             android:persistent="false"
             android:defaultValue="2"
             android:max="10"
-            settings:min="1"
+            android:min="1"
             settings:units="sec"
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
@@ -107,7 +107,7 @@
             android:persistent="false"
             android:defaultValue="0"
             android:max="10"
-            settings:min="0"
+            android:min="0"
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
 
