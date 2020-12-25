@@ -86,7 +86,7 @@
             android:summary="@string/ambient_notification_light_color_summary"
             android:title="@string/ambient_notification_light_color_title"
             ledPreview="true"
-            settings:defaultColorValue="0xFF3980FF" />
+            android:defaultValue="0xFF3980FF" />
 
         <com.derp.support.preference.CustomSystemSeekBarPreference
             android:key="notification_pulse_duration"
