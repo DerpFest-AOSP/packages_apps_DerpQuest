@@ -263,13 +263,14 @@
     <string name="quick_pulldown_left">Herunterziehen der Statusleiste von links</string>
 
     <!-- QS rows and columns -->
-    <string name="qs_columns_rows_category_title">QS-Zeilen und -Spalten</string>
-    <string name="qs_rows_columns_title">QS-Zeilen und -Spalten</string>
-    <string name="qs_rows_portrait_title">Kachelzeilen im Hochformat</string>
-    <string name="qs_rows_landscape_title">Kachelzeilen im Querformat</string>
-    <string name="qs_columns_portrait_title">Kachelspalten im Hochformat</string>
-    <string name="qs_columns_landscape_title">Kachelspalten im Querformat</string>
-    <string name="qs_tile_title_visibility_title">Kacheltitel anzeigen</string>
+    <string name="qs_columns_rows_config_title">QS-Zeilen und -Spalten</string>
+    <string name="qs_columns_rows_config_summary">Konfigurieren Sie die Anordnung der Kacheln für Schnelleinstellungen</string>
+    <string name="dialog_title">QS-Zeilen und -Spalten</string>
+    <string name="portrait_title">Hochformat</string>
+    <string name="landscape_title">Querformat</string>
+    <string name="seekbar_columns">Columns</string>
+    <string name="seekbar_rows">Zeilen</string>
+    <string name="submit_button">Übernehmen</string>
 
     <!-- Battery Styles -->
     <string name="status_bar_battery_style_title">Stil der Akkuanzeige</string>
