@@ -840,4 +840,8 @@
     <string name="rounded_medium">Mittel</string>
     <string name="rounded_high">Hoch</string>
     <string name="rounded_extreme">Extrem</string>
+
+    <!-- Lock Icon -->
+    <string name="lockscreen_lock_icon_title">Schlosssymbol</string>
+    <string name="lockscreen_lock_icon_summary">Schlosssymbol auf dem Sperrbildschirm anzeigen</string>
 </resources>
