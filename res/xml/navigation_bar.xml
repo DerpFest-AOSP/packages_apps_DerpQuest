@@ -18,10 +18,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navigationbar_title" >
 
-    <SwitchPreference
-        android:key="navbar_visibility"
-        android:title="@string/navbar_visibility" />
-
     <Preference
         android:key="system_navigation_settings_preferences"
         android:title="@string/navbar_gestures_title"
@@ -33,8 +29,7 @@
         android:key="pixel_nav_animation"
         android:title="@string/pixel_navbar_anim_title"
         android:summary="@string/pixel_navbar_anim_summary"
-        android:defaultValue="true"
-        android:dependency="navbar_visibility" />
+        android:defaultValue="true" />
 
     <com.derp.support.preference.SecureSettingListPreference
         android:key="navbar_layout_views"
@@ -42,13 +37,11 @@
         android:summary="%s"
         android:entries="@array/navbar_layout_entries"
         android:entryValues="@array/navbar_layout_values"
-        android:defaultValue="default"
-        android:dependency="navbar_visibility" />
+        android:defaultValue="default" />
 
     <com.derp.support.preference.SecureSettingSwitchPreference
         android:key="navbar_inverse_layout"
         android:title="@string/navbar_invert_layout_title"
-        android:defaultValue="false"
-        android:dependency="navbar_visibility" />
+        android:defaultValue="false" />
 
 </PreferenceScreen>
