@@ -862,4 +862,8 @@
     <!-- Screenshot compression -->
     <string name="screenshot_compression_title">Screenshot-Qualität</string>
     <string name="screenshot_compression_summary">Komprimieren Sie die Screenshot-Größe mit Verlust der Bildqualität</string>
+
+    <!-- FOD on doze -->
+    <string name="fod_on_doze_title">FOD on doze</string>
+    <string name="fod_on_doze_summary">Wählen Sie ob FOD während der Umgebungsanzeige/AOD angezeigt werden soll. Dadurch wird nur das Symbol ausgeblendet und die Funktionalität nicht deaktiviert.</string>
 </resources>

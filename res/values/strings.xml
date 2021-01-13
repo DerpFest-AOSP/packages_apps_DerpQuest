@@ -1030,4 +1030,8 @@
     <string name="sleep_mode_ringer_dnd_title">Do Not Disturb</string>
     <string name="sleep_mode_ringer_silent_title">Silent</string>
     <string name="sleep_mode_display_text">Sleep mode allows you to disable certain services to help save battery and silence your phone while you sleep.</string>
+
+    <!-- FOD on doze -->
+    <string name="fod_on_doze_title">FOD on doze</string>
+    <string name="fod_on_doze_summary">Show fingerprint on display during ambient display and AoD. This only hides the icon and will not disable functionality.</string>
 </resources>

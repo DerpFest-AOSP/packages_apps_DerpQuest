@@ -57,6 +57,12 @@
             android:entryValues="@array/fod_pressed_color_values"
             android:defaultValue="@*android:integer/config_fod_pressed_color" />
 
+        <com.derp.support.preference.SecureSettingSwitchPreference
+            android:key="fod_on_doze"
+            android:title="@string/fod_on_doze_title"
+            android:summary="@string/fod_on_doze_summary"
+            android:defaultValue="true" />
+
         <com.derp.support.preference.SystemSettingSwitchPreference
             android:key="fod_gesture"
             android:title="@string/fod_gesture_title"
