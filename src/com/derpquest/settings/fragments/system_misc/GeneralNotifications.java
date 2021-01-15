@@ -40,7 +40,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.derp.support.colorpicker.ColorPickerPreference;
-import com.derp.support.preference.CustomSystemSeekBarPreference;
+import com.derp.support.preference.CustomSeekBarPreference;
 import com.derp.support.preference.SystemSettingSwitchPreference;
 
 import com.derpquest.settings.utils.Utils;
@@ -57,8 +57,8 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
 
     private SystemSettingSwitchPreference mAmbientPref;
     private ColorPickerPreference mEdgeLightColorPreference;
-    private CustomSystemSeekBarPreference mEdgeLightDurationPreference;
-    private CustomSystemSeekBarPreference mEdgeLightRepeatCountPreference;
+    private CustomSeekBarPreference mEdgeLightDurationPreference;
+    private CustomSeekBarPreference mEdgeLightRepeatCountPreference;
     private ListPreference mColorMode;
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
@@ -89,13 +89,13 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
             mAmbientPref.setSummary(R.string.aod_disabled);
         }
 
-        mEdgeLightRepeatCountPreference = (CustomSystemSeekBarPreference) findPreference(NOTIFICATION_PULSE_REPEATS);
+        mEdgeLightRepeatCountPreference = (CustomSeekBarPreference) findPreference(NOTIFICATION_PULSE_REPEATS);
         mEdgeLightRepeatCountPreference.setOnPreferenceChangeListener(this);
         int repeats = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_REPEATS, 0);
         mEdgeLightRepeatCountPreference.setValue(repeats);
 
-        mEdgeLightDurationPreference = (CustomSystemSeekBarPreference) findPreference(NOTIFICATION_PULSE_DURATION);
+        mEdgeLightDurationPreference = (CustomSeekBarPreference) findPreference(NOTIFICATION_PULSE_DURATION);
         mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
         int duration = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_DURATION, 2);
