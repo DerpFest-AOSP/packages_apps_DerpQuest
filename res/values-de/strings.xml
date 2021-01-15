@@ -634,7 +634,8 @@
 
     <!--  Volume Panel Plugin   -->
     <string name="volume_panel">Volume-Panel-Stil</string>
-    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_stock">Standard</string>
+    <string name="volume_panel_aosp">AOSP Expanded</string>
     <string name="volume_panel_compact">Kompakt</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Gekachelt</string>
