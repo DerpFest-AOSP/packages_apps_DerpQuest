@@ -16,8 +16,10 @@
 
 package com.derpquest.settings.fragments.actions;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import androidx.preference.*;
@@ -31,6 +33,7 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.derp.derpUtils;
+import com.android.internal.util.derp.ActionUtils;
 
 import com.derp.support.preference.SystemSettingSwitchPreference;
 
@@ -41,13 +44,18 @@ import java.util.List;
 public class NavigationBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
     private static final String LAYOUT_SETTINGS = "navbar_layout_views";
     private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
-    private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
+    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
 
     private Preference mLayoutSettings;
     private SwitchPreference mSwapNavButtons;
     private SystemSettingSwitchPreference mPixelNavAnimation;
+    private SwitchPreference mNavbarVisibility;
+
+    private boolean mIsNavSwitchingMode = false;
+    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,16 +67,49 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         mLayoutSettings = findPreference(LAYOUT_SETTINGS);
         mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
         mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
+        mNavbarVisibility = findPreference(NAVBAR_VISIBILITY);
 
         if (!derpUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             prefScreen.removePreference(mLayoutSettings);
             prefScreen.removePreference(mSwapNavButtons);
             prefScreen.removePreference(mPixelNavAnimation);
         }
+
+        boolean defaultToNavigationBar = ActionUtils.deviceSupportNavigationBar(getActivity());
+        boolean showing = Settings.System.getInt(getContentResolver(),
+                Settings.System.FORCE_SHOW_NAVBAR,
+                defaultToNavigationBar ? 1 : 0) != 0;
+        updateBarVisibleAndUpdatePrefs(showing);
+
+        mNavbarVisibility.setOnPreferenceChangeListener(this);
+
+        mHandler = new Handler();
     }
 
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference.equals(mNavbarVisibility)) {
+            if (mIsNavSwitchingMode) {
+                return false;
+            }
+            mIsNavSwitchingMode = true;
+            boolean showing = ((Boolean)newValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.FORCE_SHOW_NAVBAR,
+                    showing ? 1 : 0);
+            updateBarVisibleAndUpdatePrefs(showing);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mIsNavSwitchingMode = false;
+                }
+            }, 1500);
+            return true;
+        }
         return false;
+    }
+
+    private void updateBarVisibleAndUpdatePrefs(boolean showing) {
+        mNavbarVisibility.setChecked(showing);
     }
 
     @Override
