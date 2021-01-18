@@ -20,6 +20,7 @@ package com.derpquest.settings.helpers;
 
 import android.app.Dialog;
 import android.content.ContentResolver;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -109,7 +110,13 @@ public class QsTileConfigDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                     Bundle savedInstanceState) {
 
-        mView = inflater.inflate(R.layout.qs_tile_config_dialog, container, false);
+        //Condition to change layout according to orientation
+        int orientation = this.getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            mView = inflater.inflate(R.layout.qs_tile_config_dialog, container, false);
+        } else {
+            mView = inflater.inflate(R.layout.qs_tile_config_dialog_land, container, false);
+        }
 
         if (mView != null) {
             okButton = mView.findViewById(R.id.submit);
