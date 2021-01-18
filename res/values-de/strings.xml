@@ -273,14 +273,14 @@
     <string name="qstile_default">Standard</string>
 
     <!-- Pulse -->
-    <string name="pulse_help_policy_notice_summary">Pulse ist ein brillanter Audio-Grafik-Equalizer, wenn Musik auf dem Gerät abgespielt wird</string>
-    <string name="pulse_settings_summary">Audio-Equalizer für Navigationsleiste und Sperrbildschirm</string>
-    <string name="show_navbar_pulse_title">Navbar Audio-Equalizer</string>
-    <string name="show_navbar_pulse_summary">Audio-Equalizer beim Abspielen von Musik in der Navigationsleiste anzeigen</string>
-    <string name="show_lockscreen_pulse_title">Lockscreen Audio-Equalizer</string>
-    <string name="show_lockscreen_pulse_summary">Audio-Equalizer beim Abspielen von Musik auf dem Sperrbildschirm anzeigen</string>
-    <string name="show_ambient_pulse_title">Ambient Audio-Equalizer</string>
-    <string name="show_ambient_pulse_summary">Audio-Equalizer beim Abspielen von Musik auf dem Ambient Screen anzeigen</string>
+    <string name="pulse_help_policy_notice_summary">Pulse ist ein brillanter Audio-Grafik-Visualizer, wenn Musik auf dem Gerät abgespielt wird</string>
+    <string name="pulse_settings_summary">Audio-Visualizer für Navigationsleiste und Sperrbildschirm</string>
+    <string name="show_navbar_pulse_title">Navbar Audio-Visualizer</string>
+    <string name="show_navbar_pulse_summary">Audio-Visualizer beim Abspielen von Musik in der Navigationsleiste anzeigen</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Audio-Visualizer</string>
+    <string name="show_lockscreen_pulse_summary">Audio-Visualizer beim Abspielen von Musik auf dem Sperrbildschirm anzeigen</string>
+    <string name="show_ambient_pulse_title">Ambient Audio-Visualizer</string>
+    <string name="show_ambient_pulse_summary">Audio-Visualizer beim Abspielen von Musik auf dem Ambient Screen anzeigen</string>
     <string name="pulse_render_mode_title">Rendermodus</string>
     <string name="pulse_render_mode_fading_bars">Verblassende Blöcke</string>
     <string name="pulse_render_mode_solid_lines">Durchgezogene Linien</string>
