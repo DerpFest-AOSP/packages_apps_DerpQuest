@@ -505,4 +505,8 @@
     <string name="status_bar_clock_hide_on_home_title">Hide on Home</string>
     <string name="status_bar_clock_hide_on_home_summary">Hide clock when Home is showing</string>
 
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
+
 </resources>

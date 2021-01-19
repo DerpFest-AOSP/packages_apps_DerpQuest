@@ -455,4 +455,8 @@
     <string name="status_bar_clock_hide_on_home_title">Auf dem Homescreen verstecken</string>
     <string name="status_bar_clock_hide_on_home_summary">Uhr ausblenden, wenn der Homescreen des Launchers angezeigt wird</string>
 
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Statusleiste</string>
+    <string name="lockscreen_status_bar_summary">Statusleiste auf dem Sperrbildschirm anzeigen</string>
+
 </resources>

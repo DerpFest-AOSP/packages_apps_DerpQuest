@@ -19,6 +19,12 @@
     android:title="@string/lockscreen_general_title" >
 
     <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_status_bar"
+        android:title="@string/lockscreen_status_bar_title"
+        android:summary="@string/lockscreen_status_bar_summary"
+        android:defaultValue="true" />
+
+    <com.derp.support.preference.SystemSettingSwitchPreference
         android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
