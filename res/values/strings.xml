@@ -558,4 +558,8 @@
     <string name="hide_lockicon_title">Hide lock icon</string>
     <string name="hide_lockicon_summary">Hide the lock icon on lockscreen</string>
 
+    <!-- Screenshot -->
+    <string name="global_actions_screenshot_title">Screenshot</string>
+    <string name="global_actions_screenshot_summary">Add Screenshot toggle to Power Menu</string>
+
 </resources>
