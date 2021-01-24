@@ -32,6 +32,8 @@ import com.android.settings.Utils;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.derp.derpUtils;
 
+import com.derp.support.preference.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +47,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
 
     private Preference mLayoutSettings;
     private SwitchPreference mSwapNavButtons;
-    private SwitchPreference mPixelNavAnimation;
+    private SystemSettingSwitchPreference mPixelNavAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,14 +56,14 @@ public class NavigationBar extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mPixelNavAnimation = (SwitchPreference) findPreference(PIXEL_NAV_ANIMATION);
-        mLayoutSettings = (Preference) findPreference(LAYOUT_SETTINGS);
-        mSwapNavButtons = (SwitchPreference) findPreference(NAVIGATION_BAR_INVERSE);
+        mLayoutSettings = findPreference(LAYOUT_SETTINGS);
+        mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
+        mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
 
         if (!derpUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
-            prefScreen.removePreference(mPixelNavAnimation);
             prefScreen.removePreference(mLayoutSettings);
             prefScreen.removePreference(mSwapNavButtons);
+            prefScreen.removePreference(mPixelNavAnimation);
         }
     }
 
