@@ -562,4 +562,8 @@
     <string name="global_actions_screenshot_title">Screenshot</string>
     <string name="global_actions_screenshot_summary">Add Screenshot toggle to Power Menu</string>
 
+    <!-- Screen record -->
+    <string name="global_actions_screenrecord_title">Screen Record</string>
+    <string name="global_actions_screenrecord_summary">Add Screen Record toggle to Power Menu</string>
+
 </resources>
