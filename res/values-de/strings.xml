@@ -566,4 +566,11 @@
     <string name="media_category">Medienbenachrichtigungsoptionen</string>
     <string name="artwork_media_background_title">Artwork-Medienhintergrund</string>
     <string name="artwork_media_background_summary">Legen Sie die Mediengrafik als Hintergrund für Medienbenachrichtigungen fest</string>
+
+    <!-- AOD Icons in Lockscreen! -->
+    <string name="lock_aod_icons_title">AOD-Symbole</string>
+    <string name="ambient_icons_lockscreen_title">AOD-Symbole auf dem Sperrbildschirm</string>
+    <string name="ambient_icons_lockscreen_summary">Ändern Sie die Darstellung der AOD-Symbole</string>
+    <string name="ambient_icons_size_title">AOD-Symbol-Größe</string>
+    <string name="ambient_icons_color_title">AOD-Symbol-Farbe</string>
 </resources>

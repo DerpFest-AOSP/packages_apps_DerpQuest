@@ -19,6 +19,8 @@ package com.derpquest.settings.fragments.lockscreen;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.ServiceManager;
@@ -38,6 +40,9 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.derp.support.preference.CustomSeekBarPreference;
+import com.derp.support.colorpicker.ColorPickerPreference;
+
 import com.android.internal.logging.nano.MetricsProto;
 
 import java.util.ArrayList;
@@ -51,6 +56,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private static final String LOCK_CLOCK_FONT_STYLE = "lock_clock_font_style";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
     private static final String FOD_ANIMATIONS = "fod_animations";
+    private static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -61,6 +67,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
     private PreferenceCategory mFODCategory;
+    private ColorPickerPreference mAmbientIconsColor;
 
     Preference mAODPref;
 
@@ -91,6 +98,15 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         if (mFODCategory != null && !hasFod) {
             prefSet.removePreference(mFODCategory);
         }
+        
+        // Ambient Icons Color
+        mAmbientIconsColor = (ColorPickerPreference) findPreference(AMBIENT_ICONS_COLOR);
+        int intColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.AMBIENT_ICONS_COLOR, Color.WHITE);
+        String hexColor = String.format("#%08x", (0xffffff & intColor));
+        mAmbientIconsColor.setNewPreviewColor(intColor);
+        mAmbientIconsColor.setSummary(hexColor);
+        mAmbientIconsColor.setOnPreferenceChangeListener(this);
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
         updateAlwaysOnSummary();
@@ -139,6 +155,14 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
                     Integer.valueOf((String) newValue));
             mLockDateFonts.setValue(String.valueOf(newValue));
             mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+            return true;
+        } else if (preference == mAmbientIconsColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer
+                .parseInt(String.valueOf(newValue)));
+            mAmbientIconsColor.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.AMBIENT_ICONS_COLOR, intHex);
             return true;
         }
         return false;
