@@ -51,6 +51,28 @@
         android:defaultValue="0" />
 
     <PreferenceCategory
+        android:title="@string/fod_recog_animation"
+        android:key="fod_animations">
+
+    <!-- FOD recognizing animation -->
+    <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="fod_recognizing_animation"
+        android:title="@string/fod_recog_animation"
+        android:summary="@string/fod_recog_animation_summary"
+        android:defaultValue="false" />
+
+    <com.derp.support.preference.SystemSettingListPreference
+        android:key="fod_anim"
+        android:title="@string/fod_recog_animation_effect_title"
+        android:summary="%s"
+        android:entries="@array/fod_recog_animation_entries"
+        android:entryValues="@array/fod_recog_animation_values"
+        android:defaultValue="0"
+        android:dependency="fod_recognizing_animation" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_media_art_options"
         android:title="@string/lockscreen_media_art_options_title">
         <com.derp.support.preference.SecureSettingSwitchPreference
