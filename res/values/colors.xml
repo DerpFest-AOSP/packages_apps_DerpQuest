@@ -51,4 +51,7 @@
     <color name="derpquest_statusbar_items_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_volume_rocker_background">@*android:color/accent_device_default_light</color>
 
+    <!-- FOD -->
+    <color name="fod_item_background_stroke_color">#d6d6d6</color>
+
 </resources>
