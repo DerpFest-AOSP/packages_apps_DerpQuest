@@ -18,6 +18,7 @@ package com.derpquest.settings.fragments.lockscreen;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.ServiceManager;
 import android.provider.SearchIndexableResource;
@@ -47,14 +48,18 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
 
     private static final String LOCK_CLOCK_FONT_STYLE = "lock_clock_font_style";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
+    private static final String FOD_ANIMATIONS = "fod_animations";
 
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
+    private PreferenceCategory mFODCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_general);
+        PreferenceScreen prefSet = getPreferenceScreen();
+        Context mContext = getContext();
 
         mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONT_STYLE);
         mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
@@ -68,6 +73,14 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
                 getContentResolver(), Settings.System.LOCK_DATE_FONTS, 1)));
         mLockDateFonts.setSummary(mLockDateFonts.getEntry());
         mLockDateFonts.setOnPreferenceChangeListener(this);
+        
+        Resources res = mContext.getResources();
+        boolean hasFod = res.getBoolean(com.android.internal.R.bool.config_needCustomFODView);
+
+        mFODCategory = (PreferenceCategory) findPreference(FOD_ANIMATIONS);
+        if (mFODCategory != null && !hasFod) {
+            prefSet.removePreference(mFODCategory);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

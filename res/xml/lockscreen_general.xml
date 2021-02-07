@@ -70,6 +70,20 @@
         android:defaultValue="0"
         android:dependency="fod_recognizing_animation" />
 
+    <!-- FOD icon picker -->
+    <Preference
+        android:key="fod_icon_picker_category"
+        android:icon="@drawable/ic_fp"
+        android:title="@string/fod_icon_picker_title"
+        android:summary="@string/fod_icon_picker_summary"
+        android:fragment="com.derpquest.settings.fragments.lockscreen.FODIconPickerFragment" />
+
+    <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="fod_icon_wallpaper_color"
+        android:title="@string/fod_wallpaper_color"
+        android:summary="@string/fod_wallpaper_color_summary"
+        android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
