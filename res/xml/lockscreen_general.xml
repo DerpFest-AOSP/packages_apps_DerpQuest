@@ -44,18 +44,6 @@
         android:defaultValue="0"
         android:dependency="lockscreen_battery_info" />
 
-    <com.derp.support.preference.SystemSettingSwitchPreference
-        android:key="fingerprint_success_vib"
-        android:title="@string/fprint_sucess_vib_title"
-        android:summary="@string/fprint_sucess_vib_summary"
-        android:defaultValue="true" />
-
-    <com.derp.support.preference.SystemSettingSwitchPreference
-        android:key="fingerprint_error_vib"
-        android:title="@string/fprint_error_vib_title"
-        android:summary="@string/fprint_error_vib_summary"
-        android:defaultValue="true" />
-
     <Preference
         android:key="always_on_display_schedule"
         android:title="@string/always_on_display_schedule_title"
@@ -78,6 +66,23 @@
         settings:units="%"
         settings:interval="5"
         android:defaultValue="0" />
+
+    <PreferenceCategory
+        android:title="@string/fprint_subcat">
+
+        <com.derp.support.preference.SystemSettingSwitchPreference
+           android:key="fingerprint_success_vib"
+           android:title="@string/fprint_sucess_vib_title"
+           android:summary="@string/fprint_sucess_vib_summary"
+           android:defaultValue="true" />
+
+        <com.derp.support.preference.SystemSettingSwitchPreference
+           android:key="fingerprint_error_vib"
+           android:title="@string/fprint_error_vib_title"
+           android:summary="@string/fprint_error_vib_summary"
+           android:defaultValue="true" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_media_art_options"

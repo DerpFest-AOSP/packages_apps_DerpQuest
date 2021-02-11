@@ -692,6 +692,7 @@
     <string name="volume_rocker_wake_summary">Durch Drücken der Lautstärketasten wird Ihr Gerät geweckt</string>
 
     <!-- Fingerprint authentication vibration -->
+    <string name="fprint_subcat">Fingerabdruck</string>
     <string name="fprint_sucess_vib_title">Vibration der Fingerabdruck-Authentifizierung</string>
     <string name="fprint_sucess_vib_summary">Vibrieren bei erfolgreicher Fingerabdruck-Authentifizierung</string>
     <string name="fprint_error_vib_title">Vibration bei Fingerabdruckfehlern</string>
