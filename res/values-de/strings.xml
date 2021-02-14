@@ -464,4 +464,52 @@
     <string name="screen_off_animation_default">Standard</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skalieren</string>
+
+    <!-- QS Headers -->
+    <string name="qsheader_title">QS-Kopfzeile</string>
+    <string name="status_bar_custom_header_title">Aktivieren</string>
+    <string name="daylight_header_pack_title">Kopfzeilenbildsammlung</string>
+    <string name="status_bar_custom_header_shadow_title">Kopfzeilenbild-Schatten</string>
+    <string name="status_bar_custom_header_shadow_summary">Bessere Sichtbarkeit bei hellen Bildern</string>
+    <string name="unit_percent">\u0025</string>
+    <string name="static_header_provider_title">Statisches Bild</string>
+    <string name="daylight_header_provider_title">Bildsammlung</string>
+    <string name="custom_header_provider_title">Header-Anbieter</string>
+    <string name="custom_header_browse_title">Durchsuchen Sie die installierten Header</string>
+    <string name="custom_header_browse_summary">Klicken Sie auf ein Bild, um es für den statischen Modus zu verwenden</string>
+    <string name="custom_header_browse_summary_new">Durchsuchen Sie alle verfügbaren Headersammlungen</string>
+    <string name="custom_header_pick_title">Header-Bild festlegen</string>
+    <string name="custom_header_pick_summary">Lokales oder entferntes Bild auswählen</string>
+    <string name="style_enabled_summary">Benutzerdefiniertes Header-Bild ist AN</string>
+    <string name="style_disabled_summary">Benutzerdefiniertes Header-Bild ist AUS</string>
+    <string name="header_provider_disabled">Deaktiviert</string>
+    <string name="file_header_select_title">Wähle ein Bild</string>
+    <string name="file_header_select_summary">Bild aus Speicher wählen</string>
+    <string name="file_header_provider_title">Einzelnes Bild</string>
+
+    <!-- QS panel background opacity -->
+    <string name="qs_panel_alpha_title">Deckkraft des Panels</string>
+
+    <!-- QS panel gradient below status bar -->
+    <string name="qs_panel_gradient_title">Status bar gradient</string>
+    <string name="qs_panel_gradient_summary">Show gradient below status bar in QS panel</string>
+
+    <!-- QS status bar background opacity -->
+    <string name="qs_sb_bg_alpha_title">Deckkraft der Statusleiste</string>
+
+    <!-- Alert Slider Notifications (OnePlus devices) -->
+    <string name="alert_slider_notifications_title">Alarmschieberegler-Benachrichtigungen</string>
+    <string name="alert_slider_notifications_summary">Benachrichtigung anzeigen, wenn die Position des Alarmschiebereglers geändert wird</string>
+
+    <!-- Lock icon -->
+    <string name="hide_lockicon_title">Schlosssymbol ausblenden</string>
+    <string name="hide_lockicon_summary">Blenden Sie das Schlosssymbol auf dem Sperrbildschirm aus</string>
+
+    <!-- Screenshot -->
+    <string name="global_actions_screenshot_title">Screenshot</string>
+    <string name="global_actions_screenshot_summary">Screenshot-Schalter zum Power-Menü hinzufügen</string>
+
+    <!-- Screen record -->
+    <string name="global_actions_screenrecord_title">Bildschirmaufnahme</string>
+    <string name="global_actions_screenrecord_summary">Bildschirmaufnahme-Schalter zum Power-Menü hinzufügen</string>
 </resources>
