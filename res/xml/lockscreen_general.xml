@@ -73,7 +73,6 @@
     <!-- FOD icon picker -->
     <Preference
         android:key="fod_icon_picker_category"
-        android:icon="@drawable/ic_fp"
         android:title="@string/fod_icon_picker_title"
         android:summary="@string/fod_icon_picker_summary"
         android:fragment="com.derpquest.settings.fragments.lockscreen.FODIconPickerFragment" />
