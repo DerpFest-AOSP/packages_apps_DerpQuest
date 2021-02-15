@@ -146,7 +146,7 @@
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Zusatzinfo zum Ladevorgang</string>
-    <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
+    <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke, Wattzahl und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
 
     <!-- 4G LTE switch -->
     <string name="show_fourg_title">Zeigen Sie 4G anstelle von LTE</string>
