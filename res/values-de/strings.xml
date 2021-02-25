@@ -555,4 +555,10 @@
     <string name="disabled">Deaktiviert</string>
     <string name="always_on_display_schedule_mixed_sunset">Von Sonnenuntergang bis zu einer bestimmten Zeit einschalten</string>
     <string name="always_on_display_schedule_mixed_sunrise">Von einer bestimmten Zeit bis zum Sonnenaufgang einschalten</string>
+
+    <string name="header_default">Standard</string>
+    <string name="header_large">Groß</string>
+    <string name="header_xlarge">Sehr groß</string>
+    <string name="header_title">Header-Größen</string>
+    <string name="header_dialog_title">Wähle die Größe aus</string>
 </resources>

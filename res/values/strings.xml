@@ -669,4 +669,11 @@
     <string name="disabled">Disabled</string>
     <string name="always_on_display_schedule_mixed_sunset">Turns on from sunset till a time</string>
     <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
+
+    <string name="header_default">Default</string>
+    <string name="header_large">Large</string>
+    <string name="header_xlarge">XLarge</string>
+    <string name="header_title">Header sizes</string>
+    <string name="header_dialog_title">Select size</string>
+
 </resources>
