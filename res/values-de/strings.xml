@@ -547,4 +547,10 @@
     <string name="lockscreen_weather_pixel_style_title">Pixel-Stil</string>
     <string name="lock_screen_weather_style_title">Zeigen Sie Wetter mit Pixel-Stil</string>
     <string name="lock_screen_weather_style_summary">Anstatt das große Widget zu verwenden, wird es neben dem Datum angezeigt</string>
+
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">"Always on display" Zeitplan</string>
+    <string name="always_on_display_schedule_sunset">Sonnenuntergang</string>
+    <string name="always_on_display_schedule_sunrise">Sonnenaufgang</string>
+    <string name="disabled">Deaktiviert</string>
 </resources>

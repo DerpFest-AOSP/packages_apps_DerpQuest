@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.os.ServiceManager;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -46,6 +47,7 @@ import java.util.List;
 public class LockscreenGeneral extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String LOCK_CLOCK_FONT_STYLE = "lock_clock_font_style";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
     private static final String FOD_ANIMATIONS = "fod_animations";
@@ -53,6 +55,8 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
     private PreferenceCategory mFODCategory;
+
+    Preference mAODPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +84,32 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         mFODCategory = (PreferenceCategory) findPreference(FOD_ANIMATIONS);
         if (mFODCategory != null && !hasFod) {
             prefSet.removePreference(mFODCategory);
+        }
+
+        mAODPref = findPreference(AOD_SCHEDULE_KEY);
+        updateAlwaysOnSummary();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateAlwaysOnSummary();
+    }
+
+    private void updateAlwaysOnSummary() {
+        if (mAODPref == null) return;
+        int mode = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON_AUTO_MODE, 0, UserHandle.USER_CURRENT);
+        switch (mode) {
+            case 0:
+                mAODPref.setSummary(R.string.disabled);
+                break;
+            case 1:
+                mAODPref.setSummary(R.string.night_display_auto_mode_twilight);
+                break;
+            case 2:
+                mAODPref.setSummary(R.string.night_display_auto_mode_custom);
+                break;
         }
     }
 
