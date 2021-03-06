@@ -148,42 +148,6 @@
     <string name="lockscreen_battery_info_title">Zusatzinfo zum Ladevorgang</string>
     <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke, Wattzahl und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
 
-    <!-- 4G LTE switch -->
-    <string name="show_fourg_title">Zeigen Sie 4G anstelle von LTE</string>
-    <string name="show_fourg_summary">Ersetzt LTE-Statusleistenanzeige durch 4G</string>
-
-    <!-- Show VoLTE icon on statusbar -->
-    <string name="volte_switch_title">VoLTE-Symbol</string>
-    <string name="volte_switch_summary">VoLTE-Symbol anzeigen</string>
-    <string name="volte_icon_title">VoLTE-Symbol</string>
-    <string name="volte_icon_summary">VoLTE-Symbol anzeigen</string>
-    <string name="volte_icon_style_title">VoLTE-Symbol auswählen</string>
-    <string name="volte_icon_asus">VoLTE-Asus-Symbol</string>
-    <string name="volte_icon_vo">Standardsymbol</string>
-    <string name="volte_icon_volte">VoLTE-Symbol</string>
-    <string name="volte_icon_oos">VoLTE-OOS-Symbol</string>
-    <string name="volte_icon_hd">HD-Symbol</string>
-    <string name="volte_icon_hd2">HD-CAF-Symbol</string>
-    <string name="volte_icon_miui">MIUI-11-Symbol</string>
-    <string name="volte_icon_emui">EMUI-Symbol</string>
-	<string name="volte_icon_volit">VoLIT-Symbol</string>
-    <string name="volte_icon_oos10">OOS-10-Symbol</string>
-
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi-Symbol</string>
-    <string name="vowifi_icon_enabled">VoWiFi-Symbol aktiviert</string>
-    <string name="vowifi_icon_disabled">VoWiFi-Symbol deaktiviert</string>
-    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi anstelle von VoLTE-Symbol</string>
-    <string name="vowifi_icon_style_title">VoWiFi-Symbol auswählen</string>
-    <string name="vowifi_icon_default">Standardsymbol</string>
-    <string name="vowifi_icon_emui">EMUI-Symbol</string>
-    <string name="vowifi_icon_asus">Asus-Symbol</string>
-    <string name="vowifi_icon_oneplus">OOS-Symbol</string>
-    <string name="vowifi_icon_moto">Motorola-Symbol</string>
-    <string name="vowifi_icon_simple1">Simple1-Symbol</string>
-    <string name="vowifi_icon_simple2">Simple2-Symbol</string>
-    <string name="vowifi_icon_simple3">Simple3-Symbol</string>
-
     <!-- Statusbar net monitor -->
     <string name="net_monitor_category_title">Netzwerkverkehrsanzeige</string>
     <string name="network_traffic_state_title">Netzwerkverkehrsanzeige aktivieren</string>
