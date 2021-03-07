@@ -20,9 +20,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
@@ -35,8 +32,6 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.derpquest.settings.helpers.QsTileConfigDialog;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,30 +43,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.quick_settings);
-
-        Preference qsTileConfig = findPreference("custom_qs_tile_config_dialog");
-        qsTileConfig.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-
-                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-
-                QsTileConfigDialog newFragment = QsTileConfigDialog .newInstance();
-                newFragment.show(ft, "QsTileConfigDialog");
-                return true;
-
-            }
-        });
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
-    }
-
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-
     }
 
     @Override

@@ -25,11 +25,6 @@
         android:entryValues="@array/quick_pulldown_values"
         android:defaultValue="1" />
 
-    <com.derp.support.preference.SystemSettingSwitchPreference
-        android:key="qs_tile_title_visibility"
-        android:title="@string/qs_tile_title_visibility_title"
-        android:defaultValue="true" />
-
     <com.derp.support.preference.SystemSettingListPreference
         android:key="qs_tile_style"
         android:title="@string/qs_tile_style_title"
@@ -38,11 +33,6 @@
         android:entryValues="@array/qs_tile_style_values"
         android:summary="%s"
         android:defaultValue="0" />
-
-    <Preference
-        android:key="custom_qs_tile_config_dialog"
-        android:title="@string/qs_columns_rows_config_title"
-        android:summary="@string/qs_columns_rows_config_summary" />
 
     <PreferenceCategory 
          android:key="qsheader_category"
@@ -79,34 +69,5 @@
             settings:units="" />
 
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="qs_footer_category"
-        android:title="@string/qs_footer_category_title" >
-        <!-- QS footer text toggle -->
-        <com.derp.support.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_text_show"
-            android:title="@string/qs_footer_text_show_title"
-            android:defaultValue="false" />
-
-        <!-- QS footer text string -->
-        <com.derp.support.preference.SystemSettingEditTextPreference
-            android:key="qs_footer_text_string"
-            android:title="@string/qs_footer_text_string_title"
-            android:dependency="qs_footer_text_show"
-            android:defaultValue="#StayDerped" />
-
-        <com.derp.support.preference.SystemSettingSwitchPreference
-            android:key="qs_edit_toggle"
-            android:title="@string/qs_edit_title"
-            android:summary="@string/qs_edit_summary"
-            android:defaultValue="true" />
-
-        <com.derp.support.preference.SystemSettingSwitchPreference
-            android:key="qs_running_services_toggle"
-            android:title="@string/qs_running_services_title"
-            android:summary="@string/qs_running_services_summary"
-            android:defaultValue="false" />
-        </PreferenceCategory>
 
 </PreferenceScreen>

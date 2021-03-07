@@ -140,10 +140,6 @@
     <string name="navbar_gestures_title">Navigation gesture options</string>
     <string name="navbar_gestures_summary">Choose buttons or gestures to navigate your device</string>
 
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">Show QS footer text</string>
-    <string name="qs_footer_text_string_title">Customize footer text</string>
-
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Lockscreen charging info</string>
     <string name="lockscreen_battery_info_summary">Display negociated charger max current, voltage, wattage and battery temperature on lockscreen while charging</string>
@@ -155,9 +151,6 @@
     <string name="network_traffic_state_summary">Show net download activity, or upload if bigger, in expanded statusbar</string>
     <string name="network_traffic_state_sb_summary">Keep showing net activity also in normal statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
-
-    <string name="qs_bg_use_new_tint">QS tile colors</string>
-    <string name="qs_bg_use_new_tint_summary">Use accent color for qs tile icons and background</string>
 
     <!-- SmartSpace -->
     <string name="smart_space_title">Google Smart space</string>
@@ -225,19 +218,6 @@
     <string name="quick_pulldown_right">Pulldown statusbar from right side</string>
     <string name="quick_pulldown_left">Pulldown statusbar from left side</string>
 
-    <!-- QS rows and columns -->
-    <string name="qs_columns_rows_config_title">QS columns &amp; rows</string>
-    <string name="qs_columns_rows_config_summary">Configure the way quick settings tiles are arranged</string>
-    <string name="dialog_title">QS Columns &amp; Rows</string>
-    <string name="portrait_title">PORTRAIT</string>
-    <string name="landscape_title">LANDSCAPE</string>
-    <string name="seekbar_columns">Columns</string>
-    <string name="seekbar_rows">Rows</string>
-    <string name="submit_button">Submit</string>
-
-    <!-- Tile titles -->
-    <string name="qs_tile_title_visibility_title">Show tiles title</string>
-
     <!-- Battery Styles -->
     <string name="status_bar_battery_style_title">Battery style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
@@ -252,12 +232,6 @@
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
     <string name="qs_battery_percentage_title">QS battery percentage</string>
     <string name="qs_battery_percentage_summary">Show battery percentage in the QS header instead of battery estimate</string>
-
-    <!-- Running Services -->
-    <string name="qs_running_services_title">Running Services Icon</string>
-    <string name="qs_running_services_summary">Disable the tile running services icon in the footer</string>
-
-    <string name="qs_footer_category_title">QS footer</string>
 
     <!-- Lockscreen fonts - other fonts, untranslatable by default -->
     <!-- Custom fonts -->
@@ -530,10 +504,6 @@
     <!-- Screen record -->
     <string name="global_actions_screenrecord_title">Screen Record</string>
     <string name="global_actions_screenrecord_summary">Add Screen Record toggle to Power Menu</string>
-
-    <!-- QS panel options -->
-    <string name="qs_edit_title">Edit Icon</string>
-    <string name="qs_edit_summary">Enable the tile edit icon in the footer</string>
 
     <!-- FOD animations -->
     <string name="fod_recog_animation">Fingerprint animation</string>

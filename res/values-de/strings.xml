@@ -140,10 +140,6 @@
     <string name="navbar_gestures_title">Navigation gesture options</string>
     <string name="navbar_gestures_summary">Choose buttons or gestures to navigate your device</string>
 
-    <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">QS-Fußzeilentext anzeigen</string>
-    <string name="qs_footer_text_string_title">Passe den Fußzeilentext an</string>
-
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Zusatzinfo zum Ladevorgang</string>
     <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke, Wattzahl und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
@@ -155,9 +151,6 @@
     <string name="network_traffic_state_summary">Netzwerkverkehrsanzeige in der erweiterten Statusleiste anzeigen</string>
     <string name="network_traffic_state_sb_summary">Zeigen Sie die Netzwerkverkehrsanzeige auch in der normalen Statusleiste an</string>
     <string name="network_traffic_autohide_threshold_title">Schwellenwert für das automatische Ausblenden der Netzwerkverkehrsanzeige (KB/s)</string>
-
-    <string name="qs_bg_use_new_tint">Farben der QS-Kacheln</string>
-    <string name="qs_bg_use_new_tint_summary">Verwenden Sie die Akzentfarbe für QS-Kachelsymbole und den Hintergrund</string>
 
     <!-- SmartSpace -->
     <string name="smart_space_title">Google Smart space</string>
@@ -226,16 +219,6 @@
     <string name="quick_pulldown_right">Herunterziehen der Statusleiste von rechts</string>
     <string name="quick_pulldown_left">Herunterziehen der Statusleiste von links</string>
 
-    <!-- QS rows and columns -->
-    <string name="qs_columns_rows_config_title">QS-Zeilen und -Spalten</string>
-    <string name="qs_columns_rows_config_summary">Konfigurieren Sie die Anordnung der Kacheln für Schnelleinstellungen</string>
-    <string name="dialog_title">QS-Zeilen und -Spalten</string>
-    <string name="portrait_title">Hochformat</string>
-    <string name="landscape_title">Querformat</string>
-    <string name="seekbar_columns">Columns</string>
-    <string name="seekbar_rows">Zeilen</string>
-    <string name="submit_button">Übernehmen</string>
-
     <!-- Battery Styles -->
     <string name="status_bar_battery_style_title">Stil der Akkuanzeige</string>
     <string name="status_bar_battery_style_icon_portrait">Batterie (Standard)</string>
@@ -250,12 +233,6 @@
     <string name="status_bar_battery_percentage_text_next">Neben dem Symbol</string>
     <string name="qs_battery_percentage_title">QS Akku-Prozentsatz</string>
     <string name="qs_battery_percentage_summary">Akku-Prozentsatz im QS-Header anstelle der geschätzten Laufzeit anzeigen</string>
-
-    <!-- Running Services -->
-    <string name="qs_running_services_title">Laufende Prozesse</string>
-    <string name="qs_running_services_summary">Deaktivieren Sie das Symbol für Laufende Prozesse in der Fußzeile</string>
-
-    <string name="qs_footer_category_title">QS-Fußzeile</string>
 
 	    <!-- Lockscreen fonts - Common strings -->
     <string name="lock_fonts_system_headline">System headline (default)</string>
@@ -477,10 +454,6 @@
     <!-- Screen record -->
     <string name="global_actions_screenrecord_title">Bildschirmaufnahme</string>
     <string name="global_actions_screenrecord_summary">Bildschirmaufnahme-Schalter zum Power-Menü hinzufügen</string>
-
-    <!-- QS panel options -->
-    <string name="qs_edit_title">Bearbeiten-Symbol</string>
-    <string name="qs_edit_summary">Aktivieren Sie das Kachelbearbeitungssymbol in der Fußzeile</string>
 
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Netzbetreiber-Anzeige</string>
