@@ -36,12 +36,6 @@
         android:summary="@string/lockscreen_battery_info_summary"
         android:defaultValue="true" />
 
-    <com.derp.support.preference.SystemSettingSwitchPreference
-        android:key="smart_space"
-        android:title="@string/smart_space_title"
-        android:summary="@string/smart_space_summary"
-        android:defaultValue="true" />
-
     <com.derp.support.preference.SystemSettingListPreference
         android:key="screen_off_animation"
         android:title="@string/screen_off_animation_title"
