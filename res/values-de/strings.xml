@@ -599,4 +599,15 @@
     <string name="heads_up_time_out_6sec">6 Sekunden</string>
     <string name="heads_up_time_out_8sec">8 Sekunden</string>
     <string name="heads_up_time_out_10sec">10 Sekunden</string>
+
+    <!-- Heads up snooze -->
+    <string name="heads_up_snooze_title">Schlummertimer</string>
+    <string name="heads_up_snooze_summary_one_minute">Wenn Sie beim Durchsuchen von Benachrichtigungen nach oben wischen, wird das Heads-up dieser Anwendung 1 Minute lang deaktiviert</string>
+    <string name="heads_up_snooze_summary">Wenn Sie beim Durchsuchen von Benachrichtigungen nach oben wischen, wird das Heads-up dieser Anwendung deaktiviert für <xliff:g id="number">%d</xliff:g> Minuten</string>
+    <string name="heads_up_snooze_disabled_summary">Der Schlummertimer ist deaktiviert</string>
+    <string name="heads_up_snooze_1min">1 Minute</string>
+    <string name="heads_up_snooze_5min">5 Minuten</string>
+    <string name="heads_up_snooze_10min">10 Minuten</string>
+    <string name="heads_up_snooze_15min">15 Minuten</string>
+    <string name="heads_up_snooze_20min">20 Minuten</string>
 </resources>
