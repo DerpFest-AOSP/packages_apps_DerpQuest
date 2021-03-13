@@ -580,4 +580,8 @@
     <string name="swap_volume_title">Lautstärketasten</string>
     <string name="swap_volume_keys_on_rotation_title">Lautstärketasten vertauschen</string>
     <string name="swap_volume_keys_on_rotation_summary">Vertauschen Sie die Lautstärketasten beim Drehen des Geräts</string>
+
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Helligkeitskontrolle</string>
+    <string name="status_bar_toggle_brightness_summary">Passen Sie die Helligkeit an, indem Sie über die Statusleiste wischen</string>
 </resources>

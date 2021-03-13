@@ -695,4 +695,8 @@
     <string name="swap_volume_keys_on_rotation_title">Swap volume buttons</string>
     <string name="swap_volume_keys_on_rotation_summary">Swap volume buttons when rotating the device to landscape orientation</string>
 
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
 </resources>
