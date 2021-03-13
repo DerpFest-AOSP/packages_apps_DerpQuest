@@ -610,4 +610,8 @@
     <string name="heads_up_snooze_10min">10 Minuten</string>
     <string name="heads_up_snooze_15min">15 Minuten</string>
     <string name="heads_up_snooze_20min">20 Minuten</string>
+
+    <!-- Heads up options -->
+    <string name="less_boring_heads_up_title">Essentieller Modus</string>
+    <string name="less_boring_heads_up_summary">Zeigen Sie Heads-up-Benachrichtigungen nur für eingehende Anrufe, Texte und Alarme an</string>
 </resources>
