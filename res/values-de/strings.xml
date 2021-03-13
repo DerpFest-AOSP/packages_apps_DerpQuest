@@ -575,4 +575,18 @@
     <string name="gaming_mode_notifications_all_title">Toast und Benachrichtigung anzeigen</string>
     <string name="gaming_mode_dynamic_title">Dynamischer Modus</string>
     <string name="gaming_mode_dynamic_summary">Das System versucht, Games automatisch zu erkennen und hinzuzufügen</string>
+
+    <!-- Heads up -->
+    <string name="heads_up_notifications">Heads-up</string>
+    <string name="heads_up_notifications_summary">Konfigurieren Sie Heads-up-Benachrichtigungen</string>
+    <string name="summary_heads_up_enabled">Benachrichtigungen sind aktiviert</string>
+    <string name="summary_heads_up_disabled">Aktivieren Sie diese Option, um auf erweiterte Optionen zuzugreifen</string>
+    <string name="add_heads_up_package">App hinzufügen</string>
+    <string name="heads_up_stoplist_title">Stoppliste</string>
+    <string name="add_heads_up_stoplist_summary">Verstecken Sie Heads-up-Benachrichtigungen, während Sie diese Anwendungen verwenden</string>
+    <string name="heads_up_blacklist_title">Schwarze Liste</string>
+    <string name="add_heads_up_blacklist_summary">Deaktivieren Sie das Heads-up-Benachrichtigungen für diese Anwendungen</string>
+    <string name="profile_choose_app">App auswählen</string>
+    <string name="dialog_delete_title">Entfernen</string>
+    <string name="dialog_delete_message">Ausgewähltes Element entfernen?</string>
 </resources>
