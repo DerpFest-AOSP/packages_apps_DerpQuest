@@ -145,7 +145,6 @@
     <string name="lockscreen_battery_info_summary">Display negociated charger max current, voltage, wattage and battery temperature on lockscreen while charging</string>
 
     <!-- Statusbar net monitor -->
-    <string name="net_monitor_category_title">Network monitor</string>
     <string name="network_traffic_state_title">Enable network monitor</string>
     <string name="network_traffic_state_sb_title">Always show net monitor</string>
     <string name="network_traffic_state_summary">Show net download activity, or upload if bigger, in expanded statusbar</string>

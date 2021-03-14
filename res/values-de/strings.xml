@@ -145,7 +145,6 @@
     <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke, Wattzahl und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
 
     <!-- Statusbar net monitor -->
-    <string name="net_monitor_category_title">Netzwerkverkehrsanzeige</string>
     <string name="network_traffic_state_title">Netzwerkverkehrsanzeige aktivieren</string>
     <string name="network_traffic_state_sb_title">Netzwerkverkehrsanzeige immer anzeigen</string>
     <string name="network_traffic_state_summary">Netzwerkverkehrsanzeige in der erweiterten Statusleiste anzeigen</string>
