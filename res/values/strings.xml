@@ -451,6 +451,7 @@
 
     <!-- QS Headers -->
     <string name="qsheader_title">QS Header</string>
+    <string name="custom_header_summary">Configure custom header image</string>
     <string name="status_bar_custom_header_title">Enable</string>
     <string name="daylight_header_pack_title">Header image collection</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>

@@ -41,6 +41,7 @@
         <PreferenceScreen
             android:key="qsheader"
             android:title="@string/custom_header_title"
+            android:summary="@string/custom_header_summary"
             android:fragment="com.derpquest.settings.fragments.ui.QSHeader" />
 
         <!-- QS status bar opacity -->
