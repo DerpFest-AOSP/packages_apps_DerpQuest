@@ -38,7 +38,6 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.derp.support.preference.SystemSettingMasterSwitchPreference;
 import com.derp.support.preference.SystemSettingSwitchPreference;
 
 import com.derpquest.settings.utils.Utils;
@@ -55,10 +54,8 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
-    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
 
     private Preference mAlertSlider;
-    private SystemSettingMasterSwitchPreference mGamingMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,27 +75,9 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
-
-        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
-        boolean gameEnabled = Settings.System.getInt(
-        getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.GAMING_MODE_ENABLED, 0) == 1;
-        updateGameModeEnabledUpdatePrefs(gameEnabled);
-        mGamingMode.setOnPreferenceChangeListener(this);
-    }
-
-    private void updateGameModeEnabledUpdatePrefs(boolean gameEnabled) {
-        mGamingMode.setChecked(gameEnabled);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mGamingMode) {
-            boolean gameEnabled = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.GAMING_MODE_ENABLED, gameEnabled ? 1 : 0);
-            updateGameModeEnabledUpdatePrefs(gameEnabled);
-            return true;
-        }
         return false;
     }
 
