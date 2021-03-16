@@ -553,4 +553,6 @@
     <string name="always_on_display_schedule_sunset">Sonnenuntergang</string>
     <string name="always_on_display_schedule_sunrise">Sonnenaufgang</string>
     <string name="disabled">Deaktiviert</string>
+    <string name="always_on_display_schedule_mixed_sunset">Von Sonnenuntergang bis zu einer bestimmten Zeit einschalten</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Von einer bestimmten Zeit bis zum Sonnenaufgang einschalten</string>
 </resources>
