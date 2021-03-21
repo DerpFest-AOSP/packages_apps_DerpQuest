@@ -34,6 +34,15 @@
         android:summary="%s"
         android:defaultValue="0" />
 
+    <!-- QS panel opacity -->
+    <com.derp.support.preference.CustomSystemSeekBarPreference
+        android:key="qs_panel_bg_alpha"
+        android:title="@string/qs_panel_alpha_title"
+        android:defaultValue="255"
+        android:max="255"
+        android:min="0"
+        settings:units="" />
+
     <PreferenceCategory 
          android:key="qsheader_category"
          android:title="@string/qsheader_title">
@@ -59,15 +68,6 @@
             android:title="@string/qs_panel_gradient_title"
             android:summary="@string/qs_panel_gradient_summary"
             android:defaultValue="false" />
-
-        <!-- QS panel opacity -->
-        <com.derp.support.preference.CustomSystemSeekBarPreference
-            android:key="qs_panel_bg_alpha"
-            android:title="@string/qs_panel_alpha_title"
-            android:defaultValue="255"
-            android:max="255"
-            android:min="0"
-            settings:units="" />
 
     </PreferenceCategory>
 
