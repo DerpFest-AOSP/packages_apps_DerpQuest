@@ -19,6 +19,12 @@
     android:title="@string/general_notifications_title" >
 
     <Preference
+        android:key="pulse_ambient_light"
+        android:title="@string/pulse_ambient_light_category"
+        android:summary="@string/pulse_ambient_light_summary"
+        android:fragment="com.derpquest.settings.fragments.system_misc.EdgeNotifications" />
+
+    <Preference
         android:key="gaming_mode_enabled"
         android:title="@string/gaming_mode_title"
         android:summary="@string/gaming_mode_summary"

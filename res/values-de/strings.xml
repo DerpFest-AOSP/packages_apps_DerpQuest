@@ -638,4 +638,31 @@
     <string name="volume_panel_compact">Kompakt</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Gekachelt</string>
+
+    <!-- Ambient edge lighting -->
+    <string name="edge_notifications_title">Bildschirmkantenbeleuchtung</string>
+    <string name="pulse_ambient_light_category">Bildschirmkantenbeleuchtung</string>
+    <string name="pulse_ambient_light_title">Bei neuer Benachrichtigung anzeigen</string>
+    <string name="pulse_ambient_light_summary">Lichtimpuls bei neuer Benachrichtigung anzeigen</string>
+    <string name="ambient_notification_light_enabled_title">Bei AOD anzeigen</string>
+    <string name="ambient_notification_light_enabled_summary">Zeige Lichtimpuls bei neuer Benachrichtigung, wenn AOD verwendet wird</string>
+    <string name="ambient_notification_light_color_title">Freiwählbare Farbe</string>
+    <string name="ambient_notification_light_color_summary">Standardfarbe für Lichtimpuls</string>
+    <string name="ambient_notification_light_hide_aod_title">Nur Lichtimpuls anzeigen</string>
+    <string name="ambient_notification_light_hide_aod_summary">Blenden Sie alle anderen Anzeigeelemente aus</string>
+    <string name="ambient_notification_light_timeout_title">Zeitüberschreitung für Lichtimpuls</string>
+    <string name="entry_infinite">Unendlich</string>
+    <string name="entry_five_minute">5 Minuten</string>
+    <string name="entry_ten_minute">10 Minuten</string>
+    <string name="entry_thirty_minute">30 Minuten</string>
+    <string name="entry_sixty_minute">60 Minuten</string>
+    <string name="entry_fifteen_minute">15 Minuten</string>
+    <string name="ambient_notification_light_color_mode_title">Lichtimpulsfarbe</string>
+    <string name="ambient_notification_light_color_mode_automatic">Benachrichtigungsfarbe</string>
+    <string name="ambient_notification_light_color_mode_accent">Systemakzentfarbe</string>
+    <string name="ambient_notification_light_color_mode_custom">Freiwählbare Farbe</string>
+    <string name="pulse_ambient_light_duration_title">Dauer</string>
+    <string name="pulse_ambient_light_duration_summary">Legt die Animationsdauer für den Lichtimpuls fest</string>
+    <string name="pulse_ambient_light_repeat_count_title">Wiederholungszahl</string>
+    <string name="pulse_ambient_light_repeat_count_summary">Stellen Sie die maximale Wiederholungszahl ein. 0 für unendlich</string>
 </resources>
