@@ -668,9 +668,13 @@
     <string name="pulse_ambient_light_duration_summary">Legt die Animationsdauer für den Lichtimpuls fest</string>
     <string name="pulse_ambient_light_repeat_count_title">Wiederholungszahl</string>
     <string name="pulse_ambient_light_repeat_count_summary">Stellen Sie die maximale Wiederholungszahl ein. 0 für unendlich</string>
+    <string name="pulse_ambient_light_layout_title">Kantenlichtansicht</string>
+    <string name="pulse_ambient_light_layout_solid">Solide</string>
+    <string name="pulse_ambient_light_layout_faded">Verblasst</string>
 
     <!-- Volume Panel on Left -->
     <string name="volume_panel_category">Lautstärkefenster</string>
     <string name="volume_panel_on_left_title">Lautstärkefenster links</string>
     <string name="volume_panel_on_left_summary">Ändern des Lautstärkefensters von der rechten Seite zur linken Seite</string>
+
 </resources>

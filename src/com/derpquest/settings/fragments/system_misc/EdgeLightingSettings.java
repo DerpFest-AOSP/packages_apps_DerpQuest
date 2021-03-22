@@ -37,6 +37,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.derpquest.settings.fragments.system_misc.EdgeLightingEnabler;
 import com.derp.support.colorpicker.ColorPickerPreference;
+import com.derp.support.preference.SecureSettingListPreference;
 import com.derp.support.preference.SystemSettingListPreference;
 import com.derp.support.preference.CustomSeekBarPreference;
 import com.derp.support.preference.SystemSettingSwitchPreference;
@@ -58,6 +59,7 @@ public class EdgeLightingSettings extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mAmbientNotificationLightHideAod;
     private SystemSettingListPreference mColorMode;
     private SystemSettingListPreference mAmbientNotificationLightTimeout;
+    private SecureSettingListPreference mAmbientLightLayout;
 
     private EdgeLightingEnabler mEdgeLightingEnabler;
 
@@ -76,6 +78,7 @@ public class EdgeLightingSettings extends SettingsPreferenceFragment implements
         mEdgeLightDurationPreference = (CustomSeekBarPreference) findPreference("notification_pulse_duration");
         mColorMode = (SystemSettingListPreference) findPreference("ambient_notification_light_color_mode");
         mEdgeLightColorPreference = (ColorPickerPreference) findPreference("ambient_notification_light_color");
+        mAmbientLightLayout = (SecureSettingListPreference) findPreference("pulse_ambient_light_layout");
 
         int repeats = Settings.System.getInt(getContentResolver(),
                 Settings.System.NOTIFICATION_PULSE_REPEATS, 0);
@@ -205,6 +208,7 @@ public class EdgeLightingSettings extends SettingsPreferenceFragment implements
         mColorMode.setEnabled(enabled ? true : false);
         mAmbientNotificationLightHideAod.setEnabled(enabled ? true : false);
         mAmbientNotificationLightTimeout.setEnabled(enabled ? true : false);
+        mAmbientLightLayout.setEnabled(enabled ? true : false);
         mAmbientNotificationLightEnabled.setEnabled(enabled && aodEnabled ? true : false);
         mAmbientNotificationLightHideAod.setEnabled(enabled && aodEnabled ? true : false);
         if (!aodEnabled) {
