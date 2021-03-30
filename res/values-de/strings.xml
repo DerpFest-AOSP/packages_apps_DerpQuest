@@ -653,6 +653,7 @@
     <string name="ambient_notification_light_hide_aod_title">Nur Lichtimpuls anzeigen</string>
     <string name="ambient_notification_light_hide_aod_summary">Blenden Sie alle anderen Anzeigeelemente aus</string>
     <string name="ambient_notification_light_timeout_title">Zeitüberschreitung für Lichtimpuls</string>
+    <string name="aod_disabled">AOD ist deaktiviert</string>
     <string name="entry_infinite">Unendlich</string>
     <string name="entry_five_minute">5 Minuten</string>
     <string name="entry_ten_minute">10 Minuten</string>
