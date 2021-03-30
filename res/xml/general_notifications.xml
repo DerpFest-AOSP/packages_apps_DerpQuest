@@ -22,7 +22,7 @@
         android:key="pulse_ambient_light"
         android:title="@string/pulse_ambient_light_category"
         android:summary="@string/pulse_ambient_light_summary"
-        android:fragment="com.derpquest.settings.fragments.system_misc.EdgeNotifications" />
+        android:fragment="com.derpquest.settings.fragments.system_misc.EdgeLightingSettings" />
 
     <Preference
         android:key="gaming_mode_enabled"
