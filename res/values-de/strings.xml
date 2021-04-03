@@ -448,10 +448,6 @@
     <string name="global_actions_screenshot_title">Screenshot</string>
     <string name="global_actions_screenshot_summary">Screenshot-Schalter zum Power-Menü hinzufügen</string>
 
-    <!-- Screen record -->
-    <string name="global_actions_screenrecord_title">Bildschirmaufnahme</string>
-    <string name="global_actions_screenrecord_summary">Bildschirmaufnahme-Schalter zum Power-Menü hinzufügen</string>
-
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Netzbetreiber-Anzeige</string>
     <string name="custom_carrier_label_explain">Eigene Bezeichnung eingeben. Leer lassen, um Netzwerknamen zu verwenden.</string>
