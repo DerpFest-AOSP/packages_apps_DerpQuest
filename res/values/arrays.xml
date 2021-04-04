@@ -559,6 +559,7 @@
     <!-- Status bar logo style -->
     <string-array name="status_bar_logo_style_entries" translatable="false">
         <item>@string/status_bar_logo_style_derp</item>
+        <item>@string/status_bar_logo_style_derp_alt</item>
         <item>@string/status_bar_logo_style_android</item>
         <item>@string/status_bar_logo_style_apple</item>
         <item>@string/status_bar_logo_style_beats</item>
@@ -609,6 +610,7 @@
         <item>@string/status_bar_logo_style_xbox_controller</item>
         <item>@string/status_bar_logo_style_yin_yang</item>
     </string-array>
+
     <string-array name="status_bar_logo_style_values" translatable="false">
         <item>0</item>
         <item>1</item>
@@ -660,6 +662,7 @@
         <item>47</item>
         <item>48</item>
         <item>49</item>
+        <item>50</item>
     </string-array>
 
     <string-array name="lockscreen_weather_style_entries">

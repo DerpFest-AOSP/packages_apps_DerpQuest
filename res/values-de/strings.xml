@@ -431,6 +431,7 @@
     <string name="status_bar_logo_position_left">Links</string>
     <string name="status_bar_logo_style">Logo-Stil</string>
     <string name="status_bar_logo_style_derp">DerpFest</string>
+    <string name="status_bar_logo_style_derp_alt">DerpFest Alternative</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_beats">Beats</string>
