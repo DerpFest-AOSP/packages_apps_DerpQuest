@@ -37,34 +37,34 @@
     <string name="navigationbar_summary">Konfigurieren Sie die Systemnavigationsoptionen</string>
     <string name="gesture_options_title">Gesten</string>
     <string name="gesture_options_summary">Aktivieren/Deaktivieren gerätespezifischer Benutzeraktionen</string>
-    <string name="volume_rocker_title">Volume rocker</string>
-    <string name="volume_rocker_summary">Set default behavior and actions for vol +/- keys</string>
-    <string name="hw_keys_title">Hardware keys</string>
-    <string name="hw_keys_summary">Assign actions for physical navigation buttons</string>
+    <string name="volume_rocker_title">Lautstärketasten</string>
+    <string name="volume_rocker_summary">Legen Sie das Standardverhalten und die Standardaktionen für die Tasten vol +/- fest</string>
+    <string name="hw_keys_title">Hardwaretasten</string>
+    <string name="hw_keys_summary">Weisen Sie Aktionen für physische Navigationsschaltflächen zu</string>
 
     <!-- Interface -->
     <string name="quick_settings_title">Schnelleinstellungen</string>
-    <string name="quick_settings_summary">Passen Sie die Gesamtansicht an &amp; Funktionalität</string>
+    <string name="quick_settings_summary">Passen Sie die Gesamtansicht und Funktionalität an</string>
     <string name="headsup_title">Heads-up</string>
     <string name="headsup_summary">Konfigurieren Sie Heads-up-Optionen</string>
     <string name="recents_title">Recents</string>
     <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
-    <string name="themer_title">Themer</string>
+    <string name="themer_title">Designs</string>
     <string name="themer_summary">Durchsuchen und wählen Sie installierte Designs aus</string>
 
     <!-- Statusbar -->
     <string name="battery_options_title">Batterieoptionen</string>
     <string name="battery_options_summary">Passen Sie an, wie das Batteriesymbol angezeigt wird</string>
     <string name="clock_options_title">Uhroptionen</string>
-    <string name="clock_options_summary">Legen Sie die Ansichtsoptionen für die Zeit fest &amp; Datum in der Statusleiste</string>
+    <string name="clock_options_summary">Legen Sie die Ansichtsoptionen für die Zeit und Datum in der Statusleiste fest</string>
     <string name="traffic_title">Netzwerkanzeige</string>
-    <string name="traffic_summary">Aktivieren &amp; Konfigurieren Sie die Netzwerkanzeige in der Statusleiste</string>
+    <string name="traffic_summary">Aktivieren und Konfigurieren Sie die Netzwerkanzeige in der Statusleiste</string>
     <string name="status_bar_items_title">Statusleistenelemente</string>
     <string name="status_bar_items_summary">Konfigurieren Sie Statusleistenanzeigen</string>
 
     <!-- Lockscreen -->
     <string name="lockscreen_aosp_title">Native Steuerelemente</string>
-    <string name="lockscreen_aosp_summary">Konfigurieren Sie die AOSP-Optionen für den Sperrbildschirm &amp; AOD</string>
+    <string name="lockscreen_aosp_summary">Konfigurieren Sie die AOSP-Optionen für den Sperrbildschirm und AOD</string>
     <string name="lockscreen_general_title">Allgemeine Optionen</string>
     <string name="lockscreen_general_summary">Fügen Sie visuelle Elemente Ihres Sperrbildschirms hinzu oder entfernen Sie sie</string>
     <string name="lockscreen_tuner_title">Lockscreen-Tuner</string>
@@ -137,8 +137,8 @@
 <!-- FEATURES -->
 
     <!-- Navbar Entries -->
-    <string name="navbar_gestures_title">Navigation gesture options</string>
-    <string name="navbar_gestures_summary">Choose buttons or gestures to navigate your device</string>
+    <string name="navbar_gestures_title">Navigationsgestenoptionen</string>
+    <string name="navbar_gestures_summary">Wählen Sie Schaltflächen oder Gesten, um auf Ihrem Gerät zu navigieren</string>
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Zusatzinfo zum Ladevorgang</string>
@@ -155,9 +155,9 @@
     <string name="statusbar_items_title">Statusleistenelemente</string>
 
     <!-- Status bar - icons -->
-    <string name="status_bar_icons_title">Status bar icons</string>
-    <string name="status_bar_system_icons_title">System icons</string>
-    <string name="status_bar_system_icons_summary">Control which status bar icons are shown</string>
+    <string name="status_bar_icons_title">Statusleistensymbole</string>
+    <string name="status_bar_system_icons_title">Systemsymbole</string>
+    <string name="status_bar_system_icons_summary">Steuern Sie, welche Statusleistensymbole angezeigt werden</string>
 
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-Call-Vibrationsoptionen</string>
@@ -266,9 +266,9 @@
     <string name="powermenu_advanced_reboot_summary">Ermöglicht den Zugriff auf Wiederherstellungsmodus und Bootloader</string>
 
     <!-- QS tile styles -->
-    <string name="qs_tile_style_title">QS tile style</string>
-    <string name="qs_tile_style_pick">Pick your QS Style</string>
-    <string name="qstile_default">System icon shape</string>
+    <string name="qs_tile_style_title">QS-Kachelstil</string>
+    <string name="qs_tile_style_pick">Wählen Sie Ihren QS-Kachelstil</string>
+    <string name="qstile_default">Standard</string>
     <string name="qstile_dual_tone">Dual-toned</string>
     <string name="qstile_trim">Trim</string>
     <string name="qstile_dual_tone_trim">Dual-toned Trim</string>
@@ -399,8 +399,8 @@
     <string name="qs_panel_alpha_title">Deckkraft des Panels</string>
 
     <!-- QS panel gradient below status bar -->
-    <string name="qs_panel_gradient_title">Status bar gradient</string>
-    <string name="qs_panel_gradient_summary">Show gradient below status bar in QS panel</string>
+    <string name="qs_panel_gradient_title">Statusleistenfarbverlauf</string>
+    <string name="qs_panel_gradient_summary">Farbverlauf unterhalb der Statusleiste im QS-Bedienfeld anzeigen</string>
 
     <!-- QS status bar background opacity -->
     <string name="qs_sb_bg_alpha_title">Deckkraft der Statusleiste</string>
@@ -512,7 +512,7 @@
     <string name="lock_screen_weather_style_summary">Anstatt das große Widget zu verwenden, wird es neben dem Datum angezeigt</string>
 
     <!-- AOD Schedule -->
-    <string name="always_on_display_schedule_title">"Always on display" Zeitplan</string>
+    <string name="always_on_display_schedule_title">"AOD-Zeitplan</string>
     <string name="always_on_display_schedule_sunset">Sonnenuntergang</string>
     <string name="always_on_display_schedule_sunrise">Sonnenaufgang</string>
     <string name="disabled">Deaktiviert</string>
