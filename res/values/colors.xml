@@ -21,7 +21,7 @@
 
     <color name="default_inactive_shape_color">#BC606060</color>
     <color name="default_inactive_color">#FFC8C8C8</color>
-    <color name="default_shape_inactive_color">#BC606060</color> 
+    <color name="default_shape_inactive_color">#BC606060</color>
     <color name="theme_accent">@*android:color/accent_device_default_light</color>
     <color name="preference_background_color">@*android:color/accent_device_default_light</color>
     <color name="dummycolorAccent">?android:attr/colorAccent</color>
@@ -46,6 +46,7 @@
     <color name="derpquest_lockscreen_tuner_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_lockscreen_weather_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_miscellaneous_background">@*android:color/accent_device_default_light</color>
+    <color name="derpquest_gaming_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_themer_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_traffic_background">@*android:color/accent_device_default_light</color>
     <color name="derpquest_navigationbar_background">@*android:color/accent_device_default_light</color>

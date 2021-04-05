@@ -83,6 +83,8 @@
     <string name="changelog_summary">Liste der zuletzt zu DerpFest hinzugefügten Commits</string>
     <string name="led_settings_title">LED settings</string>
     <string name="led_settings_summary">Configure the LED light for supported options</string>
+    <string name="gaming_title">Spielmodus</string>
+    <string name="gaming_title_summary">Zusätzliche Funktionen für ein immersives Spielerlebnis</string>
 
 <!-- OTHER -->
     <!-- Empty Preference Screen (if applicable) -->
@@ -164,6 +166,48 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Wischen zum Screenshot</string>
     <string name="three_finger_gesture_summary">Wischen Sie mit drei Fingern, um einen Screenshot aufzunehmen</string>
+
+    <string name="add_package_to_title">Anwendung hinzufügen</string>
+
+    <!-- Gaming mode -->
+    <string name="gaming_mode_enabled_title">Spielemodus aktivieren</string>
+    <string name="gaming_mode_disable_auto_brightness_title">Deaktivieren Sie die automatische Helligkeit</string>
+    <string name="gaming_mode_disable_auto_brightness_summary">Deaktivieren Sie die automatische Helligkeit beim Aufrufen des Spielmodus</string>
+    <string name="gaming_mode_notification_danmaku_title">Danmaku-Benachrichtigungen</string>
+    <string name="gaming_mode_notification_danmaku_summary">Zeigen Sie den Benachrichtigungsinhalt in Form von Danmaku im Spiel an</string>
+    <string name="gaming_mode_quick_start_apps_title">Schnellstart-Apps</string>
+    <string name="gaming_mode_quick_start_apps_summary">Wählen Sie die Anwendung, die Sie mit einem schwebenden Ball starten möchten</string>
+
+    <string name="gaming_mode_performance">Leistung</string>
+    <string name="gaming_mode_use_game_driver_title">Spieletreiber verwenden</string>
+    <string name="gaming_mode_use_game_driver_summary">Spezielle Treiber für Spiele verwenden</string>
+    <string name="gaming_mode_change_performance_title">Leistungstuning</string>
+    <string name="gaming_mode_change_performance_summary">Passen Sie das Leistungsniveau beim Starten des Spiels an</string>
+    <string name="gaming_mode_performance_title">Leistungsstufe</string>
+
+    <string name="gaming_mode_dnd">Nicht stören</string>
+    <string name="gaming_mode_disable_notification_alert_title">Benachrichtigungswarnung deaktivieren</string>
+    <string name="gaming_mode_disable_notification_alert_summary">Erlauben Sie keine schwebenden Benachrichtigungen und Konversationsblasen außer eingehenden Anrufen und Alarmen</string>
+    <string name="gaming_mode_disable_ringtone_title">Nicht klingeln</string>
+    <string name="gaming_mode_disable_ringtone_summary">Schalten Sie das Klingeln eingehender Anrufe und Benachrichtigungen im Spielemodus aus</string>
+    <string name="gaming_mode_auto_answer_call_title">Anrufe automatisch annehmen</string>
+    <string name="gaming_mode_auto_answer_call_summary">Anrufe automatisch im Spiel annehmen und freihändig, wenn keine Kopfhörer angeschlossen sind</string>
+
+    <string name="gaming_mode_prevent_accidental_touch">Verhindern Sie versehentliche Berührung</string>
+    <string name="gaming_mode_disable_gesture_title">Gesten deaktivieren</string>
+
+    <string name="gaming_mode_apps">Spieleliste</string>
+    <string name="gaming_mode_dynamic_add_title">Dynamischer Modus</string>
+    <string name="gaming_mode_dynamic_add_summary">Versuchen Sie, Spiele-Apps automatisch zu erkennen und hinzuzufügen</string>
+
+    <string name="gaming_mode_show_danmaku_title">Danmaku anzeigen</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">Dynamischer Benachrichtigungsfilter</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">Benachrichtigungen wie Download-Fortschritt automatisch filtern</string>
+    <string name="gaming_mode_danmaku_size_horizontal_title">Danmaku-Größe (Horizontal)</string>
+    <string name="gaming_mode_danmaku_size_vertical_title">Danmaku-Größe (Vertikal)</string>
+    <string name="gaming_mode_danmaku_speed_horizontal_title">Danmaku-Geschwindigkeit (Horizontal)</string>
+    <string name="gaming_mode_danmaku_speed_vertical_title">Danmaku-Geschwindigkeit (Vertikal)</string>
+    <string name="gaming_mode_danmaku_blacklist">Schwarze Liste</string>
 
     <!-- Lock screen cover art -->
     <string name="lockscreen_media_art_title">Mediencover anzeigen</string>
@@ -480,6 +524,8 @@
     <string name="media_category">Medienbenachrichtigungsoptionen</string>
     <string name="artwork_media_background_title">Artwork-Medienhintergrund</string>
     <string name="artwork_media_background_summary">Legen Sie die Mediengrafik als Hintergrund für Medienbenachrichtigungen fest</string>
+    <string name="artwork_media_fade_level_title">Grafik-Fade-Level</string>
+    <string name="artwork_media_fade_level_summary">Ausblenden des Mediengrafikbilds</string>
 
     <!-- AOD Icons in Lockscreen! -->
     <string name="lock_aod_icons_title">AOD-Symbole</string>
@@ -798,9 +844,6 @@
 
     <string name="theme_select_title">Designs</string>
     <string name="theme_select_summary">Durchsuchen und wählen Sie installierte Designs</string>
-
-    <string name="artwork_media_fade_level_title">Grafik-Fade-Level</string>
-    <string name="artwork_media_fade_level_summary">Ausblenden des Mediengrafikbilds</string>
 
     <!-- Rounded styles -->
     <string name="rounded_style_title">Abgerundeter Stil für Systemdialoge</string>

@@ -26,6 +26,13 @@
         android:summary="@string/animations_category_summary" />
 -->
     <com.android.settings.widget.CardPreference
+            android:key="gaming_category"
+            android:title="@string/gaming_title"
+            android:fragment="com.derpquest.settings.fragments.system_misc.GamingModeSettings"
+            android:icon="@drawable/ic_gaming_background"
+            android:summary="@string/gaming_title_summary" />
+
+    <com.android.settings.widget.CardPreference
         android:key="general_notifications"
         android:fragment="com.derpquest.settings.fragments.system_misc.GeneralNotifications"
         android:icon="@drawable/ic_notifications_general_background"
