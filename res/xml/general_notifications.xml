@@ -44,7 +44,7 @@
             android:key="artwork_media_background"
             android:title="@string/artwork_media_background_title"
             android:summary="@string/artwork_media_background_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
