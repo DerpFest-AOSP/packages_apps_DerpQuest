@@ -858,4 +858,8 @@
     <!-- Lock Icon -->
     <string name="lockscreen_lock_icon_title">Schlosssymbol</string>
     <string name="lockscreen_lock_icon_summary">Schlosssymbol auf dem Sperrbildschirm anzeigen</string>
+
+    <!-- Screenshot compression -->
+    <string name="screenshot_compression_title">Screenshot-Qualität</string>
+    <string name="screenshot_compression_summary">Komprimieren Sie die Screenshot-Größe mit Verlust der Bildqualität</string>
 </resources>
