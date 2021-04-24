@@ -526,11 +526,6 @@
     <string name="header_title">Header-Größen</string>
     <string name="header_dialog_title">Wähle die Größe aus</string>
 
-    <!-- Notification Media Options -->
-    <string name="media_category">Medienbenachrichtigungsoptionen</string>
-    <string name="artwork_media_background_title">Artwork-Medienhintergrund</string>
-    <string name="artwork_media_background_summary">Legen Sie die Mediengrafik als Hintergrund für Medienbenachrichtigungen fest</string>
-
     <!-- AOD Icons in Lockscreen! -->
     <string name="lock_aod_icons_title">AOD-Symbole</string>
     <string name="ambient_icons_lockscreen_title">AOD-Symbole auf dem Sperrbildschirm</string>

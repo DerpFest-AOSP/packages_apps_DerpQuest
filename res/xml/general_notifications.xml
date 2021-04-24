@@ -37,18 +37,6 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
-        android:key="media_category"
-        android:title="@string/media_category" >
-
-        <com.derp.support.preference.SystemSettingSwitchPreference
-            android:key="artwork_media_background"
-            android:title="@string/artwork_media_background_title"
-            android:summary="@string/artwork_media_background_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
 
