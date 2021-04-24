@@ -676,4 +676,7 @@
     <string name="volume_panel_category">Lautstärkefenster</string>
     <string name="volume_panel_on_left_title">Lautstärkefenster links</string>
     <string name="volume_panel_on_left_summary">Ändern des Lautstärkefensters von der rechten Seite zur linken Seite</string>
+
+    <!-- Notification background opacity -->
+    <string name="notification_alpha_title">Deckkraft des Benachrichtigungshintergrunds</string>
 </resources>
