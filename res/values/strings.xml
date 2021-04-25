@@ -17,7 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- DerpFest dashboard -->
-    <string name="derpquest_title">DerpQuest</string>
+    <string name="derpquest_title" translatable="false">DerpQuest</string>
     <string name="derp_title">DerpFest Settings</string>
 
     <!-- Bottom Tabs -->
@@ -243,8 +243,8 @@
     <string name="lock_clock_font_union" translatable="false">Union</string>
     <string name="lock_clock_font_vibur" translatable="false">Vibur</string>
     <string name="lock_clock_font_voltaire" translatable="false">Voltaire</string>
-    <string name="lock_clock_font_themeable">Themeable (or VCR OSD Mono)</string>
-    <string name="lock_dateown_font_themeable">Themeable (or Fox and Cat)</string>
+    <string name="lock_clock_font_themeable" translatable="false">Themeable (or VCR OSD Mono)</string>
+    <string name="lock_dateown_font_themeable" translatable="false">Themeable (or Fox and Cat)</string>
 
 	    <!-- Lockscreen fonts - Common strings -->
     <string name="lock_fonts_system_headline">System headline (default)</string>
@@ -292,8 +292,8 @@
     <string name="battery_bar_reversed">Reversed</string>
     <string name="battery_bar_use_gradient_color">Use gradient color</string>
     <string name="battery_bar_gradient_color_summary">Use gradient color as a scale for the battery level</string>
-    <string name="battery_bar_high_color">High level color"</string>
-    <string name="battery_bar_low_color">Low level color"</string>
+    <string name="battery_bar_high_color">High level color</string>
+    <string name="battery_bar_low_color">Low level color</string>
 
     <!-- Navbar layout options -->
     <string name="navbar_layout_title">Layout</string>
@@ -321,21 +321,21 @@
     <string name="qstile_dual_tone_trim">Dual-toned Trim</string>
     <string name="qstile_cookie">Cookie</string>
     <string name="qstile_justicons">Icons without circle</string>
-    <string name="qstile_inkdrop">Inkdrop</string>
-    <string name="qstile_shishu_nights">Shishu Nights</string>
+    <string name="qstile_inkdrop" translatable="false">Inkdrop</string>
+    <string name="qstile_shishu_nights" translatable="false">Shishu Nights</string>
     <string name="qstile_mono_gradient">Monochrome Gradient</string>
     <string name="qstile_wavey">Wavey</string>
-    <string name="qstile_memedo_square">The Memedo Square</string>
-    <string name="qstile_pokesign">Pokesign</string>
-    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_memedo_square" translatable="false">The Memedo Square</string>
+    <string name="qstile_pokesign" translatable="false">Pokesign</string>
+    <string name="qstile_ninja" translatable="false">Ninja</string>
     <string name="qstile_dottedcircle">Dotted Circle</string>
-    <string name="qstile_shishuink">Shishu Ink</string>
+    <string name="qstile_shishuink" translatable="false">Shishu Ink</string>
     <string name="qstile_attemptmountain">An attempt of a mountain</string>
     <string name="qstile_neonlike">Neon</string>
-    <string name="qstile_oos">Oxygen</string>
+    <string name="qstile_oos" translatable="false">Oxygen</string>
     <string name="qstile_triangles">Triangles</string>
     <string name="qstile_divided">Divided Circle</string>
-    <string name="qstile_cosmos">Shishu Cosmos</string>
+    <string name="qstile_cosmos" translatable="false">Shishu Cosmos</string>
     <string name="qstile_gradient">Gradients</string>
     <string name="qstile_pureaccent">Pure Accent</string>
 
@@ -417,7 +417,7 @@
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
     <string name="screen_off_animation_default">Default</string>
-    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_crt" translatable="false">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
 
     <!-- QS Headers -->
@@ -427,7 +427,7 @@
     <string name="daylight_header_pack_title">Header image collection</string>
     <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
-    <string name="unit_percent">\u0025</string>
+    <string name="unit_percent" translatable="false">\u0025</string>
     <string name="static_header_provider" translatable="false">static</string>
     <string name="daylight_header_provider" translatable="false">daylight</string>
     <string name="static_header_provider_title">Static image</string>
@@ -469,9 +469,9 @@
     <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
     <string name="fod_recog_animation_effect_title">Select fingerprint animation effect</string>
     <string name="fod_recog_animation_miui_normal">MIUI default</string>
-    <string name="fod_recog_animation_miui_aod">MIUI AOD</string>
-    <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
+    <string name="fod_recog_animation_miui_aod" translatable="false">MIUI AOD</string>
+    <string name="fod_recog_animation_miui_aurora" translatable="false">Aurora (K30 Pro)</string>
+    <string name="fod_recog_animation_miui_aurora_cas" translatable="false">Aurora (Mi 10 Ultra)</string>
     <string name="fod_recog_animation_miui_light">Light</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Pulse</string>
@@ -480,7 +480,7 @@
     <string name="fod_recog_animation_miui_star_cas">Starlight</string>
     <string name="fod_recog_animation_op_cosmos">Cosmos</string>
     <string name="fod_recog_animation_op_energy">Energy</string>
-    <string name="fod_recog_animation_op_mclaren">McLaren</string>
+    <string name="fod_recog_animation_op_mclaren" translatable="false">McLaren</string>
     <string name="fod_recog_animation_op_ripple">Ripple</string>
     <string name="fod_recog_animation_op_stripe">Stripe</string>
     <string name="fod_recog_animation_op_wave">Wave</string>
