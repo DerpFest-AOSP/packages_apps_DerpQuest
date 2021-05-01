@@ -813,7 +813,9 @@
     <string name="show_app_volume_title">Show app volume</string>
     <string name="show_app_volume_summary">Show app volume in volume panel</string>
 
-    <!-- Colored Statusbar Icons -->
+    <!-- Colored Statusbar & Header Icons -->
     <string name="statusbar_icons_style">Colored Statusbar Icons</string>
     <string name="statusbar_icons_style_summary">Choose the style of your statusbar icons (requires SystemUI restart)</string>
+    <string name="header_icons_style">Colored Header Icons</string>
+    <string name="header_icons_style_summary">Choose the style of your notification headers icons (requires SystemUI restart)</string>
 </resources>

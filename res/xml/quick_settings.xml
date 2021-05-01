@@ -52,6 +52,12 @@
         settings:min="0"
         settings:units="" />
 
+    <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="headers_icons_style"
+        android:title="@string/header_icons_style"
+        android:summary="@string/header_icons_style_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory 
          android:key="qsheader_category"
          android:title="@string/qsheader_title">
