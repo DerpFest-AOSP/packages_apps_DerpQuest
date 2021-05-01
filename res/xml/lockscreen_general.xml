@@ -146,7 +146,7 @@
             settings:min="0"
             settings:units="dp"
             settings:interval="1"
-            android:defaultValue="44" />
+            android:defaultValue="80" />
 
         <com.derp.support.colorpicker.ColorPickerPreference
             android:key="ambient_icons_color"
