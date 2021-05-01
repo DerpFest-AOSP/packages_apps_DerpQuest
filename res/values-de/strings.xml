@@ -682,4 +682,8 @@
 
     <string name="show_app_volume_title">App-Lautstärke anzeigen</string>
     <string name="show_app_volume_summary">App-Lautstärke im Lautstärke-Panel anzeigen</string>
+
+    <!-- Colored Statusbar Icons -->
+    <string name="statusbar_icons_style">Farbige Statusleistensymbole</string>
+    <string name="statusbar_icons_style_summary">Wählen Sie den Stil Ihrer Statusleistensymbole (erfordert einen Neustart der SystemUI)</string>
 </resources>
