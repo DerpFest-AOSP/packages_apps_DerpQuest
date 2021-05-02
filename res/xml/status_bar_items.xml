@@ -18,6 +18,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/status_bar_items_title" >
 
+     <Preference
+        android:key="ticker_settings"
+        android:title="@string/ticker_screen_title"
+        android:summary="@string/ticker_screen_summary"
+        android:fragment="com.derpquest.settings.fragments.statusbar.Ticker"/>
+
     <com.derp.support.preference.SystemSettingSwitchPreference
         android:key="status_bar_notif_count"
         android:title="@string/status_bar_notif_count_title"
