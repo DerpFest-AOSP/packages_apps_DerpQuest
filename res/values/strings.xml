@@ -145,11 +145,10 @@
     <string name="lockscreen_battery_info_summary">Display negotiated charger max current, voltage, wattage and battery temperature on lockscreen while charging</string>
 
     <!-- Statusbar net monitor -->
-    <string name="network_traffic_state_title">Enable network monitor</string>
-    <string name="network_traffic_state_sb_title">Always show net monitor</string>
-    <string name="network_traffic_state_summary">Show net download activity, or upload if bigger, in expanded statusbar</string>
-    <string name="network_traffic_state_sb_summary">Keep showing net activity also in normal statusbar</string>
+    <string name="network_traffic_sb_state_title">Show net speed in statusbar</string>
+    <string name="network_traffic_esb_state_title">Show net speed in expanded statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+    <string name="network_traffic_notch_info">Devices with notch may not show net speed in status bar sometimes, depending on the size of the notch and available space in status bar</string>
 
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusbar items</string>
@@ -246,7 +245,7 @@
     <string name="lock_clock_font_themeable" translatable="false">Themeable (or VCR OSD Mono)</string>
     <string name="lock_dateown_font_themeable" translatable="false">Themeable (or Fox and Cat)</string>
 
-	    <!-- Lockscreen fonts - Common strings -->
+    <!-- Lockscreen fonts - Common strings -->
     <string name="lock_fonts_system_headline">System headline (default)</string>
     <string name="lock_fonts_system_body">System body</string>
     <string name="lock_fonts_stock">Normal</string>

@@ -20,25 +20,26 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.derp.support.preference.SystemSettingSwitchPreference
-        android:key="network_traffic_state"
-        android:title="@string/network_traffic_state_title"
-        android:summary="@string/network_traffic_state_summary"
-        android:defaultValue="true" />
+        android:key="network_traffic_sb_state"
+        android:title="@string/network_traffic_sb_state_title"
+        android:defaultValue="false" />
 
     <com.derp.support.preference.SystemSettingSwitchPreference
-        android:key="network_traffic_state_sb"
-        android:title="@string/network_traffic_state_sb_title"
-        android:summary="@string/network_traffic_state_sb_summary"
-        android:dependency="network_traffic_state"
+        android:key="network_traffic_esb_state"
+        android:title="@string/network_traffic_esb_state_title"
         android:defaultValue="false" />
 
     <com.derp.support.preference.CustomSystemSeekBarPreference
         android:key="network_traffic_autohide_threshold"
         android:title="@string/network_traffic_autohide_threshold_title"
-        android:dependency="network_traffic_state"
         android:max="10"
         android:min="0"
         android:defaultValue="1"
         settings:units="" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="footer_preference"
+        android:title="@string/network_traffic_notch_info"
+        android:selectable="false" />
 
 </PreferenceScreen>
