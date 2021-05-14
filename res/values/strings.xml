@@ -866,4 +866,8 @@
     <string name="fod_pressed_color_yellow">Yellow</string>
     <string name="fod_pressed_color_light_yellow">Light Yellow</string>
 
+    <!-- FOD icon animation -->
+    <string name="fod_icon_animation_summary">Animate the FOD icon when turning on the screen</string>
+    <string name="fod_icon_animation">Animated FOD icon</string>
+
 </resources>
