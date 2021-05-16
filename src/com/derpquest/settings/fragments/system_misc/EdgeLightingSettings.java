@@ -218,7 +218,6 @@ public class EdgeLightingSettings extends SettingsPreferenceFragment implements
         mAmbientNotificationLightEnabled.setEnabled(enabled && aodEnabled ? true : false);
         mAmbientNotificationLightHideAod.setEnabled(enabled && aodEnabled ? true : false);
         if (!aodEnabled) {
-            mAmbientNotificationLightTimeout.setSummary(R.string.aod_disabled);
             mAmbientNotificationLightHideAod.setSummary(R.string.aod_disabled);
             mAmbientNotificationLightEnabled.setSummary(R.string.aod_disabled);
         }
