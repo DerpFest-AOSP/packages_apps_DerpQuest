@@ -629,7 +629,7 @@
     <string name="volume_category">Lautstärketasten</string>
 
     <!--  Volume Panel Plugin   -->
-    <string name="volume_panel">Volume-Panel-Stil</string>
+    <string name="volume_panel">Lautstärkefenster-Stil</string>
     <string name="volume_panel_stock">Standard</string>
     <string name="volume_panel_aosp">AOSP Expanded</string>
     <string name="volume_panel_compact">Kompakt</string>
@@ -681,5 +681,6 @@
     <string name="notification_alpha_title">Deckkraft des Benachrichtigungshintergrunds</string>
 
     <string name="show_app_volume_title">App-Lautstärke anzeigen</string>
-    <string name="show_app_volume_summary">App-Lautstärke im Lautstärke-Panel anzeigen</string>
+    <string name="show_app_volume_summary">App-Lautstärke im Lautstärkefenster anzeigen</string>
+
 </resources>
