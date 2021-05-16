@@ -936,4 +936,7 @@
     <string name="status_bar_show_lyric_title">Status bar lyric</string>
     <string name="status_bar_show_lyric_summary">Show lyric in status bar (need App support)</string>
 
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G icon</string>
+    <string name="show_fourg_icon_summary">Display 4G in signal icon instead of LTE</string>
 </resources>

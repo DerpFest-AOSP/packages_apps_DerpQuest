@@ -801,4 +801,7 @@
     <string name="status_bar_show_lyric_title">Statusleisten-Songtext</string>
     <string name="status_bar_show_lyric_summary">Songtext in Statusleiste anzeigen (App-Unterstützung erforderlich)</string>
 
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G-Symbol</string>
+    <string name="show_fourg_icon_summary">Anzeige von 4G im Signalsymbol anstelle von LTE</string>
 </resources>
