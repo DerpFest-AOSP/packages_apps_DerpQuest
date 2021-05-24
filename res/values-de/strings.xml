@@ -72,6 +72,7 @@
     <string name="lockscreen_weather_title2">Wetteroptionen</string>
     <string name="lockscreen_weather_summary2">Konfigurieren Sie das Wetter auf dem Sperrbildschirm</string>
     <string name="lockscreen_fod_summary">Konfigurieren Sie Einstellungen für die FOD-Ansicht</string>
+    <string name="custom_fod_icon_explainer">Um Ihr eigenes statisches FOD-Symbol zu verwenden, verwenden Sie die OPFP-App. Stellen Sie sicher, dass das animierte FOD-Symbol deaktiviert ist, wenn Sie ein benutzerdefiniertes Symbol in OPFP verwenden.</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animationen</string>
