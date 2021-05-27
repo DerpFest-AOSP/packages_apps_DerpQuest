@@ -27,16 +27,16 @@
     <string name="navigation_lockscreen_title">Экран блокировки</string>
     <string name="navigation_system_title">Система/Прочее</string>
     <string name="accessibility_description">Экран меню</string>
-    <string name="accessibility_item_description">%1$s menu item</string>
+    <string name="accessibility_item_description">%1$s меню</string>
 
 <!-- CATEGORIES -->
     <!-- Actions -->
     <string name="powerbutton_title">Кнопка питания</string>
     <string name="powerbutton_summary">Настройка дополнительных параметров и действий</string>
-    <string name="navigationbar_title">Navigation</string>
+    <string name="navigationbar_title">Навигация</string>
     <string name="navigationbar_summary">Настройка способов навигации</string>
-    <string name="gesture_options_title">Gestures</string>
-    <string name="gesture_options_summary">Настройки для упрощения пользования</string>
+    <string name="gesture_options_title">Жесты</string>
+    <string name="gesture_options_summary">Настройки для упрощения использования телефона</string>
     <string name="volume_rocker_title">Клавиши громкости</string>
     <string name="volume_rocker_summary">Настройка поведения для клавиш громкости +/-</string>
     <string name="hw_keys_title">Физические кнопки</string>
@@ -46,19 +46,19 @@
     <string name="quick_settings_title">Быстрые настройки</string>
     <string name="quick_settings_summary">Настройка общего вида и функциональности</string>
     <string name="headsup_title">Всплывающие уведомления</string>
-    <string name="headsup_summary">И их настройка соответственно</string>
+    <string name="headsup_summary">Настройка времени отображения и прочего</string>
     <string name="themer_title">Темы</string>
-    <string name="themer_summary">Выбрать и установить темы</string>
+    <string name="themer_summary">Настройка цвета акцента системы и фона, выбирайте на свой вкус</string>
 
     <!-- Statusbar -->
     <string name="battery_options_title">Отображение батареи</string>
-    <string name="battery_options_summary">Настройте, как вы хотите видеть свою батарею</string>
+    <string name="battery_options_summary">Настройте вид батареи под себя</string>
     <string name="clock_options_title">Часы</string>
-    <string name="clock_options_summary">Настройки отображения часов в строке состояния</string>
+    <string name="clock_options_summary">Настройки вида отображения часов в строке состояния</string>
     <string name="traffic_title">Индикация интернета</string>
     <string name="traffic_summary">Включить/настроить индикатор скорости интернета в строке состояния</string>
     <string name="status_bar_items_title">Иконки строки состояния</string>
-    <string name="status_bar_items_summary">И их настройка</string>
+    <string name="status_bar_items_summary">Здесь можно убрать системные иконки и прочее</string>
 
     <!-- Lockscreen -->
     <string name="lockscreen_aosp_title">Экран блокировки</string>
@@ -131,7 +131,7 @@
     <string name="enable_first">Пожалуйста, включите это первым</string>
 
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">Требует перезагрузки SystemUI</string>
+    <string name="systemui_restart_title">Требуется перезагрузка SystemUI</string>
     <string name="systemui_restart_message">Чтобы применились все изменения, нужно перезагрузить SystemUI. Сделать это?</string>
 
 <!-- FEATURES -->
@@ -322,7 +322,7 @@
     <string name="qstile_cookie">Печеньки</string>
     <string name="qstile_justicons">Просто иконки</string>
     <string name="qstile_inkdrop" translatable="false">Чернильная капля</string>
-    <string name="qstile_shishu_nights" translatable="false">Ночи Шишу</string>
+    <string name="qstile_shishu_nights" translatable="false">Ночь Шишу</string>
     <string name="qstile_mono_gradient">Монохромный градиент</string>
     <string name="qstile_wavey">Волнистый</string>
     <string name="qstile_memedo_square" translatable="false">The Memedo Square</string>
@@ -466,7 +466,7 @@
 
     <!-- FOD animations -->
     <string name="fod_recog_animation">Анимация отпечатка пальцев</string>
-    <string name="fod_recog_animation_summary">Показывает анимацию, когда телефон сканирует ваш палец</string>
+    <string name="fod_recog_animation_summary">Показывает анимацию сканирования отпечатка</string>
     <string name="fod_recog_animation_effect_title">Выбрать анимацию</string>
     <string name="fod_recog_animation_miui_normal">Как в MIUI по умолчанию</string>
     <string name="fod_recog_animation_miui_aod" translatable="false">MIUI AOD</string>
@@ -713,7 +713,7 @@
     <string name="heads_up_snooze_title">Таймер отложения</string>
     <string name="heads_up_snooze_summary_one_minute">При смахивании всплывающего уведомления вверх, уведомления от приложения не будут показываться минуту</string>
     <string name="heads_up_snooze_summary">При смахивании всплывающего уведомления вверх, уведомления от приложения не будут показываться <xliff:g id="number">%d</xliff:g> минут</string>
-    <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
+    <string name="heads_up_snooze_disabled_summary">Таймер отложения выключен</string>
     <string name="heads_up_snooze_1min">1 минута</string>
     <string name="heads_up_snooze_5min">5 минут</string>
     <string name="heads_up_snooze_10min">10 минут</string>
@@ -790,7 +790,7 @@
     <string name="pulse_ambient_light_show_always_title">Показывать всегда</string>
     <string name="pulse_ambient_light_show_always_summary">Подсвечивает края для всех событий, а не только уведомлений</string>
     <string name="pulse_ambient_light_repeat_direction_title">Режим повторов подстветки</string>
-    <string name="pulse_ambient_light_repeat_direction_restart">Перезапуск</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">Повтор</string>
     <string name="pulse_ambient_light_repeat_direction_reverse">Наоборот</string>
 
     <!-- Volume Panel on Left -->
