@@ -71,6 +71,7 @@
     <string name="lockscreen_weather_summary2">Configure lockscreen weather</string>
     <string name="lockscreen_fod_summary">Configure settings related to the FOD view</string>
     <string name="custom_fod_icon_explainer">To use your own static FOD icon, use the OPFP app. Make sure to have the animated FOD icon disabled when using a custom icon in OPFP.</string>
+    <string name="custom_fod_icon_png_explainer">You can download your own custom FOD icon PNGs from Telegram channels such as FODicons and OP_fps. Use a local gallery and not online services such as Google Photos to pick FOD icons.</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animations</string>
@@ -875,5 +876,8 @@
     <string name="fod_icon_animation_zaid_oneui">Samsung OneUI 3</string>
     <string name="fod_icon_animation_oneui2">Samsung OneUI 2</string>
     <string name="fod_icon_animation_oos">OnePlus OxygenOS 11</string>
+
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">Fingerprint icon</string>
 
 </resources>
