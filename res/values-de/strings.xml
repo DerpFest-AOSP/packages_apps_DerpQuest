@@ -145,11 +145,10 @@
     <string name="lockscreen_battery_info_summary">Die vom System ermittelte Ladespannung, Stromstärke, Wattzahl und Akkutemperatur während des Ladevorgangs auf dem Sperrbildschirm anzeigen</string>
 
     <!-- Statusbar net monitor -->
-    <string name="network_traffic_state_title">Netzwerkverkehrsanzeige aktivieren</string>
-    <string name="network_traffic_state_sb_title">Netzwerkverkehrsanzeige immer anzeigen</string>
-    <string name="network_traffic_state_summary">Netzwerkverkehrsanzeige in der erweiterten Statusleiste anzeigen</string>
-    <string name="network_traffic_state_sb_summary">Zeigen Sie die Netzwerkverkehrsanzeige auch in der normalen Statusleiste an</string>
-    <string name="network_traffic_autohide_threshold_title">Schwellenwert für das automatische Ausblenden der Netzwerkverkehrsanzeige (KB/s)</string>
+    <string name="network_traffic_sb_state_title">Netzwerkgeschwindigkeit in der Statusleiste anzeigen</string>
+    <string name="network_traffic_esb_state_title">Netzwerkgeschwindigkeit in erweiterter Statusleiste anzeigen</string>
+    <string name="network_traffic_autohide_threshold_title">Schwellenwert für das automatische Ausblenden der Netzwerkaktivität (KB/s)</string>
+    <string name="network_traffic_notch_info">Geräte mit Notch zeigen manchmal keine Nettogeschwindigkeit in der Statusleiste an, abhängig von der Größe des Notch und dem verfügbaren Platz in der Statusleiste</string>
 
     <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusleistenelemente</string>
