@@ -44,6 +44,7 @@ import com.android.settings.Utils;
 
 import com.derp.support.preference.CustomSeekBarPreference;
 import com.derp.support.preference.SystemSettingListPreference;
+import com.derp.support.preference.SystemSettingSeekBarPreference;
 import com.derp.support.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private static final String LOCK_CLOCK_FONT_STYLE = "lock_clock_font_style";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
     private static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
+    private static final String KEY_LOCKSCREEN_BLUR = "lockscreen_blur";
 
     static final int MODE_DISABLED = 0;
     static final int MODE_NIGHT = 1;
@@ -68,6 +70,7 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private ListPreference mLockDateFonts;
     private ColorPickerPreference mAmbientIconsColor;
     private SystemSettingListPreference mBatteryTempUnit;
+    private SystemSettingSeekBarPreference mLockscreenBlur;
 
     Preference mAODPref;
 
@@ -106,6 +109,11 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         mAmbientIconsColor.setNewPreviewColor(intColor);
         mAmbientIconsColor.setSummary(hexColor);
         mAmbientIconsColor.setOnPreferenceChangeListener(this);
+
+        mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
+        if (!com.derpquest.settings.utils.Utils.isBlurSupported()) {
+            mLockscreenBlur.setVisible(false);
+        }
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
         updateAlwaysOnSummary();

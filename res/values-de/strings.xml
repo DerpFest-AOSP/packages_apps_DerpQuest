@@ -765,4 +765,7 @@
     <string name="clock_date_right">Rechts neben der Uhr</string>
     <string name="clock_date_left">Links neben der Uhr</string>
 
+    <!-- Lockscreen blur -->
+    <string name="lockscreen_blur_title">Hintergrundunschärfe</string>
+
 </resources>

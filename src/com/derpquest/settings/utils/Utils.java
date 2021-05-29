@@ -37,6 +37,7 @@ import android.hardware.camera2.CameraManager;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.UserManager;
+import android.os.SystemProperties;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -227,6 +228,15 @@ public final class Utils {
         }
         return false;
     }
+
+    public static boolean isBlurSupported() {
+        boolean blurSupportedSysProp = SystemProperties
+            .getBoolean("ro.surface_flinger.supports_background_blur", false);
+        boolean blurDisabledSysProp = SystemProperties
+            .getBoolean("persist.sys.sf.disable_blurs", false);
+        return blurSupportedSysProp && !blurDisabledSysProp && ActivityManager.isHighEndGfx();
+    }
+
     public static void restartSystemUi(Context context) {
         Toast.makeText(context, R.string.systemui_restart_toast, Toast.LENGTH_LONG).show();
         new RestartSystemUiTask(context).execute();
