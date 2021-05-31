@@ -848,4 +848,8 @@
     <!-- Power menu background opacity -->
     <string name="power_menu_alpha_title">Power menu opacity</string>
 
+    <!--Volume Rocker Wake -->
+    <string name="volume_rocker_wake_title">Volume rocker wake</string>
+    <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
+
 </resources>
