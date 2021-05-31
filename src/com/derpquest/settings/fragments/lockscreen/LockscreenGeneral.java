@@ -16,16 +16,19 @@
 
 package com.derpquest.settings.fragments.lockscreen;
 
+import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.os.UserHandle;
 import android.os.ServiceManager;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -78,6 +81,8 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_general);
+        Context mContext = getContext();
+        WallpaperManager manager = WallpaperManager.getInstance(mContext);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         int unitMode = Settings.System.getIntForUser(resolver,
@@ -110,8 +115,9 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         mAmbientIconsColor.setSummary(hexColor);
         mAmbientIconsColor.setOnPreferenceChangeListener(this);
 
+        ParcelFileDescriptor pfd = manager.getWallpaperFile(WallpaperManager.FLAG_LOCK);
         mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
-        if (!com.derpquest.settings.utils.Utils.isBlurSupported()) {
+        if (!com.derpquest.settings.utils.Utils.isBlurSupported() || pfd != null) {
             mLockscreenBlur.setVisible(false);
         }
 
