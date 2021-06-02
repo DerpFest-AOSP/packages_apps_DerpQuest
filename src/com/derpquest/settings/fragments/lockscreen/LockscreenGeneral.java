@@ -118,7 +118,8 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
         ParcelFileDescriptor pfd = manager.getWallpaperFile(WallpaperManager.FLAG_LOCK);
         mLockscreenBlur = (SystemSettingSeekBarPreference) findPreference(KEY_LOCKSCREEN_BLUR);
         if (!com.derpquest.settings.utils.Utils.isBlurSupported() || pfd != null) {
-            mLockscreenBlur.setVisible(false);
+            mLockscreenBlur.setEnabled(false);
+            mLockscreenBlur.setSummary(getString(R.string.lockscreen_blur_disabled));
         }
 
         mAODPref = findPreference(AOD_SCHEDULE_KEY);

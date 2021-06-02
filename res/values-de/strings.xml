@@ -767,6 +767,7 @@
 
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Hintergrundunschärfe</string>
+    <string name="lockscreen_blur_disabled">Lockscreen Blur kann nicht aktiviert werden, da Ihr Lockscreen-Hintergrund nicht mit Ihrem Homescreen übereinstimmt. Oder Ihr Gerät unterstützt kein Blur.</string>
 
     <!-- Screen off fod -->
     <string name="fod_gesture_title">Screen off FOD</string>

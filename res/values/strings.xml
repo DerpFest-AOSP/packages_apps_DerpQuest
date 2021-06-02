@@ -902,6 +902,7 @@
 
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Background blur</string>
+    <string name="lockscreen_blur_disabled">Lockscreen Blur cant be enabled cause your lockscreen wallpaper doesnt match your homescreen one. Or your device doesnt support Blur.</string>
 
     <!-- Screen off fod -->
     <string name="fod_gesture_title">Screen off FOD</string>
