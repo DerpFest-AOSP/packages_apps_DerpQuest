@@ -48,5 +48,12 @@
         android:icon="@drawable/ic_lockscreen_general_background"
         android:title="@string/lockscreen_general_title"
         android:summary="@string/lockscreen_general_summary" />
+     
+    <com.android.settings.widget.CardPreference
+        android:key="lockscreen_fod_category"
+        android:fragment="com.derpquest.settings.fragments.lockscreen.FodGeneral"
+        android:icon="@drawable/ic_fod_background"
+        android:title="@string/lockscreen_fod_category"
+        android:summary="@string/lockscreen_fod_summary" />     
 
 </PreferenceScreen>

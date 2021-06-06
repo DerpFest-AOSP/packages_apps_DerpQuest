@@ -71,6 +71,7 @@
     <string name="lockscreen_tuner_summary">Fügen Sie Tuner-Teile Ihres Sperrbildschirms hinzu oder entfernen Sie sie</string>
     <string name="lockscreen_weather_title2">Wetteroptionen</string>
     <string name="lockscreen_weather_summary2">Konfigurieren Sie das Wetter auf dem Sperrbildschirm</string>
+    <string name="lockscreen_fod_summary">Konfigurieren Sie Einstellungen für die FOD-Ansicht</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animationen</string>

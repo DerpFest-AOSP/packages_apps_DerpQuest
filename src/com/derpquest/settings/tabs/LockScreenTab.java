@@ -33,7 +33,9 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
 //    private static final String LOCKSCREEN_TUNER_CATEGORY = "lockscreen_tuner_category";
     private static final String LOCKSCREEN_WEATHER_CATEGORY = "lockscreen_weather";
-
+    private static final String LOCKSCREEN_FOD_CATEGORY = "lockscreen_fod_category";
+        
+    private CardPreference mLockscreenFod;
     private CardPreference mLockscreenAosp;
     private CardPreference mLockscreenGeneral;
 //    private CardPreference mLockscreenTuner;
@@ -70,7 +72,14 @@ public class LockScreenTab extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mLockscreenWeather);
         } else {
             mLockscreenWeather = (CardPreference) findPreference(LOCKSCREEN_WEATHER_CATEGORY);
-        }
+        }    
+
+        CardPreference mLockscreenFod = findPreference("lockscreen_fod_category");
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView)) {
+                    getPreferenceScreen().removePreference(mLockscreenFod);
+        } else {
+            mLockscreenFod = (CardPreference) findPreference(LOCKSCREEN_FOD_CATEGORY);
+        }            
     }
 
     @Override

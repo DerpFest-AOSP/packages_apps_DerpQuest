@@ -69,6 +69,7 @@
     <string name="lockscreen_tuner_summary">Add or remove tuner parts of your lockscreen</string>
     <string name="lockscreen_weather_title2">Weather options</string>
     <string name="lockscreen_weather_summary2">Configure lockscreen weather</string>
+    <string name="lockscreen_fod_summary">Configure settings related to the FOD view</string>
 
     <!-- System/ Misc -->
     <string name="animations_category_title">Animations</string>
@@ -103,6 +104,7 @@
     <string name="volume_steps_title">Volume steps</string>
     <string name="power_menu_category">Power menu</string>
     <string name="pulse_settings">Pulse</string>
+    <string name="lockscreen_fod_category">Fingerprint On Display</string>
     <string name="gestures_buttons_category">BUTTONS</string>
     <string name="gestures_motions_category">MOTIONS</string>
 
@@ -463,41 +465,6 @@
     <string name="hide_lockicon_title">Hide lock icon</string>
     <string name="hide_lockicon_summary">Hide the lock icon on lockscreen</string>
 
-    <!-- FOD animations -->
-    <string name="fod_recog_animation">Fingerprint animation</string>
-    <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
-    <string name="fod_recog_animation_effect_title">Select fingerprint animation effect</string>
-    <string name="fod_recog_animation_miui_normal">MIUI default</string>
-    <string name="fod_recog_animation_miui_aod" translatable="false">MIUI AOD</string>
-    <string name="fod_recog_animation_miui_aurora" translatable="false">Aurora (K30 Pro)</string>
-    <string name="fod_recog_animation_miui_aurora_cas" translatable="false">Aurora (Mi 10 Ultra)</string>
-    <string name="fod_recog_animation_miui_light">Light</string>
-    <string name="fod_recog_animation_miui_pop">Pop</string>
-    <string name="fod_recog_animation_miui_pulse">Pulse</string>
-    <string name="fod_recog_animation_miui_pulse_white">Pulse (White)</string>
-    <string name="fod_recog_animation_miui_rhythm">Rhythm</string>
-    <string name="fod_recog_animation_miui_star_cas">Starlight</string>
-    <string name="fod_recog_animation_op_cosmos">Cosmos</string>
-    <string name="fod_recog_animation_op_energy">Energy</string>
-    <string name="fod_recog_animation_op_mclaren" translatable="false">McLaren</string>
-    <string name="fod_recog_animation_op_ripple">Ripple</string>
-    <string name="fod_recog_animation_op_stripe">Stripe</string>
-    <string name="fod_recog_animation_op_wave">Wave</string>
-    <string name="fod_recog_animation_op_scanning">Scanning (Cyberpunk 2077)</string>
-    <string name="fod_recog_animation_pureview_dna">DNA</string>
-    <string name="fod_recog_animation_pureview_future">Future</string>
-    <string name="fod_recog_animation_pureview_halo_ring">Halo ring</string>
-    <string name="fod_recog_animation_pureview_molecular">Molecular</string>
-    <string name="fod_recog_animation_rog_fusion">Fusion</string>
-    <string name="fod_recog_animation_rog_pulsar">Pulsar</string>
-    <string name="fod_recog_animation_rog_supernova">Supernova</string>
-
-    <!--FOD -->
-    <string name="fod_icon_picker_title">FOD icon picker</string>
-    <string name="fod_icon_picker_summary">Pick your favourite fingerprint icon</string>
-    <string name="fod_wallpaper_color">Use wallpaper color for FOD icon</string>
-    <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
-
     <!-- gvisual mod -->
     <string name="gvisual_title">G-Visual Mod</string>
     <string name="gvisual_summary">Various UI customizations by @ImYourGege</string>
@@ -857,5 +824,46 @@
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
     <string name="fprint_error_vib_title">Fingerprint error vibration</string>
     <string name="fprint_error_vib_summary">Vibrate on error fingerprint authentication</string>
+
+    <!-- FOD animations -->
+    <string name="fod_recog_animation">Fingerprint animation</string>
+    <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
+    <string name="fod_recog_animation_effect_title">Select fingerprint animation effect</string>
+    <string name="fod_recog_animation_miui_normal">Xiaomi default</string>
+    <string name="fod_recog_animation_miui_aod">Xiaomi AOD</string>
+    <string name="fod_recog_animation_miui_aurora">Xiaomi Aurora (K30 Pro)</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Xiaomi Aurora (Mi 10 Ultra)</string>
+    <string name="fod_recog_animation_miui_light">Xiaomi Light</string>
+    <string name="fod_recog_animation_miui_pop">Xiaomi Pop</string>
+    <string name="fod_recog_animation_miui_pulse">Xiaomi Pulse</string>
+    <string name="fod_recog_animation_miui_pulse_white">Xiaomi Pulse (White)</string>
+    <string name="fod_recog_animation_miui_rhythm">Xiaomi Rhythm</string>
+    <string name="fod_recog_animation_miui_star_cas">Xiaomi Starlight</string>
+    <string name="fod_recog_animation_op_cosmos">OnePlus Cosmos</string>
+    <string name="fod_recog_animation_op_energy">OnePlus Energy</string>
+    <string name="fod_recog_animation_op_mclaren">OnePlus McLaren</string>
+    <string name="fod_recog_animation_op_ripple">OnePlus Ripple</string>
+    <string name="fod_recog_animation_op_scanning">OnePlus Cyberpunk 2077</string>
+    <string name="fod_recog_animation_op_stripe">OnePlus Stripe</string>
+    <string name="fod_recog_animation_op_wave">OnePlus Wave</string>
+    <string name="fod_recog_animation_pureview_dna">Nokia DNA</string>
+    <string name="fod_recog_animation_pureview_future">Nokia Future</string>
+    <string name="fod_recog_animation_pureview_halo_ring">Nokia Halo ring</string>
+    <string name="fod_recog_animation_pureview_molecular">Nokia Molecular</string>
+    <string name="fod_recog_animation_rog_fusion">Asus Fusion</string>
+    <string name="fod_recog_animation_rog_pulsar">Asus Pulsar</string>
+    <string name="fod_recog_animation_rog_supernova">Asus Supernova</string>
+    <string name="fod_recog_animation_shine">Oppo Shine</string>
+    <string name="fod_recog_animation_smoke">Realme Smoke</string>
+    <string name="fod_recog_animation_strings">Realme Strings</string>
+    <string name="fod_recog_animation_quantum">Realme Quantum</string>
+
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Fingerprint pressed color</string>
+    <string name="fod_pressed_color_white">White / overlayed</string>
+    <string name="fod_pressed_color_cyan">Cyan</string>
+    <string name="fod_pressed_color_green">Green</string>
+    <string name="fod_pressed_color_yellow">Yellow</string>
+    <string name="fod_pressed_color_light_yellow">Light Yellow</string>
 
 </resources>

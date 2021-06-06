@@ -55,7 +55,6 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String LOCK_CLOCK_FONT_STYLE = "lock_clock_font_style";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
-    private static final String FOD_ANIMATIONS = "fod_animations";
     private static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
 
     static final int MODE_DISABLED = 0;
@@ -66,7 +65,6 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
 
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
-    private PreferenceCategory mFODCategory;
     private ColorPickerPreference mAmbientIconsColor;
 
     Preference mAODPref;
@@ -75,8 +73,6 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_general);
-        PreferenceScreen prefSet = getPreferenceScreen();
-        Context mContext = getContext();
 
         mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONT_STYLE);
         mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
@@ -90,14 +86,6 @@ public class LockscreenGeneral extends SettingsPreferenceFragment implements
                 getContentResolver(), Settings.System.LOCK_DATE_FONTS, 1)));
         mLockDateFonts.setSummary(mLockDateFonts.getEntry());
         mLockDateFonts.setOnPreferenceChangeListener(this);
-        
-        Resources res = mContext.getResources();
-        boolean hasFod = res.getBoolean(com.android.internal.R.bool.config_needCustomFODView);
-
-        mFODCategory = (PreferenceCategory) findPreference(FOD_ANIMATIONS);
-        if (mFODCategory != null && !hasFod) {
-            prefSet.removePreference(mFODCategory);
-        }
         
         // Ambient Icons Color
         mAmbientIconsColor = (ColorPickerPreference) findPreference(AMBIENT_ICONS_COLOR);
