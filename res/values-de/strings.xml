@@ -361,8 +361,6 @@
     <string name="clock_date_right">Rechts neben der Uhrzeit</string>
     <string name="clock_date_left">Links neben der Uhrzeit</string>
     <string name="clock_date_position">Datum positionieren</string>
-    <string name="status_bar_clock_hide_on_home_title">Auf dem Homescreen verstecken</string>
-    <string name="status_bar_clock_hide_on_home_summary">Uhr ausblenden, wenn der Homescreen des Launchers angezeigt wird</string>
 
     <!-- Show Statusbar on Lockscreen -->
     <string name="lockscreen_status_bar_title">Statusleiste</string>
