@@ -17,7 +17,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- DerpFest dashboard -->
-    <string name="derpquest_title">DerpQuest</string>
     <string name="derp_title">DerpFest Einstellungen</string>
 
     <!-- Bottom Tabs -->
@@ -27,7 +26,7 @@
     <string name="navigation_lockscreen_title">Sperrbildschirm</string>
     <string name="navigation_system_title">Verchiedenes</string>
     <string name="accessibility_description">Bildschirmmenü</string>
-    <string name="accessibility_item_description">%1$s menu item</string>
+    <string name="accessibility_item_description">%1$s Menüelement</string>
 
 <!-- CATEGORIES -->
     <!-- Actions -->
@@ -47,8 +46,6 @@
     <string name="quick_settings_summary">Passen Sie die Gesamtansicht und Funktionalität an</string>
     <string name="headsup_title">Heads-up</string>
     <string name="headsup_summary">Konfigurieren Sie Heads-up-Optionen</string>
-    <string name="recents_title">Recents</string>
-    <string name="recents_summary">Configure look &amp; feel of recent apps view</string>
     <string name="themer_title">Designs</string>
     <string name="themer_summary">Durchsuchen und wählen Sie installierte Designs aus</string>
 
@@ -107,16 +104,18 @@
     <string name="volume_steps_title">Volume steps</string>
     <string name="power_menu_category">Ein-/Aus-Menü</string>
     <string name="pulse_settings">Pulse</string>
+    <string name="gestures_buttons_category">TASTEN</string>
+    <string name="gestures_motions_category">BEWEGUNGEN</string>
 
     <!-- About DerpFest -->
     <string name="derp_about_title">Über DerpFest</string>
     <string name="derp_about_summary">Eine kleine Info über das Team</string>
-    <string name="derp_telegram_title">DerpFest Telegram Community</string>
+    <string name="derp_telegram_title">DerpFest Telegram-Community</string>
     <string name="derp_telegram_summary">Tippe hier, um unsere wundervolle Community kennenzulernen!</string>
     <string name="derp_github_title">DerpFest GitHub</string>
     <string name="derp_github_summary">Tippe hier, um unser Github zu öffnen!</string>
     <string name="derp_about_info_summary">Dies ist ein kleines Projekt, das auf AOSP basiert. Wir versuchen, eine Plattform für Anfänger zu sein und unterstützen die Custom ROM-Community auch mit unseren eigenen einzigartigen Beiträgen. Dieses ROM existiert dank der Inspiration von AOSiP, danke!</string>
-    <string name="derp_about_team">DerpFest Team</string>
+    <string name="derp_about_team">DerpFest-Team</string>
     <string name="derp_about_alex" translatable="false">Alexander Brunswig</string>
     <string name="derp_about_alex_summary" translatable="false">Gründer</string>
     <string name="derp_about_david" translatable="false">David Setiawan</string>
@@ -127,14 +126,16 @@
     <string name="derp_version_default">Unbekannt</string>
 
     <!-- Reusable strings -->
-    <string name="advanced_behavior_title">Advanced behavior</string>
-    <string name="appearance_category">APPEARANCE</string>
-    <string name="behavior_category">BEHAVIOR</string>
-    <string name="enable_first">Please enable first</string>
+    <string name="advanced_behavior_title">Erweitertes Verhalten</string>
+    <string name="appearance_category">AUSSEHEN</string>
+    <string name="behavior_category">VERHALTEN</string>
+    <string name="simple_category">EINFACH</string>
+    <string name="advanced_category">ERWEITERT</string>
+    <string name="enable_first">Bitte zuerst aktivieren</string>
 
     <!-- SystemUI Restart -->
-    <string name="systemui_restart_title">SystemUI restart required</string>
-    <string name="systemui_restart_message">For all changes to take effect, a SystemUI restart is required. Restart SystemUI now?</string>
+    <string name="systemui_restart_title">Neustart der SystemUI erforderlich</string>
+    <string name="systemui_restart_message">Damit alle Änderungen wirksam werden, ist ein Neustart der SystemUI erforderlich. SystemUI jetzt neu starten?</string>
 
 <!-- FEATURES -->
 
@@ -177,8 +178,7 @@
     <string name="show_lockscreen_media_art_title">Mediencover anzeigen</string>
     <string name="lockscreen_media_art_options_title">Sperrbildschirm-Mediencover</string>
 
-	    <!-- QS advanced settings -->
-    <string name="qs_column_rows_settings_title">QS-Panel-Einstellungen</string>
+    <!-- Quick QS pulldown -->
     <string name="status_bar_quick_qs_pulldown">Schnelles QS-Herunterziehen</string>
     <string name="quick_pulldown_none">Deaktiviert</string>
     <string name="quick_pulldown_right">Herunterziehen der Statusleiste von rechts</string>
@@ -200,8 +200,8 @@
     <string name="qs_battery_percentage_summary">Akku-Prozentsatz im QS-Header anstelle der geschätzten Laufzeit anzeigen</string>
 
 	    <!-- Lockscreen fonts - Common strings -->
-    <string name="lock_fonts_system_headline">System headline (default)</string>
-    <string name="lock_fonts_system_body">System body</string>
+    <string name="lock_fonts_system_headline">Systemüberschrift (Standard)</string>
+    <string name="lock_fonts_system_body">Systemtext</string>
     <string name="lock_fonts_stock">Normal</string>
     <string name="lock_fonts_bold">Bold</string>
     <string name="lock_fonts_italic">Italic</string>
@@ -270,28 +270,6 @@
     <string name="qs_tile_style_title">QS-Kachelstil</string>
     <string name="qs_tile_style_pick">Wählen Sie Ihren QS-Kachelstil</string>
     <string name="qstile_default">Standard</string>
-    <string name="qstile_dual_tone">Dual-toned</string>
-    <string name="qstile_trim">Trim</string>
-    <string name="qstile_dual_tone_trim">Dual-toned Trim</string>
-    <string name="qstile_cookie">Cookie</string>
-    <string name="qstile_justicons">Icons without circle</string>
-    <string name="qstile_inkdrop">Inkdrop</string>
-    <string name="qstile_shishu_nights">Shishu Nights</string>
-    <string name="qstile_mono_gradient">Monochrome Gradient</string>
-    <string name="qstile_wavey">Wavey</string>
-    <string name="qstile_memedo_square">The Memedo Square</string>
-    <string name="qstile_pokesign">Pokesign</string>
-    <string name="qstile_ninja">Ninja</string>
-    <string name="qstile_dottedcircle">Dotted Circle</string>
-    <string name="qstile_shishuink">Shishu Ink</string>
-    <string name="qstile_attemptmountain">An attempt of a mountain</string>
-    <string name="qstile_neonlike">Neon</string>
-    <string name="qstile_oos">Oxygen</string>
-    <string name="qstile_triangles">Triangles</string>
-    <string name="qstile_divided">Divided Circle</string>
-    <string name="qstile_cosmos">Shishu Cosmos</string>
-    <string name="qstile_gradient">Gradients</string>
-    <string name="qstile_pureaccent">Pure Accent</string>
 
     <!-- Pulse -->
     <string name="pulse_help_policy_notice_summary">Pulse ist ein brillanter Audio-Grafik-Equalizer, wenn Musik auf dem Gerät abgespielt wird</string>
@@ -378,12 +356,34 @@
     <string name="hide_lockicon_title">Schlosssymbol ausblenden</string>
     <string name="hide_lockicon_summary">Blenden Sie das Schlosssymbol auf dem Sperrbildschirm aus</string>
 
+    <!-- gvisual mod -->
+    <string name="gvisual_title">G-Visual-Mod</string>
+    <string name="gvisual_summary">Verschiedene UI-Anpassungen von @ImYourGege</string>
+    <string name="rounded_ui_title">Abgerundeten Ecken</string>
+    <string name="rounded_ui_dialog_title">Modell mit abgerundeten Ecken auswählen</string>
+    <string name="rounded_style_default">Standard</string>
+    <string name="rounded_style_rectangle">Rechteck</string>
+    <string name="rounded_style_large">Groß</string>
+    <string name="rounded_style_medium">Mittel</string>
+    <string name="statusbar_height_title">Höhe der Statusleiste</string>
+    <string name="statusbar_height_dialog_title">Wählen Sie das Statusleisten-Höhenmodell aus</string>
+    <string name="sb_height_default">Standard</string>
+    <string name="sb_height_medium">Mittel</string>
+    <string name="sb_height_large">Groß</string>
+    <string name="sb_height_extralarge">Extra groß</string>
+    <string name="navbar_default">Standard</string>
+    <string name="navbar_color_title">Farbe der Navigationspille</string>
+    <string name="navbar_color_dialog_title">Farbe auswählen</string>
+
     <!-- Custom carrier label and position -->
     <string name="carrier_label_settings_title">Netzbetreiber-Anzeige</string>
+    <string name="carrier_label_settings_summary">Anzeige des aktuellen Netzwerknamens in der Statusleiste</string>
+    <string name="custom_carrier_label_title">Benutzerdefinierter Text</string>
     <string name="custom_carrier_label_explain">Eigene Bezeichnung eingeben. Leer lassen, um Netzwerknamen zu verwenden.</string>
     <string name="custom_carrier_label_notset">Keine benutzerdefinierte Bezeichung festgelegt</string>
     <string name="show_carrier_keyguard">Sperrbildschirm</string>
     <string name="show_carrier_statusbar">Statusleiste</string>
+    <string name="show_carrier_both">Sperrbildschirm und Statusleiste</string>
     <string name="show_carrier_enabled">Beide</string>
 
     <!-- Statusbar logo -->
@@ -642,24 +642,127 @@
     <string name="volume_panel_on_left_title">Lautstärkefenster links</string>
     <string name="volume_panel_on_left_summary">Ändern des Lautstärkefensters von der rechten Seite zur linken Seite</string>
 
+    <!-- Language options - Volume rocker cursor control -->
+    <string name="cursor_section_header">Cursor</string>
+    <string name="volume_key_cursor_control_title">Lautstärketasten-Cursorsteuerung</string>
+    <string name="volume_key_cursor_control_off">Deaktiviert</string>
+    <string name="volume_key_cursor_control_on">Lauter/Leiser bewegt den Cursor nach links/rechts</string>
+    <string name="volume_key_cursor_control_on_reverse">Lauter/Leiser bewegt den Cursor nach rechts/links</string>
+
     <!-- Notification background opacity -->
     <string name="notification_alpha_title">Deckkraft des Benachrichtigungshintergrunds</string>
 
     <string name="show_app_volume_title">App-Lautstärke anzeigen</string>
     <string name="show_app_volume_summary">App-Lautstärke im Lautstärkefenster anzeigen</string>
 
+    <!-- Doze Brightness Config -->
+    <string name="doze_brightness_category">Doze-Helligkeitskonfiguration</string>
+    <string name="doze_brightness_force_title">Helligkeitswerte erzwingen</string>
+    <string name="doze_brightness_force_summary">Verwenden Sie benutzerdefinierte Helligkeitswerte anstelle der Standard-Bildschirmhelligkeit</string>
+    <string name="ambient_pulse_brightness_title">Ambient-Benachrichtigungshelligkeit</string>
+    <string name="ambient_pulse_brightness_summary">Stellen Sie die Helligkeit ein, die verwendet werden soll, wenn Benachrichtigungen angezeigt werden</string>
+    <string name="ambient_doze_brightness_title">Ambient-Bildschirmhelligkeit</string>
+    <string name="ambient_doze_brightness_summary">Stellen Sie die Helligkeit ein, die während der Umgebungsanzeige verwendet werden soll</string>
+
     <!-- reTicker -->
     <string name="reticker_title">reTicker (erfordert einen Neustart der SystemUI)</string>
-    <string name="reticker_summary">Ersetzen Sie Ihre Benachrichtigungen durch eine neu gestaltete Version vom Ticker. \nSchmal und weniger invasiv als eine Standardbenachrichtigung</string>
+    <string name="reticker_summary">Ersetzen Sie Ihre Benachrichtigungen durch eine neu gestaltete Version vom Ticker. \nSchmal und weniger invasiv als eine Standardbenachrichtigung.</string>
     <string name="reticker_colored_title">Verwenden Sie App-farbigen Hintergrund</string>
     <string name="reticker_colored_summary">Ersetzen Sie die Hintergrundfarbe von reTicker mithilfe der Hauptfarbe der Benachrichtigungs-App</string>
 
+    <!-- Rounded corners -->
+    <string name="corners_category">Ecken</string>
+    <string name="corner_radius">Radius der abgerundeten Ecken</string>
+    <string name="content_padding">Abstand zum Inhalt</string>
+    <string name="corner_fwvals">Benutze Standard-Framework-Werte</string>
+    <string name="corner_fwvals_summary">Nützlich, wenn das Gerät abgerundete Ecken hat</string>
+
     <!-- Power menu background opacity -->
     <string name="power_menu_alpha_title">Deckkraft des Ein-/Aus-Menüs</string>
+
+    <!--Volume Rocker Wake -->
+    <string name="volume_rocker_wake_title">Wecken durch Lautstärketasten</string>
+    <string name="volume_rocker_wake_summary">Durch Drücken der Lautstärketasten wird Ihr Gerät geweckt</string>
+
+    <!-- Fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Vibration der Fingerabdruck-Authentifizierung</string>
+    <string name="fprint_sucess_vib_summary">Vibrieren bei erfolgreicher Fingerabdruck-Authentifizierung</string>
+    <string name="fprint_error_vib_title">Vibration bei Fingerabdruckfehlern</string>
+    <string name="fprint_error_vib_summary">Bei fehlgeschlagener Fingerabdruckauthentifizierung vibrieren</string>
+
+    <!-- FOD animations -->
+    <string name="fod_recog_animation">Fingerprint-Animation</string>
+    <string name="fod_recog_animation_summary">Zeigt eine Animation an, während Ihr Finger gelesen wird</string>
+    <string name="fod_recog_animation_effect_title">Fingerabdruck-Animationseffekt auswählen</string>
+    <string name="fod_recog_animation_miui_normal">Xiaomi-Standard</string>
+
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Fingerabdruck gedrückte Farbe</string>
+    <string name="fod_pressed_color_white">Weiß / überlagert</string>
+    <string name="fod_pressed_color_cyan">Cyan</string>
+    <string name="fod_pressed_color_green">Grün</string>
+    <string name="fod_pressed_color_yellow">Gelb</string>
+    <string name="fod_pressed_color_light_yellow">Helles Gelb</string>
+
+    <!-- FOD icon animation -->
+    <string name="fod_icon_animation_summary">Animieren Sie das FOD-Symbol beim Einschalten des Bildschirms</string>
+    <string name="fod_icon_animation_effect_title">Wählen Sie den Animationseffekt des FOD-Symbols</string>
+    <string name="fod_icon_animation">Animiertes FOD-Symbol auswählen</string>
+
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">Fingerabdruck-Symbol</string>
 
     <!-- Lockscreen charge temperature unit -->
     <string name="lockscreen_charge_temp_unit_title">Temperatureinheit</string>
     <string name="lockscreen_charge_temp_unit_farhenheit">Fahrenheit</string>
     <string name="lockscreen_charge_temp_unit_celsius">Celsius</string>
+
+    <!-- Statusbar Clock -->
+    <string name="status_bar_clock_pos_title">Position der Uhr</string>
+    <string name="status_bar_clock_pos_right">Rechts</string>
+    <string name="status_bar_clock_pos_center">Mittig</string>
+    <string name="status_bar_clock_pos_left">Links</string>
+
+    <string name="status_bar_am_pm_title">AM/PM-Darstellung</string>
+    <string name="status_bar_am_pm_info">24 Stunden-Format ist aktiviert</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Klein</string>
+    <string name="status_bar_am_pm_hidden">Nicht anzeigen (Standard)</string>
+
+    <string name="status_bar_clock_title">Uhr &amp; Datum</string>
+    <string name="status_bar_clock_summary">Uhrzeit und Datum anzeigen</string>
+    <string name="status_bar_clock_seconds_title">Sekunden anzeigen</string>
+    <string name="status_bar_clock_seconds_summary">Sekunden neben der Uhr in der Statusleiste anzeigen</string>
+
+    <string name="status_bar_clock_position_title">Position der Uhr</string>
+    <string name="status_bar_clock_position_right">Rechts</string>
+    <string name="status_bar_clock_position_left">Links</string>
+    <string name="status_bar_clock_position_center">Mittig</string>
+    <string name="status_bar_clock_position_hidden">Nicht anzeigen</string>
+
+    <string name="status_bar_clock_auto_hide_title">Uhrzeit automatisch ausblenden</string>
+    <string name="status_bar_clock_auto_hide_summary">Uhrzeit in regelmäßigen Abständen ein- und ausblenden, um Platz in der Statusleiste zu sparen</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Dauer der Ausblendung</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Anzahl der Sekunden, für welche die Uhrzeit ausgeblendet bleibt</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Dauer der Anzeige</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Anzahl der Sekunden, bis die Uhrzeit ausgeblendet wird</string>
+
+    <!--Status bar date -->
+    <string name="status_bar_date_title">Datum</string>
+    <string name="status_bar_date_none">Ausgeblendet (Standard)</string>
+    <string name="status_bar_date_small">Klein</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="status_bar_date_format_title">Datumsformat</string>
+    <string name="status_bar_date_style">Datumsstil</string>
+    <string name="status_bar_date_style_normal">Normal</string>
+    <string name="status_bar_date_style_lowercase">Kleingeschrieben</string>
+    <string name="status_bar_date_style_uppercase">Großgeschrieben</string>
+    <string name="status_bar_date_format_custom">Benutzerdefiniert</string>
+    <string name="status_bar_date_string_edittext_title">Datumsformat z.B. tt/mm/jj</string>
+    <string name="status_bar_date_string_edittext_summary">Zeichenfolge eingeben</string>
+
+    <string name="clock_date_position">Position des Datums</string>
+    <string name="clock_date_right">Rechts neben der Uhr</string>
+    <string name="clock_date_left">Links neben der Uhr</string>
 
 </resources>
