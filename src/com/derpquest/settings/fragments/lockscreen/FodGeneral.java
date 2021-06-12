@@ -69,6 +69,7 @@ public class FodGeneral extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private ContentResolver mResolver;
+    private static final String SCREEN_OFF_FOD = "fod_gesture";
     private static final String ANIMA_LIST = "fod_recognizing_animation_list";
     private static final String ANIMA_TOGGLE = "fod_recognizing_animation";
     private static final String FINGERPRINT_CUSTOM_ICON = "custom_fingerprint_icon";
@@ -94,6 +95,14 @@ public class FodGeneral extends SettingsPreferenceFragment implements
         mIconAnima = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_ICON_ANIME);
 
         findPreference(FOOTER).setTitle(R.string.custom_fod_icon_png_explainer);
+
+        boolean enableScreenOffFOD = getContext().getResources().
+                getBoolean(R.bool.config_supportScreenOffFod);
+        Preference ScreenOffFODPref = (Preference) findPreference("fod_gesture");
+
+        if (!enableScreenOffFOD){
+            prefScreen.removePreference(ScreenOffFODPref);
+        }
 
         boolean isFODDevice = getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView);
         if (!isFODDevice){
@@ -236,6 +245,13 @@ public class FodGeneral extends SettingsPreferenceFragment implements
             @Override
             public List<String> getNonIndexableKeys(Context context) {
                 final List<String> keys = super.getNonIndexableKeys(context);
+                final Resources res = context.getResources();
+
+                boolean enableScreenOffFOD = res.getBoolean(
+                        R.bool.config_supportScreenOffFod);
+                if (!enableScreenOffFOD)
+                    keys.add(SCREEN_OFF_FOD);
+
                 return keys;
             }
     };

@@ -903,4 +903,8 @@
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Background blur</string>
 
+    <!-- Screen off fod -->
+    <string name="fod_gesture_title">Screen off FOD</string>
+    <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>
+
 </resources>

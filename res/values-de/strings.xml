@@ -768,4 +768,8 @@
     <!-- Lockscreen blur -->
     <string name="lockscreen_blur_title">Hintergrundunschärfe</string>
 
+    <!-- Screen off fod -->
+    <string name="fod_gesture_title">Screen off FOD</string>
+    <string name="fod_gesture_summary">Ermöglicht das Entsperren des Geräts, ohne den Bildschirm zuerst aufwecken zu müssen</string>
+
 </resources>

@@ -57,6 +57,12 @@
             android:entryValues="@array/fod_pressed_color_values"
             android:defaultValue="@*android:integer/config_fod_pressed_color" />
 
+        <com.derp.support.preference.SystemSettingSwitchPreference
+            android:key="fod_gesture"
+            android:title="@string/fod_gesture_title"
+            android:summary="@string/fod_gesture_summary"
+            android:defaultValue="false" />
+
         <com.android.settingslib.widget.FooterPreference
             android:key="custom_fod_icon_footer"
             android:selectable="false"
