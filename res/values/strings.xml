@@ -844,6 +844,7 @@
     <string name="fod_icon_animation_zaid_oneui">Samsung OneUI 3</string>
     <string name="fod_icon_animation_oneui2">Samsung OneUI 2</string>
     <string name="fod_icon_animation_oos">OnePlus OxygenOS 11</string>
+    <string name="fod_icon_animation_spark">Spark</string>
 
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">Fingerprint icon</string>
