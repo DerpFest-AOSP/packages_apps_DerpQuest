@@ -41,6 +41,13 @@
            android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
     </Preference>
 
+    <com.derp.support.preference.SystemSettingSwitchPreference
+       android:key="use_new_searchbar"
+       android:title="@string/search_bar_style_title"
+       android:icon="@drawable/ic_searchbar"
+       android:summary="@string/search_bar_style_summary"
+       android:defaultValue="false" />
+
     <com.derp.support.preference.SystemSettingListPreference
        android:key="switch_style"
        android:title="@string/switch_style_title"
