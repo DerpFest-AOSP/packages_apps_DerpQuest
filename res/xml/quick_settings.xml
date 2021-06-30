@@ -106,6 +106,13 @@
         android:title="@string/clear_all_button_category" >
 
         <com.derp.support.preference.SystemSettingListPreference
+            android:key="clear_all_icon_style"
+            android:title="@string/clearall_icon_title"
+            android:entries="@array/clearall_icon_entries"
+            android:entryValues="@array/clearall_icon_values"
+            android:defaultValue="0" />
+
+        <com.derp.support.preference.SystemSettingListPreference
             android:key="clear_all_button_gravity"
             android:title="@string/clear_all_button_gravity_title"
             android:dialogTitle="@string/clear_all_button_gravity_pick"

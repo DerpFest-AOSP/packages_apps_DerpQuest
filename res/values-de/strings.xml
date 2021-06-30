@@ -873,4 +873,10 @@
     <!-- FOD on doze -->
     <string name="fod_on_doze_title">FOD on doze</string>
     <string name="fod_on_doze_summary">Wählen Sie ob FOD während der Umgebungsanzeige/AOD angezeigt werden soll. Dadurch wird nur das Symbol ausgeblendet und die Funktionalität nicht deaktiviert.</string>
+
+    <!-- Clear All -->
+    <string name="clearall_icon_title">Symbol für Schaltfläche "Alle entfernen"</string>
+    <string name="clearall_icon_summary">Ändern Sie das Symbol für die Schaltfläche "Alle entfernen"</string>
+    <string name="clearall_icon_default">Kreuz (Standard)</string>
+    <string name="clearall_icon_oos">OOS</string>
 </resources>

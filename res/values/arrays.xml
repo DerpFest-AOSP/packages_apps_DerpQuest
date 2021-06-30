@@ -1069,4 +1069,14 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="clearall_icon_entries" translatable="false">
+        <item>@string/clearall_icon_default</item>
+        <item>@string/clearall_icon_oos</item>
+    </string-array>
+
+    <string-array name="clearall_icon_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
 </resources>
