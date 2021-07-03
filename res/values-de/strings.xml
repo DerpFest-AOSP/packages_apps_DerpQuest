@@ -876,4 +876,42 @@
     <!-- FOD on doze -->
     <string name="fod_on_doze_title">FOD on doze</string>
     <string name="fod_on_doze_summary">Wählen Sie ob FOD während der Umgebungsanzeige/AOD angezeigt werden soll. Dadurch wird nur das Symbol ausgeblendet und die Funktionalität nicht deaktiviert.</string>
+
+    <!-- Ambient Text -->
+    <string name="ambient_category_title">Ambient-Text</string>
+
+    <string name="ambient_image_hide_type_title">Animationstyp fürs Ausblenden</string>
+    <string name="ambient_image_show_type_title">Animationstyp fürs Einblenden</string>
+    <string name="ambient_image_animation_type_pick">Wählen Sie einen Animationstyp aus</string>
+    <string name="ambient_image_animation_alpha">Opazität</string>
+    <string name="ambient_image_animation_slide_to_left">Nach links bewegen</string>
+    <string name="ambient_image_animation_slide_to_right">Nach rechts bewegen</string>
+    <string name="ambient_image_animation_slide_to_left_alpha">Nach links bewegen + Opazität</string>
+    <string name="ambient_image_animation_slide_to_right_alpha">Nach rechts bewegen + Opazität</string>
+
+    <string name="ambient_text_enabled_title">Ambient-Text</string>
+    <string name="ambient_text_enabled_summary">Aktivieren Sie einen benutzerdefinierten Text in der Umgebungsanzeige/AOD</string>
+    <string name="ambient_custom_text_title">Benutzerdefinierter Text</string>
+
+    <string name="ambient_text_custom_color_start_title">Startfarbe</string>
+    <string name="ambient_text_custom_color_final_title">Endfarbe</string>
+
+    <string name="ambient_text_vertical_location_title">Vertikale Position</string>
+    <string name="ambient_text_horizontal_location_title">Horizontale Position</string>
+    <string name="ambient_text_rotation_title">Rotation</string>
+    <string name="ambient_text_size_title">Schriftgröße</string>
+    <string name="ambient_text_font_title">Schriftart</string>
+    <string name="ambient_text_font_dialog_title">Wählen Sie eine Schriftart aus</string>
+    <string name="ambient_text_font_summary">Wählen Sie eine Schriftart für Ihren Ambient-Text</string>
+
+    <string name="ambient_text_color_type_title">Farbtyp</string>
+    <string name="ambient_text_color_type_pick">Wählen Sie einen Farbtyp</string>
+    <string name="ambient_text_color_type_accent">Systemakzent</string>
+    <string name="ambient_text_color_type_custom">Benutzerdefinierte Farbe (Startfarbe)</string>
+    <string name="ambient_text_color_type_gradient">Farbverlauf (Start- bis Endfarbe)</string>
+    <string name="ambient_text_color_type_lava_lamp">Lavalampe</string>
+    <string name="ambient_text_color_type_lava_lamp_custom">Lavalampe mit benutzerdefinierten Farben (Start- bis Endfarbe)</string>
+
+    <string name="ambient_hide_keyguard_title">AOD-Inhalte ausblenden</string>
+    <string name="ambient_hide_keyguard_summary">Uhr, Statusleiste und mehr ausblenden</string>
 </resources>
