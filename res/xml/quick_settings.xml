@@ -52,6 +52,13 @@
         settings:min="0"
         settings:units="" />
 
+    <!-- QS footer page indicator -->
+    <com.derp.support.preference.SystemSettingSwitchPreference
+        android:key="qs_footer_page_indicator"
+        android:title="@string/qs_footer_page_indicator_title"
+        android:summary="@string/qs_footer_page_indicator_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory 
          android:key="qsheader_category"
          android:title="@string/qsheader_title">

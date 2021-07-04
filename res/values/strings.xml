@@ -951,4 +951,8 @@
     <string name="flashlight_on_call_not_dnd">Only in ringer mode</string>
     <string name="flashlight_on_call_dnd">Only in DND mode</string>
     <string name="flashlight_on_call_always">Always</string>
+
+    <!-- Quick Settings Footer Page Indicator -->
+    <string name="qs_footer_page_indicator_title">Page Indicator</string>
+    <string name="qs_footer_page_indicator_summary">Show page indicator in quick settings footer</string>
 </resources>
