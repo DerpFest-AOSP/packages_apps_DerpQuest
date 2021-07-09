@@ -66,7 +66,7 @@
         <com.derp.support.preference.CustomSystemSeekBarPreference
             android:key="qs_sb_bg_alpha"
             android:title="@string/qs_sb_bg_alpha_title"
-            android:defaultValue="255"
+            android:defaultValue="0"
             android:max="255"
             android:min="0"
             settings:units="" />
@@ -76,7 +76,7 @@
             android:key="qs_sb_bg_gradient"
             android:title="@string/qs_panel_gradient_title"
             android:summary="@string/qs_panel_gradient_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
