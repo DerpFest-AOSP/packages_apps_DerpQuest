@@ -946,6 +946,7 @@
     <string name="show_fourg_icon_summary">Display 4G in signal icon instead of LTE</string>
 
     <!-- Blink flashlight for incoming calls -->
+    <string name="notification_flash_title">Flashlight</string>
     <string name="flashlight_on_call_title">Blink Flashlight for call</string>
     <string name="flashlight_on_call_disabled">Disabled</string>
     <string name="flashlight_on_call_not_dnd">Only in ringer mode</string>
