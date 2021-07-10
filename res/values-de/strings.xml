@@ -807,4 +807,15 @@
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G-Symbol</string>
     <string name="show_fourg_icon_summary">Anzeige von 4G im Signalsymbol anstelle von LTE</string>
+
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Blinklicht bei eingehenden Anrufen</string>
+    <string name="flashlight_on_call_disabled">Deaktiviert</string>
+    <string name="flashlight_on_call_not_dnd">Nur im Klingelmodus</string>
+    <string name="flashlight_on_call_dnd">Nur im DND-Modus</string>
+    <string name="flashlight_on_call_always">Immer</string>
+
+    <!-- Quick Settings Footer Page Indicator -->
+    <string name="qs_footer_page_indicator_title">Seitenanzeige</string>
+    <string name="qs_footer_page_indicator_summary">Seitenanzeige in der Fußzeile der Schnelleinstellungen anzeigen</string>
 </resources>
