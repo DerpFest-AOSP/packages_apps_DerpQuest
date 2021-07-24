@@ -835,4 +835,13 @@
 
     <string name="artwork_media_fade_level_title">Grafik-Fade-Level</string>
     <string name="artwork_media_fade_level_summary">Ausblenden des Mediengrafikbilds</string>
+
+    <!-- Rounded styles -->
+    <string name="rounded_style_title">Abgerundeter Stil für Systemdialoge</string>
+    <string name="rounded_default">Standard</string>
+    <string name="rounded_none">Keiner</string>
+    <string name="rounded_slight">Leicht</string>
+    <string name="rounded_medium">Mittel</string>
+    <string name="rounded_high">Hoch</string>
+    <string name="rounded_extreme">Extrem</string>
 </resources>
