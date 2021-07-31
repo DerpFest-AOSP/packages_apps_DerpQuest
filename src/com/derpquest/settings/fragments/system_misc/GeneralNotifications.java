@@ -40,8 +40,6 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.derp.support.preference.SystemSettingSwitchPreference;
 
-import com.derpquest.settings.utils.Utils;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -52,7 +50,6 @@ import java.util.Map;
 public class GeneralNotifications extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
 
     private Preference mAlertSlider;
@@ -61,14 +58,9 @@ public class GeneralNotifications extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.general_notifications);
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        final ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
-
-        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(incallVibCategory);
-        }
 
         mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
