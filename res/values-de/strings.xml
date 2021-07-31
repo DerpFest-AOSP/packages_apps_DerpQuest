@@ -835,4 +835,7 @@
     <string name="separators_notification_header_summary">Trennzeichen in Benachrichtigungskopfzeilen hinzufügen</string>
 
     <string name="notification_header_gravity_title">Ausrichtung des Benachrichtigungskopfzeilentext</string>
+
+    <string name="theme_select_title">Designs</string>
+    <string name="theme_select_summary">Durchsuchen und wählen Sie installierte Designs</string>
 </resources>

@@ -70,6 +70,10 @@ public class Themer extends DashboardFragment {
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.accent_color"));
         controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.signal_icon"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.wifi_icon"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.font"));
         return controllers;
     }

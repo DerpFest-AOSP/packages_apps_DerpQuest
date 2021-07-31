@@ -974,4 +974,7 @@
     <string name="separators_notification_header_summary">Add separators in notification headers</string>
 
     <string name="notification_header_gravity_title">Notification Header Text Gravity</string>
+
+    <string name="theme_select_title">Themes</string>
+    <string name="theme_select_summary">Browse and select installed themes</string>
 </resources>

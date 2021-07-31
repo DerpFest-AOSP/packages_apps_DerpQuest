@@ -19,10 +19,60 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/themer_title" >
 
+    <Preference
+        android:key="theme_select_activity"
+        android:title="@string/theme_select_title"
+        android:icon="@drawable/ic_themes"
+        android:summary="@string/theme_select_summary"
+        android:persistent="false" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.wallpaper"
+                android:targetClass="com.android.customization.picker.CustomizationPickerActivity" />
+    </Preference>
+
+    <Preference
+       android:key="clock_style"
+       android:title="@string/clock_style_title"
+       android:summary="@string/clock_style_summary"
+       android:icon="@drawable/ic_clock">
+       <intent
+           android:action="android.intent.action.VIEW"
+           android:targetPackage="com.android.wallpaper"
+           android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
+    </Preference>
+
+    <com.derp.support.preference.SystemSettingListPreference
+       android:key="switch_style"
+       android:title="@string/switch_style_title"
+       android:icon="@drawable/ic_switch"
+       android:dialogTitle="@string/switch_style_title"
+       android:entries="@array/switch_style_entries"
+       android:entryValues="@array/switch_style_values"
+       android:summary="%s"
+       android:defaultValue="0" />
+
+    <com.derp.support.preference.SystemSettingListPreference 
+       android:key="theming_settings_dashboard_icons" 
+       android:title="@string/theming_settings_dashboard_icons_title" 
+       android:icon="@drawable/ic_dashboard"
+       android:entries="@array/theming_settings_dashboard_icons_entries" 
+       android:entryValues="@array/theming_settings_dashboard_icons_values"
+       android:defaultValue="0" />
+
     <ListPreference
        android:key="android.theme.customization.accent_color"
        android:title="@string/theme_customization_accent_color_title"
        android:icon="@drawable/ic_accent"/>
+
+    <ListPreference
+       android:key="android.theme.customization.wifi_icon"
+       android:title="@string/custom_wifi_bar_title"
+       android:icon="@drawable/ic_wifi"/>
+
+    <ListPreference
+       android:key="android.theme.customization.signal_icon"
+       android:title="@string/custom_signal_bar_title"
+       android:icon="@drawable/ic_cell"/>
 
     <ListPreference
        android:key="android.theme.customization.font"
