@@ -838,4 +838,7 @@
 
     <string name="theme_select_title">Designs</string>
     <string name="theme_select_summary">Durchsuchen und wählen Sie installierte Designs</string>
+
+    <string name="artwork_media_fade_level_title">Grafik-Fade-Level</string>
+    <string name="artwork_media_fade_level_summary">Ausblenden des Mediengrafikbilds</string>
 </resources>
