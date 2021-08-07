@@ -354,12 +354,6 @@
     <!-- gvisual mod -->
     <string name="gvisual_title">G-Visual-Mod</string>
     <string name="gvisual_summary">Verschiedene UI-Anpassungen von @ImYourGege</string>
-    <string name="rounded_ui_title">Abgerundeten Ecken</string>
-    <string name="rounded_ui_dialog_title">Modell mit abgerundeten Ecken auswählen</string>
-    <string name="rounded_style_default">Standard</string>
-    <string name="rounded_style_rectangle">Rechteck</string>
-    <string name="rounded_style_large">Groß</string>
-    <string name="rounded_style_medium">Mittel</string>
     <string name="statusbar_height_title">Höhe der Statusleiste</string>
     <string name="statusbar_height_dialog_title">Wählen Sie das Statusleisten-Höhenmodell aus</string>
     <string name="sb_height_default">Standard</string>
