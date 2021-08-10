@@ -347,10 +347,6 @@
     <string name="alert_slider_notifications_title">Alarmschieberegler-Benachrichtigungen</string>
     <string name="alert_slider_notifications_summary">Benachrichtigung anzeigen, wenn die Position des Alarmschiebereglers geändert wird</string>
 
-    <!-- Lock icon -->
-    <string name="hide_lockicon_title">Schlosssymbol ausblenden</string>
-    <string name="hide_lockicon_summary">Blenden Sie das Schlosssymbol auf dem Sperrbildschirm aus</string>
-
     <!-- gvisual mod -->
     <string name="gvisual_title">G-Visual-Mod</string>
     <string name="gvisual_summary">Verschiedene UI-Anpassungen von @ImYourGege</string>
