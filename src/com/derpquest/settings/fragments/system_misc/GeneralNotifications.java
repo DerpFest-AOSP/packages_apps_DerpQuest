@@ -49,10 +49,10 @@ import java.util.Map;
 @SearchIndexable
 public class GeneralNotifications extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-
-    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
-
     private Preference mAlertSlider;
+
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

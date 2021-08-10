@@ -24,12 +24,6 @@
         android:summary="@string/pulse_ambient_light_summary"
         android:fragment="com.derpquest.settings.fragments.system_misc.EdgeLightingSettings" />
 
-    <Preference
-        android:key="gaming_mode_enabled"
-        android:title="@string/gaming_mode_title"
-        android:summary="@string/gaming_mode_summary"
-        android:fragment="com.derpquest.settings.fragments.system_misc.GamingMode" />
-
     <com.derp.support.preference.SystemSettingSwitchPreference
         android:key="alert_slider_notifications"
         android:title="@string/alert_slider_notifications_title"
