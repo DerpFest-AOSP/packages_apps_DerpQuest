@@ -177,6 +177,7 @@
     <string name="gaming_mode_notification_danmaku_summary">Zeigen Sie den Benachrichtigungsinhalt in Form von Danmaku im Spiel an</string>
     <string name="gaming_mode_quick_start_apps_title">Schnellstart-Apps</string>
     <string name="gaming_mode_quick_start_apps_summary">Wählen Sie die Anwendung, die Sie mit einem schwebenden Ball starten möchten</string>
+    <string name="gaming_mode_menu_opacity_title">Deckkraft des Menüs</string>
 
     <string name="gaming_mode_performance">Leistung</string>
     <string name="gaming_mode_use_game_driver_title">Spieletreiber verwenden</string>
