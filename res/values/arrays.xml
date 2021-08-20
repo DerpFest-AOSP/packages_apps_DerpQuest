@@ -759,6 +759,7 @@
         <item>@string/fod_recog_animation_smoke</item>
         <item>@string/fod_recog_animation_strings</item>
         <item>@string/fod_recog_animation_quantum</item>
+        <item>@string/fod_recog_animation_redwave</item>
     </string-array>
 
     <string-array name="fod_recog_animation_values" translatable="false">
@@ -790,6 +791,7 @@
         <item>25</item>
         <item>26</item>
         <item>27</item>
+        <item>28</item>
     </string-array>
 
     <!-- FOD pressed color -->

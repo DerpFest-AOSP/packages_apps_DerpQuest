@@ -850,6 +850,7 @@
     <string name="fod_recog_animation_smoke">Realme Smoke</string>
     <string name="fod_recog_animation_strings">Realme Strings</string>
     <string name="fod_recog_animation_quantum">Realme Quantum</string>
+    <string name="fod_recog_animation_redwave">Project-Xtended Red wave</string>
 
     <!-- FOD pressed color -->
     <string name="fod_pressed_color_title">Fingerprint pressed color</string>
