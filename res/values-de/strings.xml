@@ -83,7 +83,7 @@
     <string name="changelog_summary">Liste der zuletzt zu DerpFest hinzugefügten Commits</string>
     <string name="led_settings_title">LED settings</string>
     <string name="led_settings_summary">Configure the LED light for supported options</string>
-    <string name="gaming_title">Spielmodus</string>
+    <string name="gaming_title">Spielemodus</string>
     <string name="gaming_title_summary">Zusätzliche Funktionen für ein immersives Spielerlebnis</string>
 
 <!-- OTHER -->
@@ -172,7 +172,7 @@
     <!-- Gaming mode -->
     <string name="gaming_mode_enabled_title">Spielemodus aktivieren</string>
     <string name="gaming_mode_disable_auto_brightness_title">Deaktivieren Sie die automatische Helligkeit</string>
-    <string name="gaming_mode_disable_auto_brightness_summary">Deaktivieren Sie die automatische Helligkeit beim Aufrufen des Spielmodus</string>
+    <string name="gaming_mode_disable_auto_brightness_summary">Deaktivieren Sie die automatische Helligkeit beim Aufrufen des Spielemodus</string>
     <string name="gaming_mode_notification_danmaku_title">Danmaku-Benachrichtigungen</string>
     <string name="gaming_mode_notification_danmaku_summary">Zeigen Sie den Benachrichtigungsinhalt in Form von Danmaku im Spiel an</string>
     <string name="gaming_mode_quick_start_apps_title">Schnellstart-Apps</string>
