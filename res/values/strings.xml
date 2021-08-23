@@ -972,10 +972,6 @@
     <string name="flashlight_on_call_dnd">Only in DND mode</string>
     <string name="flashlight_on_call_always">Always</string>
 
-    <!-- Quick Settings Footer Page Indicator -->
-    <string name="qs_footer_page_indicator_title">Page Indicator</string>
-    <string name="qs_footer_page_indicator_summary">Show page indicator in quick settings footer</string>
-
     <!-- Clear All Button Options -->
     <string name="clear_all_button_category">Clear All Button</string>
     <string name="clear_all_button_gravity_title">Clear All Button Gravity</string>

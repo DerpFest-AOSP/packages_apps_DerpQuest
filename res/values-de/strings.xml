@@ -833,10 +833,6 @@
     <string name="flashlight_on_call_dnd">Nur im DND-Modus</string>
     <string name="flashlight_on_call_always">Immer</string>
 
-    <!-- Quick Settings Footer Page Indicator -->
-    <string name="qs_footer_page_indicator_title">Seitenanzeige</string>
-    <string name="qs_footer_page_indicator_summary">Seitenanzeige in der Fußzeile der Schnelleinstellungen anzeigen</string>
-
     <!-- Clear All Button Options -->
     <string name="clear_all_button_category">Schaltfläche "Alle entfernen"</string>
     <string name="clear_all_button_gravity_title">Ausrichtung der Schaltfläche "Alle entfernen"</string>
