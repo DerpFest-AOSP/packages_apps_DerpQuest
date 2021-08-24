@@ -17,6 +17,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/gaming_title" >
     
@@ -127,6 +128,7 @@
     <com.derpquest.settings.preferences.PackageListPreference
         android:key="gaming_mode_app_list"
         android:title="@string/gaming_mode_apps"
-        android:dependency="gaming_mode_enabled" />
+        android:dependency="gaming_mode_enabled"
+        app:derp_showSystemApps="false" />
 
 </PreferenceScreen>

@@ -22,13 +22,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.provider.Settings;
 import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener; 
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import androidx.preference.Preference;
@@ -60,16 +61,24 @@ public class PackageListPreference extends PreferenceCategory implements
 
     public PackageListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        TypedArray customAttrs = context.obtainStyledAttributes(attrs, R.styleable.PackageListPreferenceView, 0, 0);
+        boolean showSystemApps = customAttrs.getBoolean(R.styleable.PackageListPreferenceView_derp_showSystemApps, true);
+
         mContext = context;
-
         mPackageManager = mContext.getPackageManager();
-        mPackageAdapter = new PackageListAdapter(mContext);
+        mPackageAdapter = new PackageListAdapter(mContext, app -> {
+            // skip any packages that didn't get listed on launcher
+            if (mPackageManager.getLaunchIntentForPackage(app.packageName) == null)
+                return false;
 
+            return showSystemApps || (app.flags & ApplicationInfo.FLAG_SYSTEM) == 0;
+        });
         mContentResolver = mContext.getApplicationContext().getContentResolver();
-
         mAddPackagePref = makeAddPref();
 
         this.setOrderingAsAdded(false);
+        customAttrs.recycle();
     }
 
     private Preference makeAddPref() {
