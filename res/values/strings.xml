@@ -495,7 +495,7 @@
     <string name="navbar_purp">Purple</string>
     <string name="navbar_blue">Blue</string>
     <string name="navbar_rose">Rose</string>
-    <string name="navbar_color_title">Navbar Colors</string>
+    <string name="navbar_color_title">Gesture pill color</string>
     <string name="navbar_color_dialog_title">Select color</string>
 
     <!-- Custom carrier label and position -->
