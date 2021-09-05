@@ -47,6 +47,8 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
+import com.derpquest.settings.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -150,6 +152,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 		if (preference == mClearAll) {
             mCustomSettingsObserver.observe();
+            Utils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;
