@@ -59,10 +59,13 @@ import com.derp.support.preference.SystemSettingListPreference;
 public class QuickSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String CLEAR_ALL_ICON_STYLE  = "clear_all_icon_style";
-
+    public static final String[] CLEAR_ALL_ICONS = {
+        "com.android.theme.systemui_clearall_oos"
+    };
     private Handler mHandler;
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
+   
 
     private SystemSettingListPreference mClearAll;
 
@@ -144,9 +147,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         }
     }
 
-    public static final String[] CLEAR_ALL_ICONS = {
-        "com.android.theme.systemui_clearall_oos"
-    };
+   
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
