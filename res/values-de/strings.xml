@@ -179,6 +179,9 @@
     <string name="gaming_mode_quick_start_apps_summary">Wählen Sie die Anwendung, die Sie mit einem schwebenden Ball starten möchten</string>
     <string name="gaming_mode_menu_opacity_title">Deckkraft des Menüs</string>
 
+    <string name="gaming_mode_use_menu_overlay_title">Menü-Overlay anzeigen</string>
+    <string name="gaming_mode_use_menu_overlay_summary">Menü-Overlay anzeigen, wenn das Spiel läuft. Wenn diese Option deaktiviert ist, werden einige Spielmodusfunktionen deaktiviert, z. B. Danmaku-Benachrichtigungen</string>
+
     <string name="gaming_mode_performance">Leistung</string>
     <string name="gaming_mode_use_game_driver_title">Spieletreiber verwenden</string>
     <string name="gaming_mode_use_game_driver_summary">Spezielle Treiber für Spiele verwenden</string>
