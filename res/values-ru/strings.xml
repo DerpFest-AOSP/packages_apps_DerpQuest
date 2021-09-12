@@ -656,34 +656,48 @@
     <string name="status_bar_toggle_brightness_summary">Активирует возможность изменять яркость движением пальца по строке состояния</string>
 
     <!-- Gaming mode -->
-    <string name="gaming_mode_title">Игровой режим</string>
-    <string name="gaming_mode_summary">Параметры игрового режима</string>
-    <string name="gaming_mode_app_picker_title">Белый лист для приложений</string>
-    <string name="gaming_mode_add_package_title">При добавлении в список приложения, игровой режим автоматически задействуется</string>
-    <string name="gaming_mode_add_package_summary">Автоматически включать/отключать игровой режим в зависимости от использования выбранных приложений</string>
-    <string name="gaming_mode_headsup_title">Скрыть всплывающие уведомления</string>
-    <string name="gaming_mode_headsup_summary">Ограничьте или отключите всплывающие уведомления по типу уведомления</string>
-    <string name="gaming_mode_headsup_allow">Показывать все всплывающие уведомления</string>
-    <string name="gaming_mode_headsup_dnc">Показывать всплывающие уведомления только для звонков и будильников</string>
-    <string name="gaming_mode_headsup_clock">Показывать всплывающие уведомления будильников</string>
-    <string name="gaming_mode_headsup_dialer">Показывать всплывающие уведомления только для звонков</string>
-    <string name="gaming_mode_headsup_stop">Скрыть все всплывающие уведомления</string>
-    <string name="gaming_mode_hardware_keys_title">Блокировка физических кнопок</string>
-    <string name="gaming_mode_hardware_keys_summary">Выключает физические кнопки домой, недавних и назад, когда используется игровой режим</string>
-    <string name="gaming_mode_brightness_title">Выключить автоматическую яркость</string>
-    <string name="gaming_mode_brightness_summary">Соотвественно, выключает автоматическую яркость, когда используется игровой режим</string>
-    <string name="gaming_mode_ringer_title">Громкость звуков уведомлений при игровом режиме</string>
-    <string name="gaming_mode_ringer_off_title">Не менять</string>
-    <string name="gaming_mode_ringer_vibrate_title">Вибрация</string>
-    <string name="gaming_mode_ringer_dnd_title">Не беспокоить</string>
-    <string name="gaming_mode_ringer_silent_title">Без звука</string>
-    <string name="gaming_mode_notifications_title">Индикация игрового режима</string>
-    <string name="gaming_mode_notifications_off_title">Выключено</string>
-    <string name="gaming_mode_notifications_notif_title">Показать уведомление</string>
-    <string name="gaming_mode_notifications_toast_title">Показать текст внизу экрана</string>
-    <string name="gaming_mode_notifications_all_title">Показать уведомление и текст внизу экрана</string>
-    <string name="gaming_mode_dynamic_title">Динамический режим</string>
-    <string name="gaming_mode_dynamic_summary">Активирует обнаружение ваших игр и добавляет игры в белый лист игрового режима</string>
+    <string name="gaming_mode_enabled_title">Включить Игровой режим</string>
+    <string name="gaming_mode_disable_auto_brightness_title">Отключение автояркости</string>
+    <string name="gaming_mode_disable_auto_brightness_summary">Отключить автояркость при входе в игровой режим</string>
+    <string name="gaming_mode_notification_danmaku_title">Уведомления Danmaku</string>
+    <string name="gaming_mode_notification_danmaku_summary">Отображение содержимого уведомлений в виде тикера в верхней части экрана</string>
+    <string name="gaming_mode_quick_start_apps_title">Быстрый запуск приложений</string>
+    <string name="gaming_mode_quick_start_apps_summary">Выберите приложения которые хотите запускать через плавающую кнопку</string>
+    <string name="gaming_mode_menu_opacity_title">Уровень непрозрачности меню</string>
+
+    <string name="gaming_mode_performance">Производительность</string>
+    <string name="gaming_mode_use_game_driver_title">Использовать игровой драйвер</string>
+    <string name="gaming_mode_use_game_driver_summary">Использование специальных игровых драйверов</string>
+    <string name="gaming_mode_change_performance_title">Настройки производительности</string>
+    <string name="gaming_mode_change_performance_summary">Регулировка уровня производительности при запуске игры</string>
+    <string name="gaming_mode_performance_title">Уровень производительности</string>
+
+    <string name="gaming_mode_use_menu_overlay_title">Отображать меню</string>
+    <string name="gaming_mode_use_menu_overlay_summary">Показывать полупрозрачное меню, когда игра запущена. Если этот параметр отключен, то некоторые функции игрового режима будут отключены, например уведомления Danmaku.</string>
+
+    <string name="gaming_mode_dnd">Не беспокоить</string>
+    <string name="gaming_mode_disable_notification_alert_title">Отключить уведомления</string>
+    <string name="gaming_mode_disable_notification_alert_summary">Не разрешать всплывающие уведомления кроме входящих вызовов и сигналов будильника</string>
+    <string name="gaming_mode_disable_ringtone_title">Без звонков</string>
+    <string name="gaming_mode_disable_ringtone_summary">Отключить звонок входящего вызова и уведомлений в игровом режиме</string>
+    <string name="gaming_mode_auto_answer_call_title">Автоматический ответ на звонки</string>
+    <string name="gaming_mode_auto_answer_call_summary">Автоматически отвечайте на звонки во время игры и оставляйте руки свободными когда наушники не подключены</string>
+
+    <string name="gaming_mode_prevent_accidental_touch">Предотвращение случайного прикосновения</string>
+    <string name="gaming_mode_disable_gesture_title">Отключить жесты</string>
+
+    <string name="gaming_mode_apps">Список игр</string>
+    <string name="gaming_mode_dynamic_add_title">Динамический режим</string>
+    <string name="gaming_mode_dynamic_add_summary">Пытаться автоматически обнаруживать и добавлять игры</string>
+
+    <string name="gaming_mode_show_danmaku_title">Отображать уведомления Danmaku</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_title">Динамическая фильтрация уведомлений</string>
+    <string name="gaming_mode_danmaku_dynamic_notification_filter_summary">Автоматически фильтровать уведомления такие как прогресс загрузки</string>
+    <string name="gaming_mode_danmaku_size_horizontal_title">Размер Danmaku (горизонтальный)</string>
+    <string name="gaming_mode_danmaku_size_vertical_title">Размер Danmaku (вертикальный)</string>
+    <string name="gaming_mode_danmaku_speed_horizontal_title">Скорость Danmaku (горизонтальная)</string>
+    <string name="gaming_mode_danmaku_speed_vertical_title">Скорость Danmaku (вертикальная)</string>
+    <string name="gaming_mode_danmaku_blacklist">Черный список</string>
 
     <!-- Heads up -->
     <string name="heads_up_notifications">Всплывающие уведомления</string>
